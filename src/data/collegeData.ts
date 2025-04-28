@@ -328,7 +328,7 @@ export const colleges: College[] = [
     },
     type: 'Government',
     rating: 4.9,
-    description: 'IISc is India's premier research institution, known for its advanced scientific and technological research and education.',
+    description: "IISc is India's premier research institution, known for its advanced scientific and technological research and education.",
     imageUrl: 'https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGNvbGxlZ2V8ZW58MHx8MHx8&w=1000&q=80',
     courses: ['Engineering', 'Science', 'Mathematics', 'Physics', 'Biology', 'Computer Science'],
     entranceExams: ['IISc Entrance Exam', 'GATE', 'JAM', 'KVPY'],
@@ -359,7 +359,7 @@ export const colleges: College[] = [
         eligibility: 'All admitted PhD students'
       },
       {
-        name: 'Prime Minister's Research Fellowship',
+        name: "Prime Minister's Research Fellowship",
         amount: 'Rs. 70,000-80,000 per month',
         eligibility: 'Top performing PhD candidates in science and technology'
       }
@@ -392,3 +392,12 @@ export const getCollegesByCity = (cityName: string): College[] => {
 export const getCollegeById = (id: string): College | undefined => {
   return colleges.find(college => college.id === id);
 };
+
+// Helper function to get filtered colleges
+export interface FilterOptions {
+  searchQuery: string;
+  courseType: string;
+  collegeType: string;
+  ratingMin: number;
+  feeRange: string;
+}
