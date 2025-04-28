@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { states } from "@/data/collegeData";
-import StateCard from "@/components/college/CityCard";
+import StateCard from "@/components/college/StateCard";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 
