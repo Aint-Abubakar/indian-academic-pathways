@@ -63,7 +63,7 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
   
-  .animate-fade-in {
+  .fade-in-element {
     @apply opacity-0 animate-fade-in;
   }
 
