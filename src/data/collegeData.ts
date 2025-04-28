@@ -46,34 +46,242 @@ export interface College {
   }>;
 }
 
-export interface City {
+export interface State {
   id: string;
   name: string;
-  state: string;
   collegeCount: number;
 }
 
-// Mock cities data
-export const cities: City[] = [
-  { id: 'delhi', name: 'Delhi', state: 'Delhi', collegeCount: 45 },
-  { id: 'mumbai', name: 'Mumbai', state: 'Maharashtra', collegeCount: 38 },
-  { id: 'bangalore', name: 'Bangalore', state: 'Karnataka', collegeCount: 32 },
-  { id: 'chennai', name: 'Chennai', state: 'Tamil Nadu', collegeCount: 28 },
-  { id: 'kolkata', name: 'Kolkata', state: 'West Bengal', collegeCount: 25 },
-  { id: 'hyderabad', name: 'Hyderabad', state: 'Telangana', collegeCount: 22 },
-  { id: 'pune', name: 'Pune', state: 'Maharashtra', collegeCount: 20 },
-  { id: 'ahmedabad', name: 'Ahmedabad', state: 'Gujarat', collegeCount: 18 },
-  { id: 'jaipur', name: 'Jaipur', state: 'Rajasthan', collegeCount: 15 },
-  { id: 'lucknow', name: 'Lucknow', state: 'Uttar Pradesh', collegeCount: 12 },
-  { id: 'chandigarh', name: 'Chandigarh', state: 'Chandigarh', collegeCount: 10 },
-  { id: 'bhubaneswar', name: 'Bhubaneswar', state: 'Odisha', collegeCount: 8 },
-  { id: 'indore', name: 'Indore', state: 'Madhya Pradesh', collegeCount: 7 },
-  { id: 'kochi', name: 'Kochi', state: 'Kerala', collegeCount: 6 },
-  { id: 'nagpur', name: 'Nagpur', state: 'Maharashtra', collegeCount: 5 }
+// Mock states data
+export const states: State[] = [
+  { id: 'maharashtra', name: 'Maharashtra', collegeCount: 20 },
+  { id: 'delhi', name: 'Delhi', collegeCount: 20 },
+  { id: 'karnataka', name: 'Karnataka', collegeCount: 5 },
+  { id: 'tamil-nadu', name: 'Tamil Nadu', collegeCount: 3 },
+  { id: 'west-bengal', name: 'West Bengal', collegeCount: 2 },
+  { id: 'telangana', name: 'Telangana', collegeCount: 2 },
+  { id: 'gujarat', name: 'Gujarat', collegeCount: 1 },
+  { id: 'rajasthan', name: 'Rajasthan', collegeCount: 1 },
+  { id: 'uttar-pradesh', name: 'Uttar Pradesh', collegeCount: 1 },
+  { id: 'chandigarh', name: 'Chandigarh', collegeCount: 1 },
+  { id: 'odisha', name: 'Odisha', collegeCount: 1 },
+  { id: 'madhya-pradesh', name: 'Madhya Pradesh', collegeCount: 1 },
+  { id: 'kerala', name: 'Kerala', collegeCount: 1 }
 ];
 
-// Mock college data
+// Mock college data for Maharashtra and Delhi
 export const colleges: College[] = [
+  // Maharashtra Colleges
+  {
+    id: 'iit-bombay',
+    name: 'Indian Institute of Technology Bombay (IIT Bombay)',
+    location: {
+      city: 'Mumbai',
+      state: 'Maharashtra',
+      address: 'Powai, Mumbai, Maharashtra 400076'
+    },
+    type: 'Government',
+    rating: 4.9,
+    description: 'IIT Bombay is renowned for its outstanding engineering education, research facilities, and vibrant campus life.',
+    imageUrl: 'https://images.unsplash.com/photo-1569447891824-258af62f3b31?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNvbGxlZ2V8ZW58MHx8MHx8&w=1000&q=80',
+    courses: ['Computer Science', 'Electrical Engineering', 'Mechanical Engineering', 'Aerospace Engineering', 'Chemical Engineering'],
+    entranceExams: ['JEE Advanced', 'GATE'],
+    fees: {
+      tuition: {
+        min: 200000,
+        max: 250000
+      },
+      hostel: {
+        min: 80000,
+        max: 100000
+      }
+    },
+    placement: {
+      percentage: 98,
+      avgSalary: 1700000,
+      topRecruiters: ['Microsoft', 'Google', 'Morgan Stanley', 'Intel', 'Qualcomm']
+    },
+    admissionDetails: {
+      eligibility: 'Students must qualify in JEE Advanced and be in the top 2.5% in their respective board examinations.',
+      process: 'Admission is based on JEE Advanced rank and counseling process conducted by JoSAA.',
+      deadlines: 'Applications typically open in September and close in June each year.'
+    },
+    scholarships: [
+      {
+        name: 'Merit-cum-Means Scholarship',
+        amount: '2/3rd of tuition fee waiver + Rs. 1000/month',
+        eligibility: 'Family income less than 4.5 lakhs per annum'
+      },
+      {
+        name: 'SC/ST Scholarship',
+        amount: 'Full tuition fee waiver',
+        eligibility: 'SC/ST category students'
+      }
+    ],
+    reviews: [
+      {
+        rating: 5,
+        comment: 'Exceptional academic environment and research facilities. Truly world-class!',
+        author: 'Vivek Sharma',
+        date: '2023-02-20'
+      },
+      {
+        rating: 4.8,
+        comment: 'Amazing technical fests and extracurricular opportunities alongside excellent academics.',
+        author: 'Meera Iyer',
+        date: '2023-05-15'
+      }
+    ]
+  },
+  {
+    id: 'university-mumbai',
+    name: 'University of Mumbai',
+    location: {
+      city: 'Mumbai',
+      state: 'Maharashtra',
+      address: 'M.G. Road, Fort, Mumbai, Maharashtra 400032'
+    },
+    type: 'Government',
+    rating: 4.5,
+    description: 'One of the oldest and most prestigious universities in India, offering a wide range of undergraduate and postgraduate courses.',
+    imageUrl: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dW5pdmVyc2l0eXxlbnwwfHwwfHw%3D&w=1000&q=80',
+    courses: ['Arts', 'Science', 'Commerce', 'Law', 'Management', 'Engineering'],
+    entranceExams: ['MHT-CET', 'MUCET', 'MULAW'],
+    fees: {
+      tuition: {
+        min: 10000,
+        max: 100000
+      },
+      hostel: {
+        min: 50000,
+        max: 80000
+      }
+    },
+    placement: {
+      percentage: 85,
+      avgSalary: 600000,
+      topRecruiters: ['TCS', 'Infosys', 'Wipro', 'HDFC Bank', 'L&T']
+    },
+    admissionDetails: {
+      eligibility: 'Varies by program, generally 50-60% marks in relevant subjects in 10+2.',
+      process: 'Merit-based admissions or entrance exams depending on the course.',
+      deadlines: 'Applications usually open in May-June for most courses.'
+    },
+    scholarships: [
+      {
+        name: 'University Merit Scholarship',
+        amount: 'Rs. 10,000 per year',
+        eligibility: 'Top performers in university exams'
+      },
+      {
+        name: 'Financial Aid Scholarship',
+        amount: 'Varies',
+        eligibility: 'Economically disadvantaged students'
+      }
+    ],
+    reviews: [
+      {
+        rating: 4.3,
+        comment: 'Excellent reputation and history, though some facilities need modernization.',
+        author: 'Rajesh Khandelwal',
+        date: '2023-03-10'
+      },
+      {
+        rating: 4.7,
+        comment: 'Great faculty and course structure. The university has a vast alumni network.',
+        author: 'Nisha Talwar',
+        date: '2023-01-25'
+      }
+    ]
+  },
+  // Rest of Maharashtra colleges with minimal details, we can expand these later
+  {
+    id: 'sppu',
+    name: 'Savitribai Phule Pune University',
+    location: {
+      city: 'Pune',
+      state: 'Maharashtra',
+      address: 'Ganeshkhind, Pune, Maharashtra 411007'
+    },
+    type: 'Government',
+    rating: 4.5,
+    description: 'Formerly known as University of Pune, SPPU is a premier institution known for its strong academic programs and research.',
+    courses: ['Arts', 'Science', 'Commerce', 'Engineering', 'Management', 'Law'],
+    entranceExams: ['PET', 'MHT-CET', 'GATE'],
+    fees: {
+      tuition: {
+        min: 15000,
+        max: 90000
+      }
+    },
+    placement: {
+      percentage: 80
+    },
+    admissionDetails: {
+      eligibility: 'Varies by program, generally 45-60% in qualifying examination.',
+      process: 'Merit-based or entrance examination depending on program.',
+      deadlines: 'May to July depending on course'
+    },
+    scholarships: [
+      {
+        name: 'University Merit Scholarship',
+        amount: 'Varies',
+        eligibility: 'Top scorers in university exams'
+      }
+    ],
+    reviews: [
+      {
+        rating: 4.2,
+        comment: 'Excellent academic standards with strong research focus.',
+        author: 'Amit Desai',
+        date: '2023-04-18'
+      }
+    ]
+  },
+  {
+    id: 'coep',
+    name: 'College of Engineering Pune (COEP)',
+    location: {
+      city: 'Pune',
+      state: 'Maharashtra',
+      address: 'Wellesley Rd, Shivajinagar, Pune, Maharashtra 411005'
+    },
+    type: 'Government',
+    rating: 4.7,
+    description: 'One of the oldest engineering colleges in India with a rich heritage and excellent technical education.',
+    courses: ['Mechanical Engineering', 'Electrical Engineering', 'Computer Science', 'Civil Engineering', 'Production Engineering'],
+    entranceExams: ['JEE Main', 'GATE', 'MHT-CET'],
+    fees: {
+      tuition: {
+        min: 50000,
+        max: 100000
+      }
+    },
+    placement: {
+      percentage: 95
+    },
+    admissionDetails: {
+      eligibility: 'JEE Main or MHT-CET scores required.',
+      process: 'Centralized admission process based on entrance exam ranks.',
+      deadlines: 'June-July each year'
+    },
+    scholarships: [
+      {
+        name: 'Merit Scholarships',
+        amount: 'Tuition waiver',
+        eligibility: 'Top academic performers'
+      }
+    ],
+    reviews: [
+      {
+        rating: 4.8,
+        comment: 'Excellent faculty and infrastructure with strong industry connections.',
+        author: 'Priya Singh',
+        date: '2023-02-10'
+      }
+    ]
+  },
+  // Delhi Colleges
   {
     id: 'iit-delhi',
     name: 'Indian Institute of Technology Delhi',
@@ -136,8 +344,69 @@ export const colleges: College[] = [
     ]
   },
   {
+    id: 'delhi-university',
+    name: 'University of Delhi (DU)',
+    location: {
+      city: 'Delhi',
+      state: 'Delhi',
+      address: 'Benito Juarez Marg, South Campus, New Delhi, Delhi 110021'
+    },
+    type: 'Government',
+    rating: 4.7,
+    description: 'The University of Delhi is one of the most prestigious universities in India, offering a wide range of courses across various disciplines.',
+    imageUrl: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dW5pdmVyc2l0eXxlbnwwfHwwfHw%3D&w=1000&q=80',
+    courses: ['Arts', 'Science', 'Commerce', 'Law', 'Management', 'Languages', 'Social Sciences'],
+    entranceExams: ['DUET', 'CUET', 'DU JAT'],
+    fees: {
+      tuition: {
+        min: 10000,
+        max: 50000
+      },
+      hostel: {
+        min: 60000,
+        max: 90000
+      }
+    },
+    placement: {
+      percentage: 85,
+      avgSalary: 800000,
+      topRecruiters: ['Deloitte', 'EY', 'PwC', 'Bain & Company', 'McKinsey']
+    },
+    admissionDetails: {
+      eligibility: 'Varies by program, generally based on 10+2 marks or entrance exams.',
+      process: 'Merit-based admissions through cut-offs or entrance tests.',
+      deadlines: 'Applications open in June-July each year.'
+    },
+    scholarships: [
+      {
+        name: 'Vice Chancellor Scholarship',
+        amount: 'Rs. 20,000 per year',
+        eligibility: 'Top performers in each faculty'
+      },
+      {
+        name: 'Welfare Scholarships',
+        amount: 'Varies',
+        eligibility: 'Students from economically weaker sections'
+      }
+    ],
+    reviews: [
+      {
+        rating: 4.6,
+        comment: 'Excellent faculty and academic environment. Many colleges under DU are top-ranked.',
+        author: 'Ashish Kapoor',
+        date: '2023-03-05'
+      },
+      {
+        rating: 4.8,
+        comment: 'Great campus life and extracurricular activities. Very competitive admissions.',
+        author: 'Kavita Sharma',
+        date: '2023-04-12'
+      }
+    ]
+  },
+  {
     id: 'srcc-delhi',
-    name: 'Shri Ram College of Commerce',
+    name: 'Shri Ram College of Commerce (SRCC)',
     location: {
       city: 'Delhi',
       state: 'Delhi',
@@ -257,134 +526,13 @@ export const colleges: College[] = [
       }
     ]
   },
-  {
-    id: 'iit-bombay',
-    name: 'Indian Institute of Technology Bombay',
-    location: {
-      city: 'Mumbai',
-      state: 'Maharashtra',
-      address: 'Powai, Mumbai, Maharashtra 400076'
-    },
-    type: 'Government',
-    rating: 4.9,
-    description: 'IIT Bombay is renowned for its outstanding engineering education, research facilities, and vibrant campus life.',
-    imageUrl: 'https://images.unsplash.com/photo-1569447891824-258af62f3b31?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNvbGxlZ2V8ZW58MHx8MHx8&w=1000&q=80',
-    courses: ['Computer Science', 'Electrical Engineering', 'Mechanical Engineering', 'Aerospace Engineering', 'Chemical Engineering'],
-    entranceExams: ['JEE Advanced', 'GATE'],
-    fees: {
-      tuition: {
-        min: 200000,
-        max: 250000
-      },
-      hostel: {
-        min: 80000,
-        max: 100000
-      }
-    },
-    placement: {
-      percentage: 98,
-      avgSalary: 1700000,
-      topRecruiters: ['Microsoft', 'Google', 'Morgan Stanley', 'Intel', 'Qualcomm']
-    },
-    admissionDetails: {
-      eligibility: 'Students must qualify in JEE Advanced and be in the top 2.5% in their respective board examinations.',
-      process: 'Admission is based on JEE Advanced rank and counseling process conducted by JoSAA.',
-      deadlines: 'Applications typically open in September and close in June each year.'
-    },
-    scholarships: [
-      {
-        name: 'Merit-cum-Means Scholarship',
-        amount: '2/3rd of tuition fee waiver + Rs. 1000/month',
-        eligibility: 'Family income less than 4.5 lakhs per annum'
-      },
-      {
-        name: 'SC/ST Scholarship',
-        amount: 'Full tuition fee waiver',
-        eligibility: 'SC/ST category students'
-      }
-    ],
-    reviews: [
-      {
-        rating: 5,
-        comment: 'Exceptional academic environment and research facilities. Truly world-class!',
-        author: 'Vivek Sharma',
-        date: '2023-02-20'
-      },
-      {
-        rating: 4.8,
-        comment: 'Amazing technical fests and extracurricular opportunities alongside excellent academics.',
-        author: 'Meera Iyer',
-        date: '2023-05-15'
-      }
-    ]
-  },
-  {
-    id: 'iisc-bangalore',
-    name: 'Indian Institute of Science',
-    location: {
-      city: 'Bangalore',
-      state: 'Karnataka',
-      address: 'CV Raman Road, Bengaluru, Karnataka 560012'
-    },
-    type: 'Government',
-    rating: 4.9,
-    description: "IISc is India's premier research institution, known for its advanced scientific and technological research and education.",
-    imageUrl: 'https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGNvbGxlZ2V8ZW58MHx8MHx8&w=1000&q=80',
-    courses: ['Engineering', 'Science', 'Mathematics', 'Physics', 'Biology', 'Computer Science'],
-    entranceExams: ['IISc Entrance Exam', 'GATE', 'JAM', 'KVPY'],
-    fees: {
-      tuition: {
-        min: 25000,
-        max: 35000
-      },
-      hostel: {
-        min: 60000,
-        max: 80000
-      }
-    },
-    placement: {
-      percentage: 95,
-      avgSalary: 1800000,
-      topRecruiters: ['Google', 'Microsoft', 'Intel', 'IBM Research', 'ISRO']
-    },
-    admissionDetails: {
-      eligibility: 'For UG: KVPY or JEE Advanced top ranks. For PG: GATE/NET/JEST scores.',
-      process: 'Entrance test followed by interview for most programs.',
-      deadlines: 'Applications open in February-March each year.'
-    },
-    scholarships: [
-      {
-        name: 'Institute Fellowship',
-        amount: 'Rs. 31,000-35,000 per month for PhD students',
-        eligibility: 'All admitted PhD students'
-      },
-      {
-        name: "Prime Minister's Research Fellowship",
-        amount: 'Rs. 70,000-80,000 per month',
-        eligibility: 'Top performing PhD candidates in science and technology'
-      }
-    ],
-    reviews: [
-      {
-        rating: 5,
-        comment: 'The research environment is unmatched anywhere else in India. Excellent labs and faculty.',
-        author: 'Dr. Arjun Nair',
-        date: '2023-01-05'
-      },
-      {
-        rating: 4.9,
-        comment: 'World-class education focused on cutting-edge research. Great opportunities for interdisciplinary work.',
-        author: 'Lakshmi Menon',
-        date: '2023-06-10'
-      }
-    ]
-  }
+  // Add more colleges for both states with minimal information
 ];
 
-// Helper function to get colleges by city name
-export const getCollegesByCity = (cityName: string): College[] => {
+// Helper function to get colleges by state name
+export const getCollegesByState = (stateName: string): College[] => {
   return colleges.filter(college => 
-    college.location.city.toLowerCase() === cityName.toLowerCase()
+    college.location.state.toLowerCase() === stateName.toLowerCase()
   );
 };
 
