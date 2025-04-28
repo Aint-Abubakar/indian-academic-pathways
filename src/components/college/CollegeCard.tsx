@@ -7,12 +7,12 @@ import { cn } from "@/lib/utils";
 
 interface CollegeCardProps {
   college: College;
-  cityId: string;
+  stateId: string;
 }
 
-const CollegeCard = ({ college, cityId }: CollegeCardProps) => {
+const CollegeCard = ({ college, stateId }: CollegeCardProps) => {
   return (
-    <Link to={`/colleges/${cityId}/${college.id}`} className="block">
+    <Link to={`/top-colleges/${stateId}/${college.id}`} className="block">
       <Card className="card-hover fade-in-element h-full">
         <CardContent className="p-0">
           <div className="relative">

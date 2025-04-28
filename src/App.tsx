@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import TopCollegesPage from "./pages/colleges/CollegesPage";
-import CollegesByState from "./pages/colleges/CollegesByCity";
+import CollegesByState from "./pages/colleges/CollegesByState";
 import CollegeDetail from "./pages/colleges/CollegeDetail";
 
 const queryClient = new QueryClient();

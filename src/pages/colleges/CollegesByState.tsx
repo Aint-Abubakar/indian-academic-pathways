@@ -1,15 +1,15 @@
 
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { getCollegesByCity, FilterOptions } from "@/data/collegeData";
+import { getCollegesByState, FilterOptions } from "@/data/collegeData";
 import CollegeCard from "@/components/college/CollegeCard";
 import SearchFilters from "@/components/college/SearchFilters";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft } from "lucide-react";
 
-const CollegesByCity = () => {
-  const { cityId } = useParams<{ cityId: string }>();
-  const [colleges, setColleges] = useState(getCollegesByCity(cityId || ""));
+const CollegesByState = () => {
+  const { stateId } = useParams<{ stateId: string }>();
+  const [colleges, setColleges] = useState(getCollegesByState(stateId || ""));
   const [filteredColleges, setFilteredColleges] = useState(colleges);
   const [filters, setFilters] = useState<FilterOptions>({
     searchQuery: "",
@@ -19,14 +19,14 @@ const CollegesByCity = () => {
     feeRange: ""
   });
   
-  // When cityId changes, get fresh colleges
+  // When stateId changes, get fresh colleges
   useEffect(() => {
-    if (cityId) {
-      const cityColleges = getCollegesByCity(cityId);
-      setColleges(cityColleges);
-      applyFilters(cityColleges, filters);
+    if (stateId) {
+      const stateColleges = getCollegesByState(stateId);
+      setColleges(stateColleges);
+      applyFilters(stateColleges, filters);
     }
-  }, [cityId]);
+  }, [stateId]);
   
   // Apply filters to the list of colleges
   const applyFilters = (collegeList = colleges, currentFilters = filters) => {
@@ -84,23 +84,23 @@ const CollegesByCity = () => {
     applyFilters(colleges, newFilters);
   };
   
-  // Format city name from ID
-  const cityName = cityId ? cityId.charAt(0).toUpperCase() + cityId.slice(1) : "";
+  // Format state name from ID
+  const stateName = stateId ? stateId.charAt(0).toUpperCase() + stateId.slice(1) : "";
   
   return (
     <div className="py-12">
       <div className="section-container">
-        <Link to="/colleges">
+        <Link to="/top-colleges">
           <Button variant="ghost" className="mb-6">
             <ChevronLeft className="h-4 w-4 mr-2" />
-            Back to Cities
+            Back to States
           </Button>
         </Link>
         
         <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-2">Colleges in {cityName}</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-2">Colleges in {stateName}</h1>
           <p className="text-lg text-muted-foreground">
-            Explore top colleges and educational institutions in {cityName}
+            Explore top colleges and educational institutions in {stateName}
           </p>
         </div>
         
@@ -112,7 +112,7 @@ const CollegesByCity = () => {
               <CollegeCard 
                 key={college.id} 
                 college={college} 
-                cityId={cityId || ""} 
+                stateId={stateId || ""} 
               />
             ))}
           </div>
@@ -139,4 +139,4 @@ const CollegesByCity = () => {
   );
 };
 
-export default CollegesByCity;
+export default CollegesByState;
