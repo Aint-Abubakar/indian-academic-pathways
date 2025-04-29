@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getCollegesByState, FilterOptions } from "@/data/collegeData";
@@ -19,10 +18,14 @@ const CollegesByState = () => {
     feeRange: ""
   });
   
-  // When stateId changes, get fresh colleges
   useEffect(() => {
     if (stateId) {
       const stateColleges = getCollegesByState(stateId);
+      console.log(`State: ${stateId}, Colleges: ${stateColleges.length}`);
+      // Log image URLs for debugging
+      stateColleges.forEach(college => {
+        console.log(`College: ${college.name}, Image URL: ${college.imageUrl}`);
+      });
       setColleges(stateColleges);
       applyFilters(stateColleges, filters);
     }

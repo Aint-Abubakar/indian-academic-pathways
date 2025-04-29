@@ -20,9 +20,12 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* College routes */}
+          {/* College routes - fix routing issue */}
+          <Route path="/colleges" element={<TopCollegesPage />} />
           <Route path="/top-colleges" element={<TopCollegesPage />} />
+          <Route path="/colleges/:stateId" element={<CollegesByState />} />
           <Route path="/top-colleges/:stateId" element={<CollegesByState />} />
+          <Route path="/colleges/:stateId/:collegeId" element={<CollegeDetail />} />
           <Route path="/top-colleges/:stateId/:collegeId" element={<CollegeDetail />} />
           {/* These routes will be implemented in future iterations */}
           <Route path="/scholarships" element={<NotFound />} />

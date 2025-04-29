@@ -24,6 +24,9 @@ const CollegeCard = ({ college, stateId }: CollegeCardProps) => {
                   : "url('/placeholder.svg')"
               }}
             >
+              {/* Add console log to troubleshoot image URLs */}
+              {console.log(`College: ${college.name}, Image URL: ${college.imageUrl}`)}
+              
               <div className="absolute top-2 right-2 bg-white rounded-full px-2 py-1 flex items-center shadow-sm">
                 <Star className="h-4 w-4 text-nextstep-yellow fill-nextstep-yellow mr-1" />
                 <span className="font-medium text-sm">{college.rating}</span>
