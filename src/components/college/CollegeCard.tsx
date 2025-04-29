@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { College } from "@/data/collegeData";
 import { Star } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useEffect } from "react";
 
 interface CollegeCardProps {
   college: College;
@@ -11,6 +12,11 @@ interface CollegeCardProps {
 }
 
 const CollegeCard = ({ college, stateId }: CollegeCardProps) => {
+  // Move console.log outside of JSX
+  useEffect(() => {
+    console.log(`College: ${college.name}, Image URL: ${college.imageUrl}`);
+  }, [college]);
+
   return (
     <Link to={`/top-colleges/${stateId}/${college.id}`} className="block">
       <Card className="card-hover fade-in-element h-full">
@@ -24,9 +30,6 @@ const CollegeCard = ({ college, stateId }: CollegeCardProps) => {
                   : "url('/placeholder.svg')"
               }}
             >
-              {/* Add console log to troubleshoot image URLs */}
-              {console.log(`College: ${college.name}, Image URL: ${college.imageUrl}`)}
-              
               <div className="absolute top-2 right-2 bg-white rounded-full px-2 py-1 flex items-center shadow-sm">
                 <Star className="h-4 w-4 text-nextstep-yellow fill-nextstep-yellow mr-1" />
                 <span className="font-medium text-sm">{college.rating}</span>
