@@ -1,3 +1,4 @@
+
 export interface College {
   id: string;
   name: string;
@@ -143,7 +144,7 @@ export const colleges: College[] = [
     type: 'Government',
     rating: 4.5,
     description: 'One of the oldest and most prestigious universities in India, offering a wide range of undergraduate and postgraduate courses.',
-    imageUrl: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dW5pdmVyc2l0eXxlbnwwfHwwfHw%3D&w=1000&q=80',
+    imageUrl: 'https://i.imgur.com/puLxzFZ.jpeg',
     courses: ['Arts', 'Science', 'Commerce', 'Law', 'Management', 'Engineering'],
     entranceExams: ['MHT-CET', 'MUCET', 'MULAW'],
     fees: {
