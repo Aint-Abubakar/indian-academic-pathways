@@ -1,4 +1,3 @@
-
 export interface College {
   id: string;
   name: string;
@@ -83,7 +82,7 @@ export const colleges: College[] = [
     type: 'Government',
     rating: 4.9,
     description: 'IIT Bombay is renowned for its outstanding engineering education, research facilities, and vibrant campus life.',
-    imageUrl: 'https://images.unsplash.com/photo-1569447891824-258af62f3b31?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNvbGxlZ2V8ZW58MHx8MHx8&w=1000&q=80',
+    imageUrl: 'https://i.imgur.com/ZWRNik8.jpeg',
     courses: ['Computer Science', 'Electrical Engineering', 'Mechanical Engineering', 'Aerospace Engineering', 'Chemical Engineering'],
     entranceExams: ['JEE Advanced', 'GATE'],
     fees: {
