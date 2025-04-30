@@ -12,16 +12,16 @@ interface CategoryCardProps {
 }
 
 const CategoryCard = ({ title, description, icon: Icon, link, color }: CategoryCardProps) => {
+  // Using inline style for dynamic color properties instead of Tailwind classes
   return (
     <Link to={link} className="group block">
-      <div className={cn(
-        "rounded-xl border bg-gradient-to-br from-nextstep-green/20 to-nextstep-teal/20 p-6 card-hover fade-in-element", 
-        `hover:border-${color}`
-      )}>
-        <div className={cn(
-          "mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg",
-          `bg-${color}/10 text-${color}`
-        )}>
+      <div className="rounded-xl border bg-gradient-to-br from-nextstep-green/20 to-nextstep-teal/20 p-6 card-hover fade-in-element"
+        style={{ borderColor: `var(--${color})` }}>
+        <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg"
+          style={{ 
+            backgroundColor: `var(--${color}-bg)`, 
+            color: `var(--${color})` 
+          }}>
           <Icon className="h-6 w-6" />
         </div>
         <h3 className="mb-2 text-lg font-semibold">{title}</h3>

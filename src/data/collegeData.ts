@@ -193,7 +193,7 @@ export const colleges: College[] = [
       }
     ]
   },
-  // Rest of Maharashtra colleges with minimal details, we can expand these later
+  // Rest of Maharashtra colleges with minimal details
   {
     id: 'sppu',
     name: 'Savitribai Phule Pune University',
@@ -205,7 +205,7 @@ export const colleges: College[] = [
     type: 'Government',
     rating: 4.5,
     description: 'Formerly known as University of Pune, SPPU is a premier institution known for its strong academic programs and research.',
-    imageUrl: 'https://postimg.cc/qzS9b2pB',
+    imageUrl: 'https://i.postimg.cc/qzS9b2pB/savitribai-phule-pune-university.jpg',
     courses: ['Arts', 'Science', 'Commerce', 'Engineering', 'Management', 'Law'],
     entranceExams: ['PET', 'MHT-CET', 'GATE'],
     fees: {
@@ -249,7 +249,7 @@ export const colleges: College[] = [
     type: 'Government',
     rating: 4.7,
     description: 'One of the oldest engineering colleges in India with a rich heritage and excellent technical education.',
-    imageUrl: 'https://postimg.cc/wy2C0Pjn',
+    imageUrl: 'https://i.postimg.cc/wy2C0Pjn/coep.jpg',
     courses: ['Mechanical Engineering', 'Electrical Engineering', 'Computer Science', 'Civil Engineering', 'Production Engineering'],
     entranceExams: ['JEE Main', 'GATE', 'MHT-CET'],
     fees: {

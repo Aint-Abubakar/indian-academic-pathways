@@ -45,6 +45,24 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Add color variables for the CategoryCard */
+    --nextstep-blue: #1975E6;
+    --nextstep-blue-bg: rgba(25, 117, 230, 0.1);
+    --nextstep-indigo: #6366F1;
+    --nextstep-indigo-bg: rgba(99, 102, 241, 0.1);
+    --nextstep-purple: #8B5CF6;
+    --nextstep-purple-bg: rgba(139, 92, 246, 0.1);
+    --nextstep-teal: #14B8A6;
+    --nextstep-teal-bg: rgba(20, 184, 166, 0.1);
+    --nextstep-green: #22C55E;
+    --nextstep-green-bg: rgba(34, 197, 94, 0.1);
+    --nextstep-orange: #F97316;
+    --nextstep-orange-bg: rgba(249, 115, 22, 0.1);
+    --nextstep-red: #EF4444;
+    --nextstep-red-bg: rgba(239, 68, 68, 0.1);
+    --nextstep-yellow: #F59E0B;
+    --nextstep-yellow-bg: rgba(245, 158, 11, 0.1);
   }
 
   * {
