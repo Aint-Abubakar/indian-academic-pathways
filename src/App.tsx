@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import TopCollegesPage from "./pages/colleges/CollegesPage";
 import CollegesByState from "./pages/colleges/CollegesByState";
 import CollegeDetail from "./pages/colleges/CollegeDetail";
+import CareersPage from "./pages/careers/CareersPage";
 
 const queryClient = new QueryClient();
 
@@ -28,12 +29,13 @@ const App = () => (
           <Route path="/top-colleges/:stateId" element={<CollegesByState />} />
           <Route path="/colleges/:stateId/:collegeId" element={<Navigate to="/top-colleges/:stateId/:collegeId" replace />} />
           <Route path="/top-colleges/:stateId/:collegeId" element={<CollegeDetail />} />
+          {/* Careers page */}
+          <Route path="/careers" element={<CareersPage />} />
           {/* These routes will be implemented in future iterations */}
           <Route path="/scholarships" element={<NotFound />} />
           <Route path="/courses" element={<NotFound />} />
           <Route path="/trending-courses" element={<NotFound />} />
           <Route path="/exams" element={<NotFound />} />
-          <Route path="/careers" element={<NotFound />} />
           <Route path="/study-abroad" element={<NotFound />} />
           <Route path="/skill-development" element={<NotFound />} />
           <Route path="/news" element={<NotFound />} />
