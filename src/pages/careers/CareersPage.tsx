@@ -45,7 +45,11 @@ const CareersPage = () => {
               <h2 className="text-2xl font-bold text-gray-800 mb-6">
                 Which stream are you studying or interested in?
               </h2>
-              <RadioGroup className="gap-4">
+              <RadioGroup 
+                defaultValue="" 
+                className="gap-4"
+                onValueChange={handleStreamSelect}
+              >
                 {["Science", "Commerce", "Arts"].map((stream) => (
                   <div key={stream} className="flex items-start space-x-3 space-y-0">
                     <RadioGroupItem value={stream} id={stream} />
@@ -53,7 +57,6 @@ const CareersPage = () => {
                       <label
                         htmlFor={stream}
                         className="text-lg font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
-                        onClick={() => handleStreamSelect(stream)}
                       >
                         {stream}
                       </label>
