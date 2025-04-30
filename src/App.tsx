@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import TopCollegesPage from "./pages/colleges/CollegesPage";
@@ -20,12 +20,13 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* College routes - fix routing issue */}
-          <Route path="/colleges" element={<TopCollegesPage />} />
+          {/* Redirect /colleges to /top-colleges */}
+          <Route path="/colleges" element={<Navigate to="/top-colleges" replace />} />
           <Route path="/top-colleges" element={<TopCollegesPage />} />
-          <Route path="/colleges/:stateId" element={<CollegesByState />} />
+          {/* Redirect college state routes */}
+          <Route path="/colleges/:stateId" element={<Navigate to="/top-colleges/:stateId" replace />} />
           <Route path="/top-colleges/:stateId" element={<CollegesByState />} />
-          <Route path="/colleges/:stateId/:collegeId" element={<CollegeDetail />} />
+          <Route path="/colleges/:stateId/:collegeId" element={<Navigate to="/top-colleges/:stateId/:collegeId" replace />} />
           <Route path="/top-colleges/:stateId/:collegeId" element={<CollegeDetail />} />
           {/* These routes will be implemented in future iterations */}
           <Route path="/scholarships" element={<NotFound />} />

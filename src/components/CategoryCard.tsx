@@ -15,7 +15,7 @@ const CategoryCard = ({ title, description, icon: Icon, link, color }: CategoryC
   return (
     <Link to={link} className="group block">
       <div className={cn(
-        "rounded-xl border bg-card p-6 card-hover fade-in-element", 
+        "rounded-xl border bg-gradient-to-br from-nextstep-green/20 to-nextstep-teal/20 p-6 card-hover fade-in-element", 
         `hover:border-${color}`
       )}>
         <div className={cn(

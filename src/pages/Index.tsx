@@ -1,4 +1,3 @@
-
 import { 
   GraduationCap, 
   School, 
@@ -27,13 +26,7 @@ const categories = [
     link: "/scholarships",
     color: "nextstep-blue"
   },
-  {
-    title: "Colleges",
-    description: "Comprehensive directory of colleges sorted by city and state across India",
-    icon: School,
-    link: "/colleges",
-    color: "nextstep-purple"
-  },
+  // Colleges option removed, only keeping Top Colleges
   {
     title: "Courses",
     description: "Complete list of academic and vocational courses in various fields",
