@@ -1,3 +1,4 @@
+
 export interface College {
   id: string;
   name: string;
@@ -53,7 +54,7 @@ export interface State {
 
 // Mock states data
 export const states: State[] = [
-  { id: 'maharashtra', name: 'Maharashtra', collegeCount: 20 },
+  { id: 'maharashtra', name: 'Maharashtra', collegeCount: 28 },
   { id: 'delhi', name: 'Delhi', collegeCount: 20 },
   { id: 'karnataka', name: 'Karnataka', collegeCount: 5 },
   { id: 'tamil-nadu', name: 'Tamil Nadu', collegeCount: 3 },
@@ -279,6 +280,412 @@ export const colleges: College[] = [
         comment: 'Excellent faculty and infrastructure with strong industry connections.',
         author: 'Priya Singh',
         date: '2023-02-10'
+      }
+    ]
+  },
+  // Adding new Maharashtra colleges
+  {
+    id: 'kj-somaiya',
+    name: 'KJ Somaiya College of Engineering',
+    location: {
+      city: 'Mumbai',
+      state: 'Maharashtra',
+      address: 'Vidyanagar, Vidyavihar East, Mumbai, Maharashtra 400077'
+    },
+    type: 'Private',
+    rating: 4.6,
+    description: 'KJ Somaiya College of Engineering is known for its excellent infrastructure, innovative teaching methods, and strong industry connections.',
+    imageUrl: 'https://ibb.co/k2Ly4td',
+    courses: ['Computer Engineering', 'Information Technology', 'Electronics Engineering', 'Mechanical Engineering', 'Chemical Engineering'],
+    entranceExams: ['JEE Main', 'MHT-CET'],
+    fees: {
+      tuition: {
+        min: 150000,
+        max: 200000
+      },
+      hostel: {
+        min: 75000,
+        max: 95000
+      }
+    },
+    placement: {
+      percentage: 90,
+      avgSalary: 800000,
+      topRecruiters: ['TCS', 'Infosys', 'Accenture', 'Capgemini', 'L&T Infotech']
+    },
+    admissionDetails: {
+      eligibility: 'Minimum 60% in 10+2 with PCM, valid JEE Main or MHT-CET score',
+      process: 'Merit-based admission through centralized counseling process',
+      deadlines: 'Applications open in May-June each year'
+    },
+    scholarships: [
+      {
+        name: 'Merit Scholarship',
+        amount: 'Up to 50% tuition fee waiver',
+        eligibility: 'Top 5% students in each branch'
+      }
+    ],
+    reviews: [
+      {
+        rating: 4.5,
+        comment: 'Great faculty and campus infrastructure. Active placement cell.',
+        author: 'Rohit Mehta',
+        date: '2023-03-15'
+      }
+    ]
+  },
+  {
+    id: 'dj-sanghvi',
+    name: 'DJ Sanghvi College of Engineering',
+    location: {
+      city: 'Mumbai',
+      state: 'Maharashtra',
+      address: 'Vile Parle West, Mumbai, Maharashtra 400056'
+    },
+    type: 'Private',
+    rating: 4.5,
+    description: 'DJ Sanghvi College of Engineering is renowned for its quality education, modern facilities, and excellent placement record.',
+    imageUrl: 'https://ibb.co/Z1JSJwF',
+    courses: ['Computer Engineering', 'Electronics Engineering', 'Information Technology', 'Mechanical Engineering', 'Civil Engineering'],
+    entranceExams: ['JEE Main', 'MHT-CET'],
+    fees: {
+      tuition: {
+        min: 140000,
+        max: 180000
+      },
+      hostel: {
+        min: 70000,
+        max: 90000
+      }
+    },
+    placement: {
+      percentage: 92,
+      avgSalary: 750000,
+      topRecruiters: ['Microsoft', 'Amazon', 'TCS', 'Infosys', 'Cognizant']
+    },
+    admissionDetails: {
+      eligibility: 'Minimum 60% in 10+2 with PCM, valid JEE Main or MHT-CET score',
+      process: 'Merit-based admission through centralized counseling process',
+      deadlines: 'Applications open in June-July each year'
+    },
+    scholarships: [
+      {
+        name: 'Academic Excellence Scholarship',
+        amount: 'Up to Rs. 50,000 per year',
+        eligibility: 'Students with 90% and above in qualifying examination'
+      }
+    ],
+    reviews: [
+      {
+        rating: 4.7,
+        comment: 'Strong technical education with excellent extracurricular opportunities.',
+        author: 'Sneha Kapoor',
+        date: '2023-05-20'
+      }
+    ]
+  },
+  {
+    id: 'bharatiya-vidyapeeth',
+    name: 'Bharatiya Vidyapeeth College of Engineering',
+    location: {
+      city: 'Pune',
+      state: 'Maharashtra',
+      address: 'Dhankawadi, Pune, Maharashtra 411043'
+    },
+    type: 'Private',
+    rating: 4.3,
+    description: 'Bharatiya Vidyapeeth College of Engineering offers quality technical education with strong emphasis on practical skills and industry exposure.',
+    imageUrl: 'https://ibb.co/wN3vfGM',
+    courses: ['Computer Engineering', 'Mechanical Engineering', 'Civil Engineering', 'Electrical Engineering', 'Information Technology'],
+    entranceExams: ['BUET', 'JEE Main', 'MHT-CET'],
+    fees: {
+      tuition: {
+        min: 120000,
+        max: 160000
+      },
+      hostel: {
+        min: 65000,
+        max: 85000
+      }
+    },
+    placement: {
+      percentage: 85,
+      avgSalary: 600000,
+      topRecruiters: ['TCS', 'Wipro', 'Infosys', 'Tech Mahindra', 'L&T']
+    },
+    admissionDetails: {
+      eligibility: 'Minimum 50% in 10+2 with PCM, valid entrance exam score',
+      process: 'Merit-based admission through entrance examination',
+      deadlines: 'Applications typically open in April-May each year'
+    },
+    scholarships: [
+      {
+        name: 'Merit-Based Scholarship',
+        amount: 'Up to 25% tuition fee waiver',
+        eligibility: 'Top performers in university exams'
+      }
+    ],
+    reviews: [
+      {
+        rating: 4.2,
+        comment: 'Good infrastructure and faculty. Decent placement opportunities.',
+        author: 'Aditya Sharma',
+        date: '2023-04-10'
+      }
+    ]
+  },
+  {
+    id: 'pict',
+    name: 'Pune Institute of Computer Technology',
+    location: {
+      city: 'Pune',
+      state: 'Maharashtra',
+      address: 'Dhankawadi, Pune, Maharashtra 411043'
+    },
+    type: 'Private',
+    rating: 4.7,
+    description: 'PICT is one of the premier institutes for Computer Engineering education in Maharashtra, known for its excellent academic programs and high placement records.',
+    imageUrl: 'https://ibb.co/YYNFD1v',
+    courses: ['Computer Engineering', 'Information Technology', 'Electronics and Telecommunication'],
+    entranceExams: ['JEE Main', 'MHT-CET'],
+    fees: {
+      tuition: {
+        min: 130000,
+        max: 170000
+      },
+      hostel: {
+        min: 70000,
+        max: 90000
+      }
+    },
+    placement: {
+      percentage: 95,
+      avgSalary: 900000,
+      topRecruiters: ['Google', 'Microsoft', 'Amazon', 'TCS', 'Infosys']
+    },
+    admissionDetails: {
+      eligibility: 'Minimum 60% in 10+2 with PCM, valid JEE Main or MHT-CET score',
+      process: 'Merit-based admission through centralized counseling process',
+      deadlines: 'Applications open in June each year'
+    },
+    scholarships: [
+      {
+        name: 'Academic Excellence Scholarship',
+        amount: 'Up to Rs. 50,000 per year',
+        eligibility: 'Top 10% students in university exams'
+      }
+    ],
+    reviews: [
+      {
+        rating: 4.8,
+        comment: 'Excellent faculty and strong focus on technical education. Great placements.',
+        author: 'Ankit Joshi',
+        date: '2023-02-25'
+      }
+    ]
+  },
+  {
+    id: 'mit-wpu',
+    name: 'MIT World Peace University',
+    location: {
+      city: 'Pune',
+      state: 'Maharashtra',
+      address: 'Kothrud, Pune, Maharashtra 411038'
+    },
+    type: 'Private',
+    rating: 4.5,
+    description: 'MIT-WPU offers a diverse range of programs with a unique blend of academic excellence and value-based education focused on holistic development.',
+    imageUrl: 'https://ibb.co/qLh6jhs',
+    courses: ['Engineering', 'Management', 'Law', 'Design', 'Liberal Arts', 'Commerce', 'Science'],
+    entranceExams: ['MIT-WPU CET', 'JEE Main', 'MHT-CET'],
+    fees: {
+      tuition: {
+        min: 160000,
+        max: 250000
+      },
+      hostel: {
+        min: 80000,
+        max: 120000
+      }
+    },
+    placement: {
+      percentage: 90,
+      avgSalary: 800000,
+      topRecruiters: ['TCS', 'Infosys', 'Accenture', 'Cognizant', 'L&T']
+    },
+    admissionDetails: {
+      eligibility: 'Varies by program, generally 50-60% in qualifying examination',
+      process: 'Entrance examination followed by personal interview',
+      deadlines: 'Applications open in January-February each year'
+    },
+    scholarships: [
+      {
+        name: 'Merit Scholarship',
+        amount: 'Up to 100% tuition fee waiver',
+        eligibility: 'Based on entrance exam performance'
+      },
+      {
+        name: 'Sports Scholarship',
+        amount: 'Up to 50% tuition fee waiver',
+        eligibility: 'National/International level sports achievers'
+      }
+    ],
+    reviews: [
+      {
+        rating: 4.6,
+        comment: 'Beautiful campus with excellent facilities. Strong focus on personality development.',
+        author: 'Priya Kulkarni',
+        date: '2023-03-18'
+      }
+    ]
+  },
+  {
+    id: 'vjti',
+    name: 'Veermata Jijabai Technological Institute',
+    location: {
+      city: 'Mumbai',
+      state: 'Maharashtra',
+      address: 'Matunga, Mumbai, Maharashtra 400019'
+    },
+    type: 'Government',
+    rating: 4.8,
+    description: 'VJTI is one of the oldest engineering colleges in India, known for its academic excellence, research facilities, and distinguished alumni network.',
+    imageUrl: 'https://ibb.co/HTXnmzR',
+    courses: ['Computer Engineering', 'Mechanical Engineering', 'Electrical Engineering', 'Electronics Engineering', 'Civil Engineering'],
+    entranceExams: ['JEE Main', 'GATE', 'MHT-CET'],
+    fees: {
+      tuition: {
+        min: 50000,
+        max: 100000
+      },
+      hostel: {
+        min: 60000,
+        max: 80000
+      }
+    },
+    placement: {
+      percentage: 95,
+      avgSalary: 1200000,
+      topRecruiters: ['Google', 'Microsoft', 'Amazon', 'Morgan Stanley', 'Adobe']
+    },
+    admissionDetails: {
+      eligibility: 'JEE Main or MHT-CET scores required with minimum 60% in 10+2',
+      process: 'Centralized admission process based on entrance exam ranks',
+      deadlines: 'June-July each year'
+    },
+    scholarships: [
+      {
+        name: 'Merit Scholarships',
+        amount: 'Full tuition waiver',
+        eligibility: 'Top academic performers'
+      }
+    ],
+    reviews: [
+      {
+        rating: 4.9,
+        comment: 'Prestigious institute with excellent faculty and strong industry connections.',
+        author: 'Rahul Deshmukh',
+        date: '2023-02-15'
+      }
+    ]
+  },
+  {
+    id: 'ict-mumbai',
+    name: 'Institute of Chemical Technology',
+    location: {
+      city: 'Mumbai',
+      state: 'Maharashtra',
+      address: 'Matunga, Mumbai, Maharashtra 400019'
+    },
+    type: 'Government',
+    rating: 4.9,
+    description: 'ICT is a premier institute specialized in chemical engineering and technology education, known for its cutting-edge research and industry collaboration.',
+    imageUrl: 'https://ibb.co/N23cDm9',
+    courses: ['Chemical Engineering', 'Biochemical Engineering', 'Pharmaceutical Technology', 'Food Engineering', 'Polymer Engineering'],
+    entranceExams: ['JEE Main', 'GATE', 'MHT-CET'],
+    fees: {
+      tuition: {
+        min: 50000,
+        max: 100000
+      },
+      hostel: {
+        min: 60000,
+        max: 80000
+      }
+    },
+    placement: {
+      percentage: 98,
+      avgSalary: 1500000,
+      topRecruiters: ['Reliance Industries', 'BASF', 'Unilever', 'P&G', 'Shell']
+    },
+    admissionDetails: {
+      eligibility: 'JEE Main or MHT-CET scores required with minimum 70% in 10+2 PCM',
+      process: 'Centralized admission process based on entrance exam ranks',
+      deadlines: 'June-July each year'
+    },
+    scholarships: [
+      {
+        name: 'Academic Excellence Scholarship',
+        amount: 'Full tuition waiver',
+        eligibility: 'Top 5% students'
+      }
+    ],
+    reviews: [
+      {
+        rating: 5,
+        comment: 'World-class education in chemical engineering with excellent research opportunities.',
+        author: 'Anjali Patil',
+        date: '2023-05-10'
+      }
+    ]
+  },
+  {
+    id: 'spit',
+    name: 'Sardar Patel Institute of Technology',
+    location: {
+      city: 'Mumbai',
+      state: 'Maharashtra',
+      address: 'Andheri West, Mumbai, Maharashtra 400058'
+    },
+    type: 'Government',
+    rating: 4.7,
+    description: 'SPIT is known for its excellent academic programs in engineering and technology with a strong focus on research and innovation.',
+    imageUrl: 'https://ibb.co/N6LQrNx',
+    courses: ['Computer Engineering', 'Information Technology', 'Electronics Engineering', 'Electronics & Telecommunication'],
+    entranceExams: ['JEE Main', 'MHT-CET'],
+    fees: {
+      tuition: {
+        min: 90000,
+        max: 130000
+      },
+      hostel: {
+        min: 70000,
+        max: 90000
+      }
+    },
+    placement: {
+      percentage: 95,
+      avgSalary: 1000000,
+      topRecruiters: ['Microsoft', 'Amazon', 'Google', 'Morgan Stanley', 'Goldman Sachs']
+    },
+    admissionDetails: {
+      eligibility: 'JEE Main or MHT-CET scores required with minimum 60% in 10+2 PCM',
+      process: 'Centralized admission process based on entrance exam ranks',
+      deadlines: 'June-July each year'
+    },
+    scholarships: [
+      {
+        name: 'Merit Scholarship',
+        amount: 'Up to 50% tuition fee waiver',
+        eligibility: 'Top performers in university exams'
+      }
+    ],
+    reviews: [
+      {
+        rating: 4.8,
+        comment: 'Excellent faculty and placement opportunities. Strong alumni network.',
+        author: 'Aditya Mehta',
+        date: '2023-04-05'
       }
     ]
   },
