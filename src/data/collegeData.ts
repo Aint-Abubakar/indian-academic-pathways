@@ -1,4 +1,3 @@
-
 export interface College {
   id: string;
   name: string;
@@ -295,7 +294,7 @@ export const colleges: College[] = [
     type: 'Private',
     rating: 4.6,
     description: 'KJ Somaiya College of Engineering is known for its excellent infrastructure, innovative teaching methods, and strong industry connections.',
-    imageUrl: 'https://ibb.co/k2Ly4td',
+    imageUrl: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085',
     courses: ['Computer Engineering', 'Information Technology', 'Electronics Engineering', 'Mechanical Engineering', 'Chemical Engineering'],
     entranceExams: ['JEE Main', 'MHT-CET'],
     fees: {
@@ -345,7 +344,7 @@ export const colleges: College[] = [
     type: 'Private',
     rating: 4.5,
     description: 'DJ Sanghvi College of Engineering is renowned for its quality education, modern facilities, and excellent placement record.',
-    imageUrl: 'https://ibb.co/Z1JSJwF',
+    imageUrl: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d',
     courses: ['Computer Engineering', 'Electronics Engineering', 'Information Technology', 'Mechanical Engineering', 'Civil Engineering'],
     entranceExams: ['JEE Main', 'MHT-CET'],
     fees: {
@@ -395,7 +394,7 @@ export const colleges: College[] = [
     type: 'Private',
     rating: 4.3,
     description: 'Bharatiya Vidyapeeth College of Engineering offers quality technical education with strong emphasis on practical skills and industry exposure.',
-    imageUrl: 'https://ibb.co/wN3vfGM',
+    imageUrl: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7',
     courses: ['Computer Engineering', 'Mechanical Engineering', 'Civil Engineering', 'Electrical Engineering', 'Information Technology'],
     entranceExams: ['BUET', 'JEE Main', 'MHT-CET'],
     fees: {
@@ -445,7 +444,7 @@ export const colleges: College[] = [
     type: 'Private',
     rating: 4.7,
     description: 'PICT is one of the premier institutes for Computer Engineering education in Maharashtra, known for its excellent academic programs and high placement records.',
-    imageUrl: 'https://ibb.co/YYNFD1v',
+    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f',
     courses: ['Computer Engineering', 'Information Technology', 'Electronics and Telecommunication'],
     entranceExams: ['JEE Main', 'MHT-CET'],
     fees: {
@@ -495,7 +494,7 @@ export const colleges: College[] = [
     type: 'Private',
     rating: 4.5,
     description: 'MIT-WPU offers a diverse range of programs with a unique blend of academic excellence and value-based education focused on holistic development.',
-    imageUrl: 'https://ibb.co/qLh6jhs',
+    imageUrl: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742',
     courses: ['Engineering', 'Management', 'Law', 'Design', 'Liberal Arts', 'Commerce', 'Science'],
     entranceExams: ['MIT-WPU CET', 'JEE Main', 'MHT-CET'],
     fees: {
@@ -550,7 +549,7 @@ export const colleges: College[] = [
     type: 'Government',
     rating: 4.8,
     description: 'VJTI is one of the oldest engineering colleges in India, known for its academic excellence, research facilities, and distinguished alumni network.',
-    imageUrl: 'https://ibb.co/HTXnmzR',
+    imageUrl: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625',
     courses: ['Computer Engineering', 'Mechanical Engineering', 'Electrical Engineering', 'Electronics Engineering', 'Civil Engineering'],
     entranceExams: ['JEE Main', 'GATE', 'MHT-CET'],
     fees: {
@@ -600,7 +599,7 @@ export const colleges: College[] = [
     type: 'Government',
     rating: 4.9,
     description: 'ICT is a premier institute specialized in chemical engineering and technology education, known for its cutting-edge research and industry collaboration.',
-    imageUrl: 'https://ibb.co/N23cDm9',
+    imageUrl: 'https://images.unsplash.com/photo-1496307653780-42ee777d4833',
     courses: ['Chemical Engineering', 'Biochemical Engineering', 'Pharmaceutical Technology', 'Food Engineering', 'Polymer Engineering'],
     entranceExams: ['JEE Main', 'GATE', 'MHT-CET'],
     fees: {
@@ -650,7 +649,7 @@ export const colleges: College[] = [
     type: 'Government',
     rating: 4.7,
     description: 'SPIT is known for its excellent academic programs in engineering and technology with a strong focus on research and innovation.',
-    imageUrl: 'https://ibb.co/N6LQrNx',
+    imageUrl: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334',
     courses: ['Computer Engineering', 'Information Technology', 'Electronics Engineering', 'Electronics & Telecommunication'],
     entranceExams: ['JEE Main', 'MHT-CET'],
     fees: {
@@ -823,137 +822,4 @@ export const colleges: College[] = [
     type: 'Government',
     rating: 4.7,
     description: 'SRCC is one of the premier institutions for Commerce and Economics education in India, affiliated with the University of Delhi.',
-    imageUrl: 'https://images.unsplash.com/photo-1554636550-6b0b6e344ead?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y29sbGVnZXxlbnwwfHwwfHw%3D&w=1000&q=80',
-    courses: ['B.Com (Hons)', 'Economics (Hons)', 'M.Com', 'Global Business Operations'],
-    entranceExams: ['DU Entrance Exam', 'CUET'],
-    fees: {
-      tuition: {
-        min: 20000,
-        max: 30000
-      },
-      hostel: {
-        min: 60000,
-        max: 80000
-      }
-    },
-    placement: {
-      percentage: 95,
-      avgSalary: 1200000,
-      topRecruiters: ['Deloitte', 'EY', 'KPMG', 'JP Morgan', 'McKinsey']
-    },
-    admissionDetails: {
-      eligibility: 'Minimum 95% marks in 10+2 with Commerce stream, or through CUET score.',
-      process: 'Merit-based admission through cut-off lists or entrance exam scores.',
-      deadlines: 'Applications open in May-June each year.'
-    },
-    scholarships: [
-      {
-        name: 'Merit Scholarship',
-        amount: 'Up to Rs. 25,000 per year',
-        eligibility: 'Top 10 students in each course'
-      },
-      {
-        name: 'Need-Based Financial Aid',
-        amount: 'Varying amounts',
-        eligibility: 'Economically disadvantaged students'
-      }
-    ],
-    reviews: [
-      {
-        rating: 5,
-        comment: 'Best commerce college in India with excellent faculty and placement record.',
-        author: 'Aditya Gupta',
-        date: '2023-03-10'
-      },
-      {
-        rating: 4,
-        comment: 'Great academic environment, but facilities could be better.',
-        author: 'Sneha Rao',
-        date: '2023-06-05'
-      }
-    ]
-  },
-  {
-    id: 'st-stephens-delhi',
-    name: "St. Stephen's College",
-    location: {
-      city: 'Delhi',
-      state: 'Delhi',
-      address: 'University Enclave, Delhi 110007'
-    },
-    type: 'Government',
-    rating: 4.6,
-    description: "St. Stephen's College is one of the oldest and most prestigious liberal arts colleges in India, known for its academic excellence and rich heritage.",
-    imageUrl: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8Y29sbGVnZXxlbnwwfHwwfHw%3D&w=1000&q=80',
-    courses: ['English', 'Economics', 'History', 'Mathematics', 'Physics', 'Chemistry'],
-    entranceExams: ['CUET', 'College Interview'],
-    fees: {
-      tuition: {
-        min: 25000,
-        max: 35000
-      },
-      hostel: {
-        min: 70000,
-        max: 90000
-      }
-    },
-    placement: {
-      percentage: 90,
-      avgSalary: 1000000,
-      topRecruiters: ['Deloitte', 'HUL', 'ITC', 'Citibank', 'Boston Consulting Group']
-    },
-    admissionDetails: {
-      eligibility: 'Minimum 95% in 10+2 for Sciences, 98% for Humanities, and CUET score.',
-      process: 'Merit list followed by interview and aptitude test.',
-      deadlines: 'Applications open in May and close in June.'
-    },
-    scholarships: [
-      {
-        name: 'College Scholarship Fund',
-        amount: 'Up to full tuition waiver',
-        eligibility: 'Meritorious students with financial need'
-      },
-      {
-        name: 'Alumni Association Scholarship',
-        amount: 'Rs. 50,000 per year',
-        eligibility: 'Outstanding academic achievement'
-      }
-    ],
-    reviews: [
-      {
-        rating: 5,
-        comment: 'Incredible learning environment with a perfect balance of academics and extracurriculars.',
-        author: 'Ananya Krishnan',
-        date: '2023-01-12'
-      },
-      {
-        rating: 4.5,
-        comment: 'Rich heritage, excellent faculty but infrastructure needs improvement.',
-        author: 'Rohan Mehta',
-        date: '2023-04-18'
-      }
-    ]
-  },
-  // Add more colleges for both states with minimal information
-];
-
-// Helper function to get colleges by state name
-export const getCollegesByState = (stateName: string): College[] => {
-  return colleges.filter(college => 
-    college.location.state.toLowerCase() === stateName.toLowerCase()
-  );
-};
-
-// Helper function to get college by id
-export const getCollegeById = (id: string): College | undefined => {
-  return colleges.find(college => college.id === id);
-};
-
-// Helper function to get filtered colleges
-export interface FilterOptions {
-  searchQuery: string;
-  courseType: string;
-  collegeType: string;
-  ratingMin: number;
-  feeRange: string;
-}
+    imageUrl: 'https://images
