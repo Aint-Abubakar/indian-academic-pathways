@@ -6,7 +6,7 @@ export interface College {
     state: string;
     address: string;
   };
-  type: "Private" | "Government";
+  type: string;
   rating: number;
   description: string;
   imageUrl?: string;
@@ -32,756 +32,187 @@ export interface College {
     process: string;
     deadlines: string;
   };
-  scholarships: Array<{
+  scholarships: {
     name: string;
     amount: string;
     eligibility: string;
-  }>;
-  reviews: Array<{
+  }[];
+  reviews: {
     rating: number;
     comment: string;
     author: string;
     date: string;
-  }>;
+  }[];
 }
 
 export interface State {
   id: string;
   name: string;
-  collegeCount: number;
 }
 
-// Helper function to get colleges by state
-export const getCollegesByState = (stateId: string) => {
-  return colleges.filter(college => college.location.state.toLowerCase() === stateId);
+// Helper function to generate a slug from a name
+const slugify = (text: string) => {
+  return text.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
 };
-
-// Filter options for college search
-export interface FilterOptions {
-  searchQuery: string;
-  courseType: string;
-  collegeType: string;
-  ratingMin: number;
-  feeRange: string;
-}
 
 // Updated states data with all states of India where colleges exist
 export const states: State[] = [
-  { id: 'maharashtra', name: 'Maharashtra', collegeCount: 28 },
-  { id: 'delhi', name: 'Delhi', collegeCount: 20 },
-  { id: 'karnataka', name: 'Karnataka', collegeCount: 15 },
-  { id: 'tamil-nadu', name: 'Tamil Nadu', collegeCount: 18 },
-  { id: 'west-bengal', name: 'West Bengal', collegeCount: 12 },
-  { id: 'telangana', name: 'Telangana', collegeCount: 12 },
-  { id: 'gujarat', name: 'Gujarat', collegeCount: 10 },
-  { id: 'rajasthan', name: 'Rajasthan', collegeCount: 9 },
-  { id: 'uttar-pradesh', name: 'Uttar Pradesh', collegeCount: 14 },
-  { id: 'punjab', name: 'Punjab', collegeCount: 8 },
-  { id: 'chandigarh', name: 'Chandigarh', collegeCount: 5 },
-  { id: 'odisha', name: 'Odisha', collegeCount: 8 },
-  { id: 'madhya-pradesh', name: 'Madhya Pradesh', collegeCount: 10 },
-  { id: 'kerala', name: 'Kerala', collegeCount: 11 },
-  { id: 'andhra-pradesh', name: 'Andhra Pradesh', collegeCount: 13 },
-  { id: 'haryana', name: 'Haryana', collegeCount: 7 },
-  { id: 'assam', name: 'Assam', collegeCount: 6 },
-  { id: 'bihar', name: 'Bihar', collegeCount: 8 },
-  { id: 'chhattisgarh', name: 'Chhattisgarh', collegeCount: 5 },
-  { id: 'goa', name: 'Goa', collegeCount: 5 },
-  { id: 'himachal-pradesh', name: 'Himachal Pradesh', collegeCount: 5 },
-  { id: 'jharkhand', name: 'Jharkhand', collegeCount: 5 },
-  { id: 'uttarakhand', name: 'Uttarakhand', collegeCount: 7 },
-  { id: 'jammu-kashmir', name: 'Jammu & Kashmir', collegeCount: 5 },
-  { id: 'arunachal-pradesh', name: 'Arunachal Pradesh', collegeCount: 5 },
-  { id: 'manipur', name: 'Manipur', collegeCount: 5 },
-  { id: 'meghalaya', name: 'Meghalaya', collegeCount: 5 },
-  { id: 'mizoram', name: 'Mizoram', collegeCount: 5 },
-  { id: 'nagaland', name: 'Nagaland', collegeCount: 5 },
-  { id: 'sikkim', name: 'Sikkim', collegeCount: 5 },
-  { id: 'tripura', name: 'Tripura', collegeCount: 5 }
+  { id: slugify("Andhra Pradesh"), name: "Andhra Pradesh" },
+  { id: slugify("Arunachal Pradesh"), name: "Arunachal Pradesh" },
+  { id: slugify("Assam"), name: "Assam" },
+  { id: slugify("Bihar"), name: "Bihar" },
+  { id: slugify("Chhattisgarh"), name: "Chhattisgarh" },
+  { id: slugify("Goa"), name: "Goa" },
+  { id: slugify("Gujarat"), name: "Gujarat" },
+  { id: slugify("Haryana"), name: "Haryana" },
+  { id: slugify("Himachal Pradesh"), name: "Himachal Pradesh" },
+  { id: slugify("Jharkhand"), name: "Jharkhand" },
+  { id: slugify("Karnataka"), name: "Karnataka" },
+  { id: slugify("Kerala"), name: "Kerala" },
+  { id: slugify("Madhya Pradesh"), name: "Madhya Pradesh" },
+  { id: slugify("Maharashtra"), name: "Maharashtra" },
+  { id: slugify("Manipur"), name: "Manipur" },
+  { id: slugify("Meghalaya"), name: "Meghalaya" },
+  { id: slugify("Mizoram"), name: "Mizoram" },
+  { id: slugify("Nagaland"), name: "Nagaland" },
+  { id: slugify("Odisha"), name: "Odisha" },
+  { id: slugify("Punjab"), name: "Punjab" },
+  { id: slugify("Rajasthan"), name: "Rajasthan" },
+  { id: slugify("Sikkim"), name: "Sikkim" },
+  { id: slugify("Tamil Nadu"), name: "Tamil Nadu" },
+  { id: slugify("Telangana"), name: "Telangana" },
+  { id: slugify("Tripura"), name: "Tripura" },
+  { id: slugify("Uttar Pradesh"), name: "Uttar Pradesh" },
+  { id: slugify("Uttarakhand"), name: "Uttarakhand" },
+  { id: slugify("West Bengal"), name: "West Bengal" },
+  { id: slugify("Delhi"), name: "Delhi" },
 ];
 
 // Mock college data for Maharashtra and Delhi
 export const colleges: College[] = [
-  // Maharashtra Colleges
   {
-    id: 'iit-bombay',
-    name: 'Indian Institute of Technology Bombay (IIT Bombay)',
+    id: 'indian-institute-of-technology-bombay',
+    name: 'Indian Institute of Technology Bombay (IITB)',
     location: {
       city: 'Mumbai',
       state: 'Maharashtra',
       address: 'Powai, Mumbai, Maharashtra 400076'
     },
     type: 'Government',
-    rating: 4.9,
-    description: 'IIT Bombay is renowned for its outstanding engineering education, research facilities, and vibrant campus life.',
-    imageUrl: 'https://i.imgur.com/ZWRNik8.jpeg',
-    courses: ['Computer Science', 'Electrical Engineering', 'Mechanical Engineering', 'Aerospace Engineering', 'Chemical Engineering'],
-    entranceExams: ['JEE Advanced', 'GATE'],
+    rating: 4.8,
+    description: 'IIT Bombay is a premier engineering and technology institute known for its rigorous academic programs and research.',
+    imageUrl: 'https://images.unsplash.com/photo-1635070474553-3c4919c98906',
+    courses: ['Computer Science', 'Mechanical Engineering', 'Electrical Engineering', 'Chemical Engineering'],
+    entranceExams: ['JEE Advanced'],
     fees: {
       tuition: {
-        min: 200000,
-        max: 250000
+        min: 220000,
+        max: 220000
       },
       hostel: {
-        min: 80000,
-        max: 100000
+        min: 70000,
+        max: 70000
       }
     },
     placement: {
-      percentage: 98,
-      avgSalary: 1700000,
-      topRecruiters: ['Microsoft', 'Google', 'Morgan Stanley', 'Intel', 'Qualcomm']
+      percentage: 95,
+      avgSalary: 2200000,
+      topRecruiters: ['Google', 'Microsoft', 'Samsung', 'Goldman Sachs']
     },
     admissionDetails: {
-      eligibility: 'Students must qualify in JEE Advanced and be in the top 2.5% in their respective board examinations.',
-      process: 'Admission is based on JEE Advanced rank and counseling process conducted by JoSAA.',
-      deadlines: 'Applications typically open in September and close in June each year.'
+      eligibility: 'Qualified JEE Advanced score',
+      process: 'Centralized Seat Allocation Board (CSAB) counseling',
+      deadlines: 'June-July each year'
     },
     scholarships: [
       {
         name: 'Merit-cum-Means Scholarship',
-        amount: '2/3rd of tuition fee waiver + Rs. 1000/month',
-        eligibility: 'Family income less than 4.5 lakhs per annum'
-      },
-      {
-        name: 'SC/ST Scholarship',
         amount: 'Full tuition fee waiver',
-        eligibility: 'SC/ST category students'
-      }
-    ],
-    reviews: [
-      {
-        rating: 5,
-        comment: 'Exceptional academic environment and research facilities. Truly world-class!',
-        author: 'Vivek Sharma',
-        date: '2023-02-20'
+        eligibility: 'Based on JEE rank and family income'
       },
       {
-        rating: 4.8,
-        comment: 'Amazing technical fests and extracurricular opportunities alongside excellent academics.',
-        author: 'Meera Iyer',
-        date: '2023-05-15'
-      }
-    ]
-  },
-  {
-    id: 'university-mumbai',
-    name: 'University of Mumbai',
-    location: {
-      city: 'Mumbai',
-      state: 'Maharashtra',
-      address: 'M.G. Road, Fort, Mumbai, Maharashtra 400032'
-    },
-    type: 'Government',
-    rating: 4.5,
-    description: 'One of the oldest and most prestigious universities in India, offering a wide range of undergraduate and postgraduate courses.',
-    imageUrl: 'https://i.imgur.com/puLxzFZ.jpeg',
-    courses: ['Arts', 'Science', 'Commerce', 'Law', 'Management', 'Engineering'],
-    entranceExams: ['MHT-CET', 'MUCET', 'MULAW'],
-    fees: {
-      tuition: {
-        min: 10000,
-        max: 100000
-      },
-      hostel: {
-        min: 50000,
-        max: 80000
-      }
-    },
-    placement: {
-      percentage: 85,
-      avgSalary: 600000,
-      topRecruiters: ['TCS', 'Infosys', 'Wipro', 'HDFC Bank', 'L&T']
-    },
-    admissionDetails: {
-      eligibility: 'Varies by program, generally 50-60% marks in relevant subjects in 10+2.',
-      process: 'Merit-based admissions or entrance exams depending on the course.',
-      deadlines: 'Applications usually open in May-June for most courses.'
-    },
-    scholarships: [
-      {
-        name: 'University Merit Scholarship',
-        amount: 'Rs. 10,000 per year',
-        eligibility: 'Top performers in university exams'
-      },
-      {
-        name: 'Financial Aid Scholarship',
-        amount: 'Varies',
-        eligibility: 'Economically disadvantaged students'
-      }
-    ],
-    reviews: [
-      {
-        rating: 4.3,
-        comment: 'Excellent reputation and history, though some facilities need modernization.',
-        author: 'Rajesh Khandelwal',
-        date: '2023-03-10'
-      },
-      {
-        rating: 4.7,
-        comment: 'Great faculty and course structure. The university has a vast alumni network.',
-        author: 'Nisha Talwar',
-        date: '2023-01-25'
-      }
-    ]
-  },
-  // Rest of Maharashtra colleges with minimal details
-  {
-    id: 'sppu',
-    name: 'Savitribai Phule Pune University',
-    location: {
-      city: 'Pune',
-      state: 'Maharashtra',
-      address: 'Ganeshkhind, Pune, Maharashtra 411007'
-    },
-    type: 'Government',
-    rating: 4.5,
-    description: 'Formerly known as University of Pune, SPPU is a premier institution known for its strong academic programs and research.',
-    imageUrl: 'https://i.postimg.cc/qzS9b2pB/savitribai-phule-pune-university.jpg',
-    courses: ['Arts', 'Science', 'Commerce', 'Engineering', 'Management', 'Law'],
-    entranceExams: ['PET', 'MHT-CET', 'GATE'],
-    fees: {
-      tuition: {
-        min: 15000,
-        max: 90000
-      }
-    },
-    placement: {
-      percentage: 80
-    },
-    admissionDetails: {
-      eligibility: 'Varies by program, generally 45-60% in qualifying examination.',
-      process: 'Merit-based or entrance examination depending on program.',
-      deadlines: 'May to July depending on course'
-    },
-    scholarships: [
-      {
-        name: 'University Merit Scholarship',
-        amount: 'Varies',
-        eligibility: 'Top scorers in university exams'
-      }
-    ],
-    reviews: [
-      {
-        rating: 4.2,
-        comment: 'Excellent academic standards with strong research focus.',
-        author: 'Amit Desai',
-        date: '2023-04-18'
-      }
-    ]
-  },
-  {
-    id: 'coep',
-    name: 'College of Engineering Pune (COEP)',
-    location: {
-      city: 'Pune',
-      state: 'Maharashtra',
-      address: 'Wellesley Rd, Shivajinagar, Pune, Maharashtra 411005'
-    },
-    type: 'Government',
-    rating: 4.7,
-    description: 'One of the oldest engineering colleges in India with a rich heritage and excellent technical education.',
-    imageUrl: 'https://i.postimg.cc/wy2C0Pjn/coep.jpg',
-    courses: ['Mechanical Engineering', 'Electrical Engineering', 'Computer Science', 'Civil Engineering', 'Production Engineering'],
-    entranceExams: ['JEE Main', 'GATE', 'MHT-CET'],
-    fees: {
-      tuition: {
-        min: 50000,
-        max: 100000
-      }
-    },
-    placement: {
-      percentage: 95
-    },
-    admissionDetails: {
-      eligibility: 'JEE Main or MHT-CET scores required.',
-      process: 'Centralized admission process based on entrance exam ranks.',
-      deadlines: 'June-July each year'
-    },
-    scholarships: [
-      {
-        name: 'Merit Scholarships',
-        amount: 'Tuition waiver',
-        eligibility: 'Top academic performers'
-      }
-    ],
-    reviews: [
-      {
-        rating: 4.8,
-        comment: 'Excellent faculty and infrastructure with strong industry connections.',
-        author: 'Priya Singh',
-        date: '2023-02-10'
-      }
-    ]
-  },
-  // Adding new Maharashtra colleges
-  {
-    id: 'kj-somaiya',
-    name: 'KJ Somaiya College of Engineering',
-    location: {
-      city: 'Mumbai',
-      state: 'Maharashtra',
-      address: 'Vidyanagar, Vidyavihar East, Mumbai, Maharashtra 400077'
-    },
-    type: 'Private',
-    rating: 4.6,
-    description: 'KJ Somaiya College of Engineering is known for its excellent infrastructure, innovative teaching methods, and strong industry connections.',
-    imageUrl: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085',
-    courses: ['Computer Engineering', 'Information Technology', 'Electronics Engineering', 'Mechanical Engineering', 'Chemical Engineering'],
-    entranceExams: ['JEE Main', 'MHT-CET'],
-    fees: {
-      tuition: {
-        min: 150000,
-        max: 200000
-      },
-      hostel: {
-        min: 75000,
-        max: 95000
-      }
-    },
-    placement: {
-      percentage: 90,
-      avgSalary: 800000,
-      topRecruiters: ['TCS', 'Infosys', 'Accenture', 'Capgemini', 'L&T Infotech']
-    },
-    admissionDetails: {
-      eligibility: 'Minimum 60% in 10+2 with PCM, valid JEE Main or MHT-CET score',
-      process: 'Merit-based admission through centralized counseling process',
-      deadlines: 'Applications open in May-June each year'
-    },
-    scholarships: [
-      {
-        name: 'Merit Scholarship',
-        amount: 'Up to 50% tuition fee waiver',
-        eligibility: 'Top 5% students in each branch'
-      }
-    ],
-    reviews: [
-      {
-        rating: 4.5,
-        comment: 'Great faculty and campus infrastructure. Active placement cell.',
-        author: 'Rohit Mehta',
-        date: '2023-03-15'
-      }
-    ]
-  },
-  {
-    id: 'dj-sanghvi',
-    name: 'DJ Sanghvi College of Engineering',
-    location: {
-      city: 'Mumbai',
-      state: 'Maharashtra',
-      address: 'Vile Parle West, Mumbai, Maharashtra 400056'
-    },
-    type: 'Private',
-    rating: 4.5,
-    description: 'DJ Sanghvi College of Engineering is renowned for its quality education, modern facilities, and excellent placement record.',
-    imageUrl: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d',
-    courses: ['Computer Engineering', 'Electronics Engineering', 'Information Technology', 'Mechanical Engineering', 'Civil Engineering'],
-    entranceExams: ['JEE Main', 'MHT-CET'],
-    fees: {
-      tuition: {
-        min: 140000,
-        max: 180000
-      },
-      hostel: {
-        min: 70000,
-        max: 90000
-      }
-    },
-    placement: {
-      percentage: 92,
-      avgSalary: 750000,
-      topRecruiters: ['Microsoft', 'Amazon', 'TCS', 'Infosys', 'Cognizant']
-    },
-    admissionDetails: {
-      eligibility: 'Minimum 60% in 10+2 with PCM, valid JEE Main or MHT-CET score',
-      process: 'Merit-based admission through centralized counseling process',
-      deadlines: 'Applications open in June-July each year'
-    },
-    scholarships: [
-      {
-        name: 'Academic Excellence Scholarship',
-        amount: 'Up to Rs. 50,000 per year',
-        eligibility: 'Students with 90% and above in qualifying examination'
-      }
-    ],
-    reviews: [
-      {
-        rating: 4.7,
-        comment: 'Strong technical education with excellent extracurricular opportunities.',
-        author: 'Sneha Kapoor',
-        date: '2023-05-20'
-      }
-    ]
-  },
-  {
-    id: 'bharatiya-vidyapeeth',
-    name: 'Bharatiya Vidyapeeth College of Engineering',
-    location: {
-      city: 'Pune',
-      state: 'Maharashtra',
-      address: 'Dhankawadi, Pune, Maharashtra 411043'
-    },
-    type: 'Private',
-    rating: 4.3,
-    description: 'Bharatiya Vidyapeeth College of Engineering offers quality technical education with strong emphasis on practical skills and industry exposure.',
-    imageUrl: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7',
-    courses: ['Computer Engineering', 'Mechanical Engineering', 'Civil Engineering', 'Electrical Engineering', 'Information Technology'],
-    entranceExams: ['BUET', 'JEE Main', 'MHT-CET'],
-    fees: {
-      tuition: {
-        min: 120000,
-        max: 160000
-      },
-      hostel: {
-        min: 65000,
-        max: 85000
-      }
-    },
-    placement: {
-      percentage: 85,
-      avgSalary: 600000,
-      topRecruiters: ['TCS', 'Wipro', 'Infosys', 'Tech Mahindra', 'L&T']
-    },
-    admissionDetails: {
-      eligibility: 'Minimum 50% in 10+2 with PCM, valid entrance exam score',
-      process: 'Merit-based admission through entrance examination',
-      deadlines: 'Applications typically open in April-May each year'
-    },
-    scholarships: [
-      {
-        name: 'Merit-Based Scholarship',
-        amount: 'Up to 25% tuition fee waiver',
-        eligibility: 'Top performers in university exams'
-      }
-    ],
-    reviews: [
-      {
-        rating: 4.2,
-        comment: 'Good infrastructure and faculty. Decent placement opportunities.',
-        author: 'Aditya Sharma',
-        date: '2023-04-10'
-      }
-    ]
-  },
-  {
-    id: 'pict',
-    name: 'Pune Institute of Computer Technology',
-    location: {
-      city: 'Pune',
-      state: 'Maharashtra',
-      address: 'Dhankawadi, Pune, Maharashtra 411043'
-    },
-    type: 'Private',
-    rating: 4.7,
-    description: 'PICT is one of the premier institutes for Computer Engineering education in Maharashtra, known for its excellent academic programs and high placement records.',
-    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f',
-    courses: ['Computer Engineering', 'Information Technology', 'Electronics and Telecommunication'],
-    entranceExams: ['JEE Main', 'MHT-CET'],
-    fees: {
-      tuition: {
-        min: 130000,
-        max: 170000
-      },
-      hostel: {
-        min: 70000,
-        max: 90000
-      }
-    },
-    placement: {
-      percentage: 95,
-      avgSalary: 900000,
-      topRecruiters: ['Google', 'Microsoft', 'Amazon', 'TCS', 'Infosys']
-    },
-    admissionDetails: {
-      eligibility: 'Minimum 60% in 10+2 with PCM, valid JEE Main or MHT-CET score',
-      process: 'Merit-based admission through centralized counseling process',
-      deadlines: 'Applications open in June each year'
-    },
-    scholarships: [
-      {
-        name: 'Academic Excellence Scholarship',
-        amount: 'Up to Rs. 50,000 per year',
-        eligibility: 'Top 10% students in university exams'
-      }
-    ],
-    reviews: [
-      {
-        rating: 4.8,
-        comment: 'Excellent faculty and strong focus on technical education. Great placements.',
-        author: 'Ankit Joshi',
-        date: '2023-02-25'
-      }
-    ]
-  },
-  {
-    id: 'mit-wpu',
-    name: 'MIT World Peace University',
-    location: {
-      city: 'Pune',
-      state: 'Maharashtra',
-      address: 'Kothrud, Pune, Maharashtra 411038'
-    },
-    type: 'Private',
-    rating: 4.5,
-    description: 'MIT-WPU offers a diverse range of programs with a unique blend of academic excellence and value-based education focused on holistic development.',
-    imageUrl: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742',
-    courses: ['Engineering', 'Management', 'Law', 'Design', 'Liberal Arts', 'Commerce', 'Science'],
-    entranceExams: ['MIT-WPU CET', 'JEE Main', 'MHT-CET'],
-    fees: {
-      tuition: {
-        min: 160000,
-        max: 250000
-      },
-      hostel: {
-        min: 80000,
-        max: 120000
-      }
-    },
-    placement: {
-      percentage: 90,
-      avgSalary: 800000,
-      topRecruiters: ['TCS', 'Infosys', 'Accenture', 'Cognizant', 'L&T']
-    },
-    admissionDetails: {
-      eligibility: 'Varies by program, generally 50-60% in qualifying examination',
-      process: 'Entrance examination followed by personal interview',
-      deadlines: 'Applications open in January-February each year'
-    },
-    scholarships: [
-      {
-        name: 'Merit Scholarship',
-        amount: 'Up to 100% tuition fee waiver',
-        eligibility: 'Based on entrance exam performance'
-      },
-      {
-        name: 'Sports Scholarship',
-        amount: 'Up to 50% tuition fee waiver',
-        eligibility: 'National/International level sports achievers'
-      }
-    ],
-    reviews: [
-      {
-        rating: 4.6,
-        comment: 'Beautiful campus with excellent facilities. Strong focus on personality development.',
-        author: 'Priya Kulkarni',
-        date: '2023-03-18'
-      }
-    ]
-  },
-  {
-    id: 'vjti',
-    name: 'Veermata Jijabai Technological Institute',
-    location: {
-      city: 'Mumbai',
-      state: 'Maharashtra',
-      address: 'Matunga, Mumbai, Maharashtra 400019'
-    },
-    type: 'Government',
-    rating: 4.8,
-    description: 'VJTI is one of the oldest engineering colleges in India, known for its academic excellence, research facilities, and distinguished alumni network.',
-    imageUrl: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625',
-    courses: ['Computer Engineering', 'Mechanical Engineering', 'Electrical Engineering', 'Electronics Engineering', 'Civil Engineering'],
-    entranceExams: ['JEE Main', 'GATE', 'MHT-CET'],
-    fees: {
-      tuition: {
-        min: 50000,
-        max: 100000
-      },
-      hostel: {
-        min: 60000,
-        max: 80000
-      }
-    },
-    placement: {
-      percentage: 95,
-      avgSalary: 1200000,
-      topRecruiters: ['Google', 'Microsoft', 'Amazon', 'Morgan Stanley', 'Adobe']
-    },
-    admissionDetails: {
-      eligibility: 'JEE Main or MHT-CET scores required with minimum 60% in 10+2',
-      process: 'Centralized admission process based on entrance exam ranks',
-      deadlines: 'June-July each year'
-    },
-    scholarships: [
-      {
-        name: 'Merit Scholarships',
-        amount: 'Full tuition waiver',
-        eligibility: 'Top academic performers'
+        name: 'Institute Free Studentship',
+        amount: 'Full tuition fee waiver',
+        eligibility: 'Based on family income'
       }
     ],
     reviews: [
       {
         rating: 4.9,
-        comment: 'Prestigious institute with excellent faculty and strong industry connections.',
-        author: 'Rahul Deshmukh',
-        date: '2023-02-15'
+        comment: 'Excellent faculty and great research opportunities.',
+        author: 'Amit Patel',
+        date: '2023-01-15'
+      },
+      {
+        rating: 4.7,
+        comment: 'The campus is beautiful and the academic environment is very conducive.',
+        author: 'Priya Sharma',
+        date: '2023-02-20'
       }
     ]
   },
   {
-    id: 'ict-mumbai',
-    name: 'Institute of Chemical Technology',
+    id: 'veermata-jijabai-technological-institute',
+    name: 'Veermata Jijabai Technological Institute (VJTI)',
     location: {
       city: 'Mumbai',
       state: 'Maharashtra',
       address: 'Matunga, Mumbai, Maharashtra 400019'
     },
     type: 'Government',
-    rating: 4.9,
-    description: 'ICT is a premier institute specialized in chemical engineering and technology education, known for its cutting-edge research and industry collaboration.',
-    imageUrl: 'https://images.unsplash.com/photo-1496307653780-42ee777d4833',
-    courses: ['Chemical Engineering', 'Biochemical Engineering', 'Pharmaceutical Technology', 'Food Engineering', 'Polymer Engineering'],
-    entranceExams: ['JEE Main', 'GATE', 'MHT-CET'],
+    rating: 4.5,
+    description: 'VJTI is one of the oldest engineering colleges in Asia, offering quality education and strong industry connections.',
+    imageUrl: 'https://images.unsplash.com/photo-1627523294853-40a491150ca5',
+    courses: ['Mechanical Engineering', 'Electrical Engineering', 'Civil Engineering', 'Computer Engineering'],
+    entranceExams: ['MHT CET'],
     fees: {
       tuition: {
-        min: 50000,
-        max: 100000
-      },
-      hostel: {
-        min: 60000,
+        min: 80000,
         max: 80000
-      }
-    },
-    placement: {
-      percentage: 98,
-      avgSalary: 1500000,
-      topRecruiters: ['Reliance Industries', 'BASF', 'Unilever', 'P&G', 'Shell']
-    },
-    admissionDetails: {
-      eligibility: 'JEE Main or MHT-CET scores required with minimum 70% in 10+2 PCM',
-      process: 'Centralized admission process based on entrance exam ranks',
-      deadlines: 'June-July each year'
-    },
-    scholarships: [
-      {
-        name: 'Academic Excellence Scholarship',
-        amount: 'Full tuition waiver',
-        eligibility: 'Top 5% students'
-      }
-    ],
-    reviews: [
-      {
-        rating: 5,
-        comment: 'World-class education in chemical engineering with excellent research opportunities.',
-        author: 'Anjali Patil',
-        date: '2023-05-10'
-      }
-    ]
-  },
-  {
-    id: 'spit',
-    name: 'Sardar Patel Institute of Technology',
-    location: {
-      city: 'Mumbai',
-      state: 'Maharashtra',
-      address: 'Andheri West, Mumbai, Maharashtra 400058'
-    },
-    type: 'Government',
-    rating: 4.7,
-    description: 'SPIT is known for its excellent academic programs in engineering and technology with a strong focus on research and innovation.',
-    imageUrl: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334',
-    courses: ['Computer Engineering', 'Information Technology', 'Electronics Engineering', 'Electronics & Telecommunication'],
-    entranceExams: ['JEE Main', 'MHT-CET'],
-    fees: {
-      tuition: {
-        min: 90000,
-        max: 130000
       },
       hostel: {
-        min: 70000,
-        max: 90000
+        min: 50000,
+        max: 50000
       }
     },
     placement: {
-      percentage: 95,
-      avgSalary: 1000000,
-      topRecruiters: ['Microsoft', 'Amazon', 'Google', 'Morgan Stanley', 'Goldman Sachs']
+      percentage: 80,
+      avgSalary: 700000,
+      topRecruiters: ['L&T', 'Tata Motors', 'Reliance', 'Infosys']
     },
     admissionDetails: {
-      eligibility: 'JEE Main or MHT-CET scores required with minimum 60% in 10+2 PCM',
-      process: 'Centralized admission process based on entrance exam ranks',
+      eligibility: 'MHT CET score',
+      process: 'State Common Entrance Test Cell counseling',
       deadlines: 'June-July each year'
     },
     scholarships: [
       {
-        name: 'Merit Scholarship',
-        amount: 'Up to 50% tuition fee waiver',
-        eligibility: 'Top performers in university exams'
+        name: 'Government of India Scholarship',
+        amount: 'Varies',
+        eligibility: 'Based on category and income'
+      },
+      {
+        name: 'VJTI Alumni Association Scholarship',
+        amount: 'Up to Rs. 25,000',
+        eligibility: 'Based on merit and need'
       }
     ],
     reviews: [
       {
-        rating: 4.8,
-        comment: 'Excellent faculty and placement opportunities. Strong alumni network.',
-        author: 'Aditya Mehta',
+        rating: 4.6,
+        comment: 'Good infrastructure and experienced faculty.',
+        author: 'Kunal Verma',
+        date: '2023-03-01'
+      },
+      {
+        rating: 4.4,
+        comment: 'The college has a great history and a strong alumni network.',
+        author: 'Sneha Reddy',
         date: '2023-04-05'
       }
     ]
   },
-  // Delhi Colleges
-  {
-    id: 'iit-delhi',
-    name: 'Indian Institute of Technology Delhi',
-    location: {
-      city: 'Delhi',
-      state: 'Delhi',
-      address: 'Hauz Khas, New Delhi, Delhi 110016'
-    },
-    type: 'Government',
-    rating: 4.8,
-    description: 'IIT Delhi is one of the premier engineering and research institutions in India, known for its cutting-edge research and excellent academic programs.',
-    imageUrl: 'https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29sbGVnZXxlbnwwfHwwfHw%3D&w=1000&q=80',
-    courses: ['Computer Science', 'Mechanical Engineering', 'Electrical Engineering', 'Civil Engineering', 'Chemical Engineering'],
-    entranceExams: ['JEE Advanced', 'GATE'],
-    fees: {
-      tuition: {
-        min: 200000,
-        max: 250000
-      },
-      hostel: {
-        min: 80000,
-        max: 100000
-      }
-    },
-    placement: {
-      percentage: 98,
-      avgSalary: 1600000,
-      topRecruiters: ['Google', 'Microsoft', 'Amazon', 'Adobe', 'Goldman Sachs']
-    },
-    admissionDetails: {
-      eligibility: 'Students must qualify in JEE Advanced and be in the top 2.5% in their respective board examinations.',
-      process: 'Admission is based on JEE Advanced rank and counseling process conducted by JoSAA.',
-      deadlines: 'Applications typically open in September and close in June each year.'
-    },
-    scholarships: [
-      {
-        name: 'Merit-cum-Means Scholarship',
-        amount: '2/3rd of tuition fee waiver + Rs. 1000/month',
-        eligibility: 'Family income less than 4.5 lakhs per annum'
-      },
-      {
-        name: 'SC/ST Scholarship',
-        amount: 'Full tuition fee waiver',
-        eligibility: 'SC/ST category students'
-      }
-    ],
-    reviews: [
-      {
-        rating: 5,
-        comment: 'World-class education and research opportunities. The campus is amazing!',
-        author: 'Rahul Sharma',
-        date: '2023-02-15'
-      },
-      {
-        rating: 4.5,
-        comment: 'Great faculty and industry connections. Placement opportunities are excellent.',
-        author: 'Priya Patel',
-        date: '2023-05-22'
-      }
-    ]
-  },
+
   {
     id: 'delhi-university',
     name: 'University of Delhi (DU)',
@@ -808,4 +239,44 @@ export const colleges: College[] = [
     },
     placement: {
       percentage: 85,
-      avgSalary: 80
+      avgSalary: 800000,
+      topRecruiters: ['Deloitte', 'EY', 'TCS', 'Wipro', 'Infosys']
+    },
+    admissionDetails: {
+      eligibility: 'Varies by course, generally based on 10+2 scores or entrance exam',
+      process: 'Merit-based admissions through centralized admission portal',
+      deadlines: 'Applications typically open in May-June each year'
+    },
+    scholarships: [
+      {
+        name: 'Merit Scholarship',
+        amount: 'Up to Rs. 20,000 per year',
+        eligibility: 'Top scorers in university exams'
+      },
+      {
+        name: 'Financial Aid',
+        amount: 'Tuition fee waiver',
+        eligibility: 'Economically disadvantaged students'
+      }
+    ],
+    reviews: [
+      {
+        rating: 4.8,
+        comment: 'Great educational experience with excellent faculty.',
+        author: 'Rahul Gupta',
+        date: '2023-03-12'
+      },
+      {
+        rating: 4.5,
+        comment: 'Diverse campus culture and good academic environment.',
+        author: 'Priya Sharma',
+        date: '2023-04-18'
+      }
+    ]
+  }
+];
+
+// Add this helper function to get a college by ID
+export const getCollegeById = (collegeId: string) => {
+  return colleges.find(college => college.id === collegeId);
+};

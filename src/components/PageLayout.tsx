@@ -9,6 +9,11 @@ interface PageLayoutProps {
 }
 
 const PageLayout = ({ title, children }: PageLayoutProps) => {
+  // Force scroll to top when component mounts
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
