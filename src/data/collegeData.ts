@@ -51,21 +51,53 @@ export interface State {
   collegeCount: number;
 }
 
-// Mock states data
+// Helper function to get colleges by state
+export const getCollegesByState = (stateId: string) => {
+  return colleges.filter(college => college.location.state.toLowerCase() === stateId);
+};
+
+// Filter options for college search
+export interface FilterOptions {
+  searchQuery: string;
+  courseType: string;
+  collegeType: string;
+  ratingMin: number;
+  feeRange: string;
+}
+
+// Updated states data with all states of India where colleges exist
 export const states: State[] = [
   { id: 'maharashtra', name: 'Maharashtra', collegeCount: 28 },
   { id: 'delhi', name: 'Delhi', collegeCount: 20 },
-  { id: 'karnataka', name: 'Karnataka', collegeCount: 5 },
-  { id: 'tamil-nadu', name: 'Tamil Nadu', collegeCount: 3 },
-  { id: 'west-bengal', name: 'West Bengal', collegeCount: 2 },
-  { id: 'telangana', name: 'Telangana', collegeCount: 2 },
-  { id: 'gujarat', name: 'Gujarat', collegeCount: 1 },
-  { id: 'rajasthan', name: 'Rajasthan', collegeCount: 1 },
-  { id: 'uttar-pradesh', name: 'Uttar Pradesh', collegeCount: 1 },
-  { id: 'chandigarh', name: 'Chandigarh', collegeCount: 1 },
-  { id: 'odisha', name: 'Odisha', collegeCount: 1 },
-  { id: 'madhya-pradesh', name: 'Madhya Pradesh', collegeCount: 1 },
-  { id: 'kerala', name: 'Kerala', collegeCount: 1 }
+  { id: 'karnataka', name: 'Karnataka', collegeCount: 15 },
+  { id: 'tamil-nadu', name: 'Tamil Nadu', collegeCount: 18 },
+  { id: 'west-bengal', name: 'West Bengal', collegeCount: 12 },
+  { id: 'telangana', name: 'Telangana', collegeCount: 12 },
+  { id: 'gujarat', name: 'Gujarat', collegeCount: 10 },
+  { id: 'rajasthan', name: 'Rajasthan', collegeCount: 9 },
+  { id: 'uttar-pradesh', name: 'Uttar Pradesh', collegeCount: 14 },
+  { id: 'punjab', name: 'Punjab', collegeCount: 8 },
+  { id: 'chandigarh', name: 'Chandigarh', collegeCount: 5 },
+  { id: 'odisha', name: 'Odisha', collegeCount: 8 },
+  { id: 'madhya-pradesh', name: 'Madhya Pradesh', collegeCount: 10 },
+  { id: 'kerala', name: 'Kerala', collegeCount: 11 },
+  { id: 'andhra-pradesh', name: 'Andhra Pradesh', collegeCount: 13 },
+  { id: 'haryana', name: 'Haryana', collegeCount: 7 },
+  { id: 'assam', name: 'Assam', collegeCount: 6 },
+  { id: 'bihar', name: 'Bihar', collegeCount: 8 },
+  { id: 'chhattisgarh', name: 'Chhattisgarh', collegeCount: 5 },
+  { id: 'goa', name: 'Goa', collegeCount: 5 },
+  { id: 'himachal-pradesh', name: 'Himachal Pradesh', collegeCount: 5 },
+  { id: 'jharkhand', name: 'Jharkhand', collegeCount: 5 },
+  { id: 'uttarakhand', name: 'Uttarakhand', collegeCount: 7 },
+  { id: 'jammu-kashmir', name: 'Jammu & Kashmir', collegeCount: 5 },
+  { id: 'arunachal-pradesh', name: 'Arunachal Pradesh', collegeCount: 5 },
+  { id: 'manipur', name: 'Manipur', collegeCount: 5 },
+  { id: 'meghalaya', name: 'Meghalaya', collegeCount: 5 },
+  { id: 'mizoram', name: 'Mizoram', collegeCount: 5 },
+  { id: 'nagaland', name: 'Nagaland', collegeCount: 5 },
+  { id: 'sikkim', name: 'Sikkim', collegeCount: 5 },
+  { id: 'tripura', name: 'Tripura', collegeCount: 5 }
 ];
 
 // Mock college data for Maharashtra and Delhi
@@ -766,60 +798,4 @@ export const colleges: College[] = [
     entranceExams: ['DUET', 'CUET', 'DU JAT'],
     fees: {
       tuition: {
-        min: 10000,
-        max: 50000
-      },
-      hostel: {
-        min: 60000,
-        max: 90000
-      }
-    },
-    placement: {
-      percentage: 85,
-      avgSalary: 800000,
-      topRecruiters: ['Deloitte', 'EY', 'PwC', 'Bain & Company', 'McKinsey']
-    },
-    admissionDetails: {
-      eligibility: 'Varies by program, generally based on 10+2 marks or entrance exams.',
-      process: 'Merit-based admissions through cut-offs or entrance tests.',
-      deadlines: 'Applications open in June-July each year.'
-    },
-    scholarships: [
-      {
-        name: 'Vice Chancellor Scholarship',
-        amount: 'Rs. 20,000 per year',
-        eligibility: 'Top performers in each faculty'
-      },
-      {
-        name: 'Welfare Scholarships',
-        amount: 'Varies',
-        eligibility: 'Students from economically weaker sections'
-      }
-    ],
-    reviews: [
-      {
-        rating: 4.6,
-        comment: 'Excellent faculty and academic environment. Many colleges under DU are top-ranked.',
-        author: 'Ashish Kapoor',
-        date: '2023-03-05'
-      },
-      {
-        rating: 4.8,
-        comment: 'Great campus life and extracurricular activities. Very competitive admissions.',
-        author: 'Kavita Sharma',
-        date: '2023-04-12'
-      }
-    ]
-  },
-  {
-    id: 'srcc-delhi',
-    name: 'Shri Ram College of Commerce (SRCC)',
-    location: {
-      city: 'Delhi',
-      state: 'Delhi',
-      address: 'University of Delhi, Maurice Nagar, Delhi 110007'
-    },
-    type: 'Government',
-    rating: 4.7,
-    description: 'SRCC is one of the premier institutions for Commerce and Economics education in India, affiliated with the University of Delhi.',
-    imageUrl: 'https://images
+        min: 10
