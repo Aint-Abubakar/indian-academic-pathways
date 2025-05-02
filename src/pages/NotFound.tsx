@@ -23,7 +23,7 @@ const NotFound = () => {
           The page you're looking for doesn't exist or has been moved.
         </p>
         <Link to="/">
-          <Button className="flex items-center gap-2 bg-gradient-to-r from-nextstep-blue to-nextstep-purple">
+          <Button className="flex items-center gap-2 bg-gradient-to-r from-nextstep-blue to-nextstep-purple hover:from-nextstep-purple hover:to-nextstep-blue transition-colors duration-300">
             <Home size={18} /> Return to Home
           </Button>
         </Link>
