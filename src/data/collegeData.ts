@@ -793,9 +793,19 @@ export const colleges: College[] = [
     type: 'Government',
     rating: 4.7,
     description: 'The University of Delhi is one of the most prestigious universities in India, offering a wide range of courses across various disciplines.',
-    imageUrl: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dW5pdmVyc2l0eXxlbnwwfHwwfHw%3D&w=1000&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f',
     courses: ['Arts', 'Science', 'Commerce', 'Law', 'Management', 'Languages', 'Social Sciences'],
     entranceExams: ['DUET', 'CUET', 'DU JAT'],
     fees: {
       tuition: {
-        min: 10
+        min: 10000,
+        max: 50000
+      },
+      hostel: {
+        min: 60000,
+        max: 90000
+      }
+    },
+    placement: {
+      percentage: 85,
+      avgSalary: 80
