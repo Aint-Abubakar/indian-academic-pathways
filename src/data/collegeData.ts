@@ -355,281 +355,472 @@ const andhraPradeshColleges: College[] = [
   }
 ];
 
-// Array of states with colleges
-export const states: State[] = [
+// Add colleges for Karnataka
+const karnatakaColleges: College[] = [
   {
-    id: "andhra-pradesh",
-    name: "Andhra Pradesh",
-    collegeCount: andhraPradeshColleges.length
+    id: "iisc-bangalore",
+    name: "Indian Institute of Science, Bangalore",
+    description: "IISc is India's premier research institute known for its cutting-edge research in science and engineering.",
+    imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585",
+    rating: 4.9,
+    type: "Government",
+    address: "CV Raman Road, Bengaluru, Karnataka - 560012",
+    location: {
+      address: "CV Raman Road",
+      city: "Bengaluru",
+      state: "Karnataka"
+    },
+    contact: {
+      phone: "+91-80-2293-2228",
+      email: "office@iisc.ac.in",
+      website: "https://www.iisc.ac.in/"
+    },
+    courses: ["BSc Research", "MTech", "PhD", "MSc Engineering"],
+    placement: {
+      percentage: 98,
+      averagePackage: "18 LPA",
+      avgSalary: 1800000,
+      topRecruiters: ["Google", "Microsoft", "Intel", "ISRO", "DRDO"]
+    },
+    facilities: ["Advanced Research Labs", "Library", "Sports Complex", "Hostels", "Healthcare"],
+    fees: {
+      tuition: {
+        min: 25000,
+        max: 50000
+      },
+      hostel: {
+        min: 15000,
+        max: 25000
+      }
+    },
+    entranceExams: ["KVPY", "IISc Entrance Exam", "GATE"],
+    admissionDetails: {
+      eligibility: "Top ranks in national entrance examinations",
+      process: "Written test followed by interview",
+      deadlines: "Applications open in January each year"
+    },
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Full Tuition Fee Waiver + Stipend",
+        eligibility: "Based on academic performance"
+      },
+      {
+        name: "Research Fellowship",
+        amount: "₹31,000 per month",
+        eligibility: "PhD scholars"
+      }
+    ]
   },
   {
-    id: "arunachal-pradesh",
-    name: "Arunachal Pradesh",
-    collegeCount: 0
-  },
-  {
-    id: "assam",
-    name: "Assam",
-    collegeCount: 0
-  },
-  {
-    id: "bihar",
-    name: "Bihar",
-    collegeCount: 0
-  },
-  {
-    id: "chhattisgarh",
-    name: "Chhattisgarh",
-    collegeCount: 0
-  },
-  {
-    id: "goa",
-    name: "Goa",
-    collegeCount: 0
-  },
-  {
-    id: "gujarat",
-    name: "Gujarat",
-    collegeCount: 0
-  },
-  {
-    id: "haryana",
-    name: "Haryana", 
-    collegeCount: 0
-  },
-  {
-    id: "himachal-pradesh",
-    name: "Himachal Pradesh",
-    collegeCount: 0
-  },
-  {
-    id: "jharkhand",
-    name: "Jharkhand",
-    collegeCount: 0
-  },
-  {
-    id: "karnataka",
-    name: "Karnataka",
-    collegeCount: 0
-  },
-  {
-    id: "kerala",
-    name: "Kerala",
-    collegeCount: 0
-  },
-  {
-    id: "madhya-pradesh",
-    name: "Madhya Pradesh",
-    collegeCount: 0
-  },
-  {
-    id: "maharashtra",
-    name: "Maharashtra",
-    collegeCount: 0
-  },
-  {
-    id: "manipur",
-    name: "Manipur",
-    collegeCount: 0
-  },
-  {
-    id: "meghalaya",
-    name: "Meghalaya",
-    collegeCount: 0
-  },
-  {
-    id: "mizoram",
-    name: "Mizoram",
-    collegeCount: 0
-  },
-  {
-    id: "nagaland",
-    name: "Nagaland",
-    collegeCount: 0
-  },
-  {
-    id: "odisha",
-    name: "Odisha",
-    collegeCount: 0
-  },
-  {
-    id: "punjab",
-    name: "Punjab",
-    collegeCount: 0
-  },
-  {
-    id: "rajasthan",
-    name: "Rajasthan",
-    collegeCount: 0
-  },
-  {
-    id: "sikkim",
-    name: "Sikkim",
-    collegeCount: 0
-  },
-  {
-    id: "tamil-nadu",
-    name: "Tamil Nadu",
-    collegeCount: 0
-  },
-  {
-    id: "telangana",
-    name: "Telangana",
-    collegeCount: 0
-  },
-  {
-    id: "tripura",
-    name: "Tripura",
-    collegeCount: 0
-  },
-  {
-    id: "uttar-pradesh",
-    name: "Uttar Pradesh",
-    collegeCount: 0
-  },
-  {
-    id: "uttarakhand",
-    name: "Uttarakhand",
-    collegeCount: 0
-  },
-  {
-    id: "west-bengal",
-    name: "West Bengal",
-    collegeCount: 0
-  },
-  {
-    id: "delhi",
-    name: "Delhi",
-    collegeCount: 2
+    id: "rvce-bangalore",
+    name: "RV College of Engineering",
+    description: "RVCE is one of the oldest and most prestigious self-financing engineering institutions in India.",
+    imageUrl: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
+    rating: 4.5,
+    type: "Private",
+    address: "Mysore Road, Bengaluru, Karnataka - 560059",
+    location: {
+      address: "Mysore Road",
+      city: "Bengaluru",
+      state: "Karnataka"
+    },
+    contact: {
+      phone: "+91-80-6717-8021",
+      email: "principal@rvce.edu.in",
+      website: "https://www.rvce.edu.in/"
+    },
+    courses: ["B.E", "M.Tech", "MBA", "PhD"],
+    placement: {
+      percentage: 95,
+      averagePackage: "12 LPA",
+      avgSalary: 1200000,
+      topRecruiters: ["Amazon", "Flipkart", "IBM", "Infosys", "TCS"]
+    },
+    facilities: ["Library", "Sports Complex", "Hostels", "Cafeterias", "Auditorium"],
+    fees: {
+      tuition: {
+        min: 100000,
+        max: 200000
+      },
+      hostel: {
+        min: 60000,
+        max: 85000
+      }
+    },
+    entranceExams: ["KCET", "COMEDK"],
+    admissionDetails: {
+      eligibility: "Minimum 60% in 10+2 with PCM",
+      process: "Merit-based admission through state entrance exams",
+      deadlines: "Applications close in May each year"
+    },
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "25% tuition fee waiver",
+        eligibility: "Top 5% students"
+      },
+      {
+        name: "Sports Excellence Scholarship",
+        amount: "50% fee waiver",
+        eligibility: "National/State level sports achievers"
+      }
+    ]
   }
 ];
 
-// Filter colleges by state
-export const getCollegesByState = (stateId: string): College[] => {
-  console.log(`Getting colleges for state: ${stateId}`);
-  
-  // Return Andhra Pradesh colleges if state ID matches
-  if (stateId === 'andhra-pradesh') {
-    return andhraPradeshColleges;
-  }
-  
-  // Return Delhi colleges if state ID matches
-  if (stateId === 'delhi') {
-    const delhiColleges: College[] = [
+// Add colleges for Maharashtra
+const maharashtraColleges: College[] = [
+  {
+    id: "iit-bombay",
+    name: "Indian Institute of Technology Bombay",
+    description: "IIT Bombay is recognized worldwide as a leader in engineering education and research.",
+    imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585",
+    rating: 4.8,
+    type: "Government",
+    address: "Powai, Mumbai, Maharashtra - 400076",
+    location: {
+      address: "Powai",
+      city: "Mumbai",
+      state: "Maharashtra"
+    },
+    contact: {
+      phone: "+91-22-2576-7901",
+      email: "registrar@iitb.ac.in",
+      website: "https://www.iitb.ac.in/"
+    },
+    courses: ["B.Tech", "M.Tech", "PhD", "MBA"],
+    placement: {
+      percentage: 97,
+      averagePackage: "16.5 LPA",
+      avgSalary: 1650000,
+      topRecruiters: ["Microsoft", "Google", "Qualcomm", "Apple", "Intel"]
+    },
+    facilities: ["Central Library", "Sports Complex", "Research Labs", "Hostels", "Healthcare"],
+    fees: {
+      tuition: {
+        min: 200000,
+        max: 250000
+      },
+      hostel: {
+        min: 20000,
+        max: 30000
+      }
+    },
+    entranceExams: ["JEE Advanced", "GATE", "CAT"],
+    admissionDetails: {
+      eligibility: "JEE Advanced rank required for B.Tech, GATE score for M.Tech",
+      process: "Centralized counseling through JOSAA for B.Tech admissions",
+      deadlines: "As per JOSAA schedule"
+    },
+    scholarships: [
       {
-        id: "iit-delhi",
-        name: "Indian Institute of Technology Delhi",
-        description: "IIT Delhi is a world-renowned technical institute established in 1961 as a College of Engineering. It was later declared an Institution of National Importance and has been instrumental in providing technical manpower and know-how to the country.",
-        imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29sbGVnZXxlbnwwfHwwfHw%3D&w=1000&q=80",
-        rating: 4.9,
-        type: "Government",
-        address: "IIT Campus, Hauz Khas, New Delhi, Delhi 110016",
-        location: {
-          address: "IIT Campus, Hauz Khas",
-          city: "New Delhi",
-          state: "Delhi"
-        },
-        contact: {
-          phone: "+91-11-2659-1999",
-          email: "info@iitd.ac.in",
-          website: "https://www.iitd.ac.in/"
-        },
-        courses: ["B.Tech", "M.Tech", "Ph.D", "MBA"],
-        placement: {
-          percentage: 98,
-          averagePackage: "16 LPA",
-          avgSalary: 1600000,
-          topRecruiters: ["Google", "Microsoft", "Amazon", "Intel"]
-        },
-        facilities: ["Library", "Sports Complex", "Computer Labs", "Hostel", "Cafeteria"],
-        fees: {
-          tuition: {
-            min: 200000,
-            max: 250000
-          },
-          hostel: {
-            min: 20000,
-            max: 30000
-          }
-        },
-        entranceExams: ["JEE Advanced", "GATE", "CAT"],
-        admissionDetails: {
-          eligibility: "JEE Advanced rank required for B.Tech, GATE score for M.Tech",
-          process: "Centralized counseling through JOSAA for B.Tech admissions",
-          deadlines: "Applications open in April and close in May each year"
-        },
-        scholarships: [
-          {
-            name: "Merit Scholarship",
-            amount: "Full Tuition Fee Waiver",
-            eligibility: "Top 10% of students"
-          },
-          {
-            name: "SC/ST Scholarship",
-            amount: "As per government norms",
-            eligibility: "SC/ST category students"
-          }
-        ]
+        name: "Merit-Cum-Means Scholarship",
+        amount: "Full Tuition Fee Waiver + Stipend",
+        eligibility: "Based on family income and academic performance"
       },
       {
-        id: "du",
-        name: "University of Delhi (DU)",
-        description: "University of Delhi is a premier university of the country with a venerable legacy and international acclaim for highest academic standards, diverse educational programs, and distinguished faculty.",
-        imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f",
-        rating: 4.7,
-        type: "Government",
-        address: "University of Delhi, North Campus, Delhi 110007",
-        location: {
-          address: "University of Delhi, North Campus",
-          city: "Delhi",
-          state: "Delhi"
-        },
-        contact: {
-          phone: "+91-11-2766-7853",
-          email: "registrar@du.ac.in",
-          website: "http://www.du.ac.in/"
-        },
-        courses: ["BA", "BSc", "BCom", "MA", "MSc", "MCom", "Ph.D"],
-        placement: {
-          percentage: 85,
-          averagePackage: "8 LPA",
-          avgSalary: 800000,
-          topRecruiters: ["Deloitte", "EY", "TCS", "Wipro"]
-        },
-        facilities: ["Library", "Sports Complex", "Labs", "Hostels", "Canteens"],
-        fees: {
-          tuition: {
-            min: 15000,
-            max: 50000
-          },
-          hostel: {
-            min: 10000,
-            max: 20000
-          }
-        },
-        entranceExams: ["DUET", "CUET"],
-        admissionDetails: {
-          eligibility: "10+2 with minimum 45-60% marks depending on course",
-          process: "Merit-based or entrance test-based depending on program",
-          deadlines: "Applications typically open in June each year"
-        },
-        scholarships: [
-          {
-            name: "Vice Chancellor's Merit Scholarship",
-            amount: "Rs. 10,000 per annum",
-            eligibility: "Top performers in each course"
-          },
-          {
-            name: "Financial Aid Scholarship",
-            amount: "Varies based on need",
-            eligibility: "Economically weaker section students"
-          }
-        ]
+        name: "Institute Freeship",
+        amount: "Full or Partial Fee Waiver",
+        eligibility: "Economically weaker section students"
       }
-    ];
-    return delhiColleges;
+    ]
+  },
+  {
+    id: "coep-pune",
+    name: "College of Engineering, Pune",
+    description: "COEP is one of the oldest engineering colleges in Asia, established in 1854.",
+    imageUrl: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
+    rating: 4.6,
+    type: "Government",
+    address: "Wellesley Road, Shivajinagar, Pune, Maharashtra - 411005",
+    location: {
+      address: "Wellesley Road, Shivajinagar",
+      city: "Pune",
+      state: "Maharashtra"
+    },
+    contact: {
+      phone: "+91-20-2550-7000",
+      email: "director@coep.ac.in",
+      website: "https://www.coep.org.in/"
+    },
+    courses: ["B.Tech", "M.Tech", "PhD"],
+    placement: {
+      percentage: 92,
+      averagePackage: "10 LPA",
+      avgSalary: 1000000,
+      topRecruiters: ["TCS", "Infosys", "L&T", "Mercedes-Benz", "John Deere"]
+    },
+    facilities: ["Library", "Sports Complex", "Hostels", "Auditorium", "Boat Club"],
+    fees: {
+      tuition: {
+        min: 50000,
+        max: 100000
+      },
+      hostel: {
+        min: 15000,
+        max: 25000
+      }
+    },
+    entranceExams: ["MHT-CET", "JEE Main"],
+    admissionDetails: {
+      eligibility: "Minimum 50% in 10+2 with PCM",
+      process: "State-level entrance exam followed by counseling",
+      deadlines: "Applications close in May each year"
+    },
+    scholarships: [
+      {
+        name: "Government Scholarship",
+        amount: "As per government norms",
+        eligibility: "Reserved category students"
+      },
+      {
+        name: "TEQIP Scholarship",
+        amount: "₹10,000 per month",
+        eligibility: "M.Tech and PhD students"
+      }
+    ]
   }
-  
-  // Return empty array for all other states for now
-  return [];
-};
+];
+
+// Add colleges for Tamil Nadu
+const tamilNaduColleges: College[] = [
+  {
+    id: "iit-madras",
+    name: "Indian Institute of Technology Madras",
+    description: "IIT Madras is known for its academic excellence and innovative research, ranked #1 in India for engineering education.",
+    imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585",
+    rating: 4.9,
+    type: "Government",
+    address: "IIT P.O., Chennai, Tamil Nadu - 600036",
+    location: {
+      address: "IIT P.O.",
+      city: "Chennai",
+      state: "Tamil Nadu"
+    },
+    contact: {
+      phone: "+91-44-2257-8100",
+      email: "registrar@iitm.ac.in",
+      website: "https://www.iitm.ac.in/"
+    },
+    courses: ["B.Tech", "M.Tech", "BSc", "PhD", "MBA"],
+    placement: {
+      percentage: 98,
+      averagePackage: "17 LPA",
+      avgSalary: 1700000,
+      topRecruiters: ["Microsoft", "Google", "Amazon", "Qualcomm", "Intel"]
+    },
+    facilities: ["Central Library", "Research Park", "Sports Complex", "Swimming Pool", "Hostels"],
+    fees: {
+      tuition: {
+        min: 200000,
+        max: 250000
+      },
+      hostel: {
+        min: 20000,
+        max: 30000
+      }
+    },
+    entranceExams: ["JEE Advanced", "GATE", "CAT"],
+    admissionDetails: {
+      eligibility: "JEE Advanced rank for B.Tech, GATE score for M.Tech",
+      process: "Centralized counseling through JOSAA for B.Tech admissions",
+      deadlines: "As per JOSAA/CCMT schedule"
+    },
+    scholarships: [
+      {
+        name: "Institute Merit Scholarship",
+        amount: "Full Tuition Fee Waiver",
+        eligibility: "Top 10% students in each branch"
+      },
+      {
+        name: "SC/ST Scholarship",
+        amount: "As per government norms",
+        eligibility: "SC/ST category students"
+      }
+    ]
+  },
+  {
+    id: "psg-tech-coimbatore",
+    name: "PSG College of Technology",
+    description: "PSG Tech is one of the oldest and most reputed engineering institutions in Tamil Nadu with strong industry connections.",
+    imageUrl: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
+    rating: 4.5,
+    type: "Private Aided",
+    address: "Peelamedu, Coimbatore, Tamil Nadu - 641004",
+    location: {
+      address: "Peelamedu",
+      city: "Coimbatore",
+      state: "Tamil Nadu"
+    },
+    contact: {
+      phone: "+91-422-257-2177",
+      email: "principal@psgtech.edu",
+      website: "https://www.psgtech.edu/"
+    },
+    courses: ["B.E", "B.Tech", "M.E", "M.Tech", "MCA", "MBA"],
+    placement: {
+      percentage: 90,
+      averagePackage: "8 LPA",
+      avgSalary: 800000,
+      topRecruiters: ["TCS", "Infosys", "CTS", "HCL", "Amazon"]
+    },
+    facilities: ["Library", "Sports Complex", "Hostels", "Cafeterias", "Entrepreneurship Cell"],
+    fees: {
+      tuition: {
+        min: 75000,
+        max: 150000
+      },
+      hostel: {
+        min: 40000,
+        max: 60000
+      }
+    },
+    entranceExams: ["TNEA", "TANCET"],
+    admissionDetails: {
+      eligibility: "Minimum 60% in 10+2 with PCM",
+      process: "Merit-based through state counseling",
+      deadlines: "Applications close in April-May each year"
+    },
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "25% tuition fee waiver",
+        eligibility: "Top performers"
+      },
+      {
+        name: "Sports Scholarship",
+        amount: "Partial fee waiver",
+        eligibility: "State/National level sports achievers"
+      }
+    ]
+  }
+];
+
+// Add colleges for Uttar Pradesh
+const uttarPradeshColleges: College[] = [
+  {
+    id: "iit-kanpur",
+    name: "Indian Institute of Technology Kanpur",
+    description: "IIT Kanpur is renowned for its rigorous academic programs and distinguished faculty.",
+    imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585",
+    rating: 4.8,
+    type: "Government",
+    address: "Kalyanpur, Kanpur, Uttar Pradesh - 208016",
+    location: {
+      address: "Kalyanpur",
+      city: "Kanpur",
+      state: "Uttar Pradesh"
+    },
+    contact: {
+      phone: "+91-512-259-7220",
+      email: "registrar@iitk.ac.in",
+      website: "https://www.iitk.ac.in/"
+    },
+    courses: ["B.Tech", "M.Tech", "MS", "PhD", "MBA"],
+    placement: {
+      percentage: 95,
+      averagePackage: "15 LPA",
+      avgSalary: 1500000,
+      topRecruiters: ["Google", "Microsoft", "Goldman Sachs", "Uber", "Samsung"]
+    },
+    facilities: ["P.K. Kelkar Library", "Swimming Pool", "Sports Complex", "Hostels", "Healthcare"],
+    fees: {
+      tuition: {
+        min: 200000,
+        max: 250000
+      },
+      hostel: {
+        min: 20000,
+        max: 30000
+      }
+    },
+    entranceExams: ["JEE Advanced", "GATE", "CAT"],
+    admissionDetails: {
+      eligibility: "JEE Advanced rank for B.Tech, GATE score for M.Tech",
+      process: "Centralized counseling through JOSAA for B.Tech admissions",
+      deadlines: "As per JOSAA schedule"
+    },
+    scholarships: [
+      {
+        name: "Merit-Cum-Means Scholarship",
+        amount: "Full Tuition Fee Waiver",
+        eligibility: "Based on family income and academic performance"
+      },
+      {
+        name: "Academic Excellence Award",
+        amount: "₹10,000 per semester",
+        eligibility: "Top 5% students"
+      }
+    ]
+  },
+  {
+    id: "bhu-varanasi",
+    name: "Banaras Hindu University (BHU)",
+    description: "BHU is one of the largest residential universities in Asia with diverse programs in engineering, sciences, and arts.",
+    imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f",
+    rating: 4.6,
+    type: "Government",
+    address: "Varanasi, Uttar Pradesh - 221005",
+    location: {
+      address: "BHU Campus",
+      city: "Varanasi",
+      state: "Uttar Pradesh"
+    },
+    contact: {
+      phone: "+91-542-236-8108",
+      email: "registrar@bhu.ac.in",
+      website: "https://www.bhu.ac.in/"
+    },
+    courses: ["B.Tech", "B.Sc", "M.Tech", "M.Sc", "PhD", "MBBS"],
+    placement: {
+      percentage: 85,
+      averagePackage: "8 LPA",
+      avgSalary: 800000,
+      topRecruiters: ["TCS", "Infosys", "NTPC", "ONGC", "DRDO"]
+    },
+    facilities: ["Central Library", "Sports Complex", "Swimming Pool", "Hostels", "Hospital"],
+    fees: {
+      tuition: {
+        min: 30000,
+        max: 80000
+      },
+      hostel: {
+        min: 10000,
+        max: 20000
+      }
+    },
+    entranceExams: ["JEE Main", "UET", "PET"],
+    admissionDetails: {
+      eligibility: "Minimum 60% in qualifying examination",
+      process: "University entrance test followed by counseling",
+      deadlines: "Applications open in February each year"
+    },
+    scholarships: [
+      {
+        name: "Central Sector Scholarship",
+        amount: "As per government norms",
+        eligibility: "Based on merit and category"
+      },
+      {
+        name: "BHU Foundation Scholarship",
+        amount: "₹10,000 per annum",
+        eligibility: "Meritorious students with financial constraints"
+      }
+    ]
+  }
+];
+
+// Add colleges for West Bengal
+const westBengalColleges: College[] = [
+  {
+    id: "iit-kharagpur",
+    name: "Indian Institute of Technology Kharagpur",
+    description: "IIT Kharagpur is the first IIT established in India with a strong emphasis on research and innovation.",
+    imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585",
+    rating: 4.8,
+    type: "Government",
+    address: "Kharagpur, West Bengal - 721302",
+    location: {
+      address: "IIT Kharagpur",
+      city: "Kharagpur",
