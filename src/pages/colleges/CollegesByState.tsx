@@ -22,10 +22,6 @@ const CollegesByState = () => {
     if (stateId) {
       const stateColleges = getCollegesByState(stateId);
       console.log(`State: ${stateId}, Colleges: ${stateColleges.length}`);
-      // Log image URLs for debugging
-      stateColleges.forEach(college => {
-        console.log(`College: ${college.name}, Image URL: ${college.imageUrl}`);
-      });
       setColleges(stateColleges);
       applyFilters(stateColleges, filters);
     }
@@ -88,7 +84,7 @@ const CollegesByState = () => {
   };
   
   // Format state name from ID
-  const stateName = stateId ? stateId.charAt(0).toUpperCase() + stateId.slice(1) : "";
+  const stateName = stateId ? stateId.charAt(0).toUpperCase() + stateId.slice(1).replace(/-/g, " ") : "";
   
   return (
     <div className="py-12">

@@ -1,3 +1,4 @@
+
 export interface College {
   id: string;
   name: string;
@@ -6,6 +7,11 @@ export interface College {
   rating: number;
   type: string;
   address: string;
+  location: {
+    address: string;
+    city: string;
+    state: string;
+  };
   contact: {
     phone: string;
     email: string;
@@ -15,9 +21,31 @@ export interface College {
   placement: {
     percentage: number;
     averagePackage: string;
+    avgSalary?: number;
     topRecruiters: string[];
   };
   facilities: string[];
+  fees: {
+    tuition: {
+      min: number;
+      max: number;
+    };
+    hostel?: {
+      min: number;
+      max: number;
+    };
+  };
+  entranceExams: string[];
+  admissionDetails: {
+    eligibility: string;
+    process: string;
+    deadlines: string;
+  };
+  scholarships: {
+    name: string;
+    amount: string;
+    eligibility: string;
+  }[];
 }
 
 export interface State {
@@ -26,9 +54,27 @@ export interface State {
   collegeCount: number;
 }
 
-export const getCollegeById = (collegeId: string, stateId: string): College | undefined => {
-  const colleges = getCollegesByState(stateId);
-  return colleges.find(college => college.id === collegeId);
+export interface FilterOptions {
+  searchQuery: string;
+  courseType: string;
+  collegeType: string;
+  ratingMin: number;
+  feeRange: string;
+}
+
+export const getCollegeById = (collegeId: string, stateId?: string): College | undefined => {
+  if (stateId) {
+    const colleges = getCollegesByState(stateId);
+    return colleges.find(college => college.id === collegeId);
+  } else {
+    // Search in all states if stateId is not provided
+    for (const state of states) {
+      const colleges = getCollegesByState(state.id);
+      const college = colleges.find(c => c.id === collegeId);
+      if (college) return college;
+    }
+    return undefined;
+  }
 };
 
 // Add colleges for Andhra Pradesh
@@ -41,6 +87,11 @@ const andhraPradeshColleges: College[] = [
     rating: 4.7,
     type: "Government",
     address: "Yerpedu – Venkatagiri Road, Yerpedu Post, Chittoor District, Andhra Pradesh - 517619",
+    location: {
+      address: "Yerpedu – Venkatagiri Road, Yerpedu Post, Chittoor District",
+      city: "Tirupati",
+      state: "Andhra Pradesh"
+    },
     contact: {
       phone: "+91-877-2500337",
       email: "info@iittp.ac.in",
@@ -50,9 +101,38 @@ const andhraPradeshColleges: College[] = [
     placement: {
       percentage: 95,
       averagePackage: "12 LPA",
+      avgSalary: 1200000,
       topRecruiters: ["Google", "Microsoft", "Amazon", "Intel"]
     },
-    facilities: ["Library", "Sports Complex", "Computer Labs", "Hostel", "Cafeteria"]
+    facilities: ["Library", "Sports Complex", "Computer Labs", "Hostel", "Cafeteria"],
+    fees: {
+      tuition: {
+        min: 200000,
+        max: 250000
+      },
+      hostel: {
+        min: 20000,
+        max: 30000
+      }
+    },
+    entranceExams: ["JEE Advanced", "GATE"],
+    admissionDetails: {
+      eligibility: "JEE Advanced rank required for B.Tech, GATE score for M.Tech, and research aptitude for Ph.D",
+      process: "Centralized counseling through JOSAA for B.Tech admissions",
+      deadlines: "Applications open in April and close in May each year"
+    },
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Full Tuition Fee Waiver",
+        eligibility: "Top 10% of students"
+      },
+      {
+        name: "SC/ST Scholarship",
+        amount: "As per government norms",
+        eligibility: "SC/ST category students"
+      }
+    ]
   },
   {
     id: "andhra-university",
@@ -62,6 +142,11 @@ const andhraPradeshColleges: College[] = [
     rating: 4.3,
     type: "Government",
     address: "Andhra University, Visakhapatnam, Andhra Pradesh - 530003",
+    location: {
+      address: "Andhra University Campus",
+      city: "Visakhapatnam",
+      state: "Andhra Pradesh"
+    },
     contact: {
       phone: "+91-891-2844000",
       email: "registrar@andhrauniversity.edu.in",
@@ -71,9 +156,38 @@ const andhraPradeshColleges: College[] = [
     placement: {
       percentage: 80,
       averagePackage: "6 LPA",
+      avgSalary: 600000,
       topRecruiters: ["TCS", "Infosys", "Wipro", "HCL"]
     },
-    facilities: ["Central Library", "Sports Fields", "Laboratories", "Hostels", "Cafeterias"]
+    facilities: ["Central Library", "Sports Fields", "Laboratories", "Hostels", "Cafeterias"],
+    fees: {
+      tuition: {
+        min: 30000,
+        max: 100000
+      },
+      hostel: {
+        min: 15000,
+        max: 25000
+      }
+    },
+    entranceExams: ["EAPCET", "ICET", "PGCET"],
+    admissionDetails: {
+      eligibility: "Varies by program; generally requires qualifying exam scores",
+      process: "Entrance exam followed by counseling",
+      deadlines: "Applications typically open in March each year"
+    },
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Rs. 10,000 per year",
+        eligibility: "Top 5% in entrance exam"
+      },
+      {
+        name: "Sports Scholarship",
+        amount: "Rs. 15,000 per year",
+        eligibility: "State/National level sports achievers"
+      }
+    ]
   },
   {
     id: "sri-venkateswara-university",
@@ -83,6 +197,11 @@ const andhraPradeshColleges: College[] = [
     rating: 4.1,
     type: "Government",
     address: "Sri Venkateswara University, Tirupati, Andhra Pradesh - 517502",
+    location: {
+      address: "Sri Venkateswara University Campus",
+      city: "Tirupati",
+      state: "Andhra Pradesh"
+    },
     contact: {
       phone: "+91-877-2289896",
       email: "registrar@svuniversity.edu.in",
@@ -92,9 +211,38 @@ const andhraPradeshColleges: College[] = [
     placement: {
       percentage: 75,
       averagePackage: "5.5 LPA",
+      avgSalary: 550000,
       topRecruiters: ["Infosys", "Wipro", "TCS", "Cognizant"]
     },
-    facilities: ["Library", "Labs", "Hostels", "Auditorium", "Sports Complex"]
+    facilities: ["Library", "Labs", "Hostels", "Auditorium", "Sports Complex"],
+    fees: {
+      tuition: {
+        min: 25000,
+        max: 80000
+      },
+      hostel: {
+        min: 12000,
+        max: 20000
+      }
+    },
+    entranceExams: ["SVUCET", "APRCET"],
+    admissionDetails: {
+      eligibility: "Bachelor's degree with minimum 50% marks for PG programs",
+      process: "University entrance exam followed by counseling",
+      deadlines: "Applications typically open in April-May each year"
+    },
+    scholarships: [
+      {
+        name: "University Scholarship",
+        amount: "Rs. 8,000 per year",
+        eligibility: "Merit-based"
+      },
+      {
+        name: "Research Scholarship",
+        amount: "Rs. 12,000 per month",
+        eligibility: "Ph.D scholars with qualifying exam"
+      }
+    ]
   },
   {
     id: "gitam-university",
@@ -104,6 +252,11 @@ const andhraPradeshColleges: College[] = [
     rating: 4.4,
     type: "Private",
     address: "GITAM University, Visakhapatnam, Andhra Pradesh - 530045",
+    location: {
+      address: "GITAM Campus, Rushikonda",
+      city: "Visakhapatnam",
+      state: "Andhra Pradesh"
+    },
     contact: {
       phone: "+91-891-2840501",
       email: "info@gitam.edu",
@@ -113,9 +266,38 @@ const andhraPradeshColleges: College[] = [
     placement: {
       percentage: 85,
       averagePackage: "7 LPA",
+      avgSalary: 700000,
       topRecruiters: ["Microsoft", "Amazon", "IBM", "Oracle"]
     },
-    facilities: ["Central Library", "Sports Complex", "Hostels", "Cafeterias", "Wi-Fi Campus"]
+    facilities: ["Central Library", "Sports Complex", "Hostels", "Cafeterias", "Wi-Fi Campus"],
+    fees: {
+      tuition: {
+        min: 100000,
+        max: 300000
+      },
+      hostel: {
+        min: 60000,
+        max: 120000
+      }
+    },
+    entranceExams: ["GAT", "GMAT", "CAT"],
+    admissionDetails: {
+      eligibility: "Varies by program; Engineering requires JEE/GAT scores",
+      process: "Entrance test followed by GD/PI for some programs",
+      deadlines: "Applications open in January and close in April"
+    },
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "10-50% tuition fee waiver",
+        eligibility: "Based on entrance exam performance"
+      },
+      {
+        name: "Sports Excellence Scholarship",
+        amount: "Full tuition fee waiver",
+        eligibility: "National/International sports achievers"
+      }
+    ]
   },
   {
     id: "iiit-sri-city",
@@ -125,6 +307,11 @@ const andhraPradeshColleges: College[] = [
     rating: 4.2,
     type: "Government",
     address: "IIIT Sri City, Chittoor District, Andhra Pradesh - 517646",
+    location: {
+      address: "IIIT Campus, Sri City",
+      city: "Chittoor",
+      state: "Andhra Pradesh"
+    },
     contact: {
       phone: "+91-7670908899",
       email: "info@iiits.ac.in",
@@ -134,9 +321,38 @@ const andhraPradeshColleges: College[] = [
     placement: {
       percentage: 90,
       averagePackage: "10 LPA",
+      avgSalary: 1000000,
       topRecruiters: ["Google", "Amazon", "Oracle", "SAP"]
     },
-    facilities: ["Library", "Computer Labs", "Sports Facilities", "Hostels", "Cafeteria"]
+    facilities: ["Library", "Computer Labs", "Sports Facilities", "Hostels", "Cafeteria"],
+    fees: {
+      tuition: {
+        min: 175000,
+        max: 225000
+      },
+      hostel: {
+        min: 25000,
+        max: 35000
+      }
+    },
+    entranceExams: ["JEE Main", "GATE"],
+    admissionDetails: {
+      eligibility: "JEE Main rank for B.Tech, GATE score for M.Tech",
+      process: "Centralized counseling through JOSAA/CSAB for B.Tech",
+      deadlines: "As per JOSAA/CSAB schedule"
+    },
+    scholarships: [
+      {
+        name: "AICTE Scholarship",
+        amount: "Rs. 50,000 per year",
+        eligibility: "Based on JEE rank"
+      },
+      {
+        name: "Institute Merit Scholarship",
+        amount: "Tuition fee waiver",
+        eligibility: "Top 10% students in each branch"
+      }
+    ]
   }
 ];
 
@@ -291,7 +507,7 @@ export const states: State[] = [
 
 // Filter colleges by state
 export const getCollegesByState = (stateId: string, filters: FilterOptions = {}): College[] => {
-  console.log(`State: ${stateId}, Colleges: ${stateId === 'andhra-pradesh' ? andhraPradeshColleges.length : 0}`);
+  console.log(`Getting colleges for state: ${stateId}`);
   
   // Return Andhra Pradesh colleges if state ID matches
   if (stateId === 'andhra-pradesh') {
@@ -309,6 +525,11 @@ export const getCollegesByState = (stateId: string, filters: FilterOptions = {})
         rating: 4.9,
         type: "Government",
         address: "IIT Campus, Hauz Khas, New Delhi, Delhi 110016",
+        location: {
+          address: "IIT Campus, Hauz Khas",
+          city: "New Delhi",
+          state: "Delhi"
+        },
         contact: {
           phone: "+91-11-2659-1999",
           email: "info@iitd.ac.in",
@@ -318,9 +539,38 @@ export const getCollegesByState = (stateId: string, filters: FilterOptions = {})
         placement: {
           percentage: 98,
           averagePackage: "16 LPA",
+          avgSalary: 1600000,
           topRecruiters: ["Google", "Microsoft", "Amazon", "Intel"]
         },
-        facilities: ["Library", "Sports Complex", "Computer Labs", "Hostel", "Cafeteria"]
+        facilities: ["Library", "Sports Complex", "Computer Labs", "Hostel", "Cafeteria"],
+        fees: {
+          tuition: {
+            min: 200000,
+            max: 250000
+          },
+          hostel: {
+            min: 20000,
+            max: 30000
+          }
+        },
+        entranceExams: ["JEE Advanced", "GATE", "CAT"],
+        admissionDetails: {
+          eligibility: "JEE Advanced rank required for B.Tech, GATE score for M.Tech",
+          process: "Centralized counseling through JOSAA for B.Tech admissions",
+          deadlines: "Applications open in April and close in May each year"
+        },
+        scholarships: [
+          {
+            name: "Merit Scholarship",
+            amount: "Full Tuition Fee Waiver",
+            eligibility: "Top 10% of students"
+          },
+          {
+            name: "SC/ST Scholarship",
+            amount: "As per government norms",
+            eligibility: "SC/ST category students"
+          }
+        ]
       },
       {
         id: "du",
@@ -330,6 +580,11 @@ export const getCollegesByState = (stateId: string, filters: FilterOptions = {})
         rating: 4.7,
         type: "Government",
         address: "University of Delhi, North Campus, Delhi 110007",
+        location: {
+          address: "University of Delhi, North Campus",
+          city: "Delhi",
+          state: "Delhi"
+        },
         contact: {
           phone: "+91-11-2766-7853",
           email: "registrar@du.ac.in",
@@ -339,9 +594,38 @@ export const getCollegesByState = (stateId: string, filters: FilterOptions = {})
         placement: {
           percentage: 85,
           averagePackage: "8 LPA",
+          avgSalary: 800000,
           topRecruiters: ["Deloitte", "EY", "TCS", "Wipro"]
         },
-        facilities: ["Library", "Sports Complex", "Labs", "Hostels", "Canteens"]
+        facilities: ["Library", "Sports Complex", "Labs", "Hostels", "Canteens"],
+        fees: {
+          tuition: {
+            min: 15000,
+            max: 50000
+          },
+          hostel: {
+            min: 10000,
+            max: 20000
+          }
+        },
+        entranceExams: ["DUET", "CUET"],
+        admissionDetails: {
+          eligibility: "10+2 with minimum 45-60% marks depending on course",
+          process: "Merit-based or entrance test-based depending on program",
+          deadlines: "Applications typically open in June each year"
+        },
+        scholarships: [
+          {
+            name: "Vice Chancellor's Merit Scholarship",
+            amount: "Rs. 10,000 per annum",
+            eligibility: "Top performers in each course"
+          },
+          {
+            name: "Financial Aid Scholarship",
+            amount: "Varies based on need",
+            eligibility: "Economically weaker section students"
+          }
+        ]
       }
     ];
     return delhiColleges;
@@ -349,9 +633,4 @@ export const getCollegesByState = (stateId: string, filters: FilterOptions = {})
   
   // Return empty array for all other states for now
   return [];
-};
-
-export type FilterOptions = {
-  type?: string;
-  rating?: number;
 };

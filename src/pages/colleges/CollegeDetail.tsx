@@ -10,17 +10,17 @@ import { Badge } from "@/components/ui/badge";
 import { ChevronLeft, MapPin, Star } from "lucide-react";
 
 const CollegeDetail = () => {
-  const { cityId, collegeId } = useParams<{ cityId: string; collegeId: string }>();
+  const { stateId, collegeId } = useParams<{ stateId: string; collegeId: string }>();
   const [college, setCollege] = useState<College | null>(null);
   const [loading, setLoading] = useState(true);
   
   useEffect(() => {
-    if (collegeId) {
-      const fetchedCollege = getCollegeById(collegeId);
+    if (collegeId && stateId) {
+      const fetchedCollege = getCollegeById(collegeId, stateId);
       setCollege(fetchedCollege || null);
       setLoading(false);
     }
-  }, [collegeId]);
+  }, [collegeId, stateId]);
   
   if (loading) {
     return (
@@ -38,7 +38,7 @@ const CollegeDetail = () => {
       <div className="section-container py-12">
         <div className="flex flex-col items-center justify-center min-h-[400px]">
           <h2 className="text-2xl font-semibold mb-4">College not found</h2>
-          <Link to={`/colleges/${cityId}`}>
+          <Link to={`/top-colleges/${stateId}`}>
             <Button>Back to Colleges</Button>
           </Link>
         </div>
