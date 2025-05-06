@@ -410,6 +410,313 @@ export const colleges: College[] = [
         date: '2023-04-18'
       }
     ]
+  },
+  
+  // Andhra Pradesh Colleges
+  {
+    id: 'iit-tirupati',
+    name: 'Indian Institute of Technology Tirupati',
+    location: {
+      city: 'Tirupati',
+      state: 'Andhra Pradesh',
+      address: 'Yerpedu – Venkatagiri Highway, Yerpedu Post, Tirupati, Andhra Pradesh 517619'
+    },
+    type: 'Government',
+    rating: 4.7,
+    description: 'IIT Tirupati is one of the newest IITs established in 2015, known for its innovative approach to engineering education and research excellence.',
+    imageUrl: 'https://images.unsplash.com/photo-1562774053-701939374585',
+    courses: ['Computer Science and Engineering', 'Electrical Engineering', 'Mechanical Engineering', 'Civil Engineering', 'Chemical Engineering'],
+    entranceExams: ['JEE Advanced', 'GATE'],
+    fees: {
+      tuition: {
+        min: 200000,
+        max: 250000
+      },
+      hostel: {
+        min: 80000,
+        max: 100000
+      }
+    },
+    placement: {
+      percentage: 95,
+      avgSalary: 1400000,
+      topRecruiters: ['Microsoft', 'Amazon', 'Google', 'Samsung R&D', 'Adobe']
+    },
+    admissionDetails: {
+      eligibility: 'Admission to B.Tech programs is through JEE Advanced, and for M.Tech through GATE.',
+      process: 'Centralized admission through JoSAA counseling for B.Tech and COAP for M.Tech programs.',
+      deadlines: 'Applications typically follow the JEE Advanced and GATE schedules.'
+    },
+    scholarships: [
+      {
+        name: 'Merit-cum-Means Scholarship',
+        amount: 'Full tuition fee waiver + Rs. 1,000 monthly stipend',
+        eligibility: 'Based on family income and academic performance'
+      },
+      {
+        name: 'SC/ST Scholarship',
+        amount: 'Full tuition fee waiver',
+        eligibility: 'SC/ST category students'
+      }
+    ],
+    reviews: [
+      {
+        rating: 4.8,
+        comment: 'Excellent faculty and growing infrastructure. The academic rigor is top-notch.',
+        author: 'Karthik Reddy',
+        date: '2024-03-15'
+      },
+      {
+        rating: 4.6,
+        comment: 'Great research opportunities despite being a new IIT. The faculty is very supportive.',
+        author: 'Priya Sharma',
+        date: '2024-01-20'
+      }
+    ]
+  },
+  {
+    id: 'andhra-university',
+    name: 'Andhra University',
+    location: {
+      city: 'Visakhapatnam',
+      state: 'Andhra Pradesh',
+      address: 'Visakhapatnam, Andhra Pradesh 530003'
+    },
+    type: 'Government',
+    rating: 4.5,
+    description: 'Established in 1926, Andhra University is one of the oldest and most prestigious universities in India, known for its academic excellence and research contributions.',
+    imageUrl: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f',
+    courses: ['Engineering', 'Science', 'Arts', 'Commerce', 'Management', 'Pharmacy', 'Law'],
+    entranceExams: ['AUCET', 'GATE', 'PGCET'],
+    fees: {
+      tuition: {
+        min: 25000,
+        max: 120000
+      },
+      hostel: {
+        min: 40000,
+        max: 70000
+      }
+    },
+    placement: {
+      percentage: 80,
+      avgSalary: 600000,
+      topRecruiters: ['TCS', 'Infosys', 'Wipro', 'Tech Mahindra', 'Cognizant']
+    },
+    admissionDetails: {
+      eligibility: 'Varies by program. Generally 50-60% in qualifying examination.',
+      process: 'Admission through entrance examination or merit-based depending on the program.',
+      deadlines: 'Applications typically open in April-May each year.'
+    },
+    scholarships: [
+      {
+        name: 'University Merit Scholarship',
+        amount: 'Rs. 10,000 to Rs. 25,000 per year',
+        eligibility: 'Top performers in university exams'
+      },
+      {
+        name: 'National Scholarship Portal Schemes',
+        amount: 'Varies based on scheme',
+        eligibility: 'Based on caste, income, and academic performance'
+      }
+    ],
+    reviews: [
+      {
+        rating: 4.6,
+        comment: 'Rich heritage and excellent academic standards. The campus is beautiful and located near the beach.',
+        author: 'Suresh Kumar',
+        date: '2024-02-10'
+      },
+      {
+        rating: 4.3,
+        comment: 'Strong industry connections and good placement opportunities. Some facilities need modernization.',
+        author: 'Lakshmi Prasad',
+        date: '2023-11-15'
+      }
+    ]
+  },
+  {
+    id: 'sri-venkateswara-university',
+    name: 'Sri Venkateswara University',
+    location: {
+      city: 'Tirupati',
+      state: 'Andhra Pradesh',
+      address: 'Tirupati, Andhra Pradesh 517502'
+    },
+    type: 'Government',
+    rating: 4.3,
+    description: 'Sri Venkateswara University, established in 1954, is a renowned institution offering diverse academic programs with a strong focus on research and cultural values.',
+    imageUrl: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085',
+    courses: ['Arts', 'Science', 'Commerce', 'Management', 'Engineering', 'Law', 'Education'],
+    entranceExams: ['SVUCET', 'APRCET'],
+    fees: {
+      tuition: {
+        min: 15000,
+        max: 80000
+      },
+      hostel: {
+        min: 30000,
+        max: 60000
+      }
+    },
+    placement: {
+      percentage: 75,
+      avgSalary: 500000,
+      topRecruiters: ['TCS', 'Infosys', 'Wipro', 'Cognizant', 'HCL']
+    },
+    admissionDetails: {
+      eligibility: 'Minimum 50% in qualifying examination for most courses.',
+      process: 'Through entrance examination or merit-based selection depending on the program.',
+      deadlines: 'Applications typically open in May-June each year.'
+    },
+    scholarships: [
+      {
+        name: 'University Merit Scholarship',
+        amount: 'Rs. 8,000 to Rs. 15,000 per year',
+        eligibility: 'Based on academic performance'
+      },
+      {
+        name: 'SC/ST/BC Scholarship',
+        amount: 'Tuition fee waiver and maintenance allowance',
+        eligibility: 'SC/ST/BC category students with family income below specified limits'
+      }
+    ],
+    reviews: [
+      {
+        rating: 4.4,
+        comment: 'Strong academic curriculum with good faculty. The campus has a spiritual ambiance being in Tirupati.',
+        author: 'Venkat Rao',
+        date: '2024-01-05'
+      },
+      {
+        rating: 4.2,
+        comment: 'Affordable education with decent placement opportunities. Infrastructure needs improvement in some departments.',
+        author: 'Sujatha Reddy',
+        date: '2023-10-18'
+      }
+    ]
+  },
+  {
+    id: 'gitam-university',
+    name: 'GITAM University',
+    location: {
+      city: 'Visakhapatnam',
+      state: 'Andhra Pradesh',
+      address: 'Gandhi Nagar, Rushikonda, Visakhapatnam, Andhra Pradesh 530045'
+    },
+    type: 'Private',
+    rating: 4.6,
+    description: 'GITAM (Gandhi Institute of Technology and Management) is a prestigious private university known for its quality education, infrastructure, and industry connections.',
+    imageUrl: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d',
+    courses: ['Engineering', 'Management', 'Pharmacy', 'Science', 'Architecture', 'Law', 'Medicine'],
+    entranceExams: ['GAT (GITAM Admission Test)', 'NEET', 'JEE Main'],
+    fees: {
+      tuition: {
+        min: 150000,
+        max: 400000
+      },
+      hostel: {
+        min: 90000,
+        max: 150000
+      }
+    },
+    placement: {
+      percentage: 90,
+      avgSalary: 800000,
+      topRecruiters: ['Microsoft', 'Amazon', 'Deloitte', 'TCS', 'Infosys', 'Accenture']
+    },
+    admissionDetails: {
+      eligibility: 'Varies by program. Generally 60% or above in qualifying examination.',
+      process: 'Through GITAM Admission Test (GAT) or based on national entrance exams like JEE, NEET.',
+      deadlines: 'Applications typically open in January and close in April.'
+    },
+    scholarships: [
+      {
+        name: 'Merit Scholarship',
+        amount: 'Up to 100% tuition fee waiver',
+        eligibility: 'Based on performance in GAT or board examinations'
+      },
+      {
+        name: 'Sports Scholarship',
+        amount: 'Up to 50% tuition fee waiver',
+        eligibility: 'National or international level sports achievers'
+      }
+    ],
+    reviews: [
+      {
+        rating: 4.7,
+        comment: 'Excellent infrastructure and faculty. The campus is beautiful with ocean view and great facilities.',
+        author: 'Ravi Teja',
+        date: '2024-04-10'
+      },
+      {
+        rating: 4.5,
+        comment: 'Strong industry connections and good placement record. The university focuses on holistic development.',
+        author: 'Ananya Devi',
+        date: '2023-12-05'
+      }
+    ]
+  },
+  {
+    id: 'iiit-sri-city',
+    name: 'Indian Institute of Information Technology Sri City',
+    location: {
+      city: 'Sri City',
+      state: 'Andhra Pradesh',
+      address: 'Sri City, Chittoor District, Andhra Pradesh 517646'
+    },
+    type: 'Government',
+    rating: 4.5,
+    description: 'IIIT Sri City is a premier institute focusing on Information Technology education and research, operating under the PPP model with industry collaboration.',
+    imageUrl: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8',
+    courses: ['Computer Science and Engineering', 'Electronics and Communication Engineering', 'Data Science', 'Artificial Intelligence'],
+    entranceExams: ['JEE Main', 'DASA', 'GATE'],
+    fees: {
+      tuition: {
+        min: 175000,
+        max: 225000
+      },
+      hostel: {
+        min: 70000,
+        max: 90000
+      }
+    },
+    placement: {
+      percentage: 95,
+      avgSalary: 1200000,
+      topRecruiters: ['Amazon', 'Microsoft', 'Google', 'Oracle', 'IBM', 'Samsung']
+    },
+    admissionDetails: {
+      eligibility: 'Admission to B.Tech programs through JEE Main with minimum 75% in 12th or equivalent.',
+      process: 'Centralized counseling through JoSAA/CSAB for B.Tech and CCMT for M.Tech programs.',
+      deadlines: 'As per JEE Main/JoSAA counseling schedule.'
+    },
+    scholarships: [
+      {
+        name: 'Institute Merit Scholarship',
+        amount: 'Tuition fee waiver up to 100%',
+        eligibility: 'Based on JEE Main rank and academic performance'
+      },
+      {
+        name: 'MCM Scholarship',
+        amount: 'Tuition fee waiver and stipend',
+        eligibility: 'Based on family income and academic performance'
+      }
+    ],
+    reviews: [
+      {
+        rating: 4.6,
+        comment: 'Excellent curriculum focused on practical application and industry requirements. Great placement opportunities.',
+        author: 'Sandeep Kumar',
+        date: '2024-02-25'
+      },
+      {
+        rating: 4.4,
+        comment: 'Strong faculty with industry experience. The location in Sri City provides good exposure to industrial environment.',
+        author: 'Meera Lakshmi',
+        date: '2023-09-12'
+      }
+    ]
   }
 ];
 
