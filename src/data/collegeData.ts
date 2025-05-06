@@ -1,4 +1,3 @@
-
 export interface College {
   id: string;
   name: string;
@@ -506,7 +505,7 @@ export const states: State[] = [
 ];
 
 // Filter colleges by state
-export const getCollegesByState = (stateId: string, filters: FilterOptions = {}): College[] => {
+export const getCollegesByState = (stateId: string): College[] => {
   console.log(`Getting colleges for state: ${stateId}`);
   
   // Return Andhra Pradesh colleges if state ID matches

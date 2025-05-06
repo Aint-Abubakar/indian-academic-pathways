@@ -49,10 +49,10 @@ const CollegeDetail = () => {
   return (
     <div className="py-12">
       <div className="section-container">
-        <Link to={`/colleges/${cityId}`}>
+        <Link to={`/colleges/${stateId}`}>
           <Button variant="ghost" className="mb-6">
             <ChevronLeft className="h-4 w-4 mr-2" />
-            Back to {cityId?.charAt(0).toUpperCase() + cityId?.slice(1)} Colleges
+            Back to {stateId?.charAt(0).toUpperCase() + stateId?.slice(1).replace(/-/g, " ")} Colleges
           </Button>
         </Link>
         
