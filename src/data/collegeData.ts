@@ -1,48 +1,23 @@
 export interface College {
   id: string;
   name: string;
-  location: {
-    city: string;
-    state: string;
-    address: string;
-  };
-  type: string;
-  rating: number;
   description: string;
-  imageUrl?: string;
-  courses: string[];
-  entranceExams: string[];
-  fees: {
-    tuition: {
-      min: number;
-      max: number;
-    };
-    hostel?: {
-      min: number;
-      max: number;
-    };
+  imageUrl: string;
+  rating: number;
+  type: string;
+  address: string;
+  contact: {
+    phone: string;
+    email: string;
+    website: string;
   };
+  courses: string[];
   placement: {
     percentage: number;
-    avgSalary?: number;
-    topRecruiters?: string[];
+    averagePackage: string;
+    topRecruiters: string[];
   };
-  admissionDetails: {
-    eligibility: string;
-    process: string;
-    deadlines: string;
-  };
-  scholarships: {
-    name: string;
-    amount: string;
-    eligibility: string;
-  }[];
-  reviews: {
-    rating: number;
-    comment: string;
-    author: string;
-    date: string;
-  }[];
+  facilities: string[];
 }
 
 export interface State {
@@ -51,676 +26,332 @@ export interface State {
   collegeCount: number;
 }
 
-// Helper function to generate a slug from a name
-const slugify = (text: string) => {
-  return text.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
+export const getCollegeById = (collegeId: string, stateId: string): College | undefined => {
+  const colleges = getCollegesByState(stateId);
+  return colleges.find(college => college.id === collegeId);
 };
 
-// Updated states data with all states of India where colleges exist
-export const states: State[] = [
-  { id: slugify("Andhra Pradesh"), name: "Andhra Pradesh", collegeCount: 13 },
-  { id: slugify("Arunachal Pradesh"), name: "Arunachal Pradesh", collegeCount: 5 },
-  { id: slugify("Assam"), name: "Assam", collegeCount: 6 },
-  { id: slugify("Bihar"), name: "Bihar", collegeCount: 8 },
-  { id: slugify("Chhattisgarh"), name: "Chhattisgarh", collegeCount: 5 },
-  { id: slugify("Goa"), name: "Goa", collegeCount: 5 },
-  { id: slugify("Gujarat"), name: "Gujarat", collegeCount: 10 },
-  { id: slugify("Haryana"), name: "Haryana", collegeCount: 7 },
-  { id: slugify("Himachal Pradesh"), name: "Himachal Pradesh", collegeCount: 5 },
-  { id: slugify("Jharkhand"), name: "Jharkhand", collegeCount: 5 },
-  { id: slugify("Karnataka"), name: "Karnataka", collegeCount: 15 },
-  { id: slugify("Kerala"), name: "Kerala", collegeCount: 11 },
-  { id: slugify("Madhya Pradesh"), name: "Madhya Pradesh", collegeCount: 10 },
-  { id: slugify("Maharashtra"), name: "Maharashtra", collegeCount: 28 },
-  { id: slugify("Manipur"), name: "Manipur", collegeCount: 5 },
-  { id: slugify("Meghalaya"), name: "Meghalaya", collegeCount: 5 },
-  { id: slugify("Mizoram"), name: "Mizoram", collegeCount: 5 },
-  { id: slugify("Nagaland"), name: "Nagaland", collegeCount: 5 },
-  { id: slugify("Odisha"), name: "Odisha", collegeCount: 8 },
-  { id: slugify("Punjab"), name: "Punjab", collegeCount: 8 },
-  { id: slugify("Rajasthan"), name: "Rajasthan", collegeCount: 9 },
-  { id: slugify("Sikkim"), name: "Sikkim", collegeCount: 5 },
-  { id: slugify("Tamil Nadu"), name: "Tamil Nadu", collegeCount: 18 },
-  { id: slugify("Telangana"), name: "Telangana", collegeCount: 12 },
-  { id: slugify("Tripura"), name: "Tripura", collegeCount: 5 },
-  { id: slugify("Uttar Pradesh"), name: "Uttar Pradesh", collegeCount: 14 },
-  { id: slugify("Uttarakhand"), name: "Uttarakhand", collegeCount: 7 },
-  { id: slugify("West Bengal"), name: "West Bengal", collegeCount: 12 },
-  { id: slugify("Delhi"), name: "Delhi", collegeCount: 20 },
-];
-
-// Add the FilterOptions interface
-export interface FilterOptions {
-  searchQuery: string;
-  courseType: string;
-  collegeType: string;
-  ratingMin: number;
-  feeRange: string;
-}
-
-// Function to get colleges by state
-export const getCollegesByState = (stateId: string) => {
-  return colleges.filter(college => college.location.state.toLowerCase() === stateId.charAt(0).toUpperCase() + stateId.slice(1) || 
-    college.location.state.toLowerCase() === stateId);
-};
-
-// Mock college data for Maharashtra and Delhi
-export const colleges: College[] = [
+// Add colleges for Andhra Pradesh
+const andhraPradeshColleges: College[] = [
   {
-    id: 'indian-institute-of-technology-bombay',
-    name: 'Indian Institute of Technology Bombay (IITB)',
-    location: {
-      city: 'Mumbai',
-      state: 'Maharashtra',
-      address: 'Powai, Mumbai, Maharashtra 400076'
+    id: "iit-tirupati",
+    name: "Indian Institute of Technology Tirupati",
+    description: "IIT Tirupati is one of the new IITs established by the Government of India, known for its excellent engineering and technology programs.",
+    imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f",
+    rating: 4.7,
+    type: "Government",
+    address: "Yerpedu – Venkatagiri Road, Yerpedu Post, Chittoor District, Andhra Pradesh - 517619",
+    contact: {
+      phone: "+91-877-2500337",
+      email: "info@iittp.ac.in",
+      website: "https://www.iittp.ac.in/"
     },
-    type: 'Government',
-    rating: 4.8,
-    description: 'IIT Bombay is a premier engineering and technology institute known for its rigorous academic programs and research.',
-    imageUrl: 'https://images.unsplash.com/photo-1635070474553-3c4919c98906',
-    courses: ['Computer Science', 'Mechanical Engineering', 'Electrical Engineering', 'Chemical Engineering'],
-    entranceExams: ['JEE Advanced'],
-    fees: {
-      tuition: {
-        min: 220000,
-        max: 220000
-      },
-      hostel: {
-        min: 70000,
-        max: 70000
-      }
-    },
+    courses: ["B.Tech", "M.Tech", "Ph.D"],
     placement: {
       percentage: 95,
-      avgSalary: 2200000,
-      topRecruiters: ['Google', 'Microsoft', 'Samsung', 'Goldman Sachs']
+      averagePackage: "12 LPA",
+      topRecruiters: ["Google", "Microsoft", "Amazon", "Intel"]
     },
-    admissionDetails: {
-      eligibility: 'Qualified JEE Advanced score',
-      process: 'Centralized Seat Allocation Board (CSAB) counseling',
-      deadlines: 'June-July each year'
-    },
-    scholarships: [
-      {
-        name: 'Merit-cum-Means Scholarship',
-        amount: 'Full tuition fee waiver',
-        eligibility: 'Based on JEE rank and family income'
-      },
-      {
-        name: 'Institute Free Studentship',
-        amount: 'Full tuition fee waiver',
-        eligibility: 'Based on family income'
-      }
-    ],
-    reviews: [
-      {
-        rating: 4.9,
-        comment: 'Excellent faculty and great research opportunities.',
-        author: 'Amit Patel',
-        date: '2023-01-15'
-      },
-      {
-        rating: 4.7,
-        comment: 'The campus is beautiful and the academic environment is very conducive.',
-        author: 'Priya Sharma',
-        date: '2023-02-20'
-      }
-    ]
+    facilities: ["Library", "Sports Complex", "Computer Labs", "Hostel", "Cafeteria"]
   },
   {
-    id: 'veermata-jijabai-technological-institute',
-    name: 'Veermata Jijabai Technological Institute (VJTI)',
-    location: {
-      city: 'Mumbai',
-      state: 'Maharashtra',
-      address: 'Matunga, Mumbai, Maharashtra 400019'
-    },
-    type: 'Government',
-    rating: 4.5,
-    description: 'VJTI is one of the oldest engineering colleges in Asia, offering quality education and strong industry connections.',
-    imageUrl: 'https://images.unsplash.com/photo-1627523294853-40a491150ca5',
-    courses: ['Mechanical Engineering', 'Electrical Engineering', 'Civil Engineering', 'Computer Engineering'],
-    entranceExams: ['MHT CET'],
-    fees: {
-      tuition: {
-        min: 80000,
-        max: 80000
-      },
-      hostel: {
-        min: 50000,
-        max: 50000
-      }
-    },
-    placement: {
-      percentage: 80,
-      avgSalary: 700000,
-      topRecruiters: ['L&T', 'Tata Motors', 'Reliance', 'Infosys']
-    },
-    admissionDetails: {
-      eligibility: 'MHT CET score',
-      process: 'State Common Entrance Test Cell counseling',
-      deadlines: 'June-July each year'
-    },
-    scholarships: [
-      {
-        name: 'Government of India Scholarship',
-        amount: 'Varies',
-        eligibility: 'Based on category and income'
-      },
-      {
-        name: 'VJTI Alumni Association Scholarship',
-        amount: 'Up to Rs. 25,000',
-        eligibility: 'Based on merit and need'
-      }
-    ],
-    reviews: [
-      {
-        rating: 4.6,
-        comment: 'Good infrastructure and experienced faculty.',
-        author: 'Kunal Verma',
-        date: '2023-03-01'
-      },
-      {
-        rating: 4.4,
-        comment: 'The college has a great history and a strong alumni network.',
-        author: 'Sneha Reddy',
-        date: '2023-04-05'
-      }
-    ]
-  },
-  {
-    id: 'university-mumbai',
-    name: 'University of Mumbai',
-    location: {
-      city: 'Mumbai',
-      state: 'Maharashtra',
-      address: 'M.G. Road, Fort, Mumbai, Maharashtra 400032'
-    },
-    type: 'Government',
-    rating: 4.5,
-    description: 'One of the oldest and most prestigious universities in India, offering a wide range of undergraduate and postgraduate courses.',
-    imageUrl: 'https://i.imgur.com/puLxzFZ.jpeg',
-    courses: ['Arts', 'Science', 'Commerce', 'Law', 'Management', 'Engineering'],
-    entranceExams: ['MHT-CET', 'MUCET', 'MULAW'],
-    fees: {
-      tuition: {
-        min: 10000,
-        max: 100000
-      },
-      hostel: {
-        min: 50000,
-        max: 80000
-      }
-    },
-    placement: {
-      percentage: 85,
-      avgSalary: 600000,
-      topRecruiters: ['TCS', 'Infosys', 'Wipro', 'HDFC Bank', 'L&T']
-    },
-    admissionDetails: {
-      eligibility: 'Varies by program, generally 50-60% marks in relevant subjects in 10+2.',
-      process: 'Merit-based admissions or entrance exams depending on the course.',
-      deadlines: 'Applications usually open in May-June for most courses.'
-    },
-    scholarships: [
-      {
-        name: 'University Merit Scholarship',
-        amount: 'Rs. 10,000 per year',
-        eligibility: 'Top performers in university exams'
-      },
-      {
-        name: 'Financial Aid Scholarship',
-        amount: 'Varies',
-        eligibility: 'Economically disadvantaged students'
-      }
-    ],
-    reviews: [
-      {
-        rating: 4.3,
-        comment: 'Excellent reputation and history, though some facilities need modernization.',
-        author: 'Rajesh Khandelwal',
-        date: '2023-03-10'
-      },
-      {
-        rating: 4.7,
-        comment: 'Great faculty and course structure. The university has a vast alumni network.',
-        author: 'Nisha Talwar',
-        date: '2023-01-25'
-      }
-    ]
-  },
-  {
-    id: 'iit-delhi',
-    name: 'Indian Institute of Technology Delhi',
-    location: {
-      city: 'Delhi',
-      state: 'Delhi',
-      address: 'Hauz Khas, New Delhi, Delhi 110016'
-    },
-    type: 'Government',
-    rating: 4.8,
-    description: 'IIT Delhi is one of the premier engineering and research institutions in India, known for its cutting-edge research and excellent academic programs.',
-    imageUrl: 'https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29sbGVnZXxlbnwwfHwwfHw%3D&w=1000&q=80',
-    courses: ['Computer Science', 'Mechanical Engineering', 'Electrical Engineering', 'Civil Engineering', 'Chemical Engineering'],
-    entranceExams: ['JEE Advanced', 'GATE'],
-    fees: {
-      tuition: {
-        min: 200000,
-        max: 250000
-      },
-      hostel: {
-        min: 80000,
-        max: 100000
-      }
-    },
-    placement: {
-      percentage: 98,
-      avgSalary: 1600000,
-      topRecruiters: ['Google', 'Microsoft', 'Amazon', 'Adobe', 'Goldman Sachs']
-    },
-    admissionDetails: {
-      eligibility: 'Students must qualify in JEE Advanced and be in the top 2.5% in their respective board examinations.',
-      process: 'Admission is based on JEE Advanced rank and counseling process conducted by JoSAA.',
-      deadlines: 'Applications typically open in September and close in June each year.'
-    },
-    scholarships: [
-      {
-        name: 'Merit-cum-Means Scholarship',
-        amount: '2/3rd of tuition fee waiver + Rs. 1000/month',
-        eligibility: 'Family income less than 4.5 lakhs per annum'
-      },
-      {
-        name: 'SC/ST Scholarship',
-        amount: 'Full tuition fee waiver',
-        eligibility: 'SC/ST category students'
-      }
-    ],
-    reviews: [
-      {
-        rating: 5,
-        comment: 'World-class education and research opportunities. The campus is amazing!',
-        author: 'Rahul Sharma',
-        date: '2023-02-15'
-      },
-      {
-        rating: 4.5,
-        comment: 'Great faculty and industry connections. Placement opportunities are excellent.',
-        author: 'Priya Patel',
-        date: '2023-05-22'
-      }
-    ]
-  },
-  {
-    id: 'delhi-university',
-    name: 'University of Delhi (DU)',
-    location: {
-      city: 'Delhi',
-      state: 'Delhi',
-      address: 'Benito Juarez Marg, South Campus, New Delhi, Delhi 110021'
-    },
-    type: 'Government',
-    rating: 4.7,
-    description: 'The University of Delhi is one of the most prestigious universities in India, offering a wide range of courses across various disciplines.',
-    imageUrl: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f',
-    courses: ['Arts', 'Science', 'Commerce', 'Law', 'Management', 'Languages', 'Social Sciences'],
-    entranceExams: ['DUET', 'CUET', 'DU JAT'],
-    fees: {
-      tuition: {
-        min: 10000,
-        max: 50000
-      },
-      hostel: {
-        min: 60000,
-        max: 90000
-      }
-    },
-    placement: {
-      percentage: 85,
-      avgSalary: 800000,
-      topRecruiters: ['Deloitte', 'EY', 'TCS', 'Wipro', 'Infosys']
-    },
-    admissionDetails: {
-      eligibility: 'Varies by course, generally based on 10+2 scores or entrance exam',
-      process: 'Merit-based admissions through centralized admission portal',
-      deadlines: 'Applications typically open in May-June each year'
-    },
-    scholarships: [
-      {
-        name: 'Merit Scholarship',
-        amount: 'Up to Rs. 20,000 per year',
-        eligibility: 'Top scorers in university exams'
-      },
-      {
-        name: 'Financial Aid',
-        amount: 'Tuition fee waiver',
-        eligibility: 'Economically disadvantaged students'
-      }
-    ],
-    reviews: [
-      {
-        rating: 4.8,
-        comment: 'Great educational experience with excellent faculty.',
-        author: 'Rahul Gupta',
-        date: '2023-03-12'
-      },
-      {
-        rating: 4.5,
-        comment: 'Diverse campus culture and good academic environment.',
-        author: 'Priya Sharma',
-        date: '2023-04-18'
-      }
-    ]
-  },
-  
-  // Andhra Pradesh Colleges
-  {
-    id: 'iit-tirupati',
-    name: 'Indian Institute of Technology Tirupati',
-    location: {
-      city: 'Tirupati',
-      state: 'Andhra Pradesh',
-      address: 'Yerpedu – Venkatagiri Highway, Yerpedu Post, Tirupati, Andhra Pradesh 517619'
-    },
-    type: 'Government',
-    rating: 4.7,
-    description: 'IIT Tirupati is one of the newest IITs established in 2015, known for its innovative approach to engineering education and research excellence.',
-    imageUrl: 'https://images.unsplash.com/photo-1562774053-701939374585',
-    courses: ['Computer Science and Engineering', 'Electrical Engineering', 'Mechanical Engineering', 'Civil Engineering', 'Chemical Engineering'],
-    entranceExams: ['JEE Advanced', 'GATE'],
-    fees: {
-      tuition: {
-        min: 200000,
-        max: 250000
-      },
-      hostel: {
-        min: 80000,
-        max: 100000
-      }
-    },
-    placement: {
-      percentage: 95,
-      avgSalary: 1400000,
-      topRecruiters: ['Microsoft', 'Amazon', 'Google', 'Samsung R&D', 'Adobe']
-    },
-    admissionDetails: {
-      eligibility: 'Admission to B.Tech programs is through JEE Advanced, and for M.Tech through GATE.',
-      process: 'Centralized admission through JoSAA counseling for B.Tech and COAP for M.Tech programs.',
-      deadlines: 'Applications typically follow the JEE Advanced and GATE schedules.'
-    },
-    scholarships: [
-      {
-        name: 'Merit-cum-Means Scholarship',
-        amount: 'Full tuition fee waiver + Rs. 1,000 monthly stipend',
-        eligibility: 'Based on family income and academic performance'
-      },
-      {
-        name: 'SC/ST Scholarship',
-        amount: 'Full tuition fee waiver',
-        eligibility: 'SC/ST category students'
-      }
-    ],
-    reviews: [
-      {
-        rating: 4.8,
-        comment: 'Excellent faculty and growing infrastructure. The academic rigor is top-notch.',
-        author: 'Karthik Reddy',
-        date: '2024-03-15'
-      },
-      {
-        rating: 4.6,
-        comment: 'Great research opportunities despite being a new IIT. The faculty is very supportive.',
-        author: 'Priya Sharma',
-        date: '2024-01-20'
-      }
-    ]
-  },
-  {
-    id: 'andhra-university',
-    name: 'Andhra University',
-    location: {
-      city: 'Visakhapatnam',
-      state: 'Andhra Pradesh',
-      address: 'Visakhapatnam, Andhra Pradesh 530003'
-    },
-    type: 'Government',
-    rating: 4.5,
-    description: 'Established in 1926, Andhra University is one of the oldest and most prestigious universities in India, known for its academic excellence and research contributions.',
-    imageUrl: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f',
-    courses: ['Engineering', 'Science', 'Arts', 'Commerce', 'Management', 'Pharmacy', 'Law'],
-    entranceExams: ['AUCET', 'GATE', 'PGCET'],
-    fees: {
-      tuition: {
-        min: 25000,
-        max: 120000
-      },
-      hostel: {
-        min: 40000,
-        max: 70000
-      }
-    },
-    placement: {
-      percentage: 80,
-      avgSalary: 600000,
-      topRecruiters: ['TCS', 'Infosys', 'Wipro', 'Tech Mahindra', 'Cognizant']
-    },
-    admissionDetails: {
-      eligibility: 'Varies by program. Generally 50-60% in qualifying examination.',
-      process: 'Admission through entrance examination or merit-based depending on the program.',
-      deadlines: 'Applications typically open in April-May each year.'
-    },
-    scholarships: [
-      {
-        name: 'University Merit Scholarship',
-        amount: 'Rs. 10,000 to Rs. 25,000 per year',
-        eligibility: 'Top performers in university exams'
-      },
-      {
-        name: 'National Scholarship Portal Schemes',
-        amount: 'Varies based on scheme',
-        eligibility: 'Based on caste, income, and academic performance'
-      }
-    ],
-    reviews: [
-      {
-        rating: 4.6,
-        comment: 'Rich heritage and excellent academic standards. The campus is beautiful and located near the beach.',
-        author: 'Suresh Kumar',
-        date: '2024-02-10'
-      },
-      {
-        rating: 4.3,
-        comment: 'Strong industry connections and good placement opportunities. Some facilities need modernization.',
-        author: 'Lakshmi Prasad',
-        date: '2023-11-15'
-      }
-    ]
-  },
-  {
-    id: 'sri-venkateswara-university',
-    name: 'Sri Venkateswara University',
-    location: {
-      city: 'Tirupati',
-      state: 'Andhra Pradesh',
-      address: 'Tirupati, Andhra Pradesh 517502'
-    },
-    type: 'Government',
+    id: "andhra-university",
+    name: "Andhra University",
+    description: "Andhra University is one of the oldest and most prestigious universities in India, offering a wide range of programs across disciplines.",
+    imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585",
     rating: 4.3,
-    description: 'Sri Venkateswara University, established in 1954, is a renowned institution offering diverse academic programs with a strong focus on research and cultural values.',
-    imageUrl: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085',
-    courses: ['Arts', 'Science', 'Commerce', 'Management', 'Engineering', 'Law', 'Education'],
-    entranceExams: ['SVUCET', 'APRCET'],
-    fees: {
-      tuition: {
-        min: 15000,
-        max: 80000
-      },
-      hostel: {
-        min: 30000,
-        max: 60000
-      }
+    type: "Government",
+    address: "Andhra University, Visakhapatnam, Andhra Pradesh - 530003",
+    contact: {
+      phone: "+91-891-2844000",
+      email: "registrar@andhrauniversity.edu.in",
+      website: "https://www.andhrauniversity.edu.in/"
     },
+    courses: ["Engineering", "Science", "Arts", "Commerce", "Management", "Law", "Pharmacy"],
+    placement: {
+      percentage: 80,
+      averagePackage: "6 LPA",
+      topRecruiters: ["TCS", "Infosys", "Wipro", "HCL"]
+    },
+    facilities: ["Central Library", "Sports Fields", "Laboratories", "Hostels", "Cafeterias"]
+  },
+  {
+    id: "sri-venkateswara-university",
+    name: "Sri Venkateswara University",
+    description: "Sri Venkateswara University is a public state university known for its quality education and research across various disciplines.",
+    imageUrl: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
+    rating: 4.1,
+    type: "Government",
+    address: "Sri Venkateswara University, Tirupati, Andhra Pradesh - 517502",
+    contact: {
+      phone: "+91-877-2289896",
+      email: "registrar@svuniversity.edu.in",
+      website: "https://www.svuniversity.edu.in/"
+    },
+    courses: ["Arts", "Science", "Commerce", "Engineering", "Management", "Law"],
     placement: {
       percentage: 75,
-      avgSalary: 500000,
-      topRecruiters: ['TCS', 'Infosys', 'Wipro', 'Cognizant', 'HCL']
+      averagePackage: "5.5 LPA",
+      topRecruiters: ["Infosys", "Wipro", "TCS", "Cognizant"]
     },
-    admissionDetails: {
-      eligibility: 'Minimum 50% in qualifying examination for most courses.',
-      process: 'Through entrance examination or merit-based selection depending on the program.',
-      deadlines: 'Applications typically open in May-June each year.'
-    },
-    scholarships: [
-      {
-        name: 'University Merit Scholarship',
-        amount: 'Rs. 8,000 to Rs. 15,000 per year',
-        eligibility: 'Based on academic performance'
-      },
-      {
-        name: 'SC/ST/BC Scholarship',
-        amount: 'Tuition fee waiver and maintenance allowance',
-        eligibility: 'SC/ST/BC category students with family income below specified limits'
-      }
-    ],
-    reviews: [
-      {
-        rating: 4.4,
-        comment: 'Strong academic curriculum with good faculty. The campus has a spiritual ambiance being in Tirupati.',
-        author: 'Venkat Rao',
-        date: '2024-01-05'
-      },
-      {
-        rating: 4.2,
-        comment: 'Affordable education with decent placement opportunities. Infrastructure needs improvement in some departments.',
-        author: 'Sujatha Reddy',
-        date: '2023-10-18'
-      }
-    ]
+    facilities: ["Library", "Labs", "Hostels", "Auditorium", "Sports Complex"]
   },
   {
-    id: 'gitam-university',
-    name: 'GITAM University',
-    location: {
-      city: 'Visakhapatnam',
-      state: 'Andhra Pradesh',
-      address: 'Gandhi Nagar, Rushikonda, Visakhapatnam, Andhra Pradesh 530045'
+    id: "gitam-university",
+    name: "GITAM University",
+    description: "GITAM (Gandhi Institute of Technology and Management) is a private university known for its engineering and management programs.",
+    imageUrl: "https://images.unsplash.com/photo-1494949649109-ecfc3b8c35df",
+    rating: 4.4,
+    type: "Private",
+    address: "GITAM University, Visakhapatnam, Andhra Pradesh - 530045",
+    contact: {
+      phone: "+91-891-2840501",
+      email: "info@gitam.edu",
+      website: "https://www.gitam.edu/"
     },
-    type: 'Private',
-    rating: 4.6,
-    description: 'GITAM (Gandhi Institute of Technology and Management) is a prestigious private university known for its quality education, infrastructure, and industry connections.',
-    imageUrl: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d',
-    courses: ['Engineering', 'Management', 'Pharmacy', 'Science', 'Architecture', 'Law', 'Medicine'],
-    entranceExams: ['GAT (GITAM Admission Test)', 'NEET', 'JEE Main'],
-    fees: {
-      tuition: {
-        min: 150000,
-        max: 400000
-      },
-      hostel: {
-        min: 90000,
-        max: 150000
-      }
+    courses: ["Engineering", "Management", "Pharmacy", "Science", "Architecture", "Law"],
+    placement: {
+      percentage: 85,
+      averagePackage: "7 LPA",
+      topRecruiters: ["Microsoft", "Amazon", "IBM", "Oracle"]
     },
+    facilities: ["Central Library", "Sports Complex", "Hostels", "Cafeterias", "Wi-Fi Campus"]
+  },
+  {
+    id: "iiit-sri-city",
+    name: "IIIT Sri City",
+    description: "Indian Institute of Information Technology, Sri City focuses on information technology education and research.",
+    imageUrl: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a",
+    rating: 4.2,
+    type: "Government",
+    address: "IIIT Sri City, Chittoor District, Andhra Pradesh - 517646",
+    contact: {
+      phone: "+91-7670908899",
+      email: "info@iiits.ac.in",
+      website: "https://www.iiits.ac.in/"
+    },
+    courses: ["B.Tech", "M.Tech", "Ph.D"],
     placement: {
       percentage: 90,
-      avgSalary: 800000,
-      topRecruiters: ['Microsoft', 'Amazon', 'Deloitte', 'TCS', 'Infosys', 'Accenture']
+      averagePackage: "10 LPA",
+      topRecruiters: ["Google", "Amazon", "Oracle", "SAP"]
     },
-    admissionDetails: {
-      eligibility: 'Varies by program. Generally 60% or above in qualifying examination.',
-      process: 'Through GITAM Admission Test (GAT) or based on national entrance exams like JEE, NEET.',
-      deadlines: 'Applications typically open in January and close in April.'
-    },
-    scholarships: [
-      {
-        name: 'Merit Scholarship',
-        amount: 'Up to 100% tuition fee waiver',
-        eligibility: 'Based on performance in GAT or board examinations'
-      },
-      {
-        name: 'Sports Scholarship',
-        amount: 'Up to 50% tuition fee waiver',
-        eligibility: 'National or international level sports achievers'
-      }
-    ],
-    reviews: [
-      {
-        rating: 4.7,
-        comment: 'Excellent infrastructure and faculty. The campus is beautiful with ocean view and great facilities.',
-        author: 'Ravi Teja',
-        date: '2024-04-10'
-      },
-      {
-        rating: 4.5,
-        comment: 'Strong industry connections and good placement record. The university focuses on holistic development.',
-        author: 'Ananya Devi',
-        date: '2023-12-05'
-      }
-    ]
-  },
-  {
-    id: 'iiit-sri-city',
-    name: 'Indian Institute of Information Technology Sri City',
-    location: {
-      city: 'Sri City',
-      state: 'Andhra Pradesh',
-      address: 'Sri City, Chittoor District, Andhra Pradesh 517646'
-    },
-    type: 'Government',
-    rating: 4.5,
-    description: 'IIIT Sri City is a premier institute focusing on Information Technology education and research, operating under the PPP model with industry collaboration.',
-    imageUrl: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8',
-    courses: ['Computer Science and Engineering', 'Electronics and Communication Engineering', 'Data Science', 'Artificial Intelligence'],
-    entranceExams: ['JEE Main', 'DASA', 'GATE'],
-    fees: {
-      tuition: {
-        min: 175000,
-        max: 225000
-      },
-      hostel: {
-        min: 70000,
-        max: 90000
-      }
-    },
-    placement: {
-      percentage: 95,
-      avgSalary: 1200000,
-      topRecruiters: ['Amazon', 'Microsoft', 'Google', 'Oracle', 'IBM', 'Samsung']
-    },
-    admissionDetails: {
-      eligibility: 'Admission to B.Tech programs through JEE Main with minimum 75% in 12th or equivalent.',
-      process: 'Centralized counseling through JoSAA/CSAB for B.Tech and CCMT for M.Tech programs.',
-      deadlines: 'As per JEE Main/JoSAA counseling schedule.'
-    },
-    scholarships: [
-      {
-        name: 'Institute Merit Scholarship',
-        amount: 'Tuition fee waiver up to 100%',
-        eligibility: 'Based on JEE Main rank and academic performance'
-      },
-      {
-        name: 'MCM Scholarship',
-        amount: 'Tuition fee waiver and stipend',
-        eligibility: 'Based on family income and academic performance'
-      }
-    ],
-    reviews: [
-      {
-        rating: 4.6,
-        comment: 'Excellent curriculum focused on practical application and industry requirements. Great placement opportunities.',
-        author: 'Sandeep Kumar',
-        date: '2024-02-25'
-      },
-      {
-        rating: 4.4,
-        comment: 'Strong faculty with industry experience. The location in Sri City provides good exposure to industrial environment.',
-        author: 'Meera Lakshmi',
-        date: '2023-09-12'
-      }
-    ]
+    facilities: ["Library", "Computer Labs", "Sports Facilities", "Hostels", "Cafeteria"]
   }
 ];
 
-// Helper function to get a college by ID
-export const getCollegeById = (collegeId: string) => {
-  return colleges.find(college => college.id === collegeId);
+// Array of states with colleges
+export const states: State[] = [
+  {
+    id: "andhra-pradesh",
+    name: "Andhra Pradesh",
+    collegeCount: andhraPradeshColleges.length
+  },
+  {
+    id: "arunachal-pradesh",
+    name: "Arunachal Pradesh",
+    collegeCount: 0
+  },
+  {
+    id: "assam",
+    name: "Assam",
+    collegeCount: 0
+  },
+  {
+    id: "bihar",
+    name: "Bihar",
+    collegeCount: 0
+  },
+  {
+    id: "chhattisgarh",
+    name: "Chhattisgarh",
+    collegeCount: 0
+  },
+  {
+    id: "goa",
+    name: "Goa",
+    collegeCount: 0
+  },
+  {
+    id: "gujarat",
+    name: "Gujarat",
+    collegeCount: 0
+  },
+  {
+    id: "haryana",
+    name: "Haryana", 
+    collegeCount: 0
+  },
+  {
+    id: "himachal-pradesh",
+    name: "Himachal Pradesh",
+    collegeCount: 0
+  },
+  {
+    id: "jharkhand",
+    name: "Jharkhand",
+    collegeCount: 0
+  },
+  {
+    id: "karnataka",
+    name: "Karnataka",
+    collegeCount: 0
+  },
+  {
+    id: "kerala",
+    name: "Kerala",
+    collegeCount: 0
+  },
+  {
+    id: "madhya-pradesh",
+    name: "Madhya Pradesh",
+    collegeCount: 0
+  },
+  {
+    id: "maharashtra",
+    name: "Maharashtra",
+    collegeCount: 0
+  },
+  {
+    id: "manipur",
+    name: "Manipur",
+    collegeCount: 0
+  },
+  {
+    id: "meghalaya",
+    name: "Meghalaya",
+    collegeCount: 0
+  },
+  {
+    id: "mizoram",
+    name: "Mizoram",
+    collegeCount: 0
+  },
+  {
+    id: "nagaland",
+    name: "Nagaland",
+    collegeCount: 0
+  },
+  {
+    id: "odisha",
+    name: "Odisha",
+    collegeCount: 0
+  },
+  {
+    id: "punjab",
+    name: "Punjab",
+    collegeCount: 0
+  },
+  {
+    id: "rajasthan",
+    name: "Rajasthan",
+    collegeCount: 0
+  },
+  {
+    id: "sikkim",
+    name: "Sikkim",
+    collegeCount: 0
+  },
+  {
+    id: "tamil-nadu",
+    name: "Tamil Nadu",
+    collegeCount: 0
+  },
+  {
+    id: "telangana",
+    name: "Telangana",
+    collegeCount: 0
+  },
+  {
+    id: "tripura",
+    name: "Tripura",
+    collegeCount: 0
+  },
+  {
+    id: "uttar-pradesh",
+    name: "Uttar Pradesh",
+    collegeCount: 0
+  },
+  {
+    id: "uttarakhand",
+    name: "Uttarakhand",
+    collegeCount: 0
+  },
+  {
+    id: "west-bengal",
+    name: "West Bengal",
+    collegeCount: 0
+  },
+  {
+    id: "delhi",
+    name: "Delhi",
+    collegeCount: 2
+  }
+];
+
+// Filter colleges by state
+export const getCollegesByState = (stateId: string, filters: FilterOptions = {}): College[] => {
+  console.log(`State: ${stateId}, Colleges: ${stateId === 'andhra-pradesh' ? andhraPradeshColleges.length : 0}`);
+  
+  // Return Andhra Pradesh colleges if state ID matches
+  if (stateId === 'andhra-pradesh') {
+    return andhraPradeshColleges;
+  }
+  
+  // Return Delhi colleges if state ID matches
+  if (stateId === 'delhi') {
+    const delhiColleges: College[] = [
+      {
+        id: "iit-delhi",
+        name: "Indian Institute of Technology Delhi",
+        description: "IIT Delhi is a world-renowned technical institute established in 1961 as a College of Engineering. It was later declared an Institution of National Importance and has been instrumental in providing technical manpower and know-how to the country.",
+        imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29sbGVnZXxlbnwwfHwwfHw%3D&w=1000&q=80",
+        rating: 4.9,
+        type: "Government",
+        address: "IIT Campus, Hauz Khas, New Delhi, Delhi 110016",
+        contact: {
+          phone: "+91-11-2659-1999",
+          email: "info@iitd.ac.in",
+          website: "https://www.iitd.ac.in/"
+        },
+        courses: ["B.Tech", "M.Tech", "Ph.D", "MBA"],
+        placement: {
+          percentage: 98,
+          averagePackage: "16 LPA",
+          topRecruiters: ["Google", "Microsoft", "Amazon", "Intel"]
+        },
+        facilities: ["Library", "Sports Complex", "Computer Labs", "Hostel", "Cafeteria"]
+      },
+      {
+        id: "du",
+        name: "University of Delhi (DU)",
+        description: "University of Delhi is a premier university of the country with a venerable legacy and international acclaim for highest academic standards, diverse educational programs, and distinguished faculty.",
+        imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f",
+        rating: 4.7,
+        type: "Government",
+        address: "University of Delhi, North Campus, Delhi 110007",
+        contact: {
+          phone: "+91-11-2766-7853",
+          email: "registrar@du.ac.in",
+          website: "http://www.du.ac.in/"
+        },
+        courses: ["BA", "BSc", "BCom", "MA", "MSc", "MCom", "Ph.D"],
+        placement: {
+          percentage: 85,
+          averagePackage: "8 LPA",
+          topRecruiters: ["Deloitte", "EY", "TCS", "Wipro"]
+        },
+        facilities: ["Library", "Sports Complex", "Labs", "Hostels", "Canteens"]
+      }
+    ];
+    return delhiColleges;
+  }
+  
+  // Return empty array for all other states for now
+  return [];
+};
+
+export type FilterOptions = {
+  type?: string;
+  rating?: number;
 };
