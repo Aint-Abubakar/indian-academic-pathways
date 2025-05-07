@@ -1,4 +1,3 @@
-
 export interface StudyAbroadCollege {
   id: string;
   name: string;
@@ -57,6 +56,37 @@ export const countries: Country[] = [
     name: "Germany",
     flagUrl: "https://images.unsplash.com/photo-1527866512907-a35e06e7e533",
     description: "Known for tuition-free public universities and various scholarship programs for foreign students."
+  },
+  // New countries
+  {
+    id: "france",
+    name: "France",
+    flagUrl: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34",
+    description: "Offers high-quality education with relatively low tuition fees and various scholarship opportunities for international students."
+  },
+  {
+    id: "japan",
+    name: "Japan",
+    flagUrl: "https://images.unsplash.com/photo-1542051841857-5f90071e7989",
+    description: "Provides excellent academic programs with numerous scholarships for international students, especially in STEM fields."
+  },
+  {
+    id: "singapore",
+    name: "Singapore",
+    flagUrl: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd",
+    description: "A hub for educational excellence in Asia with world-class universities offering generous scholarships."
+  },
+  {
+    id: "netherlands",
+    name: "Netherlands",
+    flagUrl: "https://images.unsplash.com/photo-1534351590666-13e3e96b5017",
+    description: "Known for innovative education approaches with many English-taught programs and scholarship options."
+  },
+  {
+    id: "sweden",
+    name: "Sweden",
+    flagUrl: "https://images.unsplash.com/photo-1610555356840-9c0aba1a46bc",
+    description: "Offers free education for EU students and numerous scholarship opportunities for international students."
   }
 ];
 
@@ -339,11 +369,345 @@ export const studyAbroadColleges: StudyAbroadCollege[] = [
     ranking: 64,
     tuitionFee: "No tuition fees (semester fee of €171.80)",
     acceptanceRate: "13%"
-  }
-];
-
-export function getCollegesByCountry(countryId: string): StudyAbroadCollege[] {
-  return studyAbroadColleges.filter(
-    college => college.country.toLowerCase() === countryId.toLowerCase()
-  );
-}
+  },
+  
+  // France Universities
+  {
+    id: "sorbonne",
+    name: "Sorbonne University",
+    country: "France",
+    description: "One of France's most prestigious universities with a rich history and excellent research facilities.",
+    imageUrl: "https://images.unsplash.com/photo-1541089404510-5c9a779570e2",
+    scholarships: [
+      {
+        name: "Eiffel Excellence Scholarship",
+        amount: "€1,200 monthly + benefits",
+        eligibility: "Outstanding international students pursuing Master's or PhD",
+        deadline: "January 10",
+        link: "https://www.campusfrance.org/en/eiffel-scholarship-program-of-excellence"
+      },
+      {
+        name: "Sorbonne University Foundation Scholarship",
+        amount: "€10,000 per year",
+        eligibility: "International students with exceptional academic records",
+        deadline: "March 15",
+        link: "https://www.sorbonne-universite.fr/en"
+      }
+    ],
+    website: "https://www.sorbonne-universite.fr/en",
+    ranking: 83,
+    tuitionFee: "€170 - €380 per year",
+    acceptanceRate: "25%"
+  },
+  {
+    id: "ecole-polytechnique",
+    name: "École Polytechnique",
+    country: "France",
+    description: "A leading French institution specialized in science and technology education.",
+    imageUrl: "https://images.unsplash.com/photo-1560969184-10fe8719e047",
+    scholarships: [
+      {
+        name: "Excellence Scholarship Program",
+        amount: "Full tuition + €12,000 annually",
+        eligibility: "Outstanding international students in Engineering and Sciences",
+        deadline: "December 15",
+        link: "https://www.polytechnique.edu/en/financial-aid-scholarships"
+      },
+      {
+        name: "l'X International Scholarship",
+        amount: "€12,000 per year",
+        eligibility: "Top-tier international students with strong academic background",
+        deadline: "February 28",
+        link: "https://www.polytechnique.edu/en"
+      }
+    ],
+    website: "https://www.polytechnique.edu/en",
+    ranking: 68,
+    tuitionFee: "€12,000 - €15,000 per year",
+    acceptanceRate: "10%"
+  },
+  {
+    id: "sciencespo",
+    name: "Sciences Po",
+    country: "France",
+    description: "Renowned for political science, international relations, and social sciences education.",
+    imageUrl: "https://images.unsplash.com/photo-1569683795645-b62e50fbf103",
+    scholarships: [
+      {
+        name: "Émile Boutmy Scholarship",
+        amount: "€7,300 - €19,000 per year",
+        eligibility: "International students from non-EU countries",
+        deadline: "December 8",
+        link: "https://www.sciencespo.fr/students/en/fees-funding/financial-aid/emile-boutmy-scholarship.html"
+      },
+      {
+        name: "Sciences Po Europe Scholarship",
+        amount: "Up to €10,000 per year",
+        eligibility: "EU students with excellent academic records",
+        deadline: "January 15",
+        link: "https://www.sciencespo.fr/en"
+      }
+    ],
+    website: "https://www.sciencespo.fr/en",
+    ranking: 242,
+    tuitionFee: "€10,540 - €18,700 per year",
+    acceptanceRate: "15%"
+  },
+  {
+    id: "paris-saclay",
+    name: "University of Paris-Saclay",
+    country: "France",
+    description: "A world-class university focused on science and engineering disciplines.",
+    imageUrl: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04",
+    scholarships: [
+      {
+        name: "Paris-Saclay International Master's Scholarship",
+        amount: "€10,000 per year",
+        eligibility: "High-achieving international students entering Master's programs",
+        deadline: "May 16",
+        link: "https://www.universite-paris-saclay.fr/en/admission/scholarships-grants"
+      },
+      {
+        name: "French Embassy Excellence Scholarship",
+        amount: "€5,000 - €8,000 per year",
+        eligibility: "Outstanding students from partner countries",
+        deadline: "March 30",
+        link: "https://www.universite-paris-saclay.fr/en"
+      }
+    ],
+    website: "https://www.universite-paris-saclay.fr/en",
+    ranking: 16,
+    tuitionFee: "€243 - €3,770 per year",
+    acceptanceRate: "35%"
+  },
+  {
+    id: "grenoble",
+    name: "Grenoble Alpes University",
+    country: "France",
+    description: "A multidisciplinary university known for research and innovation in the Alps region.",
+    imageUrl: "https://images.unsplash.com/photo-1565803974275-dccd2f933cbb",
+    scholarships: [
+      {
+        name: "IDEX Scholarship",
+        amount: "€8,000 - €11,000 per year",
+        eligibility: "Talented international students at Master's or PhD level",
+        deadline: "April 30",
+        link: "https://www.univ-grenoble-alpes.fr/en/large/menu/international/come-to-uga/"
+      },
+      {
+        name: "Grenoble Excellence Scholarship",
+        amount: "€5,000 per year",
+        eligibility: "International students with outstanding academic achievements",
+        deadline: "January 31",
+        link: "https://www.univ-grenoble-alpes.fr/en/"
+      }
+    ],
+    website: "https://www.univ-grenoble-alpes.fr/en/",
+    ranking: 351,
+    tuitionFee: "€243 - €3,770 per year",
+    acceptanceRate: "60%"
+  },
+  
+  // Japan Universities
+  {
+    id: "tokyo",
+    name: "University of Tokyo",
+    country: "Japan",
+    description: "Japan's top university known for cutting-edge research and academic excellence.",
+    imageUrl: "https://images.unsplash.com/photo-1542310503-ff8da9c02372",
+    scholarships: [
+      {
+        name: "University of Tokyo Scholarship",
+        amount: "¥150,000 monthly",
+        eligibility: "Outstanding international students in all fields",
+        deadline: "December 15",
+        link: "https://www.u-tokyo.ac.jp/en/prospective-students/scholarships.html"
+      },
+      {
+        name: "MEXT Japanese Government Scholarship",
+        amount: "Full tuition + ¥144,000 - ¥148,000 monthly",
+        eligibility: "International students with excellent academic records",
+        deadline: "Varies by country",
+        link: "https://www.mext.go.jp/en/policy/education/highered/title02/detail02/sdetail02/1373897.htm"
+      }
+    ],
+    website: "https://www.u-tokyo.ac.jp/en/",
+    ranking: 24,
+    tuitionFee: "¥535,800 per year",
+    acceptanceRate: "33%"
+  },
+  {
+    id: "kyoto",
+    name: "Kyoto University",
+    country: "Japan",
+    description: "A leading research university known for producing numerous Nobel laureates.",
+    imageUrl: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e",
+    scholarships: [
+      {
+        name: "Kyoto University International Scholarship",
+        amount: "¥100,000 monthly",
+        eligibility: "Self-financed international students with top academic records",
+        deadline: "February 28",
+        link: "https://www.kyoto-u.ac.jp/en/education-campus/procedures/scholarships"
+      },
+      {
+        name: "JASSO Scholarship",
+        amount: "¥48,000 monthly",
+        eligibility: "Outstanding international exchange students",
+        deadline: "Varies by program",
+        link: "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html"
+      }
+    ],
+    website: "https://www.kyoto-u.ac.jp/en",
+    ranking: 33,
+    tuitionFee: "¥535,800 per year",
+    acceptanceRate: "38%"
+  },
+  {
+    id: "waseda",
+    name: "Waseda University",
+    country: "Japan",
+    description: "A prestigious private university with strong programs in business and international relations.",
+    imageUrl: "https://images.unsplash.com/photo-1495562569060-2eec283d3391",
+    scholarships: [
+      {
+        name: "Waseda Global Scholarship",
+        amount: "Full tuition + ¥100,000 monthly",
+        eligibility: "Exceptional international students in undergraduate programs",
+        deadline: "October 31",
+        link: "https://www.waseda.jp/inst/cie/en/life/aid"
+      },
+      {
+        name: "Monbukagakusho Honors Scholarship",
+        amount: "¥48,000 monthly",
+        eligibility: "International students with outstanding academic performance",
+        deadline: "April application",
+        link: "https://www.waseda.jp/inst/scholarship/en/"
+      }
+    ],
+    website: "https://www.waseda.jp/top/en",
+    ranking: 189,
+    tuitionFee: "¥1,350,000 - ¥1,950,000 per year",
+    acceptanceRate: "20%"
+  },
+  {
+    id: "tohoku",
+    name: "Tohoku University",
+    country: "Japan",
+    description: "Known for its research excellence, especially in materials science and engineering.",
+    imageUrl: "https://images.unsplash.com/photo-1565362796128-2b10cc1fad44",
+    scholarships: [
+      {
+        name: "Tohoku University President Fellowship",
+        amount: "¥150,000 monthly + research grant",
+        eligibility: "Outstanding international PhD students",
+        deadline: "January 31",
+        link: "https://www.tohoku.ac.jp/en/admissions/financial_aid.html"
+      },
+      {
+        name: "Tohoku University Global Hagi Scholarship",
+        amount: "Full tuition waiver",
+        eligibility: "International students with excellent academic records",
+        deadline: "December 1",
+        link: "https://www.tohoku.ac.jp/en/"
+      }
+    ],
+    website: "https://www.tohoku.ac.jp/en/",
+    ranking: 82,
+    tuitionFee: "¥535,800 per year",
+    acceptanceRate: "45%"
+  },
+  {
+    id: "osaka",
+    name: "Osaka University",
+    country: "Japan",
+    description: "A comprehensive research university with strengths in medicine and technology.",
+    imageUrl: "https://images.unsplash.com/photo-1553152531-b98a2fc8d3bf",
+    scholarships: [
+      {
+        name: "Osaka University International Student Scholarship",
+        amount: "¥100,000 monthly",
+        eligibility: "High-achieving international students in graduate programs",
+        deadline: "March 31",
+        link: "https://www.osaka-u.ac.jp/en/international/inbound/support/scholarship"
+      },
+      {
+        name: "Osaka University Graduate School Scholarship",
+        amount: "Full tuition waiver",
+        eligibility: "Graduate students with excellent academic background",
+        deadline: "November 30",
+        link: "https://www.osaka-u.ac.jp/en"
+      }
+    ],
+    website: "https://www.osaka-u.ac.jp/en",
+    ranking: 75,
+    tuitionFee: "¥535,800 per year",
+    acceptanceRate: "49%"
+  },
+  
+  // Singapore Universities
+  {
+    id: "nus",
+    name: "National University of Singapore",
+    country: "Singapore",
+    description: "Singapore's flagship university with comprehensive programs across disciplines.",
+    imageUrl: "https://images.unsplash.com/photo-1565538810643-b5bdb714032a",
+    scholarships: [
+      {
+        name: "NUS Merit Scholarship",
+        amount: "Full tuition + SGD$6,000 annual stipend",
+        eligibility: "Outstanding international undergraduate students",
+        deadline: "March 31",
+        link: "https://www.nus.edu.sg/oam/scholarships"
+      },
+      {
+        name: "Science & Technology Scholarship",
+        amount: "Full tuition + SGD$12,000 annual stipend",
+        eligibility: "Exceptional students in STEM fields",
+        deadline: "January 31",
+        link: "https://www.nus.edu.sg/admissions/scholarships"
+      }
+    ],
+    website: "https://www.nus.edu.sg/",
+    ranking: 11,
+    tuitionFee: "SGD$29,350 - SGD$38,200 per year",
+    acceptanceRate: "5%"
+  },
+  {
+    id: "nanyang",
+    name: "Nanyang Technological University",
+    country: "Singapore",
+    description: "A research-intensive university known for engineering and business programs.",
+    imageUrl: "https://images.unsplash.com/photo-1599687266725-0d14ee542335",
+    scholarships: [
+      {
+        name: "ASEAN Undergraduate Scholarship",
+        amount: "Full tuition + living allowance",
+        eligibility: "Outstanding students from ASEAN countries",
+        deadline: "December 15",
+        link: "https://www.ntu.edu.sg/admissions/undergraduate/scholarships/asean-undergraduate-scholarship"
+      },
+      {
+        name: "Nanyang Scholarship",
+        amount: "Full tuition + SGD$6,500 annual stipend + laptop",
+        eligibility: "Exceptional students with strong leadership potential",
+        deadline: "January 31",
+        link: "https://www.ntu.edu.sg/admissions/undergraduate/scholarships/nanyang-scholarship"
+      }
+    ],
+    website: "https://www.ntu.edu.sg/",
+    ranking: 19,
+    tuitionFee: "SGD$29,600 - SGD$36,830 per year",
+    acceptanceRate: "36%"
+  },
+  {
+    id: "smu",
+    name: "Singapore Management University",
+    country: "Singapore",
+    description: "A specialized university focused on business, management, and social sciences.",
+    imageUrl: "https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3",
+    scholarships: [
+      {
+        name: "SMU Global Impact Scholarship",
+        amount: "Full tuition + SGD$5,000 annual stipend",
+        eligibility: "Outstanding international
