@@ -11,7 +11,7 @@ const StudyAbroadPage = () => {
   }, []);
 
   return (
-    <PageLayout>
+    <PageLayout title="Study Abroad Opportunities">
       <div className="container max-w-7xl mx-auto py-8 px-4 md:px-6">
         <div className="space-y-6">
           <div className="text-center space-y-4 mb-8">

@@ -10,6 +10,9 @@ import TopCollegesPage from "./pages/colleges/CollegesPage";
 import CollegesByState from "./pages/colleges/CollegesByState";
 import CollegeDetail from "./pages/colleges/CollegeDetail";
 import CareersPage from "./pages/careers/CareersPage";
+import StudyAbroadPage from "./pages/studyabroad/StudyAbroadPage";
+import CountryCollegesPage from "./pages/studyabroad/CountryCollegesPage";
+import CollegeDetailPage from "./pages/studyabroad/CollegeDetailPage";
 
 const queryClient = new QueryClient();
 
@@ -31,12 +34,15 @@ const App = () => (
           <Route path="/top-colleges/:stateId/:collegeId" element={<CollegeDetail />} />
           {/* Careers page */}
           <Route path="/careers" element={<CareersPage />} />
+          {/* Study Abroad routes */}
+          <Route path="/study-abroad" element={<StudyAbroadPage />} />
+          <Route path="/study-abroad/:countryId" element={<CountryCollegesPage />} />
+          <Route path="/study-abroad/:countryId/:collegeId" element={<CollegeDetailPage />} />
           {/* These routes will be implemented in future iterations */}
           <Route path="/scholarships" element={<NotFound />} />
           <Route path="/courses" element={<NotFound />} />
           <Route path="/trending-courses" element={<NotFound />} />
           <Route path="/exams" element={<NotFound />} />
-          <Route path="/study-abroad" element={<NotFound />} />
           <Route path="/skill-development" element={<NotFound />} />
           <Route path="/news" element={<NotFound />} />
           <Route path="/success-stories" element={<NotFound />} />

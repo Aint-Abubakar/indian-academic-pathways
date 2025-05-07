@@ -17,7 +17,7 @@ const CountryCollegesPage = () => {
 
   if (!country) {
     return (
-      <PageLayout>
+      <PageLayout title="Country Not Found">
         <div className="container max-w-7xl mx-auto py-8 px-4">
           <div className="text-center py-12">
             <h1 className="text-3xl font-bold">Country not found</h1>
@@ -31,7 +31,7 @@ const CountryCollegesPage = () => {
   }
 
   return (
-    <PageLayout>
+    <PageLayout title={`Study in ${country.name}`}>
       <div className="container max-w-7xl mx-auto py-8 px-4 md:px-6">
         <div className="mb-6">
           <Link to="/study-abroad" className="flex items-center text-nextstep-blue hover:underline">
