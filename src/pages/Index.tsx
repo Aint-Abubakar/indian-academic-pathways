@@ -98,6 +98,23 @@ const Index = () => {
       <Header />
       <main className="flex-grow">
         <Hero />
+        
+        <section className="py-12 md:py-16 bg-gradient-to-b from-white to-secondary/20">
+          <div className="section-container">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-6">
+              {categories.map((category, i) => (
+                <CategoryCard
+                  key={i}
+                  title={category.title}
+                  description={category.description}
+                  icon={category.icon}
+                  link={category.link}
+                  color={category.color}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>
