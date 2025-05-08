@@ -28,10 +28,10 @@ const categories = [
   },
   // Colleges option removed, only keeping Top Colleges
   {
-    title: "Courses",
-    description: "Complete list of academic and vocational courses in various fields",
+    title: "Free Courses",
+    description: "Complete list of free academic and vocational courses in various fields",
     icon: BookOpen,
-    link: "/courses",
+    link: "/free-courses",
     color: "nextstep-indigo"
   },
   {
@@ -61,13 +61,6 @@ const categories = [
     icon: GraduationCap,
     link: "/top-colleges",
     color: "nextstep-teal"
-  },
-  {
-    title: "Skill Development",
-    description: "Short-term certifications in trending technical and soft skills",
-    icon: BookUser,
-    link: "/skill-development",
-    color: "nextstep-blue"
   },
   {
     title: "Study Abroad",

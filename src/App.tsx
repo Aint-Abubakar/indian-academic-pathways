@@ -14,6 +14,7 @@ import StudyAbroadPage from "./pages/studyabroad/StudyAbroadPage";
 import CountryCollegesPage from "./pages/studyabroad/CountryCollegesPage";
 import CollegeDetailPage from "./pages/studyabroad/CollegeDetailPage";
 import ExamsPage from "./pages/exams/ExamsPage";
+import FreeCoursesPage from "./pages/freecourses/FreeCoursesPage";
 
 const queryClient = new QueryClient();
 
@@ -25,27 +26,35 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          
           {/* Redirect /colleges to /top-colleges */}
           <Route path="/colleges" element={<Navigate to="/top-colleges" replace />} />
           <Route path="/top-colleges" element={<TopCollegesPage />} />
+          
           {/* Redirect college state routes */}
           <Route path="/colleges/:stateId" element={<Navigate to="/top-colleges/:stateId" replace />} />
           <Route path="/top-colleges/:stateId" element={<CollegesByState />} />
           <Route path="/colleges/:stateId/:collegeId" element={<Navigate to="/top-colleges/:stateId/:collegeId" replace />} />
           <Route path="/top-colleges/:stateId/:collegeId" element={<CollegeDetail />} />
+          
           {/* Careers page */}
           <Route path="/careers" element={<CareersPage />} />
+          
           {/* Study Abroad routes */}
           <Route path="/study-abroad" element={<StudyAbroadPage />} />
           <Route path="/study-abroad/:countryId" element={<CountryCollegesPage />} />
           <Route path="/study-abroad/:countryId/:collegeId" element={<CollegeDetailPage />} />
+          
           {/* Exams page */}
           <Route path="/exams" element={<ExamsPage />} />
+
+          {/* Free Courses page */}
+          <Route path="/free-courses" element={<FreeCoursesPage />} />
+          <Route path="/courses" element={<Navigate to="/free-courses" replace />} />
+          
           {/* These routes will be implemented in future iterations */}
           <Route path="/scholarships" element={<NotFound />} />
-          <Route path="/courses" element={<NotFound />} />
           <Route path="/trending-courses" element={<NotFound />} />
-          <Route path="/skill-development" element={<NotFound />} />
           <Route path="/news" element={<NotFound />} />
           <Route path="/success-stories" element={<NotFound />} />
           <Route path="/resources" element={<NotFound />} />
@@ -54,6 +63,7 @@ const App = () => (
           <Route path="/privacy" element={<NotFound />} />
           <Route path="/terms" element={<NotFound />} />
           <Route path="/explore" element={<NotFound />} />
+          
           {/* Catch-all route */}
           <Route path="*" element={<NotFound />} />
         </Routes>
