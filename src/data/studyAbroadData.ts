@@ -1,4 +1,3 @@
-
 export interface StudyAbroadCollege {
   id: string;
   name: string;
@@ -92,7 +91,7 @@ export const countries: Country[] = [
 ];
 
 export const studyAbroadColleges: StudyAbroadCollege[] = [
-  // USA Universities
+  // USA Universities - Original entries
   {
     id: "harvard",
     name: "Harvard University",
@@ -148,7 +147,252 @@ export const studyAbroadColleges: StudyAbroadCollege[] = [
     acceptanceRate: "6.7%"
   },
   
-  // UK Universities
+  // Additional USA universities
+  {
+    id: "stanford",
+    name: "Stanford University",
+    country: "USA",
+    description: "A world-renowned research university known for entrepreneurship and innovation.",
+    imageUrl: "https://images.unsplash.com/photo-1541625407732-51bda672df2d",
+    scholarships: [
+      {
+        name: "Knight-Hennessy Scholars",
+        amount: "Full tuition and living stipend",
+        eligibility: "International students with demonstrated leadership and civic commitment",
+        deadline: "October 6",
+        link: "https://knight-hennessy.stanford.edu/"
+      },
+      {
+        name: "Stanford Graduate Fellowship",
+        amount: "Full tuition plus $45,000 stipend annually",
+        eligibility: "Outstanding graduate students in science and engineering",
+        deadline: "December 1",
+        link: "https://vpge.stanford.edu/fellowships-funding/sgf"
+      }
+    ],
+    website: "https://www.stanford.edu/",
+    ranking: 3,
+    tuitionFee: "$56,169 per year",
+    acceptanceRate: "4.3%"
+  },
+  {
+    id: "caltech",
+    name: "California Institute of Technology",
+    country: "USA",
+    description: "A world-leading science and engineering institute with an emphasis on research.",
+    imageUrl: "https://images.unsplash.com/photo-1594736797933-d0501ba2fe65",
+    scholarships: [
+      {
+        name: "Caltech Merit Award",
+        amount: "$15,000 - $35,000 per year",
+        eligibility: "Merit-based scholarships for outstanding international students",
+        deadline: "November 15",
+        link: "https://www.finaid.caltech.edu/types-of-aid/scholarships-and-grants"
+      },
+      {
+        name: "Summer Undergraduate Research Fellowship",
+        amount: "$6,000 for 10 weeks",
+        eligibility: "Undergraduate students interested in research",
+        deadline: "February 15",
+        link: "https://www.sfp.caltech.edu/programs/surf"
+      }
+    ],
+    website: "https://www.caltech.edu/",
+    ranking: 4,
+    tuitionFee: "$58,680 per year",
+    acceptanceRate: "6.4%"
+  },
+  {
+    id: "princeton",
+    name: "Princeton University",
+    country: "USA",
+    description: "An Ivy League research university with a strong focus on undergraduate education.",
+    imageUrl: "https://images.unsplash.com/photo-1575384043001-f37b7016c45a",
+    scholarships: [
+      {
+        name: "Princeton Financial Aid",
+        amount: "Full demonstrated need covered",
+        eligibility: "Need-based financial aid for international students",
+        deadline: "January 1",
+        link: "https://admission.princeton.edu/cost-aid"
+      },
+      {
+        name: "Davis International Fellowship",
+        amount: "$30,000 per year",
+        eligibility: "International students with financial need",
+        deadline: "December 15",
+        link: "https://admission.princeton.edu/cost-aid/types-aid"
+      }
+    ],
+    website: "https://www.princeton.edu/",
+    ranking: 5,
+    tuitionFee: "$56,010 per year",
+    acceptanceRate: "5.8%"
+  },
+  {
+    id: "yale",
+    name: "Yale University",
+    country: "USA",
+    description: "An Ivy League university known for excellence in law, medicine, and the arts.",
+    imageUrl: "https://images.unsplash.com/photo-1582727052104-5e5005b1b0de",
+    scholarships: [
+      {
+        name: "Yale Need-Based Financial Aid",
+        amount: "Full need met for all admitted students",
+        eligibility: "International students with demonstrated financial need",
+        deadline: "January 2",
+        link: "https://finaid.yale.edu/"
+      },
+      {
+        name: "Yale World Scholars Program",
+        amount: "Full cost of attendance",
+        eligibility: "Exceptional students from developing countries",
+        deadline: "December 1",
+        link: "https://world-fellows.yale.edu/"
+      }
+    ],
+    website: "https://www.yale.edu/",
+    ranking: 6,
+    tuitionFee: "$59,950 per year",
+    acceptanceRate: "6.1%"
+  },
+  {
+    id: "columbia",
+    name: "Columbia University",
+    country: "USA",
+    description: "An Ivy League university located in New York City with strong programs in journalism and business.",
+    imageUrl: "https://images.unsplash.com/photo-1569328922724-1ff1646cca35",
+    scholarships: [
+      {
+        name: "Columbia University Scholarship",
+        amount: "Varies based on need",
+        eligibility: "International students with demonstrated financial need",
+        deadline: "January 1",
+        link: "https://www.columbia.edu/content/financial-aid"
+      },
+      {
+        name: "Global Fellowship",
+        amount: "$25,000 - $45,000 per year",
+        eligibility: "Outstanding international graduate students",
+        deadline: "December 15",
+        link: "https://gsas.columbia.edu/student-guide/financing-your-education"
+      }
+    ],
+    website: "https://www.columbia.edu/",
+    ranking: 7,
+    tuitionFee: "$63,530 per year",
+    acceptanceRate: "5.5%"
+  },
+  {
+    id: "chicago",
+    name: "University of Chicago",
+    country: "USA",
+    description: "A private research university known for rigorous academics and influential economic theories.",
+    imageUrl: "https://images.unsplash.com/photo-1584721244072-a4b2994130bb",
+    scholarships: [
+      {
+        name: "Odyssey Scholarship",
+        amount: "Full tuition plus $5,000 annual stipend",
+        eligibility: "Students from lower-income backgrounds with outstanding potential",
+        deadline: "January 4",
+        link: "https://collegeadmissions.uchicago.edu/cost-aid/scholarships"
+      },
+      {
+        name: "International Student Scholarship",
+        amount: "$15,000 - $50,000 per year",
+        eligibility: "International students with exceptional academic records",
+        deadline: "January 4",
+        link: "https://collegeadmissions.uchicago.edu/cost-aid/international-aid"
+      }
+    ],
+    website: "https://www.uchicago.edu/",
+    ranking: 9,
+    tuitionFee: "$60,963 per year",
+    acceptanceRate: "6.2%"
+  },
+  {
+    id: "upenn",
+    name: "University of Pennsylvania",
+    country: "USA",
+    description: "An Ivy League institution with top-ranked Wharton School of Business.",
+    imageUrl: "https://images.unsplash.com/photo-1565036558162-e551c82632c9",
+    scholarships: [
+      {
+        name: "Penn World Scholars",
+        amount: "Full cost of attendance",
+        eligibility: "Outstanding international students from developing countries",
+        deadline: "November 1",
+        link: "https://srfs.upenn.edu/financial-aid/international-students"
+      },
+      {
+        name: "Global Leadership Scholarship",
+        amount: "$20,000 - $45,000 per year",
+        eligibility: "Students with demonstrated leadership potential",
+        deadline: "January 5",
+        link: "https://srfs.upenn.edu/financial-aid"
+      }
+    ],
+    website: "https://www.upenn.edu/",
+    ranking: 10,
+    tuitionFee: "$61,710 per year",
+    acceptanceRate: "7.4%"
+  },
+  {
+    id: "cornell",
+    name: "Cornell University",
+    country: "USA",
+    description: "An Ivy League university with strengths in engineering, hospitality, and agriculture.",
+    imageUrl: "https://images.unsplash.com/photo-1558711350-0a3979474414",
+    scholarships: [
+      {
+        name: "Cornell International Student Financial Aid",
+        amount: "Based on demonstrated need",
+        eligibility: "International students with financial need",
+        deadline: "January 2",
+        link: "https://finaid.cornell.edu/apply-for-aid/international-applicants/"
+      },
+      {
+        name: "Tata Scholarship",
+        amount: "Full demonstrated need",
+        eligibility: "Students from India with financial need",
+        deadline: "January 2",
+        link: "https://finaid.cornell.edu/apply-for-aid/international-applicants/tata-scholarship"
+      }
+    ],
+    website: "https://www.cornell.edu/",
+    ranking: 12,
+    tuitionFee: "$61,015 per year",
+    acceptanceRate: "8.7%"
+  },
+  {
+    id: "berkeley",
+    name: "University of California, Berkeley",
+    country: "USA",
+    description: "A public research university known for science, engineering, and liberal arts programs.",
+    imageUrl: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7",
+    scholarships: [
+      {
+        name: "Berkeley International Office Scholarship",
+        amount: "$5,000 - $15,000",
+        eligibility: "International students with exceptional academic achievements",
+        deadline: "January 15",
+        link: "https://financialaid.berkeley.edu/how-aid-works/international-student-financial-aid/"
+      },
+      {
+        name: "Global Leadership Scholarship",
+        amount: "$8,000 per year",
+        eligibility: "International students with leadership potential",
+        deadline: "December 15",
+        link: "https://financialaid.berkeley.edu/types-of-aid/scholarships/"
+      }
+    ],
+    website: "https://www.berkeley.edu/",
+    ranking: 13,
+    tuitionFee: "$44,007 per year (international)",
+    acceptanceRate: "14.5%"
+  },
+  
+  // UK Universities - Original entries
   {
     id: "oxford",
     name: "University of Oxford",
@@ -204,7 +448,252 @@ export const studyAbroadColleges: StudyAbroadCollege[] = [
     acceptanceRate: "21%"
   },
   
-  // Canada Universities
+  // Additional UK universities
+  {
+    id: "imperial",
+    name: "Imperial College London",
+    country: "UK",
+    description: "A science-based institution known for engineering, medicine, and business education.",
+    imageUrl: "https://images.unsplash.com/photo-1590796583326-afd3bb20d22d",
+    scholarships: [
+      {
+        name: "President's PhD Scholarships",
+        amount: "Full tuition fees plus £21,600 stipend",
+        eligibility: "Academically outstanding PhD candidates",
+        deadline: "January 20",
+        link: "https://www.imperial.ac.uk/study/pg/fees-and-funding/scholarships/presidents-phd-scholarships/"
+      },
+      {
+        name: "Imperial College Master's Scholarships",
+        amount: "£10,000 - Full tuition",
+        eligibility: "Outstanding students pursuing master's degrees",
+        deadline: "March 31",
+        link: "https://www.imperial.ac.uk/study/pg/fees-and-funding/scholarships/"
+      }
+    ],
+    website: "https://www.imperial.ac.uk/",
+    ranking: 8,
+    tuitionFee: "£32,500 - £45,300 per year",
+    acceptanceRate: "14.3%"
+  },
+  {
+    id: "ucl",
+    name: "University College London",
+    country: "UK",
+    description: "A multidisciplinary university known for arts, sciences, and professional studies.",
+    imageUrl: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
+    scholarships: [
+      {
+        name: "Global Excellence Scholarship",
+        amount: "£2,500 - £15,000",
+        eligibility: "International students with outstanding academic achievements",
+        deadline: "May 1",
+        link: "https://www.ucl.ac.uk/prospective-students/scholarships/"
+      },
+      {
+        name: "Denys Holland Scholarship",
+        amount: "£18,000 per year",
+        eligibility: "Students who would not otherwise be able to afford to study at UCL",
+        deadline: "June 30",
+        link: "https://www.ucl.ac.uk/scholarships/denys-holland-scholarship"
+      }
+    ],
+    website: "https://www.ucl.ac.uk/",
+    ranking: 17,
+    tuitionFee: "£23,300 - £34,000 per year",
+    acceptanceRate: "21%"
+  },
+  {
+    id: "lse",
+    name: "London School of Economics",
+    country: "UK",
+    description: "A specialist university focusing on social sciences, economics, and politics.",
+    imageUrl: "https://images.unsplash.com/photo-1517404215738-15263e9f9178",
+    scholarships: [
+      {
+        name: "LSE Master's Awards",
+        amount: "£5,000 - £25,000",
+        eligibility: "Outstanding students from specific regions",
+        deadline: "April 27",
+        link: "https://www.lse.ac.uk/study-at-lse/graduate/fees-and-funding/masters-financial-support"
+      },
+      {
+        name: "Graduate Support Scheme",
+        amount: "Up to £15,000",
+        eligibility: "Students with financial need",
+        deadline: "April 27",
+        link: "https://www.lse.ac.uk/study-at-lse/graduate/fees-and-funding/graduate-support-scheme"
+      }
+    ],
+    website: "https://www.lse.ac.uk/",
+    ranking: 27,
+    tuitionFee: "£23,520 - £32,136 per year",
+    acceptanceRate: "9.5%"
+  },
+  {
+    id: "edinburgh",
+    name: "University of Edinburgh",
+    country: "UK",
+    description: "A historic university with strengths in arts, medicine, science, and engineering.",
+    imageUrl: "https://images.unsplash.com/photo-1589892892997-043c86e115d4",
+    scholarships: [
+      {
+        name: "Edinburgh Global Research Scholarships",
+        amount: "PhD tuition fee difference between UK and international rate",
+        eligibility: "International PhD candidates",
+        deadline: "February 1",
+        link: "https://www.ed.ac.uk/student-funding/postgraduate/international/global/research"
+      },
+      {
+        name: "Principal's Career Development PhD Scholarships",
+        amount: "Full tuition and stipend",
+        eligibility: "Outstanding PhD candidates in any discipline",
+        deadline: "January 25",
+        link: "https://www.ed.ac.uk/student-funding/postgraduate/uk-eu/university-scholarships/development"
+      }
+    ],
+    website: "https://www.ed.ac.uk/",
+    ranking: 30,
+    tuitionFee: "£24,500 - £32,100 per year",
+    acceptanceRate: "40%"
+  },
+  {
+    id: "manchester",
+    name: "University of Manchester",
+    country: "UK",
+    description: "A research-intensive university with strengths in life sciences and engineering.",
+    imageUrl: "https://images.unsplash.com/photo-1580834341580-8c17a3a6b19b",
+    scholarships: [
+      {
+        name: "Manchester Presidential Scholarship",
+        amount: "£3,000 - £10,000",
+        eligibility: "International students with excellent academic records",
+        deadline: "June 1",
+        link: "https://www.manchester.ac.uk/study/international/finance-and-scholarships/funding/"
+      },
+      {
+        name: "Manchester Global Futures Scholarship",
+        amount: "£5,000 - £10,000",
+        eligibility: "Outstanding students from developing countries",
+        deadline: "May 31",
+        link: "https://www.manchester.ac.uk/study/masters/fees-and-funding/masters-student-funding/international-students/"
+      }
+    ],
+    website: "https://www.manchester.ac.uk/",
+    ranking: 35,
+    tuitionFee: "£20,000 - £28,500 per year",
+    acceptanceRate: "59%"
+  },
+  {
+    id: "kings",
+    name: "King's College London",
+    country: "UK",
+    description: "A research-led university with strengths in humanities, law, and health sciences.",
+    imageUrl: "https://images.unsplash.com/photo-1591284367486-50c907e9ce5f",
+    scholarships: [
+      {
+        name: "King's International Scholarship",
+        amount: "£25,000",
+        eligibility: "International students with outstanding academic achievements",
+        deadline: "March 31",
+        link: "https://www.kcl.ac.uk/study/postgraduate/fees-and-funding/student-funding/postgraduate-scholarships"
+      },
+      {
+        name: "Global Research Scholarship",
+        amount: "£10,000 per year",
+        eligibility: "International PhD students",
+        deadline: "March 15",
+        link: "https://www.kcl.ac.uk/study/postgraduate/fees-and-funding/student-funding"
+      }
+    ],
+    website: "https://www.kcl.ac.uk/",
+    ranking: 37,
+    tuitionFee: "£21,300 - £34,500 per year",
+    acceptanceRate: "36%"
+  },
+  {
+    id: "bristol",
+    name: "University of Bristol",
+    country: "UK",
+    description: "A research-intensive university known for engineering, humanities, and sciences.",
+    imageUrl: "https://images.unsplash.com/photo-1569194856732-22d56b8ed9ff",
+    scholarships: [
+      {
+        name: "Think Big Scholarships",
+        amount: "£5,000 - £20,000",
+        eligibility: "International undergraduate and postgraduate students",
+        deadline: "March 28",
+        link: "https://www.bristol.ac.uk/students/support/finances/scholarships/think-big-undergraduate/"
+      },
+      {
+        name: "Bristol Merit Scholarships",
+        amount: "£5,000 - £10,000",
+        eligibility: "High-achieving international students",
+        deadline: "June 30",
+        link: "https://www.bristol.ac.uk/students/support/finances/scholarships/"
+      }
+    ],
+    website: "https://www.bristol.ac.uk/",
+    ranking: 62,
+    tuitionFee: "£20,100 - £25,700 per year",
+    acceptanceRate: "67%"
+  },
+  {
+    id: "warwick",
+    name: "University of Warwick",
+    country: "UK",
+    description: "A research-led university with strengths in business, economics, and mathematics.",
+    imageUrl: "https://images.unsplash.com/photo-1591036640031-2a7ac9b1e1ac",
+    scholarships: [
+      {
+        name: "Warwick International Scholarships",
+        amount: "£5,000 - £15,000",
+        eligibility: "Outstanding international students",
+        deadline: "May 14",
+        link: "https://warwick.ac.uk/study/international/admissions/finance/"
+      },
+      {
+        name: "Warwick Chancellor's International Scholarships",
+        amount: "Full tuition fees plus maintenance stipend",
+        eligibility: "International PhD applicants with excellent academic qualifications",
+        deadline: "January 15",
+        link: "https://warwick.ac.uk/services/dc/schols_fund/scholarships_and_funding/chancellors_int/"
+      }
+    ],
+    website: "https://warwick.ac.uk/",
+    ranking: 64,
+    tuitionFee: "£21,200 - £27,060 per year",
+    acceptanceRate: "23%"
+  },
+  {
+    id: "durham",
+    name: "Durham University",
+    country: "UK",
+    description: "A historic university known for arts, humanities, and social sciences.",
+    imageUrl: "https://images.unsplash.com/photo-1525971977907-18a40a12aad1",
+    scholarships: [
+      {
+        name: "Durham Global Scholarship",
+        amount: "£2,000 - £5,000",
+        eligibility: "International students with excellent academic potential",
+        deadline: "January 31",
+        link: "https://www.dur.ac.uk/international/finance/scholarships/"
+      },
+      {
+        name: "Vice Chancellor's Scholarships",
+        amount: "£5,000 - £15,000",
+        eligibility: "Outstanding international postgraduate taught students",
+        deadline: "February 28",
+        link: "https://www.dur.ac.uk/study/pg/finance/funding/bursaries/"
+      }
+    ],
+    website: "https://www.dur.ac.uk/",
+    ranking: 82,
+    tuitionFee: "£20,500 - £26,000 per year",
+    acceptanceRate: "41%"
+  },
+  
+  // Canada Universities - Original entries
   {
     id: "toronto",
     name: "University of Toronto",
@@ -243,823 +732,4 @@ export const studyAbroadColleges: StudyAbroadCollege[] = [
         name: "McCall MacBain Scholarships",
         amount: "Full tuition and living stipend (approx. CAD $80,000)",
         eligibility: "Outstanding students for master's or professional degrees",
-        deadline: "September 22",
-        link: "https://mccallmacbainscholars.org/"
-      },
-      {
-        name: "Major Entrance Scholarships",
-        amount: "CAD $3,000 - $10,000",
-        eligibility: "Incoming undergraduate students with top academic standing",
-        deadline: "March 7",
-        link: "https://www.mcgill.ca/studentaid/scholarships-aid/future-undergrads/entrance-scholarships"
-      }
-    ],
-    website: "https://www.mcgill.ca/",
-    ranking: 31,
-    tuitionFee: "CAD $29,200 - $58,120 per year",
-    acceptanceRate: "46.3%"
-  },
-  
-  // Australia Universities
-  {
-    id: "melbourne",
-    name: "University of Melbourne",
-    country: "Australia",
-    description: "Australia's leading university and an integral part of the city of Melbourne's character.",
-    imageUrl: "https://images.unsplash.com/photo-1602941800793-78c77492baa7",
-    scholarships: [
-      {
-        name: "Melbourne International Undergraduate Scholarship",
-        amount: "50% to 100% fee remission",
-        eligibility: "High-achieving international undergraduate students",
-        deadline: "December 15",
-        link: "https://scholarships.unimelb.edu.au/awards/melbourne-international-undergraduate-scholarship"
-      },
-      {
-        name: "Australia Awards Scholarship",
-        amount: "Full tuition, return airfare, establishment allowance, and health insurance",
-        eligibility: "International students from developing countries",
-        deadline: "April 30",
-        link: "https://www.dfat.gov.au/people-to-people/australia-awards/Pages/australia-awards-scholarships"
-      }
-    ],
-    website: "https://www.unimelb.edu.au/",
-    ranking: 33,
-    tuitionFee: "AUD $42,000 - $48,000 per year",
-    acceptanceRate: "70%"
-  },
-  {
-    id: "sydney",
-    name: "University of Sydney",
-    country: "Australia",
-    description: "Australia's first university with a legacy of innovation and progressive thinking.",
-    imageUrl: "https://images.unsplash.com/photo-1600359797052-07991cdc417d",
-    scholarships: [
-      {
-        name: "Sydney Scholars Award",
-        amount: "AUD $6,000 - $50,000",
-        eligibility: "High-achieving domestic and international students",
-        deadline: "September 30",
-        link: "https://www.sydney.edu.au/scholarships/e/sydney-scholars-awards.html"
-      },
-      {
-        name: "Vice-Chancellor's International Scholarship",
-        amount: "AUD $40,000",
-        eligibility: "Outstanding international students commencing undergraduate or postgraduate studies",
-        deadline: "January 11",
-        link: "https://www.sydney.edu.au/scholarships/"
-      }
-    ],
-    website: "https://www.sydney.edu.au/",
-    ranking: 40,
-    tuitionFee: "AUD $45,000 - $52,000 per year",
-    acceptanceRate: "30%"
-  },
-  
-  // Germany Universities
-  {
-    id: "munich",
-    name: "Technical University of Munich",
-    country: "Germany",
-    description: "One of Europe's top universities with a focus on engineering and natural sciences.",
-    imageUrl: "https://images.unsplash.com/photo-1599941973480-33ce6bbca25d",
-    scholarships: [
-      {
-        name: "DAAD Scholarships",
-        amount: "€850 monthly plus travel and health insurance",
-        eligibility: "International students pursuing master's or PhD degrees",
-        deadline: "October 15 / April 15",
-        link: "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
-      },
-      {
-        name: "Deutschlandstipendium",
-        amount: "€300 monthly",
-        eligibility: "Talented and high-achieving students of all nationalities",
-        deadline: "June 30",
-        link: "https://www.tum.de/en/studies/fees-and-financial-aid/scholarships/deutschlandstipendium"
-      }
-    ],
-    website: "https://www.tum.de/en/",
-    ranking: 50,
-    tuitionFee: "No tuition fees (semester fee of €129)",
-    acceptanceRate: "20%"
-  },
-  {
-    id: "heidelberg",
-    name: "Heidelberg University",
-    country: "Germany",
-    description: "Germany's oldest university and a globally recognized institution for research and education.",
-    imageUrl: "https://images.unsplash.com/photo-1626866608829-47ebde548adf",
-    scholarships: [
-      {
-        name: "Erasmus+ Programme",
-        amount: "€850 - €1,000 monthly",
-        eligibility: "EU students studying in another EU country",
-        deadline: "March 1",
-        link: "https://ec.europa.eu/programmes/erasmus-plus/"
-      },
-      {
-        name: "PROMOS Scholarship",
-        amount: "€300 - €500 monthly plus travel allowance",
-        eligibility: "German students going abroad and international exchange students",
-        deadline: "Varies by university",
-        link: "https://www.uni-heidelberg.de/en/study/financing-your-studies/scholarships-and-grants"
-      }
-    ],
-    website: "https://www.uni-heidelberg.de/en",
-    ranking: 64,
-    tuitionFee: "No tuition fees (semester fee of €171.80)",
-    acceptanceRate: "13%"
-  },
-  
-  // France Universities
-  {
-    id: "sorbonne",
-    name: "Sorbonne University",
-    country: "France",
-    description: "One of France's most prestigious universities with a rich history and excellent research facilities.",
-    imageUrl: "https://images.unsplash.com/photo-1541089404510-5c9a779570e2",
-    scholarships: [
-      {
-        name: "Eiffel Excellence Scholarship",
-        amount: "€1,200 monthly + benefits",
-        eligibility: "Outstanding international students pursuing Master's or PhD",
-        deadline: "January 10",
-        link: "https://www.campusfrance.org/en/eiffel-scholarship-program-of-excellence"
-      },
-      {
-        name: "Sorbonne University Foundation Scholarship",
-        amount: "€10,000 per year",
-        eligibility: "International students with exceptional academic records",
-        deadline: "March 15",
-        link: "https://www.sorbonne-universite.fr/en"
-      }
-    ],
-    website: "https://www.sorbonne-universite.fr/en",
-    ranking: 83,
-    tuitionFee: "€170 - €380 per year",
-    acceptanceRate: "25%"
-  },
-  {
-    id: "ecole-polytechnique",
-    name: "École Polytechnique",
-    country: "France",
-    description: "A leading French institution specialized in science and technology education.",
-    imageUrl: "https://images.unsplash.com/photo-1560969184-10fe8719e047",
-    scholarships: [
-      {
-        name: "Excellence Scholarship Program",
-        amount: "Full tuition + €12,000 annually",
-        eligibility: "Outstanding international students in Engineering and Sciences",
-        deadline: "December 15",
-        link: "https://www.polytechnique.edu/en/financial-aid-scholarships"
-      },
-      {
-        name: "l'X International Scholarship",
-        amount: "€12,000 per year",
-        eligibility: "Top-tier international students with strong academic background",
-        deadline: "February 28",
-        link: "https://www.polytechnique.edu/en"
-      }
-    ],
-    website: "https://www.polytechnique.edu/en",
-    ranking: 68,
-    tuitionFee: "€12,000 - €15,000 per year",
-    acceptanceRate: "10%"
-  },
-  {
-    id: "sciencespo",
-    name: "Sciences Po",
-    country: "France",
-    description: "Renowned for political science, international relations, and social sciences education.",
-    imageUrl: "https://images.unsplash.com/photo-1569683795645-b62e50fbf103",
-    scholarships: [
-      {
-        name: "Émile Boutmy Scholarship",
-        amount: "€7,300 - €19,000 per year",
-        eligibility: "International students from non-EU countries",
-        deadline: "December 8",
-        link: "https://www.sciencespo.fr/students/en/fees-funding/financial-aid/emile-boutmy-scholarship.html"
-      },
-      {
-        name: "Sciences Po Europe Scholarship",
-        amount: "Up to €10,000 per year",
-        eligibility: "EU students with excellent academic records",
-        deadline: "January 15",
-        link: "https://www.sciencespo.fr/en"
-      }
-    ],
-    website: "https://www.sciencespo.fr/en",
-    ranking: 242,
-    tuitionFee: "€10,540 - €18,700 per year",
-    acceptanceRate: "15%"
-  },
-  {
-    id: "paris-saclay",
-    name: "University of Paris-Saclay",
-    country: "France",
-    description: "A world-class university focused on science and engineering disciplines.",
-    imageUrl: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04",
-    scholarships: [
-      {
-        name: "Paris-Saclay International Master's Scholarship",
-        amount: "€10,000 per year",
-        eligibility: "High-achieving international students entering Master's programs",
-        deadline: "May 16",
-        link: "https://www.universite-paris-saclay.fr/en/admission/scholarships-grants"
-      },
-      {
-        name: "French Embassy Excellence Scholarship",
-        amount: "€5,000 - €8,000 per year",
-        eligibility: "Outstanding students from partner countries",
-        deadline: "March 30",
-        link: "https://www.universite-paris-saclay.fr/en"
-      }
-    ],
-    website: "https://www.universite-paris-saclay.fr/en",
-    ranking: 16,
-    tuitionFee: "€243 - €3,770 per year",
-    acceptanceRate: "35%"
-  },
-  {
-    id: "grenoble",
-    name: "Grenoble Alpes University",
-    country: "France",
-    description: "A multidisciplinary university known for research and innovation in the Alps region.",
-    imageUrl: "https://images.unsplash.com/photo-1565803974275-dccd2f933cbb",
-    scholarships: [
-      {
-        name: "IDEX Scholarship",
-        amount: "€8,000 - €11,000 per year",
-        eligibility: "Talented international students at Master's or PhD level",
-        deadline: "April 30",
-        link: "https://www.univ-grenoble-alpes.fr/en/large/menu/international/come-to-uga/"
-      },
-      {
-        name: "Grenoble Excellence Scholarship",
-        amount: "€5,000 per year",
-        eligibility: "International students with outstanding academic achievements",
-        deadline: "January 31",
-        link: "https://www.univ-grenoble-alpes.fr/en/"
-      }
-    ],
-    website: "https://www.univ-grenoble-alpes.fr/en/",
-    ranking: 351,
-    tuitionFee: "€243 - €3,770 per year",
-    acceptanceRate: "60%"
-  },
-  
-  // Japan Universities
-  {
-    id: "tokyo",
-    name: "University of Tokyo",
-    country: "Japan",
-    description: "Japan's top university known for cutting-edge research and academic excellence.",
-    imageUrl: "https://images.unsplash.com/photo-1542310503-ff8da9c02372",
-    scholarships: [
-      {
-        name: "University of Tokyo Scholarship",
-        amount: "¥150,000 monthly",
-        eligibility: "Outstanding international students in all fields",
-        deadline: "December 15",
-        link: "https://www.u-tokyo.ac.jp/en/prospective-students/scholarships.html"
-      },
-      {
-        name: "MEXT Japanese Government Scholarship",
-        amount: "Full tuition + ¥144,000 - ¥148,000 monthly",
-        eligibility: "International students with excellent academic records",
-        deadline: "Varies by country",
-        link: "https://www.mext.go.jp/en/policy/education/highered/title02/detail02/sdetail02/1373897.htm"
-      }
-    ],
-    website: "https://www.u-tokyo.ac.jp/en/",
-    ranking: 24,
-    tuitionFee: "¥535,800 per year",
-    acceptanceRate: "33%"
-  },
-  {
-    id: "kyoto",
-    name: "Kyoto University",
-    country: "Japan",
-    description: "A leading research university known for producing numerous Nobel laureates.",
-    imageUrl: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e",
-    scholarships: [
-      {
-        name: "Kyoto University International Scholarship",
-        amount: "¥100,000 monthly",
-        eligibility: "Self-financed international students with top academic records",
-        deadline: "February 28",
-        link: "https://www.kyoto-u.ac.jp/en/education-campus/procedures/scholarships"
-      },
-      {
-        name: "JASSO Scholarship",
-        amount: "¥48,000 monthly",
-        eligibility: "Outstanding international exchange students",
-        deadline: "Varies by program",
-        link: "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html"
-      }
-    ],
-    website: "https://www.kyoto-u.ac.jp/en",
-    ranking: 33,
-    tuitionFee: "¥535,800 per year",
-    acceptanceRate: "38%"
-  },
-  {
-    id: "waseda",
-    name: "Waseda University",
-    country: "Japan",
-    description: "A prestigious private university with strong programs in business and international relations.",
-    imageUrl: "https://images.unsplash.com/photo-1495562569060-2eec283d3391",
-    scholarships: [
-      {
-        name: "Waseda Global Scholarship",
-        amount: "Full tuition + ¥100,000 monthly",
-        eligibility: "Exceptional international students in undergraduate programs",
-        deadline: "October 31",
-        link: "https://www.waseda.jp/inst/cie/en/life/aid"
-      },
-      {
-        name: "Monbukagakusho Honors Scholarship",
-        amount: "¥48,000 monthly",
-        eligibility: "International students with outstanding academic performance",
-        deadline: "April application",
-        link: "https://www.waseda.jp/inst/scholarship/en/"
-      }
-    ],
-    website: "https://www.waseda.jp/top/en",
-    ranking: 189,
-    tuitionFee: "¥1,350,000 - ¥1,950,000 per year",
-    acceptanceRate: "20%"
-  },
-  {
-    id: "tohoku",
-    name: "Tohoku University",
-    country: "Japan",
-    description: "Known for its research excellence, especially in materials science and engineering.",
-    imageUrl: "https://images.unsplash.com/photo-1565362796128-2b10cc1fad44",
-    scholarships: [
-      {
-        name: "Tohoku University President Fellowship",
-        amount: "¥150,000 monthly + research grant",
-        eligibility: "Outstanding international PhD students",
-        deadline: "January 31",
-        link: "https://www.tohoku.ac.jp/en/admissions/financial_aid.html"
-      },
-      {
-        name: "Tohoku University Global Hagi Scholarship",
-        amount: "Full tuition waiver",
-        eligibility: "International students with excellent academic records",
-        deadline: "December 1",
-        link: "https://www.tohoku.ac.jp/en/"
-      }
-    ],
-    website: "https://www.tohoku.ac.jp/en/",
-    ranking: 82,
-    tuitionFee: "¥535,800 per year",
-    acceptanceRate: "45%"
-  },
-  {
-    id: "osaka",
-    name: "Osaka University",
-    country: "Japan",
-    description: "A comprehensive research university with strengths in medicine and technology.",
-    imageUrl: "https://images.unsplash.com/photo-1553152531-b98a2fc8d3bf",
-    scholarships: [
-      {
-        name: "Osaka University International Student Scholarship",
-        amount: "¥100,000 monthly",
-        eligibility: "High-achieving international students in graduate programs",
-        deadline: "March 31",
-        link: "https://www.osaka-u.ac.jp/en/international/inbound/support/scholarship"
-      },
-      {
-        name: "Osaka University Graduate School Scholarship",
-        amount: "Full tuition waiver",
-        eligibility: "Graduate students with excellent academic background",
-        deadline: "November 30",
-        link: "https://www.osaka-u.ac.jp/en"
-      }
-    ],
-    website: "https://www.osaka-u.ac.jp/en",
-    ranking: 75,
-    tuitionFee: "¥535,800 per year",
-    acceptanceRate: "49%"
-  },
-  
-  // Singapore Universities
-  {
-    id: "nus",
-    name: "National University of Singapore",
-    country: "Singapore",
-    description: "Singapore's flagship university with comprehensive programs across disciplines.",
-    imageUrl: "https://images.unsplash.com/photo-1565538810643-b5bdb714032a",
-    scholarships: [
-      {
-        name: "NUS Merit Scholarship",
-        amount: "Full tuition + SGD$6,000 annual stipend",
-        eligibility: "Outstanding international undergraduate students",
-        deadline: "March 31",
-        link: "https://www.nus.edu.sg/oam/scholarships"
-      },
-      {
-        name: "Science & Technology Scholarship",
-        amount: "Full tuition + SGD$12,000 annual stipend",
-        eligibility: "Exceptional students in STEM fields",
-        deadline: "January 31",
-        link: "https://www.nus.edu.sg/admissions/scholarships"
-      }
-    ],
-    website: "https://www.nus.edu.sg/",
-    ranking: 11,
-    tuitionFee: "SGD$29,350 - SGD$38,200 per year",
-    acceptanceRate: "5%"
-  },
-  {
-    id: "nanyang",
-    name: "Nanyang Technological University",
-    country: "Singapore",
-    description: "A research-intensive university known for engineering and business programs.",
-    imageUrl: "https://images.unsplash.com/photo-1599687266725-0d14ee542335",
-    scholarships: [
-      {
-        name: "ASEAN Undergraduate Scholarship",
-        amount: "Full tuition + living allowance",
-        eligibility: "Outstanding students from ASEAN countries",
-        deadline: "December 15",
-        link: "https://www.ntu.edu.sg/admissions/undergraduate/scholarships/asean-undergraduate-scholarship"
-      },
-      {
-        name: "Nanyang Scholarship",
-        amount: "Full tuition + SGD$6,500 annual stipend + laptop",
-        eligibility: "Exceptional students with strong leadership potential",
-        deadline: "January 31",
-        link: "https://www.ntu.edu.sg/admissions/undergraduate/scholarships/nanyang-scholarship"
-      }
-    ],
-    website: "https://www.ntu.edu.sg/",
-    ranking: 19,
-    tuitionFee: "SGD$29,600 - SGD$36,830 per year",
-    acceptanceRate: "36%"
-  },
-  {
-    id: "smu",
-    name: "Singapore Management University",
-    country: "Singapore",
-    description: "A specialized university focused on business, management, and social sciences.",
-    imageUrl: "https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3",
-    scholarships: [
-      {
-        name: "SMU Global Impact Scholarship",
-        amount: "Full tuition + SGD$5,000 annual stipend",
-        eligibility: "Outstanding international students with leadership potential",
-        deadline: "December 15",
-        link: "https://www.smu.edu.sg/admissions/scholarships"
-      },
-      {
-        name: "Lee Kong Chian Scholarship",
-        amount: "Full tuition + SGD$5,000 annual allowance",
-        eligibility: "Exceptional students with outstanding academic achievements",
-        deadline: "March 31",
-        link: "https://www.smu.edu.sg/admissions/scholarships/lee-kong-chian-scholars-programme"
-      }
-    ],
-    website: "https://www.smu.edu.sg/",
-    ranking: 511,
-    tuitionFee: "SGD$28,000 - SGD$32,000 per year",
-    acceptanceRate: "25%"
-  },
-  {
-    id: "sutd",
-    name: "Singapore University of Technology and Design",
-    country: "Singapore",
-    description: "A specialized university focusing on design and technology innovation.",
-    imageUrl: "https://images.unsplash.com/photo-1544531585-9847b68c8c86",
-    scholarships: [
-      {
-        name: "SUTD Global Merit Scholarship",
-        amount: "Full tuition + SGD$8,000 annual allowance",
-        eligibility: "Academically outstanding international students",
-        deadline: "March 31",
-        link: "https://www.sutd.edu.sg/Admissions/Undergraduate/Scholarship-and-Financial-Aid/Scholarship-Information"
-      },
-      {
-        name: "ASEAN Undergraduate Scholarship",
-        amount: "Full tuition fee subsidy",
-        eligibility: "Outstanding students from ASEAN countries",
-        deadline: "March 31",
-        link: "https://www.sutd.edu.sg/Admissions/Undergraduate/Scholarship-and-Financial-Aid/Scholarship-Information"
-      }
-    ],
-    website: "https://www.sutd.edu.sg/",
-    ranking: 701,
-    tuitionFee: "SGD$20,100 per year",
-    acceptanceRate: "30%"
-  },
-  {
-    id: "sit",
-    name: "Singapore Institute of Technology",
-    country: "Singapore",
-    description: "A university focusing on applied learning and industry partnerships.",
-    imageUrl: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
-    scholarships: [
-      {
-        name: "SIT Global Scholarship",
-        amount: "Full tuition + SGD$4,000 annual allowance",
-        eligibility: "Outstanding international students with strong academic records",
-        deadline: "February 28",
-        link: "https://www.singaporetech.edu.sg/admissions/scholarships"
-      },
-      {
-        name: "Industry Scholarship",
-        amount: "Full tuition + monthly allowance",
-        eligibility: "Students committed to working with sponsoring companies after graduation",
-        deadline: "January 31",
-        link: "https://www.singaporetech.edu.sg/admissions/scholarships"
-      }
-    ],
-    website: "https://www.singaporetech.edu.sg/",
-    ranking: 801,
-    tuitionFee: "SGD$15,000 - SGD$20,000 per year",
-    acceptanceRate: "40%"
-  },
-  
-  // Netherlands Universities
-  {
-    id: "amsterdam",
-    name: "University of Amsterdam",
-    country: "Netherlands",
-    description: "One of Europe's most innovative and research-intensive universities.",
-    imageUrl: "https://images.unsplash.com/photo-1534351590666-13e3e96b5017",
-    scholarships: [
-      {
-        name: "Amsterdam Merit Scholarship",
-        amount: "€5,000 - €25,000",
-        eligibility: "Non-EEA students with excellent academic achievements",
-        deadline: "January 15",
-        link: "https://www.uva.nl/en/education/master-s/scholarships-tuition/scholarships-and-loans/amsterdam-merit-scholarships/amsterdam-merit-scholarships.html"
-      },
-      {
-        name: "Holland Scholarship",
-        amount: "€5,000",
-        eligibility: "International students from outside the EEA",
-        deadline: "February 1",
-        link: "https://www.uva.nl/en/education/master-s/scholarships-tuition/scholarships-and-loans/holland-scholarship/holland-scholarship.html"
-      }
-    ],
-    website: "https://www.uva.nl/en",
-    ranking: 55,
-    tuitionFee: "€8,900 - €18,500 per year",
-    acceptanceRate: "40%"
-  },
-  {
-    id: "delft",
-    name: "Delft University of Technology",
-    country: "Netherlands",
-    description: "The oldest and largest Dutch public technical university, focusing on engineering and applied sciences.",
-    imageUrl: "https://images.unsplash.com/photo-1605101100278-5d1deb2b6498",
-    scholarships: [
-      {
-        name: "Justus & Louise van Effen Excellence Scholarship",
-        amount: "Full tuition + €11,000 living expenses",
-        eligibility: "Excellent international students for MSc programs",
-        deadline: "December 1",
-        link: "https://www.tudelft.nl/en/education/practical-matters/scholarships"
-      },
-      {
-        name: "TU Delft Excellence Scholarship",
-        amount: "Full tuition or €10,000",
-        eligibility: "Outstanding students with excellent academic records",
-        deadline: "December 1",
-        link: "https://www.tudelft.nl/en/education/practical-matters/scholarships"
-      }
-    ],
-    website: "https://www.tudelft.nl/en/",
-    ranking: 61,
-    tuitionFee: "€18,750 per year",
-    acceptanceRate: "30%"
-  },
-  {
-    id: "utrecht",
-    name: "Utrecht University",
-    country: "Netherlands",
-    description: "A research university with a focus on interdisciplinary collaboration.",
-    imageUrl: "https://images.unsplash.com/photo-1599500848984-126a42f9099a",
-    scholarships: [
-      {
-        name: "Utrecht Excellence Scholarship",
-        amount: "€5,000 - €30,000",
-        eligibility: "Outstanding non-EU/EEA students",
-        deadline: "February 1",
-        link: "https://www.uu.nl/en/masters/general-information/application-and-admission/scholarships-and-grants/utrecht-excellence-scholarships"
-      },
-      {
-        name: "Orange Tulip Scholarship",
-        amount: "Full or partial tuition waiver",
-        eligibility: "Students from specific countries (Brazil, China, India, etc.)",
-        deadline: "April 1",
-        link: "https://www.uu.nl/en/education/exchange-and-visiting-students/finances/grants-and-scholarships"
-      }
-    ],
-    website: "https://www.uu.nl/en",
-    ranking: 124,
-    tuitionFee: "€15,000 - €20,000 per year",
-    acceptanceRate: "35%"
-  },
-  {
-    id: "groningen",
-    name: "University of Groningen",
-    country: "Netherlands",
-    description: "A research university with a global outlook, focusing on energy, healthy aging, and sustainable society.",
-    imageUrl: "https://images.unsplash.com/photo-1615564044178-251190bd1f4a",
-    scholarships: [
-      {
-        name: "Eric Bleumink Fund Scholarship",
-        amount: "Full tuition + €850 monthly living expenses",
-        eligibility: "Talented students from developing countries",
-        deadline: "January 15",
-        link: "https://www.rug.nl/education/scholarships/eric-bleumink-fund"
-      },
-      {
-        name: "Holland Scholarship",
-        amount: "€5,000",
-        eligibility: "International students from outside the EEA",
-        deadline: "February 1",
-        link: "https://www.rug.nl/education/scholarships/holland-scholarship"
-      }
-    ],
-    website: "https://www.rug.nl/",
-    ranking: 80,
-    tuitionFee: "€14,200 - €16,000 per year",
-    acceptanceRate: "30%"
-  },
-  {
-    id: "leiden",
-    name: "Leiden University",
-    country: "Netherlands",
-    description: "The oldest university in the Netherlands, known for its research excellence.",
-    imageUrl: "https://images.unsplash.com/photo-1583373834259-46cc92173cb7",
-    scholarships: [
-      {
-        name: "Leiden University Excellence Scholarship",
-        amount: "€10,000 - €25,000",
-        eligibility: "Excellent students from non-EEA countries",
-        deadline: "October 1 / February 1",
-        link: "https://www.universiteitleiden.nl/en/scholarships/sea/leiden-university-excellence-scholarship-programme"
-      },
-      {
-        name: "Orange Tulip Scholarship Programme",
-        amount: "Varies by country",
-        eligibility: "Students from specific countries with excellent academic records",
-        deadline: "April 1",
-        link: "https://www.universiteitleiden.nl/en/scholarships/sea/orange-tulip-scholarship-programme"
-      }
-    ],
-    website: "https://www.universiteitleiden.nl/en",
-    ranking: 112,
-    tuitionFee: "€15,000 - €20,000 per year",
-    acceptanceRate: "25%"
-  },
-  
-  // Sweden Universities
-  {
-    id: "lund",
-    name: "Lund University",
-    country: "Sweden",
-    description: "One of northern Europe's oldest and most prestigious universities.",
-    imageUrl: "https://images.unsplash.com/photo-1571169644780-61d633c31b45",
-    scholarships: [
-      {
-        name: "Lund University Global Scholarship",
-        amount: "25% - 100% of tuition fees",
-        eligibility: "Non-EU/EEA students with exceptional academic records",
-        deadline: "January 15",
-        link: "https://www.lunduniversity.lu.se/admissions/bachelors-and-masters/scholarships-and-awards/lund-university-global-scholarship"
-      },
-      {
-        name: "Swedish Institute Scholarships for Global Professionals",
-        amount: "Full tuition + monthly stipend + travel grant",
-        eligibility: "Students from specific countries with leadership potential",
-        deadline: "February 10",
-        link: "https://si.se/en/apply/scholarships/swedish-institute-scholarships-for-global-professionals/"
-      }
-    ],
-    website: "https://www.lunduniversity.lu.se/",
-    ranking: 95,
-    tuitionFee: "SEK 120,000 - SEK 260,000 per year",
-    acceptanceRate: "35%"
-  },
-  {
-    id: "uppsala",
-    name: "Uppsala University",
-    country: "Sweden",
-    description: "Sweden's oldest university with a strong focus on research and education.",
-    imageUrl: "https://images.unsplash.com/photo-1559236454-bc1f39000603",
-    scholarships: [
-      {
-        name: "Uppsala University President's Club Scholarship",
-        amount: "Full tuition",
-        eligibility: "Outstanding international students from non-EU/EEA countries",
-        deadline: "January 20",
-        link: "https://www.uu.se/en/admissions/scholarships/uppsala-university/"
-      },
-      {
-        name: "Anders Wall Scholarship",
-        amount: "SEK 100,000",
-        eligibility: "Chinese students with exceptional academic records",
-        deadline: "January 15",
-        link: "https://www.uu.se/en/admissions/scholarships/anders-wall/"
-      }
-    ],
-    website: "https://www.uu.se/en",
-    ranking: 111,
-    tuitionFee: "SEK 140,000 - SEK 250,000 per year",
-    acceptanceRate: "40%"
-  },
-  {
-    id: "kth",
-    name: "KTH Royal Institute of Technology",
-    country: "Sweden",
-    description: "Sweden's largest technical university focusing on engineering and technology.",
-    imageUrl: "https://images.unsplash.com/photo-1565362494805-8f069b05ff7e",
-    scholarships: [
-      {
-        name: "KTH Scholarship",
-        amount: "50% - 100% of tuition fees",
-        eligibility: "Fee-paying students with excellent academic performance",
-        deadline: "January 15",
-        link: "https://www.kth.se/en/studies/master/scholarships/kth-scholarship-1.72827"
-      },
-      {
-        name: "KTH India Scholarship Foundation",
-        amount: "Full tuition",
-        eligibility: "Outstanding Indian students",
-        deadline: "January 15",
-        link: "https://www.kth.se/en/studies/master/scholarships"
-      }
-    ],
-    website: "https://www.kth.se/en",
-    ranking: 98,
-    tuitionFee: "SEK 155,000 - SEK 310,000 per year",
-    acceptanceRate: "25%"
-  },
-  {
-    id: "chalmers",
-    name: "Chalmers University of Technology",
-    country: "Sweden",
-    description: "A research-intensive university focusing on technology, science, and sustainable development.",
-    imageUrl: "https://images.unsplash.com/photo-1544256718-3bcf237f3974",
-    scholarships: [
-      {
-        name: "Chalmers IPOET Scholarship",
-        amount: "75% - 100% of tuition fees",
-        eligibility: "Outstanding fee-paying students from non-EU/EEA countries",
-        deadline: "January 15",
-        link: "https://www.chalmers.se/en/education/fees-finance/Pages/Scholarships.aspx"
-      },
-      {
-        name: "Adlerbert Study Scholarships",
-        amount: "Full tuition + living expenses",
-        eligibility: "Excellent students pursuing Master's degree programs",
-        deadline: "January 15",
-        link: "https://www.chalmers.se/en/education/fees-finance/Pages/Scholarships.aspx"
-      }
-    ],
-    website: "https://www.chalmers.se/en",
-    ranking: 125,
-    tuitionFee: "SEK 140,000 - SEK 310,000 per year",
-    acceptanceRate: "28%"
-  },
-  {
-    id: "stockholm",
-    name: "Stockholm University",
-    country: "Sweden",
-    description: "A major public university in Stockholm known for natural sciences and humanities.",
-    imageUrl: "https://images.unsplash.com/photo-1534237710431-e2fc698436d0",
-    scholarships: [
-      {
-        name: "Stockholm University Scholarship",
-        amount: "Partial to full tuition",
-        eligibility: "Outstanding students from countries outside EU/EEA/Switzerland",
-        deadline: "February 1",
-        link: "https://www.su.se/english/education/admissions/scholarships"
-      },
-      {
-        name: "Swedish Institute Study Scholarships",
-        amount: "Full tuition + monthly stipend + insurance",
-        eligibility: "Students from specific countries with professional experience",
-        deadline: "February 10",
-        link: "https://si.se/en/apply/scholarships/swedish-institute-scholarships-for-global-professionals/"
-      }
-    ],
-    website: "https://www.su.se/english/",
-    ranking: 176,
-    tuitionFee: "SEK 90,000 - SEK 140,000 per year",
-    acceptanceRate: "45%"
-  }
-];
-
-// Helper function to get colleges by country
-export const getCollegesByCountry = (countryId: string): StudyAbroadCollege[] => {
-  return studyAbroadColleges.filter(college => college.country.toLowerCase() === 
-    countries.find(c => c.id === countryId)?.name.toLowerCase());
-};
+        deadline: "September
