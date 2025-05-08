@@ -1,3 +1,4 @@
+
 export interface StudyAbroadCollege {
   id: string;
   name: string;
@@ -710,4 +711,355 @@ export const studyAbroadColleges: StudyAbroadCollege[] = [
       {
         name: "SMU Global Impact Scholarship",
         amount: "Full tuition + SGD$5,000 annual stipend",
-        eligibility: "Outstanding international
+        eligibility: "Outstanding international students with leadership potential",
+        deadline: "December 15",
+        link: "https://www.smu.edu.sg/admissions/scholarships"
+      },
+      {
+        name: "Lee Kong Chian Scholarship",
+        amount: "Full tuition + SGD$5,000 annual allowance",
+        eligibility: "Exceptional students with outstanding academic achievements",
+        deadline: "March 31",
+        link: "https://www.smu.edu.sg/admissions/scholarships/lee-kong-chian-scholars-programme"
+      }
+    ],
+    website: "https://www.smu.edu.sg/",
+    ranking: 511,
+    tuitionFee: "SGD$28,000 - SGD$32,000 per year",
+    acceptanceRate: "25%"
+  },
+  {
+    id: "sutd",
+    name: "Singapore University of Technology and Design",
+    country: "Singapore",
+    description: "A specialized university focusing on design and technology innovation.",
+    imageUrl: "https://images.unsplash.com/photo-1544531585-9847b68c8c86",
+    scholarships: [
+      {
+        name: "SUTD Global Merit Scholarship",
+        amount: "Full tuition + SGD$8,000 annual allowance",
+        eligibility: "Academically outstanding international students",
+        deadline: "March 31",
+        link: "https://www.sutd.edu.sg/Admissions/Undergraduate/Scholarship-and-Financial-Aid/Scholarship-Information"
+      },
+      {
+        name: "ASEAN Undergraduate Scholarship",
+        amount: "Full tuition fee subsidy",
+        eligibility: "Outstanding students from ASEAN countries",
+        deadline: "March 31",
+        link: "https://www.sutd.edu.sg/Admissions/Undergraduate/Scholarship-and-Financial-Aid/Scholarship-Information"
+      }
+    ],
+    website: "https://www.sutd.edu.sg/",
+    ranking: 701,
+    tuitionFee: "SGD$20,100 per year",
+    acceptanceRate: "30%"
+  },
+  {
+    id: "sit",
+    name: "Singapore Institute of Technology",
+    country: "Singapore",
+    description: "A university focusing on applied learning and industry partnerships.",
+    imageUrl: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
+    scholarships: [
+      {
+        name: "SIT Global Scholarship",
+        amount: "Full tuition + SGD$4,000 annual allowance",
+        eligibility: "Outstanding international students with strong academic records",
+        deadline: "February 28",
+        link: "https://www.singaporetech.edu.sg/admissions/scholarships"
+      },
+      {
+        name: "Industry Scholarship",
+        amount: "Full tuition + monthly allowance",
+        eligibility: "Students committed to working with sponsoring companies after graduation",
+        deadline: "January 31",
+        link: "https://www.singaporetech.edu.sg/admissions/scholarships"
+      }
+    ],
+    website: "https://www.singaporetech.edu.sg/",
+    ranking: 801,
+    tuitionFee: "SGD$15,000 - SGD$20,000 per year",
+    acceptanceRate: "40%"
+  },
+  
+  // Netherlands Universities
+  {
+    id: "amsterdam",
+    name: "University of Amsterdam",
+    country: "Netherlands",
+    description: "One of Europe's most innovative and research-intensive universities.",
+    imageUrl: "https://images.unsplash.com/photo-1534351590666-13e3e96b5017",
+    scholarships: [
+      {
+        name: "Amsterdam Merit Scholarship",
+        amount: "€5,000 - €25,000",
+        eligibility: "Non-EEA students with excellent academic achievements",
+        deadline: "January 15",
+        link: "https://www.uva.nl/en/education/master-s/scholarships-tuition/scholarships-and-loans/amsterdam-merit-scholarships/amsterdam-merit-scholarships.html"
+      },
+      {
+        name: "Holland Scholarship",
+        amount: "€5,000",
+        eligibility: "International students from outside the EEA",
+        deadline: "February 1",
+        link: "https://www.uva.nl/en/education/master-s/scholarships-tuition/scholarships-and-loans/holland-scholarship/holland-scholarship.html"
+      }
+    ],
+    website: "https://www.uva.nl/en",
+    ranking: 55,
+    tuitionFee: "€8,900 - €18,500 per year",
+    acceptanceRate: "40%"
+  },
+  {
+    id: "delft",
+    name: "Delft University of Technology",
+    country: "Netherlands",
+    description: "The oldest and largest Dutch public technical university, focusing on engineering and applied sciences.",
+    imageUrl: "https://images.unsplash.com/photo-1605101100278-5d1deb2b6498",
+    scholarships: [
+      {
+        name: "Justus & Louise van Effen Excellence Scholarship",
+        amount: "Full tuition + €11,000 living expenses",
+        eligibility: "Excellent international students for MSc programs",
+        deadline: "December 1",
+        link: "https://www.tudelft.nl/en/education/practical-matters/scholarships"
+      },
+      {
+        name: "TU Delft Excellence Scholarship",
+        amount: "Full tuition or €10,000",
+        eligibility: "Outstanding students with excellent academic records",
+        deadline: "December 1",
+        link: "https://www.tudelft.nl/en/education/practical-matters/scholarships"
+      }
+    ],
+    website: "https://www.tudelft.nl/en/",
+    ranking: 61,
+    tuitionFee: "€18,750 per year",
+    acceptanceRate: "30%"
+  },
+  {
+    id: "utrecht",
+    name: "Utrecht University",
+    country: "Netherlands",
+    description: "A research university with a focus on interdisciplinary collaboration.",
+    imageUrl: "https://images.unsplash.com/photo-1599500848984-126a42f9099a",
+    scholarships: [
+      {
+        name: "Utrecht Excellence Scholarship",
+        amount: "€5,000 - €30,000",
+        eligibility: "Outstanding non-EU/EEA students",
+        deadline: "February 1",
+        link: "https://www.uu.nl/en/masters/general-information/application-and-admission/scholarships-and-grants/utrecht-excellence-scholarships"
+      },
+      {
+        name: "Orange Tulip Scholarship",
+        amount: "Full or partial tuition waiver",
+        eligibility: "Students from specific countries (Brazil, China, India, etc.)",
+        deadline: "April 1",
+        link: "https://www.uu.nl/en/education/exchange-and-visiting-students/finances/grants-and-scholarships"
+      }
+    ],
+    website: "https://www.uu.nl/en",
+    ranking: 124,
+    tuitionFee: "€15,000 - €20,000 per year",
+    acceptanceRate: "35%"
+  },
+  {
+    id: "groningen",
+    name: "University of Groningen",
+    country: "Netherlands",
+    description: "A research university with a global outlook, focusing on energy, healthy aging, and sustainable society.",
+    imageUrl: "https://images.unsplash.com/photo-1615564044178-251190bd1f4a",
+    scholarships: [
+      {
+        name: "Eric Bleumink Fund Scholarship",
+        amount: "Full tuition + €850 monthly living expenses",
+        eligibility: "Talented students from developing countries",
+        deadline: "January 15",
+        link: "https://www.rug.nl/education/scholarships/eric-bleumink-fund"
+      },
+      {
+        name: "Holland Scholarship",
+        amount: "€5,000",
+        eligibility: "International students from outside the EEA",
+        deadline: "February 1",
+        link: "https://www.rug.nl/education/scholarships/holland-scholarship"
+      }
+    ],
+    website: "https://www.rug.nl/",
+    ranking: 80,
+    tuitionFee: "€14,200 - €16,000 per year",
+    acceptanceRate: "30%"
+  },
+  {
+    id: "leiden",
+    name: "Leiden University",
+    country: "Netherlands",
+    description: "The oldest university in the Netherlands, known for its research excellence.",
+    imageUrl: "https://images.unsplash.com/photo-1583373834259-46cc92173cb7",
+    scholarships: [
+      {
+        name: "Leiden University Excellence Scholarship",
+        amount: "€10,000 - €25,000",
+        eligibility: "Excellent students from non-EEA countries",
+        deadline: "October 1 / February 1",
+        link: "https://www.universiteitleiden.nl/en/scholarships/sea/leiden-university-excellence-scholarship-programme"
+      },
+      {
+        name: "Orange Tulip Scholarship Programme",
+        amount: "Varies by country",
+        eligibility: "Students from specific countries with excellent academic records",
+        deadline: "April 1",
+        link: "https://www.universiteitleiden.nl/en/scholarships/sea/orange-tulip-scholarship-programme"
+      }
+    ],
+    website: "https://www.universiteitleiden.nl/en",
+    ranking: 112,
+    tuitionFee: "€15,000 - €20,000 per year",
+    acceptanceRate: "25%"
+  },
+  
+  // Sweden Universities
+  {
+    id: "lund",
+    name: "Lund University",
+    country: "Sweden",
+    description: "One of northern Europe's oldest and most prestigious universities.",
+    imageUrl: "https://images.unsplash.com/photo-1571169644780-61d633c31b45",
+    scholarships: [
+      {
+        name: "Lund University Global Scholarship",
+        amount: "25% - 100% of tuition fees",
+        eligibility: "Non-EU/EEA students with exceptional academic records",
+        deadline: "January 15",
+        link: "https://www.lunduniversity.lu.se/admissions/bachelors-and-masters/scholarships-and-awards/lund-university-global-scholarship"
+      },
+      {
+        name: "Swedish Institute Scholarships for Global Professionals",
+        amount: "Full tuition + monthly stipend + travel grant",
+        eligibility: "Students from specific countries with leadership potential",
+        deadline: "February 10",
+        link: "https://si.se/en/apply/scholarships/swedish-institute-scholarships-for-global-professionals/"
+      }
+    ],
+    website: "https://www.lunduniversity.lu.se/",
+    ranking: 95,
+    tuitionFee: "SEK 120,000 - SEK 260,000 per year",
+    acceptanceRate: "35%"
+  },
+  {
+    id: "uppsala",
+    name: "Uppsala University",
+    country: "Sweden",
+    description: "Sweden's oldest university with a strong focus on research and education.",
+    imageUrl: "https://images.unsplash.com/photo-1559236454-bc1f39000603",
+    scholarships: [
+      {
+        name: "Uppsala University President's Club Scholarship",
+        amount: "Full tuition",
+        eligibility: "Outstanding international students from non-EU/EEA countries",
+        deadline: "January 20",
+        link: "https://www.uu.se/en/admissions/scholarships/uppsala-university/"
+      },
+      {
+        name: "Anders Wall Scholarship",
+        amount: "SEK 100,000",
+        eligibility: "Chinese students with exceptional academic records",
+        deadline: "January 15",
+        link: "https://www.uu.se/en/admissions/scholarships/anders-wall/"
+      }
+    ],
+    website: "https://www.uu.se/en",
+    ranking: 111,
+    tuitionFee: "SEK 140,000 - SEK 250,000 per year",
+    acceptanceRate: "40%"
+  },
+  {
+    id: "kth",
+    name: "KTH Royal Institute of Technology",
+    country: "Sweden",
+    description: "Sweden's largest technical university focusing on engineering and technology.",
+    imageUrl: "https://images.unsplash.com/photo-1565362494805-8f069b05ff7e",
+    scholarships: [
+      {
+        name: "KTH Scholarship",
+        amount: "50% - 100% of tuition fees",
+        eligibility: "Fee-paying students with excellent academic performance",
+        deadline: "January 15",
+        link: "https://www.kth.se/en/studies/master/scholarships/kth-scholarship-1.72827"
+      },
+      {
+        name: "KTH India Scholarship Foundation",
+        amount: "Full tuition",
+        eligibility: "Outstanding Indian students",
+        deadline: "January 15",
+        link: "https://www.kth.se/en/studies/master/scholarships"
+      }
+    ],
+    website: "https://www.kth.se/en",
+    ranking: 98,
+    tuitionFee: "SEK 155,000 - SEK 310,000 per year",
+    acceptanceRate: "25%"
+  },
+  {
+    id: "chalmers",
+    name: "Chalmers University of Technology",
+    country: "Sweden",
+    description: "A research-intensive university focusing on technology, science, and sustainable development.",
+    imageUrl: "https://images.unsplash.com/photo-1544256718-3bcf237f3974",
+    scholarships: [
+      {
+        name: "Chalmers IPOET Scholarship",
+        amount: "75% - 100% of tuition fees",
+        eligibility: "Outstanding fee-paying students from non-EU/EEA countries",
+        deadline: "January 15",
+        link: "https://www.chalmers.se/en/education/fees-finance/Pages/Scholarships.aspx"
+      },
+      {
+        name: "Adlerbert Study Scholarships",
+        amount: "Full tuition + living expenses",
+        eligibility: "Excellent students pursuing Master's degree programs",
+        deadline: "January 15",
+        link: "https://www.chalmers.se/en/education/fees-finance/Pages/Scholarships.aspx"
+      }
+    ],
+    website: "https://www.chalmers.se/en",
+    ranking: 125,
+    tuitionFee: "SEK 140,000 - SEK 310,000 per year",
+    acceptanceRate: "28%"
+  },
+  {
+    id: "stockholm",
+    name: "Stockholm University",
+    country: "Sweden",
+    description: "A major public university in Stockholm known for natural sciences and humanities.",
+    imageUrl: "https://images.unsplash.com/photo-1534237710431-e2fc698436d0",
+    scholarships: [
+      {
+        name: "Stockholm University Scholarship",
+        amount: "Partial to full tuition",
+        eligibility: "Outstanding students from countries outside EU/EEA/Switzerland",
+        deadline: "February 1",
+        link: "https://www.su.se/english/education/admissions/scholarships"
+      },
+      {
+        name: "Swedish Institute Study Scholarships",
+        amount: "Full tuition + monthly stipend + insurance",
+        eligibility: "Students from specific countries with professional experience",
+        deadline: "February 10",
+        link: "https://si.se/en/apply/scholarships/swedish-institute-scholarships-for-global-professionals/"
+      }
+    ],
+    website: "https://www.su.se/english/",
+    ranking: 176,
+    tuitionFee: "SEK 90,000 - SEK 140,000 per year",
+    acceptanceRate: "45%"
+  }
+];
+
+// Helper function to get colleges by country
+export const getCollegesByCountry = (countryId: string): StudyAbroadCollege[] => {
+  return studyAbroadColleges.filter(college => college.country.toLowerCase() === 
+    countries.find(c => c.id === countryId)?.name.toLowerCase());
+};
