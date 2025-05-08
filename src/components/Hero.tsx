@@ -18,30 +18,37 @@ const Hero = () => {
               Discover scholarships, colleges, courses, exams, and career paths tailored for Indian students.
             </p>
           </div>
-          <div className="mt-8 flex flex-wrap gap-4 justify-center fade-in-element">
-            <Button asChild size="lg" className="bg-gradient-to-r from-nextstep-blue to-nextstep-purple hover:opacity-90">
-              <Link to="/explore">Explore Resources</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline">
-              <Link to="/about">Learn More</Link>
-            </Button>
-          </div>
-          <div className="mt-12 rounded-lg border bg-card p-4 md:p-8 shadow-sm fade-in-element">
-            <h3 className="text-xl font-semibold mb-4">Quick Navigation</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <Link to="/scholarships" className="bg-secondary rounded-md p-3 text-center hover:bg-secondary/80 transition-colors">
-                <span className="font-medium">Scholarships</span>
-              </Link>
-              <Link to="/colleges" className="bg-secondary rounded-md p-3 text-center hover:bg-secondary/80 transition-colors">
-                <span className="font-medium">Colleges</span>
-              </Link>
-              <Link to="/courses" className="bg-secondary rounded-md p-3 text-center hover:bg-secondary/80 transition-colors">
-                <span className="font-medium">Courses</span>
-              </Link>
-              <Link to="/exams" className="bg-secondary rounded-md p-3 text-center hover:bg-secondary/80 transition-colors">
-                <span className="font-medium">Entrance Exams</span>
-              </Link>
-            </div>
+          <div className="mt-8 grid grid-cols-2 md:grid-cols-5 gap-4 w-full max-w-4xl fade-in-element">
+            <Link to="/scholarships" className="bg-secondary rounded-md p-3 text-center hover:bg-secondary/80 transition-colors">
+              <span className="font-medium">Scholarships</span>
+            </Link>
+            <Link to="/colleges" className="bg-secondary rounded-md p-3 text-center hover:bg-secondary/80 transition-colors">
+              <span className="font-medium">Colleges</span>
+            </Link>
+            <Link to="/free-courses" className="bg-secondary rounded-md p-3 text-center hover:bg-secondary/80 transition-colors">
+              <span className="font-medium">Free Courses</span>
+            </Link>
+            <Link to="/exams" className="bg-secondary rounded-md p-3 text-center hover:bg-secondary/80 transition-colors">
+              <span className="font-medium">Exams</span>
+            </Link>
+            <Link to="/careers" className="bg-secondary rounded-md p-3 text-center hover:bg-secondary/80 transition-colors">
+              <span className="font-medium">Careers</span>
+            </Link>
+            <Link to="/top-colleges" className="bg-secondary rounded-md p-3 text-center hover:bg-secondary/80 transition-colors">
+              <span className="font-medium">Top Colleges</span>
+            </Link>
+            <Link to="/study-abroad" className="bg-secondary rounded-md p-3 text-center hover:bg-secondary/80 transition-colors">
+              <span className="font-medium">Study Abroad</span>
+            </Link>
+            <Link to="/news" className="bg-secondary rounded-md p-3 text-center hover:bg-secondary/80 transition-colors">
+              <span className="font-medium">News</span>
+            </Link>
+            <Link to="/success-stories" className="bg-secondary rounded-md p-3 text-center hover:bg-secondary/80 transition-colors">
+              <span className="font-medium">Success Stories</span>
+            </Link>
+            <Link to="/resources" className="bg-secondary rounded-md p-3 text-center hover:bg-secondary/80 transition-colors">
+              <span className="font-medium">Resources</span>
+            </Link>
           </div>
         </div>
       </div>
