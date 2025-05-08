@@ -31,19 +31,19 @@ export const countries: Country[] = [
   {
     id: "usa",
     name: "United States",
-    flagUrl: "https://images.unsplash.com/photo-1508323297387-18aea0c35cc4",
+    flagUrl: "https://ibb.co/7dsvCWzw",
     description: "Home to some of the world's top universities offering diverse scholarships for international students."
   },
   {
     id: "uk",
     name: "United Kingdom",
-    flagUrl: "https://images.unsplash.com/photo-1526659666037-6558fb67f2c7",
+    flagUrl: "https://ibb.co/ycRSp163",
     description: "Renowned for prestigious institutions with several scholarship schemes for international students."
   },
   {
     id: "canada",
     name: "Canada",
-    flagUrl: "https://images.unsplash.com/photo-1551668231-6a0f9ccc2daf",
+    flagUrl: "https://ibb.co/pBGLn2J9",
     description: "Offers quality education with affordable tuition and numerous scholarship opportunities."
   },
   {
@@ -55,7 +55,7 @@ export const countries: Country[] = [
   {
     id: "germany",
     name: "Germany",
-    flagUrl: "https://images.unsplash.com/photo-1527866512907-a35e06e7e533",
+    flagUrl: "https://ibb.co/xKQR0VW3",
     description: "Known for tuition-free public universities and various scholarship programs for foreign students."
   },
   // New countries
@@ -68,7 +68,7 @@ export const countries: Country[] = [
   {
     id: "japan",
     name: "Japan",
-    flagUrl: "https://images.unsplash.com/photo-1542051841857-5f90071e7989",
+    flagUrl: "https://ibb.co/zT9tbxL3",
     description: "Provides excellent academic programs with numerous scholarships for international students, especially in STEM fields."
   },
   {
@@ -86,7 +86,7 @@ export const countries: Country[] = [
   {
     id: "sweden",
     name: "Sweden",
-    flagUrl: "https://images.unsplash.com/photo-1610555356840-9c0aba1a46bc",
+    flagUrl: "https://ibb.co/Fb2bzT30",
     description: "Offers free education for EU students and numerous scholarship opportunities for international students."
   }
 ];
