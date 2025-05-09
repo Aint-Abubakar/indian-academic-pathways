@@ -1,3 +1,4 @@
+
 export interface FreeCourse {
   id: string;
   title: string;
@@ -610,3 +611,70 @@ export const freeCourses: FreeCourse[] = [
     category: "DevOps",
     description: "Learn how to deploy, scale, and manage containerized applications with Kubernetes.",
     duration: "5 weeks",
+    certificate: true,
+    link: "https://www.linuxfoundation.org/training/kubernetes-fundamentals/",
+    imageUrl: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9",
+    skills: ["Kubernetes", "Docker", "Container Orchestration", "DevOps", "Microservices"]
+  },
+  // Adding more trending free courses
+  {
+    id: "51",
+    title: "Stable Diffusion for AI Art",
+    provider: "Hugging Face",
+    category: "Artificial Intelligence",
+    description: "Learn how to use Stable Diffusion to create amazing AI-generated art and images.",
+    duration: "4 weeks",
+    certificate: false,
+    link: "https://huggingface.co/learn/diffusion-models/course",
+    imageUrl: "https://images.unsplash.com/photo-1659024451016-d79bf9a45206",
+    skills: ["AI Art", "Stable Diffusion", "Generative AI", "Prompt Engineering", "Image Generation"]
+  },
+  {
+    id: "52",
+    title: "Next.js Foundations",
+    provider: "Vercel",
+    category: "Web Development",
+    description: "Learn the fundamentals of Next.js, the React framework for production.",
+    duration: "Self-paced",
+    certificate: false,
+    link: "https://nextjs.org/learn",
+    imageUrl: "https://images.unsplash.com/photo-1648383228240-6ed939727ad6",
+    skills: ["Next.js", "React", "Server-Side Rendering", "Static Site Generation", "Frontend Development"]
+  },
+  {
+    id: "53",
+    title: "MongoDB Basics",
+    provider: "MongoDB University",
+    category: "Database",
+    description: "Learn the fundamentals of MongoDB, a popular NoSQL database.",
+    duration: "3 weeks",
+    certificate: true,
+    link: "https://university.mongodb.com/courses/M001/about",
+    imageUrl: "https://images.unsplash.com/photo-1603354350317-6f7aaa5911c5",
+    skills: ["MongoDB", "NoSQL", "Database Design", "Data Modeling", "CRUD Operations"]
+  },
+  {
+    id: "54",
+    title: "Data Science for Everyone",
+    provider: "DataCamp",
+    category: "Data Science",
+    description: "An introduction to data science concepts for non-technical people.",
+    duration: "4 hours",
+    certificate: true,
+    link: "https://www.datacamp.com/courses/data-science-for-everyone",
+    imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+    skills: ["Data Literacy", "Data Analysis", "Critical Thinking", "Data Visualization", "Decision Making"]
+  },
+  {
+    id: "55",
+    title: "AI for Medicine",
+    provider: "DeepLearning.AI",
+    category: "Healthcare",
+    description: "Learn how AI is transforming medical diagnosis, prognosis, and treatment.",
+    duration: "3 months",
+    certificate: true,
+    link: "https://www.coursera.org/specializations/ai-for-medicine",
+    imageUrl: "https://images.unsplash.com/photo-1576671414121-aa0c81c869a1",
+    skills: ["Medical AI", "Healthcare Analytics", "Medical Image Analysis", "Clinical Decision Support", "Health Informatics"]
+  }
+];

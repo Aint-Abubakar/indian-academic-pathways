@@ -1,677 +1,337 @@
-export interface FreeCourse {
+export interface Country {
   id: string;
-  title: string;
-  provider: string;
-  category: string;
+  name: string;
   description: string;
-  duration: string;
-  certificate: boolean;
-  link: string;
-  imageUrl: string;
-  skills: string[];
+  flagUrl: string;
 }
 
-export const freeCourses: FreeCourse[] = [
+export interface StudyAbroadCollege {
+  id: string;
+  countryId: string;
+  name: string;
+  imageUrl: string;
+  description: string;
+  ranking: number;
+  tuitionFee: string;
+  acceptanceRate: string;
+  website: string;
+  scholarships: Scholarship[];
+}
+
+interface Scholarship {
+  name: string;
+  amount: string;
+  deadline: string;
+  eligibility: string;
+  link: string;
+}
+
+export const countries: Country[] = [
   {
-    id: "1",
-    title: "Introduction to Computer Science",
-    provider: "Harvard University (CS50)",
-    category: "Computer Science",
-    description: "An introduction to the intellectual enterprises of computer science and the art of programming.",
-    duration: "11 weeks",
-    certificate: true,
-    link: "https://www.edx.org/course/introduction-computer-science-harvardx-cs50x",
-    imageUrl: "https://images.unsplash.com/photo-1550439062-609e1531270e",
-    skills: ["Programming Fundamentals", "C", "Python", "SQL", "HTML", "JavaScript"]
+    id: "usa",
+    name: "United States",
+    description: "The United States is a popular destination for international students, offering a wide range of academic programs and world-renowned universities.",
+    flagUrl: "https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
   },
   {
-    id: "2",
-    title: "Machine Learning",
-    provider: "Stanford University",
-    category: "Data Science",
-    description: "This course provides a broad introduction to machine learning, data mining, and statistical pattern recognition.",
-    duration: "11 weeks",
-    certificate: true,
-    link: "https://www.coursera.org/learn/machine-learning",
-    imageUrl: "https://images.unsplash.com/photo-1527474305487-b87b222841cc",
-    skills: ["Machine Learning", "Python", "Data Analysis", "Neural Networks"]
+    id: "uk",
+    name: "United Kingdom",
+    description: "The United Kingdom boasts a rich history of academic excellence and is home to some of the world's most prestigious universities.",
+    flagUrl: "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
   },
   {
-    id: "3",
-    title: "The Science of Well-Being",
-    provider: "Yale University",
-    category: "Psychology",
-    description: "Learn evidence-based strategies for becoming happier and building more productive habits.",
-    duration: "10 weeks",
-    certificate: true,
-    link: "https://www.coursera.org/learn/the-science-of-well-being",
-    imageUrl: "https://images.unsplash.com/photo-1551894116-f9b4fe184996",
-    skills: ["Positive Psychology", "Mental Health", "Happiness", "Well-being"]
+    id: "canada",
+    name: "Canada",
+    description: "Canada is known for its high quality of life, multicultural environment, and affordable tuition fees, making it an attractive option for international students.",
+    flagUrl: "https://upload.wikimedia.org/wikipedia/en/c/cf/Flag_of_Canada.svg"
   },
   {
-    id: "4",
-    title: "Financial Markets",
-    provider: "Yale University",
-    category: "Finance",
-    description: "An overview of the ideas, methods, and institutions that permit human society to manage risks and foster enterprise.",
-    duration: "7 weeks",
-    certificate: true,
-    link: "https://www.coursera.org/learn/financial-markets-global",
-    imageUrl: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3",
-    skills: ["Financial Markets", "Risk Management", "Investment", "Economic Principles"]
+    id: "australia",
+    name: "Australia",
+    description: "Australia offers a unique blend of world-class education, stunning natural landscapes, and a relaxed lifestyle, making it a desirable destination for students.",
+    flagUrl: "https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg"
   },
   {
-    id: "5",
-    title: "Learning How to Learn",
-    provider: "Deep Teaching Solutions",
-    category: "Education",
-    description: "Powerful mental tools to help you master tough subjects and learn effectively.",
-    duration: "4 weeks",
-    certificate: true,
-    link: "https://www.coursera.org/learn/learning-how-to-learn",
-    imageUrl: "https://images.unsplash.com/photo-1501504905252-473c47e087f8",
-    skills: ["Learning Techniques", "Memory", "Focused Learning", "Procrastination"]
-  },
-  {
-    id: "6",
-    title: "Web Development Bootcamp",
-    provider: "freeCodeCamp",
-    category: "Web Development",
-    description: "A complete web development curriculum covering HTML, CSS, JavaScript, and modern frameworks.",
-    duration: "Self-paced",
-    certificate: true,
-    link: "https://www.freecodecamp.org/",
-    imageUrl: "https://images.unsplash.com/photo-1593642532744-d377ab507dc8",
-    skills: ["HTML", "CSS", "JavaScript", "React", "Node.js", "MongoDB"]
-  },
-  {
-    id: "7",
-    title: "English for Career Development",
-    provider: "University of Pennsylvania",
-    category: "Languages",
-    description: "Learn professional English and improve your communication skills for the global workplace.",
-    duration: "5 weeks",
-    certificate: true,
-    link: "https://www.coursera.org/learn/english-for-career-development",
-    imageUrl: "https://images.unsplash.com/photo-1517842645767-c639042777db",
-    skills: ["Business English", "Resume Writing", "Interview Skills", "Communication"]
-  },
-  {
-    id: "8",
-    title: "Introduction to Digital Photography",
-    provider: "Alison",
-    category: "Art & Design",
-    description: "Learn the basics of digital photography, including camera functions, composition, and editing.",
-    duration: "4-5 hours",
-    certificate: true,
-    link: "https://alison.com/course/introduction-to-digital-photography",
-    imageUrl: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32",
-    skills: ["Photography", "Composition", "Camera Settings", "Photo Editing"]
-  },
-  {
-    id: "9",
-    title: "Data Science: R Basics",
-    provider: "Harvard University",
-    category: "Data Science",
-    description: "Build a foundation in R and learn how to wrangle, analyze, and visualize data.",
-    duration: "8 weeks",
-    certificate: true,
-    link: "https://www.edx.org/course/data-science-r-basics",
-    imageUrl: "https://images.unsplash.com/photo-1543286386-2e659306cd6c",
-    skills: ["R Programming", "Data Analysis", "Statistics", "Data Visualization"]
-  },
-  {
-    id: "10",
-    title: "Fundamentals of Graphic Design",
-    provider: "CalArts",
-    category: "Art & Design",
-    description: "Introduction to the fundamental principles of graphic design and visual communication.",
-    duration: "4 weeks",
-    certificate: true,
-    link: "https://www.coursera.org/learn/fundamentals-of-graphic-design",
-    imageUrl: "https://images.unsplash.com/photo-1626785774625-ddcddc3445e9",
-    skills: ["Design Principles", "Typography", "Color Theory", "Composition"]
-  },
-  // Adding 15 more AI and programming focused courses
-  {
-    id: "11",
-    title: "Deep Learning Specialization",
-    provider: "deeplearning.ai",
-    category: "Artificial Intelligence",
-    description: "Master deep learning fundamentals and build neural networks with leading AI practitioners.",
-    duration: "3 months",
-    certificate: true,
-    link: "https://www.coursera.org/specializations/deep-learning",
-    imageUrl: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485",
-    skills: ["Neural Networks", "Deep Learning", "TensorFlow", "Convolutional Networks", "Sequence Models"]
-  },
-  {
-    id: "12",
-    title: "AI For Everyone",
-    provider: "deeplearning.ai",
-    category: "Artificial Intelligence",
-    description: "A non-technical course designed to help you understand AI technologies and how they can impact your organization.",
-    duration: "4 weeks",
-    certificate: true,
-    link: "https://www.coursera.org/learn/ai-for-everyone",
-    imageUrl: "https://images.unsplash.com/photo-1591696205602-2f950c417cb9",
-    skills: ["AI Concepts", "Machine Learning", "AI Strategy", "Data Ethics"]
-  },
-  {
-    id: "13",
-    title: "TensorFlow Developer Certificate",
-    provider: "Google",
-    category: "Artificial Intelligence",
-    description: "Learn how to build and train neural networks using TensorFlow, an open-source machine learning framework.",
-    duration: "Self-paced",
-    certificate: true,
-    link: "https://www.tensorflow.org/certificate",
-    imageUrl: "https://images.unsplash.com/photo-1677442135146-98444abcbde2",
-    skills: ["TensorFlow", "Machine Learning", "Neural Networks", "Deep Learning", "Python"]
-  },
-  {
-    id: "14",
-    title: "Python for Everybody",
-    provider: "University of Michigan",
-    category: "Programming",
-    description: "Learn to program and analyze data with Python. No prior experience required.",
-    duration: "8 weeks",
-    certificate: true,
-    link: "https://www.coursera.org/specializations/python",
-    imageUrl: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935",
-    skills: ["Python", "Data Structures", "Web Scraping", "Databases", "Data Analysis"]
-  },
-  {
-    id: "15",
-    title: "React - The Complete Guide",
-    provider: "Academind",
-    category: "Web Development",
-    description: "Dive into React, the JavaScript library for building user interfaces, and master modern React development.",
-    duration: "40 hours",
-    certificate: true,
-    link: "https://www.udemy.com/course/react-the-complete-guide-incl-redux/",
-    imageUrl: "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
-    skills: ["React", "JavaScript", "Redux", "Hooks", "React Router", "Next.js"]
-  },
-  {
-    id: "16",
-    title: "Natural Language Processing Specialization",
-    provider: "deeplearning.ai",
-    category: "Artificial Intelligence",
-    description: "Learn how to process and analyze text data using NLP techniques and tools.",
-    duration: "4 months",
-    certificate: true,
-    link: "https://www.coursera.org/specializations/natural-language-processing",
-    imageUrl: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d",
-    skills: ["NLP", "Text Mining", "Sentiment Analysis", "Machine Translation", "Transformers"]
-  },
-  {
-    id: "17",
-    title: "Full Stack JavaScript Development",
-    provider: "The Odin Project",
-    category: "Web Development",
-    description: "Learn full-stack web development with JavaScript, from frontend to backend technologies.",
-    duration: "Self-paced",
-    certificate: false,
-    link: "https://www.theodinproject.com/paths/full-stack-javascript",
-    imageUrl: "https://images.unsplash.com/photo-1627398242454-45a1465c2479",
-    skills: ["JavaScript", "Node.js", "Express", "MongoDB", "React", "RESTful APIs"]
-  },
-  {
-    id: "18",
-    title: "Practical Deep Learning for Coders",
-    provider: "fast.ai",
-    category: "Artificial Intelligence",
-    description: "A course designed to get you started with deep learning using practical, hands-on applications.",
-    duration: "7 weeks",
-    certificate: false,
-    link: "https://course.fast.ai/",
-    imageUrl: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb",
-    skills: ["Deep Learning", "PyTorch", "Computer Vision", "NLP", "Practical Applications"]
-  },
-  {
-    id: "19",
-    title: "CS50's Introduction to Artificial Intelligence with Python",
-    provider: "Harvard University",
-    category: "Artificial Intelligence",
-    description: "Explore the concepts and algorithms at the foundation of modern artificial intelligence.",
-    duration: "7 weeks",
-    certificate: true,
-    link: "https://www.edx.org/course/cs50s-introduction-to-artificial-intelligence-with-python",
-    imageUrl: "https://images.unsplash.com/photo-1591453089816-0fbb971b454c",
-    skills: ["AI Algorithms", "Python", "Search Algorithms", "Reinforcement Learning", "Neural Networks"]
-  },
-  {
-    id: "20",
-    title: "Flutter & Dart - The Complete Guide",
-    provider: "Academind",
-    category: "Mobile Development",
-    description: "Learn Flutter and Dart to build iOS and Android apps with a single codebase.",
-    duration: "45 hours",
-    certificate: true,
-    link: "https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/",
-    imageUrl: "https://images.unsplash.com/photo-1551650975-87deedd944c3",
-    skills: ["Flutter", "Dart", "Mobile App Development", "Cross-platform", "UI Design"]
-  },
-  {
-    id: "21",
-    title: "AWS Machine Learning Engineer Nanodegree",
-    provider: "Udacity",
-    category: "Artificial Intelligence",
-    description: "Learn to deploy machine learning models and build end-to-end ML pipelines in AWS.",
-    duration: "3 months",
-    certificate: true,
-    link: "https://www.udacity.com/course/aws-machine-learning-engineer-nanodegree--nd189",
-    imageUrl: "https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb",
-    skills: ["AWS", "Machine Learning", "MLOps", "Cloud Computing", "Data Engineering"]
-  },
-  {
-    id: "22",
-    title: "Modern JavaScript From The Beginning",
-    provider: "Brad Traversy",
-    category: "Programming",
-    description: "Learn modern JavaScript fundamentals from the beginning, no frameworks or libraries.",
-    duration: "21 hours",
-    certificate: true,
-    link: "https://www.udemy.com/course/modern-javascript-from-the-beginning/",
-    imageUrl: "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a",
-    skills: ["JavaScript", "ES6+", "DOM Manipulation", "Async JS", "Error Handling"]
-  },
-  {
-    id: "23",
-    title: "Reinforcement Learning Specialization",
-    provider: "University of Alberta",
-    category: "Artificial Intelligence",
-    description: "Master the fundamentals of reinforcement learning, the technology behind AlphaGo and self-driving cars.",
-    duration: "4 months",
-    certificate: true,
-    link: "https://www.coursera.org/specializations/reinforcement-learning",
-    imageUrl: "https://images.unsplash.com/photo-1504639725590-34d0984388bd",
-    skills: ["Reinforcement Learning", "Markov Decision Process", "Q-Learning", "Policy Gradients", "Deep RL"]
-  },
-  {
-    id: "24",
-    title: "Introduction to Quantum Computing",
-    provider: "MIT",
-    category: "Computer Science",
-    description: "Learn the fundamentals of quantum computing, quantum algorithms, and their applications.",
-    duration: "10 weeks",
-    certificate: true,
-    link: "https://www.edx.org/course/quantum-information-science-i-part-1",
-    imageUrl: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb",
-    skills: ["Quantum Computing", "Quantum Mechanics", "Quantum Algorithms", "Quantum Information Theory"]
-  },
-  {
-    id: "25",
-    title: "Build a Modern Computer from First Principles",
-    provider: "Hebrew University of Jerusalem",
-    category: "Computer Science",
-    description: "Build a modern computer system, from the ground up: from Nand to Tetris, in 12 steps.",
-    duration: "6 weeks",
-    certificate: true,
-    link: "https://www.coursera.org/learn/build-a-computer",
-    imageUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475",
-    skills: ["Computer Architecture", "Hardware Design", "Logic Gates", "Assembly Language", "Operating Systems"]
-  },
-  // Adding 30 new trending free courses
-  {
-    id: "26",
-    title: "Prompt Engineering for ChatGPT",
-    provider: "DeepLearning.AI",
-    category: "Artificial Intelligence",
-    description: "Learn how to effectively communicate with AI systems like ChatGPT to get the best possible results.",
-    duration: "2 weeks",
-    certificate: true,
-    link: "https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/",
-    imageUrl: "https://images.unsplash.com/photo-1655720033654-a4239dd42d10",
-    skills: ["Prompt Engineering", "ChatGPT", "AI Communication", "Large Language Models", "Natural Language Processing"]
-  },
-  {
-    id: "27",
-    title: "Generative AI with Large Language Models",
-    provider: "DeepLearning.AI",
-    category: "Artificial Intelligence",
-    description: "Understand how generative AI works and learn to apply LLMs to various tasks and applications.",
-    duration: "3 weeks",
-    certificate: true,
-    link: "https://www.coursera.org/learn/generative-ai-with-large-language-models",
-    imageUrl: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485",
-    skills: ["Generative AI", "LLMs", "Transformers", "AI Applications", "Fine-tuning"]
-  },
-  {
-    id: "28",
-    title: "Cybersecurity for Beginners",
-    provider: "Cisco Networking Academy",
-    category: "Cybersecurity",
-    description: "Learn the basics of cybersecurity to protect yourself and your organization from digital threats.",
-    duration: "15 hours",
-    certificate: true,
-    link: "https://www.netacad.com/courses/cybersecurity/introduction-cybersecurity",
-    imageUrl: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7",
-    skills: ["Cybersecurity", "Network Security", "Information Security", "Privacy", "Digital Safety"]
-  },
-  {
-    id: "29",
-    title: "UI/UX Design Fundamentals",
-    provider: "Google",
-    category: "Art & Design",
-    description: "Learn the fundamentals of UI/UX design from Google's expert designers and create user-friendly interfaces.",
-    duration: "6 months",
-    certificate: true,
-    link: "https://www.coursera.org/professional-certificates/google-ux-design",
-    imageUrl: "https://images.unsplash.com/photo-1561070791-2526d30994b5",
-    skills: ["UI Design", "UX Design", "Wireframing", "Prototyping", "User Research", "Figma"]
-  },
-  {
-    id: "30",
-    title: "Data Analytics with Python",
-    provider: "IBM",
-    category: "Data Science",
-    description: "Learn how to analyze data using Python and create powerful data visualizations.",
-    duration: "5 weeks",
-    certificate: true,
-    link: "https://www.edx.org/professional-certificate/ibm-python-data-science",
-    imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-    skills: ["Python", "Data Analysis", "Pandas", "NumPy", "Data Visualization", "Matplotlib"]
-  },
-  {
-    id: "31",
-    title: "Blockchain Fundamentals",
-    provider: "Berkeley University of California",
-    category: "Blockchain",
-    description: "Learn the technical foundations of blockchain technology, cryptocurrencies, and applications.",
-    duration: "3 months",
-    certificate: true,
-    link: "https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals",
-    imageUrl: "https://images.unsplash.com/photo-1639762681057-408e52192e55",
-    skills: ["Blockchain", "Cryptocurrency", "Smart Contracts", "Decentralized Systems", "Cryptography"]
-  },
-  {
-    id: "32",
-    title: "Cloud Computing Fundamentals",
-    provider: "AWS",
-    category: "Cloud Computing",
-    description: "Get started with cloud computing on Amazon Web Services and learn essential cloud concepts.",
-    duration: "6 hours",
-    certificate: true,
-    link: "https://aws.amazon.com/training/digital/aws-cloud-practitioner-essentials/",
-    imageUrl: "https://images.unsplash.com/photo-1451187580459-43490279c0fa",
-    skills: ["Cloud Computing", "AWS", "Infrastructure as a Service", "Cloud Architecture", "Cloud Security"]
-  },
-  {
-    id: "33",
-    title: "DevOps Engineering",
-    provider: "Microsoft",
-    category: "DevOps",
-    description: "Learn how to implement DevOps practices using Azure DevOps and GitHub.",
-    duration: "4 weeks",
-    certificate: true,
-    link: "https://docs.microsoft.com/en-us/learn/paths/azure-devops-devops-engineer/",
-    imageUrl: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb",
-    skills: ["DevOps", "CI/CD", "Azure DevOps", "GitHub Actions", "Containerization", "Infrastructure as Code"]
-  },
-  {
-    id: "34",
-    title: "iOS App Development with Swift",
-    provider: "Apple",
-    category: "Mobile Development",
-    description: "Learn how to build iOS apps using Swift programming language and SwiftUI framework.",
-    duration: "Self-paced",
-    certificate: false,
-    link: "https://developer.apple.com/tutorials/app-dev-training/",
-    imageUrl: "https://images.unsplash.com/photo-1621839673705-6617adf9e890",
-    skills: ["Swift", "iOS Development", "SwiftUI", "Xcode", "Mobile App Development", "UI Design"]
-  },
-  {
-    id: "35",
-    title: "Game Development with Unity",
-    provider: "Unity",
-    category: "Game Development",
-    description: "Learn how to create interactive games using the Unity game engine and C# programming.",
-    duration: "Self-paced",
-    certificate: true,
-    link: "https://learn.unity.com/course/getting-started-with-unity",
-    imageUrl: "https://images.unsplash.com/photo-1511512578047-dfb367046420",
-    skills: ["Unity", "C#", "Game Design", "3D Modeling", "Game Physics", "Level Design"]
-  },
-  {
-    id: "36",
-    title: "Digital Marketing Fundamentals",
-    provider: "Google",
-    category: "Digital Marketing",
-    description: "Master the basics of digital marketing with Google's comprehensive course covering SEO, SEM, and more.",
-    duration: "40 hours",
-    certificate: true,
-    link: "https://learndigital.withgoogle.com/digitalgarage/course/digital-marketing",
-    imageUrl: "https://images.unsplash.com/photo-1533750516457-a7f992034fec",
-    skills: ["Digital Marketing", "SEO", "SEM", "Social Media Marketing", "Content Marketing", "Analytics"]
-  },
-  {
-    id: "37",
-    title: "Data Visualization with Tableau",
-    provider: "Tableau",
-    category: "Data Science",
-    description: "Learn how to create interactive data visualizations with Tableau to communicate insights effectively.",
-    duration: "4 weeks",
-    certificate: true,
-    link: "https://www.tableau.com/learn/training/elearning",
-    imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-    skills: ["Tableau", "Data Visualization", "Business Intelligence", "Dashboard Design", "Data Analysis"]
-  },
-  {
-    id: "38",
-    title: "Product Management Fundamentals",
-    provider: "Product School",
-    category: "Product Management",
-    description: "Learn the fundamentals of product management from ideation to execution and launch.",
-    duration: "8 weeks",
-    certificate: true,
-    link: "https://www.productschool.com/free-product-management-resources/",
-    imageUrl: "https://images.unsplash.com/photo-1552664730-d307ca884978",
-    skills: ["Product Management", "Product Strategy", "User Research", "Product Roadmap", "Agile Methodology"]
-  },
-  {
-    id: "39",
-    title: "Agile and Scrum Fundamentals",
-    provider: "Scrum.org",
-    category: "Project Management",
-    description: "Learn the principles of Agile project management and Scrum framework for effective team collaboration.",
-    duration: "Self-paced",
-    certificate: false,
-    link: "https://www.scrum.org/resources/what-is-scrum",
-    imageUrl: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca",
-    skills: ["Agile", "Scrum", "Sprint Planning", "Product Backlog", "Team Management", "Kanban"]
-  },
-  {
-    id: "40",
-    title: "3D Modeling with Blender",
-    provider: "Blender Foundation",
-    category: "Art & Design",
-    description: "Learn 3D modeling, rendering, and animation using the free and open-source Blender software.",
-    duration: "Self-paced",
-    certificate: false,
-    link: "https://www.blender.org/support/tutorials/",
-    imageUrl: "https://images.unsplash.com/photo-1626544827763-d516dce335e2",
-    skills: ["Blender", "3D Modeling", "3D Animation", "Rendering", "Texturing", "Rigging"]
-  },
-  {
-    id: "41",
-    title: "Sustainable Development Goals",
-    provider: "SDG Academy",
-    category: "Sustainability",
-    description: "Learn about the UN Sustainable Development Goals and how to contribute to a more sustainable future.",
-    duration: "8 weeks",
-    certificate: true,
-    link: "https://sdgacademy.org/course/the-age-of-sustainable-development/",
-    imageUrl: "https://images.unsplash.com/photo-1536859355448-76f92ebdc33d",
-    skills: ["Sustainability", "Climate Action", "Social Impact", "Environmental Science", "Global Goals"]
-  },
-  {
-    id: "42",
-    title: "Audio Production and Sound Design",
-    provider: "Berklee College of Music",
-    category: "Music Production",
-    description: "Learn the fundamentals of audio production, recording, and sound design for various media.",
-    duration: "6 weeks",
-    certificate: true,
-    link: "https://www.coursera.org/learn/music-production",
-    imageUrl: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04",
-    skills: ["Audio Production", "Sound Design", "Recording", "Mixing", "DAW", "Acoustics"]
-  },
-  {
-    id: "43",
-    title: "AR/VR Development Fundamentals",
-    provider: "Meta",
-    category: "AR/VR",
-    description: "Learn the basics of augmented and virtual reality development for immersive experiences.",
-    duration: "8 weeks",
-    certificate: true,
-    link: "https://www.coursera.org/specializations/virtual-reality",
-    imageUrl: "https://images.unsplash.com/photo-1617802690992-15d93263d3a9",
-    skills: ["AR", "VR", "Unity", "3D Modeling", "Interaction Design", "Spatial Computing"]
-  },
-  {
-    id: "44",
-    title: "Content Marketing Strategy",
-    provider: "HubSpot Academy",
-    category: "Digital Marketing",
-    description: "Learn how to create and execute a content marketing strategy that drives business results.",
-    duration: "4 hours",
-    certificate: true,
-    link: "https://academy.hubspot.com/courses/content-marketing",
-    imageUrl: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173",
-    skills: ["Content Marketing", "Content Strategy", "SEO", "Content Creation", "Analytics"]
-  },
-  {
-    id: "45",
-    title: "Ethical Hacking",
-    provider: "Cybrary",
-    category: "Cybersecurity",
-    description: "Learn ethical hacking techniques and methodologies to identify and fix security vulnerabilities.",
-    duration: "Self-paced",
-    certificate: true,
-    link: "https://www.cybrary.it/course/ethical-hacking/",
-    imageUrl: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb",
-    skills: ["Ethical Hacking", "Penetration Testing", "Network Security", "Vulnerability Assessment", "Web Security"]
-  },
-  {
-    id: "46",
-    title: "TypeScript Programming",
-    provider: "Microsoft",
-    category: "Programming",
-    description: "Learn TypeScript, a typed superset of JavaScript that enhances code quality and developer productivity.",
-    duration: "Self-paced",
-    certificate: false,
-    link: "https://docs.microsoft.com/en-us/learn/paths/build-javascript-applications-typescript/",
-    imageUrl: "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
-    skills: ["TypeScript", "JavaScript", "Object-Oriented Programming", "Static Typing", "Web Development"]
-  },
-  {
-    id: "47",
-    title: "Salesforce Fundamentals",
-    provider: "Salesforce",
-    category: "CRM",
-    description: "Learn the basics of Salesforce CRM platform and how to customize it for business needs.",
-    duration: "Self-paced",
-    certificate: true,
-    link: "https://trailhead.salesforce.com/en/content/learn/trails/force_com_admin_beginner",
-    imageUrl: "https://images.unsplash.com/photo-1661956600684-97d3a4320e45",
-    skills: ["Salesforce", "CRM", "Cloud Computing", "Business Process", "Sales Automation"]
-  },
-  {
-    id: "48",
-    title: "Financial Literacy",
-    provider: "Khan Academy",
-    category: "Finance",
-    description: "Learn the fundamentals of personal finance, investing, and managing your money wisely.",
-    duration: "Self-paced",
-    certificate: false,
-    link: "https://www.khanacademy.org/economics-finance-domain/core-finance",
-    imageUrl: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3",
-    skills: ["Financial Literacy", "Investing", "Budgeting", "Retirement Planning", "Credit Management"]
-  },
-  {
-    id: "49",
-    title: "GraphQL API Development",
-    provider: "Apollo GraphQL",
-    category: "Web Development",
-    description: "Learn how to build and consume GraphQL APIs for more efficient data fetching in applications.",
-    duration: "Self-paced",
-    certificate: false,
-    link: "https://www.apollographql.com/tutorials/",
-    imageUrl: "https://images.unsplash.com/photo-1642543348745-03b1219733d8",
-    skills: ["GraphQL", "API Development", "Web Development", "JavaScript", "Backend Development"]
-  },
-  {
-    id: "50",
-    title: "Container Orchestration with Kubernetes",
-    provider: "Linux Foundation",
-    category: "DevOps",
-    description: "Learn how to deploy, scale, and manage containerized applications with Kubernetes.",
-    duration: "5 weeks",
-    certificate: true,
-    link: "https://www.edx.org/course/introduction-to-kubernetes",
-    imageUrl: "https://images.unsplash.com/photo-1642543348745-03b1219733d8",
-    skills: ["Kubernetes", "Container Orchestration", "Docker", "Microservices", "Cloud Native", "DevOps"]
-  },
-  {
-    id: "51",
-    title: "Social Media Marketing",
-    provider: "Meta Blueprint",
-    category: "Digital Marketing",
-    description: "Learn how to create effective marketing campaigns on Facebook, Instagram, and other Meta platforms.",
-    duration: "Self-paced",
-    certificate: true,
-    link: "https://www.facebookblueprint.com/student/catalog",
-    imageUrl: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7",
-    skills: ["Social Media Marketing", "Facebook Ads", "Instagram Marketing", "Content Strategy", "Audience Targeting"]
-  },
-  {
-    id: "52",
-    title: "Robotics: Perception and Navigation",
-    provider: "University of Pennsylvania",
-    category: "Robotics",
-    description: "Learn about robotics perception, navigation, and motion planning algorithms.",
-    duration: "6 weeks",
-    certificate: true,
-    link: "https://www.coursera.org/learn/robotics-perception",
-    imageUrl: "https://images.unsplash.com/photo-1558137623-ce933996c730",
-    skills: ["Robotics", "Computer Vision", "Navigation Algorithms", "Motion Planning", "Sensor Fusion"]
-  },
-  {
-    id: "53",
-    title: "Quantum Computing for Everyone",
-    provider: "MIT",
-    category: "Computer Science",
-    description: "An accessible introduction to quantum computing principles and applications for beginners.",
-    duration: "10 weeks",
-    certificate: true,
-    link: "https://www.edx.org/course/quantum-computing-for-everyone",
-    imageUrl: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb",
-    skills: ["Quantum Computing", "Quantum Mechanics", "Quantum Algorithms", "Programming", "Physics"]
-  },
-  {
-    id: "54",
-    title: "Responsive Web Design",
-    provider: "freeCodeCamp",
-    category: "Web Development",
-    description: "Learn responsive web design principles to build websites that work on any device size.",
-    duration: "300 hours",
-    certificate: true,
-    link: "https://www.freecodecamp.org/learn/responsive-web-design/",
-    imageUrl: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97",
-    skills: ["HTML", "CSS", "Responsive Design", "Flexbox", "CSS Grid", "Mobile-First Design"]
-  },
-  {
-    id: "55",
-    title: "Supply Chain Management",
-    provider: "MIT",
-    category: "Business",
-    description: "Learn the fundamentals of supply chain management, logistics, and operations management.",
-    duration: "8 weeks",
-    certificate: true,
-    link: "https://www.edx.org/course/supply-chain-management",
-    imageUrl: "https://images.unsplash.com/photo-1566226814437-f738bf2dac74",
-    skills: ["Supply Chain", "Logistics", "Operations Management", "Inventory Management", "Procurement"]
+    id: "germany",
+    name: "Germany",
+    description: "Germany is a hub for engineering and technology, offering free or low-cost tuition at public universities and a growing number of English-taught programs.",
+    flagUrl: "https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg"
   }
 ];
+
+export const studyAbroadColleges: StudyAbroadCollege[] = [
+  {
+    id: "harvard",
+    countryId: "usa",
+    name: "Harvard University",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/2/29/Harvard_University_seal.svg/1200px-Harvard_University_seal.svg.png",
+    description: "Harvard University is a private Ivy League research university in Cambridge, Massachusetts. Established in 1636, its history, influence, and wealth have made it one of the world's most prestigious universities.",
+    ranking: 1,
+    tuitionFee: "$54,768",
+    acceptanceRate: "3.4%",
+    website: "https://www.harvard.edu/",
+    scholarships: [
+      {
+        name: "Need-Based Scholarships",
+        amount: "Varies",
+        deadline: "Varies",
+        eligibility: "Based on financial need",
+        link: "https://college.harvard.edu/financial-aid/how-aid-works"
+      },
+      {
+        name: "External Scholarships",
+        amount: "Varies",
+        deadline: "Varies",
+        eligibility: "Varies",
+        link: "https://college.harvard.edu/financial-aid/apply-aid/outside-scholarships"
+      }
+    ]
+  },
+  {
+    id: "stanford",
+    countryId: "usa",
+    name: "Stanford University",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Stanford_University_seal.svg/1200px-Stanford_University_seal.svg.png",
+    description: "Stanford University, officially Leland Stanford Junior University, is a private research university in Stanford, California. Known for its academic strength, wealth, proximity to Silicon Valley, and selectivity, it is one of the world's most prestigious universities.",
+    ranking: 3,
+    tuitionFee: "$56,169",
+    acceptanceRate: "3.9%",
+    website: "https://www.stanford.edu/",
+    scholarships: [
+      {
+        name: "Need-Based Scholarships",
+        amount: "Varies",
+        deadline: "Varies",
+        eligibility: "Based on financial need",
+        link: "https://financialaid.stanford.edu/undergrad/apply/international.html"
+      },
+      {
+        name: "Knight-Hennessy Scholars",
+        amount: "Full tuition and stipend",
+        deadline: "October",
+        eligibility: "For graduate students",
+        link: "https://knight-hennessy.stanford.edu/"
+      }
+    ]
+  },
+  {
+    id: "mit",
+    countryId: "usa",
+    name: "Massachusetts Institute of Technology (MIT)",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/MIT_Seal.svg/1200px-MIT_Seal.svg.png",
+    description: "The Massachusetts Institute of Technology (MIT) is a private research university in Cambridge, Massachusetts. MIT is dedicated to advancing knowledge and educating students in science, technology, and other areas of scholarship that will best serve the nation and the world.",
+    ranking: 2,
+    tuitionFee: "$55,510",
+    acceptanceRate: "4.1%",
+    website: "https://web.mit.edu/",
+    scholarships: [
+      {
+        name: "Need-Based Scholarships",
+        amount: "Varies",
+        deadline: "Varies",
+        eligibility: "Based on financial need",
+        link: "https://finaid.mit.edu/apply-for-aid/international-students/"
+      },
+      {
+        name: "External Scholarships",
+        amount: "Varies",
+        deadline: "Varies",
+        eligibility: "Varies",
+        link: "https://finaid.mit.edu/apply-for-aid/international-students/outside-resources/"
+      }
+    ]
+  },
+  {
+    id: "oxford",
+    countryId: "uk",
+    name: "University of Oxford",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/University_of_Oxford-Logo.svg/1200px-University_of_Oxford-Logo.svg.png",
+    description: "The University of Oxford is a collegiate research university in Oxford, England. There is evidence of teaching as early as 1096, making it the oldest university in the English-speaking world and the world's second-oldest university in continuous operation.",
+    ranking: 5,
+    tuitionFee: "£9,250 - £48,620",
+    acceptanceRate: "17.5%",
+    website: "https://www.ox.ac.uk/",
+    scholarships: [
+      {
+        name: "Rhodes Scholarships",
+        amount: "Full tuition and stipend",
+        deadline: "Varies by country",
+        eligibility: "For postgraduate students",
+        link: "https://www.rhodeshouse.ox.ac.uk/scholarships/apply/"
+      },
+      {
+        name: "Clarendon Scholarships",
+        amount: "Full tuition and stipend",
+        deadline: "January",
+        eligibility: "For graduate students",
+        link: "https://www.ox.ac.uk/clarendon"
+      }
+    ]
+  },
+  {
+    id: "cambridge",
+    countryId: "uk",
+    name: "University of Cambridge",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/b/b3/Cambridge_University_coat_of_arms.svg/1200px-Cambridge_University_coat_of_arms.svg.png",
+    description: "The University of Cambridge is a collegiate public research university in Cambridge, England. Founded in 1209 and granted a royal charter by King Henry III in 1231, Cambridge is the second-oldest university in the English-speaking world and the world's fourth-oldest surviving university.",
+    ranking: 7,
+    tuitionFee: "£22,214 - £58,000",
+    acceptanceRate: "21%",
+    website: "https://www.cam.ac.uk/",
+    scholarships: [
+      {
+        name: "Cambridge International Scholarships",
+        amount: "Full tuition and stipend",
+        deadline: "Varies",
+        eligibility: "For PhD students",
+        link: "https://www.graduate.study.cam.ac.uk/finance/funding/cambridge-international-scholarships"
+      },
+      {
+        name: "Gates Cambridge Scholarships",
+        amount: "Full tuition and stipend",
+        deadline: "October",
+        eligibility: "For postgraduate students",
+        link: "https://www.gatescambridge.org/"
+      }
+    ]
+  },
+  {
+    id: "ethzurich",
+    countryId: "germany",
+    name: "ETH Zurich",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/ETH_Z%C3%BCrich_logo.svg/1200px-ETH_Z%C3%BCrich_logo.svg.png",
+    description: "ETH Zurich is a science and technology university in the city of Zürich, Switzerland. Founded in 1855, it is consistently ranked among the world's best universities.",
+    ranking: 9,
+    tuitionFee: "CHF 730 per semester",
+    acceptanceRate: "27%",
+    website: "https://ethz.ch/en.html",
+    scholarships: [
+      {
+        name: "Excellence Scholarship & Opportunity Programme (ESOP)",
+        amount: "Varies",
+        deadline: "December",
+        eligibility: "For master's students",
+        link: "https://ethz.ch/students/en/studies/financial/scholarships/excellence-scholarship.html"
+      },
+      {
+        name: "ETH-D Scholarship",
+        amount: "Varies",
+        deadline: "March",
+        eligibility: "For doctoral students",
+        link: "https://ethz.ch/services/en/news-and-events/internal-news/archive/2020/03/doctoral-scholarships.html"
+      }
+    ]
+  },
+  {
+    id: "utoronto",
+    countryId: "canada",
+    name: "University of Toronto",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/University_of_Toronto_Coat_of_Arms.svg/1200px-University_of_Toronto_Coat_of_Arms.svg.png",
+    description: "The University of Toronto is a public research university in Toronto, Ontario, Canada. It was founded in 1827 as King's College, the first institution of higher education in Upper Canada.",
+    ranking: 26,
+    tuitionFee: "CAD $61,000 - $70,000",
+    acceptanceRate: "43%",
+    website: "https://www.utoronto.ca/",
+    scholarships: [
+      {
+        name: "Lester B. Pearson International Scholarship",
+        amount: "Full tuition, books, residence support",
+        deadline: "January",
+        eligibility: "International students",
+        link: "https://future.utoronto.ca/pearson/"
+      },
+      {
+        name: "University of Toronto Scholars Program",
+        amount: "Varies",
+        deadline: "Varies",
+        eligibility: "Based on academic merit",
+        link: "https://future.utoronto.ca/scholarships/"
+      }
+    ]
+  },
+  {
+    id: "mcgill",
+    countryId: "canada",
+    name: "McGill University",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/McGill_University_CoA.svg/1200px-McGill_University_CoA.svg.png",
+    description: "McGill University is a public research university in Montreal, Quebec, Canada. It was established in 1821 by royal charter, given by King George IV of the United Kingdom.",
+    ranking: 31,
+    tuitionFee: "CAD $20,000 - $60,000",
+    acceptanceRate: "46%",
+    website: "https://www.mcgill.ca/",
+    scholarships: [
+      {
+        name: "McGill International Student Funding",
+        amount: "Varies",
+        deadline: "Varies",
+        eligibility: "International students",
+        link: "https://www.mcgill.ca/studentaid/international-student-funding"
+      },
+      {
+        name: "External Awards and Scholarships",
+        amount: "Varies",
+        deadline: "Varies",
+        eligibility: "Varies",
+        link: "https://www.mcgill.ca/studentaid/scholarships-awards/external"
+      }
+    ]
+  },
+  {
+    id: "anu",
+    countryId: "australia",
+    name: "Australian National University (ANU)",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/f/ff/Australian_National_University_logo.svg/1200px-Australian_National_University_logo.svg.png",
+    description: "The Australian National University (ANU) is a national research university located in Canberra, Australia. Its main campus in Acton encompasses seven teaching and research colleges.",
+    ranking: 30,
+    tuitionFee: "AUD $43,680",
+    acceptanceRate: "35%",
+    website: "https://www.anu.edu.au/",
+    scholarships: [
+      {
+        name: "ANU International Excellence Scholarship",
+        amount: "50% or 25% tuition fee reduction",
+        deadline: "Varies",
+        eligibility: "International students",
+        link: "https://www.anu.edu.au/study/scholarships/find-a-scholarship/anu-international-excellence-scholarship"
+      },
+      {
+        name: "Research Scholarships",
+        amount: "Full tuition and stipend",
+        deadline: "Varies",
+        eligibility: "For research students",
+        link: "https://www.anu.edu.au/study/scholarships/find-a-scholarship?field_faculty_target_id=All&field_scholarship_type_target_id=131"
+      }
+    ]
+  },
+  {
+    id: "unimelb",
+    countryId: "australia",
+    name: "University of Melbourne",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/1/1c/Unimelb_logo.svg/1200px-Unimelb_logo.svg.png",
+    description: "The University of Melbourne is a public research university located in Melbourne, Australia. Founded in 1853, it is the second oldest university in Australia and the oldest in Victoria.",
+    ranking: 33,
+    tuitionFee: "AUD $42,000 - $50,000",
+    acceptanceRate: "30%",
+    website: "https://www.unimelb.edu.au/",
+    scholarships: [
+      {
+        name: "Melbourne International Undergraduate Scholarship",
+        amount: "AUD $10,000 per year",
+        deadline: "Varies",
+        eligibility: "Undergraduate international students",
+        link: "https://scholarships.unimelb.edu.au/awards/melbourne-international-undergraduate-scholarship"
+      },
+      {
+        name: "Graduate Research Scholarships",
+        amount: "Full tuition and stipend",
+        deadline: "Varies",
+        eligibility: "For graduate research students",
+        link: "https://scholarships.unimelb.edu.au/awards/graduate-research-scholarships"
+      }
+    ]
+  }
+];
+
+export const getCollegesByCountry = (countryId: string): StudyAbroadCollege[] => {
+  return studyAbroadColleges.filter(college => college.countryId === countryId);
+};
