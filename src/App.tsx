@@ -15,6 +15,7 @@ import CountryCollegesPage from "./pages/studyabroad/CountryCollegesPage";
 import CollegeDetailPage from "./pages/studyabroad/CollegeDetailPage";
 import ExamsPage from "./pages/exams/ExamsPage";
 import FreeCoursesPage from "./pages/freecourses/FreeCoursesPage";
+import TrendingCoursesPage from "./pages/trending/TrendingCoursesPage";
 
 const queryClient = new QueryClient();
 
@@ -48,13 +49,16 @@ const App = () => (
           {/* Exams page */}
           <Route path="/exams" element={<ExamsPage />} />
 
-          {/* Free Courses page */}
+          {/* Courses routes */}
           <Route path="/free-courses" element={<FreeCoursesPage />} />
           <Route path="/courses" element={<Navigate to="/free-courses" replace />} />
           
+          {/* Trending Courses */}
+          <Route path="/trending-courses" element={<TrendingCoursesPage />} />
+          <Route path="/best-courses" element={<Navigate to="/trending-courses" replace />} />
+          
           {/* These routes will be implemented in future iterations */}
           <Route path="/scholarships" element={<NotFound />} />
-          <Route path="/trending-courses" element={<NotFound />} />
           <Route path="/news" element={<NotFound />} />
           <Route path="/success-stories" element={<NotFound />} />
           <Route path="/resources" element={<NotFound />} />
