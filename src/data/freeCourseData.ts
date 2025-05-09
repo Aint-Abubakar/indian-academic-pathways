@@ -1,3 +1,4 @@
+
 export interface FreeCourse {
   id: string;
   title: string;
@@ -610,3 +611,69 @@ export const freeCourses: FreeCourse[] = [
     category: "DevOps",
     description: "Learn how to deploy, scale, and manage containerized applications with Kubernetes.",
     duration: "5 weeks",
+    certificate: true,
+    link: "https://training.linuxfoundation.org/training/introduction-to-kubernetes/",
+    imageUrl: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9",
+    skills: ["Kubernetes", "Docker", "Containers", "Microservices", "DevOps", "Cloud Native"]
+  },
+  {
+    id: "51",
+    title: "Stable Diffusion for AI Art",
+    provider: "Fast.ai",
+    category: "Artificial Intelligence",
+    description: "Learn how to create amazing AI-generated art using Stable Diffusion models.",
+    duration: "Self-paced",
+    certificate: false,
+    link: "https://course.fast.ai/Lessons/lesson9.html",
+    imageUrl: "https://images.unsplash.com/photo-1684391147527-a3eff1ad8011",
+    skills: ["AI Art", "Stable Diffusion", "Prompt Engineering", "Image Generation", "Creative AI"]
+  },
+  {
+    id: "52",
+    title: "Python for Data Science",
+    provider: "Kaggle",
+    category: "Data Science",
+    description: "Learn Python programming fundamentals needed for data science and machine learning.",
+    duration: "4 weeks",
+    certificate: true,
+    link: "https://www.kaggle.com/learn/python",
+    imageUrl: "https://images.unsplash.com/photo-1580675950087-38055edb2a8e",
+    skills: ["Python", "Data Manipulation", "Data Analysis", "Visualization", "Pandas", "NumPy"]
+  },
+  {
+    id: "53",
+    title: "Midjourney Prompt Engineering",
+    provider: "Designify",
+    category: "Art & Design",
+    description: "Master the art of prompt engineering for Midjourney to create stunning AI-generated artworks.",
+    duration: "3 weeks",
+    certificate: true,
+    link: "https://designify.com/tutorials/midjourney",
+    imageUrl: "https://images.unsplash.com/photo-1680687648204-8ce96af6ff8a",
+    skills: ["Midjourney", "Prompt Engineering", "AI Art", "Digital Art", "Creative Direction"]
+  },
+  {
+    id: "54",
+    title: "Next.js Full Stack Development",
+    provider: "Vercel",
+    category: "Web Development",
+    description: "Learn to build full-stack applications with Next.js, React, and serverless functions.",
+    duration: "6 weeks",
+    certificate: false,
+    link: "https://nextjs.org/learn",
+    imageUrl: "https://images.unsplash.com/photo-1642543348745-03b1219733d8",
+    skills: ["Next.js", "React", "Serverless", "API Routes", "Server Components", "TypeScript"]
+  },
+  {
+    id: "55",
+    title: "MongoDB for Developers",
+    provider: "MongoDB University",
+    category: "Database",
+    description: "Learn to design, build, and deploy applications using MongoDB and modern architecture patterns.",
+    duration: "4 weeks",
+    certificate: true,
+    link: "https://learn.mongodb.com/",
+    imageUrl: "https://images.unsplash.com/photo-1636359011657-68265feee0f4",
+    skills: ["MongoDB", "NoSQL", "Database Design", "Query Optimization", "Indexing", "Aggregation"]
+  }
+];
