@@ -34,7 +34,7 @@ const StudyAbroadCollegeCard = ({ college, countryId }: StudyAbroadCollegeCardPr
               <div className="flex items-center justify-between">
                 <div className="flex items-center text-nextstep-blue">
                   <School className="h-4 w-4 mr-1" />
-                  <span className="text-sm">{college.country}</span>
+                  <span className="text-sm">{countryId}</span>
                 </div>
                 <span className="text-sm text-muted-foreground">
                   {college.tuitionFee}

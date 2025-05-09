@@ -43,7 +43,7 @@ export const countries: Country[] = [
     id: "canada",
     name: "Canada",
     description: "Canada is known for its high quality of life, multicultural environment, and affordable tuition fees, making it an attractive option for international students.",
-    flagUrl: "https://upload.wikimedia.org/wikipedia/en/c/cf/Flag_of_Canada.svg"
+    flagUrl: "https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Canada.svg"
   },
   {
     id: "australia",
@@ -56,6 +56,37 @@ export const countries: Country[] = [
     name: "Germany",
     description: "Germany is a hub for engineering and technology, offering free or low-cost tuition at public universities and a growing number of English-taught programs.",
     flagUrl: "https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg"
+  },
+  // Adding new countries
+  {
+    id: "japan",
+    name: "Japan",
+    description: "Japan combines ancient traditions with cutting-edge technology and offers excellent universities with strong programs in engineering, technology, and arts.",
+    flagUrl: "https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg"
+  },
+  {
+    id: "singapore",
+    name: "Singapore",
+    description: "Singapore is a global education hub with world-class universities, offering a safe, multicultural environment and strong connections to Asian business markets.",
+    flagUrl: "https://upload.wikimedia.org/wikipedia/commons/4/48/Flag_of_Singapore.svg"
+  },
+  {
+    id: "sweden",
+    name: "Sweden",
+    description: "Sweden offers innovative education approaches with a focus on sustainability, creativity and critical thinking, with many programs taught entirely in English.",
+    flagUrl: "https://upload.wikimedia.org/wikipedia/en/4/4c/Flag_of_Sweden.svg"
+  },
+  {
+    id: "france",
+    name: "France",
+    description: "France offers prestigious educational institutions, rich cultural experiences, and relatively affordable tuition fees, especially for public universities.",
+    flagUrl: "https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg"
+  },
+  {
+    id: "netherlands",
+    name: "Netherlands",
+    description: "The Netherlands offers numerous English-taught programs in an international environment, with strong emphasis on innovation and practical applications.",
+    flagUrl: "https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_the_Netherlands.svg"
   }
 ];
 
@@ -327,6 +358,286 @@ export const studyAbroadColleges: StudyAbroadCollege[] = [
         deadline: "Varies",
         eligibility: "For graduate research students",
         link: "https://scholarships.unimelb.edu.au/awards/graduate-research-scholarships"
+      }
+    ]
+  },
+  
+  // Adding colleges for Japan
+  {
+    id: "utokyo",
+    countryId: "japan",
+    name: "University of Tokyo",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/7/77/University_of_Tokyo_logo.svg",
+    description: "The University of Tokyo is a leading research university located in Tokyo, Japan. It is the highest-ranked university in Asia and one of the most prestigious universities in the world.",
+    ranking: 23,
+    tuitionFee: "JPY 535,800 per year",
+    acceptanceRate: "33%",
+    website: "https://www.u-tokyo.ac.jp/en/",
+    scholarships: [
+      {
+        name: "MEXT Scholarship",
+        amount: "Full tuition and monthly stipend",
+        deadline: "December",
+        eligibility: "International students with exceptional academic records",
+        link: "https://www.u-tokyo.ac.jp/en/prospective-students/mext_scholarship.html"
+      },
+      {
+        name: "University of Tokyo Foundation Scholarship",
+        amount: "JPY 150,000 per month",
+        deadline: "April",
+        eligibility: "Graduate students with research potential",
+        link: "https://www.u-tokyo.ac.jp/en/prospective-students/scholarship.html"
+      }
+    ]
+  },
+  {
+    id: "kyoto",
+    countryId: "japan",
+    name: "Kyoto University",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/e/eb/Kyoto_University_emblem.svg",
+    description: "Kyoto University is one of Japan's premier research institutions, known for producing numerous Nobel laureates and pioneering research across various fields.",
+    ranking: 36,
+    tuitionFee: "JPY 535,800 per year",
+    acceptanceRate: "35%",
+    website: "https://www.kyoto-u.ac.jp/en",
+    scholarships: [
+      {
+        name: "MEXT Scholarship",
+        amount: "Full tuition and monthly stipend",
+        deadline: "December",
+        eligibility: "International students with exceptional academic records",
+        link: "https://www.kyoto-u.ac.jp/en/education-campus/international/students1/scholarship"
+      },
+      {
+        name: "JASSO Student Exchange Support Program",
+        amount: "JPY 80,000 per month",
+        deadline: "Varies",
+        eligibility: "Exchange students",
+        link: "https://www.jasso.go.jp/en/ryugaku/scholarship_j/shoreihi/index.html"
+      }
+    ]
+  },
+  
+  // Adding colleges for Singapore
+  {
+    id: "nus",
+    countryId: "singapore",
+    name: "National University of Singapore",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/b/b9/NUS_coat_of_arms.svg",
+    description: "The National University of Singapore (NUS) is Singapore's flagship university, offering a global approach to education and research with a focus on Asian perspectives.",
+    ranking: 11,
+    tuitionFee: "SGD 29,350 - 42,100 per year",
+    acceptanceRate: "5%",
+    website: "https://www.nus.edu.sg/",
+    scholarships: [
+      {
+        name: "NUS Merit Scholarship",
+        amount: "Full tuition and living stipend",
+        deadline: "March",
+        eligibility: "Outstanding academic achievement and leadership qualities",
+        link: "https://www.nus.edu.sg/oam/scholarships/freshmen-singapore-citizens"
+      },
+      {
+        name: "ASEAN Undergraduate Scholarship",
+        amount: "Full tuition and annual stipend",
+        deadline: "March",
+        eligibility: "Citizens of ASEAN countries (excluding Singapore)",
+        link: "https://www.nus.edu.sg/oam/scholarships/freshmen/scholarship/asean-undergraduate-scholarship"
+      }
+    ]
+  },
+  {
+    id: "ntu",
+    countryId: "singapore",
+    name: "Nanyang Technological University",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/e/e8/Nanyang_Technological_University_coat_of_arms.svg",
+    description: "Nanyang Technological University (NTU) is a research-intensive public university in Singapore known for its strength in engineering, business, and digital innovation.",
+    ranking: 15,
+    tuitionFee: "SGD 20,100 - 35,450 per year",
+    acceptanceRate: "36%",
+    website: "https://www.ntu.edu.sg/",
+    scholarships: [
+      {
+        name: "NTU Scholarship",
+        amount: "Full tuition and living allowance",
+        deadline: "February",
+        eligibility: "Outstanding academic achievements",
+        link: "https://www.ntu.edu.sg/admissions/undergraduate/scholarships/scholarships-overview"
+      },
+      {
+        name: "Nanyang Scholarship",
+        amount: "Full tuition, monthly allowance, and travel grant",
+        deadline: "December",
+        eligibility: "Top achievers with leadership qualities",
+        link: "https://www.ntu.edu.sg/admissions/undergraduate/scholarships/nanyang-scholarship"
+      }
+    ]
+  },
+  
+  // Adding colleges for Sweden
+  {
+    id: "uppsala",
+    countryId: "sweden",
+    name: "Uppsala University",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/4/47/Uppsala_University_seal.svg",
+    description: "Founded in 1477, Uppsala University is the oldest university in Sweden and all of the Nordic countries, renowned for its quality of education and research.",
+    ranking: 77,
+    tuitionFee: "Free for EU students, SEK 140,000 per year for non-EU students",
+    acceptanceRate: "35%",
+    website: "https://www.uu.se/en",
+    scholarships: [
+      {
+        name: "Uppsala University Global Scholarship",
+        amount: "75-100% of tuition fees",
+        deadline: "January",
+        eligibility: "Non-EU/EEA students with outstanding academic records",
+        link: "https://www.uu.se/en/admissions/scholarships/uppsala-university-global-scholarship/"
+      },
+      {
+        name: "Swedish Institute Scholarships",
+        amount: "Full tuition and living expenses",
+        deadline: "February",
+        eligibility: "Students from selected countries",
+        link: "https://si.se/en/apply/scholarships/swedish-institute-scholarships-for-global-professionals/"
+      }
+    ]
+  },
+  {
+    id: "kth",
+    countryId: "sweden",
+    name: "KTH Royal Institute of Technology",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/3/39/KTH_Royal_Institute_of_Technology_logo.svg",
+    description: "KTH Royal Institute of Technology is Sweden's largest technical university, offering education in engineering, science, architecture, industrial management, and urban planning.",
+    ranking: 98,
+    tuitionFee: "Free for EU students, SEK 155,000 per year for non-EU students",
+    acceptanceRate: "25%",
+    website: "https://www.kth.se/en",
+    scholarships: [
+      {
+        name: "KTH Scholarship",
+        amount: "50-100% of tuition fees",
+        deadline: "January",
+        eligibility: "Fee-paying students with excellent academic records",
+        link: "https://www.kth.se/en/studies/master/scholarships"
+      },
+      {
+        name: "Erasmus+ Programme",
+        amount: "Varies",
+        deadline: "Varies",
+        eligibility: "EU students for exchange programs",
+        link: "https://www.kth.se/en/studies/exchange/erasmus"
+      }
+    ]
+  },
+  
+  // Adding colleges for France
+  {
+    id: "sorbonne",
+    countryId: "france",
+    name: "Sorbonne University",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/e/e9/Sorbonne_Universit%C3%A9_Logo.svg",
+    description: "Sorbonne University is a public research university in Paris, France, which traces its history back to the 13th century and is one of the oldest in the world.",
+    ranking: 83,
+    tuitionFee: "€170 - €380 per year for EU students, €3,770 for non-EU students",
+    acceptanceRate: "40%",
+    website: "https://www.sorbonne-universite.fr/en",
+    scholarships: [
+      {
+        name: "Eiffel Excellence Scholarship Program",
+        amount: "€1,181 monthly and other benefits",
+        deadline: "January",
+        eligibility: "International students applying for Master's or PhD programs",
+        link: "https://www.campusfrance.org/en/eiffel-scholarship-program-of-excellence"
+      },
+      {
+        name: "Make Our Planet Great Again Scholarships",
+        amount: "Up to €1,700 monthly",
+        deadline: "May",
+        eligibility: "International students in climate change, earth system science",
+        link: "https://www.campusfrance.org/en/make-our-planet-great-again-en"
+      }
+    ]
+  },
+  {
+    id: "ecolepolytechnique",
+    countryId: "france",
+    name: "École Polytechnique",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/a/a7/Logo_EP_Couleur.svg",
+    description: "École Polytechnique is a leading French engineering school that combines top-level research, academics, and innovation at the cutting-edge of science and technology.",
+    ranking: 61,
+    tuitionFee: "€12,000 - €15,000 per year",
+    acceptanceRate: "18%",
+    website: "https://www.polytechnique.edu/en",
+    scholarships: [
+      {
+        name: "International Diversity Program",
+        amount: "€5,000 - €15,000 per year",
+        deadline: "January",
+        eligibility: "International students with excellent academic credentials",
+        link: "https://www.polytechnique.edu/en/financial-aids-and-scholarships"
+      },
+      {
+        name: "Excellence Scholarships",
+        amount: "Full tuition waiver",
+        deadline: "December",
+        eligibility: "Outstanding academic achievements",
+        link: "https://www.polytechnique.edu/en/scholarship-excellence"
+      }
+    ]
+  },
+  
+  // Adding colleges for Netherlands
+  {
+    id: "tudelft",
+    countryId: "netherlands",
+    name: "Delft University of Technology",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/5/5c/Delft_University_of_Technology_seal.svg",
+    description: "Delft University of Technology is the oldest and largest Dutch public technical university, known for its high-quality education in engineering, design and computer science.",
+    ranking: 57,
+    tuitionFee: "€2,168 for EU students, €15,166 for non-EU students",
+    acceptanceRate: "30%",
+    website: "https://www.tudelft.nl/en/",
+    scholarships: [
+      {
+        name: "Justus & Louise van Effen Excellence Scholarships",
+        amount: "Full tuition fee waiver",
+        deadline: "December",
+        eligibility: "Non-EU/EEA students with excellent academic records",
+        link: "https://www.tudelft.nl/en/education/practical-matters/scholarships/justus-louise-van-effen-excellence-scholarships/"
+      },
+      {
+        name: "Holland Scholarship",
+        amount: "€5,000",
+        deadline: "February",
+        eligibility: "International students from outside the EEA",
+        link: "https://www.tudelft.nl/en/education/practical-matters/scholarships/holland-scholarship"
+      }
+    ]
+  },
+  {
+    id: "uva",
+    countryId: "netherlands",
+    name: "University of Amsterdam",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/1/1a/University_of_Amsterdam_logo.svg",
+    description: "The University of Amsterdam is the Netherlands' largest university, offering a wide range of programs across humanities, social sciences, law, economics, and sciences.",
+    ranking: 55,
+    tuitionFee: "€2,168 for EU students, €10,000 - €20,000 for non-EU students",
+    acceptanceRate: "40%",
+    website: "https://www.uva.nl/en",
+    scholarships: [
+      {
+        name: "Amsterdam Merit Scholarships",
+        amount: "€5,000 - €25,000",
+        deadline: "January",
+        eligibility: "Non-EU/EEA students with outstanding academic achievement",
+        link: "https://www.uva.nl/en/education/master-s/scholarships-tuition/scholarships-and-loans/amsterdam-merit-scholarships/amsterdam-merit-scholarships.html"
+      },
+      {
+        name: "Amsterdam Excellence Scholarship",
+        amount: "€25,000 per year",
+        deadline: "January",
+        eligibility: "International students with excellent academic records",
+        link: "https://www.uva.nl/en/education/master-s/scholarships-tuition/scholarships-and-loans/amsterdam-excellence-scholarship/amsterdam-excellence-scholarship.html"
       }
     ]
   }
