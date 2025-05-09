@@ -11,7 +11,8 @@ import {
   Star, 
   Bell, 
   Heart, 
-  Download
+  Download,
+  Bot
 } from "lucide-react";
 
 import Header from "@/components/Header";
@@ -20,6 +21,13 @@ import Hero from "@/components/Hero";
 import CategoryCard from "@/components/CategoryCard";
 
 const categories = [
+  {
+    title: "Ask AI",
+    description: "Get instant answers to your education and career questions using AI assistant",
+    icon: Bot,
+    link: "/ask-ai",
+    color: "nextstep-purple"
+  },
   {
     title: "Scholarships",
     description: "National & international scholarships with eligibility criteria & deadlines",

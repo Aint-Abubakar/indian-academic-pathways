@@ -16,6 +16,7 @@ import CollegeDetailPage from "./pages/studyabroad/CollegeDetailPage";
 import ExamsPage from "./pages/exams/ExamsPage";
 import FreeCoursesPage from "./pages/freecourses/FreeCoursesPage";
 import TrendingCoursesPage from "./pages/trending/TrendingCoursesPage";
+import AskAiPage from "./pages/ai/AskAiPage";
 
 const queryClient = new QueryClient();
 
@@ -56,6 +57,9 @@ const App = () => (
           {/* Trending Courses */}
           <Route path="/trending-courses" element={<TrendingCoursesPage />} />
           <Route path="/best-courses" element={<Navigate to="/trending-courses" replace />} />
+          
+          {/* AI Assistant */}
+          <Route path="/ask-ai" element={<AskAiPage />} />
           
           {/* These routes will be implemented in future iterations */}
           <Route path="/scholarships" element={<NotFound />} />
