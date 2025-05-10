@@ -4,40 +4,22 @@ import PageLayout from "@/components/PageLayout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Bot, Bot as BotIcon, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+
+// Your Qwen 3 API key - Replace this with your actual API key
+const QWEN_API_KEY = "sk-or-v1-your-qwen-api-key-here";
 
 const AskAiPage = () => {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
-  const [apiKey, setApiKey] = useState(() => localStorage.getItem("qwen3_api_key") || "");
   const [isLoading, setIsLoading] = useState(false);
-  const [showDialog, setShowDialog] = useState(!apiKey);
   const { toast } = useToast();
-
-  // Save API key to localStorage
-  const saveApiKey = (key: string) => {
-    localStorage.setItem("qwen3_api_key", key);
-    setApiKey(key);
-    setShowDialog(false);
-    toast({
-      title: "API Key Saved",
-      description: "Your API key has been saved to your browser.",
-    });
-  };
 
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!apiKey) {
-      setShowDialog(true);
-      return;
-    }
-
     if (!question.trim()) {
       toast({
         variant: "destructive",
@@ -55,7 +37,7 @@ const AskAiPage = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${apiKey}`,
+          Authorization: `Bearer ${QWEN_API_KEY}`,
         },
         body: JSON.stringify({
           model: "qwen3-72b-max",
@@ -88,7 +70,7 @@ const AskAiPage = () => {
         title: "Error",
         description: error instanceof Error ? error.message : "Failed to get response from AI",
       });
-      setAnswer("Sorry, there was an error processing your request. Please check your API key and try again.");
+      setAnswer("Sorry, there was an error processing your request. Please try again later.");
     } finally {
       setIsLoading(false);
     }
@@ -110,7 +92,6 @@ const AskAiPage = () => {
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <Label htmlFor="question">Your Question</Label>
                 <Textarea
                   id="question"
                   placeholder="e.g., What should I study to become a data scientist?"
@@ -153,47 +134,6 @@ const AskAiPage = () => {
             </CardFooter>
           </Card>
         )}
-
-        <Dialog open={showDialog} onOpenChange={setShowDialog}>
-          <DialogContent>
-            <DialogHeader>
-              <DialogTitle>Enter Your Qwen 3 API Key</DialogTitle>
-              <DialogDescription>
-                You need a Qwen 3 API key to use this feature. Your key is stored locally in your browser and never sent to our servers.
-              </DialogDescription>
-            </DialogHeader>
-            <div className="py-4">
-              <Label htmlFor="apiKey">API Key</Label>
-              <Input
-                id="apiKey"
-                type="password"
-                value={apiKey}
-                onChange={(e) => setApiKey(e.target.value)}
-                placeholder="Enter your Qwen 3 API key"
-              />
-              <p className="text-sm text-muted-foreground mt-2">
-                You can get your API key from {" "}
-                <a 
-                  href="https://qwen.ai/dashboard/apikeys" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-nextstep-blue hover:underline"
-                >
-                  Qwen AI Dashboard
-                </a>
-              </p>
-            </div>
-            <DialogFooter>
-              <Button 
-                onClick={() => saveApiKey(apiKey)}
-                disabled={!apiKey}
-                className="bg-nextstep-blue hover:bg-nextstep-blue/90"
-              >
-                Save API Key
-              </Button>
-            </DialogFooter>
-          </DialogContent>
-        </Dialog>
       </div>
     </PageLayout>
   );
