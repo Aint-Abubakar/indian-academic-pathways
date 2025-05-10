@@ -38,7 +38,7 @@ const CollegeDetail = () => {
       <div className="section-container py-12">
         <div className="flex flex-col items-center justify-center min-h-[400px]">
           <h2 className="text-2xl font-semibold mb-4">College not found</h2>
-          <Link to={`/colleges/${stateId}`}>
+          <Link to={`/top-colleges/${stateId}`}>
             <Button>Back to Colleges</Button>
           </Link>
         </div>
@@ -122,22 +122,18 @@ const CollegeDetail = () => {
                 <div className="mt-6">
                   <h3 className="text-lg font-semibold mb-3">Key Features</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {college.courses && (
-                      <div className="flex items-center gap-2">
-                        <Badge variant="outline" className="bg-nextstep-blue/10">
-                          Top Courses
-                        </Badge>
-                        <span>{college.courses.slice(0, 3).join(", ")}</span>
-                      </div>
-                    )}
-                    {college.placement && (
-                      <div className="flex items-center gap-2">
-                        <Badge variant="outline" className="bg-nextstep-green/10">
-                          Placement
-                        </Badge>
-                        <span>{college.placement.percentage}% placed</span>
-                      </div>
-                    )}
+                    <div className="flex items-center gap-2">
+                      <Badge variant="outline" className="bg-nextstep-blue/10">
+                        Top Courses
+                      </Badge>
+                      <span>{college.courses.slice(0, 3).join(", ")}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Badge variant="outline" className="bg-nextstep-green/10">
+                        Placement
+                      </Badge>
+                      <span>{college.placement.percentage}% placed</span>
+                    </div>
                     <div className="flex items-center gap-2">
                       <Badge variant="outline" className="bg-nextstep-purple/10">
                         Rating
@@ -162,22 +158,20 @@ const CollegeDetail = () => {
                 <CardTitle>Courses Offered</CardTitle>
               </CardHeader>
               <CardContent>
-                {college.courses && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {college.courses.map((course, index) => (
-                      <Card key={index} className="shadow-sm border">
-                        <CardContent className="p-4">
-                          <h3 className="text-lg font-medium mb-2">{course}</h3>
-                          <div className="text-sm text-muted-foreground">
-                            <p>Duration: 4 Years</p>
-                            <p>Eligibility: 10+2 with Physics, Chemistry, Mathematics</p>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    ))}
-                  </div>
-                )}
-                {college.entranceExams && (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {college.courses.map((course, index) => (
+                    <Card key={index} className="shadow-sm border">
+                      <CardContent className="p-4">
+                        <h3 className="text-lg font-medium mb-2">{course}</h3>
+                        <div className="text-sm text-muted-foreground">
+                          <p>Duration: 4 Years</p>
+                          <p>Eligibility: 10+2 with Physics, Chemistry, Mathematics</p>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+                {college.entranceExams && college.entranceExams.length > 0 && (
                   <div className="mt-6">
                     <h3 className="text-xl font-semibold mb-4">Entrance Exams</h3>
                     <div className="flex flex-wrap gap-2">
@@ -197,7 +191,7 @@ const CollegeDetail = () => {
                 <CardTitle>Admission Details</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                {college.admissionDetails && (
+                {college.admissionDetails ? (
                   <>
                     <div>
                       <h3 className="text-lg font-semibold mb-2">Eligibility</h3>
@@ -212,6 +206,8 @@ const CollegeDetail = () => {
                       <p>{college.admissionDetails.deadlines}</p>
                     </div>
                   </>
+                ) : (
+                  <p>Admission details are not available for this college at the moment.</p>
                 )}
                 <div className="pt-4">
                   <Button className="bg-gradient-to-r from-nextstep-blue to-nextstep-purple">
@@ -288,11 +284,11 @@ const CollegeDetail = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                   <div className="bg-nextstep-blue/10 rounded-lg p-6 text-center">
                     <span className="text-3xl font-bold text-nextstep-blue">
-                      {college.placement?.percentage || 0}%
+                      {college.placement.percentage}%
                     </span>
                     <p className="mt-2 text-muted-foreground">Placement Rate</p>
                   </div>
-                  {college.placement?.avgSalary && (
+                  {college.placement.avgSalary && (
                     <div className="bg-nextstep-green/10 rounded-lg p-6 text-center">
                       <span className="text-3xl font-bold text-nextstep-green">
                         ₹{(college.placement.avgSalary / 100000).toFixed(1)}L
@@ -302,17 +298,17 @@ const CollegeDetail = () => {
                   )}
                   <div className="bg-nextstep-purple/10 rounded-lg p-6 text-center">
                     <span className="text-3xl font-bold text-nextstep-purple">
-                      {(college.placement?.topRecruiters?.length || 0)}+
+                      {(college.placement.topRecruiters?.length || college.placement.topCompanies?.length || 0)}+
                     </span>
                     <p className="mt-2 text-muted-foreground">Top Recruiters</p>
                   </div>
                 </div>
                 
-                {college.placement?.topRecruiters && college.placement.topRecruiters.length > 0 && (
+                {(college.placement.topRecruiters || college.placement.topCompanies) && (
                   <div>
                     <h3 className="text-xl font-semibold mb-4">Top Recruiters</h3>
                     <div className="flex flex-wrap gap-2">
-                      {college.placement.topRecruiters.map((recruiter, index) => (
+                      {(college.placement.topRecruiters || college.placement.topCompanies).map((recruiter, index) => (
                         <Badge key={index} variant="outline" className="px-3 py-1">
                           {recruiter}
                         </Badge>
