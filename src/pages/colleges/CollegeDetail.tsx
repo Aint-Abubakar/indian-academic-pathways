@@ -38,7 +38,7 @@ const CollegeDetail = () => {
       <div className="section-container py-12">
         <div className="flex flex-col items-center justify-center min-h-[400px]">
           <h2 className="text-2xl font-semibold mb-4">College not found</h2>
-          <Link to={`/top-colleges/${stateId}`}>
+          <Link to={`/colleges/${stateId}`}>
             <Button>Back to Colleges</Button>
           </Link>
         </div>
@@ -65,12 +65,14 @@ const CollegeDetail = () => {
                 <Badge variant="secondary" className="text-nextstep-blue">
                   {college.type}
                 </Badge>
-                <div className="flex items-center">
-                  <MapPin className="h-4 w-4 text-muted-foreground mr-1" />
-                  <span className="text-muted-foreground">
-                    {college.location.city}, {college.location.state}
-                  </span>
-                </div>
+                {college.location && (
+                  <div className="flex items-center">
+                    <MapPin className="h-4 w-4 text-muted-foreground mr-1" />
+                    <span className="text-muted-foreground">
+                      {college.location.city}, {college.location.state}
+                    </span>
+                  </div>
+                )}
                 <div className="flex items-center">
                   <CollegeRating rating={college.rating} />
                 </div>
@@ -111,25 +113,31 @@ const CollegeDetail = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-lg">{college.description}</p>
-                <div className="mt-6">
-                  <h3 className="text-lg font-semibold mb-3">Location</h3>
-                  <p>{college.location.address}</p>
-                </div>
+                {college.location && (
+                  <div className="mt-6">
+                    <h3 className="text-lg font-semibold mb-3">Location</h3>
+                    <p>{college.location.address}</p>
+                  </div>
+                )}
                 <div className="mt-6">
                   <h3 className="text-lg font-semibold mb-3">Key Features</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="flex items-center gap-2">
-                      <Badge variant="outline" className="bg-nextstep-blue/10">
-                        Top Courses
-                      </Badge>
-                      <span>{college.courses.slice(0, 3).join(", ")}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Badge variant="outline" className="bg-nextstep-green/10">
-                        Placement
-                      </Badge>
-                      <span>{college.placement.percentage}% placed</span>
-                    </div>
+                    {college.courses && (
+                      <div className="flex items-center gap-2">
+                        <Badge variant="outline" className="bg-nextstep-blue/10">
+                          Top Courses
+                        </Badge>
+                        <span>{college.courses.slice(0, 3).join(", ")}</span>
+                      </div>
+                    )}
+                    {college.placement && (
+                      <div className="flex items-center gap-2">
+                        <Badge variant="outline" className="bg-nextstep-green/10">
+                          Placement
+                        </Badge>
+                        <span>{college.placement.percentage}% placed</span>
+                      </div>
+                    )}
                     <div className="flex items-center gap-2">
                       <Badge variant="outline" className="bg-nextstep-purple/10">
                         Rating
@@ -154,27 +162,31 @@ const CollegeDetail = () => {
                 <CardTitle>Courses Offered</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {college.courses.map((course, index) => (
-                    <Card key={index} className="shadow-sm border">
-                      <CardContent className="p-4">
-                        <h3 className="text-lg font-medium mb-2">{course}</h3>
-                        <div className="text-sm text-muted-foreground">
-                          <p>Duration: 4 Years</p>
-                          <p>Eligibility: 10+2 with Physics, Chemistry, Mathematics</p>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-                <div className="mt-6">
-                  <h3 className="text-xl font-semibold mb-4">Entrance Exams</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {college.entranceExams.map((exam, index) => (
-                      <Badge key={index} variant="secondary">{exam}</Badge>
+                {college.courses && (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {college.courses.map((course, index) => (
+                      <Card key={index} className="shadow-sm border">
+                        <CardContent className="p-4">
+                          <h3 className="text-lg font-medium mb-2">{course}</h3>
+                          <div className="text-sm text-muted-foreground">
+                            <p>Duration: 4 Years</p>
+                            <p>Eligibility: 10+2 with Physics, Chemistry, Mathematics</p>
+                          </div>
+                        </CardContent>
+                      </Card>
                     ))}
                   </div>
-                </div>
+                )}
+                {college.entranceExams && (
+                  <div className="mt-6">
+                    <h3 className="text-xl font-semibold mb-4">Entrance Exams</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {college.entranceExams.map((exam, index) => (
+                        <Badge key={index} variant="secondary">{exam}</Badge>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </CardContent>
             </Card>
           </TabsContent>
@@ -185,18 +197,22 @@ const CollegeDetail = () => {
                 <CardTitle>Admission Details</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div>
-                  <h3 className="text-lg font-semibold mb-2">Eligibility</h3>
-                  <p>{college.admissionDetails.eligibility}</p>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-2">Admission Process</h3>
-                  <p>{college.admissionDetails.process}</p>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-2">Important Deadlines</h3>
-                  <p>{college.admissionDetails.deadlines}</p>
-                </div>
+                {college.admissionDetails && (
+                  <>
+                    <div>
+                      <h3 className="text-lg font-semibold mb-2">Eligibility</h3>
+                      <p>{college.admissionDetails.eligibility}</p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold mb-2">Admission Process</h3>
+                      <p>{college.admissionDetails.process}</p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold mb-2">Important Deadlines</h3>
+                      <p>{college.admissionDetails.deadlines}</p>
+                    </div>
+                  </>
+                )}
                 <div className="pt-4">
                   <Button className="bg-gradient-to-r from-nextstep-blue to-nextstep-purple">
                     Apply Now
@@ -239,22 +255,23 @@ const CollegeDetail = () => {
                   <CardTitle>Scholarships</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  {college.scholarships.map((scholarship, index) => (
-                    <div key={index} className="mb-4 pb-4 border-b last:border-0">
-                      <h4 className="font-semibold text-lg">{scholarship.name}</h4>
-                      <div className="flex flex-col gap-1 mt-2">
-                        <div className="flex justify-between">
-                          <span className="text-muted-foreground">Amount:</span>
-                          <span>{scholarship.amount}</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-muted-foreground">Eligibility:</span>
-                          <span>{scholarship.eligibility}</span>
+                  {college.scholarships && college.scholarships.length > 0 ? (
+                    college.scholarships.map((scholarship, index) => (
+                      <div key={index} className="mb-4 pb-4 border-b last:border-0">
+                        <h4 className="font-semibold text-lg">{scholarship.name}</h4>
+                        <div className="flex flex-col gap-1 mt-2">
+                          <div className="flex justify-between">
+                            <span className="text-muted-foreground">Amount:</span>
+                            <span>{scholarship.amount}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-muted-foreground">Eligibility:</span>
+                            <span>{scholarship.eligibility}</span>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
-                  {college.scholarships.length === 0 && (
+                    ))
+                  ) : (
                     <p>No scholarship information available for this college.</p>
                   )}
                 </CardContent>
@@ -271,11 +288,11 @@ const CollegeDetail = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                   <div className="bg-nextstep-blue/10 rounded-lg p-6 text-center">
                     <span className="text-3xl font-bold text-nextstep-blue">
-                      {college.placement.percentage}%
+                      {college.placement?.percentage || 0}%
                     </span>
                     <p className="mt-2 text-muted-foreground">Placement Rate</p>
                   </div>
-                  {college.placement.avgSalary && (
+                  {college.placement?.avgSalary && (
                     <div className="bg-nextstep-green/10 rounded-lg p-6 text-center">
                       <span className="text-3xl font-bold text-nextstep-green">
                         ₹{(college.placement.avgSalary / 100000).toFixed(1)}L
@@ -285,13 +302,13 @@ const CollegeDetail = () => {
                   )}
                   <div className="bg-nextstep-purple/10 rounded-lg p-6 text-center">
                     <span className="text-3xl font-bold text-nextstep-purple">
-                      {college.placement.topRecruiters?.length || 0}+
+                      {(college.placement?.topRecruiters?.length || 0)}+
                     </span>
                     <p className="mt-2 text-muted-foreground">Top Recruiters</p>
                   </div>
                 </div>
                 
-                {college.placement.topRecruiters && college.placement.topRecruiters.length > 0 && (
+                {college.placement?.topRecruiters && college.placement.topRecruiters.length > 0 && (
                   <div>
                     <h3 className="text-xl font-semibold mb-4">Top Recruiters</h3>
                     <div className="flex flex-wrap gap-2">
