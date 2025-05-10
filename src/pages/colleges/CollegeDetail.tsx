@@ -65,14 +65,12 @@ const CollegeDetail = () => {
                 <Badge variant="secondary" className="text-nextstep-blue">
                   {college.type}
                 </Badge>
-                {college.location && (
-                  <div className="flex items-center">
-                    <MapPin className="h-4 w-4 text-muted-foreground mr-1" />
-                    <span className="text-muted-foreground">
-                      {college.location.city}, {college.location.state}
-                    </span>
-                  </div>
-                )}
+                <div className="flex items-center">
+                  <MapPin className="h-4 w-4 text-muted-foreground mr-1" />
+                  <span className="text-muted-foreground">
+                    {college.location.city}, {college.location.state}
+                  </span>
+                </div>
                 <div className="flex items-center">
                   <CollegeRating rating={college.rating} />
                 </div>
@@ -113,12 +111,10 @@ const CollegeDetail = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-lg">{college.description}</p>
-                {college.location && (
-                  <div className="mt-6">
-                    <h3 className="text-lg font-semibold mb-3">Location</h3>
-                    <p>{college.location.address}</p>
-                  </div>
-                )}
+                <div className="mt-6">
+                  <h3 className="text-lg font-semibold mb-3">Location</h3>
+                  <p>{college.location.address}</p>
+                </div>
                 <div className="mt-6">
                   <h3 className="text-lg font-semibold mb-3">Key Features</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -171,16 +167,14 @@ const CollegeDetail = () => {
                     </Card>
                   ))}
                 </div>
-                {college.entranceExams && college.entranceExams.length > 0 && (
-                  <div className="mt-6">
-                    <h3 className="text-xl font-semibold mb-4">Entrance Exams</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {college.entranceExams.map((exam, index) => (
-                        <Badge key={index} variant="secondary">{exam}</Badge>
-                      ))}
-                    </div>
+                <div className="mt-6">
+                  <h3 className="text-xl font-semibold mb-4">Entrance Exams</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {college.entranceExams.map((exam, index) => (
+                      <Badge key={index} variant="secondary">{exam}</Badge>
+                    ))}
                   </div>
-                )}
+                </div>
               </CardContent>
             </Card>
           </TabsContent>
@@ -191,24 +185,18 @@ const CollegeDetail = () => {
                 <CardTitle>Admission Details</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                {college.admissionDetails ? (
-                  <>
-                    <div>
-                      <h3 className="text-lg font-semibold mb-2">Eligibility</h3>
-                      <p>{college.admissionDetails.eligibility}</p>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold mb-2">Admission Process</h3>
-                      <p>{college.admissionDetails.process}</p>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold mb-2">Important Deadlines</h3>
-                      <p>{college.admissionDetails.deadlines}</p>
-                    </div>
-                  </>
-                ) : (
-                  <p>Admission details are not available for this college at the moment.</p>
-                )}
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Eligibility</h3>
+                  <p>{college.admissionDetails.eligibility}</p>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Admission Process</h3>
+                  <p>{college.admissionDetails.process}</p>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Important Deadlines</h3>
+                  <p>{college.admissionDetails.deadlines}</p>
+                </div>
                 <div className="pt-4">
                   <Button className="bg-gradient-to-r from-nextstep-blue to-nextstep-purple">
                     Apply Now
@@ -251,23 +239,22 @@ const CollegeDetail = () => {
                   <CardTitle>Scholarships</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  {college.scholarships && college.scholarships.length > 0 ? (
-                    college.scholarships.map((scholarship, index) => (
-                      <div key={index} className="mb-4 pb-4 border-b last:border-0">
-                        <h4 className="font-semibold text-lg">{scholarship.name}</h4>
-                        <div className="flex flex-col gap-1 mt-2">
-                          <div className="flex justify-between">
-                            <span className="text-muted-foreground">Amount:</span>
-                            <span>{scholarship.amount}</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span className="text-muted-foreground">Eligibility:</span>
-                            <span>{scholarship.eligibility}</span>
-                          </div>
+                  {college.scholarships.map((scholarship, index) => (
+                    <div key={index} className="mb-4 pb-4 border-b last:border-0">
+                      <h4 className="font-semibold text-lg">{scholarship.name}</h4>
+                      <div className="flex flex-col gap-1 mt-2">
+                        <div className="flex justify-between">
+                          <span className="text-muted-foreground">Amount:</span>
+                          <span>{scholarship.amount}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-muted-foreground">Eligibility:</span>
+                          <span>{scholarship.eligibility}</span>
                         </div>
                       </div>
-                    ))
-                  ) : (
+                    </div>
+                  ))}
+                  {college.scholarships.length === 0 && (
                     <p>No scholarship information available for this college.</p>
                   )}
                 </CardContent>
@@ -298,17 +285,17 @@ const CollegeDetail = () => {
                   )}
                   <div className="bg-nextstep-purple/10 rounded-lg p-6 text-center">
                     <span className="text-3xl font-bold text-nextstep-purple">
-                      {(college.placement.topRecruiters?.length || college.placement.topCompanies?.length || 0)}+
+                      {college.placement.topRecruiters?.length || 0}+
                     </span>
                     <p className="mt-2 text-muted-foreground">Top Recruiters</p>
                   </div>
                 </div>
                 
-                {(college.placement.topRecruiters || college.placement.topCompanies) && (
+                {college.placement.topRecruiters && college.placement.topRecruiters.length > 0 && (
                   <div>
                     <h3 className="text-xl font-semibold mb-4">Top Recruiters</h3>
                     <div className="flex flex-wrap gap-2">
-                      {(college.placement.topRecruiters || college.placement.topCompanies).map((recruiter, index) => (
+                      {college.placement.topRecruiters.map((recruiter, index) => (
                         <Badge key={index} variant="outline" className="px-3 py-1">
                           {recruiter}
                         </Badge>
