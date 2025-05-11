@@ -1,3 +1,4 @@
+
 export interface State {
   id: string;
   name: string;
@@ -760,4 +761,219 @@ export const colleges: College[] = [
     type: "Government",
     description: "A premier engineering institute known for its research and academic excellence.",
     rating: 4.7,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/a/ac/IIT_Khar
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/a/ac/IIT_Kharagpur_Logo.svg/1200px-IIT_Kharagpur_Logo.svg.png",
+    location: {
+      city: "Kharagpur",
+      state: "West Bengal",
+      address: "Kharagpur, West Bengal 721302"
+    },
+    fees: {
+      tuition: { min: 220000, max: 250000 },
+      hostel: { min: 70000, max: 90000 },
+      other: { min: 20000, max: 30000 }
+    },
+    placement: {
+      percentage: 90,
+      topCompanies: ["Google", "Microsoft", "Amazon", "Flipkart", "Tata Consultancy Services"],
+      averagePackage: "20 LPA",
+      topRecruiters: ["Google", "Microsoft", "Amazon", "Flipkart", "Tata Consultancy Services"],
+      avgSalary: 2000000
+    },
+    ranking: {
+      nirf: 5,
+      outlook: 4,
+      theWeek: 3
+    },
+    courses: ["Computer Science", "Mechanical Engineering", "Electrical Engineering", "Civil Engineering", "Chemical Engineering"],
+    facilities: ["Central Library", "Sports Complex", "Hostels", "Wi-Fi Campus", "Auditorium", "Medical Center"],
+    admissionCriteria: ["JEE Advanced"],
+    researchAreas: ["Artificial Intelligence", "Renewable Energy", "Nanotechnology", "Biotechnology"],
+    entranceExams: ["JEE Advanced"],
+    admissionDetails: {
+      eligibility: "Based on JEE Advanced scores.",
+      process: "Online application followed by JEE Advanced counseling.",
+      deadlines: "Usually in June."
+    },
+    scholarships: [
+      {
+        name: "Merit-cum-Means Scholarship",
+        amount: "Full tuition fee waiver",
+        eligibility: "Based on academic performance and family income"
+      },
+      {
+        name: "Institute Free Studentship",
+        amount: "Full tuition fee waiver",
+        eligibility: "Based on family income"
+      }
+    ]
+  },
+  {
+    id: "ggsipu-delhi",
+    stateId: "delhi",
+    name: "Guru Gobind Singh Indraprastha University",
+    type: "Government",
+    description: "A state university known for its diverse programs in engineering, medicine, law, and management.",
+    rating: 4.1,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/3/39/GGSIU_logo.png",
+    location: {
+      city: "New Delhi",
+      state: "Delhi",
+      address: "Sector 16C, Dwarka, New Delhi, Delhi 110078"
+    },
+    fees: {
+      tuition: { min: 50000, max: 150000 },
+      hostel: { min: 40000, max: 80000 },
+      other: { min: 10000, max: 25000 }
+    },
+    placement: {
+      percentage: 75,
+      topCompanies: ["Infosys", "Wipro", "TCS", "Tech Mahindra", "Cognizant"],
+      averagePackage: "6 LPA",
+      topRecruiters: ["Infosys", "Wipro", "TCS", "Tech Mahindra", "Cognizant"],
+      avgSalary: 600000
+    },
+    ranking: {
+      nirf: 80,
+      outlook: 65,
+      theWeek: 70
+    },
+    courses: ["Engineering", "Medicine", "Law", "Management", "Computer Applications", "Education", "Humanities"],
+    facilities: ["Central Library", "Sports Complex", "Hostels", "Wi-Fi Campus", "Auditorium", "Medical Center", "Food Court"],
+    admissionCriteria: ["Common Entrance Test", "National Level Exams"],
+    researchAreas: ["Technology", "Environmental Studies", "Management", "Medical Sciences", "Law"],
+    entranceExams: ["IPU CET", "CLAT", "NEET", "CAT"],
+    admissionDetails: {
+      eligibility: "Based on entrance exam scores and academic records.",
+      process: "Online application followed by entrance exam and counseling.",
+      deadlines: "Applications usually open in March."
+    },
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Tuition fee waiver",
+        eligibility: "Based on academic performance"
+      },
+      {
+        name: "Need-based Financial Assistance",
+        amount: "Varies",
+        eligibility: "Based on family income"
+      }
+    ]
+  },
+  {
+    id: "aud-delhi",
+    stateId: "delhi",
+    name: "Ambedkar University Delhi",
+    type: "Government",
+    description: "A state university focused on humanities, social sciences, and liberal arts education.",
+    rating: 4.0,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/9/96/Ambedkar_University_Delhi_logo.png",
+    location: {
+      city: "New Delhi",
+      state: "Delhi",
+      address: "Lothian Road, Kashmere Gate, Delhi 110006"
+    },
+    fees: {
+      tuition: { min: 20000, max: 80000 },
+      hostel: { min: 30000, max: 60000 },
+      other: { min: 5000, max: 15000 }
+    },
+    placement: {
+      percentage: 60,
+      topCompanies: ["NGOs", "Research Organizations", "Education Institutes", "Government Agencies", "Media Houses"],
+      averagePackage: "5 LPA",
+      topRecruiters: ["NGOs", "Research Organizations", "Education Institutes", "Government Agencies", "Media Houses"],
+      avgSalary: 500000
+    },
+    ranking: {
+      nirf: 85,
+      outlook: 75,
+      theWeek: 78
+    },
+    courses: ["Humanities", "Social Sciences", "Liberal Arts", "Business Economics", "Law", "Education", "Psychology"],
+    facilities: ["Library", "Computer Labs", "Seminar Halls", "Cafeteria", "Hostel", "Cultural Spaces"],
+    admissionCriteria: ["Entrance Exam", "Merit-based Selection"],
+    researchAreas: ["Social Sciences", "Urban Studies", "Gender Studies", "Development", "Education"],
+    entranceExams: ["AUD Entrance Test"],
+    admissionDetails: {
+      eligibility: "Based on entrance exam scores and academic records.",
+      process: "Online application followed by entrance exam and interview.",
+      deadlines: "Applications usually open in April-May."
+    },
+    scholarships: [
+      {
+        name: "AUD Merit Scholarship",
+        amount: "Full fee waiver",
+        eligibility: "For exceptional academic performance"
+      },
+      {
+        name: "Fee Waiver",
+        amount: "Partial to full fee waiver",
+        eligibility: "Based on family income and socio-economic background"
+      }
+    ]
+  },
+  {
+    id: "iari-delhi",
+    stateId: "delhi",
+    name: "Indian Agricultural Research Institute",
+    type: "Government",
+    description: "A premier research institution dedicated to agricultural sciences and education in India.",
+    rating: 4.5,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/d/d8/Indian_Agricultural_Research_Institute_Logo.png",
+    location: {
+      city: "New Delhi",
+      state: "Delhi",
+      address: "Pusa Road, New Delhi, Delhi 110012"
+    },
+    fees: {
+      tuition: { min: 10000, max: 40000 },
+      hostel: { min: 15000, max: 30000 },
+      other: { min: 5000, max: 15000 }
+    },
+    placement: {
+      percentage: 85,
+      topCompanies: ["Agricultural Companies", "Research Labs", "Government Departments", "International Organizations", "Educational Institutions"],
+      averagePackage: "7 LPA",
+      topRecruiters: ["ICAR", "Bayer", "Syngenta", "UPL", "Corteva Agriscience"],
+      avgSalary: 700000
+    },
+    ranking: {
+      nirf: 15,
+      outlook: 12,
+      theWeek: 10
+    },
+    courses: ["Agricultural Sciences", "Plant Biotechnology", "Soil Science", "Agronomy", "Plant Pathology", "Entomology", "Genetics"],
+    facilities: ["Advanced Laboratories", "Research Farms", "Library", "Hostel", "Sports Complex", "Conference Halls", "Field Stations"],
+    admissionCriteria: ["ICAR AIEEA", "Interview", "Academic Records"],
+    researchAreas: ["Crop Improvement", "Climate Resilient Agriculture", "Sustainable Farming", "Plant Protection", "Agricultural Biotechnology"],
+    entranceExams: ["ICAR AIEEA", "ICAR NET"],
+    admissionDetails: {
+      eligibility: "Based on ICAR entrance exams and academic qualifications.",
+      process: "Entrance exam followed by counseling and interview.",
+      deadlines: "As per ICAR notification, usually in April-May."
+    },
+    scholarships: [
+      {
+        name: "Junior/Senior Research Fellowship",
+        amount: "Rs. 31,000 - 35,000 per month",
+        eligibility: "For research scholars based on qualification exams"
+      },
+      {
+        name: "ICAR Fellowship",
+        amount: "Rs. 12,000 - 25,000 per month",
+        eligibility: "For postgraduate and doctoral students"
+      }
+    ]
+  }
+];
+
+// Function to get colleges by state ID
+export const getCollegesByState = (stateId: string): College[] => {
+  return colleges.filter(college => college.stateId === stateId);
+};
+
+// Function to get a college by its ID
+export const getCollegeById = (collegeId: string): College | undefined => {
+  return colleges.find(college => college.id === collegeId);
+};
