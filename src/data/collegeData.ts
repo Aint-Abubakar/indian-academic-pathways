@@ -1,4 +1,3 @@
-
 export interface State {
   id: string;
   name: string;
@@ -50,6 +49,15 @@ export interface College {
     amount: string;
     eligibility: string;
   }[];
+}
+
+// Re-export FilterOptions interface from SearchFilters
+export interface FilterOptions {
+  searchQuery: string;
+  courseType: string;
+  collegeType: string;
+  ratingMin: number;
+  feeRange: string;
 }
 
 // Sample data for states
@@ -752,50 +760,4 @@ export const colleges: College[] = [
     type: "Government",
     description: "A premier engineering institute known for its research and academic excellence.",
     rating: 4.7,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/a/ac/IIT_Kharagpur_Logo.svg/1200px-IIT_Kharagpur_Logo.svg.png",
-    location: {
-      city: "Kharagpur",
-      state: "West Bengal",
-      address: "Kharagpur, West Bengal 721302"
-    },
-    fees: {
-      tuition: { min: 220000, max: 250000 },
-      hostel: { min: 70000, max: 90000 },
-      other: { min: 20000, max: 30000 }
-    },
-    placement: {
-      percentage: 92,
-      topCompanies: ["Google", "Microsoft", "Samsung", "Intel", "Goldman Sachs"],
-      averagePackage: "22 LPA",
-      topRecruiters: ["Google", "Microsoft", "Samsung", "Intel", "Goldman Sachs"],
-      avgSalary: 2200000
-    },
-    ranking: {
-      nirf: 5,
-      outlook: 4,
-      theWeek: 5
-    },
-    courses: ["Computer Science", "Mechanical Engineering", "Electrical Engineering", "Chemical Engineering", "Civil Engineering"],
-    facilities: ["Central Library", "Sports Complex", "Hostels", "Wi-Fi Campus", "Auditorium", "Medical Center"],
-    admissionCriteria: ["JEE Advanced"],
-    researchAreas: ["Artificial Intelligence", "Renewable Energy", "Nanotechnology", "Biotechnology"],
-    entranceExams: ["JEE Advanced"],
-    admissionDetails: {
-      eligibility: "Based on JEE Advanced scores.",
-      process: "Online application followed by JEE Advanced counseling.",
-      deadlines: "Usually in June."
-    },
-    scholarships: [
-      {
-        name: "Merit-cum-Means Scholarship",
-        amount: "Full tuition fee waiver",
-        eligibility: "Based on academic performance and family income"
-      },
-      {
-        name: "Institute Free Studentship",
-        amount: "Full tuition fee waiver",
-        eligibility: "Based on family income"
-      }
-    ]
-  }
-];
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/a/ac/IIT_Kharag
