@@ -755,4 +755,4 @@ export const colleges: College[] = [
     location: {
       city: "Kharagpur",
       state: "West Bengal",
-      address: "K
+      address
