@@ -1,4 +1,3 @@
-
 export interface State {
   id: string;
   name: string;
@@ -74,7 +73,7 @@ export const states: State[] = [
   {
     id: "maharashtra",
     name: "Maharashtra",
-    collegeCount: 2
+    collegeCount: 7 // Updated to reflect the new total
   },
   {
     id: "delhi",
@@ -264,6 +263,273 @@ export const colleges: College[] = [
         name: "Minority Students Scholarship",
         amount: "Up to Rs. 25,000",
         eligibility: "For students from minority communities with good academic records"
+      }
+    ]
+  },
+  
+  // Adding 5 more colleges to Maharashtra
+  {
+    id: "vjti-mumbai",
+    stateId: "maharashtra",
+    name: "Veermata Jijabai Technological Institute",
+    type: "Government",
+    description: "One of the oldest engineering colleges in Asia established in 1887, known for its excellence in engineering and technical education.",
+    rating: 4.4,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/b/b7/VJTI_Mumbai_logo.png",
+    location: {
+      city: "Mumbai",
+      state: "Maharashtra",
+      address: "H R Mahajani Road, Matunga, Mumbai, Maharashtra 400019"
+    },
+    fees: {
+      tuition: { min: 90000, max: 150000 },
+      hostel: { min: 30000, max: 60000 },
+      other: { min: 10000, max: 20000 }
+    },
+    placement: {
+      percentage: 85,
+      topCompanies: ["TCS", "L&T", "Godrej", "Reliance", "Tata Motors"],
+      averagePackage: "8.5 LPA",
+      topRecruiters: ["TCS", "L&T", "Godrej", "Reliance", "Tata Motors", "Infosys"],
+      avgSalary: 850000
+    },
+    ranking: {
+      nirf: 45,
+      outlook: 40,
+      theWeek: 42
+    },
+    courses: ["Computer Engineering", "Mechanical Engineering", "Electrical Engineering", "Civil Engineering", "Information Technology", "Electronics"],
+    facilities: ["Central Library", "Sports Ground", "Hostels", "Laboratories", "Auditorium", "Cafeteria"],
+    admissionCriteria: ["MHT-CET", "JEE Main"],
+    researchAreas: ["Artificial Intelligence", "Renewable Energy", "Structural Engineering", "Power Systems", "Data Science"],
+    entranceExams: ["MHT-CET", "JEE Main", "GATE (for PG)"],
+    admissionDetails: {
+      eligibility: "Minimum 50% in 12th (PCM) for Maharashtra candidates. Higher cutoff for others.",
+      process: "Based on MHT-CET or JEE Main rank followed by centralized admission process (CAP).",
+      deadlines: "Applications typically follow the state CET schedule in May-June."
+    },
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Tuition fee waiver",
+        eligibility: "For top 5% students in each branch"
+      },
+      {
+        name: "EBC Concession",
+        amount: "50% fee waiver",
+        eligibility: "For economically backward class students with family income less than 8 lakhs"
+      }
+    ]
+  },
+  {
+    id: "coep-pune",
+    stateId: "maharashtra",
+    name: "College of Engineering, Pune",
+    type: "Government",
+    description: "One of the most prestigious and oldest technical institutes in India established in 1854, offering top-quality engineering education.",
+    rating: 4.6,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/c/c4/College_of_Engineering%2C_Pune_logo.png",
+    location: {
+      city: "Pune",
+      state: "Maharashtra",
+      address: "Wellesley Road, Shivajinagar, Pune, Maharashtra 411005"
+    },
+    fees: {
+      tuition: { min: 80000, max: 140000 },
+      hostel: { min: 25000, max: 55000 },
+      other: { min: 8000, max: 20000 }
+    },
+    placement: {
+      percentage: 90,
+      topCompanies: ["Microsoft", "Amazon", "Deloitte", "Mercedes-Benz", "John Deere"],
+      averagePackage: "10 LPA",
+      topRecruiters: ["Microsoft", "Amazon", "Deloitte", "Mercedes-Benz", "John Deere", "Google"],
+      avgSalary: 1000000
+    },
+    ranking: {
+      nirf: 32,
+      outlook: 28,
+      theWeek: 30
+    },
+    courses: ["Computer Science", "Mechanical Engineering", "Civil Engineering", "Electronics & Telecommunication", "Metallurgy", "Production Engineering"],
+    facilities: ["Main Building (Heritage Site)", "Library", "Boat Club", "Hostels", "Sports Complex", "Research Centers"],
+    admissionCriteria: ["MHT-CET", "JEE Main"],
+    researchAreas: ["Smart Cities", "Robotics", "VLSI Design", "Autonomous Systems", "Advanced Materials"],
+    entranceExams: ["MHT-CET", "JEE Main", "GATE (for PG)"],
+    admissionDetails: {
+      eligibility: "Minimum 60% in HSC (PCM) with valid MHT-CET or JEE Main score.",
+      process: "Centralized Admission Process (CAP) based on entrance exam scores.",
+      deadlines: "As per Maharashtra state CET cell notifications."
+    },
+    scholarships: [
+      {
+        name: "COEP Merit Scholarship",
+        amount: "Full tuition waiver + stipend",
+        eligibility: "For top 1% students in each department"
+      },
+      {
+        name: "Alumni Scholarship",
+        amount: "Up to Rs. 50,000 per year",
+        eligibility: "Based on merit and financial need"
+      }
+    ]
+  },
+  {
+    id: "iiser-pune",
+    stateId: "maharashtra",
+    name: "Indian Institute of Science Education and Research, Pune",
+    type: "Government",
+    description: "Premier research-intensive institute focusing on basic sciences with integrated BS-MS and PhD programs.",
+    rating: 4.7,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/3/38/IISER_Pune_Logo.svg",
+    location: {
+      city: "Pune",
+      state: "Maharashtra",
+      address: "Dr. Homi Bhabha Road, Pashan, Pune, Maharashtra 411008"
+    },
+    fees: {
+      tuition: { min: 15000, max: 30000 },
+      hostel: { min: 16000, max: 36000 },
+      other: { min: 8000, max: 15000 }
+    },
+    placement: {
+      percentage: 80,
+      topCompanies: ["ISRO", "DRDO", "TCS Research", "Intel", "Research Institutions"],
+      averagePackage: "9 LPA",
+      topRecruiters: ["ISRO", "DRDO", "TCS Research", "Intel", "Academic Institutions", "IBM Research"],
+      avgSalary: 900000
+    },
+    ranking: {
+      nirf: 24,
+      outlook: 22,
+      theWeek: 25
+    },
+    courses: ["Physics", "Chemistry", "Biology", "Mathematics", "Earth Sciences", "Data Science", "Interdisciplinary Sciences"],
+    facilities: ["Advanced Research Labs", "Central Library", "Computing Facility", "Hostels", "Sports Complex", "Innovation Center"],
+    admissionCriteria: ["KVPY", "JEE Advanced", "IISER Aptitude Test"],
+    researchAreas: ["Quantum Physics", "Molecular Biology", "Theoretical Mathematics", "Climate Science", "Evolutionary Biology"],
+    entranceExams: ["KVPY", "JEE Advanced", "IAT"],
+    admissionDetails: {
+      eligibility: "Qualified KVPY/JEE Advanced or 60% in 10+2 with IAT score.",
+      process: "Merit-based selection through national entrance exams.",
+      deadlines: "Applications open in April-May annually."
+    },
+    scholarships: [
+      {
+        name: "INSPIRE Scholarship",
+        amount: "Rs. 80,000 per year",
+        eligibility: "For all BS-MS students with qualifying exam scores"
+      },
+      {
+        name: "KVPY Fellowship",
+        amount: "Rs. 5,000-7,000 monthly",
+        eligibility: "For students who have cleared KVPY"
+      }
+    ]
+  },
+  {
+    id: "symbiosis-pune",
+    stateId: "maharashtra",
+    name: "Symbiosis International University",
+    type: "Private",
+    description: "A multi-disciplinary university known for its quality education in management, law, media, and engineering with strong international collaborations.",
+    rating: 4.5,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/9/9c/Symbiosis_International_University_Logo.png",
+    location: {
+      city: "Pune",
+      state: "Maharashtra",
+      address: "Senapati Bapat Road, Pune, Maharashtra 411004"
+    },
+    fees: {
+      tuition: { min: 300000, max: 1200000 },
+      hostel: { min: 150000, max: 250000 },
+      other: { min: 30000, max: 80000 }
+    },
+    placement: {
+      percentage: 92,
+      topCompanies: ["Deloitte", "EY", "JP Morgan", "HSBC", "HUL", "Amazon"],
+      averagePackage: "12 LPA",
+      topRecruiters: ["Deloitte", "EY", "JP Morgan", "HSBC", "HUL", "Amazon"],
+      avgSalary: 1200000
+    },
+    ranking: {
+      nirf: 15,
+      outlook: 12,
+      theWeek: 14
+    },
+    courses: ["Management", "Law", "Media & Communication", "Engineering", "Economics", "International Relations", "Design"],
+    facilities: ["International Campus", "Smart Classrooms", "Sophisticated Labs", "Sports Complex", "Hostels", "Libraries", "Innovation Hub"],
+    admissionCriteria: ["SET (Symbiosis Entrance Test)", "SNAP (for MBA)", "SLAT (for Law)"],
+    researchAreas: ["Business Analytics", "International Trade", "Sustainable Development", "Media Studies", "Constitutional Law"],
+    entranceExams: ["SET", "SNAP", "SLAT", "SEED"],
+    admissionDetails: {
+      eligibility: "Varies by program. Generally 50-60% in qualifying examination.",
+      process: "Based on entrance test scores followed by GE-PI (Group Exercise & Personal Interview).",
+      deadlines: "Applications typically open in October-November."
+    },
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "10-50% fee waiver",
+        eligibility: "Based on academic performance"
+      },
+      {
+        name: "Sports Scholarship",
+        amount: "Up to 100% fee waiver",
+        eligibility: "For national/international level sports achievers"
+      }
+    ]
+  },
+  {
+    id: "fergusson-college",
+    stateId: "maharashtra",
+    name: "Fergusson College",
+    type: "Government",
+    description: "A prestigious autonomous college established in 1885, known for its academic excellence in arts and sciences with a rich cultural heritage.",
+    rating: 4.3,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/c/c8/Seal_of_Fergusson_College.png",
+    location: {
+      city: "Pune",
+      state: "Maharashtra",
+      address: "Fergusson College Road, Shivajinagar, Pune, Maharashtra 411004"
+    },
+    fees: {
+      tuition: { min: 5000, max: 50000 },
+      hostel: { min: 35000, max: 70000 },
+      other: { min: 5000, max: 15000 }
+    },
+    placement: {
+      percentage: 75,
+      topCompanies: ["TCS", "Cognizant", "Infosys", "Wipro", "Capgemini"],
+      averagePackage: "5 LPA",
+      topRecruiters: ["TCS", "Cognizant", "Infosys", "Wipro", "Capgemini", "Tech Mahindra"],
+      avgSalary: 500000
+    },
+    ranking: {
+      nirf: 52,
+      outlook: 48,
+      theWeek: 50
+    },
+    courses: ["Arts", "Science", "Computer Science", "Economics", "Psychology", "Chemistry", "Physics", "Botany"],
+    facilities: ["Heritage Campus", "Library", "Science Laboratories", "Botanical Garden", "Auditorium", "Sports Ground", "Cafeteria"],
+    admissionCriteria: ["Merit-based", "Entrance Test (for some courses)"],
+    researchAreas: ["Literature", "Environmental Sciences", "Economic Studies", "Biodiversity", "Physics"],
+    entranceExams: ["College Entrance Test", "FCET"],
+    admissionDetails: {
+      eligibility: "Minimum 50-60% in HSC or equivalent examination.",
+      process: "Merit-based admission with separate cutoffs for each program.",
+      deadlines: "Applications open after HSC results in June."
+    },
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Rs. 5,000 to Rs. 15,000",
+        eligibility: "For students with outstanding academic performance"
+      },
+      {
+        name: "Earn & Learn Scheme",
+        amount: "Monthly stipend",
+        eligibility: "For economically disadvantaged students"
       }
     ]
   },
