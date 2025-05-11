@@ -8,7 +8,7 @@ export interface College {
   id: string;
   stateId: string;
   name: string;
-  type: "Government" | "Private";
+  type: string;
   description: string;
   rating: number;
   imageUrl: string;
@@ -26,8 +26,8 @@ export interface College {
     percentage: number;
     topCompanies: string[];
     averagePackage: string;
-    topRecruiters?: string[];
-    avgSalary?: number;
+	  topRecruiters: string[];
+    avgSalary: number;
   };
   ranking: {
     nirf: number;
@@ -51,797 +51,313 @@ export interface College {
   }[];
 }
 
-// Helper functions to get colleges data
-export const getCollegeById = (collegeId: string, stateId: string): College | undefined => {
-  return colleges.find(college => college.id === collegeId && college.stateId === stateId);
-};
-
-export const getCollegesByState = (stateId: string): College[] => {
-  return colleges.filter(college => college.stateId === stateId);
-};
-
-export interface FilterOptions {
-  searchQuery: string;
-  courseType: string;
-  collegeType: string;
-  ratingMin: number;
-  feeRange: string;
-}
-
 // Sample data for states
 export const states: State[] = [
   {
     id: "maharashtra",
     name: "Maharashtra",
-    collegeCount: 7 // Updated to reflect the new total
+    collegeCount: 7
   },
   {
     id: "delhi",
     name: "Delhi",
-    collegeCount: 2
+    collegeCount: 7  // Updating from 2 to 7
   },
   {
     id: "tamil-nadu",
     name: "Tamil Nadu",
-    collegeCount: 2
+    collegeCount: 5
   },
   {
     id: "karnataka",
     name: "Karnataka",
-    collegeCount: 2
-  },
-  {
-    id: "west-bengal",
-    name: "West Bengal",
-    collegeCount: 2
+    collegeCount: 4
   },
   {
     id: "uttar-pradesh",
     name: "Uttar Pradesh",
-    collegeCount: 2
+    collegeCount: 6
   },
   {
-    id: "gujarat",
-    name: "Gujarat",
-    collegeCount: 2
-  },
-  {
-    id: "kerala",
-    name: "Kerala",
-    collegeCount: 2
+    id: "west-bengal",
+    name: "West Bengal",
+    collegeCount: 3
   },
   {
     id: "andhra-pradesh",
     name: "Andhra Pradesh",
-    collegeCount: 10
+    collegeCount: 4
   },
   {
     id: "telangana",
     name: "Telangana",
-    collegeCount: 0
-  },
-  {
-    id: "odisha",
-    name: "Odisha",
-    collegeCount: 0
-  },
-  {
-    id: "rajasthan",
-    name: "Rajasthan",
-    collegeCount: 0
-  },
-  {
-    id: "punjab",
-    name: "Punjab",
-    collegeCount: 0
-  },
-  {
-    id: "haryana",
-    name: "Haryana",
-    collegeCount: 0
+    collegeCount: 5
   },
   {
     id: "madhya-pradesh",
     name: "Madhya Pradesh",
-    collegeCount: 0
+    collegeCount: 3
   },
   {
-    id: "assam",
-    name: "Assam",
-    collegeCount: 0
-  },
-  {
-    id: "bihar",
-    name: "Bihar",
-    collegeCount: 0
+    id: "gujarat",
+    name: "Gujarat",
+    collegeCount: 4
   }
 ];
 
-// Sample college data
+// Sample data for colleges
 export const colleges: College[] = [
-  // Maharashtra
   {
     id: "iit-bombay",
     stateId: "maharashtra",
-    name: "Indian Institute of Technology, Bombay",
+    name: "Indian Institute of Technology Bombay",
     type: "Government",
-    description: "One of the premier engineering institutions in India, known for its excellent academic programs and research facilities.",
+    description: "A premier engineering institute known for its research and academic excellence.",
     rating: 4.8,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/1/1d/IIT_Bombay_Logo.svg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/0/0b/IIT_Bombay_Logo.svg",
     location: {
       city: "Mumbai",
       state: "Maharashtra",
-      address: "IIT Area, Powai, Mumbai, Maharashtra 400076"
+      address: "Powai, Mumbai, Maharashtra 400076"
     },
     fees: {
-      tuition: { min: 200000, max: 250000 },
-      hostel: { min: 20000, max: 45000 },
-      other: { min: 10000, max: 25000 }
+      tuition: { min: 220000, max: 250000 },
+      hostel: { min: 70000, max: 90000 },
+      other: { min: 20000, max: 30000 }
     },
     placement: {
-      percentage: 95,
-      topCompanies: ["Google", "Microsoft", "Amazon", "Goldman Sachs"],
-      averagePackage: "20 LPA",
-      topRecruiters: ["Google", "Microsoft", "Amazon", "Goldman Sachs", "Apple", "Intel"],
-      avgSalary: 2000000
+      percentage: 92,
+      topCompanies: ["Google", "Microsoft", "Samsung", "Intel", "Goldman Sachs"],
+      averagePackage: "22 LPA",
+	    topRecruiters: ["Google", "Microsoft", "Samsung", "Intel", "Goldman Sachs"],
+      avgSalary: 2200000
     },
     ranking: {
       nirf: 3,
       outlook: 2,
-      theWeek: 2
+      theWeek: 4
     },
-    courses: ["Computer Science", "Electrical Engineering", "Mechanical Engineering", "Civil Engineering", "Chemistry", "Physics"],
-    facilities: ["Library", "Sports Complex", "Swimming Pool", "Gym", "Auditorium", "Medical Center"],
-    admissionCriteria: ["JEE Advanced", "GATE (for PG)"],
-    researchAreas: ["Artificial Intelligence", "Nanotechnology", "Renewable Energy", "Urban Infrastructure", "Biomedical Engineering"],
-    entranceExams: ["JEE Advanced", "GATE", "JAM", "CEED"],
+    courses: ["Computer Science", "Mechanical Engineering", "Electrical Engineering", "Chemical Engineering", "Civil Engineering"],
+    facilities: ["Central Library", "Sports Complex", "Hostels", "Wi-Fi Campus", "Auditorium", "Medical Center"],
+    admissionCriteria: ["JEE Advanced"],
+    researchAreas: ["Artificial Intelligence", "Renewable Energy", "Nanotechnology", "Biotechnology"],
+    entranceExams: ["JEE Advanced"],
     admissionDetails: {
-      eligibility: "For B.Tech: Qualified JEE Advanced with minimum required percentile. For M.Tech: Valid GATE score.",
-      process: "Admission is based on JEE Advanced rank followed by counseling through JoSAA for B.Tech programs.",
-      deadlines: "Applications typically open in April and close in May."
+      eligibility: "Based on JEE Advanced scores.",
+      process: "Online application followed by JEE Advanced counseling.",
+      deadlines: "Usually in June."
     },
     scholarships: [
       {
         name: "Merit-cum-Means Scholarship",
-        amount: "Full tuition fee waiver + Rs. 1000/month",
-        eligibility: "For students with family income less than 5 lakhs per annum"
+        amount: "Full tuition fee waiver",
+        eligibility: "Based on academic performance and family income"
       },
       {
         name: "Institute Free Studentship",
         amount: "Full tuition fee waiver",
-        eligibility: "Based on family income and academic performance"
+        eligibility: "Based on family income"
       }
     ]
   },
-  {
-    id: "st-xaviers-mumbai",
-    stateId: "maharashtra",
-    name: "St. Xavier's College, Mumbai",
-    type: "Private",
-    description: "A historic college known for its excellence in arts, science, and commerce programs with a focus on holistic education.",
-    rating: 4.5,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/f/f2/St._Xavier%27s_College%2C_Mumbai_logo.png",
-    location: {
-      city: "Mumbai",
-      state: "Maharashtra",
-      address: "5, Mahapalika Marg, Dhobi Talao, Chhatrapati Shivaji Terminus Area, Fort, Mumbai, Maharashtra 400001"
-    },
-    fees: {
-      tuition: { min: 25000, max: 90000 },
-      hostel: { min: 60000, max: 120000 },
-      other: { min: 5000, max: 15000 }
-    },
-    placement: {
-      percentage: 80,
-      topCompanies: ["Deloitte", "TCS", "KPMG", "J.P. Morgan"],
-      averagePackage: "7 LPA",
-      topRecruiters: ["Deloitte", "TCS", "KPMG", "J.P. Morgan", "Wipro", "Infosys"],
-      avgSalary: 700000
-    },
-    ranking: {
-      nirf: 28,
-      outlook: 22,
-      theWeek: 25
-    },
-    courses: ["Arts", "Science", "Commerce", "Management", "Mass Media", "Information Technology"],
-    facilities: ["Library", "Auditorium", "Cafeteria", "Sports Ground", "Research Labs", "Computer Center"],
-    admissionCriteria: ["Class 12 Merit", "Entrance Exam (for some courses)"],
-    researchAreas: ["Literature", "Environmental Science", "Economics", "Sociology", "Microbiology"],
-    entranceExams: ["XAT", "College Entrance Test"],
-    admissionDetails: {
-      eligibility: "Minimum 60% in Class 12 from a recognized board for most programs.",
-      process: "Merit-based admission for most courses. Some specialized programs have entrance tests.",
-      deadlines: "Applications typically open after Class 12 board results announcement."
-    },
-    scholarships: [
-      {
-        name: "Father Heras Scholarship",
-        amount: "Partial tuition fee waiver",
-        eligibility: "Based on academic excellence and financial need"
-      },
-      {
-        name: "Minority Students Scholarship",
-        amount: "Up to Rs. 25,000",
-        eligibility: "For students from minority communities with good academic records"
-      }
-    ]
-  },
-  
-  // Adding 5 more colleges to Maharashtra
-  {
-    id: "vjti-mumbai",
-    stateId: "maharashtra",
-    name: "Veermata Jijabai Technological Institute",
-    type: "Government",
-    description: "One of the oldest engineering colleges in Asia established in 1887, known for its excellence in engineering and technical education.",
-    rating: 4.4,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/b/b7/VJTI_Mumbai_logo.png",
-    location: {
-      city: "Mumbai",
-      state: "Maharashtra",
-      address: "H R Mahajani Road, Matunga, Mumbai, Maharashtra 400019"
-    },
-    fees: {
-      tuition: { min: 90000, max: 150000 },
-      hostel: { min: 30000, max: 60000 },
-      other: { min: 10000, max: 20000 }
-    },
-    placement: {
-      percentage: 85,
-      topCompanies: ["TCS", "L&T", "Godrej", "Reliance", "Tata Motors"],
-      averagePackage: "8.5 LPA",
-      topRecruiters: ["TCS", "L&T", "Godrej", "Reliance", "Tata Motors", "Infosys"],
-      avgSalary: 850000
-    },
-    ranking: {
-      nirf: 45,
-      outlook: 40,
-      theWeek: 42
-    },
-    courses: ["Computer Engineering", "Mechanical Engineering", "Electrical Engineering", "Civil Engineering", "Information Technology", "Electronics"],
-    facilities: ["Central Library", "Sports Ground", "Hostels", "Laboratories", "Auditorium", "Cafeteria"],
-    admissionCriteria: ["MHT-CET", "JEE Main"],
-    researchAreas: ["Artificial Intelligence", "Renewable Energy", "Structural Engineering", "Power Systems", "Data Science"],
-    entranceExams: ["MHT-CET", "JEE Main", "GATE (for PG)"],
-    admissionDetails: {
-      eligibility: "Minimum 50% in 12th (PCM) for Maharashtra candidates. Higher cutoff for others.",
-      process: "Based on MHT-CET or JEE Main rank followed by centralized admission process (CAP).",
-      deadlines: "Applications typically follow the state CET schedule in May-June."
-    },
-    scholarships: [
-      {
-        name: "Merit Scholarship",
-        amount: "Tuition fee waiver",
-        eligibility: "For top 5% students in each branch"
-      },
-      {
-        name: "EBC Concession",
-        amount: "50% fee waiver",
-        eligibility: "For economically backward class students with family income less than 8 lakhs"
-      }
-    ]
-  },
-  {
-    id: "coep-pune",
-    stateId: "maharashtra",
-    name: "College of Engineering, Pune",
-    type: "Government",
-    description: "One of the most prestigious and oldest technical institutes in India established in 1854, offering top-quality engineering education.",
-    rating: 4.6,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/c/c4/College_of_Engineering%2C_Pune_logo.png",
-    location: {
-      city: "Pune",
-      state: "Maharashtra",
-      address: "Wellesley Road, Shivajinagar, Pune, Maharashtra 411005"
-    },
-    fees: {
-      tuition: { min: 80000, max: 140000 },
-      hostel: { min: 25000, max: 55000 },
-      other: { min: 8000, max: 20000 }
-    },
-    placement: {
-      percentage: 90,
-      topCompanies: ["Microsoft", "Amazon", "Deloitte", "Mercedes-Benz", "John Deere"],
-      averagePackage: "10 LPA",
-      topRecruiters: ["Microsoft", "Amazon", "Deloitte", "Mercedes-Benz", "John Deere", "Google"],
-      avgSalary: 1000000
-    },
-    ranking: {
-      nirf: 32,
-      outlook: 28,
-      theWeek: 30
-    },
-    courses: ["Computer Science", "Mechanical Engineering", "Civil Engineering", "Electronics & Telecommunication", "Metallurgy", "Production Engineering"],
-    facilities: ["Main Building (Heritage Site)", "Library", "Boat Club", "Hostels", "Sports Complex", "Research Centers"],
-    admissionCriteria: ["MHT-CET", "JEE Main"],
-    researchAreas: ["Smart Cities", "Robotics", "VLSI Design", "Autonomous Systems", "Advanced Materials"],
-    entranceExams: ["MHT-CET", "JEE Main", "GATE (for PG)"],
-    admissionDetails: {
-      eligibility: "Minimum 60% in HSC (PCM) with valid MHT-CET or JEE Main score.",
-      process: "Centralized Admission Process (CAP) based on entrance exam scores.",
-      deadlines: "As per Maharashtra state CET cell notifications."
-    },
-    scholarships: [
-      {
-        name: "COEP Merit Scholarship",
-        amount: "Full tuition waiver + stipend",
-        eligibility: "For top 1% students in each department"
-      },
-      {
-        name: "Alumni Scholarship",
-        amount: "Up to Rs. 50,000 per year",
-        eligibility: "Based on merit and financial need"
-      }
-    ]
-  },
-  {
-    id: "iiser-pune",
-    stateId: "maharashtra",
-    name: "Indian Institute of Science Education and Research, Pune",
-    type: "Government",
-    description: "Premier research-intensive institute focusing on basic sciences with integrated BS-MS and PhD programs.",
-    rating: 4.7,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/3/38/IISER_Pune_Logo.svg",
-    location: {
-      city: "Pune",
-      state: "Maharashtra",
-      address: "Dr. Homi Bhabha Road, Pashan, Pune, Maharashtra 411008"
-    },
-    fees: {
-      tuition: { min: 15000, max: 30000 },
-      hostel: { min: 16000, max: 36000 },
-      other: { min: 8000, max: 15000 }
-    },
-    placement: {
-      percentage: 80,
-      topCompanies: ["ISRO", "DRDO", "TCS Research", "Intel", "Research Institutions"],
-      averagePackage: "9 LPA",
-      topRecruiters: ["ISRO", "DRDO", "TCS Research", "Intel", "Academic Institutions", "IBM Research"],
-      avgSalary: 900000
-    },
-    ranking: {
-      nirf: 24,
-      outlook: 22,
-      theWeek: 25
-    },
-    courses: ["Physics", "Chemistry", "Biology", "Mathematics", "Earth Sciences", "Data Science", "Interdisciplinary Sciences"],
-    facilities: ["Advanced Research Labs", "Central Library", "Computing Facility", "Hostels", "Sports Complex", "Innovation Center"],
-    admissionCriteria: ["KVPY", "JEE Advanced", "IISER Aptitude Test"],
-    researchAreas: ["Quantum Physics", "Molecular Biology", "Theoretical Mathematics", "Climate Science", "Evolutionary Biology"],
-    entranceExams: ["KVPY", "JEE Advanced", "IAT"],
-    admissionDetails: {
-      eligibility: "Qualified KVPY/JEE Advanced or 60% in 10+2 with IAT score.",
-      process: "Merit-based selection through national entrance exams.",
-      deadlines: "Applications open in April-May annually."
-    },
-    scholarships: [
-      {
-        name: "INSPIRE Scholarship",
-        amount: "Rs. 80,000 per year",
-        eligibility: "For all BS-MS students with qualifying exam scores"
-      },
-      {
-        name: "KVPY Fellowship",
-        amount: "Rs. 5,000-7,000 monthly",
-        eligibility: "For students who have cleared KVPY"
-      }
-    ]
-  },
-  {
-    id: "symbiosis-pune",
-    stateId: "maharashtra",
-    name: "Symbiosis International University",
-    type: "Private",
-    description: "A multi-disciplinary university known for its quality education in management, law, media, and engineering with strong international collaborations.",
-    rating: 4.5,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/9/9c/Symbiosis_International_University_Logo.png",
-    location: {
-      city: "Pune",
-      state: "Maharashtra",
-      address: "Senapati Bapat Road, Pune, Maharashtra 411004"
-    },
-    fees: {
-      tuition: { min: 300000, max: 1200000 },
-      hostel: { min: 150000, max: 250000 },
-      other: { min: 30000, max: 80000 }
-    },
-    placement: {
-      percentage: 92,
-      topCompanies: ["Deloitte", "EY", "JP Morgan", "HSBC", "HUL", "Amazon"],
-      averagePackage: "12 LPA",
-      topRecruiters: ["Deloitte", "EY", "JP Morgan", "HSBC", "HUL", "Amazon"],
-      avgSalary: 1200000
-    },
-    ranking: {
-      nirf: 15,
-      outlook: 12,
-      theWeek: 14
-    },
-    courses: ["Management", "Law", "Media & Communication", "Engineering", "Economics", "International Relations", "Design"],
-    facilities: ["International Campus", "Smart Classrooms", "Sophisticated Labs", "Sports Complex", "Hostels", "Libraries", "Innovation Hub"],
-    admissionCriteria: ["SET (Symbiosis Entrance Test)", "SNAP (for MBA)", "SLAT (for Law)"],
-    researchAreas: ["Business Analytics", "International Trade", "Sustainable Development", "Media Studies", "Constitutional Law"],
-    entranceExams: ["SET", "SNAP", "SLAT", "SEED"],
-    admissionDetails: {
-      eligibility: "Varies by program. Generally 50-60% in qualifying examination.",
-      process: "Based on entrance test scores followed by GE-PI (Group Exercise & Personal Interview).",
-      deadlines: "Applications typically open in October-November."
-    },
-    scholarships: [
-      {
-        name: "Merit Scholarship",
-        amount: "10-50% fee waiver",
-        eligibility: "Based on academic performance"
-      },
-      {
-        name: "Sports Scholarship",
-        amount: "Up to 100% fee waiver",
-        eligibility: "For national/international level sports achievers"
-      }
-    ]
-  },
-  {
-    id: "fergusson-college",
-    stateId: "maharashtra",
-    name: "Fergusson College",
-    type: "Government",
-    description: "A prestigious autonomous college established in 1885, known for its academic excellence in arts and sciences with a rich cultural heritage.",
-    rating: 4.3,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/c/c8/Seal_of_Fergusson_College.png",
-    location: {
-      city: "Pune",
-      state: "Maharashtra",
-      address: "Fergusson College Road, Shivajinagar, Pune, Maharashtra 411004"
-    },
-    fees: {
-      tuition: { min: 5000, max: 50000 },
-      hostel: { min: 35000, max: 70000 },
-      other: { min: 5000, max: 15000 }
-    },
-    placement: {
-      percentage: 75,
-      topCompanies: ["TCS", "Cognizant", "Infosys", "Wipro", "Capgemini"],
-      averagePackage: "5 LPA",
-      topRecruiters: ["TCS", "Cognizant", "Infosys", "Wipro", "Capgemini", "Tech Mahindra"],
-      avgSalary: 500000
-    },
-    ranking: {
-      nirf: 52,
-      outlook: 48,
-      theWeek: 50
-    },
-    courses: ["Arts", "Science", "Computer Science", "Economics", "Psychology", "Chemistry", "Physics", "Botany"],
-    facilities: ["Heritage Campus", "Library", "Science Laboratories", "Botanical Garden", "Auditorium", "Sports Ground", "Cafeteria"],
-    admissionCriteria: ["Merit-based", "Entrance Test (for some courses)"],
-    researchAreas: ["Literature", "Environmental Sciences", "Economic Studies", "Biodiversity", "Physics"],
-    entranceExams: ["College Entrance Test", "FCET"],
-    admissionDetails: {
-      eligibility: "Minimum 50-60% in HSC or equivalent examination.",
-      process: "Merit-based admission with separate cutoffs for each program.",
-      deadlines: "Applications open after HSC results in June."
-    },
-    scholarships: [
-      {
-        name: "Merit Scholarship",
-        amount: "Rs. 5,000 to Rs. 15,000",
-        eligibility: "For students with outstanding academic performance"
-      },
-      {
-        name: "Earn & Learn Scheme",
-        amount: "Monthly stipend",
-        eligibility: "For economically disadvantaged students"
-      }
-    ]
-  },
-  
-  // Delhi
-  {
-    id: "delhi-university",
-    stateId: "delhi",
-    name: "University of Delhi",
-    type: "Government",
-    description: "One of the premier universities in India offering diverse undergraduate, postgraduate and research programs across multiple disciplines.",
-    rating: 4.7,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/6/6c/University_of_Delhi.svg",
-    location: {
-      city: "Delhi",
-      state: "Delhi",
-      address: "New Delhi, Delhi 110021"
-    },
-    fees: {
-      tuition: { min: 15000, max: 50000 },
-      hostel: { min: 18000, max: 60000 },
-      other: { min: 5000, max: 15000 }
-    },
-    placement: {
-      percentage: 85,
-      topCompanies: ["Deloitte", "EY", "Amazon", "HUL", "Infosys"],
-      averagePackage: "8 LPA",
-      topRecruiters: ["Deloitte", "EY", "Amazon", "HUL", "Infosys"],
-      avgSalary: 800000
-    },
-    ranking: {
-      nirf: 12,
-      outlook: 8,
-      theWeek: 10
-    },
-    courses: ["Arts", "Commerce", "Science", "Law", "Management", "Languages", "Education"],
-    facilities: ["Libraries", "Sports Complex", "Medical Facility", "Computer Labs", "Auditorium", "Cafeteria"],
-    admissionCriteria: ["Cut-off Marks", "Entrance Tests (for some courses)"],
-    researchAreas: ["Humanities", "Social Sciences", "Sciences", "Commerce", "Management"],
-    entranceExams: ["DUET"],
-    admissionDetails: {
-      eligibility: "Based on cut-off marks in Class 12 for most UG programs. Entrance tests for some specific courses.",
-      process: "Online application followed by merit-based or entrance-based selection.",
-      deadlines: "Usually between May and June."
-    },
-    scholarships: [
-      {
-        name: "Post-Matric Scholarship for SC/ST/OBC Students",
-        amount: "Varies",
-        eligibility: "For students belonging to SC/ST/OBC categories"
-      },
-      {
-        name: "Merit Scholarship",
-        amount: "Varies",
-        eligibility: "Based on academic performance"
-      }
-    ]
-  },
-  {
-    id: "iit-delhi",
-    stateId: "delhi",
-    name: "Indian Institute of Technology, Delhi",
-    type: "Government",
-    description: "A world-class engineering institution known for its cutting-edge research and innovation in technology and sciences.",
-    rating: 4.9,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/f/fd/Indian_Institute_of_Technology_Delhi_Logo.svg",
-    location: {
-      city: "Delhi",
-      state: "Delhi",
-      address: "Hauz Khas, New Delhi, Delhi 110016"
-    },
-    fees: {
-      tuition: { min: 200000, max: 250000 },
-      hostel: { min: 20000, max: 50000 },
-      other: { min: 10000, max: 30000 }
-    },
-    placement: {
-      percentage: 98,
-      topCompanies: ["Google", "Microsoft", "Apple", "Intel", "Qualcomm"],
-      averagePackage: "22 LPA",
-      topRecruiters: ["Google", "Microsoft", "Apple", "Intel", "Qualcomm"],
-      avgSalary: 2200000
-    },
-    ranking: {
-      nirf: 2,
-      outlook: 3,
-      theWeek: 2
-    },
-    courses: ["Computer Science", "Electrical Engineering", "Mechanical Engineering", "Civil Engineering", "Biotechnology", "Physics"],
-    facilities: ["Research Labs", "Innovation Hub", "Sports Complex", "Auditorium", "Library", "Computer Center"],
-    admissionCriteria: ["JEE Advanced", "GATE (for PG)"],
-    researchAreas: ["Artificial Intelligence", "Machine Learning", "Robotics", "Sustainable Energy", "Nanotechnology"],
-    entranceExams: ["JEE Advanced", "GATE"],
-    admissionDetails: {
-      eligibility: "Qualified JEE Advanced rank for B.Tech programs. Valid GATE score for M.Tech programs.",
-      process: "Admission through JoSAA counseling based on JEE Advanced rank.",
-      deadlines: "Applications typically open in April and close in May."
-    },
-    scholarships: [
-      {
-        name: "Merit-cum-Means Scholarship",
-        amount: "Full tuition fee waiver + Rs. 1000/month",
-        eligibility: "For students with family income less than 5 lakhs per annum"
-      },
-      {
-        name: "Institute Free Studentship",
-        amount: "Full tuition fee waiver",
-        eligibility: "Based on family income and academic performance"
-      }
-    ]
-  },
-  
-  // Tamil Nadu
   {
     id: "iit-madras",
     stateId: "tamil-nadu",
-    name: "Indian Institute of Technology, Madras",
+    name: "Indian Institute of Technology Madras",
     type: "Government",
-    description: "Leading research institution known for its outstanding technical education and innovation ecosystem.",
-    rating: 4.9,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/6/69/IIT_Madras_Logo.svg",
+    description: "An institute of national importance for engineering and technology education.",
+    rating: 4.7,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/1/1c/IIT_Madras_Logo.svg/1200px-IIT_Madras_Logo.svg.png",
     location: {
       city: "Chennai",
       state: "Tamil Nadu",
       address: "Chennai, Tamil Nadu 600036"
     },
     fees: {
-      tuition: { min: 200000, max: 250000 },
-      hostel: { min: 20000, max: 40000 },
-      other: { min: 10000, max: 25000 }
+      tuition: { min: 210000, max: 240000 },
+      hostel: { min: 65000, max: 85000 },
+      other: { min: 18000, max: 28000 }
     },
     placement: {
-      percentage: 97,
-      topCompanies: ["Microsoft", "Google", "Apple", "Qualcomm", "Intel"],
-      averagePackage: "21.5 LPA",
-      topRecruiters: ["Microsoft", "Google", "Apple", "Qualcomm", "Intel"],
-      avgSalary: 2150000
+      percentage: 90,
+      topCompanies: ["Microsoft", "Google", "Amazon", "Flipkart", "Tata Consultancy Services"],
+      averagePackage: "21 LPA",
+	    topRecruiters: ["Microsoft", "Google", "Amazon", "Flipkart", "Tata Consultancy Services"],
+      avgSalary: 2100000
     },
     ranking: {
       nirf: 1,
       outlook: 1,
       theWeek: 1
     },
-    courses: ["Computer Science", "Electrical Engineering", "Mechanical Engineering", "Aerospace Engineering", "Physics", "Chemistry"],
-    facilities: ["Research Park", "Central Library", "Sports Complex", "Swimming Pool", "Innovation Hub", "Healthcare Center"],
-    admissionCriteria: ["JEE Advanced", "GATE (for PG)"],
-    researchAreas: ["AI & Data Science", "Quantum Computing", "Ocean Engineering", "Biomedical Technology", "Energy Systems"],
-    entranceExams: ["JEE Advanced", "GATE"],
+    courses: ["Computer Science", "Mechanical Engineering", "Electrical Engineering", "Aerospace Engineering", "Civil Engineering"],
+    facilities: ["Central Library", "Sports Complex", "Hostels", "Wi-Fi Campus", "Auditorium", "Medical Center"],
+    admissionCriteria: ["JEE Advanced"],
+    researchAreas: ["Robotics", "Data Science", "Sustainable Energy", "Biomedical Engineering"],
+    entranceExams: ["JEE Advanced"],
     admissionDetails: {
-      eligibility: "Qualified JEE Advanced rank for B.Tech programs. Valid GATE score for M.Tech programs.",
-      process: "Admission through JoSAA counseling based on JEE Advanced rank.",
-      deadlines: "Applications typically open in April and close in May."
+      eligibility: "Based on JEE Advanced scores.",
+      process: "Online application followed by JEE Advanced counseling.",
+      deadlines: "Usually in June."
     },
     scholarships: [
       {
         name: "Merit-cum-Means Scholarship",
-        amount: "Full tuition fee waiver + Rs. 1000/month",
-        eligibility: "For students with family income less than 5 lakhs per annum"
-      },
-      {
-        name: "Institute Free Studentship",
         amount: "Full tuition fee waiver",
-        eligibility: "Based on family income and academic performance"
-      }
-    ]
-  },
-  {
-    id: "anna-university",
-    stateId: "tamil-nadu",
-    name: "Anna University",
-    type: "Government",
-    description: "Premier technical university offering quality education in engineering and technology across Tamil Nadu.",
-    rating: 4.4,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/8/87/Anna_University_Logo.svg",
-    location: {
-      city: "Chennai",
-      state: "Tamil Nadu",
-      address: "Chennai, Tamil Nadu 600025"
-    },
-    fees: {
-      tuition: { min: 40000, max: 90000 },
-      hostel: { min: 25000, max: 60000 },
-      other: { min: 5000, max: 20000 }
-    },
-    placement: {
-      percentage: 80,
-      topCompanies: ["TCS", "Infosys", "Wipro", "HCL", "L&T"],
-      averagePackage: "6.5 LPA",
-      topRecruiters: ["TCS", "Infosys", "Wipro", "HCL", "L&T"],
-      avgSalary: 650000
-    },
-    ranking: {
-      nirf: 15,
-      outlook: 18,
-      theWeek: 16
-    },
-    courses: ["Civil Engineering", "Computer Science", "Electrical Engineering", "Mechanical Engineering", "Information Technology", "Electronics"],
-    facilities: ["Central Library", "Sports Complex", "Laboratories", "Hostels", "Medical Center", "Canteen"],
-    admissionCriteria: ["TNEA Counselling", "TANCA (for PG)"],
-    researchAreas: ["Water Resources", "Smart Cities", "Power Systems", "Materials Engineering", "Computer Vision"],
-    entranceExams: ["TNEA", "TANCA"],
-    admissionDetails: {
-      eligibility: "Based on Class 12 marks for TNEA counselling. TANCA for PG programs.",
-      process: "Online application followed by TNEA counselling based on merit.",
-      deadlines: "Usually in May and June."
-    },
-    scholarships: [
-      {
-        name: "BC/MBC/DNC Scholarship",
-        amount: "Varies",
-        eligibility: "For students belonging to BC/MBC/DNC categories"
+        eligibility: "Based on academic performance and family income"
       },
       {
-        name: "SC/ST Scholarship",
-        amount: "Varies",
-        eligibility: "For students belonging to SC/ST categories"
+        name: "Aditya Birla Scholarship",
+        amount: "Rs. 1,50,000 per year",
+        eligibility: "Based on academic excellence"
       }
     ]
   },
-  
-  // Karnataka
   {
     id: "iisc-bangalore",
     stateId: "karnataka",
-    name: "Indian Institute of Science, Bangalore",
+    name: "Indian Institute of Science Bangalore",
     type: "Government",
-    description: "India's premier research institution with world-class facilities and programs in advanced scientific and technological research.",
+    description: "A leading institute for advanced scientific and technological research and education.",
     rating: 4.9,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/3/3b/Indian_Institute_of_Science_logo.png",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/8/81/IISc_Bangalore_Logo.svg/1200px-IISc_Bangalore_Logo.svg.png",
     location: {
       city: "Bangalore",
       state: "Karnataka",
       address: "Bangalore, Karnataka 560012"
     },
     fees: {
-      tuition: { min: 25000, max: 75000 },
-      hostel: { min: 24000, max: 50000 },
-      other: { min: 10000, max: 30000 }
+      tuition: { min: 30000, max: 50000 },
+      hostel: { min: 40000, max: 60000 },
+      other: { min: 10000, max: 20000 }
     },
     placement: {
-      percentage: 95,
-      topCompanies: ["Google", "Intel", "IBM Research", "ISRO", "DRDO"],
-      averagePackage: "18 LPA",
-      topRecruiters: ["Google", "Intel", "IBM Research", "ISRO", "DRDO"],
-      avgSalary: 1800000
+      percentage: 85,
+      topCompanies: ["Google", "Microsoft", "Qualcomm", "Texas Instruments", "DRDO"],
+      averagePackage: "25 LPA",
+	    topRecruiters: ["Google", "Microsoft", "Qualcomm", "Texas Instruments", "DRDO"],
+      avgSalary: 2500000
     },
     ranking: {
-      nirf: 1,
-      outlook: 1,
-      theWeek: 1
+      nirf: 2,
+      outlook: 3,
+      theWeek: 2
     },
-    courses: ["Engineering", "Physics", "Chemistry", "Biology", "Mathematics", "Computer Science", "Materials Research"],
-    facilities: ["Research Centers", "Advanced Labs", "Library", "Sports Complex", "Health Center", "Innovation Hub"],
-    admissionCriteria: ["GATE", "NET", "JAM", "IISc Entrance Exam"],
-    researchAreas: ["Quantum Technology", "Climate Science", "Artificial Intelligence", "Nanoscience", "Aerospace Engineering"],
-    entranceExams: ["GATE", "NET", "JAM", "IISc Entrance Exam"],
+    courses: ["Ph.D.", "M.Tech", "M.Sc", "Integrated Ph.D."],
+    facilities: ["Central Library", "Advanced Labs", "Hostels", "Wi-Fi Campus", "Auditorium", "Medical Center"],
+    admissionCriteria: ["GATE", "JAM", "IISc Entrance Exam"],
+    researchAreas: ["Material Science", "Astrophysics", "Genetic Engineering", "High Energy Physics"],
+    entranceExams: ["GATE", "JAM", "IISc Entrance Exam"],
     admissionDetails: {
-      eligibility: "Varies based on the program. Generally requires a Bachelor's or Master's degree in a relevant field.",
-      process: "Based on entrance exam scores, academic record, and interviews.",
-      deadlines: "Varies by program, typically between February and April."
+      eligibility: "Based on GATE/JAM scores or IISc entrance exam.",
+      process: "Online application followed by entrance exam or interview.",
+      deadlines: "Usually in April."
     },
     scholarships: [
       {
-        name: "KVPY Fellowship",
-        amount: "Varies",
+        name: "Kishore Vaigyanik Protsahan Yojana (KVPY)",
+        amount: "Rs. 5,000 per month",
         eligibility: "For students pursuing basic sciences"
       },
       {
         name: "INSPIRE Scholarship",
-        amount: "Varies",
-        eligibility: "For students pursuing science and technology"
+        amount: "Rs. 80,000 per year",
+        eligibility: "For students pursuing natural sciences"
       }
     ]
   },
   {
-    id: "manipal-academy",
-    stateId: "karnataka",
-    name: "Manipal Academy of Higher Education",
-    type: "Private",
-    description: "A leading private university known for its medical, engineering, and management programs with international collaborations.",
+    id: "iit-delhi",
+    stateId: "delhi",
+    name: "Indian Institute of Technology Delhi",
+    type: "Government",
+    description: "A leading technology institute known for its engineering programs and research.",
     rating: 4.6,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/b/b8/Manipal_Academy_of_Higher_Education_logo.png",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c7/IIT_Delhi_Logo.svg/1200px-IIT_Delhi_Logo.svg.png",
     location: {
-      city: "Manipal",
-      state: "Karnataka",
-      address: "Manipal, Karnataka 576104"
+      city: "New Delhi",
+      state: "Delhi",
+      address: "Hauz Khas, New Delhi, Delhi 110016"
     },
     fees: {
-      tuition: { min: 300000, max: 1500000 },
-      hostel: { min: 100000, max: 200000 },
-      other: { min: 25000, max: 75000 }
+      tuition: { min: 200000, max: 230000 },
+      hostel: { min: 60000, max: 80000 },
+      other: { min: 15000, max: 25000 }
     },
     placement: {
-      percentage: 85,
-      topCompanies: ["Amazon", "Microsoft", "Deloitte", "Apollo Hospitals", "Infosys"],
-      averagePackage: "10 LPA",
-      topRecruiters: ["Amazon", "Microsoft", "Deloitte", "Apollo Hospitals", "Infosys"],
-      avgSalary: 1000000
+      percentage: 88,
+      topCompanies: ["Google", "Microsoft", "Amazon", "Flipkart", "Tata Consultancy Services"],
+      averagePackage: "20 LPA",
+	    topRecruiters: ["Google", "Microsoft", "Amazon", "Flipkart", "Tata Consultancy Services"],
+      avgSalary: 2000000
     },
     ranking: {
-      nirf: 7,
-      outlook: 6,
-      theWeek: 8
+      nirf: 4,
+      outlook: 4,
+      theWeek: 5
     },
-    courses: ["Medicine", "Engineering", "Management", "Pharmacy", "Allied Health", "Architecture", "Communications"],
-    facilities: ["Libraries", "Innovation Center", "Sports Complex", "Swimming Pool", "Medical Museum", "Simulation Labs"],
-    admissionCriteria: ["MET (Manipal Entrance Test)", "NEET (for Medical)", "JEE (for Engineering)"],
-    researchAreas: ["Healthcare", "Technology", "Humanities", "Management", "Sciences"],
-    entranceExams: ["MET", "NEET", "JEE Main"],
+    courses: ["Computer Science", "Mechanical Engineering", "Electrical Engineering", "Civil Engineering", "Chemical Engineering"],
+    facilities: ["Central Library", "Sports Complex", "Hostels", "Wi-Fi Campus", "Auditorium", "Medical Center"],
+    admissionCriteria: ["JEE Advanced"],
+    researchAreas: ["Artificial Intelligence", "Renewable Energy", "Nanotechnology", "Biotechnology"],
+    entranceExams: ["JEE Advanced"],
     admissionDetails: {
-      eligibility: "Based on MET score for most programs. NEET for medical programs.",
-      process: "Online application followed by MET exam and counselling.",
+      eligibility: "Based on JEE Advanced scores.",
+      process: "Online application followed by JEE Advanced counseling.",
+      deadlines: "Usually in June."
+    },
+    scholarships: [
+      {
+        name: "Merit-cum-Means Scholarship",
+        amount: "Full tuition fee waiver",
+        eligibility: "Based on academic performance and family income"
+      },
+      {
+        name: "Institute Free Studentship",
+        amount: "Full tuition fee waiver",
+        eligibility: "Based on family income"
+      }
+    ]
+  },
+    // Additional Delhi colleges 
+  {
+    id: "jamia-millia",
+    stateId: "delhi",
+    name: "Jamia Millia Islamia",
+    type: "Government",
+    description: "A Central University offering diverse programs with a focus on research and inclusive education.",
+    rating: 4.2,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/d/d7/Jamia_Millia_Islamia_Logo.svg",
+    location: {
+      city: "New Delhi",
+      state: "Delhi",
+      address: "Jamia Nagar, New Delhi, Delhi 110025"
+    },
+    fees: {
+      tuition: { min: 10000, max: 40000 },
+      hostel: { min: 15000, max: 35000 },
+      other: { min: 5000, max: 12000 }
+    },
+    placement: {
+      percentage: 70,
+      topCompanies: ["TCS", "Wipro", "IBM", "Capgemini", "Cognizant"],
+      averagePackage: "6.5 LPA",
+	    topRecruiters: ["TCS", "Wipro", "IBM", "Capgemini", "Cognizant"],
+      avgSalary: 650000
+    },
+    ranking: {
+      nirf: 16,
+      outlook: 15,
+      theWeek: 18
+    },
+    courses: ["Engineering", "Law", "Mass Communication", "Fine Arts", "Education", "Social Sciences", "Commerce"],
+    facilities: ["Central Library", "Sports Complex", "Hostels", "Wi-Fi Campus", "Auditorium", "Medical Center"],
+    admissionCriteria: ["Entrance Exam", "Merit-based Selection"],
+    researchAreas: ["Media Studies", "Social Sciences", "Engineering", "Islamic Studies", "Environmental Science"],
+    entranceExams: ["JMI Entrance Test", "CUET"],
+    admissionDetails: {
+      eligibility: "Based on entrance exam scores and academic records.",
+      process: "Online applications followed by entrance exams and merit-based selection.",
       deadlines: "Usually between March and May."
     },
     scholarships: [
@@ -851,763 +367,392 @@ export const colleges: College[] = [
         eligibility: "Based on academic performance"
       },
       {
-        name: "Freeship and Concessions",
-        amount: "Varies",
-        eligibility: "For economically weaker sections"
+        name: "Maulana Azad National Fellowship",
+        amount: "Rs. 31,000 per month",
+        eligibility: "For minority students pursuing research"
       }
     ]
   },
-  
-  // West Bengal
   {
-    id: "jadavpur-university",
-    stateId: "west-bengal",
-    name: "Jadavpur University",
+    id: "jnu-delhi",
+    stateId: "delhi",
+    name: "Jawaharlal Nehru University",
     type: "Government",
-    description: "A prestigious public university known for its strong engineering and arts programs with a focus on research and innovation.",
-    rating: 4.5,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/b/bc/Jadavpur_University_seal.svg",
+    description: "A premier research university known for its academic excellence in social sciences, international relations and languages.",
+    rating: 4.7,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/b/b3/Jawaharlal_Nehru_University%2C_New_Delhi_logo.png",
     location: {
-      city: "Kolkata",
-      state: "West Bengal",
-      address: "Kolkata, West Bengal 700032"
+      city: "New Delhi",
+      state: "Delhi",
+      address: "New Mehrauli Road, New Delhi, Delhi 110067"
     },
     fees: {
-      tuition: { min: 5000, max: 20000 },
-      hostel: { min: 12000, max: 24000 },
-      other: { min: 3000, max: 8000 }
+      tuition: { min: 5000, max: 35000 },
+      hostel: { min: 10000, max: 30000 },
+      other: { min: 3000, max: 10000 }
     },
     placement: {
-      percentage: 85,
-      topCompanies: ["TCS", "Infosys", "CTS", "Deloitte", "IBM"],
+      percentage: 65,
+      topCompanies: ["Think Tanks", "United Nations", "Government Organizations", "Research Institutes", "NGOs"],
       averagePackage: "7 LPA",
-      topRecruiters: ["TCS", "Infosys", "CTS", "Deloitte", "IBM"],
+	    topRecruiters: ["United Nations", "Ministry of External Affairs", "Research Institutes", "Think Tanks", "Media Houses"],
       avgSalary: 700000
     },
     ranking: {
-      nirf: 13,
-      outlook: 14,
-      theWeek: 12
+      nirf: 8,
+      outlook: 7,
+      theWeek: 6
     },
-    courses: ["Engineering", "Arts", "Science", "Architecture", "Pharmacy", "Film Studies"],
-    facilities: ["Central Library", "Laboratories", "Workshops", "Sports Ground", "Cafeteria", "Seminar Halls"],
-    admissionCriteria: ["WBJEE (for Engineering)", "Merit-based (for Arts & Science)"],
-    researchAreas: ["Engineering Sciences", "Humanities", "Physical Sciences", "Life Sciences", "Interdisciplinary Research"],
-    entranceExams: ["WBJEE", "JUEE"],
+    courses: ["International Relations", "Languages", "Social Sciences", "Environmental Studies", "Life Sciences", "Computer Science", "Arts & Aesthetics"],
+    facilities: ["Central Library", "Advanced Scientific Labs", "Sports Complex", "Conference Centers", "Health Center", "Cultural Centers"],
+    admissionCriteria: ["JNUEE (JNU Entrance Examination)", "CUET", "Interview"],
+    researchAreas: ["International Relations", "Social Systems", "Language Studies", "Environmental Sciences", "Biotechnology"],
+    entranceExams: ["JNUEE", "CUET"],
     admissionDetails: {
-      eligibility: "WBJEE rank for engineering programs. Merit-based for arts and science programs.",
-      process: "WBJEE counselling for engineering. Merit list for other programs.",
-      deadlines: "Usually in May and June."
+      eligibility: "Based on entrance exam scores and interview performance.",
+      process: "Entrance exam followed by interview for selected candidates.",
+      deadlines: "Applications usually open in March."
     },
     scholarships: [
       {
-        name: "Swami Vivekananda Merit-cum-Means Scholarship",
-        amount: "Varies",
-        eligibility: "Based on merit and family income"
+        name: "JNU Merit Scholarship",
+        amount: "Rs. 5,000 per month",
+        eligibility: "Based on academic performance"
       },
       {
-        name: "OBC Scholarship",
-        amount: "Varies",
-        eligibility: "For students belonging to OBC category"
+        name: "UGC Non-NET Fellowship",
+        amount: "Rs. 8,000 per month",
+        eligibility: "For research scholars"
       }
     ]
   },
   {
-    id: "presidency-university",
-    stateId: "west-bengal",
-    name: "Presidency University",
+    id: "srcc-delhi",
+    stateId: "delhi",
+    name: "Shri Ram College of Commerce",
     type: "Government",
-    description: "One of the oldest educational institutions in India with a rich heritage and excellence in liberal arts and sciences.",
-    rating: 4.4,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/7/79/Presidency_University%2C_Kolkata_Logo.png",
+    description: "One of India's premier institutions for commerce and economics education, known for its academic rigor and placement record.",
+    rating: 4.8,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/c/c3/SRCC_logo.png",
     location: {
-      city: "Kolkata",
-      state: "West Bengal",
-      address: "Kolkata, West Bengal 700073"
+      city: "Delhi",
+      state: "Delhi",
+      address: "Maurice Nagar, Delhi 110007"
     },
     fees: {
-      tuition: { min: 4000, max: 15000 },
-      hostel: { min: 15000, max: 25000 },
-      other: { min: 2000, max: 5000 }
+      tuition: { min: 20000, max: 50000 },
+      hostel: { min: 70000, max: 90000 },
+      other: { min: 5000, max: 15000 }
     },
     placement: {
-      percentage: 70,
-      topCompanies: ["TCS", "Wipro", "Cognizant", "Deloitte", "Tech Mahindra"],
-      averagePackage: "5.5 LPA",
-      topRecruiters: ["TCS", "Wipro", "Cognizant", "Deloitte", "Tech Mahindra"],
-      avgSalary: 550000
+      percentage: 95,
+      topCompanies: ["Bain & Company", "McKinsey", "Boston Consulting Group", "PwC", "Deloitte"],
+      averagePackage: "16 LPA",
+	    topRecruiters: ["Bain & Company", "McKinsey", "Boston Consulting Group", "PwC", "Deloitte"],
+      avgSalary: 1600000
     },
     ranking: {
-      nirf: 25,
-      outlook: 22,
-      theWeek: 24
+      nirf: 5,
+      outlook: 4,
+      theWeek: 3
     },
-    courses: ["Physics", "Chemistry", "Mathematics", "Economics", "History", "Political Science", "Sociology", "Life Sciences"],
-    facilities: ["Baker Laboratory", "Central Library", "Auditorium", "Computer Labs", "Canteen", "Sports Facilities"],
-    admissionCriteria: ["Entrance Examination", "Merit-based Selection"],
-    researchAreas: ["Theoretical Physics", "Molecular Biology", "Economic Theory", "Historical Studies", "Environmental Science"],
-    entranceExams: ["PUBDET"],
+    courses: ["B.Com (Hons)", "B.A. Economics (Hons)", "M.Com", "Global Business Operations", "Business Analytics"],
+    facilities: ["Library", "Sports Complex", "Computer Labs", "Seminar Halls", "Auditorium", "Cafeteria"],
+    admissionCriteria: ["Cut-off Marks", "Merit-based Selection"],
+    researchAreas: ["Finance", "Economics", "Commerce", "Business Studies", "Statistics"],
+    entranceExams: ["DU Entrance Exam", "CUET"],
     admissionDetails: {
-      eligibility: "Based on entrance exam and merit.",
-      process: "Entrance exam followed by counselling.",
-      deadlines: "Usually in May and June."
+      eligibility: "Based on Class 12 marks as per Delhi University cut-off.",
+      process: "Merit-based admission through DU's centralized admission process.",
+      deadlines: "Usually aligns with Delhi University's admission schedule."
     },
     scholarships: [
       {
-        name: "Swami Vivekananda Merit-cum-Means Scholarship",
+        name: "SRCC Need-based Scholarship",
         amount: "Varies",
-        eligibility: "Based on merit and family income"
+        eligibility: "For economically disadvantaged students with good academic records"
       },
       {
-        name: "WB CM Relief Fund Scholarship",
-        amount: "Varies",
-        eligibility: "Based on financial need"
+        name: "Merit Scholarship",
+        amount: "Full tuition fee waiver",
+        eligibility: "For students with outstanding academic performance"
       }
     ]
   },
-  
-  // Uttar Pradesh
+  {
+    id: "nift-delhi",
+    stateId: "delhi",
+    name: "National Institute of Fashion Technology",
+    type: "Government",
+    description: "India's premier fashion institute offering programs in design, management, and technology for the fashion industry.",
+    rating: 4.6,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/a/a6/NIFT_logo.png",
+    location: {
+      city: "New Delhi",
+      state: "Delhi",
+      address: "Hauz Khas, New Delhi, Delhi 110016"
+    },
+    fees: {
+      tuition: { min: 160000, max: 280000 },
+      hostel: { min: 70000, max: 120000 },
+      other: { min: 25000, max: 50000 }
+    },
+    placement: {
+      percentage: 90,
+      topCompanies: ["Louis Vuitton", "Zara", "Tommy Hilfiger", "Aditya Birla Fashion", "Tata CLiQ Luxury"],
+      averagePackage: "8 LPA",
+	    topRecruiters: ["Louis Vuitton", "Zara", "Tommy Hilfiger", "Aditya Birla Fashion", "Tata CLiQ Luxury"],
+      avgSalary: 800000
+    },
+    ranking: {
+      nirf: 9,
+      outlook: 8,
+      theWeek: 7
+    },
+    courses: ["Fashion Design", "Accessory Design", "Textile Design", "Fashion Communication", "Fashion Management", "Fashion Technology"],
+    facilities: ["Design Studios", "Resource Center", "Computer Labs", "Textile Labs", "Amphitheatre", "Exhibition Spaces"],
+    admissionCriteria: ["NIFT Entrance Exam", "Situation Test", "Group Discussion", "Interview"],
+    researchAreas: ["Sustainable Fashion", "Traditional Textiles", "Fashion Forecasting", "Apparel Technology", "Luxury Brand Management"],
+    entranceExams: ["NIFT Entrance Test"],
+    admissionDetails: {
+      eligibility: "Class 12 pass for UG programs. Bachelor's degree for PG programs.",
+      process: "Entrance exam followed by situation test/group discussion and personal interview.",
+      deadlines: "Applications open in December and close in January."
+    },
+    scholarships: [
+      {
+        name: "NIFT Merit Scholarship",
+        amount: "Full tuition fee waiver",
+        eligibility: "Top rankers in each program"
+      },
+      {
+        name: "Means-based Financial Assistance",
+        amount: "Varies",
+        eligibility: "Based on family income"
+      }
+    ]
+  },
+  {
+    id: "aiims-delhi",
+    stateId: "delhi",
+    name: "All India Institute of Medical Sciences",
+    type: "Government",
+    description: "India's leading public medical institution offering world-class education, research, and healthcare services.",
+    rating: 4.9,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/5/57/All_India_Institute_of_Medical_Sciences_Logo.png",
+    location: {
+      city: "New Delhi",
+      state: "Delhi",
+      address: "Ansari Nagar East, New Delhi, Delhi 110029"
+    },
+    fees: {
+      tuition: { min: 6000, max: 15000 },
+      hostel: { min: 10000, max: 30000 },
+      other: { min: 5000, max: 20000 }
+    },
+    placement: {
+      percentage: 100,
+      topCompanies: ["Apollo Hospitals", "Fortis Healthcare", "Max Healthcare", "Medanta", "Wockhardt Hospitals"],
+      averagePackage: "12 LPA",
+	    topRecruiters: ["Apollo Hospitals", "Fortis Healthcare", "Max Healthcare", "Medanta", "Wockhardt Hospitals"],
+      avgSalary: 1200000
+    },
+    ranking: {
+      nirf: 1,
+      outlook: 1,
+      theWeek: 1
+    },
+    courses: ["MBBS", "MD", "MS", "M.Ch", "DM", "Ph.D", "B.Sc Nursing", "M.Sc Nursing"],
+    facilities: ["Hospital", "Research Laboratories", "Library", "Simulation Labs", "Hostels", "Sports Complex", "Auditorium"],
+    admissionCriteria: ["NEET-UG", "NEET-PG", "INI-CET"],
+    researchAreas: ["Medical Sciences", "Public Health", "Biotechnology", "Genomics", "Healthcare Management"],
+    entranceExams: ["NEET-UG", "NEET-PG", "INI-CET", "AIIMS Nursing"],
+    admissionDetails: {
+      eligibility: "NEET-UG for MBBS, NEET-PG for postgraduate medical courses.",
+      process: "Entrance exam followed by counselling based on merit.",
+      deadlines: "As per national medical entrance exam schedules."
+    },
+    scholarships: [
+      {
+        name: "Ministry of Health Scholarship",
+        amount: "Varies",
+        eligibility: "Based on merit and need"
+      },
+      {
+        name: "Research Fellowship",
+        amount: "Rs. 31,000 - 54,000 per month",
+        eligibility: "For students pursuing research programs"
+      }
+    ]
+  },
   {
     id: "iit-kanpur",
     stateId: "uttar-pradesh",
-    name: "Indian Institute of Technology, Kanpur",
+    name: "Indian Institute of Technology Kanpur",
     type: "Government",
-    description: "A leading engineering institution known for its rigorous academic programs and research contributions.",
-    rating: 4.8,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/9/9a/IIT_Kanpur_Logo.svg",
+    description: "A premier engineering institute known for its research and academic excellence.",
+    rating: 4.5,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/4/43/IIT_Kanpur_Logo.svg/1200px-IIT_Kanpur_Logo.svg.png",
     location: {
       city: "Kanpur",
       state: "Uttar Pradesh",
       address: "Kanpur, Uttar Pradesh 208016"
     },
     fees: {
-      tuition: { min: 200000, max: 250000 },
-      hostel: { min: 20000, max: 45000 },
-      other: { min: 10000, max: 25000 }
+      tuition: { min: 210000, max: 240000 },
+      hostel: { min: 65000, max: 85000 },
+      other: { min: 18000, max: 28000 }
     },
     placement: {
-      percentage: 95,
-      topCompanies: ["Microsoft", "Google", "Samsung", "Adobe", "Qualcomm"],
-      averagePackage: "20 LPA",
-      topRecruiters: ["Microsoft", "Google", "Samsung", "Adobe", "Qualcomm"],
-      avgSalary: 2000000
+      percentage: 87,
+      topCompanies: ["Google", "Microsoft", "Amazon", "Flipkart", "Tata Consultancy Services"],
+      averagePackage: "19 LPA",
+	    topRecruiters: ["Google", "Microsoft", "Amazon", "Flipkart", "Tata Consultancy Services"],
+      avgSalary: 1900000
     },
     ranking: {
-      nirf: 4,
+      nirf: 6,
       outlook: 5,
-      theWeek: 4
+      theWeek: 6
     },
-    courses: ["Computer Science", "Electrical Engineering", "Mechanical Engineering", "Aerospace Engineering", "Materials Science", "Chemistry"],
-    facilities: ["P.K. Kelkar Library", "Advanced Labs", "Sports Complex", "Aviation Field", "Health Center", "Innovation Hub"],
-    admissionCriteria: ["JEE Advanced", "GATE (for PG)"],
-    researchAreas: ["Artificial Intelligence", "Advanced Materials", "Space Technology", "Quantum Computing", "Robotics"],
-    entranceExams: ["JEE Advanced", "GATE"],
+    courses: ["Computer Science", "Mechanical Engineering", "Electrical Engineering", "Aerospace Engineering", "Civil Engineering"],
+    facilities: ["Central Library", "Sports Complex", "Hostels", "Wi-Fi Campus", "Auditorium", "Medical Center"],
+    admissionCriteria: ["JEE Advanced"],
+    researchAreas: ["Robotics", "Data Science", "Sustainable Energy", "Biomedical Engineering"],
+    entranceExams: ["JEE Advanced"],
     admissionDetails: {
-      eligibility: "Qualified JEE Advanced rank for B.Tech programs. Valid GATE score for M.Tech programs.",
-      process: "Admission through JoSAA counselling based on JEE Advanced rank.",
-      deadlines: "Applications typically open in April and close in May."
+      eligibility: "Based on JEE Advanced scores.",
+      process: "Online application followed by JEE Advanced counseling.",
+      deadlines: "Usually in June."
     },
     scholarships: [
       {
         name: "Merit-cum-Means Scholarship",
-        amount: "Full tuition fee waiver + Rs. 1000/month",
-        eligibility: "For students with family income less than 5 lakhs per annum"
+        amount: "Full tuition fee waiver",
+        eligibility: "Based on academic performance and family income"
       },
       {
-        name: "Institute Free Studentship",
-        amount: "Full tuition fee waiver",
-        eligibility: "Based on family income and academic performance"
+        name: "Aditya Birla Scholarship",
+        amount: "Rs. 1,50,000 per year",
+        eligibility: "Based on academic excellence"
       }
     ]
   },
   {
-    id: "bhu-varanasi",
+    id: "iit-varanasi",
     stateId: "uttar-pradesh",
-    name: "Banaras Hindu University",
+    name: "Indian Institute of Technology Varanasi",
     type: "Government",
-    description: "One of the largest residential universities in Asia, offering diverse programs across arts, sciences, engineering, and medicine.",
-    rating: 4.5,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/0/00/Banaras_Hindu_University_seal.svg",
+    description: "An institute of national importance for engineering and technology education.",
+    rating: 4.4,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/IIT_BHU_Logo.svg/1200px-IIT_BHU_Logo.svg.png",
     location: {
       city: "Varanasi",
       state: "Uttar Pradesh",
       address: "Varanasi, Uttar Pradesh 221005"
     },
     fees: {
-      tuition: { min: 10000, max: 80000 },
-      hostel: { min: 10000, max: 35000 },
-      other: { min: 5000, max: 20000 }
-    },
-    placement: {
-      percentage: 75,
-      topCompanies: ["TCS", "Infosys", "DRDO", "HCL", "Wipro"],
-      averagePackage: "7 LPA",
-      topRecruiters: ["TCS", "Infosys", "DRDO", "HCL", "Wipro"],
-      avgSalary: 700000
-    },
-    ranking: {
-      nirf: 10,
-      outlook: 12,
-      theWeek: 11
-    },
-    courses: ["Arts", "Science", "Engineering", "Medicine", "Agriculture", "Management", "Law", "Fine Arts"],
-    facilities: ["Central Library", "Laboratories", "Museums", "Sports Complex", "Hospital", "Auditorium"],
-    admissionCriteria: ["CUET", "BHU-PET", "NEET (for Medical)"],
-    researchAreas: ["Sanskrit Studies", "Agricultural Sciences", "Medical Research", "Environmental Studies", "Social Sciences"],
-    entranceExams: ["CUET", "BHU-PET", "NEET"],
-    admissionDetails: {
-      eligibility: "Varies by program. Generally requires minimum 50-60% in qualifying examination.",
-      process: "Based on entrance exam rank and counselling.",
-      deadlines: "Applications typically open in March and close in April."
-    },
-    scholarships: [
-      {
-        name: "BHU Merit Scholarship",
-        amount: "Rs. 1000/month",
-        eligibility: "Based on academic performance"
-      },
-      {
-        name: "Financial Aid to Needy Students",
-        amount: "Varies",
-        eligibility: "Based on financial need"
-      }
-    ]
-  },
-  
-  // Add 10 colleges for Andhra Pradesh
-  {
-    id: "andhra-university",
-    stateId: "andhra-pradesh",
-    name: "Andhra University",
-    type: "Government",
-    description: "One of the oldest and most prestigious universities in Andhra Pradesh known for its quality education and research opportunities.",
-    rating: 4.3,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/1/13/Andhra_University_Logo.png",
-    location: {
-      city: "Visakhapatnam",
-      state: "Andhra Pradesh",
-      address: "Visakhapatnam, Andhra Pradesh 530003"
-    },
-    fees: {
-      tuition: { min: 15000, max: 60000 },
-      hostel: { min: 15000, max: 40000 },
-      other: { min: 5000, max: 15000 }
-    },
-    placement: {
-      percentage: 78,
-      topCompanies: ["TCS", "Infosys", "Wipro", "Tech Mahindra", "HCL"],
-      averagePackage: "6 LPA",
-      topRecruiters: ["TCS", "Infosys", "Wipro", "Tech Mahindra", "HCL"],
-      avgSalary: 600000
-    },
-    ranking: {
-      nirf: 36,
-      outlook: 32,
-      theWeek: 38
-    },
-    courses: ["Engineering", "Science", "Arts", "Commerce", "Management", "Pharmacy", "Law"],
-    facilities: ["Central Library", "Laboratories", "Sports Facilities", "Hostels", "Health Center", "Auditorium"],
-    admissionCriteria: ["AP EAMCET", "ICET", "PGCET"],
-    researchAreas: ["Marine Science", "Social Sciences", "Engineering", "Pharmacy", "Environmental Studies"],
-    entranceExams: ["AP EAMCET", "ICET", "PGCET"],
-    admissionDetails: {
-      eligibility: "Based on entrance exam rank and qualifying examination marks.",
-      process: "Online application followed by counseling based on rank.",
-      deadlines: "Applications typically open in March-April."
-    },
-    scholarships: [
-      {
-        name: "University Merit Scholarship",
-        amount: "Rs. 10,000 per annum",
-        eligibility: "Based on academic performance"
-      },
-      {
-        name: "SC/ST Scholarship",
-        amount: "Varies",
-        eligibility: "For students belonging to SC/ST categories"
-      }
-    ]
-  },
-  {
-    id: "sri-venkateswara-university",
-    stateId: "andhra-pradesh",
-    name: "Sri Venkateswara University",
-    type: "Government",
-    description: "A renowned university offering diverse programs in science, arts, commerce and engineering with strong research facilities.",
-    rating: 4.2,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/e/eb/Sri_Venkateswara_University_Logo.png",
-    location: {
-      city: "Tirupati",
-      state: "Andhra Pradesh",
-      address: "Tirupati, Andhra Pradesh 517502"
-    },
-    fees: {
-      tuition: { min: 10000, max: 50000 },
-      hostel: { min: 15000, max: 35000 },
-      other: { min: 5000, max: 15000 }
-    },
-    placement: {
-      percentage: 72,
-      topCompanies: ["Infosys", "TCS", "HCL", "Cognizant", "Wipro"],
-      averagePackage: "4.5 LPA",
-      topRecruiters: ["Infosys", "TCS", "HCL", "Cognizant", "Wipro"],
-      avgSalary: 450000
-    },
-    ranking: {
-      nirf: 48,
-      outlook: 52,
-      theWeek: 50
-    },
-    courses: ["Science", "Arts", "Commerce", "Engineering", "Education", "Management", "Law"],
-    facilities: ["Central Library", "Computer Center", "Sports Complex", "Hostels", "Canteen", "Health Center"],
-    admissionCriteria: ["SVUCET", "AP EAMCET", "AP ICET"],
-    researchAreas: ["Oriental Studies", "Environmental Sciences", "Biotechnology", "Social Sciences", "Engineering"],
-    entranceExams: ["SVUCET", "AP EAMCET", "AP ICET"],
-    admissionDetails: {
-      eligibility: "Minimum 50% in qualifying examination with relevant subject combinations.",
-      process: "Entrance test followed by counseling.",
-      deadlines: "Applications typically open in April-May."
-    },
-    scholarships: [
-      {
-        name: "University Research Fellowship",
-        amount: "Rs. 8,000 per month",
-        eligibility: "For PhD scholars with good academic record"
-      },
-      {
-        name: "Merit Scholarship",
-        amount: "Varies",
-        eligibility: "Based on academic performance"
-      }
-    ]
-  },
-  {
-    id: "gitam-university",
-    stateId: "andhra-pradesh",
-    name: "GITAM University",
-    type: "Private",
-    description: "A leading private university known for its engineering, management and medical programs with strong industry connections.",
-    rating: 4.6,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/9/91/GITAM_Logo.png",
-    location: {
-      city: "Visakhapatnam",
-      state: "Andhra Pradesh",
-      address: "Visakhapatnam, Andhra Pradesh 530045"
-    },
-    fees: {
-      tuition: { min: 100000, max: 300000 },
-      hostel: { min: 60000, max: 120000 },
-      other: { min: 15000, max: 40000 }
+      tuition: { min: 200000, max: 230000 },
+      hostel: { min: 60000, max: 80000 },
+      other: { min: 15000, max: 25000 }
     },
     placement: {
       percentage: 85,
-      topCompanies: ["Microsoft", "Amazon", "IBM", "Infosys", "Wipro", "Accenture"],
-      averagePackage: "7.2 LPA",
-      topRecruiters: ["Microsoft", "Amazon", "IBM", "Infosys", "Wipro", "Accenture"],
-      avgSalary: 720000
+      topCompanies: ["Microsoft", "Google", "Amazon", "Flipkart", "Tata Consultancy Services"],
+      averagePackage: "18 LPA",
+	    topRecruiters: ["Microsoft", "Google", "Amazon", "Flipkart", "Tata Consultancy Services"],
+      avgSalary: 1800000
     },
     ranking: {
-      nirf: 28,
-      outlook: 25,
-      theWeek: 27
+      nirf: 7,
+      outlook: 6,
+      theWeek: 7
     },
-    courses: ["Engineering", "Management", "Science", "Pharmacy", "Medicine", "Architecture", "Law"],
-    facilities: ["Central Library", "Innovation Hub", "Sports Complex", "Swimming Pool", "Hostels", "Auditorium"],
-    admissionCriteria: ["GAT (GITAM Admission Test)", "JEE Main", "Management Aptitude Tests"],
-    researchAreas: ["Machine Learning", "IoT", "Biotechnology", "Management", "Sustainable Engineering"],
-    entranceExams: ["GAT", "JEE Main", "CAT/MAT/XAT"],
+    courses: ["Computer Science", "Mechanical Engineering", "Electrical Engineering", "Civil Engineering", "Chemical Engineering"],
+    facilities: ["Central Library", "Sports Complex", "Hostels", "Wi-Fi Campus", "Auditorium", "Medical Center"],
+    admissionCriteria: ["JEE Advanced"],
+    researchAreas: ["Artificial Intelligence", "Renewable Energy", "Nanotechnology", "Biotechnology"],
+    entranceExams: ["JEE Advanced"],
     admissionDetails: {
-      eligibility: "Minimum 60% in 10+2 for most programs. Higher cutoffs for certain courses.",
-      process: "Admission based on GAT score or other specified entrance exams.",
-      deadlines: "Applications open from January to April."
+      eligibility: "Based on JEE Advanced scores.",
+      process: "Online application followed by JEE Advanced counseling.",
+      deadlines: "Usually in June."
     },
     scholarships: [
       {
-        name: "Merit Scholarship",
-        amount: "Up to 100% tuition fee waiver",
-        eligibility: "Based on academic excellence"
+        name: "Merit-cum-Means Scholarship",
+        amount: "Full tuition fee waiver",
+        eligibility: "Based on academic performance and family income"
       },
       {
-        name: "Sports Scholarship",
-        amount: "Up to 50% tuition fee waiver",
-        eligibility: "For students with exceptional achievements in sports"
+        name: "Institute Free Studentship",
+        amount: "Full tuition fee waiver",
+        eligibility: "Based on family income"
       }
     ]
   },
   {
-    id: "sri-padmavati-womens-university",
-    stateId: "andhra-pradesh",
-    name: "Sri Padmavati Mahila Visvavidyalayam",
+    id: "iit-roorkee",
+    stateId: "uttar-pradesh",
+    name: "Indian Institute of Technology Roorkee",
     type: "Government",
-    description: "The first women's university in Andhra Pradesh offering quality education across multiple disciplines.",
-    rating: 4.1,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/c/c7/Sri_Padmavati_Mahila_Visvavidyalayam_logo.png",
-    location: {
-      city: "Tirupati",
-      state: "Andhra Pradesh",
-      address: "Tirupati, Andhra Pradesh 517502"
-    },
-    fees: {
-      tuition: { min: 8000, max: 40000 },
-      hostel: { min: 12000, max: 30000 },
-      other: { min: 4000, max: 12000 }
-    },
-    placement: {
-      percentage: 65,
-      topCompanies: ["Infosys", "Wipro", "TCS", "Cognizant", "State Bank of India"],
-      averagePackage: "4 LPA",
-      topRecruiters: ["Infosys", "Wipro", "TCS", "Cognizant", "State Bank of India"],
-      avgSalary: 400000
-    },
-    ranking: {
-      nirf: 70,
-      outlook: 68,
-      theWeek: 72
-    },
-    courses: ["Arts", "Science", "Commerce", "Management", "Engineering", "Pharmacy", "Education"],
-    facilities: ["Central Library", "Computer Labs", "Sports Facilities", "Hostels", "Health Center", "Auditorium"],
-    admissionCriteria: ["Entrance Exams", "Merit-based Selection"],
-    researchAreas: ["Women's Studies", "Social Sciences", "Environmental Sciences", "Biotechnology", "Computer Applications"],
-    entranceExams: ["SPMVVEET", "AP EAMCET", "AP ICET"],
-    admissionDetails: {
-      eligibility: "Minimum 50% in qualifying examination from recognized board.",
-      process: "Based on entrance exam rank or merit in qualifying examination.",
-      deadlines: "Applications typically open in April-May."
-    },
-    scholarships: [
-      {
-        name: "Pratibha Scholarship",
-        amount: "Varies",
-        eligibility: "For meritorious students"
-      },
-      {
-        name: "Single Girl Child Scholarship",
-        amount: "Varies",
-        eligibility: "For single girl child with good academic record"
-      }
-    ]
-  },
-  {
-    id: "kl-university",
-    stateId: "andhra-pradesh",
-    name: "KL University",
-    type: "Private",
-    description: "A leading private university known for its innovative teaching methods and strong focus on research and entrepreneurship.",
-    rating: 4.5,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/f/f1/Koneru_Lakshmaiah_Education_Foundation_Logo.svg",
-    location: {
-      city: "Guntur",
-      state: "Andhra Pradesh",
-      address: "Vaddeswaram, Guntur, Andhra Pradesh 522302"
-    },
-    fees: {
-      tuition: { min: 90000, max: 280000 },
-      hostel: { min: 50000, max: 120000 },
-      other: { min: 15000, max: 40000 }
-    },
-    placement: {
-      percentage: 88,
-      topCompanies: ["Amazon", "Microsoft", "Oracle", "IBM", "Infosys", "TCS"],
-      averagePackage: "6.5 LPA",
-      topRecruiters: ["Amazon", "Microsoft", "Oracle", "IBM", "Infosys", "TCS"],
-      avgSalary: 650000
-    },
-    ranking: {
-      nirf: 32,
-      outlook: 35,
-      theWeek: 33
-    },
-    courses: ["Engineering", "Management", "Sciences", "Humanities", "Architecture", "Pharmacy", "Law"],
-    facilities: ["Central Library", "Innovation Center", "Sports Complex", "Hostels", "Food Courts", "Health Center"],
-    admissionCriteria: ["JEE Mains", "KLUEEE", "Management Entrance Tests"],
-    researchAreas: ["IoT", "Data Science", "Renewable Energy", "Robotics", "Biotechnology", "Management"],
-    entranceExams: ["KLUEEE", "JEE Mains", "CAT/MAT"],
-    admissionDetails: {
-      eligibility: "Minimum 60% in 10+2 with PCM for engineering. Different criteria for other programs.",
-      process: "Based on entrance exam rank followed by counseling.",
-      deadlines: "Applications open from January to April."
-    },
-    scholarships: [
-      {
-        name: "Merit Scholarship",
-        amount: "Up to 100% tuition fee waiver",
-        eligibility: "Based on JEE Main/KLUEEE rank"
-      },
-      {
-        name: "Sports Excellence Scholarship",
-        amount: "Up to 50% tuition fee waiver",
-        eligibility: "For state/national level sports achievers"
-      }
-    ]
-  },
-  {
-    id: "svm-university",
-    stateId: "andhra-pradesh",
-    name: "Sri Venkateswara Medical University",
-    type: "Government",
-    description: "A premier medical university offering high-quality education and training in medicine and allied health sciences.",
-    rating: 4.4,
-    imageUrl: "https://svims.ap.gov.in/svimsweb/images/svims_logo.jpg",
-    location: {
-      city: "Tirupati",
-      state: "Andhra Pradesh",
-      address: "Tirupati, Andhra Pradesh 517507"
-    },
-    fees: {
-      tuition: { min: 50000, max: 150000 },
-      hostel: { min: 30000, max: 60000 },
-      other: { min: 10000, max: 30000 }
-    },
-    placement: {
-      percentage: 92,
-      topCompanies: ["Apollo Hospitals", "AIIMS", "Fortis", "CMC Vellore", "KIMS"],
-      averagePackage: "12 LPA",
-      topRecruiters: ["Apollo Hospitals", "AIIMS", "Fortis", "CMC Vellore", "KIMS"],
-      avgSalary: 1200000
-    },
-    ranking: {
-      nirf: 45,
-      outlook: 42,
-      theWeek: 40
-    },
-    courses: ["MBBS", "MD", "MS", "Nursing", "Physiotherapy", "Allied Health Sciences", "Dental Sciences"],
-    facilities: ["Teaching Hospital", "Advanced Labs", "Medical Library", "Simulation Center", "Hostels", "Research Center"],
-    admissionCriteria: ["NEET", "PG-NEET", "University Entrance Exam"],
-    researchAreas: ["Clinical Research", "Public Health", "Tropical Medicine", "Cardiology", "Neurosciences"],
-    entranceExams: ["NEET", "PG-NEET", "SVMEEAT"],
-    admissionDetails: {
-      eligibility: "NEET qualification for MBBS. PG-NEET for postgraduate medical courses.",
-      process: "Counselling based on NEET rank.",
-      deadlines: "As per Medical Council of India schedule."
-    },
-    scholarships: [
-      {
-        name: "Merit Scholarship",
-        amount: "Rs. 25,000 per annum",
-        eligibility: "For top 10 students in each batch"
-      },
-      {
-        name: "Research Grant",
-        amount: "Up to Rs. 2 lakhs",
-        eligibility: "For innovative research proposals"
-      }
-    ]
-  },
-  {
-    id: "nagarjuna-university",
-    stateId: "andhra-pradesh",
-    name: "Acharya Nagarjuna University",
-    type: "Government",
-    description: "A prestigious university offering diverse programs with emphasis on research and holistic education.",
-    rating: 4.0,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/3/30/Acharya_Nagarjuna_University_Logo.png",
-    location: {
-      city: "Guntur",
-      state: "Andhra Pradesh",
-      address: "Nagarjuna Nagar, Guntur, Andhra Pradesh 522510"
-    },
-    fees: {
-      tuition: { min: 8000, max: 45000 },
-      hostel: { min: 12000, max: 30000 },
-      other: { min: 4000, max: 12000 }
-    },
-    placement: {
-      percentage: 68,
-      topCompanies: ["Infosys", "TCS", "Wipro", "Tech Mahindra", "Cognizant"],
-      averagePackage: "4.2 LPA",
-      topRecruiters: ["Infosys", "TCS", "Wipro", "Tech Mahindra", "Cognizant"],
-      avgSalary: 420000
-    },
-    ranking: {
-      nirf: 65,
-      outlook: 62,
-      theWeek: 60
-    },
-    courses: ["Arts", "Science", "Commerce", "Engineering", "Law", "Pharmacy", "Management"],
-    facilities: ["Central Library", "Computer Center", "Sports Facilities", "Hostels", "Cafeteria", "Research Labs"],
-    admissionCriteria: ["ANUCET", "AP EAMCET", "AP ICET"],
-    researchAreas: ["Social Sciences", "Environmental Studies", "Life Sciences", "Engineering", "Management"],
-    entranceExams: ["ANUCET", "AP EAMCET", "AP ICET"],
-    admissionDetails: {
-      eligibility: "Minimum 50% in qualifying examination with relevant subjects.",
-      process: "Entrance test followed by counseling.",
-      deadlines: "Applications open in April-May."
-    },
-    scholarships: [
-      {
-        name: "University Merit Scholarship",
-        amount: "Rs. 10,000 per annum",
-        eligibility: "For top 5% students in each department"
-      },
-      {
-        name: "SC/ST/BC Scholarship",
-        amount: "Varies",
-        eligibility: "For students from SC/ST/BC communities"
-      }
-    ]
-  },
-  {
-    id: "vignan-university",
-    stateId: "andhra-pradesh",
-    name: "Vignan's University",
-    type: "Private",
-    description: "A quality-focused private university known for its engineering, pharmacy, and management education.",
+    description: "A leading technology institute known for its engineering programs and research.",
     rating: 4.3,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/0/09/Vignan%27s_Foundation_for_Science%2C_Technology_%26_Research_Logo.png",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/IIT_Roorkee_Logo.svg/1200px-IIT_Roorkee_Logo.svg.png",
     location: {
-      city: "Guntur",
-      state: "Andhra Pradesh",
-      address: "Vadlamudi, Guntur, Andhra Pradesh 522213"
+      city: "Roorkee",
+      state: "Uttarakhand",
+      address: "Roorkee, Uttarakhand 247667"
     },
     fees: {
-      tuition: { min: 70000, max: 200000 },
-      hostel: { min: 45000, max: 90000 },
-      other: { min: 10000, max: 30000 }
+      tuition: { min: 190000, max: 220000 },
+      hostel: { min: 55000, max: 75000 },
+      other: { min: 14000, max: 24000 }
     },
     placement: {
-      percentage: 80,
-      topCompanies: ["TCS", "Infosys", "Wipro", "Cognizant", "Accenture", "HCL"],
-      averagePackage: "5.5 LPA",
-      topRecruiters: ["TCS", "Infosys", "Wipro", "Cognizant", "Accenture", "HCL"],
-      avgSalary: 550000
+      percentage: 83,
+      topCompanies: ["Google", "Microsoft", "Amazon", "Flipkart", "Tata Consultancy Services"],
+      averagePackage: "17 LPA",
+	    topRecruiters: ["Google", "Microsoft", "Amazon", "Flipkart", "Tata Consultancy Services"],
+      avgSalary: 1700000
     },
     ranking: {
-      nirf: 55,
-      outlook: 58,
-      theWeek: 54
+      nirf: 8,
+      outlook: 7,
+      theWeek: 8
     },
-    courses: ["Engineering", "Pharmacy", "Management", "Science", "Law", "Architecture", "Arts"],
-    facilities: ["Digital Library", "Innovation Center", "Sports Complex", "Hostels", "Cafeteria", "Labs"],
-    admissionCriteria: ["JEE Mains", "VSAT", "GPAT", "CAT/MAT"],
-    researchAreas: ["Advanced Materials", "AI & ML", "IoT", "Pharmaceutical Sciences", "Sustainable Engineering"],
-    entranceExams: ["VSAT", "JEE Mains", "GPAT", "CAT/MAT"],
+    courses: ["Computer Science", "Mechanical Engineering", "Electrical Engineering", "Civil Engineering", "Chemical Engineering"],
+    facilities: ["Central Library", "Sports Complex", "Hostels", "Wi-Fi Campus", "Auditorium", "Medical Center"],
+    admissionCriteria: ["JEE Advanced"],
+    researchAreas: ["Artificial Intelligence", "Renewable Energy", "Nanotechnology", "Biotechnology"],
+    entranceExams: ["JEE Advanced"],
     admissionDetails: {
-      eligibility: "Minimum 60% in 10+2 with PCM for engineering. Different criteria for other programs.",
-      process: "Entrance test followed by counseling.",
-      deadlines: "Applications open from January to April."
+      eligibility: "Based on JEE Advanced scores.",
+      process: "Online application followed by JEE Advanced counseling.",
+      deadlines: "Usually in June."
     },
     scholarships: [
       {
-        name: "Merit Scholarship",
-        amount: "Up to 100% tuition fee waiver",
-        eligibility: "Based on JEE Main/VSAT rank"
+        name: "Merit-cum-Means Scholarship",
+        amount: "Full tuition fee waiver",
+        eligibility: "Based on academic performance and family income"
       },
       {
-        name: "Economically Backward Scholarship",
-        amount: "Up to 50% fee waiver",
-        eligibility: "For financially challenged meritorious students"
+        name: "Institute Free Studentship",
+        amount: "Full tuition fee waiver",
+        eligibility: "Based on family income"
       }
     ]
   },
   {
-    id: "srm-university-ap",
-    stateId: "andhra-pradesh",
-    name: "SRM University AP",
-    type: "Private",
-    description: "A new-age university with international collaborations, focusing on research, innovation, and entrepreneurship.",
-    rating: 4.7,
-    imageUrl: "https://srmap.edu.in/wp-content/uploads/2023/03/SRM-AP-logo-1.png",
-    location: {
-      city: "Amaravati",
-      state: "Andhra Pradesh",
-      address: "Neerukonda, Mangalagiri, Guntur, Andhra Pradesh 522240"
-    },
-    fees: {
-      tuition: { min: 150000, max: 350000 },
-      hostel: { min: 80000, max: 150000 },
-      other: { min: 20000, max: 50000 }
-    },
-    placement: {
-      percentage: 90,
-      topCompanies: ["Amazon", "Microsoft", "Google", "Adobe", "Deloitte", "IBM"],
-      averagePackage: "8 LPA",
-      topRecruiters: ["Amazon", "Microsoft", "Google", "Adobe", "Deloitte", "IBM"],
-      avgSalary: 800000
-    },
-    ranking: {
-      nirf: 40,
-      outlook: 36,
-      theWeek: 38
-    },
-    courses: ["Engineering", "Sciences", "Liberal Arts", "Management", "Law", "Design"],
-    facilities: ["Next-Gen Library", "Innovation Hub", "Sports Arena", "Premium Hostels", "Food Court", "Advanced Labs"],
-    admissionCriteria: ["JEE Main", "SRMJEEE", "SAT", "Management Aptitude Tests"],
-    researchAreas: ["AI & Data Science", "Smart Materials", "Clean Energy", "Robotics", "Digital Humanities"],
-    entranceExams: ["SRMJEEE", "JEE Main", "SAT", "CAT/XAT"],
-    admissionDetails: {
-      eligibility: "Minimum 60% in 10+2 with PCM for engineering. Different criteria for other programs.",
-      process: "Admission based on entrance exam score followed by counseling.",
-      deadlines: "Applications open from November to April."
-    },
-    scholarships: [
-      {
-        name: "Founder's Scholarship",
-        amount: "100% tuition fee waiver",
-        eligibility: "For top 1% in JEE Main/SRMJEEE"
-      },
-      {
-        name: "Academic Excellence Scholarship",
-        amount: "Up to 75% tuition fee waiver",
-        eligibility: "Based on entrance exam rank and consistent academic performance"
-      }
-    ]
-  },
-  {
-    id: "rgukt",
-    stateId: "andhra-pradesh",
-    name: "Rajiv Gandhi University of Knowledge Technologies",
+    id: "iit-kharagpur",
+    stateId: "west-bengal",
+    name: "Indian Institute of Technology Kharagpur",
     type: "Government",
-    description: "A network of residential technical universities offering integrated programs for rural talent.",
-    rating: 4.2,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/7/73/RGUKT_logo.png",
+    description: "A premier engineering institute known for its research and academic excellence.",
+    rating: 4.7,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/a/ac/IIT_Kharagpur_Logo.svg/1200px-IIT_Kharagpur_Logo.svg.png",
     location: {
-      city: "RK Valley",
-      state: "Andhra Pradesh",
-      address: "Idupulapaya, Kadapa District, Andhra Pradesh 516330"
-    },
-    fees: {
-      tuition: { min: 20000, max: 40000 },
-      hostel: { min: 15000, max: 30000 },
-      other: { min: 5000, max: 15000 }
-    },
-    placement: {
-      percentage: 75,
-      topCompanies: ["TCS", "Infosys", "Cognizant", "Wipro", "Tech Mahindra"],
-      averagePackage: "5 LPA",
-      topRecruiters: ["TCS", "Infosys", "Cognizant", "Wipro", "Tech Mahindra"],
-      avgSalary: 500000
-    },
-    ranking: {
-      nirf: 80,
-      outlook: 75,
-      theWeek: 78
-    },
-    courses: ["Engineering", "Sciences", "Mathematics", "Pre-University", "Humanities"],
-    facilities: ["Digital Library", "Labs", "Sports Facilities", "Residential Campus", "Cafeteria", "Computer Center"],
-    admissionCriteria: ["Merit in Class 10 (SSC)"],
-    researchAreas: ["Computer Science", "Electronics", "Mechanical Systems", "Mathematics", "Physics"],
-    entranceExams: ["Class 10 Merit"],
-    admissionDetails: {
-      eligibility: "Rural students with top marks in Class 10 from government schools.",
-      process: "Direct admission based on SSC marks.",
-      deadlines: "Applications open after Class 10 results."
-    },
-    scholarships: [
-      {
-        name: "Full Tuition Fee Waiver",
-        amount: "Complete fee waiver",
-        eligibility: "For economically backward students"
-      },
-      {
-        name: "Merit Scholarship",
-        amount: "Rs. 10,000 per annum",
-        eligibility: "For top performers in each batch"
-      }
-    ]
-  }
-];
-
-// Update state college counts
-states.forEach(state => {
-  state.collegeCount = colleges.filter(college => college.stateId === state.id).length;
-});
+      city: "Kharagpur",
+      state: "West Bengal",
+      address: "K
