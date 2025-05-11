@@ -70,7 +70,7 @@ export const states: State[] = [
   {
     id: "delhi",
     name: "Delhi",
-    collegeCount: 7  // Updating from 2 to 7
+    collegeCount: 12  // Updated count to include the new colleges
   },
   {
     id: "tamil-nadu",
@@ -760,4 +760,4 @@ export const colleges: College[] = [
     type: "Government",
     description: "A premier engineering institute known for its research and academic excellence.",
     rating: 4.7,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/a/ac/IIT_Kharag
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/a/ac/IIT_Khar
