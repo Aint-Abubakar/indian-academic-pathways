@@ -640,9 +640,39 @@ export const studyAbroadColleges: StudyAbroadCollege[] = [
         link: "https://www.uva.nl/en/education/master-s/scholarships-tuition/scholarships-and-loans/amsterdam-excellence-scholarship/amsterdam-excellence-scholarship.html"
       }
     ]
-  }
-];
-
-export const getCollegesByCountry = (countryId: string): StudyAbroadCollege[] => {
-  return studyAbroadColleges.filter(college => college.countryId === countryId);
-};
+  },
+  
+  // Adding more US colleges
+  {
+    id: "yale",
+    countryId: "usa",
+    name: "Yale University",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Yale_University_Shield_1.svg/1200px-Yale_University_Shield_1.svg.png",
+    description: "Yale University is a private Ivy League research university in New Haven, Connecticut. Founded in 1701, it is the third-oldest institution of higher education in the United States and one of the most prestigious in the world.",
+    ranking: 4,
+    tuitionFee: "$59,950",
+    acceptanceRate: "5.9%",
+    website: "https://www.yale.edu/",
+    scholarships: [
+      {
+        name: "Yale Need-Based Financial Aid",
+        amount: "Varies based on need",
+        deadline: "March 15",
+        eligibility: "Based on financial need assessment",
+        link: "https://finaid.yale.edu/costs-affordability/undergraduate-cost-attendance"
+      },
+      {
+        name: "Yale International Student Scholarships",
+        amount: "Full tuition to full cost of attendance",
+        deadline: "January 2",
+        eligibility: "International students with demonstrated need",
+        link: "https://finaid.yale.edu/costs-affordability/affordability-international-students"
+      }
+    ]
+  },
+  {
+    id: "columbia",
+    countryId: "usa",
+    name: "Columbia University",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Columbia_University_shield.svg/1200px-Columbia_University_shield.svg.png",
+    description: "Columbia University
