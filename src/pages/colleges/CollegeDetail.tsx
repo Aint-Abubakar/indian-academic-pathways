@@ -1,4 +1,3 @@
-
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getCollegeById, College } from "@/data/collegeData";
@@ -15,12 +14,12 @@ const CollegeDetail = () => {
   const [loading, setLoading] = useState(true);
   
   useEffect(() => {
-    if (collegeId && stateId) {
-      const fetchedCollege = getCollegeById(collegeId, stateId);
+    if (collegeId) {
+      const fetchedCollege = getCollegeById(collegeId);
       setCollege(fetchedCollege || null);
       setLoading(false);
     }
-  }, [collegeId, stateId]);
+  }, [collegeId]);
   
   if (loading) {
     return (
