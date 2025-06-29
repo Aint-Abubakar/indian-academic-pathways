@@ -675,4 +675,408 @@ export const studyAbroadColleges: StudyAbroadCollege[] = [
     countryId: "usa",
     name: "Columbia University",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Columbia_University_shield.svg/1200px-Columbia_University_shield.svg.png",
-    description: "Columbia University
+    description: "Columbia University is a private Ivy League research university in New York City. Founded in 1754, it is one of the oldest institutions of higher education in the United States and known for its strong programs in journalism, business, and engineering.",
+    ranking: 6,
+    tuitionFee: "$61,850",
+    acceptanceRate: "6.1%",
+    website: "https://www.columbia.edu/",
+    scholarships: [
+      {
+        name: "Columbia Need-Based Financial Aid",
+        amount: "Full tuition for families earning under $60,000",
+        deadline: "January 1",
+        eligibility: "Based on financial need",
+        link: "https://cc-seas.financialaid.columbia.edu/"
+      },
+      {
+        name: "Columbia International Student Scholarships",
+        amount: "Varies based on need",
+        deadline: "January 1",
+        eligibility: "International students with demonstrated need",
+        link: "https://www.columbia.edu/content/financial-aid-international-students"
+      }
+    ]
+  },
+  {
+    id: "princeton",
+    countryId: "usa",
+    name: "Princeton University",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Princeton_seal.svg/1200px-Princeton_seal.svg.png",
+    description: "Princeton University is a private Ivy League research university in Princeton, New Jersey. Founded in 1746, it is known for its undergraduate focus, beautiful campus, and strong programs across all disciplines.",
+    ranking: 5,
+    tuitionFee: "$57,410",
+    acceptanceRate: "5.8%",
+    website: "https://www.princeton.edu/",
+    scholarships: [
+      {
+        name: "Princeton Financial Aid Initiative",
+        amount: "Free tuition for families earning under $100,000",
+        deadline: "January 1",
+        eligibility: "Based on family income and need",
+        link: "https://admission.princeton.edu/how-apply/financial-aid"
+      },
+      {
+        name: "International Student Aid",
+        amount: "Full need met for all admitted students",
+        deadline: "January 1",
+        eligibility: "All international students",
+        link: "https://admission.princeton.edu/how-apply/international-students"
+      }
+    ]
+  },
+  {
+    id: "uchicago",
+    countryId: "usa",
+    name: "University of Chicago",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/7/79/University_of_Chicago_shield.svg/1200px-University_of_Chicago_shield.svg.png",
+    description: "The University of Chicago is a private research university in Chicago, Illinois. Known for its rigorous academic programs, the Core Curriculum, and contributions to economics and social sciences.",
+    ranking: 8,
+    tuitionFee: "$59,298",
+    acceptanceRate: "7.4%",
+    website: "https://www.uchicago.edu/",
+    scholarships: [
+      {
+        name: "UChicago Promise",
+        amount: "Free tuition for families earning under $125,000",
+        deadline: "January 2",
+        eligibility: "US citizens and permanent residents",
+        link: "https://collegeadmissions.uchicago.edu/costs-aid/uchicago-promise"
+      },
+      {
+        name: "International Student Aid",
+        amount: "Varies based on need",
+        deadline: "January 2",
+        eligibility: "International students with demonstrated need",
+        link: "https://collegeadmissions.uchicago.edu/costs-aid/international-students"
+      }
+    ]
+  },
+  {
+    id: "caltech",
+    countryId: "usa",
+    name: "California Institute of Technology",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Seal_of_the_California_Institute_of_Technology.svg/1200px-Seal_of_the_California_Institute_of_Technology.svg.png",
+    description: "Caltech is a private research university in Pasadena, California. Known for its strength in science and engineering, with a very small student body and exceptional research opportunities.",
+    ranking: 9,
+    tuitionFee: "$58,680",
+    acceptanceRate: "6.4%",
+    website: "https://www.caltech.edu/",
+    scholarships: [
+      {
+        name: "Caltech Need-Based Aid",
+        amount: "Average award $54,000",
+        deadline: "January 3",
+        eligibility: "Based on financial need",
+        link: "https://finaid.caltech.edu/"
+      },
+      {
+        name: "International Student Financial Aid",
+        amount: "Limited aid available",
+        deadline: "January 3",
+        eligibility: "International students with exceptional need",
+        link: "https://finaid.caltech.edu/international-students"
+      }
+    ]
+  },
+  {
+    id: "upenn",
+    countryId: "usa",
+    name: "University of Pennsylvania",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/UPenn_shield_with_banner.svg/1200px-UPenn_shield_with_banner.svg.png",
+    description: "The University of Pennsylvania is a private Ivy League research university in Philadelphia. Home to the prestigious Wharton School of Business and strong programs across all disciplines.",
+    ranking: 12,
+    tuitionFee: "$60,042",
+    acceptanceRate: "8.1%",
+    website: "https://www.upenn.edu/",
+    scholarships: [
+      {
+        name: "Penn First Plus",
+        amount: "Full cost of attendance for families earning under $75,000",
+        deadline: "February 15",
+        eligibility: "First-generation college students",
+        link: "https://www.sfs.upenn.edu/undergraduate/penn-first-plus"
+      },
+      {
+        name: "International Student Aid",
+        amount: "Varies based on need",
+        deadline: "February 15",
+        eligibility: "International students with demonstrated need",
+        link: "https://www.sfs.upenn.edu/undergraduate/international-students"
+      }
+    ]
+  },
+  {
+    id: "dartmouth",
+    countryId: "usa",
+    name: "Dartmouth College",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Dartmouth_College_shield.svg/1200px-Dartmouth_College_shield.svg.png",
+    description: "Dartmouth College is a private Ivy League research university in Hanover, New Hampshire. Known for its strong alumni network, outdoor recreation opportunities, and quarter system.",
+    ranking: 18,
+    tuitionFee: "$59,458",
+    acceptanceRate: "9.2%",
+    website: "https://www.dartmouth.edu/",
+    scholarships: [
+      {
+        name: "Dartmouth Financial Aid",
+        amount: "Average grant $56,000",
+        deadline: "February 1",
+        eligibility: "Based on financial need",
+        link: "https://admissions.dartmouth.edu/afford/financial-aid"
+      },
+      {
+        name: "International Student Aid",
+        amount: "Limited need-based aid",
+        deadline: "February 1",
+        eligibility: "International students with exceptional need",
+        link: "https://admissions.dartmouth.edu/afford/international-students"
+      }
+    ]
+  },
+  {
+    id: "northwestern",
+    countryId: "usa",
+    name: "Northwestern University",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Northwestern_University_seal.svg/1200px-Northwestern_University_seal.svg.png",
+    description: "Northwestern University is a private research university in Evanston, Illinois. Known for its journalism, engineering, business, and performing arts programs.",
+    ranking: 14,
+    tuitionFee: "$58,701",
+    acceptanceRate: "10.7%",
+    website: "https://www.northwestern.edu/",
+    scholarships: [
+      {
+        name: "Northwestern Commitment",
+        amount: "Full tuition for families earning under $75,000",
+        deadline: "January 1",
+        eligibility: "US citizens and permanent residents",
+        link: "https://undergradaid.northwestern.edu/northwestern-commitment/"
+      },
+      {
+        name: "International Student Aid",
+        amount: "Limited need-based aid",
+        deadline: "January 1",
+        eligibility: "International students",
+        link: "https://undergradaid.northwestern.edu/international-students/"
+      }
+    ]
+  },
+  {
+    id: "duke",
+    countryId: "usa",
+    name: "Duke University",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Duke_University_seal.svg/1200px-Duke_University_seal.svg.png",
+    description: "Duke University is a private research university in Durham, North Carolina. Known for its strong academic programs, beautiful campus, and successful athletics programs.",
+    ranking: 13,
+    tuitionFee: "$60,244",
+    acceptanceRate: "10.0%",
+    website: "https://www.duke.edu/",
+    scholarships: [
+      {
+        name: "DukeEngage",
+        amount: "Full funding for service learning programs",
+        deadline: "Varies",
+        eligibility: "All Duke students",
+        link: "https://dukeengage.duke.edu/"
+      },
+      {
+        name: "Robertson Scholars Program",
+        amount: "Full tuition, room, board, and enrichment",
+        deadline: "October 15",
+        eligibility: "Exceptional leadership and service",
+        link: "https://robertsonscholars.org/"
+      }
+    ]
+  },
+  {
+    id: "brown",
+    countryId: "usa",
+    name: "Brown University",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Brown_University_CoA.svg/1200px-Brown_University_CoA.svg.png",
+    description: "Brown University is a private Ivy League research university in Providence, Rhode Island. Known for its open curriculum and strong liberal arts programs.",
+    ranking: 20,
+    tuitionFee: "$60,696",
+    acceptanceRate: "9.3%",
+    website: "https://www.brown.edu/",
+    scholarships: [
+      {
+        name: "Brown Promise",
+        amount: "Free tuition for families earning under $100,000",
+        deadline: "January 5",
+        eligibility: "Based on family income",
+        link: "https://www.brown.edu/admission/undergraduate/explore/tuition-aid-scholarships"
+      },
+      {
+        name: "International Student Aid",
+        amount: "Limited need-based aid",
+        deadline: "January 5",
+        eligibility: "International students with exceptional need",
+        link: "https://www.brown.edu/admission/undergraduate/explore/international-students"
+      }
+    ]
+  },
+  {
+    id: "vanderbilt",
+    countryId: "usa",
+    name: "Vanderbilt University",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Vanderbilt_University_seal.svg/1200px-Vanderbilt_University_seal.svg.png",
+    description: "Vanderbilt University is a private research university in Nashville, Tennessee. Known for its strong academic programs, beautiful campus, and vibrant social life.",
+    ranking: 17,
+    tuitionFee: "$56,886",
+    acceptanceRate: "11.6%",
+    website: "https://www.vanderbilt.edu/",
+    scholarships: [
+      {
+        name: "Opportunity Vanderbilt",
+        amount: "Full demonstrated need met without loans",
+        deadline: "January 1",
+        eligibility: "All admitted students",
+        link: "https://www.vanderbilt.edu/scholarships/"
+      },
+      {
+        name: "Cornelius Vanderbilt Scholarship",
+        amount: "Full tuition plus summer stipend",
+        deadline: "December 1",
+        eligibility: "Academic excellence and leadership",
+        link: "https://www.vanderbilt.edu/scholarships/cornelius-vanderbilt/"
+      }
+    ]
+  },
+  {
+    id: "cornell",
+    countryId: "usa",
+    name: "Cornell University",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Cornell_University_coat_of_arms.svg/1200px-Cornell_University_coat_of_arms.svg.png",
+    description: "Cornell University is a private and statutory Ivy League research university in Ithaca, New York. Known for its diverse academic offerings and strong programs in engineering, agriculture, and veterinary medicine.",
+    ranking: 19,
+    tuitionFee: "$59,316",
+    acceptanceRate: "15.1%",
+    website: "https://www.cornell.edu/",
+    scholarships: [
+      {
+        name: "Cornell Commitment",
+        amount: "Free tuition for families earning under $75,000",
+        deadline: "February 15",
+        eligibility: "Based on family income",
+        link: "https://finaid.cornell.edu/cornell-commitment"
+      },
+      {
+        name: "International Student Aid",
+        amount: "Limited need-based aid",
+        deadline: "February 15",
+        eligibility: "International students with demonstrated need",
+        link: "https://finaid.cornell.edu/international-students"
+      }
+    ]
+  },
+  {
+    id: "rice",
+    countryId: "usa",
+    name: "Rice University",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Rice_University_seal.svg/1200px-Rice_University_seal.svg.png",
+    description: "Rice University is a private research university in Houston, Texas. Known for its small size, residential college system, and strong programs in engineering and natural sciences.",
+    ranking: 16,
+    tuitionFee: "$52,070",
+    acceptanceRate: "11.0%",
+    website: "https://www.rice.edu/",
+    scholarships: [
+      {
+        name: "Rice Investment",
+        amount: "Free tuition for families earning under $130,000",
+        deadline: "January 4",
+        eligibility: "Based on family income",
+        link: "https://financialaid.rice.edu/rice-investment"
+      },
+      {
+        name: "Trustee Distinguished Scholarships",
+        amount: "Full tuition",
+        deadline: "December 1",
+        eligibility: "Academic excellence and leadership",
+        link: "https://financialaid.rice.edu/trustee-distinguished-scholarships"
+      }
+    ]
+  },
+  {
+    id: "cmu",
+    countryId: "usa",
+    name: "Carnegie Mellon University",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Carnegie_Mellon_University_seal.svg/1200px-Carnegie_Mellon_University_seal.svg.png",
+    description: "Carnegie Mellon University is a private research university in Pittsburgh, Pennsylvania. Renowned for its programs in computer science, engineering, robotics, and fine arts.",
+    ranking: 22,
+    tuitionFee: "$58,924",
+    acceptanceRate: "17.3%",
+    website: "https://www.cmu.edu/",
+    scholarships: [
+      {
+        name: "Carnegie Scholars Program",
+        amount: "$5,000 - $10,000 per year",
+        deadline: "January 1",
+        eligibility: "Academic excellence and community service",
+        link: "https://www.cmu.edu/finaid/scholarships/carnegie-scholars.html"
+      },
+      {
+        name: "International Merit Scholarships",
+        amount: "Varies",
+        deadline: "January 1",
+        eligibility: "Outstanding international students",
+        link: "https://www.cmu.edu/finaid/international/"
+      }
+    ]
+  },
+  {
+    id: "emory",
+    countryId: "usa",
+    name: "Emory University",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Emory_University_seal.svg/1200px-Emory_University_seal.svg.png",
+    description: "Emory University is a private research university in Atlanta, Georgia. Known for its liberal arts college, business school, and medical school.",
+    ranking: 24,
+    tuitionFee: "$56,068",
+    acceptanceRate: "19.0%",
+    website: "https://www.emory.edu/",
+    scholarships: [
+      {
+        name: "Emory Advantage",
+        amount: "Full demonstrated need without loans",
+        deadline: "November 1 or January 1",
+        eligibility: "Students from families earning under $100,000",
+        link: "https://www.emory.edu/financial-aid/undergraduate/emory-advantage.html"
+      },
+      {
+        name: "Emory Scholars Program",
+        amount: "Full tuition to full cost of attendance",
+        deadline: "November 1",
+        eligibility: "Exceptional academic achievement and leadership",
+        link: "https://www.emory.edu/financial-aid/undergraduate/emory-scholars.html"
+      }
+    ]
+  },
+  {
+    id: "georgetown",
+    countryId: "usa",
+    name: "Georgetown University",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Georgetown_University_seal.svg/1200px-Georgetown_University_seal.svg.png",
+    description: "Georgetown University is a private research university in Washington, D.C. Known for its School of Foreign Service, law school, and political connections.",
+    ranking: 25,
+    tuitionFee: "$59,784",
+    acceptanceRate: "17.0%",
+    website: "https://www.georgetown.edu/",
+    scholarships: [
+      {
+        name: "Georgetown Scholarship Program",
+        amount: "Up to full tuition",
+        deadline: "January 10",
+        eligibility: "Based on financial need and merit",
+        link: "https://finaid.georgetown.edu/undergraduate-aid/"
+      },
+      {
+        name: "International Student Aid",
+        amount: "Limited need-based aid",
+        deadline: "January 10",
+        eligibility: "International students with exceptional need",
+        link: "https://finaid.georgetown.edu/undergraduate-aid/international-students/"
+      }
+    ]
+  }
+];
+
+export const getCollegesByCountry = (countryId: string): StudyAbroadCollege[] => {
+  return studyAbroadColleges.filter(college => college.countryId === countryId);
+};
