@@ -65,7 +65,7 @@ export const states: State[] = [
   {
     id: "maharashtra",
     name: "Maharashtra",
-    collegeCount: 7
+    collegeCount: 15
   },
   {
     id: "delhi",
@@ -295,6 +295,630 @@ export const colleges: College[] = [
         name: "Institute Free Studentship",
         amount: "Full tuition fee waiver",
         eligibility: "Based on family income"
+      }
+    ]
+  },
+  {
+    id: "vjti-mumbai",
+    stateId: "maharashtra",
+    name: "Veermata Jijabai Technological Institute",
+    type: "Government",
+    description: "One of the oldest engineering institutes in India, known for its excellent technical education.",
+    rating: 4.5,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/2/2e/VJTI_Logo.svg/1200px-VJTI_Logo.svg.png",
+    location: {
+      city: "Mumbai",
+      state: "Maharashtra",
+      address: "H.R. Mahajani Marg, Matunga, Mumbai, Maharashtra 400019"
+    },
+    fees: {
+      tuition: { min: 120000, max: 150000 },
+      hostel: { min: 50000, max: 70000 },
+      other: { min: 15000, max: 25000 }
+    },
+    placement: {
+      percentage: 88,
+      topCompanies: ["TCS", "Infosys", "L&T", "Bajaj Auto", "Mahindra"],
+      averagePackage: "8 LPA",
+      topRecruiters: ["TCS", "Infosys", "L&T", "Bajaj Auto", "Mahindra"],
+      avgSalary: 800000
+    },
+    ranking: {
+      nirf: 55,
+      outlook: 52,
+      theWeek: 48
+    },
+    courses: ["Computer Engineering", "Mechanical Engineering", "Electrical Engineering", "Electronics", "Civil Engineering"],
+    facilities: ["Central Library", "Workshops", "Computer Labs", "Sports Ground", "Auditorium"],
+    admissionCriteria: ["JEE Main", "MHT CET"],
+    researchAreas: ["Computer Science", "Mechanical Systems", "Electronics", "Civil Engineering"],
+    entranceExams: ["JEE Main", "MHT CET"],
+    admissionDetails: {
+      eligibility: "Based on JEE Main or MHT CET scores.",
+      process: "Online application followed by counseling.",
+      deadlines: "As per CAP schedule."
+    },
+    scholarships: [
+      {
+        name: "Government Scholarship",
+        amount: "Fee waiver based on category",
+        eligibility: "For SC/ST and economically weaker sections"
+      }
+    ]
+  },
+  {
+    id: "ict-mumbai",
+    stateId: "maharashtra",
+    name: "Institute of Chemical Technology Mumbai",
+    type: "Government",
+    description: "India's premier institute for chemical technology and engineering education.",
+    rating: 4.6,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/4/47/ICT_Mumbai_Logo.png/1200px-ICT_Mumbai_Logo.png",
+    location: {
+      city: "Mumbai",
+      state: "Maharashtra",
+      address: "Nathalal Parekh Marg, Matunga, Mumbai, Maharashtra 400019"
+    },
+    fees: {
+      tuition: { min: 140000, max: 170000 },
+      hostel: { min: 60000, max: 80000 },
+      other: { min: 18000, max: 28000 }
+    },
+    placement: {
+      percentage: 95,
+      topCompanies: ["Reliance", "ONGC", "Tata Chemicals", "Asian Paints", "Hindustan Unilever"],
+      averagePackage: "12 LPA",
+      topRecruiters: ["Reliance", "ONGC", "Tata Chemicals", "Asian Paints", "Hindustan Unilever"],
+      avgSalary: 1200000
+    },
+    ranking: {
+      nirf: 35,
+      outlook: 32,
+      theWeek: 28
+    },
+    courses: ["Chemical Engineering", "Chemical Technology", "Food Engineering", "Biotechnology", "Pharmaceutical Sciences"],
+    facilities: ["Advanced Labs", "Pilot Plant", "Central Library", "Hostels", "Research Centers"],
+    admissionCriteria: ["JEE Main", "MHT CET"],
+    researchAreas: ["Chemical Technology", "Biotechnology", "Food Technology", "Pharmaceutical Sciences"],
+    entranceExams: ["JEE Main", "MHT CET"],
+    admissionDetails: {
+      eligibility: "Based on JEE Main or MHT CET scores.",
+      process: "Online application followed by counseling.",
+      deadlines: "As per CAP schedule."
+    },
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Tuition fee waiver",
+        eligibility: "Based on academic performance"
+      }
+    ]
+  },
+  {
+    id: "coep-pune",
+    stateId: "maharashtra",
+    name: "College of Engineering Pune",
+    type: "Government",
+    description: "One of the oldest engineering colleges in India with a rich legacy of technical education.",
+    rating: 4.4,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/3/3c/COEP_Logo.png/1200px-COEP_Logo.png",
+    location: {
+      city: "Pune",
+      state: "Maharashtra",
+      address: "Wellesley Road, Shivajinagar, Pune, Maharashtra 411005"
+    },
+    fees: {
+      tuition: { min: 110000, max: 140000 },
+      hostel: { min: 45000, max: 65000 },
+      other: { min: 12000, max: 22000 }
+    },
+    placement: {
+      percentage: 85,
+      topCompanies: ["TCS", "Infosys", "Wipro", "Bajaj Auto", "Mahindra"],
+      averagePackage: "7 LPA",
+      topRecruiters: ["TCS", "Infosys", "Wipro", "Bajaj Auto", "Mahindra"],
+      avgSalary: 700000
+    },
+    ranking: {
+      nirf: 68,
+      outlook: 65,
+      theWeek: 62
+    },
+    courses: ["Computer Engineering", "Mechanical Engineering", "Electrical Engineering", "Civil Engineering", "Electronics"],
+    facilities: ["Central Library", "Workshops", "Computer Labs", "Sports Complex", "Hostels"],
+    admissionCriteria: ["JEE Main", "MHT CET"],
+    researchAreas: ["Computer Science", "Mechanical Systems", "Electronics", "Civil Engineering"],
+    entranceExams: ["JEE Main", "MHT CET"],
+    admissionDetails: {
+      eligibility: "Based on JEE Main or MHT CET scores.",
+      process: "Online application followed by counseling.",
+      deadlines: "As per CAP schedule."
+    },
+    scholarships: [
+      {
+        name: "Government Scholarship",
+        amount: "Fee waiver based on category",
+        eligibility: "For SC/ST and economically weaker sections"
+      }
+    ]
+  },
+  {
+    id: "pict-pune",
+    stateId: "maharashtra",
+    name: "Pune Institute of Computer Technology",
+    type: "Private",
+    description: "A premier institute for computer and information technology education in Pune.",
+    rating: 4.3,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/PICT_Logo.png/1200px-PICT_Logo.png",
+    location: {
+      city: "Pune",
+      state: "Maharashtra",
+      address: "Survey No. 27, Near Trimurti Chowk, Dhankawadi, Pune, Maharashtra 411043"
+    },
+    fees: {
+      tuition: { min: 180000, max: 220000 },
+      hostel: { min: 60000, max: 80000 },
+      other: { min: 20000, max: 30000 }
+    },
+    placement: {
+      percentage: 92,
+      topCompanies: ["Microsoft", "Google", "Amazon", "Infosys", "TCS"],
+      averagePackage: "9 LPA",
+      topRecruiters: ["Microsoft", "Google", "Amazon", "Infosys", "TCS"],
+      avgSalary: 900000
+    },
+    ranking: {
+      nirf: 85,
+      outlook: 78,
+      theWeek: 72
+    },
+    courses: ["Computer Engineering", "Information Technology", "Electronics", "E&TC Engineering"],
+    facilities: ["Modern Labs", "Library", "Sports Complex", "Hostels", "Innovation Center"],
+    admissionCriteria: ["MHT CET", "JEE Main"],
+    researchAreas: ["Computer Science", "Information Technology", "Electronics", "AI & Machine Learning"],
+    entranceExams: ["MHT CET", "JEE Main"],
+    admissionDetails: {
+      eligibility: "Based on MHT CET or JEE Main scores.",
+      process: "Online application followed by counseling.",
+      deadlines: "As per CAP schedule."
+    },
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Up to 50% fee concession",
+        eligibility: "Based on academic performance"
+      }
+    ]
+  },
+  {
+    id: "walchand-sangli",
+    stateId: "maharashtra",
+    name: "Walchand College of Engineering Sangli",
+    type: "Government",
+    description: "A well-established engineering college known for its quality education and industry connections.",
+    rating: 4.2,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/6/6a/WCE_Sangli_Logo.png/1200px-WCE_Sangli_Logo.png",
+    location: {
+      city: "Sangli",
+      state: "Maharashtra",
+      address: "Vishrambag, Sangli, Maharashtra 416415"
+    },
+    fees: {
+      tuition: { min: 100000, max: 130000 },
+      hostel: { min: 40000, max: 60000 },
+      other: { min: 10000, max: 20000 }
+    },
+    placement: {
+      percentage: 80,
+      topCompanies: ["TCS", "Infosys", "Wipro", "L&T", "Bajaj Auto"],
+      averagePackage: "6 LPA",
+      topRecruiters: ["TCS", "Infosys", "Wipro", "L&T", "Bajaj Auto"],
+      avgSalary: 600000
+    },
+    ranking: {
+      nirf: 95,
+      outlook: 88,
+      theWeek: 82
+    },
+    courses: ["Computer Engineering", "Mechanical Engineering", "Electrical Engineering", "Civil Engineering", "Electronics"],
+    facilities: ["Central Library", "Computer Labs", "Workshops", "Sports Ground", "Hostels"],
+    admissionCriteria: ["MHT CET", "JEE Main"],
+    researchAreas: ["Computer Science", "Mechanical Systems", "Electronics", "Civil Engineering"],
+    entranceExams: ["MHT CET", "JEE Main"],
+    admissionDetails: {
+      eligibility: "Based on MHT CET or JEE Main scores.",
+      process: "Online application followed by counseling.",
+      deadlines: "As per CAP schedule."
+    },
+    scholarships: [
+      {
+        name: "Government Scholarship",
+        amount: "Fee waiver based on category",
+        eligibility: "For SC/ST and economically weaker sections"
+      }
+    ]
+  },
+  {
+    id: "mit-pune",
+    stateId: "maharashtra",
+    name: "Maharashtra Institute of Technology Pune",
+    type: "Private",
+    description: "A prestigious private institute offering quality technical education with excellent industry exposure.",
+    rating: 4.1,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a8/MIT_Pune_Logo.png/1200px-MIT_Pune_Logo.png",
+    location: {
+      city: "Pune",
+      state: "Maharashtra",
+      address: "Survey No. 124, Paud Road, Kothrud, Pune, Maharashtra 411038"
+    },
+    fees: {
+      tuition: { min: 200000, max: 250000 },
+      hostel: { min: 70000, max: 90000 },
+      other: { min: 25000, max: 35000 }
+    },
+    placement: {
+      percentage: 90,
+      topCompanies: ["Microsoft", "Amazon", "Google", "TCS", "Infosys"],
+      averagePackage: "8.5 LPA",
+      topRecruiters: ["Microsoft", "Amazon", "Google", "TCS", "Infosys"],
+      avgSalary: 850000
+    },
+    ranking: {
+      nirf: 78,
+      outlook: 72,
+      theWeek: 68
+    },
+    courses: ["Computer Engineering", "Information Technology", "Mechanical Engineering", "Electronics", "Civil Engineering"],
+    facilities: ["Modern Labs", "Library", "Sports Complex", "Hostels", "Cafeteria"],
+    admissionCriteria: ["MHT CET", "JEE Main"],
+    researchAreas: ["Computer Science", "Information Technology", "Mechanical Systems", "Electronics"],
+    entranceExams: ["MHT CET", "JEE Main"],
+    admissionDetails: {
+      eligibility: "Based on MHT CET or JEE Main scores.",
+      process: "Online application followed by counseling.",
+      deadlines: "As per institute schedule."
+    },
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Up to 25% fee concession",
+        eligibility: "Based on academic performance"
+      }
+    ]
+  },
+  {
+    id: "spit-mumbai",
+    stateId: "maharashtra",
+    name: "Sardar Patel Institute of Technology",
+    type: "Private",
+    description: "A well-known engineering institute in Mumbai offering quality technical education.",
+    rating: 4.0,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7c/SPIT_Mumbai_Logo.png/1200px-SPIT_Mumbai_Logo.png",
+    location: {
+      city: "Mumbai",
+      state: "Maharashtra",
+      address: "Bhavan's Campus, Munshi Nagar, Andheri West, Mumbai, Maharashtra 400058"
+    },
+    fees: {
+      tuition: { min: 170000, max: 200000 },
+      hostel: { min: 80000, max: 100000 },
+      other: { min: 20000, max: 30000 }
+    },
+    placement: {
+      percentage: 85,
+      topCompanies: ["TCS", "Infosys", "Wipro", "Capgemini", "Cognizant"],
+      averagePackage: "7.5 LPA",
+      topRecruiters: ["TCS", "Infosys", "Wipro", "Capgemini", "Cognizant"],
+      avgSalary: 750000
+    },
+    ranking: {
+      nirf: 88,
+      outlook: 82,
+      theWeek: 78
+    },
+    courses: ["Computer Engineering", "Information Technology", "Electronics", "Mechanical Engineering"],
+    facilities: ["Computer Labs", "Library", "Sports Ground", "Auditorium", "Cafeteria"],
+    admissionCriteria: ["MHT CET", "JEE Main"],
+    researchAreas: ["Computer Science", "Information Technology", "Electronics", "Engineering"],
+    entranceExams: ["MHT CET", "JEE Main"],
+    admissionDetails: {
+      eligibility: "Based on MHT CET or JEE Main scores.",
+      process: "Online application followed by counseling.",
+      deadlines: "As per institute schedule."
+    },
+    scholarships: [
+      {
+        name: "Need-based Scholarship",
+        amount: "Partial fee waiver",
+        eligibility: "Based on family income and academic performance"
+      }
+    ]
+  },
+  {
+    id: "government-college-pune",
+    stateId: "maharashtra",
+    name: "Government College of Pharmacy Pune",
+    type: "Government",
+    description: "A premier pharmacy college known for its excellent pharmaceutical education and research.",
+    rating: 4.3,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/5/5a/GCP_Pune_Logo.png/1200px-GCP_Pune_Logo.png",
+    location: {
+      city: "Pune",
+      state: "Maharashtra",
+      address: "Kathewadi Road, Pune, Maharashtra 411038"
+    },
+    fees: {
+      tuition: { min: 80000, max: 120000 },
+      hostel: { min: 35000, max: 55000 },
+      other: { min: 8000, max: 18000 }
+    },
+    placement: {
+      percentage: 75,
+      topCompanies: ["Sun Pharma", "Cipla", "Dr. Reddy's", "Lupin", "Aurobindo Pharma"],
+      averagePackage: "5 LPA",
+      topRecruiters: ["Sun Pharma", "Cipla", "Dr. Reddy's", "Lupin", "Aurobindo Pharma"],
+      avgSalary: 500000
+    },
+    ranking: {
+      nirf: 45,
+      outlook: 42,
+      theWeek: 38
+    },
+    courses: ["B.Pharm", "M.Pharm", "Pharm.D", "Pharmaceutical Sciences"],
+    facilities: ["Pharmaceutical Labs", "Library", "Hostels", "Research Centers", "Hospital Attachments"],
+    admissionCriteria: ["MHT CET", "NEET"],
+    researchAreas: ["Pharmaceutical Sciences", "Drug Discovery", "Clinical Research", "Pharmacology"],
+    entranceExams: ["MHT CET", "NEET"],
+    admissionDetails: {
+      eligibility: "Based on MHT CET or NEET scores for respective programs.",
+      process: "Online application followed by counseling.",
+      deadlines: "As per CAP schedule."
+    },
+    scholarships: [
+      {
+        name: "Government Scholarship",
+        amount: "Fee waiver based on category",
+        eligibility: "For SC/ST and economically weaker sections"
+      }
+    ]
+  },
+  {
+    id: "sinhgad-pune",
+    stateId: "maharashtra",
+    name: "Sinhgad College of Engineering",
+    type: "Private",
+    description: "Part of the Sinhgad Technical Education Society, known for quality engineering education.",
+    rating: 3.9,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Sinhgad_Logo.png/1200px-Sinhgad_Logo.png",
+    location: {
+      city: "Pune",
+      state: "Maharashtra",
+      address: "Off Mumbai-Pune Highway, Vadgaon (Bk), Pune, Maharashtra 411041"
+    },
+    fees: {
+      tuition: { min: 150000, max: 180000 },
+      hostel: { min: 50000, max: 70000 },
+      other: { min: 15000, max: 25000 }
+    },
+    placement: {
+      percentage: 78,
+      topCompanies: ["TCS", "Infosys", "Wipro", "Tech Mahindra", "Cognizant"],
+      averagePackage: "6.5 LPA",
+      topRecruiters: ["TCS", "Infosys", "Wipro", "Tech Mahindra", "Cognizant"],
+      avgSalary: 650000
+    },
+    ranking: {
+      nirf: 120,
+      outlook: 110,
+      theWeek: 105
+    },
+    courses: ["Computer Engineering", "Information Technology", "Mechanical Engineering", "Electronics", "Civil Engineering"],
+    facilities: ["Computer Labs", "Library", "Sports Complex", "Hostels", "Workshops"],
+    admissionCriteria: ["MHT CET", "JEE Main"],
+    researchAreas: ["Computer Science", "Information Technology", "Mechanical Systems", "Electronics"],
+    entranceExams: ["MHT CET", "JEE Main"],
+    admissionDetails: {
+      eligibility: "Based on MHT CET or JEE Main scores.",
+      process: "Online application followed by counseling.",
+      deadlines: "As per institute schedule."
+    },
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Up to 20% fee concession",
+        eligibility: "Based on academic performance"
+      }
+    ]
+  },
+  {
+    id: "dkte-ichalkaranji",
+    stateId: "maharashtra",
+    name: "DKTE Society's Textile and Engineering Institute",
+    type: "Private",
+    description: "A specialized institute focusing on textile engineering and technology education.",
+    rating: 3.8,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/d/d5/DKTE_Logo.png/1200px-DKTE_Logo.png",
+    location: {
+      city: "Ichalkaranji",
+      state: "Maharashtra",
+      address: "Rajwada, Ichalkaranji, Maharashtra 416115"
+    },
+    fees: {
+      tuition: { min: 130000, max: 160000 },
+      hostel: { min: 45000, max: 65000 },
+      other: { min: 12000, max: 22000 }
+    },
+    placement: {
+      percentage: 72,
+      topCompanies: ["Textile Mills", "TCS", "Infosys", "Manufacturing Companies", "Technical Firms"],
+      averagePackage: "5.5 LPA",
+      topRecruiters: ["Textile Mills", "TCS", "Infosys", "Manufacturing Companies", "Technical Firms"],
+      avgSalary: 550000
+    },
+    ranking: {
+      nirf: 135,
+      outlook: 125,
+      theWeek: 118
+    },
+    courses: ["Textile Technology", "Computer Engineering", "Mechanical Engineering", "Electronics"],
+    facilities: ["Textile Labs", "Computer Labs", "Library", "Hostels", "Industry Interface"],
+    admissionCriteria: ["MHT CET", "JEE Main"],
+    researchAreas: ["Textile Technology", "Computer Science", "Mechanical Systems", "Materials Science"],
+    entranceExams: ["MHT CET", "JEE Main"],
+    admissionDetails: {
+      eligibility: "Based on MHT CET or JEE Main scores.",
+      process: "Online application followed by counseling.",
+      deadlines: "As per institute schedule."
+    },
+    scholarships: [
+      {
+        name: "Industry Scholarship",
+        amount: "Partial fee support",
+        eligibility: "For students from textile industry families"
+      }
+    ]
+  },
+  {
+    id: "pccoer-pune",
+    stateId: "maharashtra",
+    name: "Pimpri Chinchwad College of Engineering and Research",
+    type: "Private",
+    description: "A modern engineering college with focus on research and innovation in technical education.",
+    rating: 3.7,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/1/12/PCCOER_Logo.png/1200px-PCCOER_Logo.png",
+    location: {
+      city: "Pune",
+      state: "Maharashtra",
+      address: "Sector No. 26, Pradhikaran, Nigdi, Pune, Maharashtra 411044"
+    },
+    fees: {
+      tuition: { min: 140000, max: 170000 },
+      hostel: { min: 55000, max: 75000 },
+      other: { min: 18000, max: 28000 }
+    },
+    placement: {
+      percentage: 75,
+      topCompanies: ["TCS", "Infosys", "Wipro", "Capgemini", "L&T"],
+      averagePackage: "6 LPA",
+      topRecruiters: ["TCS", "Infosys", "Wipro", "Capgemini", "L&T"],
+      avgSalary: 600000
+    },
+    ranking: {
+      nirf: 145,
+      outlook: 135,
+      theWeek: 128
+    },
+    courses: ["Computer Engineering", "Information Technology", "Mechanical Engineering", "Electronics", "Civil Engineering"],
+    facilities: ["Modern Labs", "Library", "Sports Complex", "Hostels", "Innovation Center"],
+    admissionCriteria: ["MHT CET", "JEE Main"],
+    researchAreas: ["Computer Science", "Information Technology", "Mechanical Systems", "Electronics"],
+    entranceExams: ["MHT CET", "JEE Main"],
+    admissionDetails: {
+      eligibility: "Based on MHT CET or JEE Main scores.",
+      process: "Online application followed by counseling.",
+      deadlines: "As per institute schedule."
+    },
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Up to 15% fee concession",
+        eligibility: "Based on academic performance and entrance exam scores"
+      }
+    ]
+  },
+  {
+    id: "prec-loni",
+    stateId: "maharashtra",
+    name: "Pravara Rural Engineering College",
+    type: "Private",
+    description: "A rural engineering college committed to providing quality technical education in rural Maharashtra.",
+    rating: 3.6,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7f/PREC_Logo.png/1200px-PREC_Logo.png",
+    location: {
+      city: "Loni",
+      state: "Maharashtra",
+      address: "Loni Kalbhor, Tal. Rahata, Dist. Ahmednagar, Maharashtra 413736"
+    },
+    fees: {
+      tuition: { min: 120000, max: 150000 },
+      hostel: { min: 40000, max: 60000 },
+      other: { min: 10000, max: 20000 }
+    },
+    placement: {
+      percentage: 70,
+      topCompanies: ["TCS", "Infosys", "Tech Mahindra", "Regional Companies", "Government Jobs"],
+      averagePackage: "5 LPA",
+      topRecruiters: ["TCS", "Infosys", "Tech Mahindra", "Regional Companies", "Government Sector"],
+      avgSalary: 500000
+    },
+    ranking: {
+      nirf: 155,
+      outlook: 145,
+      theWeek: 138
+    },
+    courses: ["Computer Engineering", "Mechanical Engineering", "Civil Engineering", "Electronics", "Information Technology"],
+    facilities: ["Computer Labs", "Library", "Workshops", "Hostels", "Rural Technology Center"],
+    admissionCriteria: ["MHT CET", "JEE Main"],
+    researchAreas: ["Rural Technology", "Computer Science", "Mechanical Systems", "Civil Engineering"],
+    entranceExams: ["MHT CET", "JEE Main"],
+    admissionDetails: {
+      eligibility: "Based on MHT CET or JEE Main scores.",
+      process: "Online application followed by counseling.",
+      deadlines: "As per institute schedule."
+    },
+    scholarships: [
+      {
+        name: "Rural Development Scholarship",
+        amount: "Partial fee waiver",
+        eligibility: "For students from rural backgrounds with good academic records"
+      }
+    ]
+  },
+  {
+    id: "dypiet-pune",
+    stateId: "maharashtra",
+    name: "Dr. D. Y. Patil Institute of Engineering and Technology",
+    type: "Private",
+    description: "Part of the Dr. D. Y. Patil group, known for its comprehensive engineering education programs.",
+    rating: 3.8,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8d/DY_Patil_Logo.png/1200px-DY_Patil_Logo.png",
+    location: {
+      city: "Pune",
+      state: "Maharashtra",
+      address: "Sant Tukaram Nagar, Pimpri, Pune, Maharashtra 411018"
+    },
+    fees: {
+      tuition: { min: 160000, max: 190000 },
+      hostel: { min: 60000, max: 80000 },
+      other: { min: 20000, max: 30000 }
+    },
+    placement: {
+      percentage: 80,
+      topCompanies: ["TCS", "Infosys", "Wipro", "Cognizant", "Capgemini"],
+      averagePackage: "6.8 LPA",
+      topRecruiters: ["TCS", "Infosys", "Wipro", "Cognizant", "Capgemini"],
+      avgSalary: 680000
+    },
+    ranking: {
+      nirf: 110,
+      outlook: 102,
+      theWeek: 95
+    },
+    courses: ["Computer Engineering", "Information Technology", "Mechanical Engineering", "Electronics", "Civil Engineering"],
+    facilities: ["Modern Labs", "Library", "Sports Complex", "Hostels", "Medical Facilities"],
+    admissionCriteria: ["MHT CET", "JEE Main"],
+    researchAreas: ["Computer Science", "Information Technology", "Mechanical Systems", "Electronics"],
+    entranceExams: ["MHT CET", "JEE Main"],
+    admissionDetails: {
+      eligibility: "Based on MHT CET or JEE Main scores.",
+      process: "Online application followed by counseling.",
+      deadlines: "As per institute schedule."
+    },
+    scholarships: [
+      {
+        name: "D. Y. Patil Merit Scholarship",
+        amount: "Up to 30% fee concession",
+        eligibility: "Based on academic excellence and entrance exam performance"
       }
     ]
   },
@@ -1093,7 +1717,6 @@ export const colleges: College[] = [
       }
     ]
   },
-  // Rajasthan Colleges
   {
     id: "iit-jodhpur",
     stateId: "rajasthan",
@@ -1190,7 +1813,6 @@ export const colleges: College[] = [
       }
     ]
   },
-  // Punjab Colleges
   {
     id: "pec-chandigarh",
     stateId: "punjab",
@@ -1239,7 +1861,6 @@ export const colleges: College[] = [
       }
     ]
   },
-  // Kerala Colleges
   {
     id: "iit-palakkad",
     stateId: "kerala",
@@ -1336,7 +1957,6 @@ export const colleges: College[] = [
       }
     ]
   },
-  // Haryana Colleges
   {
     id: "nit-kurukshetra",
     stateId: "haryana",
@@ -1385,7 +2005,6 @@ export const colleges: College[] = [
       }
     ]
   },
-  // Odisha Colleges
   {
     id: "nit-rourkela",
     stateId: "odisha",
@@ -1434,7 +2053,6 @@ export const colleges: College[] = [
       }
     ]
   },
-  // Jharkhand Colleges
   {
     id: "nit-jamshedpur",
     stateId: "jharkhand",
@@ -1483,7 +2101,6 @@ export const colleges: College[] = [
       }
     ]
   },
-  // Assam Colleges
   {
     id: "iit-guwahati",
     stateId: "assam",
@@ -1532,7 +2149,6 @@ export const colleges: College[] = [
       }
     ]
   },
-  // Bihar Colleges
   {
     id: "iit-patna",
     stateId: "bihar",
@@ -1581,7 +2197,6 @@ export const colleges: College[] = [
       }
     ]
   },
-  // Chandigarh Colleges
   {
     id: "panjab-university",
     stateId: "chandigarh",
