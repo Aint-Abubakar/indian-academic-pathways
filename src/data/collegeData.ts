@@ -26,7 +26,7 @@ export interface College {
     percentage: number;
     topCompanies: string[];
     averagePackage: string;
-	  topRecruiters: string[];
+    topRecruiters: string[];
     avgSalary: number;
   };
   ranking: {
@@ -62,7 +62,6 @@ export interface FilterOptions {
 
 // Complete data for all Indian states and union territories
 export const states: State[] = [
-  // Existing states
   {
     id: "maharashtra",
     name: "Maharashtra",
@@ -113,7 +112,6 @@ export const states: State[] = [
     name: "Gujarat",
     collegeCount: 4
   },
-  // New states being added
   {
     id: "rajasthan",
     name: "Rajasthan",
@@ -214,7 +212,6 @@ export const states: State[] = [
     name: "Arunachal Pradesh",
     collegeCount: 1
   },
-  // Union Territories
   {
     id: "andaman-nicobar",
     name: "Andaman & Nicobar Islands",
@@ -270,7 +267,7 @@ export const colleges: College[] = [
       percentage: 92,
       topCompanies: ["Google", "Microsoft", "Samsung", "Intel", "Goldman Sachs"],
       averagePackage: "22 LPA",
-	    topRecruiters: ["Google", "Microsoft", "Samsung", "Intel", "Goldman Sachs"],
+      topRecruiters: ["Google", "Microsoft", "Samsung", "Intel", "Goldman Sachs"],
       avgSalary: 2200000
     },
     ranking: {
@@ -323,7 +320,7 @@ export const colleges: College[] = [
       percentage: 90,
       topCompanies: ["Microsoft", "Google", "Amazon", "Flipkart", "Tata Consultancy Services"],
       averagePackage: "21 LPA",
-	    topRecruiters: ["Microsoft", "Google", "Amazon", "Flipkart", "Tata Consultancy Services"],
+      topRecruiters: ["Microsoft", "Google", "Amazon", "Flipkart", "Tata Consultancy Services"],
       avgSalary: 2100000
     },
     ranking: {
@@ -376,7 +373,7 @@ export const colleges: College[] = [
       percentage: 85,
       topCompanies: ["Google", "Microsoft", "Qualcomm", "Texas Instruments", "DRDO"],
       averagePackage: "25 LPA",
-	    topRecruiters: ["Google", "Microsoft", "Qualcomm", "Texas Instruments", "DRDO"],
+      topRecruiters: ["Google", "Microsoft", "Qualcomm", "Texas Instruments", "DRDO"],
       avgSalary: 2500000
     },
     ranking: {
@@ -429,7 +426,7 @@ export const colleges: College[] = [
       percentage: 88,
       topCompanies: ["Google", "Microsoft", "Amazon", "Flipkart", "Tata Consultancy Services"],
       averagePackage: "20 LPA",
-	    topRecruiters: ["Google", "Microsoft", "Amazon", "Flipkart", "Tata Consultancy Services"],
+      topRecruiters: ["Google", "Microsoft", "Amazon", "Flipkart", "Tata Consultancy Services"],
       avgSalary: 2000000
     },
     ranking: {
@@ -460,7 +457,6 @@ export const colleges: College[] = [
       }
     ]
   },
-  // Additional Delhi colleges 
   {
     id: "jamia-millia",
     stateId: "delhi",
@@ -483,7 +479,7 @@ export const colleges: College[] = [
       percentage: 70,
       topCompanies: ["TCS", "Wipro", "IBM", "Capgemini", "Cognizant"],
       averagePackage: "6.5 LPA",
-	    topRecruiters: ["TCS", "Wipro", "IBM", "Capgemini", "Cognizant"],
+      topRecruiters: ["TCS", "Wipro", "IBM", "Capgemini", "Cognizant"],
       avgSalary: 650000
     },
     ranking: {
@@ -536,7 +532,7 @@ export const colleges: College[] = [
       percentage: 65,
       topCompanies: ["Think Tanks", "United Nations", "Government Organizations", "Research Institutes", "NGOs"],
       averagePackage: "7 LPA",
-	    topRecruiters: ["United Nations", "Ministry of External Affairs", "Research Institutes", "Think Tanks", "Media Houses"],
+      topRecruiters: ["United Nations", "Ministry of External Affairs", "Research Institutes", "Think Tanks", "Media Houses"],
       avgSalary: 700000
     },
     ranking: {
@@ -589,7 +585,7 @@ export const colleges: College[] = [
       percentage: 95,
       topCompanies: ["Bain & Company", "McKinsey", "Boston Consulting Group", "PwC", "Deloitte"],
       averagePackage: "16 LPA",
-	    topRecruiters: ["Bain & Company", "McKinsey", "Boston Consulting Group", "PwC", "Deloitte"],
+      topRecruiters: ["Bain & Company", "McKinsey", "Boston Consulting Group", "PwC", "Deloitte"],
       avgSalary: 1600000
     },
     ranking: {
@@ -642,7 +638,7 @@ export const colleges: College[] = [
       percentage: 90,
       topCompanies: ["Louis Vuitton", "Zara", "Tommy Hilfiger", "Aditya Birla Fashion", "Tata CLiQ Luxury"],
       averagePackage: "8 LPA",
-	    topRecruiters: ["Louis Vuitton", "Zara", "Tommy Hilfiger", "Aditya Birla Fashion", "Tata CLiQ Luxury"],
+      topRecruiters: ["Louis Vuitton", "Zara", "Tommy Hilfiger", "Aditya Birla Fashion", "Tata CLiQ Luxury"],
       avgSalary: 800000
     },
     ranking: {
@@ -695,7 +691,7 @@ export const colleges: College[] = [
       percentage: 100,
       topCompanies: ["Apollo Hospitals", "Fortis Healthcare", "Max Healthcare", "Medanta", "Wockhardt Hospitals"],
       averagePackage: "12 LPA",
-	    topRecruiters: ["Apollo Hospitals", "Fortis Healthcare", "Max Healthcare", "Medanta", "Wockhardt Hospitals"],
+      topRecruiters: ["Apollo Hospitals", "Fortis Healthcare", "Max Healthcare", "Medanta", "Wockhardt Hospitals"],
       avgSalary: 1200000
     },
     ranking: {
@@ -748,7 +744,7 @@ export const colleges: College[] = [
       percentage: 87,
       topCompanies: ["Google", "Microsoft", "Amazon", "Flipkart", "Tata Consultancy Services"],
       averagePackage: "19 LPA",
-	    topRecruiters: ["Google", "Microsoft", "Amazon", "Flipkart", "Tata Consultancy Services"],
+      topRecruiters: ["Google", "Microsoft", "Amazon", "Flipkart", "Tata Consultancy Services"],
       avgSalary: 1900000
     },
     ranking: {
@@ -801,7 +797,7 @@ export const colleges: College[] = [
       percentage: 85,
       topCompanies: ["Microsoft", "Google", "Amazon", "Flipkart", "Tata Consultancy Services"],
       averagePackage: "18 LPA",
-	    topRecruiters: ["Microsoft", "Google", "Amazon", "Flipkart", "Tata Consultancy Services"],
+      topRecruiters: ["Microsoft", "Google", "Amazon", "Flipkart", "Tata Consultancy Services"],
       avgSalary: 1800000
     },
     ranking: {
@@ -834,7 +830,7 @@ export const colleges: College[] = [
   },
   {
     id: "iit-roorkee",
-    stateId: "uttar-pradesh",
+    stateId: "uttarakhand",
     name: "Indian Institute of Technology Roorkee",
     type: "Government",
     description: "A leading technology institute known for its engineering programs and research.",
@@ -854,7 +850,7 @@ export const colleges: College[] = [
       percentage: 83,
       topCompanies: ["Google", "Microsoft", "Amazon", "Flipkart", "Tata Consultancy Services"],
       averagePackage: "17 LPA",
-	    topRecruiters: ["Google", "Microsoft", "Amazon", "Flipkart", "Tata Consultancy Services"],
+      topRecruiters: ["Google", "Microsoft", "Amazon", "Flipkart", "Tata Consultancy Services"],
       avgSalary: 1700000
     },
     ranking: {
@@ -1094,6 +1090,543 @@ export const colleges: College[] = [
         name: "ICAR Fellowship",
         amount: "Rs. 12,000 - 25,000 per month",
         eligibility: "For postgraduate and doctoral students"
+      }
+    ]
+  },
+  // Rajasthan Colleges
+  {
+    id: "iit-jodhpur",
+    stateId: "rajasthan",
+    name: "Indian Institute of Technology Jodhpur",
+    type: "Government",
+    description: "A leading engineering institute in the desert state known for its innovative programs.",
+    rating: 4.4,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/9/91/IIT_Jodhpur_Logo.svg/1200px-IIT_Jodhpur_Logo.svg.png",
+    location: {
+      city: "Jodhpur",
+      state: "Rajasthan",
+      address: "NH 62, Surpura Bypass Road, Karwar, Rajasthan 342037"
+    },
+    fees: {
+      tuition: { min: 200000, max: 230000 },
+      hostel: { min: 60000, max: 80000 },
+      other: { min: 15000, max: 25000 }
+    },
+    placement: {
+      percentage: 88,
+      topCompanies: ["Microsoft", "Google", "Amazon", "Samsung", "Intel"],
+      averagePackage: "18 LPA",
+      topRecruiters: ["Microsoft", "Google", "Amazon", "Samsung", "Intel"],
+      avgSalary: 1800000
+    },
+    ranking: {
+      nirf: 45,
+      outlook: 42,
+      theWeek: 38
+    },
+    courses: ["Computer Science", "Mechanical Engineering", "Electrical Engineering", "Civil Engineering", "Chemical Engineering"],
+    facilities: ["Central Library", "Sports Complex", "Hostels", "Wi-Fi Campus", "Auditorium", "Medical Center"],
+    admissionCriteria: ["JEE Advanced"],
+    researchAreas: ["Artificial Intelligence", "Renewable Energy", "Desert Technology", "Biotechnology"],
+    entranceExams: ["JEE Advanced"],
+    admissionDetails: {
+      eligibility: "Based on JEE Advanced scores.",
+      process: "Online application followed by JEE Advanced counseling.",
+      deadlines: "Usually in June."
+    },
+    scholarships: [
+      {
+        name: "Merit-cum-Means Scholarship",
+        amount: "Full tuition fee waiver",
+        eligibility: "Based on academic performance and family income"
+      }
+    ]
+  },
+  {
+    id: "bits-pilani",
+    stateId: "rajasthan",
+    name: "Birla Institute of Technology and Science Pilani",
+    type: "Private",
+    description: "A premier private technical institute known for its innovative curriculum and industry connections.",
+    rating: 4.6,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/d/d3/BITS_Pilani-Logo.svg",
+    location: {
+      city: "Pilani",
+      state: "Rajasthan",
+      address: "Vidya Vihar, Pilani, Rajasthan 333031"
+    },
+    fees: {
+      tuition: { min: 400000, max: 450000 },
+      hostel: { min: 80000, max: 120000 },
+      other: { min: 30000, max: 50000 }
+    },
+    placement: {
+      percentage: 95,
+      topCompanies: ["Google", "Microsoft", "Amazon", "Goldman Sachs", "McKinsey"],
+      averagePackage: "25 LPA",
+      topRecruiters: ["Google", "Microsoft", "Amazon", "Goldman Sachs", "McKinsey"],
+      avgSalary: 2500000
+    },
+    ranking: {
+      nirf: 25,
+      outlook: 20,
+      theWeek: 15
+    },
+    courses: ["Computer Science", "Electronics", "Mechanical Engineering", "Chemical Engineering", "Biotechnology"],
+    facilities: ["State-of-art Labs", "Sports Complex", "Hostels", "Wi-Fi Campus", "Innovation Centers"],
+    admissionCriteria: ["BITSAT"],
+    researchAreas: ["AI & Machine Learning", "Biotechnology", "Nanotechnology", "Sustainable Energy"],
+    entranceExams: ["BITSAT"],
+    admissionDetails: {
+      eligibility: "Based on BITSAT scores and Class 12 marks.",
+      process: "Online BITSAT exam followed by counseling.",
+      deadlines: "Usually in May-June."
+    },
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Up to 80% fee waiver",
+        eligibility: "Based on BITSAT scores and academic performance"
+      }
+    ]
+  },
+  // Punjab Colleges
+  {
+    id: "pec-chandigarh",
+    stateId: "punjab",
+    name: "Punjab Engineering College",
+    type: "Government",
+    description: "One of the oldest engineering colleges in India with excellent infrastructure and faculty.",
+    rating: 4.3,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/f/f8/PEC_Chandigarh_Logo.png",
+    location: {
+      city: "Chandigarh",
+      state: "Punjab",
+      address: "Sector 12, Chandigarh 160012"
+    },
+    fees: {
+      tuition: { min: 120000, max: 150000 },
+      hostel: { min: 50000, max: 70000 },
+      other: { min: 15000, max: 25000 }
+    },
+    placement: {
+      percentage: 85,
+      topCompanies: ["TCS", "Infosys", "Wipro", "Microsoft", "Amazon"],
+      averagePackage: "8 LPA",
+      topRecruiters: ["TCS", "Infosys", "Wipro", "Microsoft", "Amazon"],
+      avgSalary: 800000
+    },
+    ranking: {
+      nirf: 75,
+      outlook: 68,
+      theWeek: 72
+    },
+    courses: ["Computer Science", "Mechanical Engineering", "Electrical Engineering", "Civil Engineering", "Electronics"],
+    facilities: ["Central Library", "Sports Complex", "Hostels", "Wi-Fi Campus", "Labs"],
+    admissionCriteria: ["JEE Main"],
+    researchAreas: ["Computer Science", "Electronics", "Mechanical Systems", "Civil Engineering"],
+    entranceExams: ["JEE Main"],
+    admissionDetails: {
+      eligibility: "Based on JEE Main scores.",
+      process: "Online application followed by JEE Main counseling.",
+      deadlines: "As per JoSAA schedule."
+    },
+    scholarships: [
+      {
+        name: "Government Scholarship",
+        amount: "Fee waiver based on category",
+        eligibility: "For SC/ST and economically weaker sections"
+      }
+    ]
+  },
+  // Kerala Colleges
+  {
+    id: "iit-palakkad",
+    stateId: "kerala",
+    name: "Indian Institute of Technology Palakkad",
+    type: "Government",
+    description: "A young IIT established to promote technical education in Kerala.",
+    rating: 4.2,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/IIT_Palakkad_Logo.svg/1200px-IIT_Palakkad_Logo.svg.png",
+    location: {
+      city: "Palakkad",
+      state: "Kerala",
+      address: "Ahalia Integrated Campus, Kozhippara, Palakkad, Kerala 678557"
+    },
+    fees: {
+      tuition: { min: 200000, max: 230000 },
+      hostel: { min: 60000, max: 80000 },
+      other: { min: 15000, max: 25000 }
+    },
+    placement: {
+      percentage: 82,
+      topCompanies: ["Microsoft", "Google", "Amazon", "Flipkart", "Samsung"],
+      averagePackage: "16 LPA",
+      topRecruiters: ["Microsoft", "Google", "Amazon", "Flipkart", "Samsung"],
+      avgSalary: 1600000
+    },
+    ranking: {
+      nirf: 52,
+      outlook: 48,
+      theWeek: 45
+    },
+    courses: ["Computer Science", "Mechanical Engineering", "Electrical Engineering", "Civil Engineering"],
+    facilities: ["Central Library", "Sports Complex", "Hostels", "Wi-Fi Campus", "Research Labs"],
+    admissionCriteria: ["JEE Advanced"],
+    researchAreas: ["AI & Data Science", "Sustainable Engineering", "Electronics", "Materials Science"],
+    entranceExams: ["JEE Advanced"],
+    admissionDetails: {
+      eligibility: "Based on JEE Advanced scores.",
+      process: "Online application followed by JEE Advanced counseling.",
+      deadlines: "Usually in June."
+    },
+    scholarships: [
+      {
+        name: "Merit-cum-Means Scholarship",
+        amount: "Full tuition fee waiver",
+        eligibility: "Based on academic performance and family income"
+      }
+    ]
+  },
+  {
+    id: "nit-calicut",
+    stateId: "kerala",
+    name: "National Institute of Technology Calicut",
+    type: "Government",
+    description: "A premier technical institute known for excellence in engineering education and research.",
+    rating: 4.5,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/1/1c/NIT_Calicut_Logo.png/1200px-NIT_Calicut_Logo.png",
+    location: {
+      city: "Kozhikode",
+      state: "Kerala",
+      address: "NIT Campus P.O, Kozhikode, Kerala 673601"
+    },
+    fees: {
+      tuition: { min: 150000, max: 180000 },
+      hostel: { min: 55000, max: 75000 },
+      other: { min: 12000, max: 22000 }
+    },
+    placement: {
+      percentage: 90,
+      topCompanies: ["Microsoft", "Google", "Amazon", "Adobe", "Intel"],
+      averagePackage: "14 LPA",
+      topRecruiters: ["Microsoft", "Google", "Amazon", "Adobe", "Intel"],
+      avgSalary: 1400000
+    },
+    ranking: {
+      nirf: 28,
+      outlook: 25,
+      theWeek: 22
+    },
+    courses: ["Computer Science", "Electronics", "Mechanical Engineering", "Civil Engineering", "Chemical Engineering"],
+    facilities: ["Central Library", "Sports Complex", "Hostels", "Wi-Fi Campus", "Research Centers"],
+    admissionCriteria: ["JEE Main"],
+    researchAreas: ["Computer Science", "Electronics", "Materials Science", "Environmental Engineering"],
+    entranceExams: ["JEE Main"],
+    admissionDetails: {
+      eligibility: "Based on JEE Main scores.",
+      process: "Online application followed by JoSAA counseling.",
+      deadlines: "As per JoSAA schedule."
+    },
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Tuition fee waiver",
+        eligibility: "Based on JEE Main rank and academic performance"
+      }
+    ]
+  },
+  // Haryana Colleges
+  {
+    id: "nit-kurukshetra",
+    stateId: "haryana",
+    name: "National Institute of Technology Kurukshetra",
+    type: "Government",
+    description: "One of the oldest NITs in India with strong industry connections and placement record.",
+    rating: 4.4,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/3/3c/NIT_Kurukshetra_Logo.png/1200px-NIT_Kurukshetra_Logo.png",
+    location: {
+      city: "Kurukshetra",
+      state: "Haryana",
+      address: "Kurukshetra, Haryana 136119"
+    },
+    fees: {
+      tuition: { min: 150000, max: 180000 },
+      hostel: { min: 55000, max: 75000 },
+      other: { min: 12000, max: 22000 }
+    },
+    placement: {
+      percentage: 88,
+      topCompanies: ["Microsoft", "Google", "Amazon", "Samsung", "Adobe"],
+      averagePackage: "12 LPA",
+      topRecruiters: ["Microsoft", "Google", "Amazon", "Samsung", "Adobe"],
+      avgSalary: 1200000
+    },
+    ranking: {
+      nirf: 35,
+      outlook: 32,
+      theWeek: 28
+    },
+    courses: ["Computer Science", "Electronics", "Mechanical Engineering", "Civil Engineering", "IT"],
+    facilities: ["Central Library", "Sports Complex", "Hostels", "Wi-Fi Campus", "Tech Incubator"],
+    admissionCriteria: ["JEE Main"],
+    researchAreas: ["Computer Science", "Electronics", "Mechanical Systems", "Civil Engineering"],
+    entranceExams: ["JEE Main"],
+    admissionDetails: {
+      eligibility: "Based on JEE Main scores.",
+      process: "Online application followed by JoSAA counseling.",
+      deadlines: "As per JoSAA schedule."
+    },
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Tuition fee waiver",
+        eligibility: "Based on JEE Main rank and academic performance"
+      }
+    ]
+  },
+  // Odisha Colleges
+  {
+    id: "nit-rourkela",
+    stateId: "odisha",
+    name: "National Institute of Technology Rourkela",
+    type: "Government",
+    description: "A premier technical institute known for its excellent infrastructure and research facilities.",
+    rating: 4.5,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/1/14/NIT_Rourkela_Logo.png/1200px-NIT_Rourkela_Logo.png",
+    location: {
+      city: "Rourkela",
+      state: "Odisha",
+      address: "Rourkela, Odisha 769008"
+    },
+    fees: {
+      tuition: { min: 150000, max: 180000 },
+      hostel: { min: 55000, max: 75000 },
+      other: { min: 12000, max: 22000 }
+    },
+    placement: {
+      percentage: 85,
+      topCompanies: ["Microsoft", "Google", "Amazon", "Tata Steel", "SAIL"],
+      averagePackage: "13 LPA",
+      topRecruiters: ["Microsoft", "Google", "Amazon", "Tata Steel", "SAIL"],
+      avgSalary: 1300000
+    },
+    ranking: {
+      nirf: 32,
+      outlook: 28,
+      theWeek: 25
+    },
+    courses: ["Computer Science", "Metallurgy", "Mechanical Engineering", "Civil Engineering", "Electronics"],
+    facilities: ["Central Library", "Sports Complex", "Hostels", "Wi-Fi Campus", "Advanced Labs"],
+    admissionCriteria: ["JEE Main"],
+    researchAreas: ["Metallurgy", "Computer Science", "Materials Science", "Mining Engineering"],
+    entranceExams: ["JEE Main"],
+    admissionDetails: {
+      eligibility: "Based on JEE Main scores.",
+      process: "Online application followed by JoSAA counseling.",
+      deadlines: "As per JoSAA schedule."
+    },
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Tuition fee waiver",
+        eligibility: "Based on JEE Main rank and academic performance"
+      }
+    ]
+  },
+  // Jharkhand Colleges
+  {
+    id: "nit-jamshedpur",
+    stateId: "jharkhand",
+    name: "National Institute of Technology Jamshedpur",
+    type: "Government",
+    description: "A technical institute in the steel city known for metallurgy and engineering programs.",
+    rating: 4.2,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/6/6c/NIT_Jamshedpur_Logo.png/1200px-NIT_Jamshedpur_Logo.png",
+    location: {
+      city: "Jamshedpur",
+      state: "Jharkhand",
+      address: "Adityapur, Jamshedpur, Jharkhand 831014"
+    },
+    fees: {
+      tuition: { min: 150000, max: 180000 },
+      hostel: { min: 50000, max: 70000 },
+      other: { min: 10000, max: 20000 }
+    },
+    placement: {
+      percentage: 80,
+      topCompanies: ["Tata Steel", "TCS", "Infosys", "Microsoft", "Amazon"],
+      averagePackage: "9 LPA",
+      topRecruiters: ["Tata Steel", "TCS", "Infosys", "Microsoft", "Amazon"],
+      avgSalary: 900000
+    },
+    ranking: {
+      nirf: 68,
+      outlook: 65,
+      theWeek: 62
+    },
+    courses: ["Metallurgy", "Computer Science", "Mechanical Engineering", "Civil Engineering", "Electronics"],
+    facilities: ["Central Library", "Sports Complex", "Hostels", "Wi-Fi Campus", "Industrial Labs"],
+    admissionCriteria: ["JEE Main"],
+    researchAreas: ["Metallurgy", "Materials Science", "Computer Science", "Mining Technology"],
+    entranceExams: ["JEE Main"],
+    admissionDetails: {
+      eligibility: "Based on JEE Main scores.",
+      process: "Online application followed by JoSAA counseling.",
+      deadlines: "As per JoSAA schedule."
+    },
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Tuition fee waiver",
+        eligibility: "Based on JEE Main rank and academic performance"
+      }
+    ]
+  },
+  // Assam Colleges
+  {
+    id: "iit-guwahati",
+    stateId: "assam",
+    name: "Indian Institute of Technology Guwahati",
+    type: "Government",
+    description: "A premier IIT in Northeast India known for its scenic campus and academic excellence.",
+    rating: 4.6,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/e/ee/IIT_Guwahati_Logo.svg/1200px-IIT_Guwahati_Logo.svg.png",
+    location: {
+      city: "Guwahati",
+      state: "Assam",
+      address: "Guwahati, Assam 781039"
+    },
+    fees: {
+      tuition: { min: 200000, max: 230000 },
+      hostel: { min: 60000, max: 80000 },
+      other: { min: 15000, max: 25000 }
+    },
+    placement: {
+      percentage: 90,
+      topCompanies: ["Microsoft", "Google", "Amazon", "Samsung", "Adobe"],
+      averagePackage: "19 LPA",
+      topRecruiters: ["Microsoft", "Google", "Amazon", "Samsung", "Adobe"],
+      avgSalary: 1900000
+    },
+    ranking: {
+      nirf: 7,
+      outlook: 8,
+      theWeek: 9
+    },
+    courses: ["Computer Science", "Electronics", "Mechanical Engineering", "Civil Engineering", "Chemical Engineering"],
+    facilities: ["Central Library", "Sports Complex", "Hostels", "Wi-Fi Campus", "Research Centers"],
+    admissionCriteria: ["JEE Advanced"],
+    researchAreas: ["AI & Machine Learning", "Electronics", "Biotechnology", "Sustainable Technology"],
+    entranceExams: ["JEE Advanced"],
+    admissionDetails: {
+      eligibility: "Based on JEE Advanced scores.",
+      process: "Online application followed by JEE Advanced counseling.",
+      deadlines: "Usually in June."
+    },
+    scholarships: [
+      {
+        name: "Merit-cum-Means Scholarship",
+        amount: "Full tuition fee waiver",
+        eligibility: "Based on academic performance and family income"
+      }
+    ]
+  },
+  // Bihar Colleges
+  {
+    id: "iit-patna",
+    stateId: "bihar",
+    name: "Indian Institute of Technology Patna",
+    type: "Government",
+    description: "A newer IIT established to promote technical education in Bihar.",
+    rating: 4.3,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/1/14/IIT_Patna_Logo.svg/1200px-IIT_Patna_Logo.svg.png",
+    location: {
+      city: "Patna",
+      state: "Bihar",
+      address: "Bihta, Patna, Bihar 801106"
+    },
+    fees: {
+      tuition: { min: 200000, max: 230000 },
+      hostel: { min: 60000, max: 80000 },
+      other: { min: 15000, max: 25000 }
+    },
+    placement: {
+      percentage: 85,
+      topCompanies: ["Microsoft", "Google", "Amazon", "Adobe", "Samsung"],
+      averagePackage: "17 LPA",
+      topRecruiters: ["Microsoft", "Google", "Amazon", "Adobe", "Samsung"],
+      avgSalary: 1700000
+    },
+    ranking: {
+      nirf: 48,
+      outlook: 45,
+      theWeek: 42
+    },
+    courses: ["Computer Science", "Electronics", "Mechanical Engineering", "Civil Engineering", "Metallurgy"],
+    facilities: ["Central Library", "Sports Complex", "Hostels", "Wi-Fi Campus", "Modern Labs"],
+    admissionCriteria: ["JEE Advanced"],
+    researchAreas: ["Computer Science", "Electronics", "Materials Science", "Civil Engineering"],
+    entranceExams: ["JEE Advanced"],
+    admissionDetails: {
+      eligibility: "Based on JEE Advanced scores.",
+      process: "Online application followed by JEE Advanced counseling.",
+      deadlines: "Usually in June."
+    },
+    scholarships: [
+      {
+        name: "Merit-cum-Means Scholarship",
+        amount: "Full tuition fee waiver",
+        eligibility: "Based on academic performance and family income"
+      }
+    ]
+  },
+  // Chandigarh Colleges
+  {
+    id: "panjab-university",
+    stateId: "chandigarh",
+    name: "Panjab University",
+    type: "Government",
+    description: "One of the oldest universities in India offering diverse programs across multiple disciplines.",
+    rating: 4.4,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/5/52/Panjab_University_Logo.png",
+    location: {
+      city: "Chandigarh",
+      state: "Chandigarh",
+      address: "Sector 14, Chandigarh 160014"
+    },
+    fees: {
+      tuition: { min: 25000, max: 80000 },
+      hostel: { min: 40000, max: 60000 },
+      other: { min: 10000, max: 20000 }
+    },
+    placement: {
+      percentage: 75,
+      topCompanies: ["TCS", "Infosys", "Wipro", "Cognizant", "Tech Mahindra"],
+      averagePackage: "6 LPA",
+      topRecruiters: ["TCS", "Infosys", "Wipro", "Cognizant", "Tech Mahindra"],
+      avgSalary: 600000
+    },
+    ranking: {
+      nirf: 65,
+      outlook: 60,
+      theWeek: 58
+    },
+    courses: ["Engineering", "Arts", "Sciences", "Commerce", "Law", "Medicine", "Management"],
+    facilities: ["Central Library", "Sports Complex", "Hostels", "Wi-Fi Campus", "Museums"],
+    admissionCriteria: ["Entrance Exam", "Merit-based"],
+    researchAreas: ["Sciences", "Social Sciences", "Engineering", "Medicine", "Arts"],
+    entranceExams: ["PU CET", "Various departmental exams"],
+    admissionDetails: {
+      eligibility: "Based on entrance exam and academic records.",
+      process: "Online application followed by entrance exam and counseling.",
+      deadlines: "Varies by department, usually April-June."
+    },
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Fee concession",
+        eligibility: "Based on academic performance"
       }
     ]
   }
