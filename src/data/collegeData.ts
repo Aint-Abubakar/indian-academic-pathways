@@ -1,4 +1,3 @@
-
 export interface State {
   id: string;
   name: string;
@@ -61,8 +60,9 @@ export interface FilterOptions {
   feeRange: string;
 }
 
-// Sample data for states
+// Complete data for all Indian states and union territories
 export const states: State[] = [
+  // Existing states
   {
     id: "maharashtra",
     name: "Maharashtra",
@@ -71,7 +71,7 @@ export const states: State[] = [
   {
     id: "delhi",
     name: "Delhi",
-    collegeCount: 12  // Updated count to include the new colleges
+    collegeCount: 12
   },
   {
     id: "tamil-nadu",
@@ -112,10 +112,141 @@ export const states: State[] = [
     id: "gujarat",
     name: "Gujarat",
     collegeCount: 4
+  },
+  // New states being added
+  {
+    id: "rajasthan",
+    name: "Rajasthan",
+    collegeCount: 8
+  },
+  {
+    id: "punjab",
+    name: "Punjab",
+    collegeCount: 6
+  },
+  {
+    id: "haryana",
+    name: "Haryana",
+    collegeCount: 5
+  },
+  {
+    id: "kerala",
+    name: "Kerala",
+    collegeCount: 7
+  },
+  {
+    id: "odisha",
+    name: "Odisha",
+    collegeCount: 4
+  },
+  {
+    id: "jharkhand",
+    name: "Jharkhand",
+    collegeCount: 3
+  },
+  {
+    id: "assam",
+    name: "Assam",
+    collegeCount: 4
+  },
+  {
+    id: "bihar",
+    name: "Bihar",
+    collegeCount: 5
+  },
+  {
+    id: "chhattisgarh",
+    name: "Chhattisgarh",
+    collegeCount: 3
+  },
+  {
+    id: "goa",
+    name: "Goa",
+    collegeCount: 2
+  },
+  {
+    id: "himachal-pradesh",
+    name: "Himachal Pradesh",
+    collegeCount: 4
+  },
+  {
+    id: "uttarakhand",
+    name: "Uttarakhand",
+    collegeCount: 3
+  },
+  {
+    id: "jammu-kashmir",
+    name: "Jammu & Kashmir",
+    collegeCount: 3
+  },
+  {
+    id: "manipur",
+    name: "Manipur",
+    collegeCount: 2
+  },
+  {
+    id: "meghalaya",
+    name: "Meghalaya",
+    collegeCount: 2
+  },
+  {
+    id: "mizoram",
+    name: "Mizoram",
+    collegeCount: 1
+  },
+  {
+    id: "nagaland",
+    name: "Nagaland",
+    collegeCount: 2
+  },
+  {
+    id: "sikkim",
+    name: "Sikkim",
+    collegeCount: 1
+  },
+  {
+    id: "tripura",
+    name: "Tripura",
+    collegeCount: 2
+  },
+  {
+    id: "arunachal-pradesh",
+    name: "Arunachal Pradesh",
+    collegeCount: 1
+  },
+  // Union Territories
+  {
+    id: "andaman-nicobar",
+    name: "Andaman & Nicobar Islands",
+    collegeCount: 1
+  },
+  {
+    id: "chandigarh",
+    name: "Chandigarh",
+    collegeCount: 3
+  },
+  {
+    id: "dadra-nagar-haveli",
+    name: "Dadra & Nagar Haveli and Daman & Diu",
+    collegeCount: 1
+  },
+  {
+    id: "lakshadweep",
+    name: "Lakshadweep",
+    collegeCount: 1
+  },
+  {
+    id: "puducherry",
+    name: "Puducherry",
+    collegeCount: 3
+  },
+  {
+    id: "ladakh",
+    name: "Ladakh",
+    collegeCount: 1
   }
 ];
 
-// Sample data for colleges
 export const colleges: College[] = [
   {
     id: "iit-bombay",
@@ -329,7 +460,7 @@ export const colleges: College[] = [
       }
     ]
   },
-    // Additional Delhi colleges 
+  // Additional Delhi colleges 
   {
     id: "jamia-millia",
     stateId: "delhi",
