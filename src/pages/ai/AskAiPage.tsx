@@ -9,9 +9,8 @@ import { useToast } from "@/hooks/use-toast";
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 import { InfoIcon } from "lucide-react";
 
-// Your Qwen 3 API key - Replace this with your actual API key
-// Important: You need to replace this with your valid Qwen API key
-const QWEN_API_KEY = "sk-or-v1-your-qwen-api-key-here";
+// Your Qwen 3 API key
+const QWEN_API_KEY = "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";
 
 const AskAiPage = () => {
   const [question, setQuestion] = useState("");
@@ -29,17 +28,6 @@ const AskAiPage = () => {
         title: "Empty Question",
         description: "Please enter a question to continue.",
       });
-      return;
-    }
-
-    // Check if the API key has been set properly
-    if (QWEN_API_KEY === "sk-or-v1-your-qwen-api-key-here") {
-      toast({
-        variant: "destructive",
-        title: "API Key Not Configured",
-        description: "Please set up your Qwen API key in the code to use this feature.",
-      });
-      setAnswer("Cannot process your request. The Qwen API key has not been configured yet.");
       return;
     }
 
@@ -93,12 +81,11 @@ const AskAiPage = () => {
   return (
     <PageLayout title="Ask AI Assistant">
       <div className="container max-w-4xl mx-auto pb-10">
-        <Alert variant="default" className="mb-6 border-nextstep-blue bg-nextstep-blue/10">
-          <InfoIcon className="h-4 w-4" />
-          <AlertTitle>Important Notice</AlertTitle>
-          <AlertDescription>
-            To use this feature, the site administrator needs to set up a valid Qwen API key in the code.
-            Until then, the AI assistant will not be able to respond to questions.
+        <Alert variant="default" className="mb-6 border-green-500 bg-green-50">
+          <InfoIcon className="h-4 w-4 text-green-600" />
+          <AlertTitle className="text-green-800">AI Assistant Ready</AlertTitle>
+          <AlertDescription className="text-green-700">
+            Your Qwen 3 AI assistant is now configured and ready to answer your educational questions!
           </AlertDescription>
         </Alert>
         
