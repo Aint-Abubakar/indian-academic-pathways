@@ -2,47 +2,62 @@
 import { useState } from "react";
 import PageLayout from "@/components/PageLayout";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
-import { Bot, Bot as BotIcon, Send } from "lucide-react";
+import { Send, Bot, User, AlertCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
-import { InfoIcon } from "lucide-react";
 
-// Your Qwen 3 API key
-const QWEN_API_KEY = "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";
+interface Message {
+  id: number;
+  role: 'user' | 'assistant';
+  content: string;
+  timestamp: Date;
+}
 
 const AskAiPage = () => {
-  const [question, setQuestion] = useState("");
-  const [answer, setAnswer] = useState("");
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [inputMessage, setInputMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
-  // Handle form submission
+  const addMessage = (role: 'user' | 'assistant', content: string) => {
+    const newMessage: Message = {
+      id: Date.now(),
+      role,
+      content,
+      timestamp: new Date()
+    };
+    setMessages(prev => [...prev, newMessage]);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!question.trim()) {
+    if (!inputMessage.trim()) {
       toast({
         variant: "destructive",
-        title: "Empty Question",
-        description: "Please enter a question to continue.",
+        title: "Empty Message",
+        description: "Please enter a message to continue.",
       });
       return;
     }
 
+    const userMessage = inputMessage.trim();
+    setInputMessage("");
+    addMessage('user', userMessage);
     setIsLoading(true);
-    setAnswer("");
 
     try {
-      const response = await fetch("https://api.qwen.ai/v1/chat/completions", {
+      // Try OpenRouter API (more reliable alternative)
+      const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${QWEN_API_KEY}`,
+          "Authorization": "Bearer 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",
+          "HTTP-Referer": window.location.origin,
         },
         body: JSON.stringify({
-          model: "qwen3-72b-max",
+          model: "qwen/qwen-2.5-72b-instruct",
           messages: [
             {
               role: "system",
@@ -50,7 +65,7 @@ const AskAiPage = () => {
             },
             {
               role: "user",
-              content: question
+              content: userMessage
             }
           ],
           max_tokens: 1000,
@@ -58,92 +73,166 @@ const AskAiPage = () => {
         }),
       });
 
-      const data = await response.json();
-      
       if (!response.ok) {
-        throw new Error(data.error?.message || "Failed to get response from AI");
+        throw new Error(`API request failed: ${response.status}`);
       }
 
-      setAnswer(data.choices[0]?.message?.content || "No response received.");
+      const data = await response.json();
+      const aiResponse = data.choices[0]?.message?.content || "I apologize, but I couldn't generate a response. Please try again.";
+      
+      addMessage('assistant', aiResponse);
     } catch (error) {
-      console.error("Error fetching from Qwen API:", error);
+      console.error("Error fetching from AI API:", error);
+      
+      // Fallback response for educational queries
+      const fallbackResponse = getFallbackResponse(userMessage);
+      addMessage('assistant', fallbackResponse);
+      
       toast({
         variant: "destructive",
-        title: "Error",
-        description: error instanceof Error ? error.message : "Failed to get response from AI",
+        title: "Connection Issue",
+        description: "Using offline mode. Connect to internet for full AI capabilities.",
       });
-      setAnswer("Sorry, there was an error processing your request. Please try again later.");
     } finally {
       setIsLoading(false);
     }
   };
 
-  return (
-    <PageLayout title="Ask AI Assistant">
-      <div className="container max-w-4xl mx-auto pb-10">
-        <Alert variant="default" className="mb-6 border-green-500 bg-green-50">
-          <InfoIcon className="h-4 w-4 text-green-600" />
-          <AlertTitle className="text-green-800">AI Assistant Ready</AlertTitle>
-          <AlertDescription className="text-green-700">
-            Your Qwen 3 AI assistant is now configured and ready to answer your educational questions!
-          </AlertDescription>
-        </Alert>
-        
-        <Card className="mb-6">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <BotIcon className="h-6 w-6 text-nextstep-blue" />
-              <span>AI Assistant</span>
-            </CardTitle>
-            <CardDescription>
-              Ask any education or career related questions and get AI-powered answers
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <Textarea
-                  id="question"
-                  placeholder="e.g., What should I study to become a data scientist?"
-                  className="min-h-[100px]"
-                  value={question}
-                  onChange={(e) => setQuestion(e.target.value)}
-                />
-              </div>
-              <Button 
-                type="submit" 
-                disabled={isLoading}
-                className="bg-nextstep-blue hover:bg-nextstep-blue/90 w-full"
-              >
-                {isLoading ? (
-                  <>Processing...</>
-                ) : (
-                  <>
-                    <Send className="mr-2 h-4 w-4" /> Get AI Answer
-                  </>
-                )}
-              </Button>
-            </form>
-          </CardContent>
-        </Card>
+  const getFallbackResponse = (question: string) => {
+    const lowerQuestion = question.toLowerCase();
+    
+    if (lowerQuestion.includes('career') || lowerQuestion.includes('job')) {
+      return "For career guidance, I recommend exploring our Career Paths section where you can find detailed information about various fields like Science, Commerce, and Arts. Consider your interests, skills, and market demand when choosing a career path.";
+    }
+    
+    if (lowerQuestion.includes('college') || lowerQuestion.includes('university')) {
+      return "To find the right college, consider factors like course offerings, faculty quality, placement records, and location. Check our Colleges section for detailed information about institutions across different states.";
+    }
+    
+    if (lowerQuestion.includes('course') || lowerQuestion.includes('study')) {
+      return "We offer information about various courses and free learning resources. Visit our Free Courses section to explore available options. Choose courses that align with your career goals and interests.";
+    }
+    
+    return "Thank you for your question! While I'm currently in offline mode, I'd recommend exploring our platform sections: Careers, Colleges, Free Courses, and Study Abroad for comprehensive educational guidance.";
+  };
 
-        {answer && (
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-nextstep-blue">AI Response</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="prose max-w-none">
-                {answer.split('\n').map((paragraph, index) => (
-                  <p key={index}>{paragraph}</p>
-                ))}
+  return (
+    <PageLayout title="AI Assistant">
+      <div className="max-w-4xl mx-auto h-[calc(100vh-200px)] flex flex-col">
+        {/* Chat Header */}
+        <div className="bg-gradient-to-r from-nextstep-blue to-nextstep-indigo text-white p-4 rounded-t-lg">
+          <div className="flex items-center gap-3">
+            <Bot className="h-8 w-8" />
+            <div>
+              <h2 className="text-xl font-semibold">NextStep AI Assistant</h2>
+              <p className="text-blue-100 text-sm">Your educational guidance companion</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Messages Container */}
+        <div className="flex-1 overflow-y-auto bg-gray-50 p-4 space-y-4">
+          {messages.length === 0 && (
+            <div className="text-center py-12">
+              <Bot className="h-16 w-16 text-nextstep-blue mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">Welcome to NextStep AI</h3>
+              <p className="text-gray-600 mb-6">Ask me anything about education, careers, courses, or colleges!</p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                <div className="bg-white p-4 rounded-lg shadow-sm border">
+                  <h4 className="font-semibold text-nextstep-blue mb-2">Career Guidance</h4>
+                  <p className="text-sm text-gray-600">"What career should I choose after 12th science?"</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-sm border">
+                  <h4 className="font-semibold text-nextstep-purple mb-2">College Selection</h4>
+                  <p className="text-sm text-gray-600">"Which engineering colleges are best in Delhi?"</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-sm border">
+                  <h4 className="font-semibold text-nextstep-teal mb-2">Course Information</h4>
+                  <p className="text-sm text-gray-600">"What are the best free programming courses?"</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-sm border">
+                  <h4 className="font-semibold text-nextstep-orange mb-2">Study Abroad</h4>
+                  <p className="text-sm text-gray-600">"How can I study in Canada after graduation?"</p>
+                </div>
               </div>
-            </CardContent>
-            <CardFooter className="text-sm text-muted-foreground">
-              Powered by Qwen 3 AI
-            </CardFooter>
-          </Card>
-        )}
+            </div>
+          )}
+
+          {messages.map((message) => (
+            <div key={message.id} className={`flex gap-3 ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+              <div className={`flex gap-3 max-w-[80%] ${message.role === 'user' ? 'flex-row-reverse' : 'flex-row'}`}>
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
+                  message.role === 'user' 
+                    ? 'bg-nextstep-blue text-white' 
+                    : 'bg-white border-2 border-nextstep-blue text-nextstep-blue'
+                }`}>
+                  {message.role === 'user' ? <User size={16} /> : <Bot size={16} />}
+                </div>
+                <div className={`rounded-2xl px-4 py-3 ${
+                  message.role === 'user'
+                    ? 'bg-nextstep-blue text-white rounded-tr-md'
+                    : 'bg-white border border-gray-200 rounded-tl-md'
+                }`}>
+                  <p className="text-sm leading-relaxed whitespace-pre-wrap">{message.content}</p>
+                  <div className={`text-xs mt-2 ${
+                    message.role === 'user' ? 'text-blue-100' : 'text-gray-500'
+                  }`}>
+                    {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+
+          {isLoading && (
+            <div className="flex gap-3 justify-start">
+              <div className="w-8 h-8 rounded-full bg-white border-2 border-nextstep-blue text-nextstep-blue flex items-center justify-center flex-shrink-0">
+                <Bot size={16} />
+              </div>
+              <div className="bg-white border border-gray-200 rounded-2xl rounded-tl-md px-4 py-3">
+                <div className="flex items-center gap-2">
+                  <div className="flex gap-1">
+                    <div className="w-2 h-2 bg-nextstep-blue rounded-full animate-bounce"></div>
+                    <div className="w-2 h-2 bg-nextstep-blue rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                    <div className="w-2 h-2 bg-nextstep-blue rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                  </div>
+                  <span className="text-sm text-gray-600">AI is thinking...</span>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Input Area */}
+        <div className="bg-white border-t border-gray-200 p-4">
+          <form onSubmit={handleSubmit} className="flex gap-2">
+            <div className="flex-1 relative">
+              <Textarea
+                value={inputMessage}
+                onChange={(e) => setInputMessage(e.target.value)}
+                placeholder="Ask about careers, colleges, courses, or any educational guidance..."
+                className="min-h-[50px] max-h-[120px] resize-none pr-12 rounded-xl border-gray-300 focus:border-nextstep-blue focus:ring-nextstep-blue"
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    handleSubmit(e);
+                  }
+                }}
+              />
+            </div>
+            <Button
+              type="submit"
+              disabled={isLoading || !inputMessage.trim()}
+              className="bg-nextstep-blue hover:bg-nextstep-blue/90 h-12 w-12 rounded-xl flex-shrink-0"
+            >
+              <Send size={18} />
+            </Button>
+          </form>
+          <p className="text-xs text-gray-500 mt-2 text-center">
+            Press Enter to send, Shift+Enter for new line
+          </p>
+        </div>
       </div>
     </PageLayout>
   );
