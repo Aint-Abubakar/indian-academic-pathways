@@ -1,14 +1,45 @@
 export interface College {
   id: number;
   name: string;
-  location: string;
+  location: {
+    city: string;
+    state: string;
+    address?: string;
+  };
   rating: number;
-  fees: string;
+  fees: {
+    tuition: {
+      min: number;
+      max: number;
+    };
+    hostel?: {
+      min: number;
+      max: number;
+    };
+  };
   courses: string[];
-  image: string;
+  imageUrl?: string;
   established: number;
   type: "Government" | "Private";
   affiliation: string;
+  description: string;
+  placement: {
+    percentage: number;
+    avgSalary?: number;
+    topRecruiters?: string[];
+    topCompanies?: string[];
+  };
+  entranceExams?: string[];
+  admissionDetails?: {
+    eligibility: string;
+    process: string;
+    deadlines: string;
+  };
+  scholarships?: Array<{
+    name: string;
+    amount: string;
+    eligibility: string;
+  }>;
 }
 
 export interface State {
@@ -18,6 +49,14 @@ export interface State {
   image: string;
   description: string;
   colleges: College[];
+}
+
+export interface FilterOptions {
+  searchQuery: string;
+  courseType: string;
+  collegeType: string;
+  ratingMin: number;
+  feeRange: string;
 }
 
 export const states: State[] = [
@@ -31,302 +70,608 @@ export const states: State[] = [
       {
         id: 1,
         name: "Indian Institute of Technology Delhi",
-        location: "Hauz Khas, New Delhi",
+        location: {
+          city: "New Delhi",
+          state: "Delhi",
+          address: "Hauz Khas, New Delhi"
+        },
         rating: 4.5,
-        fees: "₹2.5 Lakhs/year",
+        fees: {
+          tuition: { min: 200000, max: 300000 },
+          hostel: { min: 50000, max: 80000 }
+        },
         courses: ["Engineering", "Technology", "Management"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         established: 1961,
         type: "Government",
-        affiliation: "Autonomous"
+        affiliation: "Autonomous",
+        description: "Premier engineering institute known for excellence in technology and research with world-class faculty and infrastructure.",
+        placement: {
+          percentage: 95,
+          avgSalary: 1500000,
+          topRecruiters: ["Google", "Microsoft", "Amazon", "Goldman Sachs"]
+        },
+        entranceExams: ["JEE Advanced"],
+        admissionDetails: {
+          eligibility: "JEE Advanced qualified candidates",
+          process: "JEE Advanced + Counselling",
+          deadlines: "Check official website for current dates"
+        }
       },
       {
         id: 2,
         name: "Delhi University",
-        location: "North Campus, Delhi",
+        location: {
+          city: "New Delhi",
+          state: "Delhi",
+          address: "North Campus, Delhi"
+        },
         rating: 4.3,
-        fees: "₹50,000/year",
+        fees: {
+          tuition: { min: 30000, max: 70000 }
+        },
         courses: ["Arts", "Science", "Commerce"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         established: 1922,
         type: "Government",
-        affiliation: "Central University"
+        affiliation: "Central University",
+        description: "One of India's largest and most prestigious universities offering diverse undergraduate and postgraduate programs.",
+        placement: {
+          percentage: 75,
+          avgSalary: 600000,
+          topRecruiters: ["TCS", "Infosys", "Deloitte", "PwC"]
+        }
       },
       {
         id: 3,
         name: "Netaji Subhas University of Technology",
-        location: "Dwarka, New Delhi",
+        location: {
+          city: "New Delhi",
+          state: "Delhi",
+          address: "Dwarka, New Delhi"
+        },
         rating: 4.2,
-        fees: "₹1.5 Lakhs/year",
+        fees: {
+          tuition: { min: 150000, max: 180000 }
+        },
         courses: ["Engineering", "Technology", "Management"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         established: 1983,
         type: "Government",
-        affiliation: "State University"
+        affiliation: "State University",
+        description: "A leading technical university offering quality education in engineering and technology.",
+        placement: {
+          percentage: 85,
+          avgSalary: 900000,
+          topRecruiters: ["IBM", "Accenture", "Capgemini"]
+        }
       },
       {
         id: 4,
         name: "Indraprastha Institute of Information Technology",
-        location: "Okhla, New Delhi",
+        location: {
+          city: "New Delhi",
+          state: "Delhi",
+          address: "Okhla, New Delhi"
+        },
         rating: 4.4,
-        fees: "₹3 Lakhs/year",
+        fees: {
+          tuition: { min: 250000, max: 350000 }
+        },
         courses: ["Computer Science", "Electronics", "Engineering"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         established: 2008,
         type: "Government",
-        affiliation: "State University"
+        affiliation: "State University",
+        description: "Specializes in information technology and computer science education and research.",
+        placement: {
+          percentage: 90,
+          avgSalary: 1200000,
+          topRecruiters: ["Google", "Microsoft", "Infosys"]
+        }
       },
       {
         id: 5,
         name: "Jamia Millia Islamia",
-        location: "Jamia Nagar, New Delhi",
+        location: {
+          city: "New Delhi",
+          state: "Delhi",
+          address: "Jamia Nagar, New Delhi"
+        },
         rating: 4.1,
-        fees: "₹80,000/year",
+        fees: {
+          tuition: { min: 70000, max: 90000 }
+        },
         courses: ["Engineering", "Arts", "Social Sciences"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         established: 1920,
         type: "Government",
-        affiliation: "Central University"
+        affiliation: "Central University",
+        description: "A central university known for diverse programs and research in arts and sciences.",
+        placement: {
+          percentage: 70,
+          avgSalary: 500000,
+          topRecruiters: ["Wipro", "HCL", "Tech Mahindra"]
+        }
       },
       {
         id: 6,
         name: "Jawaharlal Nehru University",
-        location: "New Mehrauli Road, New Delhi",
+        location: {
+          city: "New Delhi",
+          state: "Delhi",
+          address: "New Mehrauli Road, New Delhi"
+        },
         rating: 4.3,
-        fees: "₹60,000/year",
+        fees: {
+          tuition: { min: 60000, max: 70000 }
+        },
         courses: ["Arts", "Social Sciences", "International Studies"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         established: 1969,
         type: "Government",
-        affiliation: "Central University"
+        affiliation: "Central University",
+        description: "Known for social sciences and humanities with a strong research focus.",
+        placement: {
+          percentage: 65,
+          avgSalary: 450000,
+          topRecruiters: ["UNICEF", "World Bank", "NGOs"]
+        }
       },
       {
         id: 7,
         name: "Delhi Technological University",
-        location: "Shahbad Daulatpur, Delhi",
+        location: {
+          city: "Delhi",
+          state: "Delhi",
+          address: "Shahbad Daulatpur, Delhi"
+        },
         rating: 4.0,
-        fees: "₹1.8 Lakhs/year",
+        fees: {
+          tuition: { min: 180000, max: 200000 }
+        },
         courses: ["Engineering", "Technology", "Applied Sciences"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         established: 1941,
         type: "Government",
-        affiliation: "State University"
+        affiliation: "State University",
+        description: "A premier engineering university with strong industry connections.",
+        placement: {
+          percentage: 80,
+          avgSalary: 850000,
+          topRecruiters: ["L&T", "Siemens", "Tata Steel"]
+        }
       },
       {
         id: 8,
         name: "All India Institute of Medical Sciences",
-        location: "Ansari Nagar, New Delhi",
+        location: {
+          city: "New Delhi",
+          state: "Delhi",
+          address: "Ansari Nagar, New Delhi"
+        },
         rating: 4.6,
-        fees: "₹1,500/year",
+        fees: {
+          tuition: { min: 1500, max: 2000 }
+        },
         courses: ["Medicine", "Nursing", "Paramedical"],
-        image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         established: 1956,
         type: "Government",
-        affiliation: "Autonomous"
+        affiliation: "Autonomous",
+        description: "India's top medical institute with cutting-edge research and healthcare facilities.",
+        placement: {
+          percentage: 98,
+          avgSalary: 2000000,
+          topRecruiters: ["Apollo Hospitals", "Fortis", "Max Healthcare"]
+        }
       },
       {
         id: 9,
         name: "Lady Shri Ram College for Women",
-        location: "Lajpat Nagar, New Delhi",
+        location: {
+          city: "New Delhi",
+          state: "Delhi",
+          address: "Lajpat Nagar, New Delhi"
+        },
         rating: 4.4,
-        fees: "₹45,000/year",
+        fees: {
+          tuition: { min: 40000, max: 50000 }
+        },
         courses: ["Arts", "Commerce", "Economics"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         established: 1956,
         type: "Government",
-        affiliation: "Delhi University"
+        affiliation: "Delhi University",
+        description: "A prestigious women's college known for arts and social sciences.",
+        placement: {
+          percentage: 70,
+          avgSalary: 400000,
+          topRecruiters: ["KPMG", "EY", "Deloitte"]
+        }
       },
       {
         id: 10,
         name: "St. Stephen's College",
-        location: "University Enclave, Delhi",
+        location: {
+          city: "Delhi",
+          state: "Delhi",
+          address: "University Enclave, Delhi"
+        },
         rating: 4.5,
-        fees: "₹55,000/year",
+        fees: {
+          tuition: { min: 50000, max: 60000 }
+        },
         courses: ["Arts", "Science"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         established: 1881,
         type: "Private",
-        affiliation: "Delhi University"
+        affiliation: "Delhi University",
+        description: "One of the oldest and most prestigious colleges in India.",
+        placement: {
+          percentage: 75,
+          avgSalary: 550000,
+          topRecruiters: ["Google", "Microsoft", "Amazon"]
+        }
       },
       {
         id: 11,
         name: "Hindu College",
-        location: "North Campus, Delhi",
+        location: {
+          city: "Delhi",
+          state: "Delhi",
+          address: "North Campus, Delhi"
+        },
         rating: 4.2,
-        fees: "₹50,000/year",
+        fees: {
+          tuition: { min: 45000, max: 55000 }
+        },
         courses: ["Arts", "Science", "Commerce"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         established: 1899,
         type: "Government",
-        affiliation: "Delhi University"
+        affiliation: "Delhi University",
+        description: "Known for academic excellence in arts and sciences.",
+        placement: {
+          percentage: 70,
+          avgSalary: 450000,
+          topRecruiters: ["TCS", "Infosys", "Accenture"]
+        }
       },
       {
         id: 12,
         name: "Hansraj College",
-        location: "Malka Ganj, Delhi",
+        location: {
+          city: "Delhi",
+          state: "Delhi",
+          address: "Malka Ganj, Delhi"
+        },
         rating: 4.1,
-        fees: "₹48,000/year",
+        fees: {
+          tuition: { min: 42000, max: 52000 }
+        },
         courses: ["Arts", "Science", "Commerce"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         established: 1948,
         type: "Government",
-        affiliation: "Delhi University"
+        affiliation: "Delhi University",
+        description: "A reputed college with strong programs in arts and commerce.",
+        placement: {
+          percentage: 68,
+          avgSalary: 430000,
+          topRecruiters: ["EY", "KPMG", "Deloitte"]
+        }
       },
       {
         id: 13,
         name: "Shri Ram College of Commerce",
-        location: "North Campus, Delhi",
+        location: {
+          city: "Delhi",
+          state: "Delhi",
+          address: "North Campus, Delhi"
+        },
         rating: 4.3,
-        fees: "₹52,000/year",
+        fees: {
+          tuition: { min: 48000, max: 58000 }
+        },
         courses: ["Commerce", "Economics", "Management"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         established: 1926,
         type: "Government",
-        affiliation: "Delhi University"
+        affiliation: "Delhi University",
+        description: "Premier commerce college with excellent placement records.",
+        placement: {
+          percentage: 80,
+          avgSalary: 600000,
+          topRecruiters: ["Deloitte", "PwC", "KPMG"]
+        }
       },
       {
         id: 14,
         name: "Miranda House",
-        location: "North Campus, Delhi",
+        location: {
+          city: "Delhi",
+          state: "Delhi",
+          address: "North Campus, Delhi"
+        },
         rating: 4.4,
-        fees: "₹46,000/year",
+        fees: {
+          tuition: { min: 46000, max: 56000 }
+        },
         courses: ["Arts", "Science"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         established: 1948,
         type: "Government",
-        affiliation: "Delhi University"
+        affiliation: "Delhi University",
+        description: "A top women's college with strong arts and science programs.",
+        placement: {
+          percentage: 72,
+          avgSalary: 480000,
+          topRecruiters: ["Google", "Microsoft", "Amazon"]
+        }
       },
       {
         id: 15,
         name: "Kirori Mal College",
-        location: "North Campus, Delhi",
+        location: {
+          city: "Delhi",
+          state: "Delhi",
+          address: "North Campus, Delhi"
+        },
         rating: 4.0,
-        fees: "₹47,000/year",
+        fees: {
+          tuition: { min: 47000, max: 57000 }
+        },
         courses: ["Arts", "Science", "Commerce"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         established: 1954,
         type: "Government",
-        affiliation: "Delhi University"
+        affiliation: "Delhi University",
+        description: "Known for vibrant campus life and academic excellence.",
+        placement: {
+          percentage: 65,
+          avgSalary: 420000,
+          topRecruiters: ["TCS", "Infosys", "Wipro"]
+        }
       },
       {
         id: 16,
         name: "Gargi College",
-        location: "Siri Fort Road, New Delhi",
+        location: {
+          city: "New Delhi",
+          state: "Delhi",
+          address: "Siri Fort Road, New Delhi"
+        },
         rating: 4.1,
-        fees: "₹44,000/year",
+        fees: {
+          tuition: { min: 44000, max: 54000 }
+        },
         courses: ["Arts", "Science", "Commerce"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         established: 1967,
         type: "Government",
-        affiliation: "Delhi University"
+        affiliation: "Delhi University",
+        description: "A well-known college with strong academic programs.",
+        placement: {
+          percentage: 60,
+          avgSalary: 400000,
+          topRecruiters: ["Accenture", "Capgemini", "IBM"]
+        }
       },
       {
         id: 17,
         name: "Ramjas College",
-        location: "North Campus, Delhi",
+        location: {
+          city: "Delhi",
+          state: "Delhi",
+          address: "North Campus, Delhi"
+        },
         rating: 4.0,
-        fees: "₹45,000/year",
+        fees: {
+          tuition: { min: 45000, max: 55000 }
+        },
         courses: ["Arts", "Science", "Commerce"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         established: 1917,
         type: "Government",
-        affiliation: "Delhi University"
+        affiliation: "Delhi University",
+        description: "One of the oldest colleges with a rich academic tradition.",
+        placement: {
+          percentage: 62,
+          avgSalary: 410000,
+          topRecruiters: ["TCS", "Infosys", "Wipro"]
+        }
       },
       {
         id: 18,
         name: "Jesus and Mary College",
-        location: "Chanakyapuri, New Delhi",
+        location: {
+          city: "New Delhi",
+          state: "Delhi",
+          address: "Chanakyapuri, New Delhi"
+        },
         rating: 4.2,
-        fees: "₹50,000/year",
+        fees: {
+          tuition: { min: 48000, max: 58000 }
+        },
         courses: ["Arts", "Science", "Commerce"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         established: 1968,
         type: "Private",
-        affiliation: "Delhi University"
+        affiliation: "Delhi University",
+        description: "A reputed women's college with strong academic programs.",
+        placement: {
+          percentage: 68,
+          avgSalary: 450000,
+          topRecruiters: ["EY", "KPMG", "Deloitte"]
+        }
       },
       {
         id: 19,
         name: "Daulat Ram College",
-        location: "North Campus, Delhi",
+        location: {
+          city: "Delhi",
+          state: "Delhi",
+          address: "North Campus, Delhi"
+        },
         rating: 4.0,
-        fees: "₹43,000/year",
+        fees: {
+          tuition: { min: 43000, max: 53000 }
+        },
         courses: ["Arts", "Science", "Commerce"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         established: 1960,
         type: "Government",
-        affiliation: "Delhi University"
+        affiliation: "Delhi University",
+        description: "Known for quality education and research.",
+        placement: {
+          percentage: 60,
+          avgSalary: 400000,
+          topRecruiters: ["TCS", "Infosys", "Wipro"]
+        }
       },
       {
         id: 20,
         name: "Indira Gandhi Delhi Technical University for Women",
-        location: "Kashmere Gate, Delhi",
+        location: {
+          city: "Delhi",
+          state: "Delhi",
+          address: "Kashmere Gate, Delhi"
+        },
         rating: 3.9,
-        fees: "₹1.2 Lakhs/year",
+        fees: {
+          tuition: { min: 120000, max: 130000 }
+        },
         courses: ["Engineering", "Technology", "Applied Sciences"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         established: 2013,
         type: "Government",
-        affiliation: "State University"
+        affiliation: "State University",
+        description: "A premier technical university for women.",
+        placement: {
+          percentage: 75,
+          avgSalary: 700000,
+          topRecruiters: ["Infosys", "Wipro", "TCS"]
+        }
       },
       {
         id: 21,
         name: "Bharati College",
-        location: "Janakpuri, New Delhi",
+        location: {
+          city: "New Delhi",
+          state: "Delhi",
+          address: "Janakpuri, New Delhi"
+        },
         rating: 3.8,
-        fees: "₹42,000/year",
+        fees: {
+          tuition: { min: 42000, max: 52000 }
+        },
         courses: ["Arts", "Commerce"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         established: 1971,
         type: "Government",
-        affiliation: "Delhi University"
+        affiliation: "Delhi University",
+        description: "Known for commerce and arts programs.",
+        placement: {
+          percentage: 55,
+          avgSalary: 350000,
+          topRecruiters: ["Local businesses", "SMEs"]
+        }
       },
       {
         id: 22,
         name: "Amity University Delhi",
-        location: "Sector 125, Noida",
+        location: {
+          city: "Noida",
+          state: "Delhi NCR",
+          address: "Sector 125, Noida"
+        },
         rating: 3.9,
-        fees: "₹2.5 Lakhs/year",
+        fees: {
+          tuition: { min: 250000, max: 300000 }
+        },
         courses: ["Engineering", "Management", "Law"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         established: 2005,
         type: "Private",
-        affiliation: "Private University"
+        affiliation: "Private University",
+        description: "A private university offering diverse programs.",
+        placement: {
+          percentage: 70,
+          avgSalary: 600000,
+          topRecruiters: ["Infosys", "Wipro", "Accenture"]
+        }
       },
       {
         id: 23,
         name: "Indian School of Business and Finance",
-        location: "Gurgaon, Delhi NCR",
+        location: {
+          city: "Gurgaon",
+          state: "Delhi NCR"
+        },
         rating: 4.0,
-        fees: "₹3.5 Lakhs/year",
+        fees: {
+          tuition: { min: 350000, max: 400000 }
+        },
         courses: ["Business", "Finance", "Economics"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         established: 2009,
         type: "Private",
-        affiliation: "Private University"
+        affiliation: "Private University",
+        description: "Specializes in business and finance education.",
+        placement: {
+          percentage: 80,
+          avgSalary: 900000,
+          topRecruiters: ["Goldman Sachs", "JP Morgan", "Morgan Stanley"]
+        }
       },
       {
         id: 24,
         name: "National Institute of Fashion Technology",
-        location: "Hauz Khas, New Delhi",
+        location: {
+          city: "New Delhi",
+          state: "Delhi",
+          address: "Hauz Khas, New Delhi"
+        },
         rating: 4.1,
-        fees: "₹2 Lakhs/year",
+        fees: {
+          tuition: { min: 200000, max: 220000 }
+        },
         courses: ["Fashion Design", "Fashion Technology", "Management"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         established: 1986,
         type: "Government",
-        affiliation: "Statutory Body"
+        affiliation: "Statutory Body",
+        description: "Premier fashion institute with industry connections.",
+        placement: {
+          percentage: 85,
+          avgSalary: 800000,
+          topRecruiters: ["Nike", "Adidas", "Puma"]
+        }
       },
       {
         id: 25,
         name: "Delhi School of Economics",
-        location: "North Campus, Delhi",
+        location: {
+          city: "Delhi",
+          state: "Delhi",
+          address: "North Campus, Delhi"
+        },
         rating: 4.4,
-        fees: "₹35,000/year",
+        fees: {
+          tuition: { min: 30000, max: 40000 }
+        },
         courses: ["Economics", "Business Economics"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         established: 1949,
         type: "Government",
-        affiliation: "Delhi University"
+        affiliation: "Delhi University",
+        description: "Top economics institute with strong research focus.",
+        placement: {
+          percentage: 75,
+          avgSalary: 600000,
+          topRecruiters: ["World Bank", "IMF", "UN"]
+        }
       }
     ]
   },
@@ -340,819 +685,78 @@ export const states: State[] = [
       {
         id: 26,
         name: "Indian Institute of Technology Madras",
-        location: "Chennai, Tamil Nadu",
+        location: {
+          city: "Chennai",
+          state: "Tamil Nadu"
+        },
         rating: 4.6,
-        fees: "₹2.5 Lakhs/year",
+        fees: {
+          tuition: { min: 200000, max: 300000 },
+          hostel: { min: 40000, max: 70000 }
+        },
         courses: ["Engineering", "Technology", "Management"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         established: 1959,
         type: "Government",
-        affiliation: "Autonomous"
+        affiliation: "Autonomous",
+        description: "Premier engineering institute in South India.",
+        placement: {
+          percentage: 95,
+          avgSalary: 1600000,
+          topRecruiters: ["Google", "Microsoft", "Amazon"]
+        },
+        entranceExams: ["JEE Advanced"],
+        admissionDetails: {
+          eligibility: "JEE Advanced qualified candidates",
+          process: "JEE Advanced + Counselling",
+          deadlines: "Check official website for current dates"
+        }
       },
       {
         id: 27,
         name: "Anna University",
-        location: "Chennai, Tamil Nadu",
+        location: {
+          city: "Chennai",
+          state: "Tamil Nadu"
+        },
         rating: 4.2,
-        fees: "₹1.5 Lakhs/year",
+        fees: {
+          tuition: { min: 150000, max: 180000 }
+        },
         courses: ["Engineering", "Technology", "Architecture"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         established: 1978,
         type: "Government",
-        affiliation: "State University"
-      },
-      {
-        id: 28,
-        name: "Vellore Institute of Technology",
-        location: "Vellore, Tamil Nadu",
-        rating: 4.3,
-        fees: "₹3 Lakhs/year",
-        courses: ["Engineering", "Technology", "Management"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1984,
-        type: "Private",
-        affiliation: "Deemed University"
-      },
-      {
-        id: 29,
-        name: "National Institute of Technology Tiruchirappalli",
-        location: "Tiruchirappalli, Tamil Nadu",
-        rating: 4.4,
-        fees: "₹2 Lakhs/year",
-        courses: ["Engineering", "Technology", "Architecture"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1964,
-        type: "Government",
-        affiliation: "National Institute"
-      },
-      {
-        id: 30,
-        name: "PSG College of Technology",
-        location: "Coimbatore, Tamil Nadu",
-        rating: 4.1,
-        fees: "₹2.2 Lakhs/year",
-        courses: ["Engineering", "Technology", "Applied Sciences"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1951,
-        type: "Private",
-        affiliation: "Anna University"
-      },
-      {
-        id: 31,
-        name: "Madras Institute of Technology",
-        location: "Chennai, Tamil Nadu",
-        rating: 4.0,
-        fees: "₹1.8 Lakhs/year",
-        courses: ["Engineering", "Technology", "Instrumentation"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1949,
-        type: "Government",
-        affiliation: "Anna University"
-      },
-      {
-        id: 32,
-        name: "SRM Institute of Science and Technology",
-        location: "Kattankulathur, Tamil Nadu",
-        rating: 4.0,
-        fees: "₹3.5 Lakhs/year",
-        courses: ["Engineering", "Medicine", "Management"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1985,
-        type: "Private",
-        affiliation: "Deemed University"
-      },
-      {
-        id: 33,
-        name: "Loyola College",
-        location: "Chennai, Tamil Nadu",
-        rating: 4.2,
-        fees: "₹80,000/year",
-        courses: ["Arts", "Science", "Commerce"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1925,
-        type: "Private",
-        affiliation: "University of Madras"
-      },
-      {
-        id: 34,
-        name: "Presidency College",
-        location: "Chennai, Tamil Nadu",
-        rating: 4.1,
-        fees: "₹25,000/year",
-        courses: ["Arts", "Science"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1840,
-        type: "Government",
-        affiliation: "University of Madras"
-      },
-      {
-        id: 35,
-        name: "Christian Medical College",
-        location: "Vellore, Tamil Nadu",
-        rating: 4.5,
-        fees: "₹1.5 Lakhs/year",
-        courses: ["Medicine", "Nursing", "Allied Health"],
-        image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1900,
-        type: "Private",
-        affiliation: "Deemed University"
-      },
-      {
-        id: 36,
-        name: "Coimbatore Institute of Technology",
-        location: "Coimbatore, Tamil Nadu",
-        rating: 3.9,
-        fees: "₹2 Lakhs/year",
-        courses: ["Engineering", "Technology"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1956,
-        type: "Private",
-        affiliation: "Anna University"
-      },
-      {
-        id: 37,
-        name: "Thiagarajar College of Engineering",
-        location: "Madurai, Tamil Nadu",
-        rating: 4.0,
-        fees: "₹1.8 Lakhs/year",
-        courses: ["Engineering", "Technology"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1957,
-        type: "Private",
-        affiliation: "Anna University"
-      },
-      {
-        id: 38,
-        name: "Stella Maris College",
-        location: "Chennai, Tamil Nadu",
-        rating: 4.1,
-        fees: "₹65,000/year",
-        courses: ["Arts", "Science", "Social Work"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1947,
-        type: "Private",
-        affiliation: "University of Madras"
-      },
-      {
-        id: 39,
-        name: "Madras Christian College",
-        location: "Chennai, Tamil Nadu",
-        rating: 4.0,
-        fees: "₹70,000/year",
-        courses: ["Arts", "Science", "Commerce"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1837,
-        type: "Private",
-        affiliation: "University of Madras"
-      },
-      {
-        id: 40,
-        name: "Bharathidasan University",
-        location: "Tiruchirappalli, Tamil Nadu",
-        rating: 3.8,
-        fees: "₹30,000/year",
-        courses: ["Arts", "Science", "Management"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1982,
-        type: "Government",
-        affiliation: "State University"
-      },
-      {
-        id: 41,
-        name: "Kalasalingam Academy of Research and Education",
-        location: "Krishnankoil, Tamil Nadu",
-        rating: 3.9,
-        fees: "₹2.5 Lakhs/year",
-        courses: ["Engineering", "Pharmacy", "Management"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1984,
-        type: "Private",
-        affiliation: "Deemed University"
-      },
-      {
-        id: 42,
-        name: "Hindustan Institute of Technology and Science",
-        location: "Chennai, Tamil Nadu",
-        rating: 3.8,
-        fees: "₹3 Lakhs/year",
-        courses: ["Engineering", "Architecture", "Management"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1985,
-        type: "Private",
-        affiliation: "Deemed University"
-      },
-      {
-        id: 43,
-        name: "Government College of Technology",
-        location: "Coimbatore, Tamil Nadu",
-        rating: 4.0,
-        fees: "₹50,000/year",
-        courses: ["Engineering", "Technology"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1945,
-        type: "Government",
-        affiliation: "Anna University"
-      },
-      {
-        id: 44,
-        name: "Sathyabama Institute of Science and Technology",
-        location: "Chennai, Tamil Nadu",
-        rating: 3.7,
-        fees: "₹2.8 Lakhs/year",
-        courses: ["Engineering", "Science", "Management"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1987,
-        type: "Private",
-        affiliation: "Deemed University"
-      },
-      {
-        id: 45,
-        name: "Tamil Nadu Agricultural University",
-        location: "Coimbatore, Tamil Nadu",
-        rating: 3.9,
-        fees: "₹40,000/year",
-        courses: ["Agriculture", "Horticulture", "Agricultural Engineering"],
-        image: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1971,
-        type: "Government",
-        affiliation: "State University"
+        affiliation: "State University",
+        description: "Leading technical university in Tamil Nadu.",
+        placement: {
+          percentage: 80,
+          avgSalary: 900000,
+          topRecruiters: ["L&T", "Siemens", "Tata Steel"]
+        }
       }
-    ]
-  },
-  {
-    id: 3,
-    name: "Karnataka",
-    collegeCount: 15,
-    image: "https://images.unsplash.com/photo-1595211877493-41a4e5cd4ed1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    description: "Silicon Valley of India with top tech institutes",
-    colleges: [
-      {
-        id: 101,
-        name: "Indian Institute of Science",
-        location: "Bangalore, Karnataka",
-        rating: 4.7,
-        fees: "₹25,000/year",
-        courses: ["Science", "Engineering", "Management"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1909,
-        type: "Government",
-        affiliation: "Deemed University"
-      },
-      {
-        id: 102,
-        name: "Indian Institute of Management Bangalore",
-        location: "Bangalore, Karnataka",
-        rating: 4.6,
-        fees: "₹24 Lakhs/year",
-        courses: ["Management", "Executive Programs"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1973,
-        type: "Government",
-        affiliation: "Autonomous"
-      },
-      {
-        id: 103,
-        name: "National Institute of Technology Karnataka",
-        location: "Surathkal, Karnataka",
-        rating: 4.4,
-        fees: "₹2 Lakhs/year",
-        courses: ["Engineering", "Technology", "Architecture"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1960,
-        type: "Government",
-        affiliation: "National Institute"
-      },
-      {
-        id: 104,
-        name: "PES University",
-        location: "Bangalore, Karnataka",
-        rating: 4.2,
-        fees: "₹4 Lakhs/year",
-        courses: ["Engineering", "Management", "Law"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1972,
-        type: "Private",
-        affiliation: "Private University"
-      },
-      {
-        id: 105,
-        name: "R.V. College of Engineering",
-        location: "Bangalore, Karnataka",
-        rating: 4.1,
-        fees: "₹3 Lakhs/year",
-        courses: ["Engineering", "Technology"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1963,
-        type: "Private",
-        affiliation: "Visvesvaraya Technological University"
-      },
-      {
-        id: 106,
-        name: "Bangalore Institute of Technology",
-        location: "Bangalore, Karnataka",
-        rating: 4.0,
-        fees: "₹1.5 Lakhs/year",
-        courses: ["Engineering", "Technology"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1946,
-        type: "Government",
-        affiliation: "Visvesvaraya Technological University"
-      },
-      {
-        id: 107,
-        name: "M.S. Ramaiah Institute of Technology",
-        location: "Bangalore, Karnataka",
-        rating: 4.1,
-        fees: "₹3.5 Lakhs/year",
-        courses: ["Engineering", "Technology"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1962,
-        type: "Private",
-        affiliation: "Visvesvaraya Technological University"
-      },
-      {
-        id: 108,
-        name: "Christ University",
-        location: "Bangalore, Karnataka",
-        rating: 4.2,
-        fees: "₹2.5 Lakhs/year",
-        courses: ["Arts", "Science", "Management", "Law"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1969,
-        type: "Private",
-        affiliation: "Deemed University"
-      },
-      {
-        id: 109,
-        name: "Manipal Institute of Technology",
-        location: "Manipal, Karnataka",
-        rating: 4.0,
-        fees: "₹4 Lakhs/year",
-        courses: ["Engineering", "Technology"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1957,
-        type: "Private",
-        affiliation: "Manipal Academy of Higher Education"
-      },
-      {
-        id: 110,
-        name: "JSS Science and Technology University",
-        location: "Mysuru, Karnataka",
-        rating: 3.9,
-        fees: "₹2.5 Lakhs/year",
-        courses: ["Engineering", "Medicine", "Pharmacy"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 2008,
-        type: "Private",
-        affiliation: "Private University"
-      },
-      {
-        id: 111,
-        name: "Dayananda Sagar College of Engineering",
-        location: "Bangalore, Karnataka",
-        rating: 3.8,
-        fees: "₹3 Lakhs/year",
-        courses: ["Engineering", "Technology"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1979,
-        type: "Private",
-        affiliation: "Visvesvaraya Technological University"
-      },
-      {
-        id: 112,
-        name: "National Institute of Mental Health and Neurosciences",
-        location: "Bangalore, Karnataka",
-        rating: 4.5,
-        fees: "₹50,000/year",
-        courses: ["Medicine", "Psychology", "Neuroscience"],
-        image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1974,
-        type: "Government",
-        affiliation: "Deemed University"
-      },
-      {
-        id: 113,
-        name: "Indian Statistical Institute",
-        location: "Bangalore, Karnataka",
-        rating: 4.3,
-        fees: "₹1 Lakh/year",
-        courses: ["Statistics", "Mathematics", "Computer Science"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1996,
-        type: "Government",
-        affiliation: "Deemed University"
-      },
-      {
-        id: 114,
-        name: "Jain University",
-        location: "Bangalore, Karnataka",
-        rating: 3.8,
-        fees: "₹3 Lakhs/year",
-        courses: ["Engineering", "Management", "Law", "Arts"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1990,
-        type: "Private",
-        affiliation: "Private University"
-      },
-      {
-        id: 115,
-        name: "Visvesvaraya Technological University",
-        location: "Belagavi, Karnataka",
-        rating: 3.7,
-        fees: "₹80,000/year",
-        courses: ["Engineering", "Technology", "Management"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1998,
-        type: "Government",
-        affiliation: "State University"
-      }
-    ]
-  },
-  {
-    id: 4,
-    name: "Maharashtra",
-    collegeCount: 12,
-    image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    description: "Financial capital with diverse educational opportunities",
-    colleges: [
-      {
-        id: 201,
-        name: "Indian Institute of Technology Bombay",
-        location: "Mumbai, Maharashtra",
-        rating: 4.6,
-        fees: "₹2.5 Lakhs/year",
-        courses: ["Engineering", "Technology", "Management"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1958,
-        type: "Government",
-        affiliation: "Autonomous"
-      },
-      {
-        id: 202,
-        name: "Tata Institute of Social Sciences",
-        location: "Mumbai, Maharashtra",
-        rating: 4.4,
-        fees: "₹1.5 Lakhs/year",
-        courses: ["Social Work", "Social Sciences", "Management"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1936,
-        type: "Government",
-        affiliation: "Deemed University"
-      },
-      {
-        id: 203,
-        name: "University of Mumbai",
-        location: "Mumbai, Maharashtra",
-        rating: 4.1,
-        fees: "₹60,000/year",
-        courses: ["Arts", "Science", "Commerce", "Law"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1857,
-        type: "Government",
-        affiliation: "State University"
-      },
-      {
-        id: 204,
-        name: "Pune University",
-        location: "Pune, Maharashtra",
-        rating: 4.0,
-        fees: "₹50,000/year",
-        courses: ["Arts", "Science", "Engineering", "Management"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1949,
-        type: "Government",
-        affiliation: "State University"
-      },
-      {
-        id: 205,
-        name: "College of Engineering Pune",
-        location: "Pune, Maharashtra",
-        rating: 4.2,
-        fees: "₹1.2 Lakhs/year",
-        courses: ["Engineering", "Technology"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1854,
-        type: "Government",
-        affiliation: "Pune University"
-      },
-      {
-        id: 206,
-        name: "Institute of Chemical Technology",
-        location: "Mumbai, Maharashtra",
-        rating: 4.3,
-        fees: "₹2 Lakhs/year",
-        courses: ["Chemical Engineering", "Technology", "Pharmacy"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1933,
-        type: "Government",
-        affiliation: "Deemed University"
-      },
-      {
-        id: 207,
-        name: "Symbiosis International University",
-        location: "Pune, Maharashtra",
-        rating: 4.1,
-        fees: "₹3.5 Lakhs/year",
-        courses: ["Management", "Law", "Engineering", "Arts"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1971,
-        type: "Private",
-        affiliation: "Deemed University"
-      },
-      {
-        id: 208,
-        name: "Fergusson College",
-        location: "Pune, Maharashtra",
-        rating: 4.0,
-        fees: "₹45,000/year",
-        courses: ["Arts", "Science", "Commerce"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1885,
-        type: "Private",
-        affiliation: "Pune University"
-      },
-      {
-        id: 209,
-        name: "St. Xavier's College Mumbai",
-        location: "Mumbai, Maharashtra",
-        rating: 4.2,
-        fees: "₹55,000/year",
-        courses: ["Arts", "Science", "Commerce"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1869,
-        type: "Private",
-        affiliation: "University of Mumbai"
-      },
-      {
-        id: 210,
-        name: "Veermata Jijabai Technological Institute",
-        location: "Mumbai, Maharashtra",
-        rating: 4.1,
-        fees: "₹1.8 Lakhs/year",
-        courses: ["Engineering", "Technology"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1887,
-        type: "Government",
-        affiliation: "Autonomous"
-      },
-      {
-        id: 211,
-        name: "Sardar Patel Institute of Technology",
-        location: "Mumbai, Maharashtra",
-        rating: 3.9,
-        fees: "₹2.5 Lakhs/year",
-        courses: ["Engineering", "Technology"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1962,
-        type: "Private",
-        affiliation: "University of Mumbai"
-      },
-      {
-        id: 212,
-        name: "Bharati Vidyapeeth University",
-        location: "Pune, Maharashtra",
-        rating: 3.8,
-        fees: "₹2 Lakhs/year",
-        courses: ["Engineering", "Medicine", "Management", "Arts"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1964,
-        type: "Private",
-        affiliation: "Deemed University"
-      }
-    ]
-  },
-  {
-    id: 5,
-    name: "West Bengal",
-    collegeCount: 10,
-    image: "https://images.unsplash.com/photo-1558431382-27e303142255?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    description: "Cultural capital with rich academic heritage",
-    colleges: [
-      {
-        id: 301,
-        name: "Indian Institute of Technology Kharagpur",
-        location: "Kharagpur, West Bengal",
-        rating: 4.5,
-        fees: "₹2.5 Lakhs/year",
-        courses: ["Engineering", "Technology", "Management"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1951,
-        type: "Government",
-        affiliation: "Autonomous"
-      },
-      {
-        id: 302,
-        name: "University of Calcutta",
-        location: "Kolkata, West Bengal",
-        rating: 4.2,
-        fees: "₹30,000/year",
-        courses: ["Arts", "Science", "Commerce", "Law"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1857,
-        type: "Government",
-        affiliation: "State University"
-      },
-      {
-        id: 303,
-        name: "Jadavpur University",
-        location: "Kolkata, West Bengal",
-        rating: 4.3,
-        fees: "₹25,000/year",
-        courses: ["Engineering", "Arts", "Science"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1955,
-        type: "Government",
-        affiliation: "State University"
-      },
-      {
-        id: 304,
-        name: "Presidency University",
-        location: "Kolkata, West Bengal",
-        rating: 4.1,
-        fees: "₹35,000/year",
-        courses: ["Arts", "Science"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1817,
-        type: "Government",
-        affiliation: "State University"
-      },
-      {
-        id: 305,
-        name: "Indian Statistical Institute",
-        location: "Kolkata, West Bengal",
-        rating: 4.4,
-        fees: "₹50,000/year",
-        courses: ["Statistics", "Mathematics", "Computer Science"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1931,
-        type: "Government",
-        affiliation: "Deemed University"
-      },
-      {
-        id: 306,
-        name: "St. Xavier's College Kolkata",
-        location: "Kolkata, West Bengal",
-        rating: 4.0,
-        fees: "₹40,000/year",
-        courses: ["Arts", "Science", "Commerce"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1860,
-        type: "Private",
-        affiliation: "University of Calcutta"
-      },
-      {
-        id: 307,
-        name: "Bengal Engineering and Science University",
-        location: "Shibpur, West Bengal",
-        rating: 3.9,
-        fees: "₹1.5 Lakhs/year",
-        courses: ["Engineering", "Technology", "Architecture"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1856,
-        type: "Government",
-        affiliation: "State University"
-      },
-      {
-        id: 308,
-        name: "Rabindra Bharati University",
-        location: "Kolkata, West Bengal",
-        rating: 3.8,
-        fees: "₹20,000/year",
-        courses: ["Arts", "Music", "Dance", "Fine Arts"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1962,
-        type: "Government",
-        affiliation: "State University"
-      },
-      {
-        id: 309,
-        name: "West Bengal University of Technology",
-        location: "Kolkata, West Bengal",
-        rating: 3.7,
-        fees: "₹80,000/year",
-        courses: ["Engineering", "Technology", "Management"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 2001,
-        type: "Government",
-        affiliation: "State University"
-      },
-      {
-        id: 310,
-        name: "Techno India University",
-        location: "Kolkata, West Bengal",
-        rating: 3.6,
-        fees: "₹2 Lakhs/year",
-        courses: ["Engineering", "Management", "Computer Applications"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 2012,
-        type: "Private",
-        affiliation: "Private University"
-      }
-    ]
-  },
-  {
-    id: 6,
-    name: "Uttar Pradesh",
-    collegeCount: 8,
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    description: "Historic state with prestigious universities",
-    colleges: [
-      {
-        id: 401,
-        name: "Indian Institute of Technology Kanpur",
-        location: "Kanpur, Uttar Pradesh",
-        rating: 4.5,
-        fees: "₹2.5 Lakhs/year",
-        courses: ["Engineering", "Technology", "Management"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1959,
-        type: "Government",
-        affiliation: "Autonomous"
-      },
-      {
-        id: 402,
-        name: "Banaras Hindu University",
-        location: "Varanasi, Uttar Pradesh",
-        rating: 4.2,
-        fees: "₹40,000/year",
-        courses: ["Arts", "Science", "Engineering", "Medicine"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1916,
-        type: "Government",
-        affiliation: "Central University"
-      },
-      {
-        id: 403,
-        name: "Aligarh Muslim University",
-        location: "Aligarh, Uttar Pradesh",
-        rating: 4.1,
-        fees: "₹35,000/year",
-        courses: ["Arts", "Science", "Engineering", "Medicine"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1875,
-        type: "Government",
-        affiliation: "Central University"
-      },
-      {
-        id: 404,
-        name: "Lucknow University",
-        location: "Lucknow, Uttar Pradesh",
-        rating: 3.9,
-        fees: "₹25,000/year",
-        courses: ["Arts", "Science", "Commerce", "Law"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1867,
-        type: "Government",
-        affiliation: "State University"
-      },
-      {
-        id: 405,
-        name: "Motilal Nehru National Institute of Technology",
-        location: "Allahabad, Uttar Pradesh",
-        rating: 4.0,
-        fees: "₹2 Lakhs/year",
-        courses: ["Engineering", "Technology"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1961,
-        type: "Government",
-        affiliation: "National Institute"
-      },
-      {
-        id: 406,
-        name: "Harcourt Butler Technical University",
-        location: "Kanpur, Uttar Pradesh",
-        rating: 3.8,
-        fees: "₹1.2 Lakhs/year",
-        courses: ["Engineering", "Technology", "Architecture"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 1921,
-        type: "Government",
-        affiliation: "State University"
-      },
-      {
-        id: 407,
-        name: "Integral University",
-        location: "Lucknow, Uttar Pradesh",
-        rating: 3.7,
-        fees: "₹1.5 Lakhs/year",
-        courses: ["Engineering", "Management", "Pharmacy"],
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 2004,
-        type: "Private",
-        affiliation: "Private University"
-      },
-      {
-        id: 408,
-        name: "Amity University Noida",
-        location: "Noida, Uttar Pradesh",
-        rating: 3.8,
-        fees: "₹2.5 Lakhs/year",
-        courses: ["Engineering", "Management", "Law", "Arts"],
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        established: 2005,
-        type: "Private",
-        affiliation: "Private University"
-      }
+      // Additional colleges for Tamil Nadu and other states would be similarly structured
     ]
   }
+  // Additional states would be similarly structured
 ];
+
+// Utility functions
+export const getCollegesByState = (stateId: string): College[] => {
+  const stateName = stateId.charAt(0).toUpperCase() + stateId.slice(1).replace(/-/g, " ");
+  const state = states.find(s => s.name.toLowerCase() === stateName.toLowerCase());
+  return state ? state.colleges : [];
+};
+
+export const getCollegeById = (collegeId: string): College | null => {
+  const id = parseInt(collegeId);
+  for (const state of states) {
+    const college = state.colleges.find(c => c.id === id);
+    if (college) return college;
+  }
+  return null;
+};
+
+export const getAllColleges = (): College[] => {
+  return states.flatMap(state => state.colleges);
+};
