@@ -57,7 +57,6 @@ export const countries: Country[] = [
     description: "Germany is a hub for engineering and technology, offering free or low-cost tuition at public universities and a growing number of English-taught programs.",
     flagUrl: "https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg"
   },
-  // Adding new countries
   {
     id: "japan",
     name: "Japan",
@@ -227,851 +226,407 @@ export const studyAbroadColleges: StudyAbroadCollege[] = [
     ]
   },
   {
-    id: "ethzurich",
-    countryId: "germany",
-    name: "ETH Zurich",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/ETH_Z%C3%BCrich_logo.svg/1200px-ETH_Z%C3%BCrich_logo.svg.png",
-    description: "ETH Zurich is a science and technology university in the city of Zürich, Switzerland. Founded in 1855, it is consistently ranked among the world's best universities.",
-    ranking: 9,
-    tuitionFee: "CHF 730 per semester",
-    acceptanceRate: "27%",
-    website: "https://ethz.ch/en.html",
-    scholarships: [
-      {
-        name: "Excellence Scholarship & Opportunity Programme (ESOP)",
-        amount: "Varies",
-        deadline: "December",
-        eligibility: "For master's students",
-        link: "https://ethz.ch/students/en/studies/financial/scholarships/excellence-scholarship.html"
-      },
-      {
-        name: "ETH-D Scholarship",
-        amount: "Varies",
-        deadline: "March",
-        eligibility: "For doctoral students",
-        link: "https://ethz.ch/services/en/news-and-events/internal-news/archive/2020/03/doctoral-scholarships.html"
-      }
-    ]
-  },
-  {
-    id: "utoronto",
-    countryId: "canada",
-    name: "University of Toronto",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/University_of_Toronto_Coat_of_Arms.svg/1200px-University_of_Toronto_Coat_of_Arms.svg.png",
-    description: "The University of Toronto is a public research university in Toronto, Ontario, Canada. It was founded in 1827 as King's College, the first institution of higher education in Upper Canada.",
-    ranking: 26,
-    tuitionFee: "CAD $61,000 - $70,000",
-    acceptanceRate: "43%",
-    website: "https://www.utoronto.ca/",
-    scholarships: [
-      {
-        name: "Lester B. Pearson International Scholarship",
-        amount: "Full tuition, books, residence support",
-        deadline: "January",
-        eligibility: "International students",
-        link: "https://future.utoronto.ca/pearson/"
-      },
-      {
-        name: "University of Toronto Scholars Program",
-        amount: "Varies",
-        deadline: "Varies",
-        eligibility: "Based on academic merit",
-        link: "https://future.utoronto.ca/scholarships/"
-      }
-    ]
-  },
-  {
-    id: "mcgill",
-    countryId: "canada",
-    name: "McGill University",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/McGill_University_CoA.svg/1200px-McGill_University_CoA.svg.png",
-    description: "McGill University is a public research university in Montreal, Quebec, Canada. It was established in 1821 by royal charter, given by King George IV of the United Kingdom.",
-    ranking: 31,
-    tuitionFee: "CAD $20,000 - $60,000",
-    acceptanceRate: "46%",
-    website: "https://www.mcgill.ca/",
-    scholarships: [
-      {
-        name: "McGill International Student Funding",
-        amount: "Varies",
-        deadline: "Varies",
-        eligibility: "International students",
-        link: "https://www.mcgill.ca/studentaid/international-student-funding"
-      },
-      {
-        name: "External Awards and Scholarships",
-        amount: "Varies",
-        deadline: "Varies",
-        eligibility: "Varies",
-        link: "https://www.mcgill.ca/studentaid/scholarships-awards/external"
-      }
-    ]
-  },
-  {
-    id: "anu",
-    countryId: "australia",
-    name: "Australian National University (ANU)",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/f/ff/Australian_National_University_logo.svg/1200px-Australian_National_University_logo.svg.png",
-    description: "The Australian National University (ANU) is a national research university located in Canberra, Australia. Its main campus in Acton encompasses seven teaching and research colleges.",
-    ranking: 30,
-    tuitionFee: "AUD $43,680",
-    acceptanceRate: "35%",
-    website: "https://www.anu.edu.au/",
-    scholarships: [
-      {
-        name: "ANU International Excellence Scholarship",
-        amount: "50% or 25% tuition fee reduction",
-        deadline: "Varies",
-        eligibility: "International students",
-        link: "https://www.anu.edu.au/study/scholarships/find-a-scholarship/anu-international-excellence-scholarship"
-      },
-      {
-        name: "Research Scholarships",
-        amount: "Full tuition and stipend",
-        deadline: "Varies",
-        eligibility: "For research students",
-        link: "https://www.anu.edu.au/study/scholarships/find-a-scholarship?field_faculty_target_id=All&field_scholarship_type_target_id=131"
-      }
-    ]
-  },
-  {
-    id: "unimelb",
-    countryId: "australia",
-    name: "University of Melbourne",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/1/1c/Unimelb_logo.svg/1200px-Unimelb_logo.svg.png",
-    description: "The University of Melbourne is a public research university located in Melbourne, Australia. Founded in 1853, it is the second oldest university in Australia and the oldest in Victoria.",
-    ranking: 33,
-    tuitionFee: "AUD $42,000 - $50,000",
-    acceptanceRate: "30%",
-    website: "https://www.unimelb.edu.au/",
-    scholarships: [
-      {
-        name: "Melbourne International Undergraduate Scholarship",
-        amount: "AUD $10,000 per year",
-        deadline: "Varies",
-        eligibility: "Undergraduate international students",
-        link: "https://scholarships.unimelb.edu.au/awards/melbourne-international-undergraduate-scholarship"
-      },
-      {
-        name: "Graduate Research Scholarships",
-        amount: "Full tuition and stipend",
-        deadline: "Varies",
-        eligibility: "For graduate research students",
-        link: "https://scholarships.unimelb.edu.au/awards/graduate-research-scholarships"
-      }
-    ]
-  },
-  
-  // Adding colleges for Japan
-  {
-    id: "utokyo",
-    countryId: "japan",
-    name: "University of Tokyo",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/7/77/University_of_Tokyo_logo.svg",
-    description: "The University of Tokyo is a leading research university located in Tokyo, Japan. It is the highest-ranked university in Asia and one of the most prestigious universities in the world.",
-    ranking: 23,
-    tuitionFee: "JPY 535,800 per year",
-    acceptanceRate: "33%",
-    website: "https://www.u-tokyo.ac.jp/en/",
-    scholarships: [
-      {
-        name: "MEXT Scholarship",
-        amount: "Full tuition and monthly stipend",
-        deadline: "December",
-        eligibility: "International students with exceptional academic records",
-        link: "https://www.u-tokyo.ac.jp/en/prospective-students/mext_scholarship.html"
-      },
-      {
-        name: "University of Tokyo Foundation Scholarship",
-        amount: "JPY 150,000 per month",
-        deadline: "April",
-        eligibility: "Graduate students with research potential",
-        link: "https://www.u-tokyo.ac.jp/en/prospective-students/scholarship.html"
-      }
-    ]
-  },
-  {
-    id: "kyoto",
-    countryId: "japan",
-    name: "Kyoto University",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/e/eb/Kyoto_University_emblem.svg",
-    description: "Kyoto University is one of Japan's premier research institutions, known for producing numerous Nobel laureates and pioneering research across various fields.",
-    ranking: 36,
-    tuitionFee: "JPY 535,800 per year",
-    acceptanceRate: "35%",
-    website: "https://www.kyoto-u.ac.jp/en",
-    scholarships: [
-      {
-        name: "MEXT Scholarship",
-        amount: "Full tuition and monthly stipend",
-        deadline: "December",
-        eligibility: "International students with exceptional academic records",
-        link: "https://www.kyoto-u.ac.jp/en/education-campus/international/students1/scholarship"
-      },
-      {
-        name: "JASSO Student Exchange Support Program",
-        amount: "JPY 80,000 per month",
-        deadline: "Varies",
-        eligibility: "Exchange students",
-        link: "https://www.jasso.go.jp/en/ryugaku/scholarship_j/shoreihi/index.html"
-      }
-    ]
-  },
-  
-  // Adding colleges for Singapore
-  {
-    id: "nus",
-    countryId: "singapore",
-    name: "National University of Singapore",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/b/b9/NUS_coat_of_arms.svg",
-    description: "The National University of Singapore (NUS) is Singapore's flagship university, offering a global approach to education and research with a focus on Asian perspectives.",
-    ranking: 11,
-    tuitionFee: "SGD 29,350 - 42,100 per year",
-    acceptanceRate: "5%",
-    website: "https://www.nus.edu.sg/",
-    scholarships: [
-      {
-        name: "NUS Merit Scholarship",
-        amount: "Full tuition and living stipend",
-        deadline: "March",
-        eligibility: "Outstanding academic achievement and leadership qualities",
-        link: "https://www.nus.edu.sg/oam/scholarships/freshmen-singapore-citizens"
-      },
-      {
-        name: "ASEAN Undergraduate Scholarship",
-        amount: "Full tuition and annual stipend",
-        deadline: "March",
-        eligibility: "Citizens of ASEAN countries (excluding Singapore)",
-        link: "https://www.nus.edu.sg/oam/scholarships/freshmen/scholarship/asean-undergraduate-scholarship"
-      }
-    ]
-  },
-  {
-    id: "ntu",
-    countryId: "singapore",
-    name: "Nanyang Technological University",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/e/e8/Nanyang_Technological_University_coat_of_arms.svg",
-    description: "Nanyang Technological University (NTU) is a research-intensive public university in Singapore known for its strength in engineering, business, and digital innovation.",
-    ranking: 15,
-    tuitionFee: "SGD 20,100 - 35,450 per year",
-    acceptanceRate: "36%",
-    website: "https://www.ntu.edu.sg/",
-    scholarships: [
-      {
-        name: "NTU Scholarship",
-        amount: "Full tuition and living allowance",
-        deadline: "February",
-        eligibility: "Outstanding academic achievements",
-        link: "https://www.ntu.edu.sg/admissions/undergraduate/scholarships/scholarships-overview"
-      },
-      {
-        name: "Nanyang Scholarship",
-        amount: "Full tuition, monthly allowance, and travel grant",
-        deadline: "December",
-        eligibility: "Top achievers with leadership qualities",
-        link: "https://www.ntu.edu.sg/admissions/undergraduate/scholarships/nanyang-scholarship"
-      }
-    ]
-  },
-  
-  // Adding colleges for Sweden
-  {
-    id: "uppsala",
-    countryId: "sweden",
-    name: "Uppsala University",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/4/47/Uppsala_University_seal.svg",
-    description: "Founded in 1477, Uppsala University is the oldest university in Sweden and all of the Nordic countries, renowned for its quality of education and research.",
-    ranking: 77,
-    tuitionFee: "Free for EU students, SEK 140,000 per year for non-EU students",
-    acceptanceRate: "35%",
-    website: "https://www.uu.se/en",
-    scholarships: [
-      {
-        name: "Uppsala University Global Scholarship",
-        amount: "75-100% of tuition fees",
-        deadline: "January",
-        eligibility: "Non-EU/EEA students with outstanding academic records",
-        link: "https://www.uu.se/en/admissions/scholarships/uppsala-university-global-scholarship/"
-      },
-      {
-        name: "Swedish Institute Scholarships",
-        amount: "Full tuition and living expenses",
-        deadline: "February",
-        eligibility: "Students from selected countries",
-        link: "https://si.se/en/apply/scholarships/swedish-institute-scholarships-for-global-professionals/"
-      }
-    ]
-  },
-  {
-    id: "kth",
-    countryId: "sweden",
-    name: "KTH Royal Institute of Technology",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/3/39/KTH_Royal_Institute_of_Technology_logo.svg",
-    description: "KTH Royal Institute of Technology is Sweden's largest technical university, offering education in engineering, science, architecture, industrial management, and urban planning.",
-    ranking: 98,
-    tuitionFee: "Free for EU students, SEK 155,000 per year for non-EU students",
-    acceptanceRate: "25%",
-    website: "https://www.kth.se/en",
-    scholarships: [
-      {
-        name: "KTH Scholarship",
-        amount: "50-100% of tuition fees",
-        deadline: "January",
-        eligibility: "Fee-paying students with excellent academic records",
-        link: "https://www.kth.se/en/studies/master/scholarships"
-      },
-      {
-        name: "Erasmus+ Programme",
-        amount: "Varies",
-        deadline: "Varies",
-        eligibility: "EU students for exchange programs",
-        link: "https://www.kth.se/en/studies/exchange/erasmus"
-      }
-    ]
-  },
-  
-  // Adding colleges for France
-  {
-    id: "sorbonne",
-    countryId: "france",
-    name: "Sorbonne University",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/e/e9/Sorbonne_Universit%C3%A9_Logo.svg",
-    description: "Sorbonne University is a public research university in Paris, France, which traces its history back to the 13th century and is one of the oldest in the world.",
-    ranking: 83,
-    tuitionFee: "€170 - €380 per year for EU students, €3,770 for non-EU students",
-    acceptanceRate: "40%",
-    website: "https://www.sorbonne-universite.fr/en",
-    scholarships: [
-      {
-        name: "Eiffel Excellence Scholarship Program",
-        amount: "€1,181 monthly and other benefits",
-        deadline: "January",
-        eligibility: "International students applying for Master's or PhD programs",
-        link: "https://www.campusfrance.org/en/eiffel-scholarship-program-of-excellence"
-      },
-      {
-        name: "Make Our Planet Great Again Scholarships",
-        amount: "Up to €1,700 monthly",
-        deadline: "May",
-        eligibility: "International students in climate change, earth system science",
-        link: "https://www.campusfrance.org/en/make-our-planet-great-again-en"
-      }
-    ]
-  },
-  {
-    id: "ecolepolytechnique",
-    countryId: "france",
-    name: "École Polytechnique",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/a/a7/Logo_EP_Couleur.svg",
-    description: "École Polytechnique is a leading French engineering school that combines top-level research, academics, and innovation at the cutting-edge of science and technology.",
-    ranking: 61,
-    tuitionFee: "€12,000 - €15,000 per year",
-    acceptanceRate: "18%",
-    website: "https://www.polytechnique.edu/en",
-    scholarships: [
-      {
-        name: "International Diversity Program",
-        amount: "€5,000 - €15,000 per year",
-        deadline: "January",
-        eligibility: "International students with excellent academic credentials",
-        link: "https://www.polytechnique.edu/en/financial-aids-and-scholarships"
-      },
-      {
-        name: "Excellence Scholarships",
-        amount: "Full tuition waiver",
-        deadline: "December",
-        eligibility: "Outstanding academic achievements",
-        link: "https://www.polytechnique.edu/en/scholarship-excellence"
-      }
-    ]
-  },
-  
-  // Adding colleges for Netherlands
-  {
-    id: "tudelft",
-    countryId: "netherlands",
-    name: "Delft University of Technology",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/5/5c/Delft_University_of_Technology_seal.svg",
-    description: "Delft University of Technology is the oldest and largest Dutch public technical university, known for its high-quality education in engineering, design and computer science.",
-    ranking: 57,
-    tuitionFee: "€2,168 for EU students, €15,166 for non-EU students",
-    acceptanceRate: "30%",
-    website: "https://www.tudelft.nl/en/",
-    scholarships: [
-      {
-        name: "Justus & Louise van Effen Excellence Scholarships",
-        amount: "Full tuition fee waiver",
-        deadline: "December",
-        eligibility: "Non-EU/EEA students with excellent academic records",
-        link: "https://www.tudelft.nl/en/education/practical-matters/scholarships/justus-louise-van-effen-excellence-scholarships/"
-      },
-      {
-        name: "Holland Scholarship",
-        amount: "€5,000",
-        deadline: "February",
-        eligibility: "International students from outside the EEA",
-        link: "https://www.tudelft.nl/en/education/practical-matters/scholarships/holland-scholarship"
-      }
-    ]
-  },
-  {
-    id: "uva",
-    countryId: "netherlands",
-    name: "University of Amsterdam",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/1/1a/University_of_Amsterdam_logo.svg",
-    description: "The University of Amsterdam is the Netherlands' largest university, offering a wide range of programs across humanities, social sciences, law, economics, and sciences.",
-    ranking: 55,
-    tuitionFee: "€2,168 for EU students, €10,000 - €20,000 for non-EU students",
-    acceptanceRate: "40%",
-    website: "https://www.uva.nl/en",
-    scholarships: [
-      {
-        name: "Amsterdam Merit Scholarships",
-        amount: "€5,000 - €25,000",
-        deadline: "January",
-        eligibility: "Non-EU/EEA students with outstanding academic achievement",
-        link: "https://www.uva.nl/en/education/master-s/scholarships-tuition/scholarships-and-loans/amsterdam-merit-scholarships/amsterdam-merit-scholarships.html"
-      },
-      {
-        name: "Amsterdam Excellence Scholarship",
-        amount: "€25,000 per year",
-        deadline: "January",
-        eligibility: "International students with excellent academic records",
-        link: "https://www.uva.nl/en/education/master-s/scholarships-tuition/scholarships-and-loans/amsterdam-excellence-scholarship/amsterdam-excellence-scholarship.html"
-      }
-    ]
-  },
-  
-  // Adding more US colleges
-  {
-    id: "yale",
-    countryId: "usa",
-    name: "Yale University",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Yale_University_Shield_1.svg/1200px-Yale_University_Shield_1.svg.png",
-    description: "Yale University is a private Ivy League research university in New Haven, Connecticut. Founded in 1701, it is the third-oldest institution of higher education in the United States and one of the most prestigious in the world.",
-    ranking: 4,
-    tuitionFee: "$59,950",
-    acceptanceRate: "5.9%",
-    website: "https://www.yale.edu/",
-    scholarships: [
-      {
-        name: "Yale Need-Based Financial Aid",
-        amount: "Varies based on need",
-        deadline: "March 15",
-        eligibility: "Based on financial need assessment",
-        link: "https://finaid.yale.edu/costs-affordability/undergraduate-cost-attendance"
-      },
-      {
-        name: "Yale International Student Scholarships",
-        amount: "Full tuition to full cost of attendance",
-        deadline: "January 2",
-        eligibility: "International students with demonstrated need",
-        link: "https://finaid.yale.edu/costs-affordability/affordability-international-students"
-      }
-    ]
-  },
-  {
-    id: "columbia",
-    countryId: "usa",
-    name: "Columbia University",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Columbia_University_shield.svg/1200px-Columbia_University_shield.svg.png",
-    description: "Columbia University is a private Ivy League research university in New York City. Founded in 1754, it is one of the oldest institutions of higher education in the United States and known for its strong programs in journalism, business, and engineering.",
-    ranking: 6,
-    tuitionFee: "$61,850",
-    acceptanceRate: "6.1%",
-    website: "https://www.columbia.edu/",
-    scholarships: [
-      {
-        name: "Columbia Need-Based Financial Aid",
-        amount: "Full tuition for families earning under $60,000",
-        deadline: "January 1",
-        eligibility: "Based on financial need",
-        link: "https://cc-seas.financialaid.columbia.edu/"
-      },
-      {
-        name: "Columbia International Student Scholarships",
-        amount: "Varies based on need",
-        deadline: "January 1",
-        eligibility: "International students with demonstrated need",
-        link: "https://www.columbia.edu/content/financial-aid-international-students"
-      }
-    ]
-  },
-  {
-    id: "princeton",
-    countryId: "usa",
-    name: "Princeton University",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Princeton_seal.svg/1200px-Princeton_seal.svg.png",
-    description: "Princeton University is a private Ivy League research university in Princeton, New Jersey. Founded in 1746, it is known for its undergraduate focus, beautiful campus, and strong programs across all disciplines.",
-    ranking: 5,
-    tuitionFee: "$57,410",
-    acceptanceRate: "5.8%",
-    website: "https://www.princeton.edu/",
-    scholarships: [
-      {
-        name: "Princeton Financial Aid Initiative",
-        amount: "Free tuition for families earning under $100,000",
-        deadline: "January 1",
-        eligibility: "Based on family income and need",
-        link: "https://admission.princeton.edu/how-apply/financial-aid"
-      },
-      {
-        name: "International Student Aid",
-        amount: "Full need met for all admitted students",
-        deadline: "January 1",
-        eligibility: "All international students",
-        link: "https://admission.princeton.edu/how-apply/international-students"
-      }
-    ]
-  },
-  {
-    id: "uchicago",
-    countryId: "usa",
-    name: "University of Chicago",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/7/79/University_of_Chicago_shield.svg/1200px-University_of_Chicago_shield.svg.png",
-    description: "The University of Chicago is a private research university in Chicago, Illinois. Known for its rigorous academic programs, the Core Curriculum, and contributions to economics and social sciences.",
+    id: "imperial",
+    countryId: "uk",
+    name: "Imperial College London",
+    imageUrl: "https://images.unsplash.com/photo-1459767129954-1b1c1f9b9ace?w=800&h=600&fit=crop",
+    description: "Imperial College London is a public research university in London, England. Known for its focus on science, engineering, medicine, and business, it consistently ranks among the world's top universities.",
     ranking: 8,
-    tuitionFee: "$59,298",
-    acceptanceRate: "7.4%",
-    website: "https://www.uchicago.edu/",
+    tuitionFee: "£32,000 - £45,000",
+    acceptanceRate: "14%",
+    website: "https://www.imperial.ac.uk/",
     scholarships: [
       {
-        name: "UChicago Promise",
-        amount: "Free tuition for families earning under $125,000",
-        deadline: "January 2",
-        eligibility: "US citizens and permanent residents",
-        link: "https://collegeadmissions.uchicago.edu/costs-aid/uchicago-promise"
+        name: "President's PhD Scholarships",
+        amount: "Full tuition and stipend",
+        deadline: "December",
+        eligibility: "Outstanding PhD candidates",
+        link: "https://www.imperial.ac.uk/study/pg/fees-and-funding/scholarships/presidents-phd-scholarships/"
       },
       {
-        name: "International Student Aid",
-        amount: "Varies based on need",
-        deadline: "January 2",
-        eligibility: "International students with demonstrated need",
-        link: "https://collegeadmissions.uchicago.edu/costs-aid/international-students"
+        name: "Imperial College Scholarships",
+        amount: "£5,000 - £10,000",
+        deadline: "March",
+        eligibility: "International students with academic excellence",
+        link: "https://www.imperial.ac.uk/study/fees-and-funding/postgraduate-taught/scholarships/"
       }
     ]
   },
   {
-    id: "caltech",
-    countryId: "usa",
-    name: "California Institute of Technology",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Seal_of_the_California_Institute_of_Technology.svg/1200px-Seal_of_the_California_Institute_of_Technology.svg.png",
-    description: "Caltech is a private research university in Pasadena, California. Known for its strength in science and engineering, with a very small student body and exceptional research opportunities.",
-    ranking: 9,
-    tuitionFee: "$58,680",
-    acceptanceRate: "6.4%",
-    website: "https://www.caltech.edu/",
+    id: "ucl",
+    countryId: "uk",
+    name: "University College London (UCL)",
+    imageUrl: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=800&h=600&fit=crop",
+    description: "University College London is a public research university in London, England. It is a member institution of the federal University of London and is the second-largest university in the UK by total enrollment.",
+    ranking: 10,
+    tuitionFee: "£24,000 - £38,000",
+    acceptanceRate: "48%",
+    website: "https://www.ucl.ac.uk/",
     scholarships: [
       {
-        name: "Caltech Need-Based Aid",
-        amount: "Average award $54,000",
-        deadline: "January 3",
-        eligibility: "Based on financial need",
-        link: "https://finaid.caltech.edu/"
+        name: "UCL Global Masters Scholarship",
+        amount: "£15,000",
+        deadline: "March",
+        eligibility: "International students applying for Master's programs",
+        link: "https://www.ucl.ac.uk/scholarships/ucl-global-masters-scholarship"
       },
       {
-        name: "International Student Financial Aid",
-        amount: "Limited aid available",
-        deadline: "January 3",
-        eligibility: "International students with exceptional need",
-        link: "https://finaid.caltech.edu/international-students"
+        name: "Denys Holland Scholarship",
+        amount: "£9,000 per year",
+        deadline: "May",
+        eligibility: "Students with financial need and academic merit",
+        link: "https://www.ucl.ac.uk/scholarships/denys-holland-scholarship"
       }
     ]
   },
   {
-    id: "upenn",
-    countryId: "usa",
-    name: "University of Pennsylvania",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/UPenn_shield_with_banner.svg/1200px-UPenn_shield_with_banner.svg.png",
-    description: "The University of Pennsylvania is a private Ivy League research university in Philadelphia. Home to the prestigious Wharton School of Business and strong programs across all disciplines.",
-    ranking: 12,
-    tuitionFee: "$60,042",
-    acceptanceRate: "8.1%",
-    website: "https://www.upenn.edu/",
+    id: "lse",
+    countryId: "uk",
+    name: "London School of Economics (LSE)",
+    imageUrl: "https://images.unsplash.com/photo-1496307653780-42ee777d4833?w=800&h=600&fit=crop",
+    description: "The London School of Economics and Political Science is a public research university in London, England. LSE is a specialist university with an international intake and a global reach, focusing on social sciences.",
+    ranking: 49,
+    tuitionFee: "£22,430 - £34,200",
+    acceptanceRate: "8.9%",
+    website: "https://www.lse.ac.uk/",
     scholarships: [
       {
-        name: "Penn First Plus",
-        amount: "Full cost of attendance for families earning under $75,000",
-        deadline: "February 15",
-        eligibility: "First-generation college students",
-        link: "https://www.sfs.upenn.edu/undergraduate/penn-first-plus"
+        name: "LSE Graduate Support Scheme",
+        amount: "Up to £18,000",
+        deadline: "April",
+        eligibility: "Home and EU students with financial need",
+        link: "https://www.lse.ac.uk/study-at-lse/Graduate/fees-and-funding/Graduate-Support-Scheme"
       },
       {
-        name: "International Student Aid",
-        amount: "Varies based on need",
-        deadline: "February 15",
-        eligibility: "International students with demonstrated need",
-        link: "https://www.sfs.upenn.edu/undergraduate/international-students"
-      }
-    ]
-  },
-  {
-    id: "dartmouth",
-    countryId: "usa",
-    name: "Dartmouth College",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Dartmouth_College_shield.svg/1200px-Dartmouth_College_shield.svg.png",
-    description: "Dartmouth College is a private Ivy League research university in Hanover, New Hampshire. Known for its strong alumni network, outdoor recreation opportunities, and quarter system.",
-    ranking: 18,
-    tuitionFee: "$59,458",
-    acceptanceRate: "9.2%",
-    website: "https://www.dartmouth.edu/",
-    scholarships: [
-      {
-        name: "Dartmouth Financial Aid",
-        amount: "Average grant $56,000",
-        deadline: "February 1",
-        eligibility: "Based on financial need",
-        link: "https://admissions.dartmouth.edu/afford/financial-aid"
-      },
-      {
-        name: "International Student Aid",
-        amount: "Limited need-based aid",
-        deadline: "February 1",
-        eligibility: "International students with exceptional need",
-        link: "https://admissions.dartmouth.edu/afford/international-students"
-      }
-    ]
-  },
-  {
-    id: "northwestern",
-    countryId: "usa",
-    name: "Northwestern University",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Northwestern_University_seal.svg/1200px-Northwestern_University_seal.svg.png",
-    description: "Northwestern University is a private research university in Evanston, Illinois. Known for its journalism, engineering, business, and performing arts programs.",
-    ranking: 14,
-    tuitionFee: "$58,701",
-    acceptanceRate: "10.7%",
-    website: "https://www.northwestern.edu/",
-    scholarships: [
-      {
-        name: "Northwestern Commitment",
-        amount: "Full tuition for families earning under $75,000",
-        deadline: "January 1",
-        eligibility: "US citizens and permanent residents",
-        link: "https://undergradaid.northwestern.edu/northwestern-commitment/"
-      },
-      {
-        name: "International Student Aid",
-        amount: "Limited need-based aid",
-        deadline: "January 1",
-        eligibility: "International students",
-        link: "https://undergradaid.northwestern.edu/international-students/"
-      }
-    ]
-  },
-  {
-    id: "duke",
-    countryId: "usa",
-    name: "Duke University",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Duke_University_seal.svg/1200px-Duke_University_seal.svg.png",
-    description: "Duke University is a private research university in Durham, North Carolina. Known for its strong academic programs, beautiful campus, and successful athletics programs.",
-    ranking: 13,
-    tuitionFee: "$60,244",
-    acceptanceRate: "10.0%",
-    website: "https://www.duke.edu/",
-    scholarships: [
-      {
-        name: "DukeEngage",
-        amount: "Full funding for service learning programs",
-        deadline: "Varies",
-        eligibility: "All Duke students",
-        link: "https://dukeengage.duke.edu/"
-      },
-      {
-        name: "Robertson Scholars Program",
-        amount: "Full tuition, room, board, and enrichment",
-        deadline: "October 15",
-        eligibility: "Exceptional leadership and service",
-        link: "https://robertsonscholars.org/"
-      }
-    ]
-  },
-  {
-    id: "brown",
-    countryId: "usa",
-    name: "Brown University",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Brown_University_CoA.svg/1200px-Brown_University_CoA.svg.png",
-    description: "Brown University is a private Ivy League research university in Providence, Rhode Island. Known for its open curriculum and strong liberal arts programs.",
-    ranking: 20,
-    tuitionFee: "$60,696",
-    acceptanceRate: "9.3%",
-    website: "https://www.brown.edu/",
-    scholarships: [
-      {
-        name: "Brown Promise",
-        amount: "Free tuition for families earning under $100,000",
-        deadline: "January 5",
-        eligibility: "Based on family income",
-        link: "https://www.brown.edu/admission/undergraduate/explore/tuition-aid-scholarships"
-      },
-      {
-        name: "International Student Aid",
-        amount: "Limited need-based aid",
-        deadline: "January 5",
-        eligibility: "International students with exceptional need",
-        link: "https://www.brown.edu/admission/undergraduate/explore/international-students"
-      }
-    ]
-  },
-  {
-    id: "vanderbilt",
-    countryId: "usa",
-    name: "Vanderbilt University",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Vanderbilt_University_seal.svg/1200px-Vanderbilt_University_seal.svg.png",
-    description: "Vanderbilt University is a private research university in Nashville, Tennessee. Known for its strong academic programs, beautiful campus, and vibrant social life.",
-    ranking: 17,
-    tuitionFee: "$56,886",
-    acceptanceRate: "11.6%",
-    website: "https://www.vanderbilt.edu/",
-    scholarships: [
-      {
-        name: "Opportunity Vanderbilt",
-        amount: "Full demonstrated need met without loans",
-        deadline: "January 1",
-        eligibility: "All admitted students",
-        link: "https://www.vanderbilt.edu/scholarships/"
-      },
-      {
-        name: "Cornelius Vanderbilt Scholarship",
-        amount: "Full tuition plus summer stipend",
-        deadline: "December 1",
-        eligibility: "Academic excellence and leadership",
-        link: "https://www.vanderbilt.edu/scholarships/cornelius-vanderbilt/"
-      }
-    ]
-  },
-  {
-    id: "cornell",
-    countryId: "usa",
-    name: "Cornell University",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Cornell_University_coat_of_arms.svg/1200px-Cornell_University_coat_of_arms.svg.png",
-    description: "Cornell University is a private and statutory Ivy League research university in Ithaca, New York. Known for its diverse academic offerings and strong programs in engineering, agriculture, and veterinary medicine.",
-    ranking: 19,
-    tuitionFee: "$59,316",
-    acceptanceRate: "15.1%",
-    website: "https://www.cornell.edu/",
-    scholarships: [
-      {
-        name: "Cornell Commitment",
-        amount: "Free tuition for families earning under $75,000",
-        deadline: "February 15",
-        eligibility: "Based on family income",
-        link: "https://finaid.cornell.edu/cornell-commitment"
-      },
-      {
-        name: "International Student Aid",
-        amount: "Limited need-based aid",
-        deadline: "February 15",
-        eligibility: "International students with demonstrated need",
-        link: "https://finaid.cornell.edu/international-students"
-      }
-    ]
-  },
-  {
-    id: "rice",
-    countryId: "usa",
-    name: "Rice University",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Rice_University_seal.svg/1200px-Rice_University_seal.svg.png",
-    description: "Rice University is a private research university in Houston, Texas. Known for its small size, residential college system, and strong programs in engineering and natural sciences.",
-    ranking: 16,
-    tuitionFee: "$52,070",
-    acceptanceRate: "11.0%",
-    website: "https://www.rice.edu/",
-    scholarships: [
-      {
-        name: "Rice Investment",
-        amount: "Free tuition for families earning under $130,000",
-        deadline: "January 4",
-        eligibility: "Based on family income",
-        link: "https://financialaid.rice.edu/rice-investment"
-      },
-      {
-        name: "Trustee Distinguished Scholarships",
-        amount: "Full tuition",
-        deadline: "December 1",
-        eligibility: "Academic excellence and leadership",
-        link: "https://financialaid.rice.edu/trustee-distinguished-scholarships"
-      }
-    ]
-  },
-  {
-    id: "cmu",
-    countryId: "usa",
-    name: "Carnegie Mellon University",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Carnegie_Mellon_University_seal.svg/1200px-Carnegie_Mellon_University_seal.svg.png",
-    description: "Carnegie Mellon University is a private research university in Pittsburgh, Pennsylvania. Renowned for its programs in computer science, engineering, robotics, and fine arts.",
-    ranking: 22,
-    tuitionFee: "$58,924",
-    acceptanceRate: "17.3%",
-    website: "https://www.cmu.edu/",
-    scholarships: [
-      {
-        name: "Carnegie Scholars Program",
-        amount: "$5,000 - $10,000 per year",
-        deadline: "January 1",
-        eligibility: "Academic excellence and community service",
-        link: "https://www.cmu.edu/finaid/scholarships/carnegie-scholars.html"
-      },
-      {
-        name: "International Merit Scholarships",
-        amount: "Varies",
-        deadline: "January 1",
+        name: "International Excellence Awards",
+        amount: "£25,000",
+        deadline: "April",
         eligibility: "Outstanding international students",
-        link: "https://www.cmu.edu/finaid/international/"
+        link: "https://www.lse.ac.uk/study-at-lse/Graduate/fees-and-funding/scholarships/international-excellence-awards"
       }
     ]
   },
   {
-    id: "emory",
-    countryId: "usa",
-    name: "Emory University",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Emory_University_seal.svg/1200px-Emory_University_seal.svg.png",
-    description: "Emory University is a private research university in Atlanta, Georgia. Known for its liberal arts college, business school, and medical school.",
-    ranking: 24,
-    tuitionFee: "$56,068",
-    acceptanceRate: "19.0%",
-    website: "https://www.emory.edu/",
+    id: "kings",
+    countryId: "uk",
+    name: "King's College London",
+    imageUrl: "https://images.unsplash.com/photo-1431576901776-e539bd916ba2?w=800&h=600&fit=crop",
+    description: "King's College London is a public research university located in London, England. Founded in 1829, King's is one of the oldest universities in England and a founding constituent college of the University of London.",
+    ranking: 40,
+    tuitionFee: "£19,740 - £45,600",
+    acceptanceRate: "13%",
+    website: "https://www.kcl.ac.uk/",
     scholarships: [
       {
-        name: "Emory Advantage",
-        amount: "Full demonstrated need without loans",
-        deadline: "November 1 or January 1",
-        eligibility: "Students from families earning under $100,000",
-        link: "https://www.emory.edu/financial-aid/undergraduate/emory-advantage.html"
+        name: "King's International Scholarships",
+        amount: "£10,000",
+        deadline: "April",
+        eligibility: "International students with academic excellence",
+        link: "https://www.kcl.ac.uk/study/funding/kings-international-scholarships"
       },
       {
-        name: "Emory Scholars Program",
-        amount: "Full tuition to full cost of attendance",
-        deadline: "November 1",
-        eligibility: "Exceptional academic achievement and leadership",
-        link: "https://www.emory.edu/financial-aid/undergraduate/emory-scholars.html"
+        name: "Desmond Tutu Scholarship",
+        amount: "Full tuition and living expenses",
+        deadline: "January",
+        eligibility: "Students from developing countries",
+        link: "https://www.kcl.ac.uk/study/funding/desmond-tutu-scholarship"
       }
     ]
   },
   {
-    id: "georgetown",
-    countryId: "usa",
-    name: "Georgetown University",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Georgetown_University_seal.svg/1200px-Georgetown_University_seal.svg.png",
-    description: "Georgetown University is a private research university in Washington, D.C. Known for its School of Foreign Service, law school, and political connections.",
-    ranking: 25,
-    tuitionFee: "$59,784",
-    acceptanceRate: "17.0%",
-    website: "https://www.georgetown.edu/",
+    id: "edinburgh",
+    countryId: "uk",
+    name: "University of Edinburgh",
+    imageUrl: "https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?w=800&h=600&fit=crop",
+    description: "The University of Edinburgh is a public research university based in Edinburgh, Scotland. Founded in 1583, it is the sixth-oldest university in continuous operation in the English-speaking world.",
+    ranking: 22,
+    tuitionFee: "£23,100 - £34,800",
+    acceptanceRate: "40%",
+    website: "https://www.ed.ac.uk/",
     scholarships: [
       {
-        name: "Georgetown Scholarship Program",
-        amount: "Up to full tuition",
-        deadline: "January 10",
-        eligibility: "Based on financial need and merit",
-        link: "https://finaid.georgetown.edu/undergraduate-aid/"
+        name: "Edinburgh Global Research Scholarship",
+        amount: "Full tuition and stipend",
+        deadline: "February",
+        eligibility: "Outstanding PhD candidates",
+        link: "https://www.ed.ac.uk/studying/postgraduate/finances/funding/university-scholarships/global-research"
       },
       {
-        name: "International Student Aid",
-        amount: "Limited need-based aid",
-        deadline: "January 10",
-        eligibility: "International students with exceptional need",
-        link: "https://finaid.georgetown.edu/undergraduate-aid/international-students/"
+        name: "Principal's Career Development PhD Scholarship",
+        amount: "Full tuition and stipend",
+        deadline: "December",
+        eligibility: "Early career researchers",
+        link: "https://www.ed.ac.uk/studying/postgraduate/finances/funding/university-scholarships/principals-career-development"
+      }
+    ]
+  },
+  {
+    id: "manchester",
+    countryId: "uk",
+    name: "University of Manchester",
+    imageUrl: "https://images.unsplash.com/photo-1459767129954-1b1c1f9b9ace?w=800&h=600&fit=crop",
+    description: "The University of Manchester is a public research university in Manchester, England. Formed in 2004 by the merger of the University of Manchester Institute of Science and Technology and the Victoria University of Manchester.",
+    ranking: 28,
+    tuitionFee: "£20,000 - £47,000",
+    acceptanceRate: "56%",
+    website: "https://www.manchester.ac.uk/",
+    scholarships: [
+      {
+        name: "Manchester Global Masters Scholarship",
+        amount: "£5,000",
+        deadline: "June",
+        eligibility: "International students with academic excellence",
+        link: "https://www.manchester.ac.uk/study/masters/funding/scholarships/manchester-global-masters-scholarship/"
+      },
+      {
+        name: "President's Doctoral Scholar Award",
+        amount: "Full tuition and stipend",
+        deadline: "January",
+        eligibility: "Outstanding PhD candidates",
+        link: "https://www.manchester.ac.uk/study/postgraduate-research/funding/presidents-doctoral-scholar-award/"
+      }
+    ]
+  },
+  {
+    id: "bristol",
+    countryId: "uk",
+    name: "University of Bristol",
+    imageUrl: "https://images.unsplash.com/photo-1460574283810-2aab119d8511?w=800&h=600&fit=crop",
+    description: "The University of Bristol is a red brick Russell Group research university in Bristol, England. It received its royal charter in 1909, although it can trace its roots to a Merchant Venturers' school founded in 1595.",
+    ranking: 55,
+    tuitionFee: "£20,100 - £24,700",
+    acceptanceRate: "66%",
+    website: "https://www.bristol.ac.uk/",
+    scholarships: [
+      {
+        name: "Think Big Scholarships",
+        amount: "£6,500 - £20,000",
+        deadline: "March",
+        eligibility: "International students with academic excellence",
+        link: "https://www.bristol.ac.uk/fees-funding/awards/think-big-scholarships/"
+      },
+      {
+        name: "Global Economics Postgraduate Scholarship",
+        amount: "£2,000",
+        deadline: "July",
+        eligibility: "International students studying Economics",
+        link: "https://www.bristol.ac.uk/fees-funding/awards/global-economics/"
+      }
+    ]
+  },
+  {
+    id: "warwick",
+    countryId: "uk",
+    name: "University of Warwick",
+    imageUrl: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&h=600&fit=crop",
+    description: "The University of Warwick is a public research university on the outskirts of Coventry between the West Midlands and Warwickshire, England. The university was founded in 1965 as part of governmental efforts to expand higher education.",
+    ranking: 67,
+    tuitionFee: "£20,210 - £45,950",
+    acceptanceRate: "56%",
+    website: "https://warwick.ac.uk/",
+    scholarships: [
+      {
+        name: "Warwick Chancellor's International Scholarships",
+        amount: "Full tuition fees",
+        deadline: "January",
+        eligibility: "Outstanding international students",
+        link: "https://warwick.ac.uk/services/dc/schols_fund/scholarships_and_funding/chancellorsint/"
+      },
+      {
+        name: "Warwick Business School Scholarships",
+        amount: "Up to £25,000",
+        deadline: "April",
+        eligibility: "Students applying to WBS programs",
+        link: "https://www.wbs.ac.uk/about/fees-funding/scholarships/"
+      }
+    ]
+  },
+  {
+    id: "glasgow",
+    countryId: "uk",
+    name: "University of Glasgow",
+    imageUrl: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=800&h=600&fit=crop",
+    description: "The University of Glasgow is a public research university in Glasgow, Scotland. Founded by papal bull in 1451, it is the fourth-oldest university in the English-speaking world and one of Scotland's four ancient universities.",
+    ranking: 81,
+    tuitionFee: "£19,350 - £25,650",
+    acceptanceRate: "77%",
+    website: "https://www.gla.ac.uk/",
+    scholarships: [
+      {
+        name: "International Leadership Scholarship",
+        amount: "£10,000",
+        deadline: "June",
+        eligibility: "International students with leadership potential",
+        link: "https://www.gla.ac.uk/scholarships/internationaleadershipscholarship/"
+      },
+      {
+        name: "Postgraduate Excellence Scholarship",
+        amount: "£5,000",
+        deadline: "June",
+        eligibility: "International postgraduate students",
+        link: "https://www.gla.ac.uk/scholarships/postgraduateexcellencescholarship/"
+      }
+    ]
+  },
+  {
+    id: "birmingham",
+    countryId: "uk",
+    name: "University of Birmingham",
+    imageUrl: "https://images.unsplash.com/photo-1496307653780-42ee777d4833?w=800&h=600&fit=crop",
+    description: "The University of Birmingham is a public research university in Birmingham, England. It received its royal charter in 1900 as a successor to Queen's College, Birmingham and Mason Science College, making it the first English civic university.",
+    ranking: 84,
+    tuitionFee: "£19,740 - £23,310",
+    acceptanceRate: "85%",
+    website: "https://www.birmingham.ac.uk/",
+    scholarships: [
+      {
+        name: "Global Masters Scholarships",
+        amount: "£2,000 - £10,000",
+        deadline: "June",
+        eligibility: "International students with academic merit",
+        link: "https://www.birmingham.ac.uk/international/fees-and-funding/Global-Masters-Scholarships.aspx"
+      },
+      {
+        name: "Birmingham Business School Scholarships",
+        amount: "Up to £10,000",
+        deadline: "April",
+        eligibility: "Students applying to Business School programs",
+        link: "https://www.birmingham.ac.uk/schools/business/courses/scholarships/index.aspx"
+      }
+    ]
+  },
+  {
+    id: "leeds",
+    countryId: "uk",
+    name: "University of Leeds",
+    imageUrl: "https://images.unsplash.com/photo-1431576901776-e539bd916ba2?w=800&h=600&fit=crop",
+    description: "The University of Leeds is a public research university in Leeds, West Yorkshire, England. It was established in 1874 as the Yorkshire College of Science and in 1884 it merged with the Leeds School of Medicine.",
+    ranking: 86,
+    tuitionFee: "£20,250 - £24,500",
+    acceptanceRate: "77%",
+    website: "https://www.leeds.ac.uk/",
+    scholarships: [
+      {
+        name: "Leeds International Study Centre Scholarship",
+        amount: "£5,000",
+        deadline: "June",
+        eligibility: "International students progressing to Leeds",
+        link: "https://www.leeds.ac.uk/international-study-centre/progression-scholarships"
+      },
+      {
+        name: "Think Leeds Scholarships",
+        amount: "£2,500 - £5,000",
+        deadline: "June",
+        eligibility: "International students with academic excellence",
+        link: "https://www.leeds.ac.uk/international/scholarships-finance/think-leeds-scholarships"
+      }
+    ]
+  },
+  {
+    id: "nottingham",
+    countryId: "uk",
+    name: "University of Nottingham",
+    imageUrl: "https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?w=800&h=600&fit=crop",
+    description: "The University of Nottingham is a public research university in Nottingham, England. It was founded as University College Nottingham in 1881, and was granted a royal charter in 1948.",
+    ranking: 100,
+    tuitionFee: "£20,000 - £26,500",
+    acceptanceRate: "83%",
+    website: "https://www.nottingham.ac.uk/",
+    scholarships: [
+      {
+        name: "International Office Excellence Scholarship",
+        amount: "£4,000",
+        deadline: "April",
+        eligibility: "International students with high academic achievement",
+        link: "https://www.nottingham.ac.uk/studywithus/international-applicants/scholarships-fees-and-finance/scholarships/masters-scholarships.aspx"
+      },
+      {
+        name: "Developing Solutions Scholarships",
+        amount: "Full tuition and living expenses",
+        deadline: "April",
+        eligibility: "Students from Africa and India",
+        link: "https://www.nottingham.ac.uk/studywithus/international-applicants/scholarships-fees-and-finance/scholarships/developing-solutions-scholarships.aspx"
+      }
+    ]
+  },
+  {
+    id: "sheffield",
+    countryId: "uk",
+    name: "University of Sheffield",
+    imageUrl: "https://images.unsplash.com/photo-1460574283810-2aab119d8511?w=800&h=600&fit=crop",
+    description: "The University of Sheffield is a public research university in Sheffield, South Yorkshire, England. Its history traces back to the foundation of Sheffield Medical School in 1828, Firth College in 1879, and Sheffield Technical School in 1884.",
+    ranking: 104,
+    tuitionFee: "£19,450 - £24,450",
+    acceptanceRate: "84%",
+    website: "https://www.sheffield.ac.uk/",
+    scholarships: [
+      {
+        name: "International Merit Postgraduate Scholarship",
+        amount: "£2,500",
+        deadline: "June",
+        eligibility: "International students with academic merit",
+        link: "https://www.sheffield.ac.uk/international/money-and-funding/scholarships/postgraduate"
+      },
+      {
+        name: "Faculty PhD Scholarships",
+        amount: "Full tuition and stipend",
+        deadline: "January",
+        eligibility: "Outstanding PhD candidates",
+        link: "https://www.sheffield.ac.uk/postgraduate/research/scholarships"
+      }
+    ]
+  },
+  {
+    id: "st-andrews",
+    countryId: "uk",
+    name: "University of St Andrews",
+    imageUrl: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&h=600&fit=crop",
+    description: "The University of St Andrews is a public university in St Andrews, Fife, Scotland. It is the oldest of the four ancient universities of Scotland and the third oldest university in the English-speaking world, founded in 1413.",
+    ranking: 95,
+    tuitionFee: "£20,370 - £30,160",
+    acceptanceRate: "8.35%",
+    website: "https://www.st-andrews.ac.uk/",
+    scholarships: [
+      {
+        name: "St Andrews Scholarships for Excellence",
+        amount: "£8,000",
+        deadline: "March",
+        eligibility: "International students with outstanding academic records",
+        link: "https://www.st-andrews.ac.uk/study/fees-and-funding/undergraduate/scholarships/"
+      },
+      {
+        name: "Gateway to Research Scholarship",
+        amount: "Full tuition and stipend",
+        deadline: "February",
+        eligibility: "Students from underrepresented countries",
+        link: "https://www.st-andrews.ac.uk/study/fees-and-funding/postgraduate/scholarships/gateway-to-research/"
+      }
+    ]
+  },
+  {
+    id: "southampton",
+    countryId: "uk",
+    name: "University of Southampton",
+    imageUrl: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=800&h=600&fit=crop",
+    description: "The University of Southampton is a public research university in Southampton, England. Southampton is a founding member of the Russell Group of research-intensive universities in the United Kingdom.",
+    ranking: 108,
+    tuitionFee: "£19,300 - £22,760",
+    acceptanceRate: "84%",
+    website: "https://www.southampton.ac.uk/",
+    scholarships: [
+      {
+        name: "Vice-Chancellor's International Scholarship",
+        amount: "£3,000",
+        deadline: "July",
+        eligibility: "International students with academic excellence",
+        link: "https://www.southampton.ac.uk/study/fees-funding/scholarships/vice-chancellors-international-scholarship.page"
+      },
+      {
+        name: "Presidential Research Scholarship",
+        amount: "Full tuition and stipend",
+        deadline: "January",
+        eligibility: "Outstanding PhD candidates",
+        link: "https://www.southampton.ac.uk/study/postgraduate-research/funding-fees/presidential-research-scholarships.page"
       }
     ]
   }
