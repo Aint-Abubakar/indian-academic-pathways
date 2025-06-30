@@ -9,7 +9,6 @@ import {
   Globe, 
   BookUser,
   Star, 
-  Bell, 
   Heart, 
   Download,
   Bot
@@ -78,15 +77,8 @@ const categories = [
     color: "nextstep-purple"
   },
   {
-    title: "Education News",
-    description: "Latest updates on exam patterns, policies, and scholarship announcements",
-    icon: Bell,
-    link: "/news",
-    color: "nextstep-orange"
-  },
-  {
-    title: "Motivational Stories",
-    description: "Success stories of students cracking exams and winning scholarships",
+    title: "Success Stories",
+    description: "Inspiring stories of successful entrepreneurs, students, and professionals with their journeys",
     icon: Heart,
     link: "/success-stories",
     color: "nextstep-red"
