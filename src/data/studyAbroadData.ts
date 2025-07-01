@@ -172,6 +172,411 @@ export const studyAbroadColleges: StudyAbroadCollege[] = [
     ]
   },
   {
+    id: "yale",
+    countryId: "usa",
+    name: "Yale University",
+    imageUrl: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&h=600&fit=crop",
+    description: "Yale University is a private Ivy League research university in New Haven, Connecticut. Founded in 1701, Yale is the third-oldest institution of higher education in the United States and one of the most prestigious universities in the world.",
+    ranking: 4,
+    tuitionFee: "$62,250",
+    acceptanceRate: "4.6%",
+    website: "https://www.yale.edu/",
+    scholarships: [
+      {
+        name: "Need-Based Financial Aid",
+        amount: "Varies",
+        deadline: "March",
+        eligibility: "Based on demonstrated financial need",
+        link: "https://finaid.yale.edu/"
+      },
+      {
+        name: "Yale World Fellows Program",
+        amount: "Full fellowship",
+        deadline: "February",
+        eligibility: "Mid-career professionals",
+        link: "https://worldfellows.yale.edu/"
+      }
+    ]
+  },
+  {
+    id: "princeton",
+    countryId: "usa",
+    name: "Princeton University",
+    imageUrl: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=800&h=600&fit=crop",
+    description: "Princeton University is a private Ivy League research university in Princeton, New Jersey. Founded in 1746, Princeton is the fourth-oldest institution of higher education in the United States and one of the nine colonial colleges chartered before the American Revolution.",
+    ranking: 1,
+    tuitionFee: "$57,410",
+    acceptanceRate: "3.9%",
+    website: "https://www.princeton.edu/",
+    scholarships: [
+      {
+        name: "Princeton Financial Aid",
+        amount: "Full need met",
+        deadline: "January",
+        eligibility: "All admitted students based on need",
+        link: "https://finaid.princeton.edu/"
+      },
+      {
+        name: "Princeton in Africa Fellowship",
+        amount: "Full stipend",
+        deadline: "February",
+        eligibility: "Recent graduates",
+        link: "https://piaf.princeton.edu/"
+      }
+    ]
+  },
+  {
+    id: "columbia",
+    countryId: "usa",
+    name: "Columbia University",
+    imageUrl: "https://images.unsplash.com/photo-1496307653780-42ee777d4833?w=800&h=600&fit=crop",
+    description: "Columbia University is a private Ivy League research university in New York City. Established in 1754, Columbia is the oldest institution of higher learning in New York and the fifth-oldest in the United States.",
+    ranking: 18,
+    tuitionFee: "$63,530",
+    acceptanceRate: "3.7%",
+    website: "https://www.columbia.edu/",
+    scholarships: [
+      {
+        name: "Columbia College Scholarship",
+        amount: "Up to full tuition",
+        deadline: "January",
+        eligibility: "Based on academic merit and financial need",
+        link: "https://cc.columbia.edu/preprofessional/scholarships"
+      },
+      {
+        name: "International Students Scholarship",
+        amount: "Varies",
+        deadline: "January",
+        eligibility: "International students with financial need",
+        link: "https://studentaid.columbia.edu/how/international"
+      }
+    ]
+  },
+  {
+    id: "uchicago",
+    countryId: "usa",
+    name: "University of Chicago",
+    imageUrl: "https://images.unsplash.com/photo-1431576901776-e539bd916ba2?w=800&h=600&fit=crop",
+    description: "The University of Chicago is a private research university in Chicago, Illinois. Founded in 1890, the University of Chicago is known for its devotion to academic scholarship and research and the creation of several academic disciplines.",
+    ranking: 6,
+    tuitionFee: "$61,179",
+    acceptanceRate: "6.2%",
+    website: "https://www.uchicago.edu/",
+    scholarships: [
+      {
+        name: "UChicago Promise",
+        amount: "Full tuition",
+        deadline: "January",
+        eligibility: "Families earning less than $125,000",
+        link: "https://collegeadmissions.uchicago.edu/afford/uchicago-promise"
+      },
+      {
+        name: "Odyssey Scholarship",
+        amount: "Full need met",
+        deadline: "January",
+        eligibility: "First-generation college students",
+        link: "https://collegeadmissions.uchicago.edu/afford/odyssey-scholarship"
+      }
+    ]
+  },
+  {
+    id: "upenn",
+    countryId: "usa",
+    name: "University of Pennsylvania",
+    imageUrl: "https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?w=800&h=600&fit=crop",
+    description: "The University of Pennsylvania is a private Ivy League research university in Philadelphia, Pennsylvania. Founded in 1740, Penn is the fourth-oldest institution of higher education in the United States and one of the nine colonial colleges.",
+    ranking: 8,
+    tuitionFee: "$63,452",
+    acceptanceRate: "5.7%",
+    website: "https://www.upenn.edu/",
+    scholarships: [
+      {
+        name: "Penn First Plus",
+        amount: "Full aid package",
+        deadline: "February",
+        eligibility: "First-generation, low-income students",
+        link: "https://www.upenn.edu/pennfirst/penn-first-plus"
+      },
+      {
+        name: "Benjamin Franklin Scholars",
+        amount: "Merit-based aid",
+        deadline: "December",
+        eligibility: "High-achieving students",
+        link: "https://www.upenn.edu/pennfirst/scholarships"
+      }
+    ]
+  },
+  {
+    id: "caltech",
+    countryId: "usa",
+    name: "California Institute of Technology (Caltech)",
+    imageUrl: "https://images.unsplash.com/photo-1459767129954-1b1c1f9b9ace?w=800&h=600&fit=crop",
+    description: "The California Institute of Technology is a private research university in Pasadena, California. Known for its strength in science and engineering, Caltech is one of the world's most prestigious institutions of technology.",
+    ranking: 9,
+    tuitionFee: "$60,864",
+    acceptanceRate: "6.4%",
+    website: "https://www.caltech.edu/",
+    scholarships: [
+      {
+        name: "Caltech Need-Based Aid",
+        amount: "Up to full cost",
+        deadline: "February",
+        eligibility: "Students with demonstrated financial need",
+        link: "https://finaid.caltech.edu/"
+      },
+      {
+        name: "Caltech Graduate Fellowships",
+        amount: "Full tuition and stipend",
+        deadline: "December",
+        eligibility: "Graduate students in STEM fields",
+        link: "https://www.gradoffice.caltech.edu/financialsupport"
+      }
+    ]
+  },
+  {
+    id: "duke",
+    countryId: "usa",
+    name: "Duke University",
+    imageUrl: "https://images.unsplash.com/photo-1460574283810-2aab119d8511?w=800&h=600&fit=crop",
+    description: "Duke University is a private research university in Durham, North Carolina. Founded in 1838, Duke is known for its highly ranked programs in law, medicine, business, and engineering.",
+    ranking: 10,
+    tuitionFee: "$63,450",
+    acceptanceRate: "6.3%",
+    website: "https://duke.edu/",
+    scholarships: [
+      {
+        name: "Robertson Scholars Leadership Program",
+        amount: "Full tuition, room, and board",
+        deadline: "December",
+        eligibility: "Leadership potential and academic excellence",
+        link: "https://robertsonscholars.org/"
+      },
+      {
+        name: "Duke University Scholarship",
+        amount: "Up to full tuition",
+        deadline: "December",
+        eligibility: "Merit-based for exceptional students",
+        link: "https://financialaid.duke.edu/undergraduate-applicants/merit-scholarships"
+      }
+    ]
+  },
+  {
+    id: "northwestern",
+    countryId: "usa",
+    name: "Northwestern University",
+    imageUrl: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&h=600&fit=crop",
+    description: "Northwestern University is a private research university in Evanston, Illinois. Founded in 1851, Northwestern is known for its highly ranked programs in journalism, business, law, and medicine.",
+    ranking: 11,
+    tuitionFee: "$63,468",
+    acceptanceRate: "7.2%",
+    website: "https://www.northwestern.edu/",
+    scholarships: [
+      {
+        name: "Northwestern Scholarship",
+        amount: "Up to full tuition",
+        deadline: "January",
+        eligibility: "Need-based financial aid",
+        link: "https://undergradaid.northwestern.edu/"
+      },
+      {
+        name: "Good Neighbor Great University Scholarship",
+        amount: "Full tuition",
+        deadline: "December",
+        eligibility: "Chicago Public Schools graduates",
+        link: "https://undergradaid.northwestern.edu/types-of-aid/scholarships-and-grants/good-neighbor-great-university/"
+      }
+    ]
+  },
+  {
+    id: "dartmouth",
+    countryId: "usa",
+    name: "Dartmouth College",
+    imageUrl: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=800&h=600&fit=crop",
+    description: "Dartmouth College is a private Ivy League research university in Hanover, New Hampshire. Founded in 1769, Dartmouth is known for its strong alumni network, outdoor recreation opportunities, and liberal arts education.",
+    ranking: 12,
+    tuitionFee: "$62,430",
+    acceptanceRate: "6.2%",
+    website: "https://dartmouth.edu/",
+    scholarships: [
+      {
+        name: "Dartmouth Scholarship",
+        amount: "Up to full cost",
+        deadline: "February",
+        eligibility: "Need-based financial aid",
+        link: "https://financialaid.dartmouth.edu/"
+      },
+      {
+        name: "Dartmouth Bound",
+        amount: "Full financial aid package",
+        deadline: "February",
+        eligibility: "Students from specific backgrounds",
+        link: "https://admissions.dartmouth.edu/afford/dartmouth-bound"
+      }
+    ]
+  },
+  {
+    id: "brown",
+    countryId: "usa",
+    name: "Brown University",
+    imageUrl: "https://images.unsplash.com/photo-1496307653780-42ee777d4833?w=800&h=600&fit=crop",
+    description: "Brown University is a private Ivy League research university in Providence, Rhode Island. Founded in 1764, Brown is known for its open curriculum and strong programs in the liberal arts and sciences.",
+    ranking: 13,
+    tuitionFee: "$62,680",
+    acceptanceRate: "5.4%",
+    website: "https://www.brown.edu/",
+    scholarships: [
+      {
+        name: "Brown Scholarship",
+        amount: "Up to full cost",
+        deadline: "February",
+        eligibility: "Need-based financial aid",
+        link: "https://www.brown.edu/admission/undergraduate/afford/aid-programs"
+      },
+      {
+        name: "Sidney E. Frank Scholarship",
+        amount: "Full tuition and expenses",
+        deadline: "December",
+        eligibility: "First-generation college students",
+        link: "https://www.brown.edu/admission/undergraduate/afford/frank-scholarship"
+      }
+    ]
+  },
+  {
+    id: "cornell",
+    countryId: "usa",
+    name: "Cornell University",
+    imageUrl: "https://images.unsplash.com/photo-1431576901776-e539bd916ba2?w=800&h=600&fit=crop",
+    description: "Cornell University is a private Ivy League statutory land-grant research university in Ithaca, New York. Founded in 1865, Cornell is known for its highly ranked programs in engineering, agriculture, business, and veterinary medicine.",
+    ranking: 17,
+    tuitionFee: "$63,200",
+    acceptanceRate: "8.7%",
+    website: "https://www.cornell.edu/",
+    scholarships: [
+      {
+        name: "Cornell Commitment",
+        amount: "Full aid for families earning <$75K",
+        deadline: "February",
+        eligibility: "Students from low-income families",
+        link: "https://finaid.cornell.edu/apply/cornell-commitment"
+      },
+      {
+        name: "Cornell Presidential Research Scholars",
+        amount: "$4,000 research funding",
+        deadline: "February",
+        eligibility: "High-achieving undergraduate researchers",
+        link: "https://cprs.cornell.edu/"
+      }
+    ]
+  },
+  {
+    id: "rice",
+    countryId: "usa",
+    name: "Rice University",
+    imageUrl: "https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?w=800&h=600&fit=crop",
+    description: "Rice University is a private research university in Houston, Texas. Known for its applied science programs, highly selective admissions, and collegiate system, Rice consistently ranks among the top universities in the United States.",
+    ranking: 15,
+    tuitionFee: "$54,960",
+    acceptanceRate: "8.7%",
+    website: "https://www.rice.edu/",
+    scholarships: [
+      {
+        name: "Rice Investment",
+        amount: "Free tuition for families earning <$200K",
+        deadline: "January",
+        eligibility: "Students from middle and low-income families",
+        link: "https://financialaid.rice.edu/rice-investment"
+      },
+      {
+        name: "Century Scholars Program",
+        amount: "Full tuition and fees",
+        deadline: "December",
+        eligibility: "Outstanding students from Texas",
+        link: "https://financialaid.rice.edu/types-aid/scholarships-and-grants/century-scholars"
+      }
+    ]
+  },
+  {
+    id: "vanderbilt",
+    countryId: "usa",
+    name: "Vanderbilt University",
+    imageUrl: "https://images.unsplash.com/photo-1459767129954-1b1c1f9b9ace?w=800&h=600&fit=crop",
+    description: "Vanderbilt University is a private research university in Nashville, Tennessee. Founded in 1873, Vanderbilt is known for its strong programs in education, law, medicine, and music.",
+    ranking: 18,
+    tuitionFee: "$58,130",
+    acceptanceRate: "6.7%",
+    website: "https://www.vanderbilt.edu/",
+    scholarships: [
+      {
+        name: "Opportunity Vanderbilt",
+        amount: "Full need met without loans",
+        deadline: "January",
+        eligibility: "Students with demonstrated financial need",
+        link: "https://www.vanderbilt.edu/financialaid/opportunity-vanderbilt/"
+      },
+      {
+        name: "Cornelius Vanderbilt Scholarship",
+        amount: "Full tuition plus stipend",
+        deadline: "December",
+        eligibility: "Merit-based for exceptional students",
+        link: "https://admissions.vanderbilt.edu/merit/"
+      }
+    ]
+  },
+  {
+    id: "notre-dame",
+    countryId: "usa",
+    name: "University of Notre Dame",
+    imageUrl: "https://images.unsplash.com/photo-1460574283810-2aab119d8511?w=800&h=600&fit=crop",
+    description: "The University of Notre Dame is a private Catholic research university in Notre Dame, Indiana. Founded in 1842, Notre Dame is known for its strong alumni network, athletics program, and commitment to undergraduate education.",
+    ranking: 20,
+    tuitionFee: "$59,794",
+    acceptanceRate: "15.8%",
+    website: "https://www.nd.edu/",
+    scholarships: [
+      {
+        name: "Notre Dame Scholarship",
+        amount: "Up to full tuition",
+        deadline: "January",
+        eligibility: "Need-based and merit-based aid",
+        link: "https://financialaid.nd.edu/"
+      },
+      {
+        name: "Hesburgh-Yusko Scholars Program",
+        amount: "Full tuition and enrichment",
+        deadline: "November",
+        eligibility: "Students committed to social justice",
+        link: "https://admissions.nd.edu/apply/hesburgh-yusko-scholars/"
+      }
+    ]
+  },
+  {
+    id: "ucla",
+    countryId: "usa",
+    name: "University of California, Los Angeles (UCLA)",
+    imageUrl: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&h=600&fit=crop",
+    description: "The University of California, Los Angeles is a public land-grant research university in Los Angeles, California. UCLA is considered one of the most prestigious public universities in the United States.",
+    ranking: 21,
+    tuitionFee: "$46,326 (out-of-state)",
+    acceptanceRate: "10.8%",
+    website: "https://www.ucla.edu/",
+    scholarships: [
+      {
+        name: "Regents Scholarship",
+        amount: "Up to full cost of attendance",
+        deadline: "November",
+        eligibility: "Outstanding academic achievement",
+        link: "https://www.ucla.edu/admission/undergraduate-admission/scholarships/regents-scholarship"
+      },
+      {
+        name: "Alumni Scholarship",
+        amount: "$4,000 - $20,000",
+        deadline: "December",
+        eligibility: "Merit-based for exceptional students",
+        link: "https://www.uclaalumni.net/scholarships/"
+      }
+    ]
+  },
+  {
     id: "oxford",
     countryId: "uk",
     name: "University of Oxford",
