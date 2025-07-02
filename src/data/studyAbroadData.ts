@@ -1034,6 +1034,547 @@ export const studyAbroadColleges: StudyAbroadCollege[] = [
         link: "https://www.southampton.ac.uk/study/postgraduate-research/funding-fees/presidential-research-scholarships.page"
       }
     ]
+  },
+  // Japanese Universities
+  {
+    id: "university-of-tokyo",
+    countryId: "japan",
+    name: "University of Tokyo",
+    imageUrl: "https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a?w=800&h=600&fit=crop",
+    description: "The University of Tokyo, abbreviated as UTokyo, is a public research university in Tokyo, Japan. Established in 1877, it is Japan's first imperial university and consistently ranks as the top university in Japan.",
+    ranking: 23,
+    tuitionFee: "¥535,800 ($3,600)",
+    acceptanceRate: "35%",
+    website: "https://www.u-tokyo.ac.jp/en/",
+    scholarships: [
+      {
+        name: "MEXT Scholarship",
+        amount: "¥143,000-184,000/month",
+        deadline: "May",
+        eligibility: "International students for undergraduate and graduate programs",
+        link: "https://www.u-tokyo.ac.jp/en/prospective-students/scholarships.html"
+      },
+      {
+        name: "University of Tokyo Fellowship",
+        amount: "¥200,000/month",
+        deadline: "December",
+        eligibility: "Outstanding doctoral students",
+        link: "https://www.u-tokyo.ac.jp/en/prospective-students/doctoral-fellowship.html"
+      }
+    ]
+  },
+  {
+    id: "kyoto-university",
+    countryId: "japan",
+    name: "Kyoto University",
+    imageUrl: "https://images.unsplash.com/photo-1496307653780-42ee777d4833?w=800&h=600&fit=crop",
+    description: "Kyoto University is a national university in Kyoto, Japan. Founded in 1897, it is one of the former Imperial Universities and is considered one of the most prestigious universities in Japan.",
+    ranking: 36,
+    tuitionFee: "¥535,800 ($3,600)",
+    acceptanceRate: "38%",
+    website: "https://www.kyoto-u.ac.jp/en",
+    scholarships: [
+      {
+        name: "MEXT Scholarship",
+        amount: "¥143,000-184,000/month",
+        deadline: "May",
+        eligibility: "International students for all levels",
+        link: "https://www.kyoto-u.ac.jp/en/education-campus/education/international/scholarship"
+      },
+      {
+        name: "Kyoto University International Undergraduate Program Scholarship",
+        amount: "Full tuition waiver",
+        deadline: "January",
+        eligibility: "International undergraduate students",
+        link: "https://www.kyoto-u.ac.jp/en/education-campus/education/international/iup-scholarship"
+      }
+    ]
+  },
+  {
+    id: "osaka-university",
+    countryId: "japan",
+    name: "Osaka University",
+    imageUrl: "https://images.unsplash.com/photo-1459767129954-1b1c1f9b9ace?w=800&h=600&fit=crop",
+    description: "Osaka University is a national university in Osaka, Japan. Founded in 1931, it is one of Japan's former imperial universities and is known for its strong programs in medicine, engineering, and science.",
+    ranking: 68,
+    tuitionFee: "¥535,800 ($3,600)",
+    acceptanceRate: "40%",
+    website: "https://www.osaka-u.ac.jp/en",
+    scholarships: [
+      {
+        name: "MEXT Scholarship",
+        amount: "¥143,000-184,000/month",
+        deadline: "May",
+        eligibility: "International students",
+        link: "https://www.osaka-u.ac.jp/en/international/scholarships"
+      },
+      {
+        name: "Osaka University Scholarship for International Students",
+        amount: "¥80,000/month",
+        deadline: "February",
+        eligibility: "International students with excellent academic records",
+        link: "https://www.osaka-u.ac.jp/en/international/scholarships/university-scholarship"
+      }
+    ]
+  },
+  {
+    id: "tohoku-university",
+    countryId: "japan",
+    name: "Tohoku University",
+    imageUrl: "https://images.unsplash.com/photo-1460574283810-2aab119d8511?w=800&h=600&fit=crop",
+    description: "Tohoku University is a Japanese national university in Sendai, Miyagi. Founded in 1907, it was the third imperial university in Japan and is known for its research excellence and international outlook.",
+    ranking: 79,
+    tuitionFee: "¥535,800 ($3,600)",
+    acceptanceRate: "42%",
+    website: "https://www.tohoku.ac.jp/en/",
+    scholarships: [
+      {
+        name: "MEXT Scholarship",
+        amount: "¥143,000-184,000/month",
+        deadline: "May",
+        eligibility: "International students",
+        link: "https://www.tohoku.ac.jp/en/international/scholarships/"
+      },
+      {
+        name: "Tohoku University Global Leader Program Scholarship",
+        amount: "Full tuition + ¥180,000/month",
+        deadline: "December",
+        eligibility: "Outstanding doctoral students",
+        link: "https://www.tohoku.ac.jp/en/international/global-leader-scholarship/"
+      }
+    ]
+  },
+  {
+    id: "nagoya-university",
+    countryId: "japan",
+    name: "Nagoya University",
+    imageUrl: "https://images.unsplash.com/photo-1439337153520-7082a56a81f4?w=800&h=600&fit=crop",
+    description: "Nagoya University is a Japanese national university in Nagoya, Japan. Founded in 1939, it is one of Japan's leading research universities and has produced several Nobel Prize winners.",
+    ranking: 112,
+    tuitionFee: "¥535,800 ($3,600)",
+    acceptanceRate: "45%",
+    website: "https://en.nagoya-u.ac.jp/",
+    scholarships: [
+      {
+        name: "MEXT Scholarship",
+        amount: "¥143,000-184,000/month",
+        deadline: "May",
+        eligibility: "International students",
+        link: "https://en.nagoya-u.ac.jp/international/scholarships/"
+      },
+      {
+        name: "Nagoya University Doctoral Fellowship",
+        amount: "¥200,000/month",
+        deadline: "January",
+        eligibility: "Doctoral students with outstanding research potential",
+        link: "https://en.nagoya-u.ac.jp/international/doctoral-fellowship/"
+      }
+    ]
+  },
+  {
+    id: "hokkaido-university",
+    countryId: "japan",
+    name: "Hokkaido University",
+    imageUrl: "https://images.unsplash.com/photo-1497604401993-f2e922e5cb0a?w=800&h=600&fit=crop",
+    description: "Hokkaido University is a national university in Sapporo, Hokkaido, Japan. Established in 1876, it is one of the former imperial universities and is known for its beautiful campus and strong agricultural and veterinary programs.",
+    ranking: 145,
+    tuitionFee: "¥535,800 ($3,600)",
+    acceptanceRate: "50%",
+    website: "https://www.hokudai.ac.jp/en/",
+    scholarships: [
+      {
+        name: "MEXT Scholarship",
+        amount: "¥143,000-184,000/month",
+        deadline: "May",
+        eligibility: "International students",
+        link: "https://www.hokudai.ac.jp/en/international/scholarships/"
+      },
+      {
+        name: "Hokkaido University President Fellowship",
+        amount: "¥150,000/month",
+        deadline: "December",
+        eligibility: "Outstanding graduate students",
+        link: "https://www.hokudai.ac.jp/en/international/president-fellowship/"
+      }
+    ]
+  },
+  {
+    id: "kyushu-university",
+    countryId: "japan",
+    name: "Kyushu University",
+    imageUrl: "https://images.unsplash.com/photo-1466442929976-97f336a657be?w=800&h=600&fit=crop",
+    description: "Kyushu University is a Japanese national university in Fukuoka, Japan. Founded in 1903, it is one of Japan's former imperial universities and is known for its comprehensive research programs and international initiatives.",
+    ranking: 135,
+    tuitionFee: "¥535,800 ($3,600)",
+    acceptanceRate: "48%",
+    website: "https://www.kyushu-u.ac.jp/en/",
+    scholarships: [
+      {
+        name: "MEXT Scholarship",
+        amount: "¥143,000-184,000/month",
+        deadline: "May",
+        eligibility: "International students",
+        link: "https://www.kyushu-u.ac.jp/en/international/scholarships/"
+      },
+      {
+        name: "Kyushu University Doctoral Fellowship",
+        amount: "¥180,000/month",
+        deadline: "November",
+        eligibility: "Exceptional doctoral candidates",
+        link: "https://www.kyushu-u.ac.jp/en/international/doctoral-fellowship/"
+      }
+    ]
+  },
+  {
+    id: "waseda-university",
+    countryId: "japan",
+    name: "Waseda University",
+    imageUrl: "https://images.unsplash.com/photo-1492321936769-b49830bc1d1e?w=800&h=600&fit=crop",
+    description: "Waseda University is a private research university in Tokyo, Japan. Founded in 1882, it is one of Japan's most prestigious private universities and is known for its liberal atmosphere and strong alumni network.",
+    ranking: 203,
+    tuitionFee: "¥1,200,000-1,500,000 ($8,000-10,000)",
+    acceptanceRate: "55%",
+    website: "https://www.waseda.jp/top/en/",
+    scholarships: [
+      {
+        name: "Waseda University Scholarship",
+        amount: "¥300,000-800,000/year",
+        deadline: "March",
+        eligibility: "International students with academic excellence",
+        link: "https://www.waseda.jp/top/en/international/scholarships/"
+      },
+      {
+        name: "JASSO Scholarship",
+        amount: "¥48,000/month",
+        deadline: "April",
+        eligibility: "International students with financial need",
+        link: "https://www.waseda.jp/top/en/international/jasso-scholarship/"
+      }
+    ]
+  },
+  {
+    id: "keio-university",
+    countryId: "japan",
+    name: "Keio University",
+    imageUrl: "https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a?w=800&h=600&fit=crop",
+    description: "Keio University is a private research university in Tokyo, Japan. Founded in 1858, it is one of Japan's oldest institutions of higher learning and is particularly renowned for its business and economics programs.",
+    ranking: 201,
+    tuitionFee: "¥1,200,000-1,600,000 ($8,000-11,000)",
+    acceptanceRate: "60%",
+    website: "https://www.keio.ac.jp/en/",
+    scholarships: [
+      {
+        name: "Keio University Scholarship",
+        amount: "¥500,000-1,000,000/year",
+        deadline: "February",
+        eligibility: "International students with outstanding academic records",
+        link: "https://www.keio.ac.jp/en/international/scholarships/"
+      },
+      {
+        name: "Fukuzawa Memorial Scholarship",
+        amount: "Full tuition waiver",
+        deadline: "January",
+        eligibility: "Exceptional international students",
+        link: "https://www.keio.ac.jp/en/international/fukuzawa-scholarship/"
+      }
+    ]
+  },
+  {
+    id: "tsukuba-university",
+    countryId: "japan",
+    name: "University of Tsukuba",
+    imageUrl: "https://images.unsplash.com/photo-1496307653780-42ee777d4833?w=800&h=600&fit=crop",
+    description: "The University of Tsukuba is a national university in Tsukuba, Ibaraki, Japan. Established in 1973, it is known for its innovative educational system and strong research programs in science and technology.",
+    ranking: 270,
+    tuitionFee: "¥535,800 ($3,600)",
+    acceptanceRate: "52%",
+    website: "https://www.tsukuba.ac.jp/en/",
+    scholarships: [
+      {
+        name: "MEXT Scholarship",
+        amount: "¥143,000-184,000/month",
+        deadline: "May",
+        eligibility: "International students",
+        link: "https://www.tsukuba.ac.jp/en/international/scholarships/"
+      },
+      {
+        name: "University of Tsukuba Fellowship",
+        amount: "¥120,000/month",
+        deadline: "December",
+        eligibility: "Outstanding graduate students",
+        link: "https://www.tsukuba.ac.jp/en/international/fellowship/"
+      }
+    ]
+  },
+  {
+    id: "hiroshima-university",
+    countryId: "japan",
+    name: "Hiroshima University",
+    imageUrl: "https://images.unsplash.com/photo-1459767129954-1b1c1f9b9ace?w=800&h=600&fit=crop",
+    description: "Hiroshima University is a national university in Hiroshima, Japan. Founded in 1949, it is known for its peace studies programs and comprehensive research activities across multiple disciplines.",
+    ranking: 334,
+    tuitionFee: "¥535,800 ($3,600)",
+    acceptanceRate: "55%",
+    website: "https://www.hiroshima-u.ac.jp/en",
+    scholarships: [
+      {
+        name: "MEXT Scholarship",
+        amount: "¥143,000-184,000/month",
+        deadline: "May",
+        eligibility: "International students",
+        link: "https://www.hiroshima-u.ac.jp/en/international/scholarships"
+      },
+      {
+        name: "Hiroshima University Phoenix Scholarship",
+        amount: "¥100,000/month",
+        deadline: "February",
+        eligibility: "Students from developing countries",
+        link: "https://www.hiroshima-u.ac.jp/en/international/phoenix-scholarship"
+      }
+    ]
+  },
+  {
+    id: "kobe-university",
+    countryId: "japan",
+    name: "Kobe University",
+    imageUrl: "https://images.unsplash.com/photo-1460574283810-2aab119d8511?w=800&h=600&fit=crop",
+    description: "Kobe University is a national university in Kobe, Japan. Founded in 1949, it is known for its strong programs in business, economics, and maritime studies, taking advantage of Kobe's position as a major port city.",
+    ranking: 351,
+    tuitionFee: "¥535,800 ($3,600)",
+    acceptanceRate: "58%",
+    website: "https://www.kobe-u.ac.jp/en/",
+    scholarships: [
+      {
+        name: "MEXT Scholarship",
+        amount: "¥143,000-184,000/month",
+        deadline: "May",
+        eligibility: "International students",
+        link: "https://www.kobe-u.ac.jp/en/international/scholarships/"
+      },
+      {
+        name: "Kobe University Maritime Fellowship",
+        amount: "¥80,000/month",
+        deadline: "March",
+        eligibility: "Students in maritime-related fields",
+        link: "https://www.kobe-u.ac.jp/en/international/maritime-fellowship/"
+      }
+    ]
+  },
+  {
+    id: "yokohama-national-university",
+    countryId: "japan",
+    name: "Yokohama National University",
+    imageUrl: "https://images.unsplash.com/photo-1439337153520-7082a56a81f4?w=800&h=600&fit=crop",
+    description: "Yokohama National University is a national university in Yokohama, Japan. Founded in 1949, it is known for its strong engineering and business programs and its beautiful campus overlooking Tokyo Bay.",
+    ranking: 401,
+    tuitionFee: "¥535,800 ($3,600)",
+    acceptanceRate: "60%",
+    website: "https://www.ynu.ac.jp/english/",
+    scholarships: [
+      {
+        name: "MEXT Scholarship",
+        amount: "¥143,000-184,000/month",
+        deadline: "May",
+        eligibility: "International students",
+        link: "https://www.ynu.ac.jp/english/international/scholarships/"
+      },
+      {
+        name: "YNU International Student Support Scholarship",
+        amount: "¥50,000/month",
+        deadline: "April",
+        eligibility: "International students with financial need",
+        link: "https://www.ynu.ac.jp/english/international/support-scholarship/"
+      }
+    ]
+  },
+  {
+    id: "chiba-university",
+    countryId: "japan",
+    name: "Chiba University",
+    imageUrl: "https://images.unsplash.com/photo-1497604401993-f2e922e5cb0a?w=800&h=600&fit=crop",
+    description: "Chiba University is a national university in Chiba, Japan. Founded in 1949, it is known for its comprehensive programs and particularly strong medical and pharmaceutical schools.",
+    ranking: 451,
+    tuitionFee: "¥535,800 ($3,600)",
+    acceptanceRate: "62%",
+    website: "https://www.chiba-u.ac.jp/e/",
+    scholarships: [
+      {
+        name: "MEXT Scholarship",
+        amount: "¥143,000-184,000/month",
+        deadline: "May",
+        eligibility: "International students",
+        link: "https://www.chiba-u.ac.jp/e/international/scholarships/"
+      },
+      {
+        name: "Chiba University International Student Scholarship",
+        amount: "¥40,000/month",
+        deadline: "March",
+        eligibility: "International students with good academic standing",
+        link: "https://www.chiba-u.ac.jp/e/international/student-scholarship/"
+      }
+    ]
+  },
+  {
+    id: "niigata-university",
+    countryId: "japan",
+    name: "Niigata University",
+    imageUrl: "https://images.unsplash.com/photo-1466442929976-97f336a657be?w=800&h=600&fit=crop",
+    description: "Niigata University is a national university in Niigata, Japan. Founded in 1949, it is known for its strong medical school and comprehensive research programs across various disciplines.",
+    ranking: 501,
+    tuitionFee: "¥535,800 ($3,600)",
+    acceptanceRate: "65%",
+    website: "https://www.niigata-u.ac.jp/en/",
+    scholarships: [
+      {
+        name: "MEXT Scholarship",
+        amount: "¥143,000-184,000/month",
+        deadline: "May",
+        eligibility: "International students",
+        link: "https://www.niigata-u.ac.jp/en/international/scholarships/"
+      },
+      {
+        name: "Niigata University Regional Development Scholarship",
+        amount: "¥60,000/month",
+        deadline: "February",
+        eligibility: "Students interested in regional development studies",
+        link: "https://www.niigata-u.ac.jp/en/international/regional-scholarship/"
+      }
+    ]
+  },
+  {
+    id: "okayama-university",
+    countryId: "japan",
+    name: "Okayama University",
+    imageUrl: "https://images.unsplash.com/photo-1492321936769-b49830bc1d1e?w=800&h=600&fit=crop",
+    description: "Okayama University is a national university in Okayama, Japan. Founded in 1949, it is known for its comprehensive programs and particularly strong medical and agricultural schools.",
+    ranking: 551,
+    tuitionFee: "¥535,800 ($3,600)",
+    acceptanceRate: "68%",
+    website: "https://www.okayama-u.ac.jp/eng/",
+    scholarships: [
+      {
+        name: "MEXT Scholarship",
+        amount: "¥143,000-184,000/month",
+        deadline: "May",
+        eligibility: "International students",
+        link: "https://www.okayama-u.ac.jp/eng/international/scholarships/"
+      },
+      {
+        name: "Okayama University Excellence Scholarship",
+        amount: "¥70,000/month",
+        deadline: "January",
+        eligibility: "Outstanding international students",
+        link: "https://www.okayama-u.ac.jp/eng/international/excellence-scholarship/"
+      }
+    ]
+  },
+  {
+    id: "kumamoto-university",
+    countryId: "japan",
+    name: "Kumamoto University",
+    imageUrl: "https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a?w=800&h=600&fit=crop",
+    description: "Kumamoto University is a national university in Kumamoto, Japan. Founded in 1949, it is known for its strong medical school and comprehensive research programs, particularly in natural sciences.",
+    ranking: 601,
+    tuitionFee: "¥535,800 ($3,600)",
+    acceptanceRate: "70%",
+    website: "https://www.kumamoto-u.ac.jp/en/",
+    scholarships: [
+      {
+        name: "MEXT Scholarship",
+        amount: "¥143,000-184,000/month",
+        deadline: "May",
+        eligibility: "International students",
+        link: "https://www.kumamoto-u.ac.jp/en/international/scholarships/"
+      },
+      {
+        name: "Kumamoto University International Exchange Scholarship",
+        amount: "¥50,000/month",
+        deadline: "March",
+        eligibility: "International students participating in exchange programs",
+        link: "https://www.kumamoto-u.ac.jp/en/international/exchange-scholarship/"
+      }
+    ]
+  },
+  {
+    id: "shinshu-university",
+    countryId: "japan",
+    name: "Shinshu University",
+    imageUrl: "https://images.unsplash.com/photo-1496307653780-42ee777d4833?w=800&h=600&fit=crop",
+    description: "Shinshu University is a national university in Matsumoto, Nagano, Japan. Founded in 1949, it is known for its beautiful mountain campus setting and strong programs in engineering and fiber science.",
+    ranking: 651,
+    tuitionFee: "¥535,800 ($3,600)",
+    acceptanceRate: "72%",
+    website: "https://www.shinshu-u.ac.jp/english/",
+    scholarships: [
+      {
+        name: "MEXT Scholarship",
+        amount: "¥143,000-184,000/month",
+        deadline: "May",
+        eligibility: "International students",
+        link: "https://www.shinshu-u.ac.jp/english/international/scholarships/"
+      },
+      {
+        name: "Shinshu University Mountain Research Scholarship",
+        amount: "¥45,000/month",
+        deadline: "February",
+        eligibility: "Students in environmental and mountain sciences",
+        link: "https://www.shinshu-u.ac.jp/english/international/mountain-scholarship/"
+      }
+    ]
+  },
+  {
+    id: "gunma-university",
+    countryId: "japan",
+    name: "Gunma University",
+    imageUrl: "https://images.unsplash.com/photo-1459767129954-1b1c1f9b9ace?w=800&h=600&fit=crop",
+    description: "Gunma University is a national university in Maebashi, Gunma, Japan. Founded in 1949, it is known for its strong medical school and comprehensive undergraduate and graduate programs.",
+    ranking: 701,
+    tuitionFee: "¥535,800 ($3,600)",
+    acceptanceRate: "75%",
+    website: "https://www.gunma-u.ac.jp/english/",
+    scholarships: [
+      {
+        name: "MEXT Scholarship",
+        amount: "¥143,000-184,000/month",
+        deadline: "May",
+        eligibility: "International students",
+        link: "https://www.gunma-u.ac.jp/english/international/scholarships/"
+      },
+      {
+        name: "Gunma University Community Support Scholarship",
+        amount: "¥35,000/month",
+        deadline: "April",
+        eligibility: "International students with community involvement",
+        link: "https://www.gunma-u.ac.jp/english/international/community-scholarship/"
+      }
+    ]
+  },
+  {
+    id: "yamaguchi-university",
+    countryId: "japan",
+    name: "Yamaguchi University",
+    imageUrl: "https://images.unsplash.com/photo-1460574283810-2aab119d8511?w=800&h=600&fit=crop",
+    description: "Yamaguchi University is a national university in Yamaguchi, Japan. Founded in 1949, it is known for its comprehensive programs and strong emphasis on international education and research collaboration.",
+    ranking: 751,
+    tuitionFee: "¥535,800 ($3,600)",
+    acceptanceRate: "78%",
+    website: "https://www.yamaguchi-u.ac.jp/en/",
+    scholarships: [
+      {
+        name: "MEXT Scholarship",
+        amount: "¥143,000-184,000/month",
+        deadline: "May",
+        eligibility: "International students",
+        link: "https://www.yamaguchi-u.ac.jp/en/international/scholarships/"
+      },
+      {
+        name: "Yamaguchi University International Partnership Scholarship",
+        amount: "¥40,000/month",
+        deadline: "January",
+        eligibility: "Students from partner universities",
+        link: "https://www.yamaguchi-u.ac.jp/en/international/partnership-scholarship/"
+      }
+    ]
   }
 ];
 
