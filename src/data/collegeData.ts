@@ -1,3 +1,4 @@
+
 import { State, College, FilterOptions } from "./types";
 
 export const states: State[] = [
@@ -856,3 +857,10 @@ export const colleges: College[] = [
 export function getCollegesByState(stateId: string): College[] {
   return colleges.filter(college => college.location.toLowerCase().includes(stateId.toLowerCase()));
 }
+
+export function getCollegeById(collegeId: string): College | null {
+  return colleges.find(college => college.id === collegeId) || null;
+}
+
+// Export types for use in other files
+export type { State, College, FilterOptions };
