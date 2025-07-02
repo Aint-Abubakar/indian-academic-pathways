@@ -12,7 +12,11 @@ export interface College {
   name: string;
   description: string;
   type: "Government" | "Private";
-  location: string;
+  location: {
+    city: string;
+    state: string;
+    address: string;
+  } | string;
   rating: number;
   courses: string[];
   fees: {

@@ -44,6 +44,22 @@ const CollegeDetail = () => {
       </div>
     );
   }
+
+  // Helper function to get location display text
+  const getLocationDisplay = (location: string | { city: string; state: string; address: string }) => {
+    if (typeof location === 'string') {
+      return location;
+    }
+    return `${location.city}, ${location.state}`;
+  };
+
+  // Helper function to get full address
+  const getFullAddress = (location: string | { city: string; state: string; address: string }) => {
+    if (typeof location === 'string') {
+      return location;
+    }
+    return location.address;
+  };
   
   return (
     <div className="py-12">
@@ -68,7 +84,7 @@ const CollegeDetail = () => {
                   <div className="flex items-center">
                     <MapPin className="h-4 w-4 text-muted-foreground mr-1" />
                     <span className="text-muted-foreground">
-                      {college.location.city}, {college.location.state}
+                      {getLocationDisplay(college.location)}
                     </span>
                   </div>
                 )}
@@ -115,7 +131,7 @@ const CollegeDetail = () => {
                 {college.location && (
                   <div className="mt-6">
                     <h3 className="text-lg font-semibold mb-3">Location</h3>
-                    <p>{college.location.address}</p>
+                    <p>{getFullAddress(college.location)}</p>
                   </div>
                 )}
                 <div className="mt-6">
