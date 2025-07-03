@@ -3258,12 +3258,519 @@ const karnatakaColleges: College[] = [
   }
 ];
 
+const tamilNaduColleges: College[] = [
+  {
+    id: "iit-madras",
+    name: "Indian Institute of Technology Madras",
+    description: "Premier engineering institute, consistently ranked as India's top technical university.",
+    rating: 4.9,
+    type: "Government",
+    courses: ["Engineering", "Technology", "Sciences", "Management"],
+    fees: {
+      tuition: { min: 250000, max: 300000 },
+      hostel: { min: 18000, max: 25000 },
+    },
+    location: {
+      city: "Chennai",
+      state: "Tamil Nadu",
+      address: "Sardar Patel Road, Adyar, Chennai 600036"
+    },
+    established: 1959,
+    accreditation: ["NAAC A++", "NBA", "ABET"],
+    facilities: ["Research Labs", "Library", "Hostel", "Sports Complex", "Medical Center"],
+    admissionProcess: "JEE Advanced",
+    scholarships: [
+      {
+        name: "Merit-cum-Means Scholarship",
+        amount: "₹1,00,000 per year",
+        eligibility: "JEE Advanced qualified with family income < 5 LPA"
+      }
+    ],
+    placementRate: 99,
+    averagePackage: 2100000,
+    imageUrl: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
+    placement: {
+      percentage: 99,
+      avgSalary: 2100000,
+      topRecruiters: ["Microsoft", "Google", "Amazon", "Facebook", "Goldman Sachs"]
+    },
+    entranceExams: ["JEE Advanced"],
+    admissionDetails: {
+      eligibility: "JEE Advanced qualified with PCM in 12th",
+      process: "JoSAA counseling",
+      deadlines: "June-July annually"
+    }
+  },
+  {
+    id: "anna-university",
+    name: "Anna University",
+    description: "State technical university offering undergraduate and postgraduate programs in engineering and technology.",
+    rating: 4.2,
+    type: "Government",
+    courses: ["Engineering", "Technology", "Architecture", "Planning"],
+    fees: {
+      tuition: { min: 60000, max: 100000 },
+      hostel: { min: 20000, max: 35000 },
+    },
+    location: {
+      city: "Chennai",
+      state: "Tamil Nadu",
+      address: "Sardar Patel Road, Guindy, Chennai 600025"
+    },
+    established: 1978,
+    accreditation: ["NAAC A", "NBA", "UGC"],
+    facilities: ["Central Library", "Computer Center", "Hostels", "Sports Facilities"],
+    admissionProcess: "TNEA",
+    scholarships: [
+      {
+        name: "State Merit Scholarship",
+        amount: "₹50,000 per year",
+        eligibility: "Top 10% in TNEA"
+      }
+    ],
+    placementRate: 85,
+    averagePackage: 650000,
+    imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585",
+    placement: {
+      percentage: 85,
+      avgSalary: 650000,
+      topRecruiters: ["TCS", "Infosys", "Wipro", "Cognizant", "HCL"]
+    },
+    entranceExams: ["TNEA"],
+    admissionDetails: {
+      eligibility: "12th PCM with minimum 50% marks",
+      process: "TNEA counseling",
+      deadlines: "June-July annually"
+    }
+  },
+  {
+    id: "vit-vellore",
+    name: "Vellore Institute of Technology",
+    description: "Private deemed university known for its engineering programs and international collaborations.",
+    rating: 4.4,
+    type: "Private",
+    courses: ["Engineering", "Technology", "Management", "Sciences"],
+    fees: {
+      tuition: { min: 198000, max: 400000 },
+      hostel: { min: 180000, max: 250000 },
+    },
+    location: {
+      city: "Vellore",
+      state: "Tamil Nadu",
+      address: "Vellore 632014"
+    },
+    established: 1984,
+    accreditation: ["NAAC A++", "NBA", "UGC"],
+    facilities: ["Digital Library", "Research Centers", "Hostels", "Sports Complex", "Medical Center"],
+    admissionProcess: "VITEEE",
+    scholarships: [
+      {
+        name: "Dr. G. Viswanathan Scholarship",
+        amount: "₹2,00,000 per year",
+        eligibility: "VITEEE rank under 1000"
+      }
+    ],
+    placementRate: 95,
+    averagePackage: 750000,
+    imageUrl: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b",
+    placement: {
+      percentage: 95,
+      avgSalary: 750000,
+      topRecruiters: ["Accenture", "TCS", "Wipro", "Amazon", "Microsoft"]
+    },
+    entranceExams: ["VITEEE"],
+    admissionDetails: {
+      eligibility: "12th PCM with minimum 60% marks",
+      process: "VITEEE followed by counseling",
+      deadlines: "April-May annually"
+    }
+  },
+  {
+    id: "nit-trichy",
+    name: "National Institute of Technology Tiruchirappalli",
+    description: "Premier technical institute known for excellence in engineering education and research.",
+    rating: 4.6,
+    type: "Government",
+    courses: ["Engineering", "Technology", "Sciences", "Management"],
+    fees: {
+      tuition: { min: 150000, max: 200000 },
+      hostel: { min: 20000, max: 30000 },
+    },
+    location: {
+      city: "Tiruchirappalli",
+      state: "Tamil Nadu",
+      address: "National Highway 67, Tiruchirappalli 620015"
+    },
+    established: 1964,
+    accreditation: ["NAAC A++", "NBA", "AICTE"],
+    facilities: ["Central Library", "Computer Center", "Hostels", "Sports Complex", "Health Center"],
+    admissionProcess: "JEE Main",
+    scholarships: [
+      {
+        name: "Institute Merit Scholarship",
+        amount: "₹75,000 per year",
+        eligibility: "Top 20% students based on JEE Main rank"
+      }
+    ],
+    placementRate: 92,
+    averagePackage: 1200000,
+    imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f",
+    placement: {
+      percentage: 92,
+      avgSalary: 1200000,
+      topRecruiters: ["Google", "Microsoft", "Amazon", "Samsung", "Oracle"]
+    },
+    entranceExams: ["JEE Main"],
+    admissionDetails: {
+      eligibility: "JEE Main qualified with PCM in 12th",
+      process: "JoSAA counseling",
+      deadlines: "June-July annually"
+    }
+  },
+  {
+    id: "psg-tech",
+    name: "PSG College of Technology",
+    description: "Autonomous engineering college with strong industry connections and excellent placement record.",
+    rating: 4.3,
+    type: "Private",
+    courses: ["Engineering", "Technology", "Applied Sciences"],
+    fees: {
+      tuition: { min: 90000, max: 150000 },
+      hostel: { min: 30000, max: 45000 },
+    },
+    location: {
+      city: "Coimbatore",
+      state: "Tamil Nadu",
+      address: "Peelamedu, Coimbatore 641004"
+    },
+    established: 1951,
+    accreditation: ["NAAC A++", "NBA", "UGC"],
+    facilities: ["Library", "Labs", "Hostels", "Sports", "Training & Placement Cell"],
+    admissionProcess: "TNEA/Management Quota",
+    scholarships: [
+      {
+        name: "PSG Merit Scholarship",
+        amount: "₹40,000 per year",
+        eligibility: "Top 15% in entrance exam"
+      }
+    ],
+    placementRate: 88,
+    averagePackage: 680000,
+    imageUrl: "https://images.unsplash.com/photo-1564981797816-1043664bf78d",
+    placement: {
+      percentage: 88,
+      avgSalary: 680000,
+      topRecruiters: ["Infosys", "TCS", "Wipro", "L&T", "Ashok Leyland"]
+    },
+    entranceExams: ["TNEA"],
+    admissionDetails: {
+      eligibility: "12th PCM with minimum 50% marks",
+      process: "TNEA counseling/Direct admission",
+      deadlines: "June-July annually"
+    }
+  },
+  {
+    id: "thiagarajar-college",
+    name: "Thiagarajar College of Engineering",
+    description: "Government-aided autonomous engineering college known for quality education.",
+    rating: 4.1,
+    type: "Government",
+    courses: ["Engineering", "Technology"],
+    fees: {
+      tuition: { min: 45000, max: 80000 },
+      hostel: { min: 15000, max: 25000 },
+    },
+    location: {
+      city: "Madurai",
+      state: "Tamil Nadu",
+      address: "Thiruparankundram, Madurai 625015"
+    },
+    established: 1957,
+    accreditation: ["NAAC A+", "NBA", "UGC"],
+    facilities: ["Library", "Computer Center", "Hostels", "Sports Complex"],
+    admissionProcess: "TNEA",
+    scholarships: [
+      {
+        name: "TCE Merit Scholarship",
+        amount: "₹25,000 per year",
+        eligibility: "Top 25% students"
+      }
+    ],
+    placementRate: 82,
+    averagePackage: 550000,
+    imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+    placement: {
+      percentage: 82,
+      avgSalary: 550000,
+      topRecruiters: ["TCS", "Infosys", "Cognizant", "Accenture", "HCL"]
+    },
+    entranceExams: ["TNEA"],
+    admissionDetails: {
+      eligibility: "12th PCM with minimum 50% marks",
+      process: "TNEA counseling",
+      deadlines: "June-July annually"
+    }
+  },
+  {
+    id: "sathyabama-university",
+    name: "Sathyabama Institute of Science and Technology",
+    description: "Deemed university with focus on research and innovation in engineering and technology.",
+    rating: 4.0,
+    type: "Private",
+    courses: ["Engineering", "Technology", "Management", "Sciences"],
+    fees: {
+      tuition: { min: 180000, max: 250000 },
+      hostel: { min: 80000, max: 120000 },
+    },
+    location: {
+      city: "Chennai",
+      state: "Tamil Nadu",
+      address: "Jeppiaar Nagar, Rajiv Gandhi Salai, Chennai 600119"
+    },
+    established: 1987,
+    accreditation: ["NAAC A", "NBA", "UGC"],
+    facilities: ["Library", "Research Centers", "Hostels", "Sports", "Medical Center"],
+    admissionProcess: "SAEEE/JEE Main",
+    scholarships: [
+      {
+        name: "Chancellor's Scholarship",
+        amount: "₹1,00,000 per year",
+        eligibility: "JEE Main rank under 10000"
+      }
+    ],
+    placementRate: 75,
+    averagePackage: 480000,
+    imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585",
+    placement: {
+      percentage: 75,
+      avgSalary: 480000,
+      topRecruiters: ["TCS", "Infosys", "Wipro", "Capgemini", "Tech Mahindra"]
+    },
+    entranceExams: ["SAEEE", "JEE Main"],
+    admissionDetails: {
+      eligibility: "12th PCM with minimum 50% marks",
+      process: "SAEEE/JEE Main counseling",
+      deadlines: "May-June annually"
+    }
+  },
+  {
+    id: "ssn-college",
+    name: "SSN College of Engineering",
+    description: "Autonomous engineering college affiliated to Anna University with excellent academic standards.",
+    rating: 4.2,
+    type: "Private",
+    courses: ["Engineering", "Technology"],
+    fees: {
+      tuition: { min: 120000, max: 180000 },
+      hostel: { min: 45000, max: 65000 },
+    },
+    location: {
+      city: "Chennai",
+      state: "Tamil Nadu",
+      address: "Old Mahabalipuram Road, Kalavakkam 603110"
+    },
+    established: 1996,
+    accreditation: ["NAAC A++", "NBA", "UGC"],
+    facilities: ["Digital Library", "Labs", "Hostels", "Sports Complex", "Innovation Center"],
+    admissionProcess: "TNEA",
+    scholarships: [
+      {
+        name: "SSN Excellence Award",
+        amount: "₹60,000 per year",
+        eligibility: "Top 10% in TNEA"
+      }
+    ],
+    placementRate: 90,
+    averagePackage: 720000,
+    imageUrl: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
+    placement: {
+      percentage: 90,
+      avgSalary: 720000,
+      topRecruiters: ["Amazon", "Microsoft", "Google", "Zoho", "PayPal"]
+    },
+    entranceExams: ["TNEA"],
+    admissionDetails: {
+      eligibility: "12th PCM with minimum 50% marks",
+      process: "TNEA counseling",
+      deadlines: "June-July annually"
+    }
+  },
+  {
+    id: "srm-university",
+    name: "SRM Institute of Science and Technology",
+    description: "Private deemed university with multiple campuses and strong industry partnerships.",
+    rating: 4.1,
+    type: "Private",
+    courses: ["Engineering", "Technology", "Management", "Medicine", "Law"],
+    fees: {
+      tuition: { min: 250000, max: 350000 },
+      hostel: { min: 120000, max: 180000 },
+    },
+    location: {
+      city: "Chennai",
+      state: "Tamil Nadu",
+      address: "SRM Nagar, Kattankulathur 603203"
+    },
+    established: 1985,
+    accreditation: ["NAAC A++", "NBA", "UGC"],
+    facilities: ["Library", "Research Centers", "Hostels", "Sports Complex", "Medical Center"],
+    admissionProcess: "SRMJEEE",
+    scholarships: [
+      {
+        name: "SRM Merit Scholarship",
+        amount: "₹1,50,000 per year",
+        eligibility: "SRMJEEE rank under 500"
+      }
+    ],
+    placementRate: 85,
+    averagePackage: 650000,
+    imageUrl: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b",
+    placement: {
+      percentage: 85,
+      avgSalary: 650000,
+      topRecruiters: ["Accenture", "TCS", "Wipro", "Cognizant", "Infosys"]
+    },
+    entranceExams: ["SRMJEEE"],
+    admissionDetails: {
+      eligibility: "12th PCM with minimum 50% marks",
+      process: "SRMJEEE followed by counseling",
+      deadlines: "April-May annually"
+    }
+  },
+  {
+    id: "madras-institute-tech",
+    name: "Madras Institute of Technology",
+    description: "Campus of Anna University, premier institute for aerospace and other engineering disciplines.",
+    rating: 4.3,
+    type: "Government",
+    courses: ["Aerospace Engineering", "Electronics", "Computer Science", "Mechanical"],
+    fees: {
+      tuition: { min: 60000, max: 100000 },
+      hostel: { min: 25000, max: 40000 },
+    },
+    location: {
+      city: "Chennai",
+      state: "Tamil Nadu",
+      address: "Chromepet, Chennai 600044"
+    },
+    established: 1949,
+    accreditation: ["NAAC A+", "NBA", "UGC"],
+    facilities: ["Aerospace Labs", "Library", "Hostels", "Sports Complex"],
+    admissionProcess: "TNEA",
+    scholarships: [
+      {
+        name: "MIT Alumni Scholarship",
+        amount: "₹50,000 per year",
+        eligibility: "Top 20% students"
+      }
+    ],
+    placementRate: 87,
+    averagePackage: 700000,
+    imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f",
+    placement: {
+      percentage: 87,
+      avgSalary: 700000,
+      topRecruiters: ["HAL", "ISRO", "DRDO", "Boeing", "Airbus"]
+    },
+    entranceExams: ["TNEA"],
+    admissionDetails: {
+      eligibility: "12th PCM with minimum 50% marks",
+      process: "TNEA counseling",
+      deadlines: "June-July annually"
+    }
+  },
+  {
+    id: "coimbatore-institute-tech",
+    name: "Coimbatore Institute of Technology",
+    description: "Autonomous engineering college known for its industry-oriented curriculum.",
+    rating: 4.0,
+    type: "Private",
+    courses: ["Engineering", "Technology", "Management"],
+    fees: {
+      tuition: { min: 80000, max: 130000 },
+      hostel: { min: 35000, max: 50000 },
+    },
+    location: {
+      city: "Coimbatore",
+      state: "Tamil Nadu",
+      address: "Coimbatore 641014"
+    },
+    established: 1956,
+    accreditation: ["NAAC A", "NBA", "UGC"],
+    facilities: ["Library", "Labs", "Hostels", "Sports", "Industry Interface"],
+    admissionProcess: "TNEA",
+    scholarships: [
+      {
+        name: "CIT Merit Award",
+        amount: "₹35,000 per year",
+        eligibility: "Top 30% students"
+      }
+    ],
+    placementRate: 78,
+    averagePackage: 520000,
+    imageUrl: "https://images.unsplash.com/photo-1564981797816-1043664bf78d",
+    placement: {
+      percentage: 78,
+      avgSalary: 520000,
+      topRecruiters: ["TCS", "Infosys", "L&T", "Bosch", "TVS Motors"]
+    },
+    entranceExams: ["TNEA"],
+    admissionDetails: {
+      eligibility: "12th PCM with minimum 50% marks",
+      process: "TNEA counseling",
+      deadlines: "June-July annually"
+    }
+  },
+  {
+    id: "sastra-university",
+    name: "SASTRA Deemed University",
+    description: "Private deemed university offering multidisciplinary programs with emphasis on research.",
+    rating: 4.2,
+    type: "Private",
+    courses: ["Engineering", "Technology", "Sciences", "Management", "Liberal Arts"],
+    fees: {
+      tuition: { min: 170000, max: 220000 },
+      hostel: { min: 60000, max: 90000 },
+    },
+    location: {
+      city: "Thanjavur",
+      state: "Tamil Nadu",
+      address: "Thirumalaisamudram, Thanjavur 613401"
+    },
+    established: 1984,
+    accreditation: ["NAAC A++", "NBA", "UGC"],
+    facilities: ["Digital Library", "Research Centers", "Hostels", "Sports Complex", "Innovation Hub"],
+    admissionProcess: "JEE Main/SASTRA Entrance",
+    scholarships: [
+      {
+        name: "SASTRA Excellence Scholarship",
+        amount: "₹80,000 per year",
+        eligibility: "JEE Main rank under 5000"
+      }
+    ],
+    placementRate: 82,
+    averagePackage: 620000,
+    imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585",
+    placement: {
+      percentage: 82,
+      avgSalary: 620000,
+      topRecruiters: ["Amazon", "Microsoft", "TCS", "Wipro", "Cognizant"]
+    },
+    entranceExams: ["JEE Main", "SASTRA Entrance"],
+    admissionDetails: {
+      eligibility: "12th PCM with minimum 60% marks",
+      process: "JEE Main/SASTRA Entrance counseling",
+      deadlines: "May-June annually"
+    }
+  }
+];
+
 export const getCollegesByState = (stateId: string) => {
   const stateCollegeMap: { [key: string]: College[] } = {
     "maharashtra": maharashtraColleges,
     "delhi": delhiColleges,
     "karnataka": karnatakaColleges,
-    "tamil-nadu": [],
+    "tamil-nadu": tamilNaduColleges,
     "uttar-pradesh": [],
     "gujarat": [],
     "rajasthan": [],
@@ -3307,7 +3814,7 @@ export const getCollegeById = (collegeId: string): College | undefined => {
     "maharashtra": maharashtraColleges,
     "delhi": delhiColleges,
     "karnataka": karnatakaColleges,
-    "tamil-nadu": [],
+    "tamil-nadu": tamilNaduColleges,
     "uttar-pradesh": [],
     "gujarat": [],
     "rajasthan": [],
