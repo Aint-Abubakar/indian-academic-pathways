@@ -2699,11 +2699,570 @@ const delhiColleges: College[] = [
   }
 ];
 
+const karnatakaColleges: College[] = [
+  {
+    id: "iisc-bangalore",
+    name: "Indian Institute of Science",
+    description: "Premier research institution known for its excellence in science and engineering research.",
+    rating: 4.9,
+    type: "Government",
+    courses: ["Science", "Engineering", "Research"],
+    fees: {
+      tuition: { min: 50000, max: 80000 },
+      hostel: { min: 15000, max: 25000 },
+    },
+    location: {
+      city: "Bangalore",
+      state: "Karnataka",
+      address: "CV Raman Avenue, Bangalore, Karnataka 560012"
+    },
+    established: 1909,
+    accreditation: ["NAAC A++", "NBA"],
+    facilities: ["Library", "Research Labs", "Hostel", "Sports"],
+    admissionProcess: "KVPY/JEE Advanced/GATE",
+    scholarships: [
+      {
+        name: "KVPY Fellowship",
+        amount: "₹7,000 per month",
+        eligibility: "KVPY qualified students"
+      },
+      {
+        name: "JRF Fellowship",
+        amount: "₹31,000 per month",
+        eligibility: "PhD students"
+      }
+    ],
+    placementRate: 100,
+    averagePackage: 2800000,
+    imageUrl: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e",
+    placement: {
+      percentage: 100,
+      avgSalary: 2800000,
+      topRecruiters: ["Google", "Microsoft", "Amazon", "Facebook"]
+    },
+    entranceExams: ["KVPY", "JEE Advanced", "GATE"],
+    admissionDetails: {
+      eligibility: "KVPY/JEE Advanced qualified",
+      process: "Online application and counseling",
+      deadlines: "May-June annually"
+    }
+  },
+  {
+    id: "nit-karnataka",
+    name: "National Institute of Technology Karnataka",
+    description: "Premier technical institute offering undergraduate and postgraduate programs in engineering.",
+    rating: 4.7,
+    type: "Government",
+    courses: ["Engineering", "Technology", "Science"],
+    fees: {
+      tuition: { min: 180000, max: 220000 },
+      hostel: { min: 25000, max: 35000 },
+    },
+    location: {
+      city: "Surathkal",
+      state: "Karnataka",
+      address: "Srinivasnagar, Surathkal, Karnataka 575025"
+    },
+    established: 1960,
+    accreditation: ["NAAC A++", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Innovation Hub"],
+    admissionProcess: "JEE Main",
+    scholarships: [
+      {
+        name: "Merit-cum-Means Scholarship",
+        amount: "₹1,000-₹12,000 per month",
+        eligibility: "Based on family income and merit"
+      }
+    ],
+    placementRate: 92,
+    averagePackage: 1400000,
+    imageUrl: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+    placement: {
+      percentage: 92,
+      avgSalary: 1400000,
+      topRecruiters: ["Microsoft", "Amazon", "Google", "Intel"]
+    },
+    entranceExams: ["JEE Main"],
+    admissionDetails: {
+      eligibility: "JEE Main qualified with 75% in 12th",
+      process: "JoSAA counseling",
+      deadlines: "June-July annually"
+    }
+  },
+  {
+    id: "rvce-bangalore",
+    name: "R.V. College of Engineering",
+    description: "Autonomous engineering college affiliated to VTU, known for quality education and placements.",
+    rating: 4.5,
+    type: "Private",
+    courses: ["Engineering", "Technology"],
+    fees: {
+      tuition: { min: 250000, max: 300000 },
+      hostel: { min: 40000, max: 60000 },
+    },
+    location: {
+      city: "Bangalore",
+      state: "Karnataka",
+      address: "RV Vidyaniketan Post, Mysore Road, Bangalore 560059"
+    },
+    established: 1963,
+    accreditation: ["NAAC A++", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Cafeteria"],
+    admissionProcess: "KCET/COMEDK",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹50,000 per year",
+        eligibility: "Top 5% students"
+      },
+      {
+        name: "Need-based Scholarship",
+        amount: "₹25,000 per year",
+        eligibility: "Family income < ₹3 lakhs"
+      }
+    ],
+    placementRate: 85,
+    averagePackage: 800000,
+    imageUrl: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
+    placement: {
+      percentage: 85,
+      avgSalary: 800000,
+      topRecruiters: ["TCS", "Infosys", "Wipro", "Accenture"]
+    },
+    entranceExams: ["KCET", "COMEDK"],
+    admissionDetails: {
+      eligibility: "KCET/COMEDK qualified with PCM in 12th",
+      process: "KEA counseling/Direct admission",
+      deadlines: "July-August annually"
+    }
+  },
+  {
+    id: "bmsce-bangalore",
+    name: "B.M.S. College of Engineering",
+    description: "Autonomous engineering college with excellent academic standards and industry connections.",
+    rating: 4.4,
+    type: "Private",
+    courses: ["Engineering", "Technology"],
+    fees: {
+      tuition: { min: 240000, max: 280000 },
+      hostel: { min: 35000, max: 50000 },
+    },
+    location: {
+      city: "Bangalore",
+      state: "Karnataka",
+      address: "Bull Temple Road, Basavanagudi, Bangalore 560019"
+    },
+    established: 1946,
+    accreditation: ["NAAC A++", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports"],
+    admissionProcess: "KCET/COMEDK",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹40,000 per year",
+        eligibility: "Top 10% students"
+      }
+    ],
+    placementRate: 82,
+    averagePackage: 750000,
+    imageUrl: "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
+    placement: {
+      percentage: 82,
+      avgSalary: 750000,
+      topRecruiters: ["Microsoft", "Amazon", "Samsung", "Bosch"]
+    },
+    entranceExams: ["KCET", "COMEDK"],
+    admissionDetails: {
+      eligibility: "KCET/COMEDK qualified with PCM in 12th",
+      process: "KEA counseling/Direct admission",
+      deadlines: "July-August annually"
+    }
+  },
+  {
+    id: "msrit-bangalore",
+    name: "M.S. Ramaiah Institute of Technology",
+    description: "Leading engineering institute known for innovation and entrepreneurship.",
+    rating: 4.3,
+    type: "Private",
+    courses: ["Engineering", "Technology"],
+    fees: {
+      tuition: { min: 260000, max: 310000 },
+      hostel: { min: 45000, max: 65000 },
+    },
+    location: {
+      city: "Bangalore",
+      state: "Karnataka",
+      address: "Gnanagangothri Campus, MSR Nagar, Bangalore 560054"
+    },
+    established: 1962,
+    accreditation: ["NAAC A", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Innovation Center"],
+    admissionProcess: "KCET/COMEDK",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹35,000 per year",
+        eligibility: "Top 10% students"
+      }
+    ],
+    placementRate: 80,
+    averagePackage: 720000,
+    imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+    placement: {
+      percentage: 80,
+      avgSalary: 720000,
+      topRecruiters: ["TCS", "Infosys", "Cognizant", "HCL"]
+    },
+    entranceExams: ["KCET", "COMEDK"],
+    admissionDetails: {
+      eligibility: "KCET/COMEDK qualified with PCM in 12th",
+      process: "KEA counseling/Direct admission",
+      deadlines: "July-August annually"
+    }
+  },
+  {
+    id: "pesit-bangalore",
+    name: "PES Institute of Technology",
+    description: "Premier engineering college with focus on innovation and research.",
+    rating: 4.4,
+    type: "Private",
+    courses: ["Engineering", "Technology"],
+    fees: {
+      tuition: { min: 280000, max: 330000 },
+      hostel: { min: 50000, max: 70000 },
+    },
+    location: {
+      city: "Bangalore",
+      state: "Karnataka",
+      address: "100 Feet Ring Road, BSK III Stage, Bangalore 560085"
+    },
+    established: 1988,
+    accreditation: ["NAAC A++", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Research Centers"],
+    admissionProcess: "KCET/COMEDK/PESSAT",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹60,000 per year",
+        eligibility: "Top 5% students"
+      }
+    ],
+    placementRate: 88,
+    averagePackage: 900000,
+    imageUrl: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+    placement: {
+      percentage: 88,
+      avgSalary: 900000,
+      topRecruiters: ["Google", "Microsoft", "Amazon", "Adobe"]
+    },
+    entranceExams: ["KCET", "COMEDK", "PESSAT"],
+    admissionDetails: {
+      eligibility: "KCET/COMEDK/PESSAT qualified",
+      process: "KEA counseling/Direct admission",
+      deadlines: "July-August annually"
+    }
+  },
+  {
+    id: "sjce-mysore",
+    name: "Sri Jayachamarajendra College of Engineering",
+    description: "Government engineering college affiliated to VTU with strong academic tradition.",
+    rating: 4.2,
+    type: "Government",
+    courses: ["Engineering", "Technology"],
+    fees: {
+      tuition: { min: 80000, max: 120000 },
+      hostel: { min: 20000, max: 30000 },
+    },
+    location: {
+      city: "Mysore",
+      state: "Karnataka",
+      address: "Manasagangothri, Mysore, Karnataka 570006"
+    },
+    established: 1963,
+    accreditation: ["NAAC A", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports"],
+    admissionProcess: "KCET",
+    scholarships: [
+      {
+        name: "Government Scholarship",
+        amount: "Fee concession",
+        eligibility: "SC/ST/OBC students"
+      }
+    ],
+    placementRate: 75,
+    averagePackage: 650000,
+    imageUrl: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81",
+    placement: {
+      percentage: 75,
+      avgSalary: 650000,
+      topRecruiters: ["TCS", "Infosys", "Wipro", "L&T"]
+    },
+    entranceExams: ["KCET"],
+    admissionDetails: {
+      eligibility: "KCET qualified with PCM in 12th",
+      process: "KEA counseling",
+      deadlines: "July-August annually"
+    }
+  },
+  {
+    id: "uvce-bangalore",
+    name: "University Visvesvaraya College of Engineering",
+    description: "Government engineering college affiliated to Bangalore University with rich heritage.",
+    rating: 4.1,
+    type: "Government",
+    courses: ["Engineering", "Technology"],
+    fees: {
+      tuition: { min: 75000, max: 110000 },
+      hostel: { min: 18000, max: 28000 },
+    },
+    location: {
+      city: "Bangalore",
+      state: "Karnataka",
+      address: "Jnanabharathi Campus, Bangalore University, Bangalore 560056"
+    },
+    established: 1917,
+    accreditation: ["NAAC A", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports"],
+    admissionProcess: "KCET",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹20,000 per year",
+        eligibility: "Top 10% students"
+      }
+    ],
+    placementRate: 70,
+    averagePackage: 600000,
+    imageUrl: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
+    placement: {
+      percentage: 70,
+      avgSalary: 600000,
+      topRecruiters: ["TCS", "Infosys", "Accenture", "Mindtree"]
+    },
+    entranceExams: ["KCET"],
+    admissionDetails: {
+      eligibility: "KCET qualified with PCM in 12th",
+      process: "KEA counseling",
+      deadlines: "July-August annually"
+    }
+  },
+  {
+    id: "nitte-mangalore",
+    name: "NITTE Meenakshi Institute of Technology",
+    description: "Leading private engineering college with strong industry partnerships.",
+    rating: 4.3,
+    type: "Private",
+    courses: ["Engineering", "Technology"],
+    fees: {
+      tuition: { min: 220000, max: 270000 },
+      hostel: { min: 40000, max: 55000 },
+    },
+    location: {
+      city: "Bangalore",
+      state: "Karnataka",
+      address: "P.B. No. 6429, Yelahanka, Bangalore 560064"
+    },
+    established: 2001,
+    accreditation: ["NAAC A", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Cafeteria"],
+    admissionProcess: "KCET/COMEDK",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹30,000 per year",
+        eligibility: "Top 15% students"
+      }
+    ],
+    placementRate: 78,
+    averagePackage: 680000,
+    imageUrl: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5",
+    placement: {
+      percentage: 78,
+      avgSalary: 680000,
+      topRecruiters: ["Microsoft", "Amazon", "Flipkart", "Byju's"]
+    },
+    entranceExams: ["KCET", "COMEDK"],
+    admissionDetails: {
+      eligibility: "KCET/COMEDK qualified with PCM in 12th",
+      process: "KEA counseling/Direct admission",
+      deadlines: "July-August annually"
+    }
+  },
+  {
+    id: "cmrit-bangalore",
+    name: "CMR Institute of Technology",
+    description: "Engineering college with focus on technology and innovation.",
+    rating: 4.0,
+    type: "Private",
+    courses: ["Engineering", "Technology"],
+    fees: {
+      tuition: { min: 200000, max: 250000 },
+      hostel: { min: 35000, max: 50000 },
+    },
+    location: {
+      city: "Bangalore",
+      state: "Karnataka",
+      address: "132, AECS Layout, Kundalahalli, Bangalore 560037"
+    },
+    established: 2000,
+    accreditation: ["NAAC A", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports"],
+    admissionProcess: "KCET/COMEDK",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹25,000 per year",
+        eligibility: "Top 20% students"
+      }
+    ],
+    placementRate: 72,
+    averagePackage: 620000,
+    imageUrl: "https://images.unsplash.com/photo-1483058712412-4245e9b90334",
+    placement: {
+      percentage: 72,
+      avgSalary: 620000,
+      topRecruiters: ["TCS", "Infosys", "Cognizant", "Tech Mahindra"]
+    },
+    entranceExams: ["KCET", "COMEDK"],
+    admissionDetails: {
+      eligibility: "KCET/COMEDK qualified with PCM in 12th",
+      process: "KEA counseling/Direct admission",
+      deadlines: "July-August annually"
+    }
+  },
+  {
+    id: "biet-davangere",
+    name: "Bapuji Institute of Engineering and Technology",
+    description: "Government engineering college with emphasis on technical education.",
+    rating: 3.9,
+    type: "Government",
+    courses: ["Engineering", "Technology"],
+    fees: {
+      tuition: { min: 70000, max: 100000 },
+      hostel: { min: 15000, max: 25000 },
+    },
+    location: {
+      city: "Davangere",
+      state: "Karnataka",
+      address: "Shamanur Road, Davangere, Karnataka 577004"
+    },
+    established: 1979,
+    accreditation: ["NAAC B++", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports"],
+    admissionProcess: "KCET",
+    scholarships: [
+      {
+        name: "Government Scholarship",
+        amount: "Fee waiver",
+        eligibility: "SC/ST/OBC students"
+      }
+    ],
+    placementRate: 65,
+    averagePackage: 550000,
+    imageUrl: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+    placement: {
+      percentage: 65,
+      avgSalary: 550000,
+      topRecruiters: ["TCS", "Infosys", "Wipro", "HCL"]
+    },
+    entranceExams: ["KCET"],
+    admissionDetails: {
+      eligibility: "KCET qualified with PCM in 12th",
+      process: "KEA counseling",
+      deadlines: "July-August annually"
+    }
+  },
+  {
+    id: "ksit-bangalore",
+    name: "KS Institute of Technology",
+    description: "Engineering college offering quality technical education with modern facilities.",
+    rating: 3.8,
+    type: "Private",
+    courses: ["Engineering", "Technology"],
+    fees: {
+      tuition: { min: 180000, max: 220000 },
+      hostel: { min: 30000, max: 45000 },
+    },
+    location: {
+      city: "Bangalore",
+      state: "Karnataka",
+      address: "# 14, Raghuvanahalli, Kanakapura Road, Bangalore 560062"
+    },
+    established: 1999,
+    accreditation: ["NAAC B++", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports"],
+    admissionProcess: "KCET/COMEDK",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹20,000 per year",
+        eligibility: "Top 25% students"
+      }
+    ],
+    placementRate: 68,
+    averagePackage: 580000,
+    imageUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+    placement: {
+      percentage: 68,
+      avgSalary: 580000,
+      topRecruiters: ["TCS", "Infosys", "Mindtree", "Accenture"]
+    },
+    entranceExams: ["KCET", "COMEDK"],
+    admissionDetails: {
+      eligibility: "KCET/COMEDK qualified with PCM in 12th",
+      process: "KEA counseling/Direct admission",
+      deadlines: "July-August annually"
+    }
+  },
+  {
+    id: "ait-bangalore",
+    name: "Acharya Institute of Technology",
+    description: "Private engineering college with focus on holistic development.",
+    rating: 3.7,
+    type: "Private",
+    courses: ["Engineering", "Technology"],
+    fees: {
+      tuition: { min: 160000, max: 200000 },
+      hostel: { min: 25000, max: 40000 },
+    },
+    location: {
+      city: "Bangalore",
+      state: "Karnataka",
+      address: "Acharya Dr. Sarvepalli Radhakrishnan Road, Bangalore 560107"
+    },
+    established: 2000,
+    accreditation: ["NAAC B+", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports"],
+    admissionProcess: "KCET/COMEDK",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹15,000 per year",
+        eligibility: "Top 30% students"
+      }
+    ],
+    placementRate: 62,
+    averagePackage: 520000,
+    imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+    placement: {
+      percentage: 62,
+      avgSalary: 520000,
+      topRecruiters: ["TCS", "Infosys", "Wipro", "Tech Mahindra"]
+    },
+    entranceExams: ["KCET", "COMEDK"],
+    admissionDetails: {
+      eligibility: "KCET/COMEDK qualified with PCM in 12th",
+      process: "KEA counseling/Direct admission",
+      deadlines: "July-August annually"
+    }
+  }
+];
+
 export const getCollegesByState = (stateId: string) => {
   const stateCollegeMap: { [key: string]: College[] } = {
     "maharashtra": maharashtraColleges,
     "delhi": delhiColleges,
-    "karnataka": [],
+    "karnataka": karnatakaColleges,
     "tamil-nadu": [],
     "uttar-pradesh": [],
     "gujarat": [],
@@ -2747,7 +3306,7 @@ export const getCollegeById = (collegeId: string): College | undefined => {
   const allStates = Object.keys({
     "maharashtra": maharashtraColleges,
     "delhi": delhiColleges,
-    "karnataka": [],
+    "karnataka": karnatakaColleges,
     "tamil-nadu": [],
     "uttar-pradesh": [],
     "gujarat": [],
