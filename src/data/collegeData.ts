@@ -3255,6 +3255,258 @@ const karnatakaColleges: College[] = [
       process: "KEA counseling/Direct admission",
       deadlines: "July-August annually"
     }
+  },
+  {
+    id: "pes-university",
+    name: "PES University",
+    description: "Leading private university known for engineering and technology programs.",
+    rating: 4.2,
+    type: "Private",
+    courses: ["Engineering", "Technology", "Management", "Sciences"],
+    fees: {
+      tuition: { min: 250000, max: 350000 },
+      hostel: { min: 80000, max: 120000 },
+    },
+    location: {
+      city: "Bangalore",
+      state: "Karnataka",
+      address: "100 Feet Ring Road, BSK III Stage, Bangalore 560085"
+    },
+    established: 1972,
+    accreditation: ["NAAC A++", "NBA", "UGC"],
+    facilities: ["Modern Labs", "Library", "Hostels", "Sports Complex", "Innovation Center"],
+    admissionProcess: "PESSAT/KCET",
+    scholarships: [
+      {
+        name: "PES Merit Scholarship",
+        amount: "₹75,000 per year",
+        eligibility: "PESSAT rank under 1000"
+      }
+    ],
+    placementRate: 90,
+    averagePackage: 850000,
+    imageUrl: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
+    placement: {
+      percentage: 90,
+      avgSalary: 850000,
+      topRecruiters: ["Microsoft", "Amazon", "Google", "Adobe", "Goldman Sachs"]
+    },
+    entranceExams: ["PESSAT", "KCET"],
+    admissionDetails: {
+      eligibility: "PESSAT/KCET qualified with PCM in 12th",
+      process: "PESSAT counseling/KEA counseling",
+      deadlines: "May-August annually"
+    }
+  },
+  {
+    id: "ramaiah-institute",
+    name: "M.S. Ramaiah Institute of Technology",
+    description: "Autonomous engineering college with excellent academic standards and industry connections.",
+    rating: 4.1,
+    type: "Private",
+    courses: ["Engineering", "Technology", "Architecture"],
+    fees: {
+      tuition: { min: 180000, max: 250000 },
+      hostel: { min: 60000, max: 90000 },
+    },
+    location: {
+      city: "Bangalore",
+      state: "Karnataka",
+      address: "MSR Nagar, Bangalore 560054"
+    },
+    established: 1962,
+    accreditation: ["NAAC A++", "NBA", "UGC"],
+    facilities: ["Central Library", "Research Labs", "Hostels", "Sports Complex", "Medical Center"],
+    admissionProcess: "KCET/COMEDK",
+    scholarships: [
+      {
+        name: "Ramaiah Excellence Award",
+        amount: "₹50,000 per year",
+        eligibility: "Top 10% in KCET/COMEDK"
+      }
+    ],
+    placementRate: 88,
+    averagePackage: 720000,
+    imageUrl: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b",
+    placement: {
+      percentage: 88,
+      avgSalary: 720000,
+      topRecruiters: ["Infosys", "TCS", "Wipro", "Bosch", "Toyota"]
+    },
+    entranceExams: ["KCET", "COMEDK"],
+    admissionDetails: {
+      eligibility: "KCET/COMEDK qualified with PCM in 12th",
+      process: "KEA counseling/Direct admission",
+      deadlines: "July-August annually"
+    }
+  },
+  {
+    id: "christ-university",
+    name: "CHRIST (Deemed to be University)",
+    description: "Multi-disciplinary deemed university offering diverse programs with emphasis on holistic education.",
+    rating: 4.0,
+    type: "Private",
+    courses: ["Engineering", "Management", "Sciences", "Commerce", "Humanities"],
+    fees: {
+      tuition: { min: 200000, max: 280000 },
+      hostel: { min: 90000, max: 130000 },
+    },
+    location: {
+      city: "Bangalore",
+      state: "Karnataka",
+      address: "Hosur Road, Bangalore 560029"
+    },
+    established: 1969,
+    accreditation: ["NAAC A++", "NBA", "UGC"],
+    facilities: ["Library", "Research Centers", "Hostels", "Sports Complex", "Chapel"],
+    admissionProcess: "CUET/University Entrance",
+    scholarships: [
+      {
+        name: "CHRIST Merit Scholarship",
+        amount: "₹60,000 per year",
+        eligibility: "Top 15% in entrance exam"
+      }
+    ],
+    placementRate: 85,
+    averagePackage: 650000,
+    imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585",
+    placement: {
+      percentage: 85,
+      avgSalary: 650000,
+      topRecruiters: ["Deloitte", "EY", "KPMG", "TCS", "Accenture"]
+    },
+    entranceExams: ["CUET", "University Entrance"],
+    admissionDetails: {
+      eligibility: "12th with minimum 50% marks",
+      process: "University entrance exam and counseling",
+      deadlines: "April-May annually"
+    }
+  },
+  {
+    id: "jain-university",
+    name: "Jain (Deemed-to-be University)",
+    description: "Private deemed university known for innovation and industry-oriented education.",
+    rating: 3.9,
+    type: "Private",
+    courses: ["Engineering", "Technology", "Management", "Sciences", "Commerce"],
+    fees: {
+      tuition: { min: 180000, max: 240000 },
+      hostel: { min: 75000, max: 110000 },
+    },
+    location: {
+      city: "Bangalore",
+      state: "Karnataka",
+      address: "Jayanagar 9th Block, Bangalore 560011"
+    },
+    established: 1990,
+    accreditation: ["NAAC A++", "NBA", "UGC"],
+    facilities: ["Digital Library", "Innovation Labs", "Hostels", "Sports Complex", "Medical Center"],
+    admissionProcess: "JET/KCET",
+    scholarships: [
+      {
+        name: "Jain Merit Scholarship",
+        amount: "₹45,000 per year",
+        eligibility: "JET rank under 2000"
+      }
+    ],
+    placementRate: 82,
+    averagePackage: 580000,
+    imageUrl: "https://images.unsplash.com/photo-1564981797816-1043664bf78d",
+    placement: {
+      percentage: 82,
+      avgSalary: 580000,
+      topRecruiters: ["TCS", "Infosys", "Wipro", "Cognizant", "IBM"]
+    },
+    entranceExams: ["JET", "KCET"],
+    admissionDetails: {
+      eligibility: "12th with minimum 50% marks",
+      process: "JET/KCET counseling",
+      deadlines: "May-July annually"
+    }
+  },
+  {
+    id: "reva-university",
+    name: "REVA University",
+    description: "Private university focusing on technology education and research innovation.",
+    rating: 3.8,
+    type: "Private",
+    courses: ["Engineering", "Technology", "Management", "Sciences", "Architecture"],
+    fees: {
+      tuition: { min: 160000, max: 220000 },
+      hostel: { min: 70000, max: 100000 },
+    },
+    location: {
+      city: "Bangalore",
+      state: "Karnataka",
+      address: "Rukmini Knowledge Park, Kattigenahalli, Bangalore 560064"
+    },
+    established: 2012,
+    accreditation: ["NAAC A+", "NBA", "UGC"],
+    facilities: ["Modern Labs", "Library", "Hostels", "Sports Complex", "Innovation Hub"],
+    admissionProcess: "REVA CET/KCET",
+    scholarships: [
+      {
+        name: "REVA Merit Award",
+        amount: "₹40,000 per year",
+        eligibility: "Top 20% in entrance exam"
+      }
+    ],
+    placementRate: 75,
+    averagePackage: 520000,
+    imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+    placement: {
+      percentage: 75,
+      avgSalary: 520000,
+      topRecruiters: ["TCS", "Infosys", "Tech Mahindra", "HCL", "Capgemini"]
+    },
+    entranceExams: ["REVA CET", "KCET"],
+    admissionDetails: {
+      eligibility: "12th PCM with minimum 50% marks",
+      process: "REVA CET/KCET counseling",
+      deadlines: "June-August annually"
+    }
+  },
+  {
+    id: "cmr-university",
+    name: "CMR University",
+    description: "Private university offering undergraduate and postgraduate programs with industry focus.",
+    rating: 3.7,
+    type: "Private",
+    courses: ["Engineering", "Technology", "Management", "Sciences"],
+    fees: {
+      tuition: { min: 150000, max: 200000 },
+      hostel: { min: 65000, max: 85000 },
+    },
+    location: {
+      city: "Bangalore",
+      state: "Karnataka",
+      address: "AECS Layout, Bangalore 560037"
+    },
+    established: 2013,
+    accreditation: ["NAAC A", "NBA", "UGC"],
+    facilities: ["Library", "Computer Labs", "Hostels", "Sports", "Industry Interface"],
+    admissionProcess: "CMRUET/KCET",
+    scholarships: [
+      {
+        name: "CMR Merit Scholarship",
+        amount: "₹35,000 per year",
+        eligibility: "Top 25% students"
+      }
+    ],
+    placementRate: 70,
+    averagePackage: 480000,
+    imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f",
+    placement: {
+      percentage: 70,
+      avgSalary: 480000,
+      topRecruiters: ["TCS", "Infosys", "Wipro", "Accenture", "L&T"]
+    },
+    entranceExams: ["CMRUET", "KCET"],
+    admissionDetails: {
+      eligibility: "12th PCM with minimum 50% marks",
+      process: "CMRUET/KCET counseling",
+      deadlines: "June-July annually"
+    }
   }
 ];
 
@@ -3760,6 +4012,258 @@ const tamilNaduColleges: College[] = [
     admissionDetails: {
       eligibility: "12th PCM with minimum 60% marks",
       process: "JEE Main/SASTRA Entrance counseling",
+      deadlines: "May-June annually"
+    }
+  },
+  {
+    id: "karunya-university",
+    name: "Karunya Institute of Technology and Sciences",
+    description: "Deemed university with Christian minority status, known for engineering and research programs.",
+    rating: 3.9,
+    type: "Private",
+    courses: ["Engineering", "Technology", "Sciences", "Management"],
+    fees: {
+      tuition: { min: 140000, max: 190000 },
+      hostel: { min: 70000, max: 100000 },
+    },
+    location: {
+      city: "Coimbatore",
+      state: "Tamil Nadu",
+      address: "Karunya Nagar, Coimbatore 641114"
+    },
+    established: 1986,
+    accreditation: ["NAAC A", "NBA", "UGC"],
+    facilities: ["Library", "Research Centers", "Hostels", "Medical Center", "Sports Complex"],
+    admissionProcess: "JEE Main/KEAM",
+    scholarships: [
+      {
+        name: "Karunya Merit Scholarship",
+        amount: "₹50,000 per year",
+        eligibility: "JEE Main rank under 15000"
+      }
+    ],
+    placementRate: 73,
+    averagePackage: 450000,
+    imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+    placement: {
+      percentage: 73,
+      avgSalary: 450000,
+      topRecruiters: ["TCS", "Infosys", "Wipro", "Cognizant", "L&T"]
+    },
+    entranceExams: ["JEE Main", "KEAM"],
+    admissionDetails: {
+      eligibility: "12th PCM with minimum 50% marks",
+      process: "JEE Main/KEAM counseling",
+      deadlines: "May-June annually"
+    }
+  },
+  {
+    id: "vel-tech-university",
+    name: "Vel Tech Rangarajan Dr. Sagunthala R&D Institute",
+    description: "Private deemed university focusing on technology education and research.",
+    rating: 3.8,
+    type: "Private",
+    courses: ["Engineering", "Technology", "Management", "Sciences"],
+    fees: {
+      tuition: { min: 120000, max: 170000 },
+      hostel: { min: 60000, max: 85000 },
+    },
+    location: {
+      city: "Chennai",
+      state: "Tamil Nadu",
+      address: "Avadi, Chennai 600062"
+    },
+    established: 1997,
+    accreditation: ["NAAC A", "NBA", "UGC"],
+    facilities: ["Digital Library", "Labs", "Hostels", "Sports", "Industry Interface"],
+    admissionProcess: "VTEE/JEE Main",
+    scholarships: [
+      {
+        name: "Vel Tech Merit Award",
+        amount: "₹40,000 per year",
+        eligibility: "Top 25% in entrance exam"
+      }
+    ],
+    placementRate: 70,
+    averagePackage: 420000,
+    imageUrl: "https://images.unsplash.com/photo-1564981797816-1043664bf78d",
+    placement: {
+      percentage: 70,
+      avgSalary: 420000,
+      topRecruiters: ["TCS", "Infosys", "Tech Mahindra", "HCL", "Capgemini"]
+    },
+    entranceExams: ["VTEE", "JEE Main"],
+    admissionDetails: {
+      eligibility: "12th PCM with minimum 50% marks",
+      process: "VTEE/JEE Main counseling",
+      deadlines: "May-June annually"
+    }
+  },
+  {
+    id: "amrita-university-coimbatore",
+    name: "Amrita Vishwa Vidyapeetham - Coimbatore",
+    description: "Multi-campus deemed university with strong emphasis on research and innovation.",
+    rating: 4.1,
+    type: "Private",
+    courses: ["Engineering", "Technology", "Medicine", "Business", "Arts & Sciences"],
+    fees: {
+      tuition: { min: 200000, max: 280000 },
+      hostel: { min: 90000, max: 130000 },
+    },
+    location: {
+      city: "Coimbatore",
+      state: "Tamil Nadu",
+      address: "Ettimadai, Coimbatore 641112"
+    },
+    established: 1994,
+    accreditation: ["NAAC A++", "NBA", "UGC"],
+    facilities: ["World-class Labs", "Library", "Hostels", "Medical Center", "Sports Complex"],
+    admissionProcess: "AEEE/JEE Main",
+    scholarships: [
+      {
+        name: "Amrita Merit Scholarship",
+        amount: "₹1,00,000 per year",
+        eligibility: "AEEE rank under 1000"
+      }
+    ],
+    placementRate: 88,
+    averagePackage: 720000,
+    imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585",
+    placement: {
+      percentage: 88,
+      avgSalary: 720000,
+      topRecruiters: ["Amazon", "Microsoft", "Google", "Infosys", "TCS"]
+    },
+    entranceExams: ["AEEE", "JEE Main"],
+    admissionDetails: {
+      eligibility: "12th PCM with minimum 60% marks",
+      process: "AEEE/JEE Main counseling",
+      deadlines: "April-May annually"
+    }
+  },
+  {
+    id: "loyola-icam",
+    name: "Loyola-ICAM College of Engineering and Technology",
+    description: "Catholic minority institution known for holistic education and industry partnerships.",
+    rating: 3.9,
+    type: "Private",
+    courses: ["Engineering", "Technology"],
+    fees: {
+      tuition: { min: 95000, max: 140000 },
+      hostel: { min: 40000, max: 60000 },
+    },
+    location: {
+      city: "Chennai",
+      state: "Tamil Nadu",
+      address: "Pearl City, Chennai 600034"
+    },
+    established: 2001,
+    accreditation: ["NAAC A", "NBA", "UGC"],
+    facilities: ["Library", "Labs", "Hostels", "Sports", "Chapel"],
+    admissionProcess: "TNEA",
+    scholarships: [
+      {
+        name: "Loyola Excellence Scholarship",
+        amount: "₹30,000 per year",
+        eligibility: "Top 20% in TNEA"
+      }
+    ],
+    placementRate: 75,
+    averagePackage: 480000,
+    imageUrl: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b",
+    placement: {
+      percentage: 75,
+      avgSalary: 480000,
+      topRecruiters: ["Infosys", "TCS", "Wipro", "Cognizant", "Accenture"]
+    },
+    entranceExams: ["TNEA"],
+    admissionDetails: {
+      eligibility: "12th PCM with minimum 50% marks",
+      process: "TNEA counseling",
+      deadlines: "June-July annually"
+    }
+  },
+  {
+    id: "kongu-engineering-college",
+    name: "Kongu Engineering College",
+    description: "Autonomous engineering college with strong alumni network and industry connections.",
+    rating: 3.8,
+    type: "Private",
+    courses: ["Engineering", "Technology"],
+    fees: {
+      tuition: { min: 75000, max: 120000 },
+      hostel: { min: 30000, max: 45000 },
+    },
+    location: {
+      city: "Erode",
+      state: "Tamil Nadu",
+      address: "Perundurai, Erode 638060"
+    },
+    established: 1983,
+    accreditation: ["NAAC A+", "NBA", "UGC"],
+    facilities: ["Library", "Computer Center", "Hostels", "Sports", "Training Center"],
+    admissionProcess: "TNEA",
+    scholarships: [
+      {
+        name: "KEC Merit Scholarship",
+        amount: "₹25,000 per year",
+        eligibility: "Top 30% students"
+      }
+    ],
+    placementRate: 72,
+    averagePackage: 460000,
+    imageUrl: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
+    placement: {
+      percentage: 72,
+      avgSalary: 460000,
+      topRecruiters: ["TCS", "Infosys", "L&T", "Ashok Leyland", "TVS Motors"]
+    },
+    entranceExams: ["TNEA"],
+    admissionDetails: {
+      eligibility: "12th PCM with minimum 50% marks",
+      process: "TNEA counseling",
+      deadlines: "June-July annually"
+    }
+  },
+  {
+    id: "hindustan-university",
+    name: "Hindustan Institute of Technology and Science",
+    description: "Deemed university offering diverse programs with focus on industry readiness.",
+    rating: 3.7,
+    type: "Private",
+    courses: ["Engineering", "Technology", "Management", "Sciences", "Architecture"],
+    fees: {
+      tuition: { min: 160000, max: 220000 },
+      hostel: { min: 80000, max: 115000 },
+    },
+    location: {
+      city: "Chennai",
+      state: "Tamil Nadu",
+      address: "Padur, Chennai 603103"
+    },
+    established: 1985,
+    accreditation: ["NAAC A", "NBA", "UGC"],
+    facilities: ["Library", "Research Centers", "Hostels", "Medical Center", "Sports Complex"],
+    admissionProcess: "HITSEEE/JEE Main",
+    scholarships: [
+      {
+        name: "HITS Merit Scholarship",
+        amount: "₹60,000 per year",
+        eligibility: "JEE Main rank under 20000"
+      }
+    ],
+    placementRate: 68,
+    averagePackage: 410000,
+    imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f",
+    placement: {
+      percentage: 68,
+      avgSalary: 410000,
+      topRecruiters: ["TCS", "Infosys", "Wipro", "Tech Mahindra", "HCL"]
+    },
+    entranceExams: ["HITSEEE", "JEE Main"],
+    admissionDetails: {
+      eligibility: "12th PCM with minimum 50% marks",
+      process: "HITSEEE/JEE Main counseling",
       deadlines: "May-June annually"
     }
   }
