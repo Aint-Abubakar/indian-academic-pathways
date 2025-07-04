@@ -4269,13 +4269,580 @@ const tamilNaduColleges: College[] = [
   }
 ];
 
+const uttarPradeshColleges: College[] = [
+  {
+    id: "iit-kanpur",
+    name: "Indian Institute of Technology Kanpur",
+    description: "One of the premier engineering institutes in India, known for its academic excellence and research.",
+    rating: 4.8,
+    type: "Government",
+    courses: ["Engineering", "Science", "Management", "Design"],
+    fees: {
+      tuition: { min: 220000, max: 250000 },
+      hostel: { min: 30000, max: 40000 },
+    },
+    location: {
+      city: "Kanpur",
+      state: "Uttar Pradesh",
+      address: "Kalyanpur, Kanpur, Uttar Pradesh 208016"
+    },
+    established: 1959,
+    accreditation: ["NAAC A++", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Research Centers", "Innovation Hub"],
+    admissionProcess: "JEE Advanced",
+    scholarships: [
+      {
+        name: "Merit-based Scholarship",
+        amount: "Full tuition fee waiver",
+        eligibility: "Top 10% students"
+      },
+      {
+        name: "Need-based Scholarship",
+        amount: "Up to ₹50,000",
+        eligibility: "Family income < ₹5 lakhs"
+      }
+    ],
+    placementRate: 95,
+    averagePackage: 2500000,
+    imageUrl: "https://images.unsplash.com/photo-1487958449943-2429e8be8625",
+    placement: {
+      percentage: 95,
+      avgSalary: 2500000,
+      topRecruiters: ["Google", "Microsoft", "Amazon", "Goldman Sachs", "McKinsey"]
+    },
+    entranceExams: ["JEE Advanced"],
+    admissionDetails: {
+      eligibility: "JEE Advanced qualified with minimum 75% in 12th",
+      process: "Online counseling through JoSAA",
+      deadlines: "June-July annually"
+    }
+  },
+  {
+    id: "iit-bhu",
+    name: "Indian Institute of Technology (BHU) Varanasi",
+    description: "Premier engineering institute with rich heritage and excellent academic programs.",
+    rating: 4.7,
+    type: "Government",
+    courses: ["Engineering", "Science", "Management", "Humanities"],
+    fees: {
+      tuition: { min: 220000, max: 250000 },
+      hostel: { min: 28000, max: 38000 },
+    },
+    location: {
+      city: "Varanasi",
+      state: "Uttar Pradesh",
+      address: "Varanasi, Uttar Pradesh 221005"
+    },
+    established: 1919,
+    accreditation: ["NAAC A++", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Cultural Centers", "Research Labs"],
+    admissionProcess: "JEE Advanced",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Full tuition fee waiver",
+        eligibility: "Top 10% students"
+      },
+      {
+        name: "SC/ST Scholarship",
+        amount: "Complete fee waiver",
+        eligibility: "SC/ST category students"
+      }
+    ],
+    placementRate: 92,
+    averagePackage: 2200000,
+    imageUrl: "https://images.unsplash.com/photo-1487958449943-2429e8be8625",
+    placement: {
+      percentage: 92,
+      avgSalary: 2200000,
+      topRecruiters: ["Microsoft", "Amazon", "Google", "Samsung", "Intel"]
+    },
+    entranceExams: ["JEE Advanced"],
+    admissionDetails: {
+      eligibility: "JEE Advanced qualified with minimum 75% in 12th",
+      process: "Online counseling through JoSAA",
+      deadlines: "June-July annually"
+    }
+  },
+  {
+    id: "hbtu-kanpur",
+    name: "Harcourt Butler Technical University",
+    description: "Leading technical university known for engineering and technology programs.",
+    rating: 4.3,
+    type: "Government",
+    courses: ["Engineering", "Technology", "Management", "Pharmacy"],
+    fees: {
+      tuition: { min: 75000, max: 95000 },
+      hostel: { min: 15000, max: 25000 },
+    },
+    location: {
+      city: "Kanpur",
+      state: "Uttar Pradesh",
+      address: "Nawabganj, Kanpur, Uttar Pradesh 208002"
+    },
+    established: 1921,
+    accreditation: ["NAAC A", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Workshop", "Innovation Center"],
+    admissionProcess: "JEE Main / UPSEE",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹25,000 per year",
+        eligibility: "Top 5% students"
+      },
+      {
+        name: "State Scholarship",
+        amount: "Fee concession",
+        eligibility: "UP domicile students"
+      }
+    ],
+    placementRate: 78,
+    averagePackage: 650000,
+    imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585",
+    placement: {
+      percentage: 78,
+      avgSalary: 650000,
+      topRecruiters: ["TCS", "Infosys", "Wipro", "HCL", "Tech Mahindra"]
+    },
+    entranceExams: ["JEE Main", "UPSEE"],
+    admissionDetails: {
+      eligibility: "JEE Main qualified or UPSEE qualified with PCM in 12th",
+      process: "Online counseling through AKTU",
+      deadlines: "July-August annually"
+    }
+  },
+  {
+    id: "university-lucknow",
+    name: "University of Lucknow",
+    description: "One of the oldest and most prestigious universities in India offering diverse programs.",
+    rating: 4.2,
+    type: "Government",
+    courses: ["Arts", "Science", "Commerce", "Law", "Management", "Education"],
+    fees: {
+      tuition: { min: 15000, max: 35000 },
+      hostel: { min: 8000, max: 15000 },
+    },
+    location: {
+      city: "Lucknow",
+      state: "Uttar Pradesh",
+      address: "Badshah Bagh, Lucknow, Uttar Pradesh 226007"
+    },
+    established: 1867,
+    accreditation: ["NAAC A+", "UGC"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Cultural Centers", "Museum"],
+    admissionProcess: "Merit based / Entrance exam",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹15,000 per year",
+        eligibility: "Top 10% students"
+      },
+      {
+        name: "Minority Scholarship",
+        amount: "Fee concession",
+        eligibility: "Minority community students"
+      }
+    ],
+    placementRate: 65,
+    averagePackage: 450000,
+    imageUrl: "https://images.unsplash.com/photo-1486718448742-163732cd1544",
+    placement: {
+      percentage: 65,
+      avgSalary: 450000,
+      topRecruiters: ["Government Organizations", "TCS", "Infosys", "Banking Sector"]
+    },
+    entranceExams: ["LUCET", "CUET"],
+    admissionDetails: {
+      eligibility: "12th passed from recognized board",
+      process: "Online application and entrance exam",
+      deadlines: "May-June annually"
+    }
+  },
+  {
+    id: "jssu-noida",
+    name: "Jaypee Institute of Information Technology",
+    description: "Premier private institute for engineering and technology education.",
+    rating: 4.4,
+    type: "Private",
+    courses: ["Engineering", "Technology", "Management", "Applied Sciences"],
+    fees: {
+      tuition: { min: 220000, max: 280000 },
+      hostel: { min: 35000, max: 45000 },
+    },
+    location: {
+      city: "Noida",
+      state: "Uttar Pradesh",
+      address: "Sector 62, Noida, Uttar Pradesh 201309"
+    },
+    established: 2001,
+    accreditation: ["NAAC A+", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Innovation Labs", "Incubation Center"],
+    admissionProcess: "JEE Main",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Up to ₹50,000",
+        eligibility: "Top 10% students in JEE Main"
+      },
+      {
+        name: "Sports Scholarship",
+        amount: "Fee concession",
+        eligibility: "State/National level sports achievers"
+      }
+    ],
+    placementRate: 85,
+    averagePackage: 950000,
+    imageUrl: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b",
+    placement: {
+      percentage: 85,
+      avgSalary: 950000,
+      topRecruiters: ["Microsoft", "Amazon", "Google", "Adobe", "Samsung"]
+    },
+    entranceExams: ["JEE Main"],
+    admissionDetails: {
+      eligibility: "JEE Main qualified with minimum 75% in 12th",
+      process: "Online counseling",
+      deadlines: "June-July annually"
+    }
+  },
+  {
+    id: "amity-noida",
+    name: "Amity University Noida",
+    description: "Leading private university offering diverse programs with modern infrastructure.",
+    rating: 4.1,
+    type: "Private",
+    courses: ["Engineering", "Management", "Law", "Medical", "Arts", "Science"],
+    fees: {
+      tuition: { min: 280000, max: 350000 },
+      hostel: { min: 40000, max: 50000 },
+    },
+    location: {
+      city: "Noida",
+      state: "Uttar Pradesh",
+      address: "Sector 125, Noida, Uttar Pradesh 201313"
+    },
+    established: 2005,
+    accreditation: ["NAAC A+", "UGC"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Innovation Centers", "Medical Center"],
+    admissionProcess: "Amity JEE / Merit based",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Up to ₹1,00,000",
+        eligibility: "Top performers in entrance exam"
+      },
+      {
+        name: "Sports Excellence Scholarship",
+        amount: "Fee waiver",
+        eligibility: "National level sports achievers"
+      }
+    ],
+    placementRate: 80,
+    averagePackage: 750000,
+    imageUrl: "https://images.unsplash.com/photo-1459767129954-1b1c1f9b9ace",
+    placement: {
+      percentage: 80,
+      avgSalary: 750000,
+      topRecruiters: ["Accenture", "TCS", "Infosys", "Wipro", "Cognizant"]
+    },
+    entranceExams: ["Amity JEE", "JEE Main"],
+    admissionDetails: {
+      eligibility: "12th passed with minimum 60% marks",
+      process: "Online application and entrance exam",
+      deadlines: "April-May annually"
+    }
+  },
+  {
+    id: "gl-bajaj-mathura",
+    name: "GL Bajaj Institute of Technology and Management",
+    description: "Well-established engineering college with excellent industry connections.",
+    rating: 4.0,
+    type: "Private",
+    courses: ["Engineering", "Management", "Computer Applications"],
+    fees: {
+      tuition: { min: 140000, max: 170000 },
+      hostel: { min: 25000, max: 35000 },
+    },
+    location: {
+      city: "Greater Noida",
+      state: "Uttar Pradesh",
+      address: "Plot No. 2, APJ Abdul Kalam Road, Knowledge Park III, Greater Noida"
+    },
+    established: 1998,
+    accreditation: ["NAAC B+", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Auditorium", "Cafeteria"],
+    admissionProcess: "UPSEE / JEE Main",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹20,000 per year",
+        eligibility: "Top 5% students"
+      },
+      {
+        name: "Need-based Scholarship",
+        amount: "Fee concession",
+        eligibility: "Family income < ₹3 lakhs"
+      }
+    ],
+    placementRate: 75,
+    averagePackage: 550000,
+    imageUrl: "https://images.unsplash.com/photo-1497493292307-31c376b6e479",
+    placement: {
+      percentage: 75,
+      avgSalary: 550000,
+      topRecruiters: ["TCS", "Infosys", "HCL", "Wipro", "Capgemini"]
+    },
+    entranceExams: ["UPSEE", "JEE Main"],
+    admissionDetails: {
+      eligibility: "UPSEE qualified or JEE Main qualified with PCM in 12th",
+      process: "Online counseling through AKTU",
+      deadlines: "July-August annually"
+    }
+  },
+  {
+    id: "geu-dehradun",
+    name: "Graphic Era University",
+    description: "Modern university with focus on technology and innovation.",
+    rating: 4.2,
+    type: "Private",
+    courses: ["Engineering", "Management", "Sciences", "Computer Applications"],
+    fees: {
+      tuition: { min: 190000, max: 240000 },
+      hostel: { min: 30000, max: 40000 },
+    },
+    location: {
+      city: "Dehradun",
+      state: "Uttar Pradesh",
+      address: "566/6 Bell Road, Clement Town, Dehradun, Uttarakhand 248002"
+    },
+    established: 1993,
+    accreditation: ["NAAC A", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Innovation Center", "Incubation Hub"],
+    admissionProcess: "JEE Main / GEEE",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Up to ₹75,000",
+        eligibility: "Top 10% students in entrance exam"
+      },
+      {
+        name: "Alumni Scholarship",
+        amount: "₹25,000 per year",
+        eligibility: "Children of alumni"
+      }
+    ],
+    placementRate: 82,
+    averagePackage: 850000,
+    imageUrl: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b",
+    placement: {
+      percentage: 82,
+      avgSalary: 850000,
+      topRecruiters: ["Amazon", "Microsoft", "Google", "Infosys", "TCS"]
+    },
+    entranceExams: ["JEE Main", "GEEE"],
+    admissionDetails: {
+      eligibility: "JEE Main qualified or GEEE qualified with PCM in 12th",
+      process: "Online counseling",
+      deadlines: "June-July annually"
+    }
+  },
+  {
+    id: "bennett-university",
+    name: "Bennett University",
+    description: "Modern private university with international collaborations and industry partnerships.",
+    rating: 4.3,
+    type: "Private",
+    courses: ["Engineering", "Management", "Law", "Media", "Liberal Arts"],
+    fees: {
+      tuition: { min: 320000, max: 380000 },
+      hostel: { min: 45000, max: 60000 },
+    },
+    location: {
+      city: "Greater Noida",
+      state: "Uttar Pradesh",
+      address: "Plot Nos 8-11, Tech Zone II, Greater Noida, Uttar Pradesh 201310"
+    },
+    established: 2016,
+    accreditation: ["NAAC A", "UGC"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Innovation Labs", "Industry Interface"],
+    admissionProcess: "JEE Main / SAT / Bennett University Test",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Up to ₹2,00,000",
+        eligibility: "Top performers in entrance exam"
+      },
+      {
+        name: "International Scholarship",
+        amount: "Fee waiver",
+        eligibility: "International exchange students"
+      }
+    ],
+    placementRate: 88,
+    averagePackage: 1200000,
+    imageUrl: "https://images.unsplash.com/photo-1459767129954-1b1c1f9b9ace",
+    placement: {
+      percentage: 88,
+      avgSalary: 1200000,
+      topRecruiters: ["Microsoft", "Amazon", "Google", "Goldman Sachs", "McKinsey"]
+    },
+    entranceExams: ["JEE Main", "SAT", "BUT"],
+    admissionDetails: {
+      eligibility: "JEE Main qualified or SAT score or BUT qualified with 12th passed",
+      process: "Online application and counseling",
+      deadlines: "May-June annually"
+    }
+  },
+  {
+    id: "sharda-university",
+    name: "Sharda University",
+    description: "International university with diverse programs and global partnerships.",
+    rating: 4.0,
+    type: "Private",
+    courses: ["Engineering", "Management", "Medical", "Law", "Arts", "Agriculture"],
+    fees: {
+      tuition: { min: 250000, max: 300000 },
+      hostel: { min: 35000, max: 50000 },
+    },
+    location: {
+      city: "Greater Noida",
+      state: "Uttar Pradesh",
+      address: "Plot No. 32-34, Knowledge Park III, Greater Noida, Uttar Pradesh 201310"
+    },
+    established: 2009,
+    accreditation: ["NAAC A", "UGC"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Medical Center", "International Center"],
+    admissionProcess: "Merit based / Entrance exam",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Up to ₹1,50,000",
+        eligibility: "Top 10% students"
+      },
+      {
+        name: "International Scholarship",
+        amount: "Fee concession",
+        eligibility: "International students"
+      }
+    ],
+    placementRate: 78,
+    averagePackage: 700000,
+    imageUrl: "https://images.unsplash.com/photo-1486718448742-163732cd1544",
+    placement: {
+      percentage: 78,
+      avgSalary: 700000,
+      topRecruiters: ["TCS", "Infosys", "Wipro", "Cognizant", "HCL"]
+    },
+    entranceExams: ["SUAT", "JEE Main"],
+    admissionDetails: {
+      eligibility: "12th passed with minimum 50% marks",
+      process: "Online application and entrance exam",
+      deadlines: "April-May annually"
+    }
+  },
+  {
+    id: "galgotias-university",
+    name: "Galgotias University",
+    description: "Private university known for engineering and management programs with modern facilities.",
+    rating: 4.1,
+    type: "Private",
+    courses: ["Engineering", "Management", "Law", "Applied Sciences", "Humanities"],
+    fees: {
+      tuition: { min: 220000, max: 280000 },
+      hostel: { min: 40000, max: 55000 },
+    },
+    location: {
+      city: "Greater Noida",
+      state: "Uttar Pradesh",
+      address: "Plot No. 2, Sector 17-A, Yamuna Expressway, Greater Noida, Uttar Pradesh 203201"
+    },
+    established: 2011,
+    accreditation: ["NAAC A", "UGC"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Innovation Center", "Skill Development Center"],
+    admissionProcess: "GEEE / JEE Main",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Up to ₹1,00,000",
+        eligibility: "Top performers in entrance exam"
+      },
+      {
+        name: "Sports Scholarship",
+        amount: "Fee waiver",
+        eligibility: "State/National level sports achievers"
+      }
+    ],
+    placementRate: 80,
+    averagePackage: 650000,
+    imageUrl: "https://images.unsplash.com/photo-1497493292307-31c376b6e479",
+    placement: {
+      percentage: 80,
+      avgSalary: 650000,
+      topRecruiters: ["Amazon", "Microsoft", "TCS", "Infosys", "Wipro"]
+    },
+    entranceExams: ["GEEE", "JEE Main"],
+    admissionDetails: {
+      eligibility: "GEEE qualified or JEE Main qualified with PCM in 12th",
+      process: "Online counseling",
+      deadlines: "June-July annually"
+    }
+  },
+  {
+    id: "mit-moradabad",
+    name: "Moradabad Institute of Technology",
+    description: "Engineering college with strong industry connections and practical learning approach.",
+    rating: 3.9,
+    type: "Private",
+    courses: ["Engineering", "Management", "Computer Applications"],
+    fees: {
+      tuition: { min: 120000, max: 150000 },
+      hostel: { min: 20000, max: 30000 },
+    },
+    location: {
+      city: "Moradabad",
+      state: "Uttar Pradesh",
+      address: "Ram Ganga Vihar, Moradabad, Uttar Pradesh 244001"
+    },
+    established: 1996,
+    accreditation: ["NAAC B+", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Workshop", "Computer Center"],
+    admissionProcess: "UPSEE / JEE Main",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹15,000 per year",
+        eligibility: "Top 5% students"
+      },
+      {
+        name: "Need-based Scholarship",
+        amount: "Fee concession",
+        eligibility: "Family income < ₹2 lakhs"
+      }
+    ],
+    placementRate: 70,
+    averagePackage: 480000,
+    imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585",
+    placement: {
+      percentage: 70,
+      avgSalary: 480000,
+      topRecruiters: ["TCS", "Infosys", "HCL", "Tech Mahindra", "Wipro"]
+    },
+    entranceExams: ["UPSEE", "JEE Main"],
+    admissionDetails: {
+      eligibility: "UPSEE qualified or JEE Main qualified with PCM in 12th",
+      process: "Online counseling through AKTU",
+      deadlines: "July-August annually"
+    }
+  }
+];
+
 export const getCollegesByState = (stateId: string) => {
   const stateCollegeMap: { [key: string]: College[] } = {
     "maharashtra": maharashtraColleges,
     "delhi": delhiColleges,
     "karnataka": karnatakaColleges,
     "tamil-nadu": tamilNaduColleges,
-    "uttar-pradesh": [],
+    "uttar-pradesh": uttarPradeshColleges,
     "gujarat": [],
     "rajasthan": [],
     "west-bengal": [],
@@ -4319,7 +4886,7 @@ export const getCollegeById = (collegeId: string): College | undefined => {
     "delhi": delhiColleges,
     "karnataka": karnatakaColleges,
     "tamil-nadu": tamilNaduColleges,
-    "uttar-pradesh": [],
+    "uttar-pradesh": uttarPradeshColleges,
     "gujarat": [],
     "rajasthan": [],
     "west-bengal": [],
