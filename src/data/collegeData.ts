@@ -5403,6 +5403,479 @@ const telanganaColleges: College[] = [
   }
 ];
 
+const gujaratColleges: College[] = [
+  {
+    id: "iit-gandhinagar",
+    name: "Indian Institute of Technology Gandhinagar",
+    description: "Premier engineering institute known for its innovative curriculum and research excellence.",
+    rating: 4.7,
+    type: "Government",
+    courses: ["Engineering", "Science", "Management", "Design"],
+    fees: {
+      tuition: { min: 220000, max: 250000 },
+      hostel: { min: 30000, max: 40000 },
+    },
+    location: {
+      city: "Gandhinagar",
+      state: "Gujarat",
+      address: "Palaj, Gandhinagar, Gujarat 382355"
+    },
+    established: 2008,
+    accreditation: ["NAAC A++", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Research Centers", "Innovation Hub"],
+    admissionProcess: "JEE Advanced",
+    scholarships: [
+      {
+        name: "Merit-based Scholarship",
+        amount: "Full tuition fee waiver",
+        eligibility: "Top 10% students"
+      },
+      {
+        name: "Need-based Scholarship",
+        amount: "Up to ₹50,000",
+        eligibility: "Family income < ₹5 lakhs"
+      }
+    ],
+    placementRate: 93,
+    averagePackage: 2300000,
+    imageUrl: "https://images.unsplash.com/photo-1487958449943-2429e8be8625",
+    placement: {
+      percentage: 93,
+      avgSalary: 2300000,
+      topRecruiters: ["Google", "Microsoft", "Amazon", "Goldman Sachs", "Samsung"]
+    },
+    entranceExams: ["JEE Advanced"],
+    admissionDetails: {
+      eligibility: "JEE Advanced qualified with minimum 75% in 12th",
+      process: "Online counseling through JoSAA",
+      deadlines: "June-July annually"
+    }
+  },
+  {
+    id: "nit-surat",
+    name: "Sardar Vallabhbhai National Institute of Technology Surat",
+    description: "Leading NIT known for its engineering programs and research contributions.",
+    rating: 4.5,
+    type: "Government",
+    courses: ["Engineering", "Technology", "Management", "Sciences"],
+    fees: {
+      tuition: { min: 140000, max: 160000 },
+      hostel: { min: 25000, max: 35000 },
+    },
+    location: {
+      city: "Surat",
+      state: "Gujarat",
+      address: "Ichchhanath, Surat, Gujarat 395007"
+    },
+    established: 1961,
+    accreditation: ["NAAC A++", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Research Centers", "Innovation Labs"],
+    admissionProcess: "JEE Main",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Full tuition fee waiver",
+        eligibility: "Top 5% students"
+      },
+      {
+        name: "SC/ST Scholarship",
+        amount: "Complete fee waiver",
+        eligibility: "SC/ST category students"
+      }
+    ],
+    placementRate: 88,
+    averagePackage: 1600000,
+    imageUrl: "https://images.unsplash.com/photo-1487958449943-2429e8be8625",
+    placement: {
+      percentage: 88,
+      avgSalary: 1600000,
+      topRecruiters: ["Microsoft", "Amazon", "Google", "TCS", "L&T"]
+    },
+    entranceExams: ["JEE Main"],
+    admissionDetails: {
+      eligibility: "JEE Main qualified with minimum 75% in 12th",
+      process: "Online counseling through JoSAA",
+      deadlines: "June-July annually"
+    }
+  },
+  {
+    id: "iiim-ahmedabad",
+    name: "Indian Institute of Management Ahmedabad",
+    description: "Premier management institute and one of the top business schools in India.",
+    rating: 4.9,
+    type: "Government",
+    courses: ["MBA", "Executive MBA", "Management Programs", "PhD"],
+    fees: {
+      tuition: { min: 2500000, max: 2700000 },
+      hostel: { min: 60000, max: 80000 },
+    },
+    location: {
+      city: "Ahmedabad",
+      state: "Gujarat",
+      address: "Vastrapur, Ahmedabad, Gujarat 380015"
+    },
+    established: 1961,
+    accreditation: ["AACSB", "EQUIS", "AMBA"],
+    facilities: ["Library", "Case Study Rooms", "Hostel", "Sports", "Leadership Center", "Innovation Labs"],
+    admissionProcess: "CAT",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Up to ₹5,00,000",
+        eligibility: "Top performers in CAT"
+      },
+      {
+        name: "Need-based Scholarship",
+        amount: "Partial fee waiver",
+        eligibility: "Family income < ₹8 lakhs"
+      }
+    ],
+    placementRate: 100,
+    averagePackage: 32000000,
+    imageUrl: "https://images.unsplash.com/photo-1466442929976-97f336a657be",
+    placement: {
+      percentage: 100,
+      avgSalary: 32000000,
+      topRecruiters: ["McKinsey", "BCG", "Bain", "Goldman Sachs", "JP Morgan"]
+    },
+    entranceExams: ["CAT"],
+    admissionDetails: {
+      eligibility: "CAT qualified with bachelor's degree and work experience",
+      process: "Group discussion, personal interview, and written ability test",
+      deadlines: "January-February annually"
+    }
+  },
+  {
+    id: "daiict-gandhinagar",
+    name: "Dhirubhai Ambani Institute of Information and Communication Technology",
+    description: "Premier institute for ICT education with strong industry partnerships.",
+    rating: 4.4,
+    type: "Private",
+    courses: ["ICT", "Computer Science", "Electronics", "Design"],
+    fees: {
+      tuition: { min: 280000, max: 320000 },
+      hostel: { min: 35000, max: 45000 },
+    },
+    location: {
+      city: "Gandhinagar",
+      state: "Gujarat",
+      address: "Near Indroda Circle, Gandhinagar, Gujarat 382007"
+    },
+    established: 2001,
+    accreditation: ["NAAC A+", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Innovation Center", "Incubation Hub"],
+    admissionProcess: "JEE Main / GUJCET",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Up to ₹1,00,000",
+        eligibility: "Top 10% students in entrance exam"
+      },
+      {
+        name: "Need-based Scholarship",
+        amount: "Fee concession",
+        eligibility: "Family income < ₹4 lakhs"
+      }
+    ],
+    placementRate: 92,
+    averagePackage: 1200000,
+    imageUrl: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b",
+    placement: {
+      percentage: 92,
+      avgSalary: 1200000,
+      topRecruiters: ["Microsoft", "Amazon", "Google", "Adobe", "Cisco"]
+    },
+    entranceExams: ["JEE Main", "GUJCET"],
+    admissionDetails: {
+      eligibility: "JEE Main qualified or GUJCET qualified with PCM in 12th",
+      process: "Online counseling",
+      deadlines: "June-July annually"
+    }
+  },
+  {
+    id: "gujarat-university",
+    name: "Gujarat University",
+    description: "One of the oldest and largest universities in Gujarat offering diverse programs.",
+    rating: 4.2,
+    type: "Government",
+    courses: ["Arts", "Science", "Commerce", "Law", "Management", "Engineering"],
+    fees: {
+      tuition: { min: 15000, max: 40000 },
+      hostel: { min: 8000, max: 18000 },
+    },
+    location: {
+      city: "Ahmedabad",
+      state: "Gujarat",
+      address: "Navrangpura, Ahmedabad, Gujarat 380009"
+    },
+    established: 1949,
+    accreditation: ["NAAC A+", "UGC"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Cultural Centers", "Museums"],
+    admissionProcess: "Merit based / Entrance exam",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹20,000 per year",
+        eligibility: "Top 10% students"
+      },
+      {
+        name: "State Scholarship",
+        amount: "Fee concession",
+        eligibility: "Gujarat domicile students"
+      }
+    ],
+    placementRate: 65,
+    averagePackage: 450000,
+    imageUrl: "https://images.unsplash.com/photo-1486718448742-163732cd1544",
+    placement: {
+      percentage: 65,
+      avgSalary: 450000,
+      topRecruiters: ["Government Organizations", "TCS", "Infosys", "Banking Sector"]
+    },
+    entranceExams: ["GUJCET", "CUET"],
+    admissionDetails: {
+      eligibility: "12th passed from recognized board",
+      process: "Online application and entrance exam",
+      deadlines: "May-June annually"
+    }
+  },
+  {
+    id: "ldrp-gandhinagar",
+    name: "L.D. College of Engineering",
+    description: "Premier government engineering college with excellent academic programs.",
+    rating: 4.3,
+    type: "Government",
+    courses: ["Engineering", "Technology"],
+    fees: {
+      tuition: { min: 65000, max: 85000 },
+      hostel: { min: 15000, max: 25000 },
+    },
+    location: {
+      city: "Ahmedabad",
+      state: "Gujarat",
+      address: "Navrangpura, Ahmedabad, Gujarat 380015"
+    },
+    established: 1948,
+    accreditation: ["NAAC A", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Workshop", "Computer Center"],
+    admissionProcess: "GUJCET / JEE Main",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹25,000 per year",
+        eligibility: "Top 5% students"
+      },
+      {
+        name: "State Scholarship",
+        amount: "Fee concession",
+        eligibility: "Gujarat domicile students"
+      }
+    ],
+    placementRate: 78,
+    averagePackage: 650000,
+    imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585",
+    placement: {
+      percentage: 78,
+      avgSalary: 650000,
+      topRecruiters: ["TCS", "Infosys", "L&T", "Wipro", "HCL"]
+    },
+    entranceExams: ["GUJCET", "JEE Main"],
+    admissionDetails: {
+      eligibility: "GUJCET qualified or JEE Main qualified with PCM in 12th",
+      process: "Online counseling through ACPC",
+      deadlines: "July-August annually"
+    }
+  },
+  {
+    id: "nirma-university",
+    name: "Nirma University",
+    description: "Leading private university known for its engineering and management programs.",
+    rating: 4.4,
+    type: "Private",
+    courses: ["Engineering", "Management", "Law", "Pharmacy", "Architecture"],
+    fees: {
+      tuition: { min: 220000, max: 280000 },
+      hostel: { min: 30000, max: 45000 },
+    },
+    location: {
+      city: "Ahmedabad",
+      state: "Gujarat",
+      address: "Sarkhej-Gandhinagar Highway, Ahmedabad, Gujarat 382481"
+    },
+    established: 2003,
+    accreditation: ["NAAC A++", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Innovation Center", "Industry Interface"],
+    admissionProcess: "JEE Main / GUJCET",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Up to ₹75,000",
+        eligibility: "Top performers in entrance exam"
+      },
+      {
+        name: "Sports Scholarship",
+        amount: "Fee concession",
+        eligibility: "State/National level sports achievers"
+      }
+    ],
+    placementRate: 85,
+    averagePackage: 950000,
+    imageUrl: "https://images.unsplash.com/photo-1459767129954-1b1c1f9b9ace",
+    placement: {
+      percentage: 85,
+      avgSalary: 950000,
+      topRecruiters: ["Amazon", "Microsoft", "TCS", "Infosys", "L&T"]
+    },
+    entranceExams: ["JEE Main", "GUJCET"],
+    admissionDetails: {
+      eligibility: "JEE Main qualified or GUJCET qualified with PCM in 12th",
+      process: "Online counseling",
+      deadlines: "June-July annually"
+    }
+  },
+  {
+    id: "cept-ahmedabad",
+    name: "CEPT University",
+    description: "Specialized university for planning, architecture, technology, and management.",
+    rating: 4.5,
+    type: "Private",
+    courses: ["Architecture", "Planning", "Technology", "Management", "Design"],
+    fees: {
+      tuition: { min: 180000, max: 250000 },
+      hostel: { min: 25000, max: 40000 },
+    },
+    location: {
+      city: "Ahmedabad",
+      state: "Gujarat",
+      address: "Kasturbhai Lalbhai Campus, University Road, Ahmedabad, Gujarat 380009"
+    },
+    established: 2005,
+    accreditation: ["NAAC A+", "COA"],
+    facilities: ["Library", "Design Studios", "Hostel", "Sports", "Workshop", "Exhibition Halls"],
+    admissionProcess: "NATA / JEE Main",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Up to ₹50,000",
+        eligibility: "Top 10% students"
+      },
+      {
+        name: "Design Excellence Scholarship",
+        amount: "Fee waiver",
+        eligibility: "Outstanding portfolio submission"
+      }
+    ],
+    placementRate: 88,
+    averagePackage: 800000,
+    imageUrl: "https://images.unsplash.com/photo-1497493292307-31c376b6e479",
+    placement: {
+      percentage: 88,
+      avgSalary: 800000,
+      topRecruiters: ["Architecture Firms", "Design Studios", "Urban Planning Agencies", "Construction Companies"]
+    },
+    entranceExams: ["NATA", "JEE Main"],
+    admissionDetails: {
+      eligibility: "NATA qualified or JEE Main qualified with 12th passed",
+      process: "Portfolio review and counseling",
+      deadlines: "June-July annually"
+    }
+  },
+  {
+    id: "pandit-deendayal",
+    name: "Pandit Deendayal Energy University",
+    description: "Specialized university focused on energy and petroleum studies.",
+    rating: 4.1,
+    type: "Government",
+    courses: ["Petroleum Engineering", "Energy Engineering", "Management", "Law"],
+    fees: {
+      tuition: { min: 120000, max: 150000 },
+      hostel: { min: 20000, max: 30000 },
+    },
+    location: {
+      city: "Gandhinagar",
+      state: "Gujarat",
+      address: "Raisan Village, Gandhinagar, Gujarat 382426"
+    },
+    established: 2007,
+    accreditation: ["NAAC A", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Research Centers", "Industry Partnerships"],
+    admissionProcess: "JEE Main / GUJCET",
+    scholarships: [
+      {
+        name: "Energy Sector Scholarship",
+        amount: "₹30,000 per year",
+        eligibility: "Top performers in energy-related courses"
+      },
+      {
+        name: "Merit Scholarship",
+        amount: "Fee concession",
+        eligibility: "Top 10% students"
+      }
+    ],
+    placementRate: 82,
+    averagePackage: 750000,
+    imageUrl: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b",
+    placement: {
+      percentage: 82,
+      avgSalary: 750000,
+      topRecruiters: ["ONGC", "Reliance", "IOCL", "BPCL", "Adani Group"]
+    },
+    entranceExams: ["JEE Main", "GUJCET"],
+    admissionDetails: {
+      eligibility: "JEE Main qualified or GUJCET qualified with PCM in 12th",
+      process: "Online counseling",
+      deadlines: "July-August annually"
+    }
+  },
+  {
+    id: "msu-baroda",
+    name: "Maharaja Sayajirao University of Baroda",
+    description: "Premier state university offering comprehensive education across multiple disciplines.",
+    rating: 4.3,
+    type: "Government",
+    courses: ["Arts", "Science", "Commerce", "Engineering", "Medicine", "Law"],
+    fees: {
+      tuition: { min: 20000, max: 50000 },
+      hostel: { min: 10000, max: 20000 },
+    },
+    location: {
+      city: "Vadodara",
+      state: "Gujarat",
+      address: "Pratapgunj, Vadodara, Gujarat 390002"
+    },
+    established: 1949,
+    accreditation: ["NAAC A+", "UGC"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Cultural Centers", "Museums"],
+    admissionProcess: "Merit based / Entrance exam",
+    scholarships: [
+      {
+        name: "University Merit Scholarship",
+        amount: "₹15,000 per year",
+        eligibility: "Top 5% students"
+      },
+      {
+        name: "State Scholarship",
+        amount: "Fee concession",
+        eligibility: "Gujarat domicile students"
+      }
+    ],
+    placementRate: 70,
+    averagePackage: 550000,
+    imageUrl: "https://images.unsplash.com/photo-1486718448742-163732cd1544",
+    placement: {
+      percentage: 70,
+      avgSalary: 550000,
+      topRecruiters: ["Government Organizations", "TCS", "Infosys", "Healthcare Sector"]
+    },
+    entranceExams: ["GUJCET", "NEET", "CLAT"],
+    admissionDetails: {
+      eligibility: "12th passed from recognized board",
+      process: "Online application and entrance exam",
+      deadlines: "May-June annually"
+    }
+  }
+];
+
 export const getCollegesByState = (stateId: string) => {
   const stateCollegeMap: { [key: string]: College[] } = {
     "maharashtra": maharashtraColleges,
@@ -5410,7 +5883,7 @@ export const getCollegesByState = (stateId: string) => {
     "karnataka": karnatakaColleges,
     "tamil-nadu": tamilNaduColleges,
     "uttar-pradesh": uttarPradeshColleges,
-    "gujarat": [],
+    "gujarat": gujaratColleges,
     "rajasthan": [],
     "west-bengal": [],
     "kerala": [],
@@ -5454,7 +5927,7 @@ export const getCollegeById = (collegeId: string): College | undefined => {
     "karnataka": karnatakaColleges,
     "tamil-nadu": tamilNaduColleges,
     "uttar-pradesh": uttarPradeshColleges,
-    "gujarat": [],
+    "gujarat": gujaratColleges,
     "rajasthan": [],
     "west-bengal": [],
     "kerala": [],

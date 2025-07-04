@@ -77,18 +77,11 @@ const categories = [
     color: "nextstep-purple"
   },
   {
-    title: "Success Stories",
-    description: "Inspiring stories of successful entrepreneurs, students, and professionals with their journeys",
-    icon: Heart,
-    link: "/success-stories",
-    color: "nextstep-red"
-  },
-  {
-    title: "Free Resources",
-    description: "Downloadable eBooks, mock tests, free courses, and study materials",
-    icon: Download,
-    link: "/resources",
-    color: "nextstep-green"
+    title: "Smart Study",
+    description: "AI-powered study tools, techniques and personalized learning strategies for better results",
+    icon: BookUser,
+    link: "/smart-study",
+    color: "nextstep-indigo"
   }
 ];
 
