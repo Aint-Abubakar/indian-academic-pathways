@@ -4836,6 +4836,573 @@ const uttarPradeshColleges: College[] = [
   }
 ];
 
+const telanganaColleges: College[] = [
+  {
+    id: "iit-hyderabad",
+    name: "Indian Institute of Technology Hyderabad",
+    description: "Premier engineering institute known for its cutting-edge research and academic excellence.",
+    rating: 4.7,
+    type: "Government",
+    courses: ["Engineering", "Science", "Management", "Design"],
+    fees: {
+      tuition: { min: 220000, max: 250000 },
+      hostel: { min: 30000, max: 40000 },
+    },
+    location: {
+      city: "Hyderabad",
+      state: "Telangana",
+      address: "Kandi, Sangareddy, Hyderabad, Telangana 502285"
+    },
+    established: 2008,
+    accreditation: ["NAAC A++", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Research Centers", "Innovation Hub"],
+    admissionProcess: "JEE Advanced",
+    scholarships: [
+      {
+        name: "Merit-based Scholarship",
+        amount: "Full tuition fee waiver",
+        eligibility: "Top 10% students"
+      },
+      {
+        name: "Need-based Scholarship",
+        amount: "Up to ₹50,000",
+        eligibility: "Family income < ₹5 lakhs"
+      }
+    ],
+    placementRate: 94,
+    averagePackage: 2400000,
+    imageUrl: "https://images.unsplash.com/photo-1487958449943-2429e8be8625",
+    placement: {
+      percentage: 94,
+      avgSalary: 2400000,
+      topRecruiters: ["Google", "Microsoft", "Amazon", "Goldman Sachs", "Intel"]
+    },
+    entranceExams: ["JEE Advanced"],
+    admissionDetails: {
+      eligibility: "JEE Advanced qualified with minimum 75% in 12th",
+      process: "Online counseling through JoSAA",
+      deadlines: "June-July annually"
+    }
+  },
+  {
+    id: "nit-warangal",
+    name: "National Institute of Technology Warangal",
+    description: "Prestigious NIT known for its engineering programs and research contributions.",
+    rating: 4.6,
+    type: "Government",
+    courses: ["Engineering", "Technology", "Management", "Sciences"],
+    fees: {
+      tuition: { min: 140000, max: 160000 },
+      hostel: { min: 25000, max: 35000 },
+    },
+    location: {
+      city: "Warangal",
+      state: "Telangana",
+      address: "Warangal, Telangana 506004"
+    },
+    established: 1959,
+    accreditation: ["NAAC A++", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Research Centers", "Innovation Labs"],
+    admissionProcess: "JEE Main",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Full tuition fee waiver",
+        eligibility: "Top 5% students"
+      },
+      {
+        name: "SC/ST Scholarship",
+        amount: "Complete fee waiver",
+        eligibility: "SC/ST category students"
+      }
+    ],
+    placementRate: 90,
+    averagePackage: 1800000,
+    imageUrl: "https://images.unsplash.com/photo-1487958449943-2429e8be8625",
+    placement: {
+      percentage: 90,
+      avgSalary: 1800000,
+      topRecruiters: ["Microsoft", "Amazon", "Google", "Samsung", "TCS"]
+    },
+    entranceExams: ["JEE Main"],
+    admissionDetails: {
+      eligibility: "JEE Main qualified with minimum 75% in 12th",
+      process: "Online counseling through JoSAA",
+      deadlines: "June-July annually"
+    }
+  },
+  {
+    id: "iiit-hyderabad",
+    name: "International Institute of Information Technology Hyderabad",
+    description: "Premier institute for computer science and information technology education.",
+    rating: 4.8,
+    type: "Private",
+    courses: ["Computer Science", "Electronics", "Computational Natural Sciences"],
+    fees: {
+      tuition: { min: 380000, max: 420000 },
+      hostel: { min: 35000, max: 45000 },
+    },
+    location: {
+      city: "Hyderabad",
+      state: "Telangana",
+      address: "Gachibowli, Hyderabad, Telangana 500032"
+    },
+    established: 1998,
+    accreditation: ["NAAC A++", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Research Centers", "Startup Incubator"],
+    admissionProcess: "UGEE",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Up to ₹2,00,000",
+        eligibility: "Top performers in UGEE"
+      },
+      {
+        name: "Need-based Scholarship",
+        amount: "Fee concession",
+        eligibility: "Family income < ₹6 lakhs"
+      }
+    ],
+    placementRate: 98,
+    averagePackage: 2800000,
+    imageUrl: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b",
+    placement: {
+      percentage: 98,
+      avgSalary: 2800000,
+      topRecruiters: ["Google", "Microsoft", "Amazon", "Facebook", "Adobe"]
+    },
+    entranceExams: ["UGEE"],
+    admissionDetails: {
+      eligibility: "UGEE qualified with minimum 75% in 12th with PCM",
+      process: "Online counseling",
+      deadlines: "May-June annually"
+    }
+  },
+  {
+    id: "osmania-university",
+    name: "Osmania University",
+    description: "One of the oldest and most prestigious universities in South India offering diverse programs.",
+    rating: 4.3,
+    type: "Government",
+    courses: ["Arts", "Science", "Commerce", "Law", "Engineering", "Medicine"],
+    fees: {
+      tuition: { min: 15000, max: 45000 },
+      hostel: { min: 8000, max: 18000 },
+    },
+    location: {
+      city: "Hyderabad",
+      state: "Telangana",
+      address: "University Road, Hyderabad, Telangana 500007"
+    },
+    established: 1918,
+    accreditation: ["NAAC A+", "UGC"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Cultural Centers", "Museums"],
+    admissionProcess: "Merit based / Entrance exam",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹20,000 per year",
+        eligibility: "Top 10% students"
+      },
+      {
+        name: "Minority Scholarship",
+        amount: "Fee concession",
+        eligibility: "Minority community students"
+      }
+    ],
+    placementRate: 70,
+    averagePackage: 500000,
+    imageUrl: "https://images.unsplash.com/photo-1486718448742-163732cd1544",
+    placement: {
+      percentage: 70,
+      avgSalary: 500000,
+      topRecruiters: ["Government Organizations", "TCS", "Infosys", "Banking Sector"]
+    },
+    entranceExams: ["EAMCET", "PGCET"],
+    admissionDetails: {
+      eligibility: "12th passed from recognized board",
+      process: "Online application and entrance exam",
+      deadlines: "May-June annually"
+    }
+  },
+  {
+    id: "bits-hyderabad",
+    name: "Birla Institute of Technology and Science Hyderabad",
+    description: "Premier private institute known for its innovative academic programs and industry connections.",
+    rating: 4.7,
+    type: "Private",
+    courses: ["Engineering", "Sciences", "Management", "Pharmacy"],
+    fees: {
+      tuition: { min: 450000, max: 500000 },
+      hostel: { min: 50000, max: 65000 },
+    },
+    location: {
+      city: "Hyderabad",
+      state: "Telangana",
+      address: "Jawahar Nagar, Kapra Mandal, Medchal, Hyderabad, Telangana 500078"
+    },
+    established: 2008,
+    accreditation: ["NAAC A++", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Innovation Centers", "Research Labs"],
+    admissionProcess: "BITSAT",
+    scholarships: [
+      {
+        name: "Merit-cum-Means Scholarship",
+        amount: "Up to ₹3,00,000",
+        eligibility: "Top performers with family income < ₹12 lakhs"
+      },
+      {
+        name: "Merit Scholarship",
+        amount: "Fee waiver",
+        eligibility: "Top 1% in BITSAT"
+      }
+    ],
+    placementRate: 95,
+    averagePackage: 2200000,
+    imageUrl: "https://images.unsplash.com/photo-1459767129954-1b1c1f9b9ace",
+    placement: {
+      percentage: 95,
+      avgSalary: 2200000,
+      topRecruiters: ["Microsoft", "Google", "Amazon", "Samsung", "Goldman Sachs"]
+    },
+    entranceExams: ["BITSAT"],
+    admissionDetails: {
+      eligibility: "BITSAT qualified with minimum 75% in 12th with PCM",
+      process: "Online counseling based on BITSAT score",
+      deadlines: "June-July annually"
+    }
+  },
+  {
+    id: "jntu-hyderabad",
+    name: "Jawaharlal Nehru Technological University Hyderabad",
+    description: "Leading technological university offering various engineering and technology programs.",
+    rating: 4.2,
+    type: "Government",
+    courses: ["Engineering", "Technology", "Management", "Pharmacy"],
+    fees: {
+      tuition: { min: 60000, max: 80000 },
+      hostel: { min: 15000, max: 25000 },
+    },
+    location: {
+      city: "Hyderabad",
+      state: "Telangana",
+      address: "Kukatpally, Hyderabad, Telangana 500085"
+    },
+    established: 1972,
+    accreditation: ["NAAC A", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Workshop", "Research Centers"],
+    admissionProcess: "TS EAMCET",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹25,000 per year",
+        eligibility: "Top 5% students"
+      },
+      {
+        name: "State Scholarship",
+        amount: "Fee concession",
+        eligibility: "Telangana domicile students"
+      }
+    ],
+    placementRate: 75,
+    averagePackage: 650000,
+    imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585",
+    placement: {
+      percentage: 75,
+      avgSalary: 650000,
+      topRecruiters: ["TCS", "Infosys", "Wipro", "HCL", "Tech Mahindra"]
+    },
+    entranceExams: ["TS EAMCET"],
+    admissionDetails: {
+      eligibility: "TS EAMCET qualified with PCM in 12th",
+      process: "Online counseling through TS EAMCET",
+      deadlines: "July-August annually"
+    }
+  },
+  {
+    id: "ise-hyderabad",
+    name: "Indian School of Business Hyderabad",
+    description: "World-renowned business school offering premier management education.",
+    rating: 4.9,
+    type: "Private",
+    courses: ["MBA", "Executive MBA", "Management Programs"],
+    fees: {
+      tuition: { min: 3400000, max: 3600000 },
+      hostel: { min: 80000, max: 100000 },
+    },
+    location: {
+      city: "Hyderabad",
+      state: "Telangana",
+      address: "Gachibowli, Hyderabad, Telangana 500111"
+    },
+    established: 2001,
+    accreditation: ["AACSB", "EQUIS"],
+    facilities: ["Library", "Case Study Rooms", "Hostel", "Sports", "Leadership Center", "Innovation Labs"],
+    admissionProcess: "GMAT/GRE",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Up to ₹10,00,000",
+        eligibility: "Top performers in GMAT/GRE"
+      },
+      {
+        name: "Diversity Scholarship",
+        amount: "Partial fee waiver",
+        eligibility: "Underrepresented groups"
+      }
+    ],
+    placementRate: 100,
+    averagePackage: 28000000,
+    imageUrl: "https://images.unsplash.com/photo-1466442929976-97f336a657be",
+    placement: {
+      percentage: 100,
+      avgSalary: 28000000,
+      topRecruiters: ["McKinsey", "BCG", "Bain", "Goldman Sachs", "JP Morgan"]
+    },
+    entranceExams: ["GMAT", "GRE"],
+    admissionDetails: {
+      eligibility: "Bachelor's degree with GMAT/GRE score and work experience",
+      process: "Online application with essays and interviews",
+      deadlines: "January-March annually"
+    }
+  },
+  {
+    id: "cbit-hyderabad",
+    name: "Chaitanya Bharathi Institute of Technology",
+    description: "Premier engineering college known for its academic excellence and industry partnerships.",
+    rating: 4.4,
+    type: "Private",
+    courses: ["Engineering", "Technology", "Management"],
+    fees: {
+      tuition: { min: 180000, max: 220000 },
+      hostel: { min: 30000, max: 40000 },
+    },
+    location: {
+      city: "Hyderabad",
+      state: "Telangana",
+      address: "Gandipet, Hyderabad, Telangana 500075"
+    },
+    established: 1979,
+    accreditation: ["NAAC A+", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Innovation Center", "Industry Interface"],
+    admissionProcess: "TS EAMCET",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹30,000 per year",
+        eligibility: "Top 10% students in TS EAMCET"
+      },
+      {
+        name: "Sports Scholarship",
+        amount: "Fee concession",
+        eligibility: "State/National level sports achievers"
+      }
+    ],
+    placementRate: 85,
+    averagePackage: 850000,
+    imageUrl: "https://images.unsplash.com/photo-1497493292307-31c376b6e479",
+    placement: {
+      percentage: 85,
+      avgSalary: 850000,
+      topRecruiters: ["Microsoft", "Amazon", "TCS", "Infosys", "Cognizant"]
+    },
+    entranceExams: ["TS EAMCET"],
+    admissionDetails: {
+      eligibility: "TS EAMCET qualified with PCM in 12th",
+      process: "Online counseling",
+      deadlines: "July-August annually"
+    }
+  },
+  {
+    id: "mvsr-hyderabad",
+    name: "Mahatma Gandhi Institute of Technology",
+    description: "Well-established engineering college with strong academic programs and placements.",
+    rating: 4.1,
+    type: "Private",
+    courses: ["Engineering", "Technology", "Management"],
+    fees: {
+      tuition: { min: 150000, max: 180000 },
+      hostel: { min: 25000, max: 35000 },
+    },
+    location: {
+      city: "Hyderabad",
+      state: "Telangana",
+      address: "Gandipet, Hyderabad, Telangana 500075"
+    },
+    established: 1997,
+    accreditation: ["NAAC A", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Auditorium", "Computer Center"],
+    admissionProcess: "TS EAMCET",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹20,000 per year",
+        eligibility: "Top 5% students"
+      },
+      {
+        name: "Need-based Scholarship",
+        amount: "Fee concession",
+        eligibility: "Family income < ₹3 lakhs"
+      }
+    ],
+    placementRate: 80,
+    averagePackage: 700000,
+    imageUrl: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b",
+    placement: {
+      percentage: 80,
+      avgSalary: 700000,
+      topRecruiters: ["TCS", "Infosys", "Wipro", "HCL", "Capgemini"]
+    },
+    entranceExams: ["TS EAMCET"],
+    admissionDetails: {
+      eligibility: "TS EAMCET qualified with PCM in 12th",
+      process: "Online counseling",
+      deadlines: "July-August annually"
+    }
+  },
+  {
+    id: "vasavi-hyderabad",
+    name: "Vasavi College of Engineering",
+    description: "Prestigious engineering college known for its quality education and excellent faculty.",
+    rating: 4.3,
+    type: "Private",
+    courses: ["Engineering", "Technology"],
+    fees: {
+      tuition: { min: 160000, max: 190000 },
+      hostel: { min: 28000, max: 38000 },
+    },
+    location: {
+      city: "Hyderabad",
+      state: "Telangana",
+      address: "Ibrahim Bagh, Hyderabad, Telangana 500031"
+    },
+    established: 1981,
+    accreditation: ["NAAC A+", "NBA"],
+    facilities: ["Library", "Labs", "Hostel", "Sports", "Auditorium", "Research Centers"],
+    admissionProcess: "TS EAMCET",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹25,000 per year",
+        eligibility: "Top 10% students in TS EAMCET"
+      },
+      {
+        name: "Alumni Scholarship",
+        amount: "₹15,000 per year",
+        eligibility: "Children of alumni"
+      }
+    ],
+    placementRate: 88,
+    averagePackage: 800000,
+    imageUrl: "https://images.unsplash.com/photo-1459767129954-1b1c1f9b9ace",
+    placement: {
+      percentage: 88,
+      avgSalary: 800000,
+      topRecruiters: ["Amazon", "Microsoft", "TCS", "Infosys", "Accenture"]
+    },
+    entranceExams: ["TS EAMCET"],
+    admissionDetails: {
+      eligibility: "TS EAMCET qualified with PCM in 12th",
+      process: "Online counseling",
+      deadlines: "July-August annually"
+    }
+  },
+  {
+    id: "nih-hyderabad",
+    name: "National Institute of Nutrition",
+    description: "Premier institute for nutrition research and public health education.",
+    rating: 4.5,
+    type: "Government",
+    courses: ["Nutrition", "Public Health", "Food Technology", "Biochemistry"],
+    fees: {
+      tuition: { min: 25000, max: 40000 },
+      hostel: { min: 12000, max: 20000 },
+    },
+    location: {
+      city: "Hyderabad",
+      state: "Telangana",
+      address: "Jamai-Osmania, Hyderabad, Telangana 500007"
+    },
+    established: 1918,
+    accreditation: ["NAAC A+", "ICMR"],
+    facilities: ["Library", "Research Labs", "Hostel", "Clinical Units", "Community Health Centers"],
+    admissionProcess: "Entrance exam",
+    scholarships: [
+      {
+        name: "Research Fellowship",
+        amount: "₹31,000 per month",
+        eligibility: "PhD students"
+      },
+      {
+        name: "Merit Scholarship",
+        amount: "₹10,000 per year",
+        eligibility: "Top performers"
+      }
+    ],
+    placementRate: 92,
+    averagePackage: 600000,
+    imageUrl: "https://images.unsplash.com/photo-1486718448742-163732cd1544",
+    placement: {
+      percentage: 92,
+      avgSalary: 600000,
+      topRecruiters: ["ICMR", "WHO", "Government Health Departments", "NGOs", "Research Institutions"]
+    },
+    entranceExams: ["GATE", "NET"],
+    admissionDetails: {
+      eligibility: "Master's degree in relevant subjects",
+      process: "Entrance exam and interview",
+      deadlines: "March-April annually"
+    }
+  },
+  {
+    id: "nalsar-hyderabad",
+    name: "NALSAR University of Law",
+    description: "Premier law university known for its excellent legal education and research programs.",
+    rating: 4.6,
+    type: "Government",
+    courses: ["Law", "Legal Studies", "Business Law", "International Law"],
+    fees: {
+      tuition: { min: 200000, max: 250000 },
+      hostel: { min: 30000, max: 40000 },
+    },
+    location: {
+      city: "Hyderabad",
+      state: "Telangana",
+      address: "Justice City, Shameerpet, Hyderabad, Telangana 500101"
+    },
+    established: 1998,
+    accreditation: ["NAAC A++", "BCI"],
+    facilities: ["Library", "Moot Court", "Hostel", "Sports", "Legal Aid Clinic", "Research Centers"],
+    admissionProcess: "CLAT",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Up to ₹1,00,000",
+        eligibility: "Top performers in CLAT"
+      },
+      {
+        name: "Need-based Scholarship",
+        amount: "Fee concession",
+        eligibility: "Family income < ₹4 lakhs"
+      }
+    ],
+    placementRate: 95,
+    averagePackage: 1200000,
+    imageUrl: "https://images.unsplash.com/photo-1466442929976-97f336a657be",
+    placement: {
+      percentage: 95,
+      avgSalary: 1200000,
+      topRecruiters: ["Law Firms", "Corporate Legal Departments", "Government", "Judiciary", "Legal Consultancies"]
+    },
+    entranceExams: ["CLAT"],
+    admissionDetails: {
+      eligibility: "CLAT qualified with 12th passed",
+      process: "Online counseling based on CLAT score",
+      deadlines: "June-July annually"
+    }
+  }
+];
+
 export const getCollegesByState = (stateId: string) => {
   const stateCollegeMap: { [key: string]: College[] } = {
     "maharashtra": maharashtraColleges,
@@ -4850,7 +5417,7 @@ export const getCollegesByState = (stateId: string) => {
     "punjab": [],
     "andhra-pradesh": [],
     "bihar": [],
-    "telangana": [],
+    "telangana": telanganaColleges,
     "arunachal-pradesh": [],
     "assam": [],
     "chhattisgarh": [],
@@ -4894,7 +5461,7 @@ export const getCollegeById = (collegeId: string): College | undefined => {
     "punjab": [],
     "andhra-pradesh": [],
     "bihar": [],
-    "telangana": [],
+    "telangana": telanganaColleges,
     "arunachal-pradesh": [],
     "assam": [],
     "chhattisgarh": [],
