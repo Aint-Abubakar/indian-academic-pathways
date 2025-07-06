@@ -98,7 +98,7 @@ export const states: State[] = [
   {
     id: "kerala",
     name: "Kerala",
-    collegeCount: 55,
+    collegeCount: 67,
   },
   {
     id: "punjab",
@@ -239,6 +239,501 @@ export const states: State[] = [
     id: "puducherry",
     name: "Puducherry",
     collegeCount: 8
+  }
+];
+
+const keralaColleges: College[] = [
+  {
+    id: "iit-palakkad",
+    name: "Indian Institute of Technology Palakkad",
+    description: "One of the newer IITs established in Kerala, known for innovative engineering programs and research excellence.",
+    rating: 4.6,
+    type: "Government",
+    courses: ["Engineering", "Technology", "Research"],
+    fees: {
+      tuition: { min: 200000, max: 230000 },
+      hostel: { min: 15000, max: 25000 }
+    },
+    location: {
+      city: "Palakkad",
+      state: "Kerala",
+      address: "Ahalia Integrated Campus, Kozhippara, Palakkad, Kerala 678557"
+    },
+    established: 2015,
+    accreditation: ["NBA", "NAAC A++"],
+    facilities: ["Research Labs", "Central Library", "Hostels", "Sports Complex", "Cafeteria"],
+    admissionProcess: "JEE Advanced",
+    scholarships: [
+      {
+        name: "Merit-cum-Means Scholarship",
+        amount: "Full tuition waiver",
+        eligibility: "Family income < 5 LPA"
+      }
+    ],
+    placementRate: 92,
+    averagePackage: 1400000,
+    placement: {
+      percentage: 92,
+      avgSalary: 1400000,
+      topRecruiters: ["Google", "Microsoft", "Amazon", "Goldman Sachs"]
+    },
+    entranceExams: ["JEE Advanced"],
+    admissionDetails: {
+      eligibility: "JEE Advanced qualified candidates",
+      process: "JoSAA Counselling",
+      deadlines: "June-July"
+    }
+  },
+  {
+    id: "nit-calicut",
+    name: "National Institute of Technology Calicut",
+    description: "Premier technical institute in Kerala offering undergraduate and postgraduate programs in engineering and technology.",
+    rating: 4.5,
+    type: "Government",
+    courses: ["Engineering", "Technology", "Management", "Science"],
+    fees: {
+      tuition: { min: 150000, max: 180000 },
+      hostel: { min: 12000, max: 20000 }
+    },
+    location: {
+      city: "Calicut",
+      state: "Kerala",
+      address: "NIT Campus, Chathamangalam, Kozhikode, Kerala 673601"
+    },
+    established: 1961,
+    accreditation: ["NBA", "NAAC A"],
+    facilities: ["Research Centers", "Central Library", "Hostels", "Sports Facilities", "Medical Center"],
+    admissionProcess: "JEE Main",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹50,000 per year",
+        eligibility: "Top 10% students"
+      }
+    ],
+    placementRate: 88,
+    averagePackage: 1200000,
+    placement: {
+      percentage: 88,
+      avgSalary: 1200000,
+      topRecruiters: ["Infosys", "TCS", "Wipro", "Cognizant", "Accenture"]
+    },
+    entranceExams: ["JEE Main"],
+    admissionDetails: {
+      eligibility: "JEE Main qualified with valid score",
+      process: "JoSAA Counselling",
+      deadlines: "June-July"
+    }
+  },
+  {
+    id: "cusat",
+    name: "Cochin University of Science and Technology",
+    description: "State university known for engineering, science, and technology programs with strong industry connections.",
+    rating: 4.3,
+    type: "Government",
+    courses: ["Engineering", "Science", "Technology", "Management", "Law"],
+    fees: {
+      tuition: { min: 80000, max: 120000 },
+      hostel: { min: 8000, max: 15000 }
+    },
+    location: {
+      city: "Kochi",
+      state: "Kerala",
+      address: "Cochin University P.O, Kochi, Kerala 682022"
+    },
+    established: 1971,
+    accreditation: ["NAAC A", "NBA"],
+    facilities: ["Research Labs", "Library", "Hostels", "Sports Complex", "Auditorium"],
+    admissionProcess: "KEAM/Management Quota",
+    scholarships: [
+      {
+        name: "State Merit Scholarship",
+        amount: "₹30,000 per year",
+        eligibility: "Merit-based selection"
+      }
+    ],
+    placementRate: 82,
+    averagePackage: 600000,
+    placement: {
+      percentage: 82,
+      avgSalary: 600000,
+      topRecruiters: ["TCS", "Infosys", "Wipro", "Tech Mahindra", "UST Global"]
+    },
+    entranceExams: ["KEAM", "JEE Main"],
+    admissionDetails: {
+      eligibility: "Plus Two with PCM for engineering",
+      process: "KEAM Counselling",
+      deadlines: "June-August"
+    }
+  },
+  {
+    id: "university-of-kerala",
+    name: "University of Kerala",
+    description: "One of the oldest universities in India, offering diverse academic programs across multiple disciplines.",
+    rating: 4.2,
+    type: "Government",
+    courses: ["Arts", "Science", "Commerce", "Law", "Medicine", "Engineering"],
+    fees: {
+      tuition: { min: 25000, max: 80000 },
+      hostel: { min: 6000, max: 12000 }
+    },
+    location: {
+      city: "Thiruvananthapuram",
+      state: "Kerala",
+      address: "Senate House Campus, Palayam, Thiruvananthapuram, Kerala 695034"
+    },
+    established: 1937,
+    accreditation: ["NAAC A++", "UGC"],
+    facilities: ["Multiple Libraries", "Research Centers", "Hostels", "Medical Facilities"],
+    admissionProcess: "Merit/Entrance Based",
+    scholarships: [
+      {
+        name: "University Merit Scholarship",
+        amount: "₹25,000 per year",
+        eligibility: "Top performers in each course"
+      }
+    ],
+    placementRate: 75,
+    averagePackage: 400000,
+    placement: {
+      percentage: 75,
+      avgSalary: 400000,
+      topRecruiters: ["Government Sectors", "Private Companies", "Banks"]
+    },
+    entranceExams: ["University Entrance Tests"],
+    admissionDetails: {
+      eligibility: "Plus Two for UG, Graduation for PG",
+      process: "University Counselling",
+      deadlines: "May-July"
+    }
+  },
+  {
+    id: "iisc-bangalore-kerala-campus",
+    name: "Indian Institute of Science Education and Research Thiruvananthapuram",
+    description: "Premier research institute focusing on science education and cutting-edge research.",
+    rating: 4.7,
+    type: "Government",
+    courses: ["Pure Sciences", "Applied Sciences", "Research"],
+    fees: {
+      tuition: { min: 200000, max: 250000 },
+      hostel: { min: 15000, max: 25000 }
+    },
+    location: {
+      city: "Thiruvananthapuram",
+      state: "Kerala",
+      address: "Maruthamala P.O, Vithura, Thiruvananthapuram, Kerala 695551"
+    },
+    established: 2008,
+    accreditation: ["NAAC A++", "Institute of Eminence"],
+    facilities: ["Advanced Research Labs", "Library", "Hostels", "Sports Facilities"],
+    admissionProcess: "KVPY/JEE Advanced/JAM",
+    scholarships: [
+      {
+        name: "INSPIRE Fellowship",
+        amount: "₹80,000 per year",
+        eligibility: "All admitted students"
+      }
+    ],
+    placementRate: 95,
+    averagePackage: 1800000,
+    placement: {
+      percentage: 95,
+      avgSalary: 1800000,
+      topRecruiters: ["Research Institutes", "IITs", "IISc", "International Universities"]
+    },
+    entranceExams: ["KVPY", "JEE Advanced", "JAM"],
+    admissionDetails: {
+      eligibility: "KVPY/JEE Advanced qualified",
+      process: "Direct Admission",
+      deadlines: "May-June"
+    }
+  },
+  {
+    id: "kerala-agricultural-university",
+    name: "Kerala Agricultural University",
+    description: "Leading agricultural university offering comprehensive programs in agriculture and allied sciences.",
+    rating: 4.1,
+    type: "Government",
+    courses: ["Agriculture", "Veterinary Science", "Forestry", "Agricultural Engineering"],
+    fees: {
+      tuition: { min: 40000, max: 80000 },
+      hostel: { min: 8000, max: 15000 }
+    },
+    location: {
+      city: "Thrissur",
+      state: "Kerala",
+      address: "KAU P.O, Vellanikkara, Thrissur, Kerala 680656"
+    },
+    established: 1971,
+    accreditation: ["NAAC A", "ICAR"],
+    facilities: ["Research Farms", "Veterinary Hospital", "Library", "Hostels"],
+    admissionProcess: "KEAM Agriculture/NEET",
+    scholarships: [
+      {
+        name: "Agricultural Merit Scholarship",
+        amount: "₹20,000 per year",
+        eligibility: "Merit-based for agriculture students"
+      }
+    ],
+    placementRate: 78,
+    averagePackage: 350000,
+    placement: {
+      percentage: 78,
+      avgSalary: 350000,
+      topRecruiters: ["Government Agriculture Dept", "Private Agro Companies", "Banks"]
+    },
+    entranceExams: ["KEAM Agriculture", "NEET"],
+    admissionDetails: {
+      eligibility: "Plus Two with Biology/Agriculture",
+      process: "KEAM Counselling",
+      deadlines: "June-August"
+    }
+  },
+  {
+    id: "mahatma-gandhi-university",
+    name: "Mahatma Gandhi University",
+    description: "Major state university offering diverse undergraduate and postgraduate programs.",
+    rating: 4.0,
+    type: "Government",
+    courses: ["Arts", "Science", "Commerce", "Engineering", "Management", "Law"],
+    fees: {
+      tuition: { min: 20000, max: 100000 },
+      hostel: { min: 6000, max: 12000 }
+    },
+    location: {
+      city: "Kottayam",
+      state: "Kerala",
+      address: "Priyadarshini Hills P.O, Kottayam, Kerala 686560"
+    },
+    established: 1983,
+    accreditation: ["NAAC A", "UGC"],
+    facilities: ["Central Library", "Research Centers", "Hostels", "Sports Facilities"],
+    admissionProcess: "Merit/Entrance Based",
+    scholarships: [
+      {
+        name: "University Scholarship",
+        amount: "₹15,000 per year",
+        eligibility: "Economically weaker sections"
+      }
+    ],
+    placementRate: 70,
+    averagePackage: 400000,
+    placement: {
+      percentage: 70,
+      avgSalary: 400000,
+      topRecruiters: ["IT Companies", "Banks", "Government Sectors"]
+    },
+    entranceExams: ["University Entrance Tests"],
+    admissionDetails: {
+      eligibility: "Plus Two for UG programs",
+      process: "University Admission Process",
+      deadlines: "May-July"
+    }
+  },
+  {
+    id: "rajiv-gandhi-iiit-kottayam",
+    name: "Indian Institute of Information Technology Kottayam",
+    description: "Premier IT institute focusing on information technology and computer science education.",
+    rating: 4.4,
+    type: "Government",
+    courses: ["Computer Science", "Information Technology", "Electronics"],
+    fees: {
+      tuition: { min: 180000, max: 220000 },
+      hostel: { min: 12000, max: 20000 }
+    },
+    location: {
+      city: "Kottayam",
+      state: "Kerala",
+      address: "Pala-Kottayam Road, Kottayam, Kerala 686635"
+    },
+    established: 2015,
+    accreditation: ["NBA", "NAAC"],
+    facilities: ["Computer Labs", "Library", "Hostels", "Sports Complex"],
+    admissionProcess: "JEE Main",
+    scholarships: [
+      {
+        name: "Technical Education Scholarship",
+        amount: "₹40,000 per year",
+        eligibility: "Merit cum means"
+      }
+    ],
+    placementRate: 90,
+    averagePackage: 1100000,
+    placement: {
+      percentage: 90,
+      avgSalary: 1100000,
+      topRecruiters: ["Google", "Microsoft", "Amazon", "Flipkart", "Infosys"]
+    },
+    entranceExams: ["JEE Main"],
+    admissionDetails: {
+      eligibility: "JEE Main qualified",
+      process: "JoSAA Counselling",
+      deadlines: "June-July"
+    }
+  },
+  {
+    id: "amrita-university",
+    name: "Amrita Vishwa Vidyapeetham",
+    description: "Private deemed university known for engineering, medicine, and research programs.",
+    rating: 4.3,
+    type: "Private",
+    courses: ["Engineering", "Medicine", "Business", "Arts & Sciences", "Ayurveda"],
+    fees: {
+      tuition: { min: 300000, max: 500000 },
+      hostel: { min: 80000, max: 120000 }
+    },
+    location: {
+      city: "Kollam",
+      state: "Kerala",
+      address: "Clappana P.O, Kollam, Kerala 690525"
+    },
+    established: 2003,
+    accreditation: ["NAAC A++", "NBA", "NIRF Ranked"],
+    facilities: ["Modern Labs", "Hospital", "Library", "Hostels", "Sports Complex"],
+    admissionProcess: "AEEE/NEET/CAT",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "Up to 100% tuition waiver",
+        eligibility: "Top performers in entrance exams"
+      }
+    ],
+    placementRate: 85,
+    averagePackage: 800000,
+    placement: {
+      percentage: 85,
+      avgSalary: 800000,
+      topRecruiters: ["TCS", "Infosys", "Wipro", "Accenture", "Cognizant"]
+    },
+    entranceExams: ["AEEE", "NEET", "CAT"],
+    admissionDetails: {
+      eligibility: "Plus Two with relevant subjects",
+      process: "University Entrance Tests",
+      deadlines: "April-June"
+    }
+  },
+  {
+    id: "sree-chitra-tirunal-institute",
+    name: "Sree Chitra Tirunal Institute for Medical Sciences and Technology",
+    description: "Premier medical institute and deemed university specializing in medical sciences and biomedical technology.",
+    rating: 4.6,
+    type: "Government",
+    courses: ["Medicine", "Biomedical Technology", "Medical Research"],
+    fees: {
+      tuition: { min: 50000, max: 150000 },
+      hostel: { min: 10000, max: 18000 }
+    },
+    location: {
+      city: "Thiruvananthapuram",
+      state: "Kerala", 
+      address: "Medical College P.O, Thiruvananthapuram, Kerala 695011"
+    },
+    established: 1973,
+    accreditation: ["NAAC A++", "Institute of Eminence"],
+    facilities: ["Super Specialty Hospital", "Research Labs", "Library", "Hostels"],
+    admissionProcess: "NEET/Institute Entrance",
+    scholarships: [
+      {
+        name: "Medical Merit Scholarship",
+        amount: "₹60,000 per year",
+        eligibility: "NEET top scorers"
+      }
+    ],
+    placementRate: 95,
+    averagePackage: 1200000,
+    placement: {
+      percentage: 95,
+      avgSalary: 1200000,
+      topRecruiters: ["Hospitals", "Medical Colleges", "Research Institutes"]
+    },
+    entranceExams: ["NEET", "Institute Entrance Tests"],
+    admissionDetails: {
+      eligibility: "NEET qualified for medical courses",
+      process: "Institute Counselling",
+      deadlines: "June-August"
+    }
+  },
+  {
+    id: "kerala-veterinary-university",
+    name: "Kerala Veterinary and Animal Sciences University",
+    description: "Specialized university for veterinary and animal sciences education and research.",
+    rating: 4.0,
+    type: "Government",
+    courses: ["Veterinary Medicine", "Animal Sciences", "Dairy Science", "Fisheries"],
+    fees: {
+      tuition: { min: 60000, max: 100000 },
+      hostel: { min: 8000, max: 15000 }
+    },
+    location: {
+      city: "Wayanad",
+      state: "Kerala",
+      address: "Pookode, Lakkidi P.O, Wayanad, Kerala 673576"
+    },
+    established: 2010,
+    accreditation: ["NAAC A", "Veterinary Council of India"],
+    facilities: ["Veterinary Hospital", "Research Farms", "Library", "Hostels"],
+    admissionProcess: "NEET/KEAM",
+    scholarships: [
+      {
+        name: "Veterinary Scholarship",
+        amount: "₹25,000 per year",
+        eligibility: "Merit and need-based"
+      }
+    ],
+    placementRate: 80,
+    averagePackage: 400000,
+    placement: {
+      percentage: 80,
+      avgSalary: 400000,
+      topRecruiters: ["Government Veterinary Dept", "Private Clinics", "Dairy Companies"]
+    },
+    entranceExams: ["NEET", "KEAM"],
+    admissionDetails: {
+      eligibility: "Plus Two with Biology",
+      process: "KEAM Counselling",
+      deadlines: "June-August"
+    }
+  },
+  {
+    id: "indian-maritime-university-kochi",
+    name: "Indian Maritime University - Kochi Campus",
+    description: "Specialized maritime university offering courses in shipping, port management, and marine engineering.",
+    rating: 4.2,
+    type: "Government",
+    courses: ["Marine Engineering", "Nautical Science", "Port Management", "Ship Building"],
+    fees: {
+      tuition: { min: 120000, max: 180000 },
+      hostel: { min: 15000, max: 25000 }
+    },
+    location: {
+      city: "Kochi",
+      state: "Kerala",
+      address: "Kundannoor, Maradu P.O, Kochi, Kerala 682304"
+    },
+    established: 2008,
+    accreditation: ["NAAC", "DGS Approved"],
+    facilities: ["Simulation Labs", "Workshop", "Library", "Hostels", "Training Ship"],
+    admissionProcess: "IMU CET/JEE Main",
+    scholarships: [
+      {
+        name: "Maritime Scholarship",
+        amount: "₹50,000 per year",
+        eligibility: "Merit-based for maritime courses"
+      }
+    ],
+    placementRate: 92,
+    averagePackage: 1500000,
+    placement: {
+      percentage: 92,
+      avgSalary: 1500000,
+      topRecruiters: ["Shipping Companies", "Port Authorities", "Offshore Companies"]
+    },
+    entranceExams: ["IMU CET", "JEE Main"],
+    admissionDetails: {
+      eligibility: "Plus Two with PCM",
+      process: "IMU Counselling",
+      deadlines: "May-July"
+    }
   }
 ];
 
@@ -5886,7 +6381,7 @@ export const getCollegesByState = (stateId: string) => {
     "gujarat": gujaratColleges,
     "rajasthan": [],
     "west-bengal": [],
-    "kerala": [],
+    "kerala": keralaColleges,
     "punjab": [],
     "andhra-pradesh": [],
     "bihar": [],
@@ -5930,7 +6425,7 @@ export const getCollegeById = (collegeId: string): College | undefined => {
     "gujarat": gujaratColleges,
     "rajasthan": [],
     "west-bengal": [],
-    "kerala": [],
+    "kerala": keralaColleges,
     "punjab": [],
     "andhra-pradesh": [],
     "bihar": [],
