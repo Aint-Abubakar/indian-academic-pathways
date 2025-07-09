@@ -55,9 +55,10 @@ const AskAiPage = () => {
           "Content-Type": "application/json",
           "Authorization": "Bearer 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",
           "HTTP-Referer": window.location.origin,
+          "X-Title": "NextStep Educational Platform",
         },
         body: JSON.stringify({
-          model: "qwen/qwen-2.5-72b-instruct",
+          model: "meta-llama/llama-3.1-8b-instruct:free",
           messages: [
             {
               role: "system",
