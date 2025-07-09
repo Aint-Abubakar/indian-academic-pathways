@@ -3,7 +3,8 @@ import { useState } from "react";
 import PageLayout from "@/components/PageLayout";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { Send, Bot, User, AlertCircle } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Send, Bot, User, AlertCircle, Key } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 
@@ -18,6 +19,7 @@ const AskAiPage = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputMessage, setInputMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [apiKey, setApiKey] = useState("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");
   const { toast } = useToast();
 
   const addMessage = (role: 'user' | 'assistant', content: string) => {
@@ -42,18 +44,28 @@ const AskAiPage = () => {
       return;
     }
 
+    if (!apiKey.trim()) {
+      toast({
+        variant: "destructive",
+        title: "Missing API Key",
+        description: "Please enter your OpenRouter API key.",
+      });
+      return;
+    }
+
     const userMessage = inputMessage.trim();
     setInputMessage("");
     addMessage('user', userMessage);
     setIsLoading(true);
 
     try {
-      // Try OpenRouter API with proper headers
+      console.log("Making API request with key:", apiKey.substring(0, 10) + "...");
+      
       const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Bearer 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",
+          "Authorization": `Bearer ${apiKey}`,
           "HTTP-Referer": window.location.origin,
           "X-Title": "NextStep AI Assistant"
         },
@@ -80,6 +92,16 @@ const AskAiPage = () => {
       if (!response.ok) {
         const errorData = await response.text();
         console.log("API Error response:", errorData);
+        
+        if (response.status === 401) {
+          toast({
+            variant: "destructive",
+            title: "Invalid API Key",
+            description: "The provided API key is invalid or expired. Please check your OpenRouter account.",
+          });
+          throw new Error("Invalid API key");
+        }
+        
         throw new Error(`API request failed: ${response.status} - ${errorData}`);
       }
 
@@ -91,15 +113,11 @@ const AskAiPage = () => {
     } catch (error) {
       console.error("Error fetching from AI API:", error);
       
-      // Fallback response for educational queries
-      const fallbackResponse = getFallbackResponse(userMessage);
-      addMessage('assistant', fallbackResponse);
-      
-      toast({
-        variant: "destructive",
-        title: "Connection Issue",
-        description: "Using offline mode. Connect to internet for full AI capabilities.",
-      });
+      // Only show fallback if it's not an auth error
+      if (!error.message.includes("Invalid API key")) {
+        const fallbackResponse = getFallbackResponse(userMessage);
+        addMessage('assistant', fallbackResponse);
+      }
     } finally {
       setIsLoading(false);
     }
@@ -126,6 +144,24 @@ const AskAiPage = () => {
   return (
     <PageLayout title="AI Assistant">
       <div className="max-w-4xl mx-auto h-[calc(100vh-200px)] flex flex-col">
+        {/* API Key Input */}
+        <div className="mb-4 p-4 bg-white rounded-lg border border-gray-200">
+          <div className="flex items-center gap-2 mb-2">
+            <Key className="h-4 w-4 text-nextstep-blue" />
+            <label className="text-sm font-medium text-gray-700">OpenRouter API Key</label>
+          </div>
+          <Input
+            type="password"
+            value={apiKey}
+            onChange={(e) => setApiKey(e.target.value)}
+            placeholder="Enter your OpenRouter API key..."
+            className="w-full"
+          />
+          <p className="text-xs text-gray-500 mt-1">
+            Get your API key from <a href="https://openrouter.ai/" target="_blank" rel="noopener noreferrer" className="text-nextstep-blue hover:underline">OpenRouter</a>
+          </p>
+        </div>
+
         {/* Chat Header */}
         <div className="bg-gradient-to-r from-nextstep-blue to-nextstep-indigo text-white p-4 rounded-t-lg">
           <div className="flex items-center gap-3">
