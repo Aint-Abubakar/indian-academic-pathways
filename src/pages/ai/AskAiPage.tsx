@@ -48,14 +48,14 @@ const AskAiPage = () => {
     setIsLoading(true);
 
     try {
-      // Try OpenRouter API (more reliable alternative)
+      // Try OpenRouter API with proper headers
       const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           "Authorization": "Bearer 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",
           "HTTP-Referer": window.location.origin,
-          "X-Title": "NextStep Educational Platform",
+          "X-Title": "NextStep AI Assistant"
         },
         body: JSON.stringify({
           model: "meta-llama/llama-3.1-8b-instruct:free",
@@ -70,16 +70,22 @@ const AskAiPage = () => {
             }
           ],
           max_tokens: 1000,
-          temperature: 0.7,
-        }),
+          temperature: 0.7
+        })
       });
 
+      console.log("API Response status:", response.status);
+      console.log("API Response headers:", Object.fromEntries(response.headers.entries()));
+
       if (!response.ok) {
-        throw new Error(`API request failed: ${response.status}`);
+        const errorData = await response.text();
+        console.log("API Error response:", errorData);
+        throw new Error(`API request failed: ${response.status} - ${errorData}`);
       }
 
       const data = await response.json();
-      const aiResponse = data.choices[0]?.message?.content || "I apologize, but I couldn't generate a response. Please try again.";
+      console.log("API Success response:", data);
+      const aiResponse = data.choices?.[0]?.message?.content || "I apologize, but I couldn't generate a response. Please try again.";
       
       addMessage('assistant', aiResponse);
     } catch (error) {
