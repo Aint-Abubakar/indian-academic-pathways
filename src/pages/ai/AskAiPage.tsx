@@ -53,7 +53,7 @@ const AskAiPage = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Bearer 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",
+          "Authorization": "Bearer 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",
           "HTTP-Referer": window.location.origin,
         },
         body: JSON.stringify({
