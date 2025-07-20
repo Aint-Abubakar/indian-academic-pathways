@@ -16,7 +16,7 @@ import CollegeDetailPage from "./pages/studyabroad/CollegeDetailPage";
 import ExamsPage from "./pages/exams/ExamsPage";
 import FreeCoursesPage from "./pages/freecourses/FreeCoursesPage";
 import TrendingCoursesPage from "./pages/trending/TrendingCoursesPage";
-import AskAiPage from "./pages/ai/AskAiPage";
+
 import ScholarshipsPage from "./pages/scholarships/ScholarshipsPage";
 import ScholarshipDetail from "./pages/scholarships/ScholarshipDetail";
 import SmartStudyPage from "./pages/smartstudy/SmartStudyPage";
@@ -61,8 +61,6 @@ const App = () => (
           <Route path="/trending-courses" element={<TrendingCoursesPage />} />
           <Route path="/best-courses" element={<Navigate to="/trending-courses" replace />} />
           
-          {/* AI Assistant */}
-          <Route path="/ask-ai" element={<AskAiPage />} />
           
           {/* Scholarships */}
           <Route path="/scholarships" element={<ScholarshipsPage />} />
