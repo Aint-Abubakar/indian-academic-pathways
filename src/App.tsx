@@ -19,6 +19,7 @@ import TrendingCoursesPage from "./pages/trending/TrendingCoursesPage";
 import AskAiPage from "./pages/ai/AskAiPage";
 import ScholarshipsPage from "./pages/scholarships/ScholarshipsPage";
 import ScholarshipDetail from "./pages/scholarships/ScholarshipDetail";
+import SmartStudyPage from "./pages/smartstudy/SmartStudyPage";
 
 const queryClient = new QueryClient();
 
@@ -66,6 +67,9 @@ const App = () => (
           {/* Scholarships */}
           <Route path="/scholarships" element={<ScholarshipsPage />} />
           <Route path="/scholarships/:id" element={<ScholarshipDetail />} />
+          
+          {/* Smart Study */}
+          <Route path="/smart-study" element={<SmartStudyPage />} />
           
           {/* These routes will be implemented in future iterations */}
           <Route path="/news" element={<NotFound />} />
