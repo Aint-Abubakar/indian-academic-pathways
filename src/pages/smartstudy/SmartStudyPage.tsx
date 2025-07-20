@@ -1,4 +1,4 @@
-import { BookOpen, Music, ExternalLink, Download, Play } from "lucide-react";
+import { BookOpen, Music, ExternalLink, Download, Play, Brain } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -201,6 +201,89 @@ const teachingChannels = {
   ]
 };
 
+const studyTechniques = [
+  {
+    title: "How to Study Effectively with Scientific Methods",
+    channel: "Thomas Frank",
+    description: "Evidence-based study techniques for maximum efficiency",
+    duration: "15 min",
+    link: "https://www.youtube.com/watch?v=VKo8td_kbAU",
+    technique: "Active Recall"
+  },
+  {
+    title: "Feynman Technique: Master Any Topic in 4 Steps",
+    channel: "Zach Highley",
+    description: "Nobel Prize winner's method for understanding complex concepts",
+    duration: "8 min",
+    link: "https://www.youtube.com/watch?v=tkm0TNFzIeg",
+    technique: "Feynman Method"
+  },
+  {
+    title: "The Science of Spaced Repetition",
+    channel: "Veritasium",
+    description: "How to remember anything forever using scientifically proven intervals",
+    duration: "12 min",
+    link: "https://www.youtube.com/watch?v=cVf38y07cfk",
+    technique: "Spaced Repetition"
+  },
+  {
+    title: "Pomodoro Technique: 25-Minute Study Sessions",
+    channel: "Ali Abdaal",
+    description: "Time management technique for maintaining focus and avoiding burnout",
+    duration: "10 min",
+    link: "https://www.youtube.com/watch?v=mNBmG24djoY",
+    technique: "Pomodoro"
+  },
+  {
+    title: "Mind Mapping for Faster Learning",
+    channel: "Justin Sung",
+    description: "Visual learning technique to organize and retain information",
+    duration: "18 min",
+    link: "https://www.youtube.com/watch?v=5nTuScU70As",
+    technique: "Mind Mapping"
+  },
+  {
+    title: "The Cornell Note-Taking System",
+    channel: "Marty Lobdell",
+    description: "Structured note-taking method for better comprehension and review",
+    duration: "7 min",
+    link: "https://www.youtube.com/watch?v=lsR-10piUUs",
+    technique: "Cornell Notes"
+  },
+  {
+    title: "How to Read Faster and Comprehend Better",
+    channel: "Jim Kwik",
+    description: "Speed reading techniques without losing comprehension",
+    duration: "14 min",
+    link: "https://www.youtube.com/watch?v=ZwEquW_Yij0",
+    technique: "Speed Reading"
+  },
+  {
+    title: "Memory Palace Technique for Exams",
+    channel: "Memory Athlete",
+    description: "Ancient method of loci for memorizing large amounts of information",
+    duration: "16 min",
+    link: "https://www.youtube.com/watch?v=PIhGl8MQQyI",
+    technique: "Memory Palace"
+  },
+  {
+    title: "Scientific Study Schedule Planning",
+    channel: "Matt D'Avella",
+    description: "How to create study schedules based on cognitive science",
+    duration: "11 min",
+    link: "https://www.youtube.com/watch?v=ErWXXUuXfSk",
+    technique: "Schedule Planning"
+  },
+  {
+    title: "Flow State: How to Enter Deep Focus",
+    channel: "Improvement Pill",
+    description: "Psychological techniques to achieve maximum concentration",
+    duration: "9 min",
+    link: "https://www.youtube.com/watch?v=znwUCNrjpD4",
+    technique: "Flow State"
+  }
+];
+
 const SmartStudyPage = () => {
   return (
     <PageLayout title="Smart Study Tools & Resources">
@@ -339,6 +422,49 @@ const SmartStudyPage = () => {
                       </div>
                     </div>
                   ))}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* How to Study Section */}
+        <section>
+          <div className="flex items-center gap-3 mb-6">
+            <Brain className="h-8 w-8 text-nextstep-orange" />
+            <h2 className="text-3xl font-bold text-nextstep-navy">How to Study</h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {studyTechniques.map((video, index) => (
+              <Card key={index} className="group hover:shadow-lg transition-shadow duration-200">
+                <CardHeader>
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <CardTitle className="text-lg text-nextstep-navy group-hover:text-nextstep-orange transition-colors">
+                        {video.title}
+                      </CardTitle>
+                      <div className="flex items-center gap-2 mt-2">
+                        <Badge variant="outline" className="text-xs">
+                          {video.technique}
+                        </Badge>
+                        <span className="text-xs text-gray-500">{video.duration}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <CardDescription className="text-sm leading-relaxed">
+                    {video.description}
+                  </CardDescription>
+                  <p className="text-xs text-gray-600 mt-1">by {video.channel}</p>
+                </CardHeader>
+                <CardContent>
+                  <Button 
+                    className="w-full bg-nextstep-orange hover:bg-nextstep-orange/90"
+                    onClick={() => window.open(video.link, '_blank')}
+                  >
+                    <Play className="h-4 w-4 mr-2" />
+                    Watch Now
+                  </Button>
                 </CardContent>
               </Card>
             ))}
