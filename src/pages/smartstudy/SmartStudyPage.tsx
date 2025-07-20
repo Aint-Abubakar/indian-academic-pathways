@@ -1,4 +1,4 @@
-import { BookOpen, Music, ExternalLink, Download } from "lucide-react";
+import { BookOpen, Music, ExternalLink, Download, Play } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -128,6 +128,79 @@ const focusedMusic = [
   }
 ];
 
+const teachingChannels = {
+  Physics: [
+    { name: "Physics Wallah", channel: "Physics Wallah - Alakh Pandey", link: "https://www.youtube.com/@PhysicsWallah", subscribers: "8.9M" },
+    { name: "Vedantu JEE", channel: "Vedantu JEE", link: "https://www.youtube.com/@VedantuJEE", subscribers: "2.1M" },
+    { name: "Khan Academy", channel: "Khan Academy", link: "https://www.youtube.com/@khanacademy", subscribers: "7.9M" },
+    { name: "BYJU'S Classes", channel: "BYJU'S Classes", link: "https://www.youtube.com/@byjusclasses", subscribers: "3.2M" },
+    { name: "Unacademy JEE", channel: "Unacademy JEE", link: "https://www.youtube.com/@UnacademyJEE", subscribers: "1.8M" }
+  ],
+  Chemistry: [
+    { name: "Pankaj Singh Chemistry", channel: "Pankaj Singh Chemistry", link: "https://www.youtube.com/@PankajSinghChemistry", subscribers: "1.2M" },
+    { name: "Vedantu NEET", channel: "Vedantu NEET", link: "https://www.youtube.com/@VedantuNEET", subscribers: "1.9M" },
+    { name: "Unacademy NEET", channel: "Unacademy NEET", link: "https://www.youtube.com/@UnacademyNEET", subscribers: "2.3M" },
+    { name: "Physics Wallah Chemistry", channel: "Physics Wallah", link: "https://www.youtube.com/@PhysicsWallah", subscribers: "8.9M" },
+    { name: "Khan Academy Chemistry", channel: "Khan Academy", link: "https://www.youtube.com/@khanacademy", subscribers: "7.9M" }
+  ],
+  Mathematics: [
+    { name: "Mohit Tyagi", channel: "Mohit Tyagi", link: "https://www.youtube.com/@mohittyagi", subscribers: "1.5M" },
+    { name: "Neha Agrawal Mathematically Inclined", channel: "Neha Agrawal Mathematically Inclined", link: "https://www.youtube.com/@NehaAgrawalMathematicallyInclined", subscribers: "890K" },
+    { name: "Vedantu Math", channel: "Vedantu Math", link: "https://www.youtube.com/@VedantuMath", subscribers: "1.1M" },
+    { name: "Khan Academy Math", channel: "Khan Academy", link: "https://www.youtube.com/@khanacademy", subscribers: "7.9M" },
+    { name: "Mathematics by Rakesh Yadav", channel: "Rakesh Yadav", link: "https://www.youtube.com/@RakeshYadav", subscribers: "650K" }
+  ],
+  Biology: [
+    { name: "Shomu's Biology", channel: "Shomu's Biology", link: "https://www.youtube.com/@ShomusBiology", subscribers: "1.8M" },
+    { name: "Amoeba Sisters", channel: "Amoeba Sisters", link: "https://www.youtube.com/@AmoebaSisters", subscribers: "3.1M" },
+    { name: "Vedantu NEET Biology", channel: "Vedantu NEET", link: "https://www.youtube.com/@VedantuNEET", subscribers: "1.9M" },
+    { name: "Biology by Dr. Anand Mani", channel: "Dr. Anand Mani", link: "https://www.youtube.com/@DrAnandMani", subscribers: "780K" },
+    { name: "Unacademy Biology", channel: "Unacademy NEET", link: "https://www.youtube.com/@UnacademyNEET", subscribers: "2.3M" }
+  ],
+  English: [
+    { name: "English with Lucy", channel: "English with Lucy", link: "https://www.youtube.com/@EnglishwithLucy", subscribers: "5.7M" },
+    { name: "Magnet Brains English", channel: "Magnet Brains", link: "https://www.youtube.com/@MagnetBrains", subscribers: "9.1M" },
+    { name: "Study IQ Education", channel: "StudyIQ Education", link: "https://www.youtube.com/@StudyIQEducation", subscribers: "4.2M" },
+    { name: "CBSE Class 12 English", channel: "CBSE Adda", link: "https://www.youtube.com/@CBSEAdda", subscribers: "1.3M" },
+    { name: "English Literature by Kirti Choudhary", channel: "Kirti Choudhary", link: "https://www.youtube.com/@KirtiChoudhary", subscribers: "560K" }
+  ],
+  History: [
+    { name: "StudyIQ History", channel: "StudyIQ Education", link: "https://www.youtube.com/@StudyIQEducation", subscribers: "4.2M" },
+    { name: "History Simplified", channel: "History Simplified", link: "https://www.youtube.com/@HistorySimplified", subscribers: "1.1M" },
+    { name: "Magnet Brains History", channel: "Magnet Brains", link: "https://www.youtube.com/@MagnetBrains", subscribers: "9.1M" },
+    { name: "Unacademy History", channel: "Unacademy Plus", link: "https://www.youtube.com/@UnacademyPlus", subscribers: "2.8M" },
+    { name: "History by Aadesh Singh", channel: "Aadesh Singh", link: "https://www.youtube.com/@AadeshSingh", subscribers: "750K" }
+  ],
+  Geography: [
+    { name: "Geography by Amit Sengupta", channel: "Amit Sengupta", link: "https://www.youtube.com/@AmitSengupta", subscribers: "920K" },
+    { name: "StudyIQ Geography", channel: "StudyIQ Education", link: "https://www.youtube.com/@StudyIQEducation", subscribers: "4.2M" },
+    { name: "Magnet Brains Geography", channel: "Magnet Brains", link: "https://www.youtube.com/@MagnetBrains", subscribers: "9.1M" },
+    { name: "Geography Optional", channel: "Geography Optional", link: "https://www.youtube.com/@GeographyOptional", subscribers: "680K" },
+    { name: "Unacademy Geography", channel: "Unacademy Plus", link: "https://www.youtube.com/@UnacademyPlus", subscribers: "2.8M" }
+  ],
+  Economics: [
+    { name: "Economics by Rajat Arora", channel: "Rajat Arora", link: "https://www.youtube.com/@RajatArora", subscribers: "1.2M" },
+    { name: "StudyIQ Economics", channel: "StudyIQ Education", link: "https://www.youtube.com/@StudyIQEducation", subscribers: "4.2M" },
+    { name: "Khan Academy Economics", channel: "Khan Academy", link: "https://www.youtube.com/@khanacademy", subscribers: "7.9M" },
+    { name: "Economics Simplified", channel: "Economics Simplified", link: "https://www.youtube.com/@EconomicsSimplified", subscribers: "850K" },
+    { name: "Magnet Brains Economics", channel: "Magnet Brains", link: "https://www.youtube.com/@MagnetBrains", subscribers: "9.1M" }
+  ],
+  "Political Science": [
+    { name: "Political Science by Laxmikanth", channel: "Laxmikanth Polity", link: "https://www.youtube.com/@LaxmikanthPolity", subscribers: "780K" },
+    { name: "StudyIQ Polity", channel: "StudyIQ Education", link: "https://www.youtube.com/@StudyIQEducation", subscribers: "4.2M" },
+    { name: "Unacademy Polity", channel: "Unacademy Plus", link: "https://www.youtube.com/@UnacademyPlus", subscribers: "2.8M" },
+    { name: "Magnet Brains Political Science", channel: "Magnet Brains", link: "https://www.youtube.com/@MagnetBrains", subscribers: "9.1M" },
+    { name: "Political Science Hub", channel: "Political Science Hub", link: "https://www.youtube.com/@PoliticalScienceHub", subscribers: "450K" }
+  ],
+  "Computer Science": [
+    { name: "Code with Harry", channel: "CodeWithHarry", link: "https://www.youtube.com/@CodeWithHarry", subscribers: "4.1M" },
+    { name: "Programming with Mosh", channel: "Programming with Mosh", link: "https://www.youtube.com/@programmingwithmosh", subscribers: "3.2M" },
+    { name: "freeCodeCamp", channel: "freeCodeCamp.org", link: "https://www.youtube.com/@freecodecamp", subscribers: "7.8M" },
+    { name: "Apna College", channel: "Apna College", link: "https://www.youtube.com/@ApnaCollegeOfficial", subscribers: "4.9M" },
+    { name: "Jenny's Lectures", channel: "Jenny's Lectures CS IT", link: "https://www.youtube.com/@JennyslecturesCSIT", subscribers: "1.4M" }
+  ]
+};
+
 const SmartStudyPage = () => {
   return (
     <PageLayout title="Smart Study Tools & Resources">
@@ -218,6 +291,54 @@ const SmartStudyPage = () => {
                     <Music className="h-4 w-4 mr-2" />
                     Listen Now
                   </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* Teaching Channels Section */}
+        <section>
+          <div className="flex items-center gap-3 mb-6">
+            <Play className="h-8 w-8 text-nextstep-green" />
+            <h2 className="text-3xl font-bold text-nextstep-navy">Teaching Channels</h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {Object.entries(teachingChannels).map(([subject, channels]) => (
+              <Card key={subject} className="h-full">
+                <CardHeader>
+                  <CardTitle className="text-lg text-nextstep-navy">{subject}</CardTitle>
+                  <CardDescription>Best YouTube channels for {subject}</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  {channels.map((channel, index) => (
+                    <div key={index} className="group">
+                      <div className="flex items-start justify-between gap-2 mb-1">
+                        <div className="flex-1 min-w-0">
+                          <p className="text-sm font-medium text-gray-900 truncate" title={channel.name}>
+                            {channel.name}
+                          </p>
+                          <p className="text-xs text-gray-600 truncate" title={channel.channel}>
+                            {channel.channel}
+                          </p>
+                        </div>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="shrink-0"
+                          onClick={() => window.open(channel.link, '_blank')}
+                        >
+                          <Play className="h-3 w-3" />
+                        </Button>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Badge variant="secondary" className="text-xs bg-nextstep-green/10 text-nextstep-green">
+                          {channel.subscribers} subscribers
+                        </Badge>
+                      </div>
+                    </div>
+                  ))}
                 </CardContent>
               </Card>
             ))}
