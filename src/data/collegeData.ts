@@ -6371,6 +6371,1282 @@ const gujaratColleges: College[] = [
   }
 ];
 
+const rajasthanColleges: College[] = [
+  {
+    id: "iit-jodhpur",
+    name: "Indian Institute of Technology Jodhpur",
+    description: "Premier engineering institute in Rajasthan known for its innovative curriculum and research excellence.",
+    rating: 4.6,
+    type: "Government",
+    courses: ["Engineering", "Science", "Management"],
+    fees: {
+      tuition: { min: 200000, max: 230000 },
+      hostel: { min: 15000, max: 25000 }
+    },
+    location: {
+      city: "Jodhpur",
+      state: "Rajasthan",
+      address: "NH 65, Nagaur Road, Karwar, Jodhpur, Rajasthan 342037"
+    },
+    established: 2008,
+    accreditation: ["NBA", "NAAC A++"],
+    facilities: ["Research Labs", "Central Library", "Hostels", "Sports Complex"],
+    admissionProcess: "JEE Advanced",
+    scholarships: [
+      {
+        name: "Merit-cum-Means Scholarship",
+        amount: "Full tuition waiver",
+        eligibility: "Family income < 5 LPA"
+      }
+    ],
+    placementRate: 90,
+    averagePackage: 1300000,
+    placement: {
+      percentage: 90,
+      avgSalary: 1300000,
+      topRecruiters: ["Google", "Microsoft", "Amazon", "Adobe"]
+    },
+    entranceExams: ["JEE Advanced"],
+    admissionDetails: {
+      eligibility: "JEE Advanced qualified candidates",
+      process: "JoSAA Counselling",
+      deadlines: "June-July"
+    }
+  }
+];
+
+const westBengalColleges: College[] = [
+  {
+    id: "jadavpur-university",
+    name: "Jadavpur University",
+    description: "Prestigious state university known for engineering, arts, and research excellence.",
+    rating: 4.5,
+    type: "Government",
+    courses: ["Engineering", "Arts", "Science", "Management"],
+    fees: {
+      tuition: { min: 25000, max: 80000 },
+      hostel: { min: 8000, max: 15000 }
+    },
+    location: {
+      city: "Kolkata",
+      state: "West Bengal",
+      address: "188, Raja S.C. Mallick Rd, Jadavpur, Kolkata, West Bengal 700032"
+    },
+    established: 1955,
+    accreditation: ["NAAC A++", "NBA"],
+    facilities: ["Research Centers", "Central Library", "Hostels", "Sports Complex"],
+    admissionProcess: "WBJEE/JECA",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹30,000 per year",
+        eligibility: "Top 10% students"
+      }
+    ],
+    placementRate: 85,
+    averagePackage: 800000,
+    placement: {
+      percentage: 85,
+      avgSalary: 800000,
+      topRecruiters: ["TCS", "Infosys", "Wipro", "Cognizant"]
+    },
+    entranceExams: ["WBJEE", "JECA"],
+    admissionDetails: {
+      eligibility: "12th PCM for engineering",
+      process: "WBJEE Counselling",
+      deadlines: "June-August"
+    }
+  }
+];
+
+const punjabColleges: College[] = [
+  {
+    id: "pec-chandigarh",
+    name: "Punjab Engineering College",
+    description: "Premier engineering college with excellent infrastructure and placement record.",
+    rating: 4.4,
+    type: "Government",
+    courses: ["Engineering", "Technology", "Management"],
+    fees: {
+      tuition: { min: 120000, max: 150000 },
+      hostel: { min: 10000, max: 18000 }
+    },
+    location: {
+      city: "Chandigarh",
+      state: "Punjab",
+      address: "Sector 12, Chandigarh 160012"
+    },
+    established: 1921,
+    accreditation: ["NBA", "NAAC A"],
+    facilities: ["Research Labs", "Library", "Hostels", "Sports Facilities"],
+    admissionProcess: "JEE Main",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹25,000 per year",
+        eligibility: "Top performers"
+      }
+    ],
+    placementRate: 88,
+    averagePackage: 700000,
+    placement: {
+      percentage: 88,
+      avgSalary: 700000,
+      topRecruiters: ["Microsoft", "Amazon", "Google", "Infosys"]
+    },
+    entranceExams: ["JEE Main"],
+    admissionDetails: {
+      eligibility: "JEE Main qualified",
+      process: "JoSAA Counselling",
+      deadlines: "June-July"
+    }
+  }
+];
+
+const andhraPradeshColleges: College[] = [
+  {
+    id: "iiit-hyderabad",
+    name: "International Institute of Information Technology Hyderabad",
+    description: "Premier IT institute known for computer science and information technology programs.",
+    rating: 4.6,
+    type: "Private",
+    courses: ["Computer Science", "Electronics", "Design"],
+    fees: {
+      tuition: { min: 300000, max: 400000 },
+      hostel: { min: 20000, max: 30000 }
+    },
+    location: {
+      city: "Hyderabad",
+      state: "Andhra Pradesh",
+      address: "Gachibowli, Hyderabad, Telangana 500032"
+    },
+    established: 1998,
+    accreditation: ["NBA", "NAAC A++"],
+    facilities: ["Research Centers", "Incubation Center", "Hostels", "Sports Complex"],
+    admissionProcess: "UGEE",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "50% tuition waiver",
+        eligibility: "Top 10% students"
+      }
+    ],
+    placementRate: 95,
+    averagePackage: 1800000,
+    placement: {
+      percentage: 95,
+      avgSalary: 1800000,
+      topRecruiters: ["Google", "Microsoft", "Facebook", "Amazon"]
+    },
+    entranceExams: ["UGEE"],
+    admissionDetails: {
+      eligibility: "12th PCM with 90%+ marks",
+      process: "UGEE Exam",
+      deadlines: "April-May"
+    }
+  }
+];
+
+const biharColleges: College[] = [
+  {
+    id: "nit-patna",
+    name: "National Institute of Technology Patna",
+    description: "Premier technical institute offering quality engineering education in Bihar.",
+    rating: 4.3,
+    type: "Government",
+    courses: ["Engineering", "Technology", "Science"],
+    fees: {
+      tuition: { min: 150000, max: 180000 },
+      hostel: { min: 12000, max: 20000 }
+    },
+    location: {
+      city: "Patna",
+      state: "Bihar",
+      address: "Ashok Rajpath, Patna, Bihar 800005"
+    },
+    established: 2004,
+    accreditation: ["NBA", "NAAC A"],
+    facilities: ["Research Labs", "Central Library", "Hostels", "Sports Complex"],
+    admissionProcess: "JEE Main",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹50,000 per year",
+        eligibility: "Top 10% students"
+      }
+    ],
+    placementRate: 82,
+    averagePackage: 800000,
+    placement: {
+      percentage: 82,
+      avgSalary: 800000,
+      topRecruiters: ["TCS", "Infosys", "Wipro", "Accenture"]
+    },
+    entranceExams: ["JEE Main"],
+    admissionDetails: {
+      eligibility: "JEE Main qualified",
+      process: "JoSAA Counselling",
+      deadlines: "June-July"
+    }
+  }
+];
+
+const arunachalPradeshColleges: College[] = [
+  {
+    id: "rajiv-gandhi-university",
+    name: "Rajiv Gandhi University",
+    description: "State university offering diverse academic programs in Arunachal Pradesh.",
+    rating: 3.8,
+    type: "Government",
+    courses: ["Arts", "Science", "Commerce", "Management", "Law"],
+    fees: {
+      tuition: { min: 15000, max: 50000 },
+      hostel: { min: 5000, max: 10000 }
+    },
+    location: {
+      city: "Itanagar",
+      state: "Arunachal Pradesh",
+      address: "Rono Hills, Doimukh, Itanagar, Arunachal Pradesh 791112"
+    },
+    established: 1985,
+    accreditation: ["NAAC B+", "UGC"],
+    facilities: ["Library", "Hostels", "Sports Complex", "Computer Center"],
+    admissionProcess: "Merit Based",
+    scholarships: [
+      {
+        name: "State Merit Scholarship",
+        amount: "₹20,000 per year",
+        eligibility: "Merit-based selection"
+      }
+    ],
+    placementRate: 65,
+    averagePackage: 300000,
+    placement: {
+      percentage: 65,
+      avgSalary: 300000,
+      topRecruiters: ["Government Departments", "Private Companies", "Banks"]
+    },
+    entranceExams: ["University Entrance Test"],
+    admissionDetails: {
+      eligibility: "12th passed for UG",
+      process: "University Counselling",
+      deadlines: "June-August"
+    }
+  }
+];
+
+const assamColleges: College[] = [
+  {
+    id: "iit-guwahati",
+    name: "Indian Institute of Technology Guwahati",
+    description: "Premier engineering institute in Northeast India known for academic excellence.",
+    rating: 4.5,
+    type: "Government",
+    courses: ["Engineering", "Science", "Management", "Design"],
+    fees: {
+      tuition: { min: 200000, max: 230000 },
+      hostel: { min: 15000, max: 25000 }
+    },
+    location: {
+      city: "Guwahati",
+      state: "Assam",
+      address: "Guwahati, Assam 781039"
+    },
+    established: 1994,
+    accreditation: ["NBA", "NAAC A++"],
+    facilities: ["Research Centers", "Central Library", "Hostels", "Sports Complex"],
+    admissionProcess: "JEE Advanced",
+    scholarships: [
+      {
+        name: "Merit-cum-Means Scholarship",
+        amount: "Full tuition waiver",
+        eligibility: "Family income < 5 LPA"
+      }
+    ],
+    placementRate: 88,
+    averagePackage: 1200000,
+    placement: {
+      percentage: 88,
+      avgSalary: 1200000,
+      topRecruiters: ["Google", "Microsoft", "Amazon", "Goldman Sachs"]
+    },
+    entranceExams: ["JEE Advanced"],
+    admissionDetails: {
+      eligibility: "JEE Advanced qualified",
+      process: "JoSAA Counselling",
+      deadlines: "June-July"
+    }
+  }
+];
+
+const chhattisgarhColleges: College[] = [
+  {
+    id: "nit-raipur",
+    name: "National Institute of Technology Raipur",
+    description: "Premier technical institute offering quality engineering education in Chhattisgarh.",
+    rating: 4.2,
+    type: "Government",
+    courses: ["Engineering", "Technology", "Science"],
+    fees: {
+      tuition: { min: 150000, max: 180000 },
+      hostel: { min: 12000, max: 20000 }
+    },
+    location: {
+      city: "Raipur",
+      state: "Chhattisgarh",
+      address: "GE Road, Raipur, Chhattisgarh 492010"
+    },
+    established: 1956,
+    accreditation: ["NBA", "NAAC A"],
+    facilities: ["Research Labs", "Central Library", "Hostels", "Sports Complex"],
+    admissionProcess: "JEE Main",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹50,000 per year",
+        eligibility: "Top 10% students"
+      }
+    ],
+    placementRate: 80,
+    averagePackage: 700000,
+    placement: {
+      percentage: 80,
+      avgSalary: 700000,
+      topRecruiters: ["TCS", "Infosys", "Wipro", "Cognizant"]
+    },
+    entranceExams: ["JEE Main"],
+    admissionDetails: {
+      eligibility: "JEE Main qualified",
+      process: "JoSAA Counselling",
+      deadlines: "June-July"
+    }
+  }
+];
+
+const goaColleges: College[] = [
+  {
+    id: "goa-university",
+    name: "Goa University",
+    description: "State university offering diverse academic programs in a coastal setting.",
+    rating: 4.0,
+    type: "Government",
+    courses: ["Arts", "Science", "Commerce", "Engineering", "Law"],
+    fees: {
+      tuition: { min: 20000, max: 80000 },
+      hostel: { min: 8000, max: 15000 }
+    },
+    location: {
+      city: "Panaji",
+      state: "Goa",
+      address: "Taleigao Plateau, Goa 403206"
+    },
+    established: 1985,
+    accreditation: ["NAAC A", "UGC"],
+    facilities: ["Marine Sciences Center", "Library", "Hostels", "Sports Complex"],
+    admissionProcess: "Merit/Entrance Based",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹25,000 per year",
+        eligibility: "Top performers"
+      }
+    ],
+    placementRate: 70,
+    averagePackage: 450000,
+    placement: {
+      percentage: 70,
+      avgSalary: 450000,
+      topRecruiters: ["Government Sectors", "Tourism Industry", "IT Companies"]
+    },
+    entranceExams: ["University Entrance Tests"],
+    admissionDetails: {
+      eligibility: "12th passed for UG",
+      process: "University Counselling",
+      deadlines: "June-August"
+    }
+  }
+];
+
+const haryanaColleges: College[] = [
+  {
+    id: "nit-kurukshetra",
+    name: "National Institute of Technology Kurukshetra",
+    description: "Premier technical institute known for engineering excellence in Haryana.",
+    rating: 4.3,
+    type: "Government",
+    courses: ["Engineering", "Technology", "Management"],
+    fees: {
+      tuition: { min: 150000, max: 180000 },
+      hostel: { min: 12000, max: 20000 }
+    },
+    location: {
+      city: "Kurukshetra",
+      state: "Haryana",
+      address: "Kurukshetra, Haryana 136119"
+    },
+    established: 1963,
+    accreditation: ["NBA", "NAAC A"],
+    facilities: ["Research Centers", "Central Library", "Hostels", "Sports Complex"],
+    admissionProcess: "JEE Main",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹50,000 per year",
+        eligibility: "Top 10% students"
+      }
+    ],
+    placementRate: 85,
+    averagePackage: 900000,
+    placement: {
+      percentage: 85,
+      avgSalary: 900000,
+      topRecruiters: ["Microsoft", "Google", "Amazon", "Samsung"]
+    },
+    entranceExams: ["JEE Main"],
+    admissionDetails: {
+      eligibility: "JEE Main qualified",
+      process: "JoSAA Counselling",
+      deadlines: "June-July"
+    }
+  }
+];
+
+const himachalPradeshColleges: College[] = [
+  {
+    id: "nit-hamirpur",
+    name: "National Institute of Technology Hamirpur",
+    description: "Premier engineering institute nestled in the hills of Himachal Pradesh.",
+    rating: 4.2,
+    type: "Government",
+    courses: ["Engineering", "Technology", "Science"],
+    fees: {
+      tuition: { min: 150000, max: 180000 },
+      hostel: { min: 12000, max: 20000 }
+    },
+    location: {
+      city: "Hamirpur",
+      state: "Himachal Pradesh",
+      address: "Hamirpur, Himachal Pradesh 177005"
+    },
+    established: 1986,
+    accreditation: ["NBA", "NAAC A"],
+    facilities: ["Research Labs", "Central Library", "Hostels", "Sports Complex"],
+    admissionProcess: "JEE Main",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹50,000 per year",
+        eligibility: "Top 10% students"
+      }
+    ],
+    placementRate: 83,
+    averagePackage: 750000,
+    placement: {
+      percentage: 83,
+      avgSalary: 750000,
+      topRecruiters: ["TCS", "Infosys", "Amazon", "Microsoft"]
+    },
+    entranceExams: ["JEE Main"],
+    admissionDetails: {
+      eligibility: "JEE Main qualified",
+      process: "JoSAA Counselling",
+      deadlines: "June-July"
+    }
+  }
+];
+
+const jharkhandColleges: College[] = [
+  {
+    id: "nit-jamshedpur",
+    name: "National Institute of Technology Jamshedpur",
+    description: "Premier technical institute in the steel city of Jamshedpur.",
+    rating: 4.1,
+    type: "Government",
+    courses: ["Engineering", "Technology", "Science"],
+    fees: {
+      tuition: { min: 150000, max: 180000 },
+      hostel: { min: 12000, max: 20000 }
+    },
+    location: {
+      city: "Jamshedpur",
+      state: "Jharkhand",
+      address: "Adityapur, Jamshedpur, Jharkhand 831014"
+    },
+    established: 1960,
+    accreditation: ["NBA", "NAAC A"],
+    facilities: ["Research Centers", "Central Library", "Hostels", "Sports Complex"],
+    admissionProcess: "JEE Main",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹50,000 per year",
+        eligibility: "Top 10% students"
+      }
+    ],
+    placementRate: 78,
+    averagePackage: 650000,
+    placement: {
+      percentage: 78,
+      avgSalary: 650000,
+      topRecruiters: ["TCS", "Infosys", "Tata Steel", "Wipro"]
+    },
+    entranceExams: ["JEE Main"],
+    admissionDetails: {
+      eligibility: "JEE Main qualified",
+      process: "JoSAA Counselling",
+      deadlines: "June-July"
+    }
+  }
+];
+
+const madhyaPradeshColleges: College[] = [
+  {
+    id: "iiit-bhopal",
+    name: "Indian Institute of Information Technology Bhopal",
+    description: "Premier IT institute known for computer science and information technology programs.",
+    rating: 4.3,
+    type: "Government",
+    courses: ["Computer Science", "Information Technology", "Electronics"],
+    fees: {
+      tuition: { min: 200000, max: 250000 },
+      hostel: { min: 15000, max: 25000 }
+    },
+    location: {
+      city: "Bhopal",
+      state: "Madhya Pradesh",
+      address: "Bhopal, Madhya Pradesh 462066"
+    },
+    established: 2017,
+    accreditation: ["NBA", "NAAC A"],
+    facilities: ["Computer Labs", "Research Centers", "Hostels", "Sports Complex"],
+    admissionProcess: "JEE Main",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹50,000 per year",
+        eligibility: "Top 10% students"
+      }
+    ],
+    placementRate: 85,
+    averagePackage: 900000,
+    placement: {
+      percentage: 85,
+      avgSalary: 900000,
+      topRecruiters: ["Google", "Microsoft", "Amazon", "Adobe"]
+    },
+    entranceExams: ["JEE Main"],
+    admissionDetails: {
+      eligibility: "JEE Main qualified",
+      process: "JoSAA Counselling",
+      deadlines: "June-July"
+    }
+  }
+];
+
+const manipurColleges: College[] = [
+  {
+    id: "manipur-university",
+    name: "Manipur University",
+    description: "Central university offering diverse academic programs in Manipur.",
+    rating: 3.9,
+    type: "Government",
+    courses: ["Arts", "Science", "Commerce", "Management", "Education"],
+    fees: {
+      tuition: { min: 15000, max: 60000 },
+      hostel: { min: 6000, max: 12000 }
+    },
+    location: {
+      city: "Imphal",
+      state: "Manipur",
+      address: "Canchipur, Imphal, Manipur 795003"
+    },
+    established: 1980,
+    accreditation: ["NAAC A", "UGC"],
+    facilities: ["Central Library", "Research Centers", "Hostels", "Sports Complex"],
+    admissionProcess: "Merit/Entrance Based",
+    scholarships: [
+      {
+        name: "Central University Scholarship",
+        amount: "₹20,000 per year",
+        eligibility: "Merit-based selection"
+      }
+    ],
+    placementRate: 68,
+    averagePackage: 350000,
+    placement: {
+      percentage: 68,
+      avgSalary: 350000,
+      topRecruiters: ["Government Departments", "NGOs", "Private Companies"]
+    },
+    entranceExams: ["University Entrance Tests"],
+    admissionDetails: {
+      eligibility: "12th passed for UG",
+      process: "University Counselling",
+      deadlines: "June-August"
+    }
+  }
+];
+
+const meghalayaColleges: College[] = [
+  {
+    id: "nit-meghalaya",
+    name: "National Institute of Technology Meghalaya",
+    description: "Emerging technical institute offering quality engineering education in Northeast India.",
+    rating: 4.0,
+    type: "Government",
+    courses: ["Engineering", "Technology", "Science"],
+    fees: {
+      tuition: { min: 150000, max: 180000 },
+      hostel: { min: 12000, max: 20000 }
+    },
+    location: {
+      city: "Shillong",
+      state: "Meghalaya",
+      address: "Bijni Complex, Laitumkhrah, Shillong, Meghalaya 793003"
+    },
+    established: 2010,
+    accreditation: ["NBA", "NAAC A"],
+    facilities: ["Computer Labs", "Library", "Hostels", "Sports Facilities"],
+    admissionProcess: "JEE Main",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹50,000 per year",
+        eligibility: "Top 10% students"
+      }
+    ],
+    placementRate: 75,
+    averagePackage: 600000,
+    placement: {
+      percentage: 75,
+      avgSalary: 600000,
+      topRecruiters: ["TCS", "Infosys", "Wipro", "Cognizant"]
+    },
+    entranceExams: ["JEE Main"],
+    admissionDetails: {
+      eligibility: "JEE Main qualified",
+      process: "JoSAA Counselling",
+      deadlines: "June-July"
+    }
+  }
+];
+
+const mizoramColleges: College[] = [
+  {
+    id: "mizoram-university",
+    name: "Mizoram University",
+    description: "Central university providing quality higher education in Mizoram.",
+    rating: 3.8,
+    type: "Government",
+    courses: ["Arts", "Science", "Commerce", "Management", "Law"],
+    fees: {
+      tuition: { min: 12000, max: 50000 },
+      hostel: { min: 5000, max: 10000 }
+    },
+    location: {
+      city: "Aizawl",
+      state: "Mizoram",
+      address: "Tanhril, Aizawl, Mizoram 796004"
+    },
+    established: 2001,
+    accreditation: ["NAAC A", "UGC"],
+    facilities: ["Central Library", "Computer Center", "Hostels", "Sports Complex"],
+    admissionProcess: "Merit/Entrance Based",
+    scholarships: [
+      {
+        name: "Central University Scholarship",
+        amount: "₹18,000 per year",
+        eligibility: "Merit-based selection"
+      }
+    ],
+    placementRate: 62,
+    averagePackage: 280000,
+    placement: {
+      percentage: 62,
+      avgSalary: 280000,
+      topRecruiters: ["Government Departments", "Banks", "Private Companies"]
+    },
+    entranceExams: ["University Entrance Tests"],
+    admissionDetails: {
+      eligibility: "12th passed for UG",
+      process: "University Counselling",
+      deadlines: "June-August"
+    }
+  }
+];
+
+const nagalandColleges: College[] = [
+  {
+    id: "nagaland-university",
+    name: "Nagaland University",
+    description: "Central university offering quality education in diverse fields in Nagaland.",
+    rating: 3.7,
+    type: "Government",
+    courses: ["Arts", "Science", "Commerce", "Management", "Education"],
+    fees: {
+      tuition: { min: 12000, max: 45000 },
+      hostel: { min: 5000, max: 10000 }
+    },
+    location: {
+      city: "Kohima",
+      state: "Nagaland",
+      address: "Lumami, Zunheboto, Nagaland 798627"
+    },
+    established: 1994,
+    accreditation: ["NAAC B++", "UGC"],
+    facilities: ["Library", "Computer Center", "Hostels", "Sports Facilities"],
+    admissionProcess: "Merit Based",
+    scholarships: [
+      {
+        name: "University Merit Scholarship",
+        amount: "₹15,000 per year",
+        eligibility: "Top performers"
+      }
+    ],
+    placementRate: 58,
+    averagePackage: 250000,
+    placement: {
+      percentage: 58,
+      avgSalary: 250000,
+      topRecruiters: ["Government Departments", "NGOs", "Banks"]
+    },
+    entranceExams: ["University Entrance Tests"],
+    admissionDetails: {
+      eligibility: "12th passed for UG",
+      process: "Direct Admission",
+      deadlines: "June-August"
+    }
+  }
+];
+
+const odishaColleges: College[] = [
+  {
+    id: "nit-rourkela",
+    name: "National Institute of Technology Rourkela",
+    description: "Premier engineering institute in Odisha known for its excellent academic standards.",
+    rating: 4.4,
+    type: "Government",
+    courses: ["Engineering", "Technology", "Science", "Management"],
+    fees: {
+      tuition: { min: 150000, max: 180000 },
+      hostel: { min: 12000, max: 20000 }
+    },
+    location: {
+      city: "Rourkela",
+      state: "Odisha",
+      address: "Sector-1, Rourkela, Odisha 769008"
+    },
+    established: 1961,
+    accreditation: ["NBA", "NAAC A++"],
+    facilities: ["Research Centers", "Central Library", "Hostels", "Sports Complex"],
+    admissionProcess: "JEE Main",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹50,000 per year",
+        eligibility: "Top 10% students"
+      }
+    ],
+    placementRate: 87,
+    averagePackage: 950000,
+    placement: {
+      percentage: 87,
+      avgSalary: 950000,
+      topRecruiters: ["Google", "Microsoft", "Amazon", "Samsung"]
+    },
+    entranceExams: ["JEE Main"],
+    admissionDetails: {
+      eligibility: "JEE Main qualified",
+      process: "JoSAA Counselling",
+      deadlines: "June-July"
+    }
+  }
+];
+
+const sikkimColleges: College[] = [
+  {
+    id: "sikkim-university",
+    name: "Sikkim University",
+    description: "Central university offering quality education in the beautiful state of Sikkim.",
+    rating: 3.9,
+    type: "Government",
+    courses: ["Arts", "Science", "Commerce", "Management", "Technology"],
+    fees: {
+      tuition: { min: 15000, max: 60000 },
+      hostel: { min: 6000, max: 12000 }
+    },
+    location: {
+      city: "Gangtok",
+      state: "Sikkim",
+      address: "6th Mile, Samdur, Tadong, Gangtok, Sikkim 737102"
+    },
+    established: 2007,
+    accreditation: ["NAAC A", "UGC"],
+    facilities: ["Central Library", "Research Centers", "Hostels", "Sports Complex"],
+    admissionProcess: "Merit/Entrance Based",
+    scholarships: [
+      {
+        name: "Central University Scholarship",
+        amount: "₹20,000 per year",
+        eligibility: "Merit-based selection"
+      }
+    ],
+    placementRate: 70,
+    averagePackage: 400000,
+    placement: {
+      percentage: 70,
+      avgSalary: 400000,
+      topRecruiters: ["Government Departments", "Tourism Industry", "IT Companies"]
+    },
+    entranceExams: ["University Entrance Tests"],
+    admissionDetails: {
+      eligibility: "12th passed for UG",
+      process: "University Counselling",
+      deadlines: "June-August"
+    }
+  }
+];
+
+const tripuraColleges: College[] = [
+  {
+    id: "tripura-university",
+    name: "Tripura University",
+    description: "Central university providing quality higher education in Tripura.",
+    rating: 3.8,
+    type: "Government",
+    courses: ["Arts", "Science", "Commerce", "Management", "Education"],
+    fees: {
+      tuition: { min: 12000, max: 50000 },
+      hostel: { min: 5000, max: 10000 }
+    },
+    location: {
+      city: "Agartala",
+      state: "Tripura",
+      address: "Suryamaninagar, Agartala, Tripura 799022"
+    },
+    established: 1987,
+    accreditation: ["NAAC A", "UGC"],
+    facilities: ["Central Library", "Computer Center", "Hostels", "Sports Complex"],
+    admissionProcess: "Merit/Entrance Based",
+    scholarships: [
+      {
+        name: "Central University Scholarship",
+        amount: "₹18,000 per year",
+        eligibility: "Merit-based selection"
+      }
+    ],
+    placementRate: 65,
+    averagePackage: 320000,
+    placement: {
+      percentage: 65,
+      avgSalary: 320000,
+      topRecruiters: ["Government Departments", "Banks", "Private Companies"]
+    },
+    entranceExams: ["University Entrance Tests"],
+    admissionDetails: {
+      eligibility: "12th passed for UG",
+      process: "University Counselling",
+      deadlines: "June-August"
+    }
+  }
+];
+
+const uttarakhandColleges: College[] = [
+  {
+    id: "iit-roorkee",
+    name: "Indian Institute of Technology Roorkee",
+    description: "One of the oldest technical institutions in Asia, known for engineering excellence.",
+    rating: 4.6,
+    type: "Government",
+    courses: ["Engineering", "Architecture", "Management", "Science"],
+    fees: {
+      tuition: { min: 200000, max: 230000 },
+      hostel: { min: 15000, max: 25000 }
+    },
+    location: {
+      city: "Roorkee",
+      state: "Uttarakhand",
+      address: "Roorkee, Uttarakhand 247667"
+    },
+    established: 1847,
+    accreditation: ["NBA", "NAAC A++"],
+    facilities: ["Research Centers", "Central Library", "Hostels", "Sports Complex"],
+    admissionProcess: "JEE Advanced",
+    scholarships: [
+      {
+        name: "Merit-cum-Means Scholarship",
+        amount: "Full tuition waiver",
+        eligibility: "Family income < 5 LPA"
+      }
+    ],
+    placementRate: 92,
+    averagePackage: 1400000,
+    placement: {
+      percentage: 92,
+      avgSalary: 1400000,
+      topRecruiters: ["Google", "Microsoft", "Amazon", "Goldman Sachs"]
+    },
+    entranceExams: ["JEE Advanced"],
+    admissionDetails: {
+      eligibility: "JEE Advanced qualified",
+      process: "JoSAA Counselling",
+      deadlines: "June-July"
+    }
+  }
+];
+
+const andamanNicobarColleges: College[] = [
+  {
+    id: "andaman-university",
+    name: "Dr. A.P.J. Abdul Kalam University",
+    description: "University offering diverse academic programs in the Andaman & Nicobar Islands.",
+    rating: 3.6,
+    type: "Government",
+    courses: ["Science", "Arts", "Commerce", "Management"],
+    fees: {
+      tuition: { min: 15000, max: 40000 },
+      hostel: { min: 8000, max: 15000 }
+    },
+    location: {
+      city: "Port Blair",
+      state: "Andaman & Nicobar Islands",
+      address: "Brookshabad, Port Blair, Andaman & Nicobar Islands 744112"
+    },
+    established: 2016,
+    accreditation: ["UGC", "NAAC B+"],
+    facilities: ["Library", "Computer Center", "Hostels", "Marine Studies Center"],
+    admissionProcess: "Merit Based",
+    scholarships: [
+      {
+        name: "Island Development Scholarship",
+        amount: "₹15,000 per year",
+        eligibility: "Local students"
+      }
+    ],
+    placementRate: 55,
+    averagePackage: 250000,
+    placement: {
+      percentage: 55,
+      avgSalary: 250000,
+      topRecruiters: ["Government Departments", "Tourism Industry", "Marine Organizations"]
+    },
+    entranceExams: ["University Entrance Tests"],
+    admissionDetails: {
+      eligibility: "12th passed for UG",
+      process: "Direct Admission",
+      deadlines: "June-August"
+    }
+  }
+];
+
+const chandigarhColleges: College[] = [
+  {
+    id: "panjab-university",
+    name: "Panjab University",
+    description: "Premier university in Chandigarh offering diverse academic programs.",
+    rating: 4.2,
+    type: "Government",
+    courses: ["Arts", "Science", "Commerce", "Engineering", "Law", "Management"],
+    fees: {
+      tuition: { min: 25000, max: 100000 },
+      hostel: { min: 10000, max: 20000 }
+    },
+    location: {
+      city: "Chandigarh",
+      state: "Chandigarh",
+      address: "Sector 14, Chandigarh 160014"
+    },
+    established: 1882,
+    accreditation: ["NAAC A++", "UGC"],
+    facilities: ["Central Library", "Research Centers", "Hostels", "Sports Complex"],
+    admissionProcess: "Merit/Entrance Based",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹30,000 per year",
+        eligibility: "Top 10% students"
+      }
+    ],
+    placementRate: 78,
+    averagePackage: 650000,
+    placement: {
+      percentage: 78,
+      avgSalary: 650000,
+      topRecruiters: ["Government Sectors", "IT Companies", "Banks"]
+    },
+    entranceExams: ["University Entrance Tests"],
+    admissionDetails: {
+      eligibility: "12th passed for UG",
+      process: "University Counselling",
+      deadlines: "June-August"
+    }
+  }
+];
+
+const dadraNagarHaveliColleges: College[] = [
+  {
+    id: "dnh-college",
+    name: "Government College Silvassa",
+    description: "Government college providing quality education in Dadra & Nagar Haveli.",
+    rating: 3.5,
+    type: "Government",
+    courses: ["Arts", "Science", "Commerce"],
+    fees: {
+      tuition: { min: 8000, max: 25000 },
+      hostel: { min: 4000, max: 8000 }
+    },
+    location: {
+      city: "Silvassa",
+      state: "Dadra & Nagar Haveli",
+      address: "Silvassa, Dadra & Nagar Haveli 396230"
+    },
+    established: 1965,
+    accreditation: ["UGC", "NAAC B"],
+    facilities: ["Library", "Computer Lab", "Sports Ground"],
+    admissionProcess: "Merit Based",
+    scholarships: [
+      {
+        name: "Government Scholarship",
+        amount: "₹10,000 per year",
+        eligibility: "Merit-based selection"
+      }
+    ],
+    placementRate: 50,
+    averagePackage: 200000,
+    placement: {
+      percentage: 50,
+      avgSalary: 200000,
+      topRecruiters: ["Government Departments", "Local Industries"]
+    },
+    entranceExams: ["Merit Based"],
+    admissionDetails: {
+      eligibility: "12th passed",
+      process: "Direct Admission",
+      deadlines: "June-July"
+    }
+  }
+];
+
+const damanDiuColleges: College[] = [
+  {
+    id: "daman-college",
+    name: "Government College Daman",
+    description: "Government college offering undergraduate programs in Daman & Diu.",
+    rating: 3.4,
+    type: "Government",
+    courses: ["Arts", "Science", "Commerce"],
+    fees: {
+      tuition: { min: 8000, max: 25000 },
+      hostel: { min: 4000, max: 8000 }
+    },
+    location: {
+      city: "Daman",
+      state: "Daman & Diu",
+      address: "Nani Daman, Daman 396210"
+    },
+    established: 1968,
+    accreditation: ["UGC", "NAAC B"],
+    facilities: ["Library", "Computer Lab", "Sports Facilities"],
+    admissionProcess: "Merit Based",
+    scholarships: [
+      {
+        name: "UT Scholarship",
+        amount: "₹8,000 per year",
+        eligibility: "Local students"
+      }
+    ],
+    placementRate: 45,
+    averagePackage: 180000,
+    placement: {
+      percentage: 45,
+      avgSalary: 180000,
+      topRecruiters: ["Government Departments", "Tourism Industry"]
+    },
+    entranceExams: ["Merit Based"],
+    admissionDetails: {
+      eligibility: "12th passed",
+      process: "Direct Admission",
+      deadlines: "June-July"
+    }
+  }
+];
+
+const jammuKashmirColleges: College[] = [
+  {
+    id: "nit-srinagar",
+    name: "National Institute of Technology Srinagar",
+    description: "Premier technical institute in the beautiful valley of Kashmir.",
+    rating: 4.1,
+    type: "Government",
+    courses: ["Engineering", "Technology", "Science"],
+    fees: {
+      tuition: { min: 150000, max: 180000 },
+      hostel: { min: 12000, max: 20000 }
+    },
+    location: {
+      city: "Srinagar",
+      state: "Jammu & Kashmir",
+      address: "Hazratbal, Srinagar, Jammu & Kashmir 190006"
+    },
+    established: 1960,
+    accreditation: ["NBA", "NAAC A"],
+    facilities: ["Research Labs", "Central Library", "Hostels", "Sports Complex"],
+    admissionProcess: "JEE Main",
+    scholarships: [
+      {
+        name: "Merit Scholarship",
+        amount: "₹50,000 per year",
+        eligibility: "Top 10% students"
+      }
+    ],
+    placementRate: 80,
+    averagePackage: 700000,
+    placement: {
+      percentage: 80,
+      avgSalary: 700000,
+      topRecruiters: ["TCS", "Infosys", "Wipro", "Amazon"]
+    },
+    entranceExams: ["JEE Main"],
+    admissionDetails: {
+      eligibility: "JEE Main qualified",
+      process: "JoSAA Counselling",
+      deadlines: "June-July"
+    }
+  }
+];
+
+const ladakhColleges: College[] = [
+  {
+    id: "ladakh-university",
+    name: "University of Ladakh",
+    description: "Newly established university serving the high-altitude region of Ladakh.",
+    rating: 3.6,
+    type: "Government",
+    courses: ["Arts", "Science", "Commerce", "Buddhist Studies"],
+    fees: {
+      tuition: { min: 10000, max: 35000 },
+      hostel: { min: 5000, max: 10000 }
+    },
+    location: {
+      city: "Leh",
+      state: "Ladakh",
+      address: "Leh, Ladakh 194101"
+    },
+    established: 2019,
+    accreditation: ["UGC"],
+    facilities: ["Library", "Computer Center", "Hostels", "Research Centers"],
+    admissionProcess: "Merit Based",
+    scholarships: [
+      {
+        name: "Ladakh Development Scholarship",
+        amount: "₹12,000 per year",
+        eligibility: "Local students"
+      }
+    ],
+    placementRate: 52,
+    averagePackage: 220000,
+    placement: {
+      percentage: 52,
+      avgSalary: 220000,
+      topRecruiters: ["Government Departments", "Tourism Industry", "NGOs"]
+    },
+    entranceExams: ["University Entrance Tests"],
+    admissionDetails: {
+      eligibility: "12th passed",
+      process: "Direct Admission",
+      deadlines: "June-August"
+    }
+  }
+];
+
+const lakshadweepColleges: College[] = [
+  {
+    id: "lakshadweep-college",
+    name: "Govt. Degree College Kavaratti",
+    description: "Government college providing higher education in the coral islands of Lakshadweep.",
+    rating: 3.3,
+    type: "Government",
+    courses: ["Arts", "Science", "Commerce"],
+    fees: {
+      tuition: { min: 5000, max: 20000 },
+      hostel: { min: 3000, max: 6000 }
+    },
+    location: {
+      city: "Kavaratti",
+      state: "Lakshadweep",
+      address: "Kavaratti, Lakshadweep 682555"
+    },
+    established: 1985,
+    accreditation: ["UGC"],
+    facilities: ["Library", "Computer Lab", "Marine Studies Center"],
+    admissionProcess: "Merit Based",
+    scholarships: [
+      {
+        name: "Island Scholarship",
+        amount: "₹5,000 per year",
+        eligibility: "All students"
+      }
+    ],
+    placementRate: 40,
+    averagePackage: 150000,
+    placement: {
+      percentage: 40,
+      avgSalary: 150000,
+      topRecruiters: ["Government Departments", "Fisheries", "Tourism"]
+    },
+    entranceExams: ["Merit Based"],
+    admissionDetails: {
+      eligibility: "12th passed",
+      process: "Direct Admission",
+      deadlines: "June-July"
+    }
+  }
+];
+
+const puducherryColleges: College[] = [
+  {
+    id: "pondicherry-university",
+    name: "Pondicherry University",
+    description: "Central university offering diverse academic programs in the Union Territory of Puducherry.",
+    rating: 4.0,
+    type: "Government",
+    courses: ["Arts", "Science", "Engineering", "Management", "Law"],
+    fees: {
+      tuition: { min: 20000, max: 80000 },
+      hostel: { min: 8000, max: 15000 }
+    },
+    location: {
+      city: "Puducherry",
+      state: "Puducherry",
+      address: "R.V. Nagar, Kalapet, Puducherry 605014"
+    },
+    established: 1985,
+    accreditation: ["NAAC A++", "UGC"],
+    facilities: ["Central Library", "Research Centers", "Hostels", "Sports Complex"],
+    admissionProcess: "Merit/Entrance Based",
+    scholarships: [
+      {
+        name: "Central University Scholarship",
+        amount: "₹25,000 per year",
+        eligibility: "Merit-based selection"
+      }
+    ],
+    placementRate: 75,
+    averagePackage: 500000,
+    placement: {
+      percentage: 75,
+      avgSalary: 500000,
+      topRecruiters: ["Government Sectors", "IT Companies", "Research Organizations"]
+    },
+    entranceExams: ["University Entrance Tests"],
+    admissionDetails: {
+      eligibility: "12th passed for UG",
+      process: "University Counselling",
+      deadlines: "June-August"
+    }
+  }
+];
+
 export const getCollegesByState = (stateId: string) => {
   const stateCollegeMap: { [key: string]: College[] } = {
     "maharashtra": maharashtraColleges,
@@ -6379,37 +7655,37 @@ export const getCollegesByState = (stateId: string) => {
     "tamil-nadu": tamilNaduColleges,
     "uttar-pradesh": uttarPradeshColleges,
     "gujarat": gujaratColleges,
-    "rajasthan": [],
-    "west-bengal": [],
+    "rajasthan": rajasthanColleges,
+    "west-bengal": westBengalColleges,
     "kerala": keralaColleges,
-    "punjab": [],
-    "andhra-pradesh": [],
-    "bihar": [],
+    "punjab": punjabColleges,
+    "andhra-pradesh": andhraPradeshColleges,
+    "bihar": biharColleges,
     "telangana": telanganaColleges,
-    "arunachal-pradesh": [],
-    "assam": [],
-    "chhattisgarh": [],
-    "goa": [],
-    "haryana": [],
-    "himachal-pradesh": [],
-    "jharkhand": [],
-    "madhya-pradesh": [],
-    "manipur": [],
-    "meghalaya": [],
-    "mizoram": [],
-    "nagaland": [],
-    "odisha": [],
-    "sikkim": [],
-    "tripura": [],
-    "uttarakhand": [],
-    "andaman-nicobar": [],
-    "chandigarh": [],
-    "dadra-nagar-haveli": [],
-    "daman-diu": [],
-    "jammu-kashmir": [],
-    "ladakh": [],
-    "lakshadweep": [],
-    "puducherry": []
+    "arunachal-pradesh": arunachalPradeshColleges,
+    "assam": assamColleges,
+    "chhattisgarh": chhattisgarhColleges,
+    "goa": goaColleges,
+    "haryana": haryanaColleges,
+    "himachal-pradesh": himachalPradeshColleges,
+    "jharkhand": jharkhandColleges,
+    "madhya-pradesh": madhyaPradeshColleges,
+    "manipur": manipurColleges,
+    "meghalaya": meghalayaColleges,
+    "mizoram": mizoramColleges,
+    "nagaland": nagalandColleges,
+    "odisha": odishaColleges,
+    "sikkim": sikkimColleges,
+    "tripura": tripuraColleges,
+    "uttarakhand": uttarakhandColleges,
+    "andaman-nicobar": andamanNicobarColleges,
+    "chandigarh": chandigarhColleges,
+    "dadra-nagar-haveli": dadraNagarHaveliColleges,
+    "daman-diu": damanDiuColleges,
+    "jammu-kashmir": jammuKashmirColleges,
+    "ladakh": ladakhColleges,
+    "lakshadweep": lakshadweepColleges,
+    "puducherry": puducherryColleges
   };
 
   return stateCollegeMap[stateId] || [];
