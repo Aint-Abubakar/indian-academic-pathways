@@ -577,6 +577,546 @@ export const studyAbroadColleges: StudyAbroadCollege[] = [
     ]
   },
   {
+    id: "uoft",
+    countryId: "canada",
+    name: "University of Toronto",
+    imageUrl: "https://images.unsplash.com/photo-1459767129954-1b1c1f9b9ace?w=800&h=600&fit=crop",
+    description: "The University of Toronto is a public research university in Toronto, Ontario, Canada, located on the grounds that surround Queen's Park. It was founded by royal charter in 1827 as King's College, the first institution of higher learning in Upper Canada.",
+    ranking: 18,
+    tuitionFee: "CAD $58,160",
+    acceptanceRate: "43%",
+    website: "https://www.utoronto.ca/",
+    scholarships: [
+      {
+        name: "Lester B. Pearson International Scholarship",
+        amount: "Full tuition, books, incidental fees, and residence support",
+        deadline: "January 15",
+        eligibility: "International students demonstrating exceptional academic achievement and creativity",
+        link: "https://future.utoronto.ca/pearson"
+      },
+      {
+        name: "National Scholarship Program",
+        amount: "CAD $7,500",
+        deadline: "February 1",
+        eligibility: "Canadian citizens and permanent residents",
+        link: "https://future.utoronto.ca/finances/awards-scholarships"
+      }
+    ]
+  },
+  {
+    id: "ubc",
+    countryId: "canada",
+    name: "University of British Columbia",
+    imageUrl: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=800&h=600&fit=crop",
+    description: "The University of British Columbia is a public research university with campuses near Vancouver and in Kelowna, British Columbia. Established in 1908, it is British Columbia's oldest university.",
+    ranking: 34,
+    tuitionFee: "CAD $51,000",
+    acceptanceRate: "52.4%",
+    website: "https://www.ubc.ca/",
+    scholarships: [
+      {
+        name: "International Major Entrance Scholarship",
+        amount: "Up to CAD $40,000",
+        deadline: "January 15",
+        eligibility: "Outstanding international students",
+        link: "https://students.ubc.ca/enrolment/finances/award-search/vancouver/faculty-any/level-undergraduate/type-entrance/international-yes"
+      },
+      {
+        name: "Karen McKellin International Leader of Tomorrow Award",
+        amount: "Full financial support",
+        deadline: "December 1",
+        eligibility: "International students with financial need and leadership potential",
+        link: "https://you.ubc.ca/applying-ubc/how-apply/international-leaders-tomorrow-award/"
+      }
+    ]
+  },
+  {
+    id: "mcgill",
+    countryId: "canada",
+    name: "McGill University",
+    imageUrl: "https://images.unsplash.com/photo-1496307653780-42ee777d4833?w=800&h=600&fit=crop",
+    description: "McGill University is an English-language public research university located in Montreal, Quebec, Canada. Founded in 1821 by royal charter granted by King George IV, the university bears the name of James McGill, a Scottish merchant whose bequest in 1813 formed the university's precursor, University of McGill College.",
+    ranking: 31,
+    tuitionFee: "CAD $50,000",
+    acceptanceRate: "46%",
+    website: "https://www.mcgill.ca/",
+    scholarships: [
+      {
+        name: "McGill Entrance Scholarship Program",
+        amount: "CAD $3,000 - CAD $12,000",
+        deadline: "January 15",
+        eligibility: "Outstanding academic achievement",
+        link: "https://www.mcgill.ca/studentaid/scholarships-aid/entrance"
+      },
+      {
+        name: "Major Scholarship for International Students",
+        amount: "CAD $10,000 - CAD $30,000",
+        deadline: "January 15",
+        eligibility: "International students with exceptional academic records",
+        link: "https://www.mcgill.ca/studentaid/scholarships-aid/entrance/international"
+      }
+    ]
+  },
+  {
+    id: "mcmaster",
+    countryId: "canada",
+    name: "McMaster University",
+    imageUrl: "https://images.unsplash.com/photo-1431576901776-e539bd916ba2?w=800&h=600&fit=crop",
+    description: "McMaster University is a public research university in Hamilton, Ontario, Canada. The main McMaster campus is on 121 hectares of land near the residential neighborhoods of Ainslie Wood and Westdale, adjacent to the Royal Botanical Gardens.",
+    ranking: 152,
+    tuitionFee: "CAD $50,000",
+    acceptanceRate: "58.7%",
+    website: "https://www.mcmaster.ca/",
+    scholarships: [
+      {
+        name: "McMaster Entrance Awards",
+        amount: "CAD $1,000 - CAD $5,000",
+        deadline: "Automatic consideration",
+        eligibility: "High academic achievement",
+        link: "https://registrar.mcmaster.ca/aid-awards/entrance-scholarships/"
+      },
+      {
+        name: "International Excellence Awards",
+        amount: "Up to CAD $20,000",
+        deadline: "February 1",
+        eligibility: "International students with outstanding academic records",
+        link: "https://future.mcmaster.ca/admission/international-excellence-awards/"
+      }
+    ]
+  },
+  {
+    id: "waterloo",
+    countryId: "canada",
+    name: "University of Waterloo",
+    imageUrl: "https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?w=800&h=600&fit=crop",
+    description: "The University of Waterloo is a public research university with a main campus in Waterloo, Ontario, Canada. The main campus is on 404 hectares of land adjacent to 'Uptown' Waterloo and Waterloo Park. The university also operates three satellite campuses and four affiliated university colleges.",
+    ranking: 112,
+    tuitionFee: "CAD $63,000",
+    acceptanceRate: "53%",
+    website: "https://uwaterloo.ca/",
+    scholarships: [
+      {
+        name: "International Student Entrance Scholarships",
+        amount: "CAD $2,000 - CAD $10,000",
+        deadline: "February 1",
+        eligibility: "International students with high academic standing",
+        link: "https://uwaterloo.ca/find-out-more/financing/scholarships"
+      },
+      {
+        name: "President's Scholarship of Distinction",
+        amount: "CAD $2,000",
+        deadline: "Automatic consideration",
+        eligibility: "Exceptional academic achievement",
+        link: "https://uwaterloo.ca/student-awards-financial-aid/undergraduate-awards/presidents-scholarships"
+      }
+    ]
+  },
+  {
+    id: "queens",
+    countryId: "canada",
+    name: "Queen's University",
+    imageUrl: "https://images.unsplash.com/photo-1460574283810-2aab119d8511?w=800&h=600&fit=crop",
+    description: "Queen's University at Kingston, commonly known as Queen's University or Queen's, is a public research university in Kingston, Ontario, Canada. Queen's holds more than 1,400 hectares of land throughout Ontario and owns Herstmonceux Castle in East Sussex, England.",
+    ranking: 209,
+    tuitionFee: "CAD $55,000",
+    acceptanceRate: "43.9%",
+    website: "https://www.queensu.ca/",
+    scholarships: [
+      {
+        name: "Major Admission Award",
+        amount: "CAD $5,000 - CAD $36,000",
+        deadline: "February 15",
+        eligibility: "Outstanding academic and leadership achievements",
+        link: "https://www.queensu.ca/registrar/financial-aid/awards-bursaries/major-admission-awards"
+      },
+      {
+        name: "International Admission Awards",
+        amount: "CAD $2,000 - CAD $15,000",
+        deadline: "February 15",
+        eligibility: "International students with exceptional academic records",
+        link: "https://www.queensu.ca/admission/international-admission-awards"
+      }
+    ]
+  },
+  {
+    id: "alberta",
+    countryId: "canada",
+    name: "University of Alberta",
+    imageUrl: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&h=600&fit=crop",
+    description: "The University of Alberta, also known as U of A or UAlberta, is a public research university located in Edmonton, Alberta, Canada. It was founded in 1908 by Alexander Cameron Rutherford, the first premier of Alberta, and Henry Marshall Tory, its first president.",
+    ranking: 110,
+    tuitionFee: "CAD $35,000",
+    acceptanceRate: "58%",
+    website: "https://www.ualberta.ca/",
+    scholarships: [
+      {
+        name: "International Entrance Scholarship",
+        amount: "CAD $5,000 - CAD $120,000",
+        deadline: "December 1",
+        eligibility: "International students with outstanding academic achievement",
+        link: "https://www.ualberta.ca/admissions/undergraduate/entrance-awards/international-entrance-scholarships.html"
+      },
+      {
+        name: "Jason Lang Scholarship",
+        amount: "CAD $1,000",
+        deadline: "September 30",
+        eligibility: "Alberta residents with high academic achievement",
+        link: "https://studentaid.alberta.ca/scholarships-awards/undergraduate/jason-lang-scholarship/"
+      }
+    ]
+  },
+  {
+    id: "uottawa",
+    countryId: "canada",
+    name: "University of Ottawa",
+    imageUrl: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=800&h=600&fit=crop",
+    description: "The University of Ottawa, often referred to as uOttawa or U of O, is a bilingual public research university in Ottawa, Ontario, Canada. The main campus is located on 42.5 hectares in the residential neighbourhood of Sandy Hill, adjacent to Ottawa's Rideau Canal.",
+    ranking: 237,
+    tuitionFee: "CAD $46,000",
+    acceptanceRate: "75%",
+    website: "https://www.uottawa.ca/",
+    scholarships: [
+      {
+        name: "International Admission Scholarship",
+        amount: "CAD $1,000 - CAD $30,000",
+        deadline: "March 1",
+        eligibility: "International students with high academic standing",
+        link: "https://www.uottawa.ca/financial-aid-awards/undergraduate-awards/admission-scholarships-international-students"
+      },
+      {
+        name: "Excellence Scholarship",
+        amount: "CAD $4,000 - CAD $5,000",
+        deadline: "March 1",
+        eligibility: "Outstanding academic achievement",
+        link: "https://www.uottawa.ca/financial-aid-awards/undergraduate-awards/excellence-scholarships"
+      }
+    ]
+  },
+  {
+    id: "calgary",
+    countryId: "canada",
+    name: "University of Calgary",
+    imageUrl: "https://images.unsplash.com/photo-1496307653780-42ee777d4833?w=800&h=600&fit=crop",
+    description: "The University of Calgary is a public research university located in Calgary, Alberta, Canada. The University of Calgary started in 1944 as the Calgary branch of the University of Alberta, founded in 1908, prior to being instituted into a separate, autonomous university in 1966.",
+    ranking: 242,
+    tuitionFee: "CAD $35,000",
+    acceptanceRate: "10.6%",
+    website: "https://www.ucalgary.ca/",
+    scholarships: [
+      {
+        name: "International Entrance Scholarship",
+        amount: "CAD $15,000 - CAD $60,000",
+        deadline: "December 1",
+        eligibility: "International students with exceptional academic achievement",
+        link: "https://www.ucalgary.ca/registrar/awards/international-entrance-scholarship"
+      },
+      {
+        name: "Schulich Leader Scholarships",
+        amount: "CAD $100,000 - CAD $120,000",
+        deadline: "January 31",
+        eligibility: "STEM students with leadership and entrepreneurial thinking",
+        link: "https://schulichleaders.com/"
+      }
+    ]
+  },
+  {
+    id: "western",
+    countryId: "canada",
+    name: "Western University",
+    imageUrl: "https://images.unsplash.com/photo-1431576901776-e539bd916ba2?w=800&h=600&fit=crop",
+    description: "The University of Western Ontario, commonly known as Western University or Western, is a public research university in London, Ontario, Canada. The main campus is located on 455 hectares of land, surrounded by residential neighbourhoods and the Thames River bisecting the campus's eastern portion.",
+    ranking: 172,
+    tuitionFee: "CAD $57,000",
+    acceptanceRate: "58%",
+    website: "https://www.uwo.ca/",
+    scholarships: [
+      {
+        name: "International President's Entrance Scholarship",
+        amount: "CAD $100,000",
+        deadline: "January 31",
+        eligibility: "International students with exceptional academic and leadership achievements",
+        link: "https://www.uwo.ca/admissions/undergraduate/scholarships_awards/entrance_awards/presidents_entrance_scholarship.html"
+      },
+      {
+        name: "National Scholarship",
+        amount: "CAD $2,000",
+        deadline: "May 1",
+        eligibility: "High academic achievement",
+        link: "https://www.uwo.ca/admissions/undergraduate/scholarships_awards/entrance_awards/"
+      }
+    ]
+  },
+  {
+    id: "laval",
+    countryId: "canada",
+    name: "Université Laval",
+    imageUrl: "https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?w=800&h=600&fit=crop",
+    description: "Université Laval is a French-language public research university in Quebec City, Quebec, Canada. The university was founded in 1663, making it the oldest centre of higher education in Canada and the first institution in North America to offer higher education in French.",
+    ranking: 419,
+    tuitionFee: "CAD $28,000",
+    acceptanceRate: "85%",
+    website: "https://www.ulaval.ca/",
+    scholarships: [
+      {
+        name: "Excellence Scholarship for International Students",
+        amount: "CAD $10,000 - CAD $25,000",
+        deadline: "February 1",
+        eligibility: "International students with outstanding academic records",
+        link: "https://www.ulaval.ca/en/student-services/scholarships-and-financial-aid/scholarships-for-international-students"
+      },
+      {
+        name: "Merit Scholarship Program",
+        amount: "CAD $2,000 - CAD $15,000",
+        deadline: "March 1",
+        eligibility: "Academic excellence",
+        link: "https://www.ulaval.ca/bourses-et-aide-financiere"
+      }
+    ]
+  },
+  {
+    id: "montreal",
+    countryId: "canada",
+    name: "Université de Montréal",
+    imageUrl: "https://images.unsplash.com/photo-1460574283810-2aab119d8511?w=800&h=600&fit=crop",
+    description: "The Université de Montréal is a French-language public research university in Montreal, Quebec, Canada. The university's main campus is located on the northern slope of Mount Royal in the neighbourhoods of Outremont and Côte-des-Neiges.",
+    ranking: 111,
+    tuitionFee: "CAD $27,000",
+    acceptanceRate: "57%",
+    website: "https://www.umontreal.ca/",
+    scholarships: [
+      {
+        name: "Excellence Scholarship",
+        amount: "CAD $10,923 - CAD $27,300",
+        deadline: "February 1",
+        eligibility: "International students with exceptional academic achievement",
+        link: "https://international.umontreal.ca/en/admissions-aid/financial-aid/"
+      },
+      {
+        name: "Exemption from Supplementary Tuition Fees",
+        amount: "Tuition reduction",
+        deadline: "February 1",
+        eligibility: "International students based on academic merit",
+        link: "https://international.umontreal.ca/en/admissions-aid/financial-aid/exemptions/"
+      }
+    ]
+  },
+  {
+    id: "concordia",
+    countryId: "canada",
+    name: "Concordia University",
+    imageUrl: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&h=600&fit=crop",
+    description: "Concordia University is a public comprehensive research university located in Montreal, Quebec, Canada. Following the merger of Loyola College and Sir George Williams University, Concordia University was granted a charter by the government of Quebec in 1974, making it the youngest of Quebec's universities.",
+    ranking: 521,
+    tuitionFee: "CAD $25,000",
+    acceptanceRate: "63%",
+    website: "https://www.concordia.ca/",
+    scholarships: [
+      {
+        name: "Undergraduate International Tuition Award of Excellence",
+        amount: "CAD $10,077",
+        deadline: "March 1",
+        eligibility: "International undergraduate students with high academic standing",
+        link: "https://www.concordia.ca/students/financial-support/scholarships-awards/undergraduate-awards.html"
+      },
+      {
+        name: "Concordia Merit Scholarship",
+        amount: "CAD $1,000 - CAD $12,000",
+        deadline: "March 1",
+        eligibility: "Academic excellence and leadership",
+        link: "https://www.concordia.ca/students/financial-support/scholarships-awards/"
+      }
+    ]
+  },
+  {
+    id: "carleton",
+    countryId: "canada",
+    name: "Carleton University",
+    imageUrl: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=800&h=600&fit=crop",
+    description: "Carleton University is an English-language public research university in Ottawa, Ontario, Canada. Founded in 1942 as Carleton College, the institution originally operated as a private, non-denominational evening college to serve returning World War II veterans.",
+    ranking: 601,
+    tuitionFee: "CAD $35,000",
+    acceptanceRate: "17%",
+    website: "https://carleton.ca/",
+    scholarships: [
+      {
+        name: "Entrance Scholarships for International Students",
+        amount: "CAD $4,000 - CAD $16,000",
+        deadline: "April 1",
+        eligibility: "International students with high academic achievement",
+        link: "https://carleton.ca/awards/scholarships-for-international-students/"
+      },
+      {
+        name: "Carleton Prestige Scholarships",
+        amount: "CAD $4,000",
+        deadline: "May 1",
+        eligibility: "Outstanding academic performance",
+        link: "https://carleton.ca/awards/undergraduate-awards/"
+      }
+    ]
+  },
+  {
+    id: "ryerson",
+    countryId: "canada",
+    name: "Toronto Metropolitan University",
+    imageUrl: "https://images.unsplash.com/photo-1496307653780-42ee777d4833?w=800&h=600&fit=crop",
+    description: "Toronto Metropolitan University, formerly known as Ryerson University, is a public research university located in Toronto, Ontario, Canada. The university's undergraduate and graduate programs are housed in eight faculties.",
+    ranking: 801,
+    tuitionFee: "CAD $33,000",
+    acceptanceRate: "78%",
+    website: "https://www.torontomu.ca/",
+    scholarships: [
+      {
+        name: "International Secondary School Student Awards",
+        amount: "CAD $5,000 - CAD $12,000",
+        deadline: "February 1",
+        eligibility: "International students entering from secondary school",
+        link: "https://www.torontomu.ca/student-life-and-learning/awards-scholarships/international-student-awards/"
+      },
+      {
+        name: "Entrance Scholarships",
+        amount: "CAD $1,000 - CAD $5,000",
+        deadline: "May 1",
+        eligibility: "High academic achievement",
+        link: "https://www.torontomu.ca/student-life-and-learning/awards-scholarships/"
+      }
+    ]
+  },
+  {
+    id: "simon-fraser",
+    countryId: "canada",
+    name: "Simon Fraser University",
+    imageUrl: "https://images.unsplash.com/photo-1431576901776-e539bd916ba2?w=800&h=600&fit=crop",
+    description: "Simon Fraser University is a public research university in British Columbia, Canada. It maintains three campuses: the main campus on Burnaby Mountain, and satellite campuses in Vancouver and Surrey.",
+    ranking: 318,
+    tuitionFee: "CAD $40,000",
+    acceptanceRate: "59%",
+    website: "https://www.sfu.ca/",
+    scholarships: [
+      {
+        name: "International Undergraduate Student Scholarship",
+        amount: "CAD $5,000 - CAD $34,000",
+        deadline: "February 28",
+        eligibility: "International students with outstanding academic records",
+        link: "https://www.sfu.ca/students/financialaid/undergraduate/awards/international.html"
+      },
+      {
+        name: "Major Entrance Scholarship",
+        amount: "CAD $5,000 - CAD $16,000",
+        deadline: "February 28",
+        eligibility: "Academic excellence",
+        link: "https://www.sfu.ca/students/financialaid/undergraduate/awards/entrance.html"
+      }
+    ]
+  },
+  {
+    id: "dalhousie",
+    countryId: "canada",
+    name: "Dalhousie University",
+    imageUrl: "https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?w=800&h=600&fit=crop",
+    description: "Dalhousie University is a large public research university in Nova Scotia, Canada. Dalhousie University is a member of the U15, a group of research-intensive universities in Canada.",
+    ranking: 308,
+    tuitionFee: "CAD $25,000",
+    acceptanceRate: "73%",
+    website: "https://www.dal.ca/",
+    scholarships: [
+      {
+        name: "Entrance Scholarships for International Students",
+        amount: "CAD $1,000 - CAD $30,000",
+        deadline: "March 1",
+        eligibility: "International students with high academic achievement",
+        link: "https://www.dal.ca/admissions/scholarships_awards/international_awards.html"
+      },
+      {
+        name: "Sexton Scholars Program",
+        amount: "CAD $10,000 - CAD $85,000",
+        deadline: "February 1",
+        eligibility: "Outstanding academic achievement in engineering",
+        link: "https://www.dal.ca/faculty/engineering/current_students/undergraduate_students/scholarships_and_awards/sexton-scholars.html"
+      }
+    ]
+  },
+  {
+    id: "manitoba",
+    countryId: "canada",
+    name: "University of Manitoba",
+    imageUrl: "https://images.unsplash.com/photo-1460574283810-2aab119d8511?w=800&h=600&fit=crop",
+    description: "The University of Manitoba is a public research university in the province of Manitoba, Canada. Located in Winnipeg, it is the largest university in the province and the 17th-largest in all of Canada, with a student enrollment of 29,800.",
+    ranking: 651,
+    tuitionFee: "CAD $20,000",
+    acceptanceRate: "52%",
+    website: "https://umanitoba.ca/",
+    scholarships: [
+      {
+        name: "International Undergraduate Student Scholarship",
+        amount: "CAD $3,000 - CAD $5,000",
+        deadline: "March 1",
+        eligibility: "International students with high academic standing",
+        link: "https://umanitoba.ca/student-supports/financial-support/scholarships-bursaries-awards/international-undergraduate-scholarships"
+      },
+      {
+        name: "University of Manitoba Entrance Scholarships",
+        amount: "CAD $1,500 - CAD $3,000",
+        deadline: "May 1",
+        eligibility: "High school graduates with outstanding grades",
+        link: "https://umanitoba.ca/student-supports/financial-support/scholarships-bursaries-awards"
+      }
+    ]
+  },
+  {
+    id: "saskatchewan",
+    countryId: "canada",
+    name: "University of Saskatchewan",
+    imageUrl: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&h=600&fit=crop",
+    description: "The University of Saskatchewan is a Canadian public research university, founded in 1907, and located on the east side of the South Saskatchewan River in Saskatoon, Saskatchewan, Canada.",
+    ranking: 601,
+    tuitionFee: "CAD $24,000",
+    acceptanceRate: "70%",
+    website: "https://www.usask.ca/",
+    scholarships: [
+      {
+        name: "International Student Awards",
+        amount: "CAD $1,000 - CAD $20,000",
+        deadline: "February 15",
+        eligibility: "International students with academic excellence",
+        link: "https://students.usask.ca/money/scholarships-awards/undergraduate-awards.php#InternationalStudentAwards"
+      },
+      {
+        name: "Guaranteed Entrance Scholarships",
+        amount: "CAD $500 - CAD $3,000",
+        deadline: "May 1",
+        eligibility: "High school students with excellent grades",
+        link: "https://students.usask.ca/money/scholarships-awards/undergraduate-awards.php"
+      }
+    ]
+  },
+  {
+    id: "victoria",
+    countryId: "canada",
+    name: "University of Victoria",
+    imageUrl: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=800&h=600&fit=crop",
+    description: "The University of Victoria is a public research university located in the municipalities of Oak Bay and Saanich, British Columbia, Canada. The university traces its roots to Victoria College, the first post-secondary institution established in British Columbia in 1903.",
+    ranking: 359,
+    tuitionFee: "CAD $30,000",
+    acceptanceRate: "63%",
+    website: "https://www.uvic.ca/",
+    scholarships: [
+      {
+        name: "International Entrance Scholarships",
+        amount: "CAD $2,500 - CAD $15,000",
+        deadline: "February 28",
+        eligibility: "International students with outstanding academic achievement",
+        link: "https://www.uvic.ca/registrar/safa/entrance-scholarships/international/index.php"
+      },
+      {
+        name: "President's Scholarship for Excellence",
+        amount: "CAD $5,000",
+        deadline: "February 28",
+        eligibility: "Academic excellence and community involvement",
+        link: "https://www.uvic.ca/registrar/safa/entrance-scholarships/"
+      }
+    ]
+  },
+  {
     id: "oxford",
     countryId: "uk",
     name: "University of Oxford",
