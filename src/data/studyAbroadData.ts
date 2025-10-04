@@ -2132,14 +2132,14 @@ export const studyAbroadColleges: StudyAbroadCollege[] = [
       amount: "25% tuition fee remission",
       deadline: "Usually November for following year intake",
       eligibility: "International students enrolling in a bachelor degree, high academic merit",
-      link: "https://scholarships.unimelb.edu.au/awards/melbourne-international-undergraduate-scholarship"  :contentReference[oaicite:2]{index=2}
+      link: "https://scholarships.unimelb.edu.au/awards/melbourne-international-undergraduate-scholarship"
     },
     {
       name: "Melbourne Graduate Research Scholarship",
       amount: "Full tuition fee coverage + living allowance (≈ AUD 35,000/year)",
       deadline: "Varies by faculty; check research degree scholarship deadlines",
       eligibility: "International postgraduate research students",
-      link: "https://www.unimelb.edu.au/research-support/funding/graduate-research-scholarships"  :contentReference[oaicite:3]{index=3}
+      link: "https://www.unimelb.edu.au/research-support/funding/graduate-research-scholarships"
     }
   ]
 },
