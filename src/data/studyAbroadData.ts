@@ -2115,7 +2115,34 @@ export const studyAbroadColleges: StudyAbroadCollege[] = [
         link: "https://www.yamaguchi-u.ac.jp/en/international/partnership-scholarship/"
       }
     ]
-  }
+ ,
+    {
+    id: "gunma-university",
+    countryId: "japan",
+    name: "Gunma University",
+    imageUrl: "https://images.unsplash.com/photo-1459767129954-1b1c1f9b9ace?w=800&h=600&fit=crop",
+    description: "Gunma University is a national university in Maebashi, Gunma, Japan. Founded in 1949, it is known for its strong medical school and comprehensive undergraduate and graduate programs.",
+    ranking: 701,
+    tuitionFee: "¥535,800 ($3,600)",
+    acceptanceRate: "75%",
+    website: "https://www.gunma-u.ac.jp/english/",
+    scholarships: [
+      {
+        name: "MEXT Scholarship",
+        amount: "¥143,000-184,000/month",
+        deadline: "May",
+        eligibility: "International students",
+        link: "https://www.gunma-u.ac.jp/english/international/scholarships/"
+      },
+      {
+        name: "Gunma University Community Support Scholarship",
+        amount: "¥35,000/month",
+        deadline: "April",
+        eligibility: "International students with community involvement",
+        link: "https://www.gunma-u.ac.jp/english/international/community-scholarship/"
+      }
+    ]
+  },
 ];
 
 export const getCollegesByCountry = (countryId: string): StudyAbroadCollege[] => {
