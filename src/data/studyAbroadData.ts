@@ -2116,33 +2116,34 @@ export const studyAbroadColleges: StudyAbroadCollege[] = [
       }
     ]
   },   
+   {
+  id: "university-of-melbourne",
+  countryId: "australia",
+  name: "University of Melbourne",
+  imageUrl: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=800&h=600&fit=crop",
+  description: "The University of Melbourne is a leading public research university in Melbourne, Victoria, Australia. Founded in 1853, it’s known for its strength in engineering, computer science, AI & ML research, medical sciences, and arts.",
+  ranking: 39,  // in the 2025 Times Higher Education ranking for Australia globally ≈ #39 :contentReference[oaicite:0]{index=0}
+  tuitionFee: "AUD $40,000 – 90,000 (~USD $25,000–60,000) per year",  // Depends on course (e.g. Engineering, Medicine are higher) :contentReference[oaicite:1]{index=1}
+  acceptanceRate: "≈ 30–40%",  // approximate, Australian top unis are competitive; not always published precisely
+  website: "https://www.unimelb.edu.au/",
+  scholarships: [
     {
-    id: "university-of-melborne",
-    countryId: "japan",
-    name: "Gunma University",
-    imageUrl: "https://images.unsplash.com/photo-1459767129954-1b1c1f9b9ace?w=800&h=600&fit=crop",
-    description: "Gunma University is a national university in Maebashi, Gunma, Japan. Founded in 1949, it is known for its strong medical school and comprehensive undergraduate and graduate programs.",
-    ranking: 701,
-    tuitionFee: "¥535,800 ($3,600)",
-    acceptanceRate: "75%",
-    website: "https://www.gunma-u.ac.jp/english/",
-    scholarships: [
-      {
-        name: "MEXT Scholarship",
-        amount: "¥143,000-184,000/month",
-        deadline: "May",
-        eligibility: "International students",
-        link: "https://www.gunma-u.ac.jp/english/international/scholarships/"
-      },
-      {
-        name: "Gunma University Community Support Scholarship",
-        amount: "¥35,000/month",
-        deadline: "April",
-        eligibility: "International students with community involvement",
-        link: "https://www.gunma-u.ac.jp/english/international/community-scholarship/"
-      }
-    ]
-  },
+      name: "Melbourne International Undergraduate Scholarship",
+      amount: "25% tuition fee remission",
+      deadline: "Usually November for following year intake",
+      eligibility: "International students enrolling in a bachelor degree, high academic merit",
+      link: "https://scholarships.unimelb.edu.au/awards/melbourne-international-undergraduate-scholarship"  :contentReference[oaicite:2]{index=2}
+    },
+    {
+      name: "Melbourne Graduate Research Scholarship",
+      amount: "Full tuition fee coverage + living allowance (≈ AUD 35,000/year)",
+      deadline: "Varies by faculty; check research degree scholarship deadlines",
+      eligibility: "International postgraduate research students",
+      link: "https://www.unimelb.edu.au/research-support/funding/graduate-research-scholarships"  :contentReference[oaicite:3]{index=3}
+    }
+  ]
+},
+
 ];
 
 export const getCollegesByCountry = (countryId: string): StudyAbroadCollege[] => {
