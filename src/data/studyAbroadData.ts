@@ -2115,7 +2115,7 @@ export const studyAbroadColleges: StudyAbroadCollege[] = [
         link: "https://www.yamaguchi-u.ac.jp/en/international/partnership-scholarship/"
       }
     ]
- ,
+  },   
     {
     id: "gunma-university",
     countryId: "japan",
