@@ -2117,7 +2117,7 @@ export const studyAbroadColleges: StudyAbroadCollege[] = [
     ]
   },   
     {
-    id: "gunma-university",
+    id: "university-of-melborne",
     countryId: "japan",
     name: "Gunma University",
     imageUrl: "https://images.unsplash.com/photo-1459767129954-1b1c1f9b9ace?w=800&h=600&fit=crop",
