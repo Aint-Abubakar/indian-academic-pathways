@@ -19,12 +19,12 @@ const Hero = () => {
               Discover scholarships, colleges, courses, exams, and career paths tailored for Indian students.
             </p>
             <div className="flex flex-wrap justify-center gap-4 pt-6">
-              <Button asChild size="lg" className="bg-gradient-to-r from-nextstep-blue to-nextstep-purple hover:opacity-90">
+              <Button asChild size="lg" className="bg-gradient-to-r from-nextstep-blue to-nextstep-purple hover:opacity-90 hover:shadow-2xl hover:scale-110 group">
                 <Link to="/scholarships">
-                  Explore Scholarships <ArrowRight className="ml-2 h-4 w-4" />
+                  Explore Scholarships <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-nextstep-blue text-nextstep-blue hover:bg-nextstep-blue/10">
+              <Button asChild size="lg" variant="outline" className="border-nextstep-blue text-nextstep-blue hover:bg-nextstep-blue/10 hover:shadow-lg hover:scale-110 group">
                 <Link to="/free-courses">
                   Browse Free Courses
                 </Link>

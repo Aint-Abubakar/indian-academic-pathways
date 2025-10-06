@@ -86,6 +86,79 @@
   }
 
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+    @apply transition-all duration-500 ease-out hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02];
+    transform-origin: center;
+    will-change: transform, box-shadow;
+  }
+
+  .card-hover::before {
+    content: '';
+    @apply absolute inset-0 rounded-xl opacity-0 transition-opacity duration-500;
+    background: linear-gradient(135deg, rgba(25, 117, 230, 0.1), rgba(139, 92, 246, 0.1));
+    z-index: -1;
+  }
+
+  .card-hover:hover::before {
+    @apply opacity-100;
+  }
+
+  .btn-hover-lift {
+    @apply transition-all duration-300 ease-out;
+    transform: translateY(0) scale(1);
+  }
+
+  .btn-hover-lift:hover {
+    @apply shadow-xl;
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  .btn-hover-lift:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  .icon-bounce {
+    @apply transition-transform duration-300 ease-out;
+  }
+
+  .group:hover .icon-bounce {
+    animation: icon-bounce 0.6s ease-in-out;
+  }
+
+  @keyframes icon-bounce {
+    0%, 100% { transform: translateY(0) scale(1); }
+    25% { transform: translateY(-4px) scale(1.1); }
+    50% { transform: translateY(0) scale(1.05); }
+    75% { transform: translateY(-2px) scale(1.08); }
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300;
+    position: relative;
+  }
+
+  .hover-glow::after {
+    content: '';
+    @apply absolute inset-0 rounded-lg opacity-0 blur-xl transition-opacity duration-500;
+    background: radial-gradient(circle at center, hsl(var(--primary) / 0.4), transparent 70%);
+    z-index: -1;
+  }
+
+  .hover-glow:hover::after {
+    @apply opacity-100;
+  }
+
+  .link-underline {
+    @apply relative inline-block;
+  }
+
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 transition-transform duration-300 ease-out;
+    transform-origin: right;
+  }
+
+  .link-underline:hover::after {
+    @apply scale-x-100;
+    transform-origin: left;
   }
 }
